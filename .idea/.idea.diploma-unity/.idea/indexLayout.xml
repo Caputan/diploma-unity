@@ -17,10 +17,10 @@
       <Path>.git</Path>
       <Path>.idea</Path>
       <Path>Documentation</Path>
-      <Path>Interactive Platform MachineParts</Path>
       <Path>Library</Path>
       <Path>Logs</Path>
       <Path>Temp</Path>
+      <Path>UserSettings</Path>
       <Path>obj</Path>
     </explicitExcludes>
   </component>
