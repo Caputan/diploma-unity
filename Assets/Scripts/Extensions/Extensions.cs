@@ -10,7 +10,20 @@ namespace Diploma.Extensions
             gameObject.name = name;
             return gameObject;
         }
-         
+
+
+        public static GameObject AddRigidBody(this GameObject gameObject,float mass)
+        { 
+            var component = gameObject.GetOrAddComponent<Rigidbody>();
+            component.mass = mass; 
+            return gameObject;
+        }
+
+        public static GameObject AddCollider(this GameObject gameObject)
+        {
+            var component = gameObject.GetOrAddComponent<Collider>();
+            return gameObject;
+        }
         
         public static GameObject AddSpriteRenderer(this GameObject gameObject, Sprite sprite)
         {
@@ -55,7 +68,6 @@ namespace Diploma.Extensions
             {
                 return res;
             }
-
             return 0;
         }
     }

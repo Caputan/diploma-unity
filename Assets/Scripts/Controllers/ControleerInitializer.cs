@@ -1,19 +1,27 @@
-﻿using UnityEngine;
+﻿using GameObjectCreating;
+using UnityEngine;
+using UnityEngine.UI;
+
+
 
 namespace Diploma.Controllers
 {
     public class ControleerInitializer : MonoBehaviour
     {
+        [SerializeField] private Button _button;
+        [SerializeField] private int countOfdetails;
+        
+        private GameContext _gameContext;
         private Controllers _controllers;
         private void Start()
         {
-            //коменты для ознакомления с структурой
-            // var playerFactory = new PlayerFactory(_data.Player);
-            // var playerInitialization = new PlayerInitialization(playerFactory,_gameContext);
-
+            _gameContext = new GameContext();
+            var GameObjectFactory = new GameObjectFactory();
+            var Pool = new PoolOfObjects(countOfdetails,GameObjectFactory,_gameContext);
+            var GameObjectInitilization = new GameObjectInitialization(Pool);
             
             _controllers = new Controllers();
-            // _controllers.Add(playerInitialization);
+            
             
             _controllers.Initialization();
         }
