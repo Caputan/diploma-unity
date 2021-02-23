@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace GameObjectCreating
+namespace Diploma.Interfaces
 {
     public interface IFactory
     {

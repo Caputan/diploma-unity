@@ -1,4 +1,5 @@
 ﻿using Diploma.Extensions;
+using Diploma.Interfaces;
 using UnityEngine;
 
 namespace GameObjectCreating
