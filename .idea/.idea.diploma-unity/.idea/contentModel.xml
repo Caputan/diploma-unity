@@ -1,14 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Users\georg\AppData\Local\JetBrains\Rider2020.2\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\georg\AppData\Local\JetBrains\Rider2020.2\resharper-host\Local\Transient\Rider\v202\SolutionCaches\_diploma-unity.1767244633.00" t="ExcludeRecursive" />
-    <e p="C:\Users\georg\AppData\Roaming\JetBrains\Rider2020.2\consoles\db" t="IncludeRecursive" />
-    <e p="D:\Unity-Storage\Diploma\diploma-unity" t="IncludeRecursive">
+    <e p="C:\diploma-unity" t="IncludeRecursive">
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="CopyAsset.txt" t="Include" />
         <e p="MoveAsset.txt" t="Include" />
+        <e p="Plugins" t="Include">
+          <e p="SimpleFileBrowser" t="Include">
+            <e p="Android" t="Include">
+              <e p="FBCallbackHelper.cs" t="Include" />
+              <e p="FBDirectoryReceiveCallbackAndroid.cs" t="Include" />
+              <e p="FBPermissionCallbackAndroid.cs" t="Include" />
+            </e>
+            <e p="Editor" t="Include">
+              <e p="FBPostProcessBuild.cs" t="Include" />
+              <e p="SimpleFileBrowser.Editor.asmdef" t="Include" />
+            </e>
+            <e p="README.txt" t="Include" />
+            <e p="Scripts" t="Include">
+              <e p="FileBrowser.cs" t="Include" />
+              <e p="FileBrowserContextMenu.cs" t="Include" />
+              <e p="FileBrowserCursorHandler.cs" t="Include" />
+              <e p="FileBrowserDeleteConfirmationPanel.cs" t="Include" />
+              <e p="FileBrowserHelpers.cs" t="Include" />
+              <e p="FileBrowserItem.cs" t="Include" />
+              <e p="FileBrowserMovement.cs" t="Include" />
+              <e p="FileBrowserQuickLink.cs" t="Include" />
+              <e p="FileBrowserRenamedItem.cs" t="Include" />
+              <e p="NonDrawingGraphic.cs" t="Include" />
+              <e p="SimpleRecycledListView" t="Include">
+                <e p="IListViewAdapter.cs" t="Include" />
+                <e p="ListItem.cs" t="Include" />
+                <e p="RecycledListView.cs" t="Include" />
+              </e>
+            </e>
+            <e p="SimpleFileBrowser.Runtime.asmdef" t="Include" />
+          </e>
+        </e>
         <e p="Scripts" t="Include">
           <e p="Constructor" t="Include">
             <e p="AbstractFactory.cs" t="Include" />
@@ -58,9 +87,19 @@
             <e p="IFactoryView.cs" t="Include" />
             <e p="IInitialization.cs" t="Include" />
             <e p="ILateExecute.cs" t="Include" />
+            <e p="ITable.cs" t="Include" />
           </e>
           <e p="Managers" t="Include">
+            <e p="DataBaseManager.cs" t="Include" />
+            <e p="FileManager.cs" t="Include" />
             <e p="PoolManager.cs" t="Include" />
+          </e>
+          <e p="Tables" t="Include">
+            <e p="AssembiesTable.cs" t="Include" />
+            <e p="LesionsTable.cs" t="Include" />
+            <e p="TextsTable.cs" t="Include" />
+            <e p="UsersTable.cs" t="Include" />
+            <e p="VideosTable.cs" t="Include" />
           </e>
           <e p="UI" t="Include">
             <e p="ToggleView.cs" t="Include" />
@@ -70,7 +109,11 @@
       <e p="diploma-unity.sln" t="IncludeFlat" />
       <e p="obj" t="ExcludeRecursive" />
       <e p="Packages" t="ExcludeRecursive" />
+      <e p="SimpleFileBrowser.Editor.csproj" t="IncludeRecursive" />
+      <e p="SimpleFileBrowser.Runtime.csproj" t="IncludeRecursive" />
       <e p="Temp\bin" t="ExcludeRecursive" />
     </e>
+    <e p="C:\Users\Артем\AppData\Local\JetBrains\Rider2020.3\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\Артем\AppData\Local\JetBrains\Rider2020.3\resharper-host\Local\Transient\Rider\v203\SolutionCaches\_diploma-unity.533668909.00" t="ExcludeRecursive" />
   </component>
 </project>
