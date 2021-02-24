@@ -11,12 +11,12 @@ namespace Diploma.Controllers
         //public PlayerModel PlayerModel;
         public Dictionary<int,GameObjectModel> GameObjectModels;
         
-        public Dictionary<int, FactoryType> FactoryTypes;
+        public Dictionary<int, FactoryType> FactoryTypeForCreating;
         public Camera MainCamera;
         public GameContextWithLogic()
         {
             GameObjectModels = new Dictionary<int, GameObjectModel>();
-            FactoryTypes = new Dictionary<int, FactoryType>();
+            FactoryTypeForCreating = new Dictionary<int, FactoryType>();
         }
 
         public void AddCamera(Camera camera)
@@ -24,9 +24,9 @@ namespace Diploma.Controllers
             MainCamera = camera;
         }
 
-        public void AddFactoryType(int id, FactoryType factoryType)
+        public void AddFactoryTypeForCreating(int id, FactoryType factoryType)
         {
-            FactoryTypes.Add(id,factoryType);
+            FactoryTypeForCreating.Add(id,factoryType);
         }
         public void AddGameObjectToList(int id,GameObjectModel gameObjectModel)
         {

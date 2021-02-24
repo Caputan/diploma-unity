@@ -13,9 +13,12 @@ namespace Diploma.Constructor
         private Button _button;
         private int _toggleID;
 
-        public AbstractView(GameContextWithViews gameContextWithViews, GameContextWithLogic gameContextWithLogic)
+        public AbstractView(GameContextWithViews gameContextWithViews, GameContextWithLogic gameContextWithLogic,
+            Button button
+        )
         {
             _gameContextWithLogic = gameContextWithLogic;
+            _button = button;
             _gameContextWithViews = gameContextWithViews;
         }
         
@@ -24,7 +27,7 @@ namespace Diploma.Constructor
         {
             foreach (var toggle in _gameContextWithViews.ChoosenToggles)
             {
-                toggle.Value.GetComponent<Toggle>().onValueChanged.AddListener(on=>
+                toggle.Value.GetComponentInChildren<Toggle>().onValueChanged.AddListener(on=>
                 {
                     if (on) _toggleID = toggle.Value.GetInstanceID();
                 });
@@ -36,7 +39,7 @@ namespace Diploma.Constructor
         
         public void ChoosedNextStage()
         {
-            NextStage.Invoke(_gameContextWithLogic.FactoryTypes[_toggleID]);
+            NextStage.Invoke(_gameContextWithLogic.FactoryTypeForCreating[_toggleID]);
         }
     }
 }

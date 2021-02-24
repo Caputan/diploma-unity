@@ -14,7 +14,7 @@ namespace Diploma.Controllers
         [SerializeField] private Button _button;
         [SerializeField] private int countOfDetails;
         [SerializeField] private GameObject togglePanelPrefab;
-        [SerializeField] private Transform CanvasTransform;
+        [SerializeField] private GameObject ToggleGroup;
         
         private GameContextWithLogic _gameContextWithLogic;
         private GameContextWithViews _gameContextWithViews;
@@ -25,11 +25,11 @@ namespace Diploma.Controllers
             
             _gameContextWithLogic = new GameContextWithLogic();
             _gameContextWithViews = new GameContextWithViews();
-            //костыль.
+           
             var GameContextWithViewCreator = new GameContexWithViewCreator(
                 _gameContextWithViews,
                 _gameContextWithLogic,
-                CanvasTransform,
+                ToggleGroup,
                 togglePanelPrefab);
             
             #endregion
@@ -37,7 +37,7 @@ namespace Diploma.Controllers
             #region Creation new Lession Module
 
             var abstractFactory = new AbstractFactory();
-            var abstractView = new AbstractView(_gameContextWithViews,_gameContextWithLogic);
+            var abstractView = new AbstractView(_gameContextWithViews,_gameContextWithLogic,_button);
             var abstractFactoryController = new AbstractFactoryController(abstractView,abstractFactory);
             
             #endregion
@@ -52,6 +52,8 @@ namespace Diploma.Controllers
             _controllers = new Controllers();
             _controllers.Add(GameContextWithViewCreator);
             _controllers.Add(DataBaseController);
+            _controllers.Add(abstractView);
+            _controllers.Add(abstractFactoryController);
             _controllers.Initialization();
         }
         

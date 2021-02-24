@@ -23,8 +23,6 @@ namespace Diploma.Constructor
                     OppositionEngineFactory oppositionEngineFactory = new OppositionEngineFactory();
                     oppositionEngineFactory.Create();
                     break;
-                case FactoryType.None:
-                    throw new SystemException("ti pidor. viberi type!");
             }
         }
     }
