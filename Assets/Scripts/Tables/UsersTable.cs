@@ -31,10 +31,20 @@ public class UsersTable : ITable
             
         }
     }
-
-    public void AddData(DataContext context)
+    public void AddNewRecord(DataContext context, string[] userParams)
     {
-        throw new System.NotImplementedException();
+        Table<Users> users = context.GetTable<Users>();
+
+        Users newUser = new Users()
+        {
+            User_Name = userParams[0],
+            User_Email = userParams[1],
+            User_Password = userParams[2],
+            User_Role = userParams[3]
+        };
+        
+        users.InsertOnSubmit(newUser);
+        context.SubmitChanges();
     }
 
 

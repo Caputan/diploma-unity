@@ -32,9 +32,17 @@ public class AssemliesTable : ITable
         }
     }
 
-    public void AddData(DataContext context)
+    public void AddNewRecord(DataContext context, string[] assemblyParams)
     {
-        throw new System.NotImplementedException();
+        Table<Assemblies> assemblies = context.GetTable<Assemblies>();
+
+        Assemblies newAssembly = new Assemblies()
+        {
+            Assembly_Link = assemblyParams[0]
+        };
+        
+        assemblies.InsertOnSubmit(newAssembly);
+        context.SubmitChanges();
     }
 }
 

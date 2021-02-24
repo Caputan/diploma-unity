@@ -8,6 +8,6 @@ using System.IO;
 public interface ITable
 {
     void GetAllData(DataContext context);
-    void AddData(DataContext context);
     void GetRecord(DataContext context);
+    void AddNewRecord(DataContext context, string[] recordParams);
 }

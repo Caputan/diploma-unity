@@ -32,12 +32,20 @@ public class TextTable : ITable
         }
     }
 
-    public void AddData(DataContext context)
+    public void AddNewRecord(DataContext context, string[] textParams)
     {
-        throw new System.NotImplementedException();
+        Table<Texts> texts = context.GetTable<Texts>();
+
+        Texts newText = new Texts()
+        {
+            Text_Link = textParams[0]
+        };
+        
+        texts.InsertOnSubmit(newText);
+        context.SubmitChanges();
     }
-    
-    
+
+
     [Table(Name = "Texts")]
     public class Texts
     {

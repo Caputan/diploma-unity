@@ -30,9 +30,17 @@ public class VideosTable : ITable
         }
     }
 
-    public void AddData(DataContext context)
+    public void AddNewRecord(DataContext context, string[] videoParams)
     {
-        throw new System.NotImplementedException();
+        Table<Videos> videos = context.GetTable<Videos>();
+
+        Videos newVideo = new Videos()
+        {
+            Video_Link = videoParams[0]
+        };
+        
+        videos.InsertOnSubmit(newVideo);
+        context.SubmitChanges();
     }
 }
 
