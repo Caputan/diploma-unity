@@ -1,4 +1,5 @@
-﻿using Diploma.UI;
+﻿using Diploma.Constructor;
+using Diploma.UI;
 using GameObjectCreating;
 using UnityEngine;
 using UnityEngine.UI;
@@ -10,31 +11,44 @@ namespace Diploma.Controllers
     public class ControleerInitializer : MonoBehaviour
     {
         [SerializeField] private Button _button;
-        [SerializeField] private int countOfdetails;
-        [SerializeField] private Toggle toggle1;
-        [SerializeField] private Toggle toggle2;
-        [SerializeField] private Toggle toggle3;
+        [SerializeField] private int countOfDetails;
+        [SerializeField] private GameObject togglePanelPrefab;
+        [SerializeField] private Transform CanvasTransform;
         
-        private GameContext _gameContext;
+        private GameContextWithLogic _gameContextWithLogic;
+        private GameContextWithViews _gameContextWithViews;
         private Controllers _controllers;
         private void Start()
         {
-            _gameContext = new GameContext();
-            //тут еще нужно разместить создание меню.
-            _gameContext.AddToggles(toggle1);
-            _gameContext.AddToggles(toggle2);
-            _gameContext.AddToggles(toggle3);
-            //-----
+            #region Creation UI and GameContext
             
+            _gameContextWithLogic = new GameContextWithLogic();
+            _gameContextWithViews = new GameContextWithViews();
+            //костыль.
+            var GameContextWithViewCreator = new GameContexWithViewCreator(
+                _gameContextWithViews,
+                _gameContextWithLogic,
+                CanvasTransform,
+                togglePanelPrefab);
+            
+            #endregion
+
+            #region Creation new Lession Module
+
+            var abstractFactory = new AbstractFactory();
+            var abstractView = new AbstractView(_gameContextWithViews,_gameContextWithLogic);
+            var abstractFactoryController = new AbstractFactoryController(abstractView,abstractFactory);
+            
+            #endregion
+           
             
             // Scene
             var GameObjectFactory = new GameObjectFactory();
-            var Pool = new PoolOfObjects(countOfdetails,GameObjectFactory,_gameContext);
+            var Pool = new PoolOfObjects(countOfDetails,GameObjectFactory,_gameContextWithLogic);
             var GameObjectInitilization = new GameObjectInitialization(Pool);
             
             _controllers = new Controllers();
-            _controllers.Add(new ToggleView(_gameContext));
-            
+            _controllers.Add(GameContextWithViewCreator);
             _controllers.Initialization();
         }
         

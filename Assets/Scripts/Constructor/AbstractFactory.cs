@@ -1,4 +1,5 @@
-﻿using Diploma.Enums;
+﻿using System;
+using Diploma.Enums;
 using Diploma.Interfaces;
 
 namespace Diploma.Constructor
@@ -6,23 +7,25 @@ namespace Diploma.Constructor
     public class AbstractFactory: IAbstractFactory
     {
         private FactoryType currentType;
-        
-        
-        
-        public void Create()
+        public void Create(FactoryType factoryType)
         {
-            // switch (enemy.type)
-            // {
-            //     case "mage":
-            //         MageFactory mage = new MageFactory(enemy.type,enemy.health);
-            //         CreateFactory(mage);
-            //         break;
-            //     case "infantry":
-            //         IfantryFactory ifantry = new IfantryFactory(enemy.type,enemy.health); 
-            //         CreateFactory(ifantry);
-            //         break;
-            //          
-            // }
+            switch (factoryType)
+            {
+                case FactoryType.Brake:
+                    BrakeFactory brakeFactory = new BrakeFactory();
+                    brakeFactory.Create();
+                    break;
+                case FactoryType.GearBox:
+                    GearBoxFactory gearBoxFactory = new GearBoxFactory();
+                    gearBoxFactory.Create();
+                    break;
+                case FactoryType.OppositionEngine:
+                    OppositionEngineFactory oppositionEngineFactory = new OppositionEngineFactory();
+                    oppositionEngineFactory.Create();
+                    break;
+                case FactoryType.None:
+                    throw new SystemException("ti pidor. viberi type!");
+            }
         }
     }
 }

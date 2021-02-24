@@ -1,7 +1,9 @@
-﻿namespace Diploma.Interfaces
+﻿using Diploma.Enums;
+
+namespace Diploma.Interfaces
 {
     public interface IAbstractFactory
     {
-        void Create();
+        void Create(FactoryType factoryType);
     }
 }

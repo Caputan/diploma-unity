@@ -1,29 +1,32 @@
 ﻿using System.Collections.Generic;
+using Diploma.Enums;
 using GameObjectCreating;
 using UnityEngine;
 using UnityEngine.UI;
 
 namespace Diploma.Controllers
 {
-    public class GameContext
+    public class GameContextWithLogic
     {
         //public PlayerModel PlayerModel;
         public Dictionary<int,GameObjectModel> GameObjectModels;
-        public List<Toggle> ChoosenToggles;
+        
+        public Dictionary<int, FactoryType> FactoryTypes;
         public Camera MainCamera;
-        public GameContext()
+        public GameContextWithLogic()
         {
             GameObjectModels = new Dictionary<int, GameObjectModel>();
-            ChoosenToggles = new List<Toggle>();
+            FactoryTypes = new Dictionary<int, FactoryType>();
         }
 
         public void AddCamera(Camera camera)
         {
             MainCamera = camera;
         }
-        public void AddToggles(Toggle toggle)
+
+        public void AddFactoryType(int id, FactoryType factoryType)
         {
-            ChoosenToggles.Add(toggle);
+            FactoryTypes.Add(id,factoryType);
         }
         public void AddGameObjectToList(int id,GameObjectModel gameObjectModel)
         {

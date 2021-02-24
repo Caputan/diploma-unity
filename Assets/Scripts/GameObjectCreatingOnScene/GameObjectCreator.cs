@@ -8,11 +8,11 @@ namespace GameObjectCreating
     public class GameObjectCreator: IInitialization
     {
         private readonly IFactory _factory;
-        private readonly GameContext _gameContext;
+        private readonly GameContextWithLogic _gameContext;
         private GameObject _gameObject;
         private GameObjectStruct _gameObjectStruct;
         private GameObjectComponents _gameObjectComponents;
-        public GameObjectCreator(IFactory factory,GameContext gameContext)
+        public GameObjectCreator(IFactory factory,GameContextWithLogic gameContext)
         {
             _factory = factory;
             _gameContext = gameContext;
