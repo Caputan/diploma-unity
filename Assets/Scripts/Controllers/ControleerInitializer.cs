@@ -1,4 +1,5 @@
-﻿using Diploma.Constructor;
+﻿using Controllers;
+using Diploma.Constructor;
 using Diploma.UI;
 using GameObjectCreating;
 using UnityEngine;
@@ -46,9 +47,11 @@ namespace Diploma.Controllers
             var GameObjectFactory = new GameObjectFactory();
             var Pool = new PoolOfObjects(countOfDetails,GameObjectFactory,_gameContextWithLogic);
             var GameObjectInitilization = new GameObjectInitialization(Pool);
+            var DataBaseController = new DataBaseController();
             
             _controllers = new Controllers();
             _controllers.Add(GameContextWithViewCreator);
+            _controllers.Add(DataBaseController);
             _controllers.Initialization();
         }
         

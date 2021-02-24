@@ -1,7 +1,4 @@
-﻿
-
-
-using Diploma.Interfaces;
+﻿using Diploma.Interfaces;
 using GameObjectCreating;
 using UnityEngine;
 
