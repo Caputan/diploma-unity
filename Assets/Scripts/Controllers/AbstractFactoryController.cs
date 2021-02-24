@@ -1,15 +1,19 @@
 ﻿using Diploma.Enums;
 using Diploma.Interfaces;
+using UnityEngine;
+using UnityEngine.UI;
 
 namespace Diploma.Controllers
 {
-    public class AbstractFactoryController: IInitialization,IExecute,ICleanData
+    public class AbstractFactoryController: IInitialization,ICleanData
     {
         private readonly IAbstractView _abstractView;
+        private readonly IAbstractFactory _abstractFactory;
 
-        public AbstractFactoryController(IAbstractView abstractView)
+        public AbstractFactoryController(IAbstractView abstractView, IAbstractFactory abstractFactory)
         {
             _abstractView = abstractView;
+            _abstractFactory = abstractFactory;
         }
 
         public void Initialization()
@@ -19,17 +23,13 @@ namespace Diploma.Controllers
 
         private void DoneNextStage(FactoryType factoryType)
         {
-            throw new System.NotImplementedException();
-        }
-
-        public void Execute(float deltaTime)
-        {
-            throw new System.NotImplementedException();
+            _abstractFactory.Create(factoryType);
+            //след команда.
         }
 
         public void CleanData()
         {
-            throw new System.NotImplementedException();
+            _abstractView.NextStage -= DoneNextStage;
         }
     }
 }

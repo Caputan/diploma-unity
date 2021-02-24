@@ -56,7 +56,8 @@
             <e p="AbstractFactoryController.cs" t="Include" />
             <e p="ControleerInitializer.cs" t="Include" />
             <e p="Controllers.cs" t="Include" />
-            <e p="GameContext.cs" t="Include" />
+            <e p="GameContextWithLogic.cs" t="Include" />
+            <e p="GameContextWithViews.cs" t="Include" />
             <e p="GameObjectController.cs" t="Include" />
             <e p="GameObjectInitialization.cs" t="Include" />
           </e>
@@ -66,6 +67,7 @@
           <e p="Extensions" t="Include">
             <e p="Extensions.cs" t="Include" />
           </e>
+          <e p="FileManager.cs" t="Include" />
           <e p="GameObjectCreatingOnScene" t="Include">
             <e p="GameObjectComponents.cs" t="Include" />
             <e p="GameObjectCreator.cs" t="Include" />
@@ -87,7 +89,11 @@
             <e p="IFactoryView.cs" t="Include" />
             <e p="IInitialization.cs" t="Include" />
             <e p="ILateExecute.cs" t="Include" />
+<<<<<<< Updated upstream
             <e p="ITable.cs" t="Include" />
+=======
+            <e p="IUIObjectsFactory.cs" t="Include" />
+>>>>>>> Stashed changes
           </e>
           <e p="Managers" t="Include">
             <e p="DataBaseManager.cs" t="Include" />
@@ -102,7 +108,8 @@
             <e p="VideosTable.cs" t="Include" />
           </e>
           <e p="UI" t="Include">
-            <e p="ToggleView.cs" t="Include" />
+            <e p="GameContexWithViewCreator.cs" t="Include" />
+            <e p="TogglePanelFactory.cs" t="Include" />
           </e>
         </e>
       </e>

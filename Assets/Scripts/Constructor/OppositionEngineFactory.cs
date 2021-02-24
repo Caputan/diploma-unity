@@ -1,4 +1,5 @@
 ﻿using Interfaces;
+using UnityEngine;
 
 namespace Diploma.Constructor
 {
@@ -6,7 +7,7 @@ namespace Diploma.Constructor
     {
         public void Create()
         {
-            throw new System.NotImplementedException();
+            Debug.Log("OppositionEngineFactory was created");
         }
     }
 }
