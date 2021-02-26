@@ -20,13 +20,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9a27c574-4a30-4862-a74f-153a103b04b8" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.diploma-unity/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.diploma-unity/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.diploma-unity/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.diploma-unity/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interfaces/ITable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Interfaces/ITable.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tables/AssembiesTable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tables/AssembiesTable.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tables/LesionsTable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tables/LesionsTable.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tables/TextsTable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tables/TextsTable.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tables/UsersTable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tables/UsersTable.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tables/VideosTable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tables/VideosTable.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tables/LesionsTable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tables/LesionTable.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tables/LesionsTable.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tables/LesionTable.cs.meta" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,6 +57,7 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/Tables/TextsTable.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Tables/AssembiesTable.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Tables/VideosTable.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Managers/DataBaseManager.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1oVh7QrK5P1QV67f8aHYDy536Km" />
@@ -125,6 +123,8 @@
       <workItem from="1614092656717" duration="8624000" />
       <workItem from="1614108288654" duration="4501000" />
       <workItem from="1614175787965" duration="1631000" />
+      <workItem from="1614333702989" duration="200000" />
+      <workItem from="1614333943300" duration="319000" />
     </task>
     <servers />
   </component>

@@ -56,6 +56,7 @@
             <e p="AbstractFactoryController.cs" t="Include" />
             <e p="ControleerInitializer.cs" t="Include" />
             <e p="Controllers.cs" t="Include" />
+            <e p="DataBaseController.cs" t="Include" />
             <e p="GameContext.cs" t="Include" />
             <e p="GameObjectController.cs" t="Include" />
             <e p="GameObjectInitialization.cs" t="Include" />
@@ -82,6 +83,7 @@
             <e p="ICollision.cs" t="Include" />
             <e p="IConstructorFactory.cs" t="Include" />
             <e p="IController.cs" t="Include" />
+            <e p="IDataBase.cs" t="Include" />
             <e p="IExecute.cs" t="Include" />
             <e p="IFactory.cs" t="Include" />
             <e p="IFactoryView.cs" t="Include" />
@@ -90,7 +92,6 @@
             <e p="ITable.cs" t="Include" />
           </e>
           <e p="Managers" t="Include">
-            <e p="DataBaseManager.cs" t="Include" />
             <e p="FileManager.cs" t="Include" />
             <e p="PoolManager.cs" t="Include" />
           </e>
@@ -98,6 +99,7 @@
             <e p="AssembiesTable.cs" t="Include" />
             <e p="LesionsTable.cs" t="Include" />
             <e p="TextsTable.cs" t="Include" />
+            <e p="TypesTable.cs" t="Include" />
             <e p="UsersTable.cs" t="Include" />
             <e p="VideosTable.cs" t="Include" />
           </e>
