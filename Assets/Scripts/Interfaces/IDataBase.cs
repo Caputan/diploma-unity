@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Data.Linq;
 
-namespace Interfaces
+namespace Diploma.Interfaces
 {
     public interface IDataBase
     {

@@ -2,10 +2,10 @@
 using System.Data.Linq;
 using System.Data.Linq.Mapping;
 using System.Linq;
-using Interfaces;
-using ITable = Interfaces.ITable;
+using Diploma.Interfaces;
+using ITable = Diploma.Interfaces.ITable;
 
-namespace Tables
+namespace Diploma.Tables
 {
     public class AssemliesTable : IDataBase
     {

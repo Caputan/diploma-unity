@@ -1,4 +1,4 @@
-﻿namespace Interfaces
+﻿namespace Diploma.Interfaces
 {
     public interface ITable 
     {

@@ -3,11 +3,9 @@ using System.Data.Linq;
 using System.IO;
 using Diploma.Interfaces;
 using Mono.Data.Sqlite;
-using Tables;
+using Diploma.Tables;
 using UnityEngine;
-using IDataBase = Interfaces.IDataBase;
-using ITable = Interfaces.ITable;
-using Types = Tables.Types;
+using ITable = Diploma.Interfaces.ITable;
 
 namespace Controllers
 {
