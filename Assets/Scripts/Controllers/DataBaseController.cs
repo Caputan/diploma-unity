@@ -1,8 +1,11 @@
-﻿using System.Data.Linq;
+﻿using System.Collections.Generic;
+using System.Data.Linq;
 using System.IO;
 using Diploma.Interfaces;
 using Mono.Data.Sqlite;
+using Diploma.Tables;
 using UnityEngine;
+using ITable = Diploma.Interfaces.ITable;
 
 namespace Controllers
 {
@@ -11,7 +14,7 @@ namespace Controllers
         private const string _dbName = "MachinePartsDB.bytes";
         private static DataContext _context;
 
-        private ITable _activeTable;
+        private IDataBase _activeTable;
     
     
         // Start is called before the first frame update
@@ -22,19 +25,24 @@ namespace Controllers
             _context = new DataContext(connection);
         }
 
-        public void SetTable(ITable table)
+        public void SetTable(IDataBase table)
         {
             this._activeTable = table;
         }
 
-        public void GetDataFromTable()
+        public List<ITable> GetDataFromTable()
         {
-            _activeTable.GetAllData(_context);
+            return _activeTable.GetAllData(_context);
         }
 
         public void AddNewRecordToTable(string[] recordParams)
         {
             _activeTable.AddNewRecord(_context, recordParams);
+        }
+
+        public ITable GetRecordFromTableById(int id)
+        {
+            return _activeTable.GetRecordById(_context, id);
         }
 
         public void Initialization() { }

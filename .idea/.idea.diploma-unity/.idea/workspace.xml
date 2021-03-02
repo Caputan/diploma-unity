@@ -20,47 +20,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9a27c574-4a30-4862-a74f-153a103b04b8" name="Default Changelist" comment="">
-<<<<<<< Updated upstream
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.diploma-unity/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.diploma-unity/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interfaces/ITable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Interfaces/ITable.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tables/AssembiesTable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tables/AssembiesTable.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tables/LesionsTable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tables/LesionsTable.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tables/TextsTable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tables/TextsTable.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tables/UsersTable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tables/UsersTable.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tables/VideosTable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tables/VideosTable.cs" afterDir="false" />
-=======
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/ExampleToggleGroup.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/ExampleToggleGroup.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Panel.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Panel.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/GameContextWithViews.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/GameContextWithViews.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Interfaces/IUIObjectsFactory.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Interfaces/IUIObjectsFactory.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/GameContexWithViewCreator.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/GameContexWithViewCreator.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/TogglePanelFactory.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/TogglePanelFactory.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.diploma-unity/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.diploma-unity/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.diploma-unity/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.diploma-unity/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/TestAsset.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/TestAsset.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Constructor/AbstractFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Constructor/AbstractFactory.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Constructor/AbstractView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Constructor/AbstractView.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Constructor/BrakeFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Constructor/BrakeFactory.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Constructor/GearBoxFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Constructor/GearBoxFactory.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Constructor/OppositionEngineFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Constructor/OppositionEngineFactory.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/AbstractFactoryController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/AbstractFactoryController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/ControleerInitializer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/ControleerInitializer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/GameContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/GameContextWithLogic.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/GameContext.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/GameContextWithLogic.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameObjectCreatingOnScene/GameObjectCreator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameObjectCreatingOnScene/GameObjectCreator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameObjectCreatingOnScene/PoolOfObjects.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameObjectCreatingOnScene/PoolOfObjects.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interfaces/IAbstractFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Interfaces/IAbstractFactory.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/ToggleView.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/ToggleView.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets.meta" beforeDir="false" />
->>>>>>> Stashed changes
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tables/LesionsTable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tables/LesionTable.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tables/LesionsTable.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tables/LesionTable.cs.meta" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,7 +38,6 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Interfaces/IInitialization.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
-<<<<<<< Updated upstream
     <changedPaths>
       <option value="$PROJECT_DIR$/Assets/Scripts/IDataBase.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/AssemblyManager.cs" />
@@ -95,63 +57,8 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/Tables/TextsTable.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Tables/AssembiesTable.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Tables/VideosTable.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Managers/DataBaseManager.cs" />
     </changedPaths>
-=======
-    <option name="CHANGED_PATHS">
-      <list>
-        <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/AssetDatabaseController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Editor/AssetDatabaseController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/GameObjectCreating/IFactory.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Extensions/Extensions.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/GameObjectCreating/GameObjectProvider.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/GameObjectCreating/GameObjectModel.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Managers/PoolManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/GameObjectCreating/GameObjectFactory.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Interfaces/ICollision.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/GameObjectCreating/GameObjectStruct.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/GameObjectCreating/GameObjectComponents.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/GameObjectCreating/GameObjectCreator.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/GameObjectCreating/PoolOfObjects.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/GameObjectInitialization.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/GameObjectController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Constructor/IAbstractView.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Constructor/IAbstractFactory.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Interfaces/IFactory.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/GameObjectCreatingOnScene/GameObjectFactory.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Interfaces/IFactoryView.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Interfaces/IConstructorFactory.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Constructor/ConstructorController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Constructor/OppositionEngineFactoryView.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Constructor/GearBoxFactoryView.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Constructor/BrakeFactoryView.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Enums/FactoryType.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Constructor/BrakeStruct.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Constructor/GearBoxStruct.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Constructor/OppositionEngineStruct.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/ConstructorController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Interfaces/IAbstractView.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Interfaces/IToogleView.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/ToogleView.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Interfaces/IAbstractFactory.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/ToggleView.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/GameContext.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/AbstractFactoryController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Constructor/BrakeFactory.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Constructor/GearBoxFactory.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Constructor/OppositionEngineFactory.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/GameObjectCreatingOnScene/GameObjectCreator.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/GameObjectCreatingOnScene/PoolOfObjects.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Constructor/AbstractFactory.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/GameContextWithLogic.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Interfaces/IUIObjectsFactory.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/TogglePanelFactory.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/GameContextWithViews.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/GameContexWithViewCreator.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/ControleerInitializer.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Constructor/AbstractView.cs" />
-      </list>
-    </option>
->>>>>>> Stashed changes
   </component>
   <component name="ProjectId" id="1oVh7QrK5P1QV67f8aHYDy536Km" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -214,12 +121,10 @@
       <workItem from="1613735496157" duration="6056000" />
       <workItem from="1614087665964" duration="2476000" />
       <workItem from="1614092656717" duration="8624000" />
-<<<<<<< Updated upstream
       <workItem from="1614108288654" duration="4501000" />
       <workItem from="1614175787965" duration="1631000" />
-=======
-      <workItem from="1614167778904" duration="9799000" />
->>>>>>> Stashed changes
+      <workItem from="1614333702989" duration="200000" />
+      <workItem from="1614333943300" duration="319000" />
     </task>
     <servers />
   </component>

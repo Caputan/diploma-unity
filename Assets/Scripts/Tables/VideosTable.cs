@@ -1,54 +1,63 @@
-﻿using UnityEngine;
-using System.Linq;
+﻿using System.Collections.Generic;
 using System.Data.Linq;
 using System.Data.Linq.Mapping;
+using System.Linq;
+using Diploma.Interfaces;
+using ITable = Diploma.Interfaces.ITable;
 
-public class VideosTable : ITable
+namespace Diploma.Tables
 {
-    public void GetAllData(DataContext context)
+    public class VideosTable : IDataBase
     {
-        Table<Videos> videos = context.GetTable<Videos>();
-
-        var query = from video in videos select video;
-
-        foreach (var video in query)
+        public List<ITable> GetAllData(DataContext context)
         {
-            Debug.Log(video.Video_Id);
-            Debug.Log(video.Video_Link);
+            Table<Videos> videos = context.GetTable<Videos>();
+
+            var query = from video in videos select video;
+
+            List<ITable> videosList = new List<ITable>();
+            foreach (var video in query)
+            {
+                videosList.Add(video);
+            }
+
+            return videosList;
         }
-    }
     
-    public void GetRecord(DataContext context)
-    {
-        Table<Videos> videos = context.GetTable<Videos>();
-
-        var query = from video in videos where video.Video_Id == 1 select video;
-
-        foreach (var text in query)
+        public ITable GetRecordById(DataContext context, int id)
         {
-            //return text.Text_Link;
+            Table<Videos> videos = context.GetTable<Videos>();
+
+            var query = from video in videos where video.Video_Id == id select video;
+
+            foreach (var video in query)
+            {
+                return video;
+            }
+
+            return null;
+        }
+
+        public void AddNewRecord(DataContext context, string[] videoParams)
+        {
+            Table<Videos> videos = context.GetTable<Videos>();
+
+            Videos newVideo = new Videos()
+            {
+                Video_Link = videoParams[0]
+            };
+        
+            videos.InsertOnSubmit(newVideo);
+            context.SubmitChanges();
         }
     }
 
-    public void AddNewRecord(DataContext context, string[] videoParams)
+    [Table(Name = "Videos")]
+    public class Videos : ITable
     {
-        Table<Videos> videos = context.GetTable<Videos>();
-
-        Videos newVideo = new Videos()
-        {
-            Video_Link = videoParams[0]
-        };
-        
-        videos.InsertOnSubmit(newVideo);
-        context.SubmitChanges();
+        [Column(Name = "Video_Id")] 
+        public int Video_Id { get; set; }
+        [Column(Name = "Video_Link")] 
+        public string Video_Link { get; set; }
     }
-}
-
-[Table(Name = "Videos")]
-public class Videos
-{
-    [Column(Name = "Video_Id")] 
-    public int Video_Id { get; set; }
-    [Column(Name = "Video_Link")] 
-    public string Video_Link { get; set; }
 }

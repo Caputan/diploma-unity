@@ -1,57 +1,63 @@
-﻿using UnityEngine;
-using System.Linq;
+﻿using System.Collections.Generic;
 using System.Data.Linq;
 using System.Data.Linq.Mapping;
-using Mono.Data.Sqlite;
-using System.IO;
+using System.Linq;
+using Diploma.Interfaces;
+using ITable = Diploma.Interfaces.ITable;
 
-public class AssemliesTable : ITable
+namespace Diploma.Tables
 {
-    public void GetAllData(DataContext context)
+    public class AssemliesTable : IDataBase
     {
-        Table<Assemblies> assemblies = context.GetTable<Assemblies>();
-
-        var query = from assembly in assemblies select assembly;
-
-        foreach (var assembly in query)
+        public List<ITable> GetAllData(DataContext context)
         {
-            Debug.Log(assembly.Assembly_Id);
-            Debug.Log(assembly.Assembly_Link);
+            Table<Assemblies> assemblies = context.GetTable<Assemblies>();
+
+            var query = from assembly in assemblies select assembly;
+            List<ITable> assembliesList = new List<ITable>();
+            foreach (var assembly in query)
+            {
+                assembliesList.Add(assembly);
+            }
+
+            return assembliesList;
         }
-    }
     
-    public void GetRecord(DataContext context)
-    {
-        Table<Assemblies> assemblies = context.GetTable<Assemblies>();
-
-        var query = from assembly in assemblies where assembly.Assembly_Id == 1 select assembly;
-
-        foreach (var assembly in query)
+        public ITable GetRecordById(DataContext context, int id)
         {
-            //return text.Text_Link;
+            Table<Assemblies> assemblies = context.GetTable<Assemblies>();
+
+            var query = from assembly in assemblies where assembly.Assembly_Id == id select assembly;
+
+            foreach (var assembly in query)
+            {
+                return assembly;
+            }
+
+            return null;
+        }
+
+        public void AddNewRecord(DataContext context, string[] assemblyParams)
+        {
+            Table<Assemblies> assemblies = context.GetTable<Assemblies>();
+
+            Assemblies newAssembly = new Assemblies()
+            {
+                Assembly_Link = assemblyParams[0]
+            };
+        
+            assemblies.InsertOnSubmit(newAssembly);
+            context.SubmitChanges();
         }
     }
 
-    public void AddNewRecord(DataContext context, string[] assemblyParams)
+
+    [Table(Name = "Assemblies")]
+    public class Assemblies : ITable
     {
-        Table<Assemblies> assemblies = context.GetTable<Assemblies>();
-
-        Assemblies newAssembly = new Assemblies()
-        {
-            Assembly_Link = assemblyParams[0]
-        };
-        
-        assemblies.InsertOnSubmit(newAssembly);
-        context.SubmitChanges();
+        [Column(Name = "Assembly_Id")] 
+        public int Assembly_Id { get; set; }
+        [Column(Name = "Assembly_Link")] 
+        public string Assembly_Link { get; set; }
     }
-}
-
-
-[Table(Name = "Assemblies")]
-public class Assemblies
-{
-    [Column(Name = "Assembly_Id")] 
-    public int Assembly_Id { get; set; }
-    [Column(Name = "Assembly_Link")] 
-    public string Assembly_Link { get; set; }
 }
