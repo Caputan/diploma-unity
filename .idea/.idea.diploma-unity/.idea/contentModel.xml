@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Users\georg\AppData\Local\JetBrains\Rider2020.2\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\georg\AppData\Local\JetBrains\Rider2020.2\resharper-host\Local\Transient\Rider\v202\SolutionCaches\_diploma-unity.1767244633.00" t="ExcludeRecursive" />
-    <e p="C:\Users\georg\AppData\Roaming\JetBrains\Rider2020.2\consoles\db" t="IncludeRecursive" />
-    <e p="D:\Unity-Storage\Diploma\diploma-unity" t="IncludeRecursive">
+    <e p="C:\Users\Jasto\AppData\Local\JetBrains\Rider2020.3\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\Jasto\AppData\Local\JetBrains\Rider2020.3\resharper-host\Local\Transient\Rider\v203\SolutionCaches\_diploma-unity.-1575445037.00" t="ExcludeRecursive" />
+    <e p="D:\Unity-Storage\diploma-unity" t="IncludeRecursive">
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="CopyAsset.txt" t="Include" />
@@ -64,9 +63,12 @@
             <e p="GameContextWithViews.cs" t="Include" />
             <e p="GameObjectController.cs" t="Include" />
             <e p="GameObjectInitialization.cs" t="Include" />
+            <e p="GearBoxFactoryController.cs" t="Include" />
           </e>
           <e p="Enums" t="Include">
+            <e p="ComboType.cs" t="Include" />
             <e p="FactoryType.cs" t="Include" />
+            <e p="TypesOfGearBoxes.cs" t="Include" />
           </e>
           <e p="Extensions" t="Include">
             <e p="Extensions.cs" t="Include" />
@@ -83,6 +85,7 @@
           <e p="Interfaces" t="Include">
             <e p="IAbstractFactory.cs" t="Include" />
             <e p="IAbstractView.cs" t="Include" />
+            <e p="IChooseGearboxLowType.cs" t="Include" />
             <e p="ICleanData.cs" t="Include" />
             <e p="ICollision.cs" t="Include" />
             <e p="IConstructorFactory.cs" t="Include" />

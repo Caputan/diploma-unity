@@ -26,6 +26,7 @@ namespace Diploma.Controllers
             _gameContextWithLogic = new GameContextWithLogic();
             _gameContextWithViews = new GameContextWithViews();
            
+            // тут мы создали базове типизированное меню
             var GameContextWithViewCreator = new GameContexWithViewCreator(
                 _gameContextWithViews,
                 _gameContextWithLogic,
@@ -34,6 +35,12 @@ namespace Diploma.Controllers
             
             #endregion
 
+            #region DataBase initialization
+
+            var DatabaseController = new DataBaseController();
+            
+            #endregion
+            
             #region Creation new Lession Module
 
             var abstractFactory = new AbstractFactory();

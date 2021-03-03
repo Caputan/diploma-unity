@@ -4,7 +4,7 @@ namespace Interfaces
 {
     public interface IFactoryView
     {
-        void ChoosedNextStage(bool nextStage);
+        void ChoosedNextStage();
         event Action<float,int> NextStage;
     }
 }

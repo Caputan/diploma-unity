@@ -1,11 +1,9 @@
 ﻿using Diploma.Enums;
 using Diploma.Interfaces;
-using UnityEngine;
-using UnityEngine.UI;
 
 namespace Diploma.Controllers
 {
-    public class AbstractFactoryController: IInitialization,ICleanData
+    public sealed class AbstractFactoryController: IInitialization,ICleanData
     {
         private readonly IAbstractView _abstractView;
         private readonly IAbstractFactory _abstractFactory;
@@ -24,7 +22,6 @@ namespace Diploma.Controllers
         private void DoneNextStage(FactoryType factoryType)
         {
             _abstractFactory.Create(factoryType);
-            //след команда.
         }
 
         public void CleanData()
