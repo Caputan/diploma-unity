@@ -5,7 +5,7 @@ namespace Diploma.Constructor
 {
     public class OppositionEngineFactoryView: IFactoryView
     {
-        public void ChoosedNextStage(bool nextStage)
+        public void ChoosedNextStage()
         {
             throw new NotImplementedException();
         }

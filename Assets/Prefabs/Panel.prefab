@@ -159,7 +159,7 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_IsOn: 1
+  m_IsOn: 0
 --- !u!1 &4901789301935305887
 GameObject:
   m_ObjectHideFlags: 0
@@ -268,10 +268,10 @@ RectTransform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -244, y: 87}
-  m_SizeDelta: {x: -612.88513, y: -256.35162}
+  m_AnchorMin: {x: 0.08615151, y: 0.39339778}
+  m_AnchorMax: {x: 0.35936365, y: 0.8563536}
+  m_AnchoredPosition: {x: -4.5, y: 3.5}
+  m_SizeDelta: {x: -14.885132, y: -13.351624}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2291260768825182704
 CanvasRenderer:

@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\diploma-unity" t="IncludeRecursive">
+    <e p="C:\Users\Jasto\AppData\Local\JetBrains\Rider2020.3\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\Jasto\AppData\Local\JetBrains\Rider2020.3\resharper-host\Local\Transient\Rider\v203\SolutionCaches\_diploma-unity.-1575445037.00" t="ExcludeRecursive" />
+    <e p="D:\Unity-Storage\diploma-unity" t="IncludeRecursive">
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="CopyAsset.txt" t="Include" />
@@ -57,12 +59,20 @@
             <e p="ControleerInitializer.cs" t="Include" />
             <e p="Controllers.cs" t="Include" />
             <e p="DataBaseController.cs" t="Include" />
+<<<<<<< HEAD
             <e p="GameContext.cs" t="Include" />
+=======
+            <e p="GameContextWithLogic.cs" t="Include" />
+            <e p="GameContextWithViews.cs" t="Include" />
+>>>>>>> ConstructorsForUIAndToggles_v2
             <e p="GameObjectController.cs" t="Include" />
             <e p="GameObjectInitialization.cs" t="Include" />
+            <e p="GearBoxFactoryController.cs" t="Include" />
           </e>
           <e p="Enums" t="Include">
+            <e p="ComboType.cs" t="Include" />
             <e p="FactoryType.cs" t="Include" />
+            <e p="TypesOfGearBoxes.cs" t="Include" />
           </e>
           <e p="Extensions" t="Include">
             <e p="Extensions.cs" t="Include" />
@@ -79,6 +89,7 @@
           <e p="Interfaces" t="Include">
             <e p="IAbstractFactory.cs" t="Include" />
             <e p="IAbstractView.cs" t="Include" />
+            <e p="IChooseGearboxLowType.cs" t="Include" />
             <e p="ICleanData.cs" t="Include" />
             <e p="ICollision.cs" t="Include" />
             <e p="IConstructorFactory.cs" t="Include" />
@@ -90,6 +101,10 @@
             <e p="IInitialization.cs" t="Include" />
             <e p="ILateExecute.cs" t="Include" />
             <e p="ITable.cs" t="Include" />
+<<<<<<< HEAD
+=======
+            <e p="IUIObjectsFactory.cs" t="Include" />
+>>>>>>> ConstructorsForUIAndToggles_v2
           </e>
           <e p="Managers" t="Include">
             <e p="FileManager.cs" t="Include" />
@@ -115,7 +130,5 @@
       <e p="SimpleFileBrowser.Runtime.csproj" t="IncludeRecursive" />
       <e p="Temp\bin" t="ExcludeRecursive" />
     </e>
-    <e p="C:\Users\Артем\AppData\Local\JetBrains\Rider2020.3\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\Артем\AppData\Local\JetBrains\Rider2020.3\resharper-host\Local\Transient\Rider\v203\SolutionCaches\_diploma-unity.533668909.00" t="ExcludeRecursive" />
   </component>
 </project>
