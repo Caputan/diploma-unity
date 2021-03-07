@@ -4,18 +4,25 @@ using System.Data.Linq.Mapping;
 using System.Linq;
 using Diploma.Interfaces;
 using ITable = Diploma.Interfaces.ITable;
+using SQLite4Unity3d;
 
 namespace Diploma.Tables
 {
     public class UsersTable : IDataBase
     {
-        public List<ITable> GetAllData(DataContext context)
+        public List<ITable> GetAllData(SQLiteConnection connection)
         {
-            Table<Users> users = context.GetTable<Users>();
-
-            var query = from user in users select user;
-
+            // Table<Users> users = context.GetTable<Users>();
+            //
+            // var query = from user in users select user;
+            //
+            // List<ITable> usersList = new List<ITable>();
+            // foreach (var user in query)
+            // {
+            //     usersList.Add(user);
+            // }
             List<ITable> usersList = new List<ITable>();
+            var query = connection.Table<Users>().ToArray();
             foreach (var user in query)
             {
                 usersList.Add(user);
@@ -24,48 +31,52 @@ namespace Diploma.Tables
             return usersList;
         }
     
-        public ITable GetRecordById(DataContext context, int id)
+        public ITable GetRecordById(SQLiteConnection connection, int id)
         {
-            Table<Users> users = context.GetTable<Users>();
+            // Table<Users> users = context.GetTable<Users>();
+            //
+            // var query = from user in users where user.User_Id == id select user;
+            //
+            // foreach (var user in query)
+            // {
+            //     return user;
+            // }
 
-            var query = from user in users where user.User_Id == id select user;
-
-            foreach (var user in query)
-            {
-                return user;
-            }
-
-            return null;
+            return connection.Table<Users>().FirstOrDefault(x => x.User_Id == id);
         }
-        public void AddNewRecord(DataContext context, string[] userParams)
+        public void AddNewRecord(SQLiteConnection connection, string[] userParams, byte[] arrayForFiles)
         {
-            Table<Users> users = context.GetTable<Users>();
-
-            Users newUser = new Users()
+            // Table<Users> users = context.GetTable<Users>();
+            //
+            // Users newUser = new Users()
+            // {
+            //     User_Name = userParams[0],
+            //     User_Email = userParams[1],
+            //     User_Password = userParams[2],
+            //     User_Role = userParams[3]
+            // };
+            //
+            // users.InsertOnSubmit(newUser);
+            // context.SubmitChanges();
+            var newUser = new Users()
             {
+                User_Id = 4,
                 User_Name = userParams[0],
                 User_Email = userParams[1],
                 User_Password = userParams[2],
                 User_Role = userParams[3]
             };
-        
-            users.InsertOnSubmit(newUser);
-            context.SubmitChanges();
+            connection.Insert(newUser);
         }
+    }
+    
 
-
-        public class Users : ITable
-        {
-            [Column(Name = "User_Id")]
-            public int User_Id { get; set; }
-            [Column(Name = "User_Name")]
-            public string User_Name { get; set; }
-            [Column(Name = "User_Email")]
-            public string User_Email { get; set; }
-            [Column(Name = "User_Password")]
-            public string User_Password { get; set; }
-            [Column(Name = "User_Role")]
-            public string User_Role { get; set; }
-        }
+    public class Users : ITable
+    {
+        public int User_Id { get; set; }
+        public string User_Name { get; set; }
+        public string User_Email { get; set; }
+        public string User_Password { get; set; }
+        public string User_Role { get; set; }
     }
 }

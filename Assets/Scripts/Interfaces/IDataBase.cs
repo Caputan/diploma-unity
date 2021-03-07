@@ -1,12 +1,13 @@
 ﻿using System.Collections.Generic;
 using System.Data.Linq;
+using SQLite4Unity3d;
 
 namespace Diploma.Interfaces
 {
     public interface IDataBase
     {
-        List<ITable> GetAllData(DataContext context);
-        ITable GetRecordById(DataContext context, int id);
-        void AddNewRecord(DataContext context, string[] recordParams);
+        List<ITable> GetAllData(SQLiteConnection connection);
+        ITable GetRecordById(SQLiteConnection connection, int id);
+        void AddNewRecord(SQLiteConnection connection, string[] recordParams, byte[] arrayForFiles);
     }
 }

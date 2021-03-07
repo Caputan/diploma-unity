@@ -1,21 +1,27 @@
 ﻿using System.Collections.Generic;
 using System.Data.Linq;
-using System.Data.Linq.Mapping;
 using System.Linq;
 using Diploma.Interfaces;
 using ITable = Diploma.Interfaces.ITable;
+using SQLite4Unity3d;
 
 namespace Diploma.Tables
 {
     public class TypesTable : IDataBase
     {
-        public List<ITable> GetAllData(DataContext context)
+        public List<ITable> GetAllData(SQLiteConnection connection)
         {
-            Table<Types> types = context.GetTable<Types>();
-
-            var query = from type in types select type;
-    
+            // Table<Types> types = context.GetTable<Types>();
+            //
+            // var query = from type in types select type;
+            //
+            // List<ITable> typesList = new List<ITable>();
+            // foreach (var type in query)
+            // {
+            //     typesList.Add(type);
+            // }
             List<ITable> typesList = new List<ITable>();
+            var query = connection.Table<Types>().ToArray();
             foreach (var type in query)
             {
                 typesList.Add(type);
@@ -24,40 +30,45 @@ namespace Diploma.Tables
             return typesList;
         }
     
-        public ITable GetRecordById(DataContext context, int id)
+        public ITable GetRecordById(SQLiteConnection connection, int id)
         {
-            Table<Types> types = context.GetTable<Types>();
+            // Table<Types> types = context.GetTable<Types>();
+            //
+            // var query = from type in types where type.Type_Id == id select type;
+            //
+            // foreach (var type in query)
+            // {
+            //     return type;
+            // }
 
-            var query = from type in types where type.Type_Id == id select type;
-
-            foreach (var type in query)
-            {
-                return type;
-            }
-
-            return null;
+            return connection.Table<Types>().FirstOrDefault(x => x.Type_Id == id);
         }
 
-        public void AddNewRecord(DataContext context, string[] assemblyParams)
+        public void AddNewRecord(SQLiteConnection connection, string[] assemblyParams, byte[] arrayForFiles)
         {
-            // Table<Types> assemblies = context.GetTable<Types>();
+            // Table<Types> types = context.GetTable<Types>();
             //
             // Types newType = new Types()
             // {
-            //     Type_Image = assemblyParams[0]
+            //     Type_Id = 4,
+            //     Type_Image = arrayForFiles
             // };
             //
-            // assemblies.InsertOnSubmit(newType);
+            // types.InsertOnSubmit(newType);
             // context.SubmitChanges();
+            var newType = new Types()
+            {
+                Type_Id = 4,
+                Type_Image = arrayForFiles
+            };
+            connection.Insert(newType);
         }
     }
 
-    [Table(Name = "Types")]
+
     public class Types : ITable
     {
-        [Column(Name = "Type_Id")] 
         public int Type_Id { get; set; }
-        [Column(Name = "Type_Image")] 
-        public string Type_Image { get; set; }
+        public byte[] Type_Image { get; set; }
     }
 }
