@@ -3,19 +3,29 @@ using System.Data.Linq;
 using System.Data.Linq.Mapping;
 using System.Linq;
 using Diploma.Interfaces;
+using UnityEngine;
 using ITable = Diploma.Interfaces.ITable;
+using SQLite4Unity3d;
+using UnityEngine.UI;
 
 namespace Diploma.Tables
 {
     public class TextsTable : IDataBase
     {
-        public List<ITable> GetAllData(DataContext context)
+        public List<ITable> GetAllData(SQLiteConnection connection)
         {
-            Table<Texts> texts = context.GetTable<Texts>();
-
-            var query = from text in texts select text;
-        
+            // Table<Texts> texts = context.GetTable<Texts>();
+            //
+            // var query = from text in texts select text;
+            //
+            // List<ITable> textsList = new List<ITable>();
+            // foreach (var text in query)
+            // {
+            //     Debug.Log(text.Text_Link);
+            //     textsList.Add(text);
+            // }
             List<ITable> textsList = new List<ITable>();
+            var query = connection.Table<Texts>().ToArray();
             foreach (var text in query)
             {
                 textsList.Add(text);
@@ -24,41 +34,45 @@ namespace Diploma.Tables
             return textsList;
         }
     
-        public ITable GetRecordById(DataContext context, int id)
+        public ITable GetRecordById(SQLiteConnection connection, int id)
         {
-            Table<Texts> texts = context.GetTable<Texts>();
+            // Table<Texts> texts = context.GetTable<Texts>();
+            //
+            // var query = from text in texts where text.Text_Id == id select text;
+            //
+            // foreach (var text in query)
+            // {
+            //     return text;
+            // }
 
-            var query = from text in texts where text.Text_Id == id select text;
-
-            foreach (var text in query)
-            {
-                return text;
-            }
-
-            return null;
+            return connection.Table<Texts>().FirstOrDefault(x => x.Text_Id == id);
         }
 
-        public void AddNewRecord(DataContext context, string[] textParams)
+        public void AddNewRecord(SQLiteConnection connection, string[] textParams, byte[] arrayForFiles)
         {
-            Table<Texts> texts = context.GetTable<Texts>();
-
-            Texts newText = new Texts()
+            // Table<Texts> texts = context.GetTable<Texts>();
+            //
+            // Texts newText = new Texts()
+            // {
+            //     Text_Link = textParams[0]
+            // };
+            //
+            // texts.InsertOnSubmit(newText);
+            // context.SubmitChanges();
+            var newText = new Texts()
             {
+                Text_Id = 4,
                 Text_Link = textParams[0]
             };
+            connection.Insert(newText);
+        }
         
-            texts.InsertOnSubmit(newText);
-            context.SubmitChanges();
-        }
+    }
+    
 
-
-        [Table(Name = "Texts")]
-        public class Texts : ITable
-        {
-            [Column(Name = "Text_Id")] 
-            public int Text_Id { get; set; }
-            [Column(Name = "Text_Link")] 
-            public string Text_Link { get; set; }
-        }
+    public class Texts : ITable
+    {
+        public int Text_Id { get; set; }
+        public string Text_Link { get; set; }
     }
 }

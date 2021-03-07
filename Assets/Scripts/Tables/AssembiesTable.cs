@@ -4,60 +4,73 @@ using System.Data.Linq.Mapping;
 using System.Linq;
 using Diploma.Interfaces;
 using ITable = Diploma.Interfaces.ITable;
+using SQLite4Unity3d;
 
 namespace Diploma.Tables
 {
     public class AssemliesTable : IDataBase
     {
-        public List<ITable> GetAllData(DataContext context)
+        public List<ITable> GetAllData(SQLiteConnection connection)
         {
-            Table<Assemblies> assemblies = context.GetTable<Assemblies>();
-
-            var query = from assembly in assemblies select assembly;
-            List<ITable> assembliesList = new List<ITable>();
+            // Table<Assemblies> assemblies = context.GetTable<Assemblies>();
+            //
+            // var query = from assembly in assemblies select assembly;
+            // List<ITable> assembliesList = new List<ITable>();
+            // foreach (var assembly in query)
+            // {
+            //     assembliesList.Add(assembly);
+            // }
+            //
+            // return assembliesList;
+            List<ITable> assemliesList = new List<ITable>();
+            var query = connection.Table<Assemblies>().ToArray();
             foreach (var assembly in query)
             {
-                assembliesList.Add(assembly);
+                assemliesList.Add(assembly);
             }
 
-            return assembliesList;
+            return assemliesList;
         }
     
-        public ITable GetRecordById(DataContext context, int id)
+        public ITable GetRecordById(SQLiteConnection connection, int id)
         {
-            Table<Assemblies> assemblies = context.GetTable<Assemblies>();
-
-            var query = from assembly in assemblies where assembly.Assembly_Id == id select assembly;
-
-            foreach (var assembly in query)
-            {
-                return assembly;
-            }
-
-            return null;
+            // Table<Assemblies> assemblies = context.GetTable<Assemblies>();
+            //
+            // var query = from assembly in assemblies where assembly.Assembly_Id == id select assembly;
+            //
+            // foreach (var assembly in query)
+            // {
+            //     return assembly;
+            // }
+            //
+            return connection.Table<Assemblies>().FirstOrDefault(x => x.Assembly_Id == id);
         }
 
-        public void AddNewRecord(DataContext context, string[] assemblyParams)
+        public void AddNewRecord(SQLiteConnection connection, string[] assemblyParams, byte[] arrayForFiles)
         {
-            Table<Assemblies> assemblies = context.GetTable<Assemblies>();
-
-            Assemblies newAssembly = new Assemblies()
+            // Table<Assemblies> assemblies = context.GetTable<Assemblies>();
+            //
+            // Assemblies newAssembly = new Assemblies()
+            // {
+            //     Assembly_Link = arrayForFiles
+            // };
+            //
+            // assemblies.InsertOnSubmit(newAssembly);
+            // context.SubmitChanges();
+            var newAssembly = new Assemblies()
             {
-                Assembly_Link = assemblyParams[0]
+                Assembly_Id = 4,
+                Assembly_Link = arrayForFiles
             };
-        
-            assemblies.InsertOnSubmit(newAssembly);
-            context.SubmitChanges();
+            connection.Insert(newAssembly);
         }
     }
 
 
-    [Table(Name = "Assemblies")]
+
     public class Assemblies : ITable
     {
-        [Column(Name = "Assembly_Id")] 
         public int Assembly_Id { get; set; }
-        [Column(Name = "Assembly_Link")] 
-        public string Assembly_Link { get; set; }
+        public byte[] Assembly_Link { get; set; }
     }
 }
