@@ -41,7 +41,7 @@ namespace Diploma.Tables
 
             return connection.Table<Users>().FirstOrDefault(x => x.User_Id == id);
         }
-        public void AddNewRecord(SQLiteConnection connection, string[] userParams, byte[] arrayForFiles)
+        public void AddNewRecord(SQLiteConnection connection, string[] userParams)
         {
             // Table<Users> users = context.GetTable<Users>();
             //
@@ -70,6 +70,7 @@ namespace Diploma.Tables
 
     public class Users : ITable
     {
+        [PrimaryKey, AutoIncrement]
         public int User_Id { get; set; }
         public string User_Name { get; set; }
         public string User_Email { get; set; }

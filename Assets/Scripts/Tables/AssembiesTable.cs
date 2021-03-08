@@ -43,7 +43,7 @@ namespace Diploma.Tables
             return connection.Table<Assemblies>().FirstOrDefault(x => x.Assembly_Id == id);
         }
 
-        public void AddNewRecord(SQLiteConnection connection, string[] assemblyParams, byte[] arrayForFiles)
+        public void AddNewRecord(SQLiteConnection connection, string[] assemblyParams)
         {
             // Table<Assemblies> assemblies = context.GetTable<Assemblies>();
             //
@@ -57,7 +57,7 @@ namespace Diploma.Tables
             var newAssembly = new Assemblies()
             {
                 Assembly_Id = 4,
-                Assembly_Link = arrayForFiles
+                Assembly_Link = assemblyParams[0]
             };
             connection.Insert(newAssembly);
         }
@@ -67,7 +67,8 @@ namespace Diploma.Tables
 
     public class Assemblies : ITable
     {
+        [PrimaryKey, AutoIncrement]
         public int Assembly_Id { get; set; }
-        public byte[] Assembly_Link { get; set; }
+        public string Assembly_Link { get; set; }
     }
 }

@@ -37,9 +37,9 @@ namespace Controllers
             return _activeTable.GetAllData<T>(_connection);
         }
 
-        public void AddNewRecordToTable(string[] recordParams, string fileName)
+        public void AddNewRecordToTable(string[] recordParams)
         {
-            _activeTable.AddNewRecord(_connection, recordParams, ConvertToBytes(fileName));
+            _activeTable.AddNewRecord(_connection, recordParams);
         }
 
         public ITable GetRecordFromTableById(int id)

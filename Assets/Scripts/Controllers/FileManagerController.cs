@@ -59,23 +59,23 @@ namespace Controllers
                     case FileTypes.Assebly:
                         // нужено перенести именно в загрузку.
                         DataBaseController.SetTable(Tables[0]);
-                        DataBaseController.AddNewRecordToTable(null,FileBrowser.Result[0]);
+                        DataBaseController.AddNewRecordToTable(FileBrowser.Result);
                         break;
                     case FileTypes.Image:
                         DataBaseController.SetTable(Tables[3]);
-                        DataBaseController.AddNewRecordToTable(null,FileBrowser.Result[0]);
+                        DataBaseController.AddNewRecordToTable(FileBrowser.Result);
                         break;
                     case FileTypes.Text:
                         DataBaseController.SetTable(Tables[2]);
-                        DataBaseController.AddNewRecordToTable(null,FileBrowser.Result[0]);
+                        DataBaseController.AddNewRecordToTable(FileBrowser.Result);
                         break;
                     case FileTypes.Video:
                         DataBaseController.SetTable(Tables[5]);
-                        DataBaseController.AddNewRecordToTable(null,FileBrowser.Result[0]);
+                        DataBaseController.AddNewRecordToTable(FileBrowser.Result);
                         break;
                     case FileTypes.LessonPreview:
                         DataBaseController.SetTable(Tables[1]);
-                        DataBaseController.AddNewRecordToTable(null,FileBrowser.Result[0]);
+                        DataBaseController.AddNewRecordToTable(FileBrowser.Result);
                         break;
                     default:
                         throw new Exception("TAK DELAT NELZYA");

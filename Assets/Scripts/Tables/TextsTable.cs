@@ -45,7 +45,7 @@ namespace Diploma.Tables
             return connection.Table<Texts>().FirstOrDefault(x => x.Text_Id == id);
         }
 
-        public void AddNewRecord(SQLiteConnection connection, string[] textParams, byte[] arrayForFiles)
+        public void AddNewRecord(SQLiteConnection connection, string[] textParams)
         {
             // Table<Texts> texts = context.GetTable<Texts>();
             //
@@ -69,6 +69,7 @@ namespace Diploma.Tables
 
     public class Texts : ITable
     {
+        [PrimaryKey, AutoIncrement]
         public int Text_Id { get; set; }
         public string Text_Link { get; set; }
     }

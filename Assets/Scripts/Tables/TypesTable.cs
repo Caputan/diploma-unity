@@ -40,7 +40,7 @@ namespace Diploma.Tables
             return connection.Table<Types>().FirstOrDefault(x => x.Type_Id == id);
         }
 
-        public void AddNewRecord(SQLiteConnection connection, string[] assemblyParams, byte[] arrayForFiles)
+        public void AddNewRecord(SQLiteConnection connection, string[] typeParams)
         {
             // Table<Types> types = context.GetTable<Types>();
             //
@@ -55,7 +55,7 @@ namespace Diploma.Tables
             var newType = new Types()
             {
                 Type_Id = 4,
-                Type_Image = arrayForFiles
+                Type_Image = typeParams[0]
             };
             connection.Insert(newType);
         }
@@ -64,7 +64,8 @@ namespace Diploma.Tables
 
     public class Types : ITable
     {
+        [PrimaryKey, AutoIncrement]
         public int Type_Id { get; set; }
-        public byte[] Type_Image { get; set; }
+        public string Type_Image { get; set; }
     }
 }

@@ -8,6 +8,6 @@ namespace Diploma.Interfaces
     {
         List<T> GetAllData<T>(SQLiteConnection connection);
         ITable GetRecordById(SQLiteConnection connection, int id);
-        void AddNewRecord(SQLiteConnection connection, string[] recordParams, byte[] arrayForFiles);
+        void AddNewRecord(SQLiteConnection connection, string[] recordParams);
     }
 }

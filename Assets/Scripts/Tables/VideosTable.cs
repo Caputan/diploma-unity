@@ -42,7 +42,7 @@ namespace Diploma.Tables
             return connection.Table<Videos>().FirstOrDefault(x => x.Video_Id == id);
         }
 
-        public void AddNewRecord(SQLiteConnection connection, string[] videoParams, byte[] arrayForFiles)
+        public void AddNewRecord(SQLiteConnection connection, string[] videoParams)
         {
             // Table<Videos> videos = context.GetTable<Videos>();
             //
@@ -65,6 +65,7 @@ namespace Diploma.Tables
 
     public class Videos : ITable
     {
+        [PrimaryKey, AutoIncrement]
         public int Video_Id { get; set; }
         public string Video_Link { get; set; }
     }
