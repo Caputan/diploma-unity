@@ -27,13 +27,14 @@ namespace Controllers
 
         private void GearBoxFactoryViewOnNextStage(LoadingParts loadingParts)
         {
+            _gearBoxFactoryView.LoadNextUi();
             //_dataBaseController.SetTable();
         }
 
         private void GearBoxFactoryViewOnChooseTypeOf(TypesOfGearBoxes obj)
         {
             var info = _gearBoxFactory.ChooseAType(obj);
-            _gearBoxFactoryView.LoadNextUi(info);
+            
         }
 
         public void CleanData()

@@ -20,6 +20,7 @@ namespace Diploma.Controllers
         [SerializeField] private GameObject togglePanelPrefab;
         [SerializeField] private GameObject ToggleGroup;
         [SerializeField] private FileManagerController _fileManager;
+        [SerializeField] private Loader3DS _loader3Ds;
         
         private GameContextWithLogic _gameContextWithLogic;
         private GameContextWithViews _gameContextWithViews;

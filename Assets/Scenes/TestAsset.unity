@@ -553,6 +553,7 @@ GameObject:
   - component: {fileID: 1801427346}
   - component: {fileID: 1801427345}
   - component: {fileID: 1801427347}
+  - component: {fileID: 1801427348}
   m_Layer: 0
   m_Name: ControllerInitializator
   m_TagString: Untagged
@@ -578,6 +579,7 @@ MonoBehaviour:
     type: 3}
   ToggleGroup: {fileID: 1038110742}
   _fileManager: {fileID: 1801427347}
+  _loader3Ds: {fileID: 1801427348}
 --- !u!4 &1801427346
 Transform:
   m_ObjectHideFlags: 0
@@ -604,6 +606,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dcc8c3af3a9e4038abb9663c8e9ca2e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Loader3Ds: {fileID: 0}
+--- !u!114 &1801427348
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1801427344}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62f369a0366324444922303ae9da26c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  modelPath: C:/diploma-unity/Assets/Fence.3ds
+  modelShader: {fileID: 0}
 --- !u!1 &1974469511
 GameObject:
   m_ObjectHideFlags: 0

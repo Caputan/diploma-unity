@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using Diploma.Enums;
@@ -12,6 +13,7 @@ namespace Controllers
     {
         public DataBaseController DataBaseController;
         public List<IDataBase> Tables;
+        public Loader3DS Loader3Ds;
         public void Start()
         {
             FileBrowser.SetFilters( true, new FileBrowser.Filter( "Assemblies", ".3do" ), 
@@ -55,6 +57,7 @@ namespace Controllers
                 switch (fileTypes)
                 {
                     case FileTypes.Assebly:
+                        // нужено перенести именно в загрузку.
                         DataBaseController.SetTable(Tables[0]);
                         DataBaseController.AddNewRecordToTable(null,FileBrowser.Result[0]);
                         break;
@@ -70,6 +73,12 @@ namespace Controllers
                         DataBaseController.SetTable(Tables[5]);
                         DataBaseController.AddNewRecordToTable(null,FileBrowser.Result[0]);
                         break;
+                    case FileTypes.LessonPreview:
+                        DataBaseController.SetTable(Tables[1]);
+                        DataBaseController.AddNewRecordToTable(null,FileBrowser.Result[0]);
+                        break;
+                    default:
+                        throw new Exception("TAK DELAT NELZYA");
                 }
                 
                

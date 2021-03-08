@@ -16,20 +16,18 @@ namespace Diploma.Constructor
         private readonly GameContextWithViews _gameContextWithViews;
         private readonly GameContextWithLogic _gameContextWithLogic;
         private readonly Button _button;
-        private readonly FileManagerController _fileManagerController;
         private readonly DataBaseController _dataBaseController;
         private int _toggleID;
         public GearBoxFactoryView(GameContextWithViews gameContextWithViews, GameContextWithLogic gameContextWithLogic
         //сюда еще должен прийти 3дс лоадер
-        , Button button,
-        FileManagerController fileManagerController
+        , Button button
         )
         {
          
             _gameContextWithViews = gameContextWithViews;
             _gameContextWithLogic = gameContextWithLogic;
             _button = button;
-            _fileManagerController = fileManagerController;
+          
         }
         
         public void Initialization()
@@ -62,9 +60,9 @@ namespace Diploma.Constructor
            NextStage.Invoke(LoadingParts.LoadLections);
         }
 
-        public void LoadNextUi(GameObject content)
+        public void LoadNextUi()
         {
-            _fileManagerController.ShowSaveDialog(FileTypes.Assebly);
+            
             
             //тут нужно загрузить сборку в виде листа
             
