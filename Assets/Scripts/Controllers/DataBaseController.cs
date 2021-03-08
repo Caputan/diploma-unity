@@ -32,9 +32,9 @@ namespace Controllers
             this._activeTable = table;
         }
 
-        public List<ITable> GetDataFromTable()
+        public List<T> GetDataFromTable<T>()
         {
-            return _activeTable.GetAllData(_connection);
+            return _activeTable.GetAllData<T>(_connection);
         }
 
         public void AddNewRecordToTable(string[] recordParams, string fileName)

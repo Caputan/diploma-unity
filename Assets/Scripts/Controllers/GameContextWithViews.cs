@@ -8,7 +8,7 @@ namespace Diploma.Controllers
     {
         public Dictionary<int,GameObject> ChoosenToggles;
         public Dictionary<int, Button> Buttons;
-        
+
         public GameContextWithViews()
         {
             ChoosenToggles = new Dictionary<int,GameObject>();
@@ -24,5 +24,7 @@ namespace Diploma.Controllers
         {
             Buttons.Add(id,button);
         }
+
+      
     }
 }

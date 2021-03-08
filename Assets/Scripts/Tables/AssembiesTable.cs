@@ -10,7 +10,7 @@ namespace Diploma.Tables
 {
     public class AssemliesTable : IDataBase
     {
-        public List<ITable> GetAllData(SQLiteConnection connection)
+        public List<Assemblies> GetAllData<Assemblies>(SQLiteConnection connection)
         {
             // Table<Assemblies> assemblies = context.GetTable<Assemblies>();
             //
@@ -22,12 +22,9 @@ namespace Diploma.Tables
             // }
             //
             // return assembliesList;
-            List<ITable> assemliesList = new List<ITable>();
-            var query = connection.Table<Assemblies>().ToArray();
-            foreach (var assembly in query)
-            {
-                assemliesList.Add(assembly);
-            }
+            List<Assemblies> assemliesList = new List<Assemblies>();
+            assemliesList = connection.Table<Assemblies>().ToList();
+            
 
             return assemliesList;
         }

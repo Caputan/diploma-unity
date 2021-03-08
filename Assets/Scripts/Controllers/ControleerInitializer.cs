@@ -16,24 +16,17 @@ namespace Diploma.Controllers
     public class ControleerInitializer : MonoBehaviour
     {
         [SerializeField] private Button _button;
-        [SerializeField] private int countOfdetails;
-        [SerializeField] private Toggle toggle1;
-        [SerializeField] private Toggle toggle2;
-        [SerializeField] private Toggle toggle3;
+        [SerializeField] private int countOfDetails;
+        [SerializeField] private GameObject togglePanelPrefab;
+        [SerializeField] private GameObject ToggleGroup;
+        [SerializeField] private FileManagerController _fileManager;
         
-        private GameContext _gameContext;
+        private GameContextWithLogic _gameContextWithLogic;
+        private GameContextWithViews _gameContextWithViews;
         private Controllers _controllers;
         private void Start()
         {
-            _gameContext = new GameContext();
-            //тут еще нужно разместить создание меню.
-            _gameContext.AddToggles(toggle1);
-            _gameContext.AddToggles(toggle2);
-            _gameContext.AddToggles(toggle3);
-            //-----
             
-            
-            #endregion
 
             #region DataBase initialization
 
@@ -45,22 +38,40 @@ namespace Diploma.Controllers
             UsersTable users = new UsersTable();
             VideosTable videos = new VideosTable();
             List<IDataBase> tables = new List<IDataBase>();
-            tables.Add(assemblies);
-            tables.Add(lessons);
-            tables.Add(texts);
-            tables.Add(types);
-            tables.Add(users);
-            tables.Add(videos);
+            tables.Add(assemblies); // 0 - assembles
+            tables.Add(lessons); // 1 - lessons
+            tables.Add(texts); // 2 - text
+            tables.Add(types); // 3 - types
+            tables.Add(users); // 4 - users
+            tables.Add(videos); // 5 - videos
             
-            DataBaseController.SetTable(types);
-            DataBaseController.AddNewRecordToTable(null, "C:/Users/Артем/Desktop/kart.jpg");
-            
+            //DataBaseController.SetTable(types);
+            //DataBaseController.AddNewRecordToTable(null, "C:/Users/Артем/Desktop/kart.jpg");
             #endregion
             
-            #region Creation new Lession Module
+            #region Creation UI and GameContext
+            
+            _gameContextWithLogic = new GameContextWithLogic();
+            _gameContextWithViews = new GameContextWithViews();
+           
+            // тут мы создали базове типизированное меню
+            var GameContextWithViewCreator = new GameContexWithViewCreator(
+                _gameContextWithViews,
+                _gameContextWithLogic,
+                ToggleGroup,
+                togglePanelPrefab,
+                DataBaseController,
+                tables
+                );
+            
+            #endregion
 
+            _fileManager.DataBaseController = DataBaseController;
+            _fileManager.Tables = tables;
+            #region Creation new Lession Module
+            // данный регион будет вызываться во время создания урока
             var abstractFactory = new AbstractFactory();
-            var abstractView = new AbstractView(_gameContextWithViews,_gameContextWithLogic,_button);
+            var abstractView = new AbstractView(_gameContextWithViews,_gameContextWithLogic,_button,_fileManager);
             var abstractFactoryController = new AbstractFactoryController(abstractView,abstractFactory);
             
             #endregion
@@ -68,12 +79,14 @@ namespace Diploma.Controllers
             
             // Scene
             var GameObjectFactory = new GameObjectFactory();
-            var Pool = new PoolOfObjects(countOfdetails,GameObjectFactory,_gameContext);
+            var Pool = new PoolOfObjects(countOfDetails,GameObjectFactory,_gameContextWithLogic);
             var GameObjectInitilization = new GameObjectInitialization(Pool);
-                        
+
             _controllers = new Controllers();
-            _controllers.Add(new ToggleView(_gameContext));
-            
+            _controllers.Add(GameContextWithViewCreator);
+            _controllers.Add(DataBaseController);
+            _controllers.Add(abstractView);
+            _controllers.Add(abstractFactoryController);
             _controllers.Initialization();
         }
         

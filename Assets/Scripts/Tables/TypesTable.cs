@@ -9,7 +9,7 @@ namespace Diploma.Tables
 {
     public class TypesTable : IDataBase
     {
-        public List<ITable> GetAllData(SQLiteConnection connection)
+        public List<Types> GetAllData<Types>(SQLiteConnection connection)
         {
             // Table<Types> types = context.GetTable<Types>();
             //
@@ -20,13 +20,9 @@ namespace Diploma.Tables
             // {
             //     typesList.Add(type);
             // }
-            List<ITable> typesList = new List<ITable>();
-            var query = connection.Table<Types>().ToArray();
-            foreach (var type in query)
-            {
-                typesList.Add(type);
-            }
-
+            List<Types> typesList = new List<Types>();
+            typesList = connection.Table<Types>().ToList();
+            
             return typesList;
         }
     

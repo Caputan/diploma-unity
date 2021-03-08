@@ -1,10 +1,11 @@
 ﻿using System;
+using Diploma.Enums;
 
 namespace Interfaces
 {
     public interface IFactoryView
     {
         void ChoosedNextStage();
-        event Action<float,int> NextStage;
+        event Action<LoadingParts> NextStage;
     }
 }

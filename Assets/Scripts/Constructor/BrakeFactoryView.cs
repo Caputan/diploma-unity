@@ -1,4 +1,5 @@
 ﻿using System;
+using Diploma.Enums;
 using Interfaces;
 
 namespace Diploma.Constructor
@@ -10,6 +11,6 @@ namespace Diploma.Constructor
             throw new NotImplementedException();
         }
 
-        public event Action<float, int> NextStage;
+        public event Action<LoadingParts> NextStage;
     }
 }

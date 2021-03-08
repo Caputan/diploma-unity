@@ -11,7 +11,7 @@ namespace Diploma.Tables
 {
     public class LessonsTable : IDataBase
     {
-        public List<ITable> GetAllData(SQLiteConnection connection)
+        public List<Lessons> GetAllData<Lessons>(SQLiteConnection connection)
         {
             // Table<Lessons> lessons = context.GetTable<Lessons>();
             //
@@ -24,12 +24,9 @@ namespace Diploma.Tables
             // }
             //
             // return lessonsList;
-            List<ITable> lessonsList = new List<ITable>();
-            var query = connection.Table<Lessons>().ToArray();
-            foreach (var lesson in query)
-            {
-                lessonsList.Add(lesson);
-            }
+            List<Lessons> lessonsList = new List<Lessons>();
+            lessonsList = connection.Table<Lessons>().ToList();
+            
 
             return lessonsList;
         }

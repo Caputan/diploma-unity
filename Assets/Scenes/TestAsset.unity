@@ -552,6 +552,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1801427346}
   - component: {fileID: 1801427345}
+  - component: {fileID: 1801427347}
   m_Layer: 0
   m_Name: ControllerInitializator
   m_TagString: Untagged
@@ -572,10 +573,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _button: {fileID: 466750863}
-  countOfDetails: 0
+  countOfDetails: 5
   togglePanelPrefab: {fileID: 5877053247081451630, guid: f470d19f7a58ed9449b10ce3d899f0fa,
     type: 3}
   ToggleGroup: {fileID: 1038110742}
+  _fileManager: {fileID: 1801427347}
 --- !u!4 &1801427346
 Transform:
   m_ObjectHideFlags: 0
@@ -590,6 +592,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1801427347
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1801427344}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dcc8c3af3a9e4038abb9663c8e9ca2e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1974469511
 GameObject:
   m_ObjectHideFlags: 0
