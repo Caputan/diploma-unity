@@ -10,7 +10,7 @@ namespace Diploma.Tables
 {
     public class UsersTable : IDataBase
     {
-        public List<ITable> GetAllData(SQLiteConnection connection)
+        public List<Users> GetAllData<Users>(SQLiteConnection connection)
         {
             // Table<Users> users = context.GetTable<Users>();
             //
@@ -21,12 +21,9 @@ namespace Diploma.Tables
             // {
             //     usersList.Add(user);
             // }
-            List<ITable> usersList = new List<ITable>();
-            var query = connection.Table<Users>().ToArray();
-            foreach (var user in query)
-            {
-                usersList.Add(user);
-            }
+            List<Users> usersList = new List<Users>();
+            usersList = connection.Table<Users>().ToList();
+            
 
             return usersList;
         }

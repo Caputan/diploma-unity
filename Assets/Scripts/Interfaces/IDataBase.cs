@@ -6,7 +6,7 @@ namespace Diploma.Interfaces
 {
     public interface IDataBase
     {
-        List<ITable> GetAllData(SQLiteConnection connection);
+        List<T> GetAllData<T>(SQLiteConnection connection);
         ITable GetRecordById(SQLiteConnection connection, int id);
         void AddNewRecord(SQLiteConnection connection, string[] recordParams, byte[] arrayForFiles);
     }

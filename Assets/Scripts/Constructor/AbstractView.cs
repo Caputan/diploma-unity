@@ -1,4 +1,5 @@
 ﻿using System;
+using Controllers;
 using Diploma.Controllers;
 using Diploma.Enums;
 using Diploma.Interfaces;
@@ -11,14 +12,17 @@ namespace Diploma.Constructor
         private readonly GameContextWithLogic _gameContextWithLogic;
         private readonly GameContextWithViews _gameContextWithViews;
         private Button _button;
+        private readonly FileManagerController _fileManager;
         private int _toggleID;
 
         public AbstractView(GameContextWithViews gameContextWithViews, GameContextWithLogic gameContextWithLogic,
-            Button button
+            Button button,
+            FileManagerController fileManager
         )
         {
             _gameContextWithLogic = gameContextWithLogic;
             _button = button;
+            _fileManager = fileManager;
             _gameContextWithViews = gameContextWithViews;
         }
         

@@ -19,7 +19,7 @@ namespace Diploma.UI
         {
            var gm = GameObject.Instantiate(_togglePanel);
            gm.transform.SetParent(parent);
-           gm.transform.position = Vector3.zero;
+           
            gm.GetComponentInChildren<Toggle>().group = _toggleGroup;
            return gm;
         }

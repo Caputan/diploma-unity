@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using Controllers;
 using Diploma.Controllers;
 using Diploma.Enums;
 using Diploma.Interfaces;
@@ -10,18 +12,24 @@ namespace Diploma.Constructor
 {
     public class GearBoxFactoryView: IFactoryView,IInitialization,IChooseGearboxLowType
     {
+        public List<ITable> Tables { get; }
         private readonly GameContextWithViews _gameContextWithViews;
         private readonly GameContextWithLogic _gameContextWithLogic;
         private readonly Button _button;
+        private readonly FileManagerController _fileManagerController;
+        private readonly DataBaseController _dataBaseController;
         private int _toggleID;
         public GearBoxFactoryView(GameContextWithViews gameContextWithViews, GameContextWithLogic gameContextWithLogic
-        //временный костыль с кнопкой. кнопки будут в вью
-        , Button button
+        //сюда еще должен прийти 3дс лоадер
+        , Button button,
+        FileManagerController fileManagerController
         )
         {
+         
             _gameContextWithViews = gameContextWithViews;
             _gameContextWithLogic = gameContextWithLogic;
             _button = button;
+            _fileManagerController = fileManagerController;
         }
         
         public void Initialization()
@@ -36,21 +44,43 @@ namespace Diploma.Constructor
                 {
                     if (on) _toggleID = toggle.Value.GetInstanceID();
                 });
+                
+                toggle.Value.SetActive(false);
             }
             
             _button.onClick.RemoveAllListeners();
             _button.onClick.AddListener(() => ChoosedNextStage());
+            _button.enabled = false;
+
             #endregion
+
+           
         }
-        
+
         public void ChoosedNextStage()
         {
-           
+           NextStage.Invoke(LoadingParts.LoadLections);
         }
 
         public void LoadNextUi(GameObject content)
         {
+            _fileManagerController.ShowSaveDialog(FileTypes.Assebly);
             
+            //тут нужно загрузить сборку в виде листа
+            
+            //еще нужно выключить первый вью
+            
+            #region Second View
+
+            // тут мы объявляем то,что на выходе у лоадера
+            // foreach (var VARIABLE in COLLECTION)
+            // {
+            //     
+            
+            // setActive(false);
+            // }
+
+            #endregion
         }
         
         public void ChoosedLowType(TypesOfGearBoxes typesOfGearBoxes)
@@ -58,7 +88,7 @@ namespace Diploma.Constructor
             ChooseTypeOf.Invoke(typesOfGearBoxes);
         }
 
-        public event Action<float, int> NextStage;
+        public event Action<LoadingParts> NextStage;
         public event Action<TypesOfGearBoxes> ChooseTypeOf;
         
     }

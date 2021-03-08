@@ -1,5 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
+using Controllers;
 using Diploma.Enums;
+using Diploma.Interfaces;
 using Interfaces;
 using UnityEngine;
 
@@ -7,9 +10,17 @@ namespace Diploma.Constructor
 {
     public class GearBoxFactory: IConstructorFactory
     {
+        private readonly DataBaseController _dataBaseController;
+        private readonly List<ITable> _tables;
+
+        public GearBoxFactory(DataBaseController dataBaseController, List<ITable> tables)
+        {
+            _dataBaseController = dataBaseController;
+            _tables = tables;
+        }
+        
         public void Create()
         {
-            //так. не будет оно использоваться. надо подумать как объединить нижний метод
             Debug.Log("GearBoxFactory was created");
         }
 
@@ -30,5 +41,6 @@ namespace Diploma.Constructor
                     throw new Exception("Type Error");
             }
         }
+        
     }
 }

@@ -16,8 +16,8 @@ namespace Diploma.Constructor
                     brakeFactory.Create();
                     break;
                 case FactoryType.GearBox:
-                    GearBoxFactory gearBoxFactory = new GearBoxFactory();
-                    gearBoxFactory.Create();
+                    // GearBoxFactory gearBoxFactory = new GearBoxFactory();
+                    // gearBoxFactory.Create();
                     break;
                 case FactoryType.OppositionEngine:
                     OppositionEngineFactory oppositionEngineFactory = new OppositionEngineFactory();

@@ -12,7 +12,7 @@ namespace Diploma.Tables
 {
     public class TextsTable : IDataBase
     {
-        public List<ITable> GetAllData(SQLiteConnection connection)
+        public List<Texts> GetAllData<Texts>(SQLiteConnection connection)
         {
             // Table<Texts> texts = context.GetTable<Texts>();
             //
@@ -24,12 +24,9 @@ namespace Diploma.Tables
             //     Debug.Log(text.Text_Link);
             //     textsList.Add(text);
             // }
-            List<ITable> textsList = new List<ITable>();
-            var query = connection.Table<Texts>().ToArray();
-            foreach (var text in query)
-            {
-                textsList.Add(text);
-            }
+            List<Texts> textsList = new List<Texts>();
+            textsList = connection.Table<Texts>().ToList();
+            
 
             return textsList;
         }
@@ -61,7 +58,7 @@ namespace Diploma.Tables
             // context.SubmitChanges();
             var newText = new Texts()
             {
-                Text_Id = 4,
+                Text_Id = 5,
                 Text_Link = textParams[0]
             };
             connection.Insert(newText);

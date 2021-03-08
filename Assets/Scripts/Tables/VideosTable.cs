@@ -10,7 +10,7 @@ namespace Diploma.Tables
 {
     public class VideosTable : IDataBase
     {
-        public List<ITable> GetAllData(SQLiteConnection connection)
+        public List<Videos> GetAllData<Videos>(SQLiteConnection connection)
         {
             // Table<Videos> videos = context.GetTable<Videos>();
             //
@@ -21,12 +21,9 @@ namespace Diploma.Tables
             // {
             //     videosList.Add(video);
             // }
-            List<ITable> videosList = new List<ITable>();
-            var query = connection.Table<Videos>().ToArray();
-            foreach (var video in query)
-            {
-                videosList.Add(video);
-            }
+            List<Videos> videosList = new List<Videos>();
+            videosList = connection.Table<Videos>().ToList();
+            
 
             return videosList;
         }

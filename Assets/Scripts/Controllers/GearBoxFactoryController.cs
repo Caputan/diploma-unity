@@ -25,7 +25,7 @@ namespace Controllers
             _gearBoxFactoryView.NextStage += GearBoxFactoryViewOnNextStage;
         }
 
-        private void GearBoxFactoryViewOnNextStage(float arg1, int arg2)
+        private void GearBoxFactoryViewOnNextStage(LoadingParts loadingParts)
         {
             //_dataBaseController.SetTable();
         }
