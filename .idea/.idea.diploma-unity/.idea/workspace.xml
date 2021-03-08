@@ -20,18 +20,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9a27c574-4a30-4862-a74f-153a103b04b8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/FileManager.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/FileManager/FileManager.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/FileManager/FileManager.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Interfaces/IFileManager.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Interfaces/IFileManager.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/ChooseALesson.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/ChooseALesson.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/ListOfLessonsController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/ListOfLessonsController.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/ListOfLessons.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/ListOfLessons/ListOfLessonsView.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/ListOfLessons/ListOfLessonsView.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.diploma-unity/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.diploma-unity/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.diploma-unity/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.diploma-unity/.idea/indexLayout.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.diploma-unity/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.diploma-unity/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.diploma-unity/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.diploma-unity/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/TestAsset.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/TestAsset.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/ControleerInitializer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/ControleerInitializer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/Controllers.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/Controllers.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/DataBaseController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/DataBaseController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/FileManagerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/FileManagerController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/GameContextWithLogic.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/GameContextWithLogic.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/GameContextWithViews.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/GameContextWithViews.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/GameObjectController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/GameObjectController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/GameObjectInitialization.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/GameObjectInitialization.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/GameContexWithViewCreator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/GameContexWithViewCreator.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,7 +58,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/GameContextWithViews.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/TogglePanelFactory.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Constructor/GearBoxFactory.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Enums/LoadingParts.cs" />
@@ -66,17 +73,24 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Tables/VideosTable.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Tables/UsersTable.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Tables/AssembiesTable.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/GameContexWithViewCreator.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Tables/TextsTable.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/GearBoxFactoryController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Constructor/AbstractView.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Constructor/GearBoxFactoryView.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Enums/FileTypes.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Interfaces/IFileManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/DataBaseController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/FileManager/FileManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/Controllers.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/DataBaseController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/FileManagerController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/GameContextWithLogic.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/GameObjectController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/GameObjectInitialization.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/ListOfLessonsController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/GameContextWithViews.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/GameContexWithViewCreator.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/ControleerInitializer.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ListOfLessons/ListOfLessonsView.cs" />
       </list>
     </option>
   </component>
@@ -148,6 +162,7 @@
       <workItem from="1615213696629" duration="3584000" />
       <workItem from="1615221016437" duration="127000" />
       <workItem from="1615221315013" duration="91000" />
+      <workItem from="1615221709318" duration="6416000" />
     </task>
     <servers />
   </component>
@@ -241,10 +256,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1493" height="162" key="GridCell.Tab.3.right/0.0.1536.824@0.0.1536.824" timestamp="1615220818668" />
-    <state x="601" y="113" key="RiderGenerateDialog" timestamp="1614094616749">
+    <state x="601" y="113" key="RiderGenerateDialog" timestamp="1615223283721">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="601" y="113" key="RiderGenerateDialog/0.0.1536.824@0.0.1536.824" timestamp="1614094616749" />
+    <state x="601" y="113" key="RiderGenerateDialog/0.0.1536.824@0.0.1536.824" timestamp="1615223283721" />
     <state x="425" y="187" key="run.anything.popup" timestamp="1615218124004">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -253,24 +268,5 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1615218391066" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/Controllers/GearBoxFactoryController.cs</url>
-          <line>36</line>
-          <properties documentPath="D:\Unity-Storage\Diploma\diploma-unity\Assets\Scripts\Controllers\GearBoxFactoryController.cs" initialLine="35">
-            <startOffsets>
-              <option value="-1" />
-            </startOffsets>
-            <endOffsets>
-              <option value="-1" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="8" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

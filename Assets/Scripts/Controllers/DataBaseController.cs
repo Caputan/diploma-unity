@@ -8,7 +8,7 @@ using ITable = Diploma.Interfaces.ITable;
 
 namespace Controllers
 {
-    public class DataBaseController : IInitialization
+    public sealed class DataBaseController : IInitialization
     {
         private const string _dbName = "MachinePartsDB.bytes";
         private static DataContext _context;

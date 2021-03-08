@@ -13,12 +13,16 @@ using Types = Diploma.Tables.Types;
 
 namespace Diploma.Controllers
 {
-    public class ControleerInitializer : MonoBehaviour
+    public sealed class ControleerInitializer : MonoBehaviour
     {
         [SerializeField] private Button _button;
         [SerializeField] private int countOfDetails;
         [SerializeField] private GameObject togglePanelPrefab;
         [SerializeField] private GameObject ToggleGroup;
+
+        [SerializeField] private GameObject toggleLessionPrefab;
+        [SerializeField] private GameObject ParentForLessions;
+        
         [SerializeField] private FileManagerController _fileManager;
         [SerializeField] private Loader3DS _loader3Ds;
         
@@ -68,6 +72,8 @@ namespace Diploma.Controllers
                 _gameContextWithLogic,
                 ToggleGroup,
                 togglePanelPrefab,
+                ParentForLessions,
+                toggleLessionPrefab,
                 DataBaseController,
                 tables
                 );

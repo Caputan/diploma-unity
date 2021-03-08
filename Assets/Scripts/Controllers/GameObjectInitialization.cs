@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Diploma.Controllers
 {
-    public class GameObjectInitialization: IInitialization
+    public sealed class GameObjectInitialization: IInitialization
     {
         private readonly PoolOfObjects _poolOfObjects;
 

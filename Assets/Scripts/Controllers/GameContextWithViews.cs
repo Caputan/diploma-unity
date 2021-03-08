@@ -4,11 +4,12 @@ using UnityEngine.UI;
 
 namespace Diploma.Controllers
 {
-    public class GameContextWithViews
+    public sealed class GameContextWithViews
     {
         public Dictionary<int,GameObject> ChoosenToggles;
         public Dictionary<int, Button> Buttons;
-
+        public Dictionary<int,GameObject> ChoosenLessonToggles;
+        
         public GameContextWithViews()
         {
             ChoosenToggles = new Dictionary<int,GameObject>();
@@ -20,6 +21,10 @@ namespace Diploma.Controllers
             ChoosenToggles.Add(id,toggle);
         }
 
+        public void AddLessonsToggles(int id, GameObject toggle)
+        {
+            ChoosenLessonToggles.Add(id,toggle);
+        }
         public void AddButtons(int id, Button button)
         {
             Buttons.Add(id,button);

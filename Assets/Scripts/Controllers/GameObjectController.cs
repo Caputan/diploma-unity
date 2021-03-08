@@ -1,6 +1,6 @@
 ﻿namespace Diploma.Controllers
 {
-    public class GameObjectController
+    public sealed class GameObjectController
     {
         
     }

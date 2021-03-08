@@ -66,6 +66,7 @@
             <e p="GameObjectController.cs" t="Include" />
             <e p="GameObjectInitialization.cs" t="Include" />
             <e p="GearBoxFactoryController.cs" t="Include" />
+            <e p="ListOfLessonsController.cs" t="Include" />
           </e>
           <e p="Enums" t="Include">
             <e p="ComboType.cs" t="Include" />
@@ -106,6 +107,9 @@
             <e p="ILateExecute.cs" t="Include" />
             <e p="ITable.cs" t="Include" />
             <e p="IUIObjectsFactory.cs" t="Include" />
+          </e>
+          <e p="ListOfLessons" t="Include">
+            <e p="ListOfLessonsView.cs" t="Include" />
           </e>
           <e p="Loader3DS.cs" t="Include" />
           <e p="Managers" t="Include">

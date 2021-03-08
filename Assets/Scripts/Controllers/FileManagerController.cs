@@ -9,7 +9,7 @@ using UnityEngine;
 
 namespace Controllers
 {
-    public class FileManagerController: MonoBehaviour
+    public sealed class FileManagerController: MonoBehaviour
     {
         public DataBaseController DataBaseController;
         public List<IDataBase> Tables;
