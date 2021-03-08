@@ -2,8 +2,6 @@
 using System.Data.Linq;
 using System.IO;
 using Diploma.Interfaces;
-using Mono.Data.Sqlite;
-using Diploma.Tables;
 using SQLite4Unity3d;
 using UnityEngine;
 using ITable = Diploma.Interfaces.ITable;

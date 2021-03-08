@@ -25,12 +25,19 @@ namespace Diploma.Controllers
         private GameContextWithLogic _gameContextWithLogic;
         private GameContextWithViews _gameContextWithViews;
         private Controllers _controllers;
+        public string[] destinationPath = new string[4];
         private void Start()
         {
             
 
             #region DataBase initialization
 
+            FileManager.FileManager fileManager = new FileManager.FileManager();
+            destinationPath[0] = fileManager.CreateFileFolder("Assemblies");
+            destinationPath[1] = fileManager.CreateFileFolder("Videos");
+            destinationPath[2] = fileManager.CreateFileFolder("Photos");
+            destinationPath[3] = fileManager.CreateFileFolder("Texts");
+            
             var DataBaseController = new DataBaseController();
             AssemliesTable assemblies = new AssemliesTable();
             LessonsTable lessons = new LessonsTable();
@@ -69,6 +76,8 @@ namespace Diploma.Controllers
 
             _fileManager.DataBaseController = DataBaseController;
             _fileManager.Tables = tables;
+            _fileManager.destinationPath = destinationPath;
+            
             #region Creation new Lession Module
             // данный регион будет вызываться во время создания урока
             var abstractFactory = new AbstractFactory();

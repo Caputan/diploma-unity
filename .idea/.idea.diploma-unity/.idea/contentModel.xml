@@ -77,6 +77,9 @@
           <e p="Extensions" t="Include">
             <e p="Extensions.cs" t="Include" />
           </e>
+          <e p="FileManager" t="Include">
+            <e p="FileManager.cs" t="Include" />
+          </e>
           <e p="GameObjectCreatingOnScene" t="Include">
             <e p="GameObjectComponents.cs" t="Include" />
             <e p="GameObjectCreator.cs" t="Include" />
@@ -98,6 +101,7 @@
             <e p="IExecute.cs" t="Include" />
             <e p="IFactory.cs" t="Include" />
             <e p="IFactoryView.cs" t="Include" />
+            <e p="IFileManager.cs" t="Include" />
             <e p="IInitialization.cs" t="Include" />
             <e p="ILateExecute.cs" t="Include" />
             <e p="ITable.cs" t="Include" />

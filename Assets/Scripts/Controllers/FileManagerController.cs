@@ -14,9 +14,10 @@ namespace Controllers
         public DataBaseController DataBaseController;
         public List<IDataBase> Tables;
         public Loader3DS Loader3Ds;
+        public string[] destinationPath = new string[4];
         public void Start()
         {
-            FileBrowser.SetFilters( true, new FileBrowser.Filter( "Assemblies", ".3do" ), 
+            FileBrowser.SetFilters( true, new FileBrowser.Filter( "Assemblies", ".3ds" ), 
                 new FileBrowser.Filter( "Text Files", ".doc", ".pdf", ".docx" ), 
                 new FileBrowser.Filter("Videos", ".mp4") );
 		
@@ -51,39 +52,54 @@ namespace Controllers
 
             if (FileBrowser.Success)
             {
-                string destinationPath = Path.Combine(Application.persistentDataPath,
-                    FileBrowserHelpers.GetFilename(FileBrowser.Result[0]));
-                //FileBrowserHelpers.CopyFile(FileBrowser.Result[0], destinationPath);
+                 // = Path.Combine(Application.persistentDataPath,
+                 //    FileBrowserHelpers.GetFilename(FileBrowser.Result[0]));
+                string[] localPath = new string[1];
                 switch (fileTypes)
                 {
                     case FileTypes.Assebly:
-                        // нужено перенести именно в загрузку.
+                        localPath[0] = Path.Combine(destinationPath[0],FileBrowserHelpers.GetFilename(FileBrowser.Result[0]));
+                        
+                        FileBrowserHelpers.CopyFile(FileBrowser.Result[0], localPath[0]);
+                        
                         DataBaseController.SetTable(Tables[0]);
-                        DataBaseController.AddNewRecordToTable(FileBrowser.Result);
+                        DataBaseController.AddNewRecordToTable(localPath);
                         break;
                     case FileTypes.Image:
+                        localPath[0] = Path.Combine(destinationPath[2],FileBrowserHelpers.GetFilename(FileBrowser.Result[0]));
+                        
+                        FileBrowserHelpers.CopyFile(FileBrowser.Result[0], localPath[0]);
+                        
                         DataBaseController.SetTable(Tables[3]);
-                        DataBaseController.AddNewRecordToTable(FileBrowser.Result);
+                        DataBaseController.AddNewRecordToTable(localPath);
                         break;
                     case FileTypes.Text:
+                        localPath[0] = Path.Combine(destinationPath[3],FileBrowserHelpers.GetFilename(FileBrowser.Result[0]));
+                        
+                        FileBrowserHelpers.CopyFile(FileBrowser.Result[0], localPath[0]);
+
                         DataBaseController.SetTable(Tables[2]);
-                        DataBaseController.AddNewRecordToTable(FileBrowser.Result);
+                        DataBaseController.AddNewRecordToTable(localPath);
                         break;
                     case FileTypes.Video:
+                        localPath[0] = Path.Combine(destinationPath[1],FileBrowserHelpers.GetFilename(FileBrowser.Result[0]));
+                        
+                        FileBrowserHelpers.CopyFile(FileBrowser.Result[0], localPath[0]);
+
                         DataBaseController.SetTable(Tables[5]);
-                        DataBaseController.AddNewRecordToTable(FileBrowser.Result);
+                        DataBaseController.AddNewRecordToTable(localPath);
                         break;
                     case FileTypes.LessonPreview:
+                        localPath[0] = Path.Combine(destinationPath[2],FileBrowserHelpers.GetFilename(FileBrowser.Result[0]));
+                        
+                        FileBrowserHelpers.CopyFile(FileBrowser.Result[0], localPath[0]);
+
                         DataBaseController.SetTable(Tables[1]);
-                        DataBaseController.AddNewRecordToTable(FileBrowser.Result);
+                        DataBaseController.AddNewRecordToTable(localPath);
                         break;
                     default:
                         throw new Exception("TAK DELAT NELZYA");
                 }
-                
-               
-                
-               
             }
         }
     }
