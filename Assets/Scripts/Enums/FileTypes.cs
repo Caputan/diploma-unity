@@ -6,5 +6,7 @@
         Video,
         Assebly,
         Text,
+        LessonPreview,
+        
     }
 }

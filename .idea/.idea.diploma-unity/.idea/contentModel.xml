@@ -103,6 +103,7 @@
             <e p="ITable.cs" t="Include" />
             <e p="IUIObjectsFactory.cs" t="Include" />
           </e>
+          <e p="Loader3DS.cs" t="Include" />
           <e p="Managers" t="Include">
             <e p="FileManager.cs" t="Include" />
             <e p="PoolManager.cs" t="Include" />
