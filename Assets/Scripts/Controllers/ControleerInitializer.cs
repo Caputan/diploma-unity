@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Controllers;
 using Diploma.Constructor;
+using Diploma.FileManager;
 using Diploma.Interfaces;
 using Diploma.Tables;
 using Diploma.UI;
@@ -28,6 +29,8 @@ namespace Diploma.Controllers
         
         private GameContextWithLogic _gameContextWithLogic;
         private GameContextWithViews _gameContextWithViews;
+        private GameContextWithLessons _gameContextWithLessons;
+        
         private Controllers _controllers;
         public string[] destinationPath = new string[4];
         private void Start()
@@ -59,17 +62,21 @@ namespace Diploma.Controllers
             
             //DataBaseController.SetTable(types);
             //DataBaseController.AddNewRecordToTable(null, "C:/Users/Артем/Desktop/kart.jpg");
+            
+            
             #endregion
             
             #region Creation UI and GameContext
             
             _gameContextWithLogic = new GameContextWithLogic();
             _gameContextWithViews = new GameContextWithViews();
-           
+            _gameContextWithLessons = new GameContextWithLessons();
+            
             // тут мы создали базове типизированное меню
             var GameContextWithViewCreator = new GameContexWithViewCreator(
                 _gameContextWithViews,
                 _gameContextWithLogic,
+                _gameContextWithLessons,
                 ToggleGroup,
                 togglePanelPrefab,
                 ParentForLessions,

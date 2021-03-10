@@ -1,39 +1,41 @@
 ﻿using System;
-using Diploma.Enums;
+using System.Collections.Generic;
+using Controllers;
 using Diploma.Interfaces;
+using Diploma.Tables;
+using Interfaces;
+using UnityEngine;
 using UnityEngine.UI;
 
 namespace ListOfLessons
 {
-    public sealed class ListOfLessonsView: IInitialization
+    public sealed class ListOfLessonsView: IInitialization, IShowInfoFromChoosing
     {
-        public ListOfLessonsView()
+        private int _id;
+        private readonly GameObject _lessonToggle;
+        private readonly DataBaseController _dataBaseController;
+        private readonly List<IDataBase> _tables;
+
+
+        public ListOfLessonsView(int id,GameObject lessonToggle,
+            DataBaseController dataBaseController,List<IDataBase> tables)
         {
-            
+            _id = id;
+            _lessonToggle = lessonToggle;
+            _dataBaseController = dataBaseController;
+            _tables = tables;
         }
         public void Initialization()
         {
-            
-            // foreach (var toggle in _gameContextWithViews.ChoosenToggles)
-            // {
-            //     toggle.Value.GetComponentInChildren<Toggle>().onValueChanged.AddListener(on=>
-            //     {
-            //         if (on) _toggleID = toggle.Value.GetInstanceID();
-            //     });
-            //     
-            //     toggle.Value.SetActive(false);
-            // }
-            //
-            // _button.onClick.RemoveAllListeners();
-            // _button.onClick.AddListener(() => ChoosedNextStage());
+            _lessonToggle.GetComponent<Toggle>().
+                onValueChanged.AddListener((someBool) => ChooseLessionFromList(someBool));
         }
         
-        public void ChooseLessionFromList()
+        public void ChooseLessionFromList(bool someBool)
         {
-            //ChooseLession.Invoke();
+            if(someBool)
+                ChooseAnotherLession.Invoke(_id,_dataBaseController,_tables);
         }
-        
-        public event Action<int> ChooseLession;
-        
+        public event Action<int,DataBaseController,List<IDataBase>> ChooseAnotherLession;
     }
 }

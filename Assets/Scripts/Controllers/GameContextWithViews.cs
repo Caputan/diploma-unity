@@ -9,6 +9,7 @@ namespace Diploma.Controllers
         public Dictionary<int,GameObject> ChoosenToggles;
         public Dictionary<int, Button> Buttons;
         public Dictionary<int,GameObject> ChoosenLessonToggles;
+        public GameObject infoPanel;
         
         public GameContextWithViews()
         {
@@ -30,6 +31,10 @@ namespace Diploma.Controllers
             Buttons.Add(id,button);
         }
 
+        public void SetInfoPanel(GameObject infopanel)
+        {
+            infoPanel = infopanel;
+        }
       
     }
 }
