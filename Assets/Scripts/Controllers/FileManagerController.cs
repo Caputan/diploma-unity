@@ -56,8 +56,11 @@ namespace Controllers
                 //FileBrowserHelpers.CopyFile(FileBrowser.Result[0], destinationPath);
                 switch (fileTypes)
                 {
-                    case FileTypes.Assebly:
-                        // нужено перенести именно в загрузку.
+                    case FileTypes.Assembly:
+                        localPath[0] = Path.Combine(destinationPath[0],FileBrowserHelpers.GetFilename(FileBrowser.Result[0]));
+                        
+                        FileBrowserHelpers.CopyFile(FileBrowser.Result[0], localPath[0]);
+                        
                         DataBaseController.SetTable(Tables[0]);
                         DataBaseController.AddNewRecordToTable(FileBrowser.Result);
                         break;

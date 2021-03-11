@@ -31,15 +31,6 @@ namespace Diploma.Tables
     
         public ITable GetRecordById(SQLiteConnection connection, int id)
         {
-            // Table<Assemblies> assemblies = context.GetTable<Assemblies>();
-            //
-            // var query = from assembly in assemblies where assembly.Assembly_Id == id select assembly;
-            //
-            // foreach (var assembly in query)
-            // {
-            //     return assembly;
-            // }
-            //
             return connection.Table<Assemblies>().FirstOrDefault(x => x.Assembly_Id == id);
         }
 
