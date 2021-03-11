@@ -2,10 +2,13 @@
 using System.Collections.Generic;
 using Controllers;
 using Diploma.Constructor;
+using Diploma.FileManager;
+using Diploma.Enums;
 using Diploma.Interfaces;
 using Diploma.Tables;
 using Diploma.UI;
 using GameObjectCreating;
+using Interfaces;
 using UnityEngine;
 using UnityEngine.UI;
 using Types = Diploma.Tables.Types;
@@ -19,6 +22,10 @@ namespace Diploma.Controllers
         [SerializeField] private int countOfDetails;
         [SerializeField] private GameObject togglePanelPrefab;
         [SerializeField] private GameObject ToggleGroup;
+
+        [SerializeField] private GameObject toggleLessonPrefab;
+        [SerializeField] private GameObject ParentForLessons;
+        
         [SerializeField] private FileManagerController _fileManager;
         [SerializeField] private Loader3DS _loader3Ds;
         
@@ -46,14 +53,25 @@ namespace Diploma.Controllers
             tables.Add(users); // 4 - users
             tables.Add(videos); // 5 - videos
             
-            //DataBaseController.SetTable(types);
-            //DataBaseController.AddNewRecordToTable(null, "C:/Users/Артем/Desktop/kart.jpg");
+            #endregion
+
+            #region Authentication
+
+            var AuthController = new AuthController(DataBaseController, tables);
+
             #endregion
             
             #region Creation UI and GameContext
             
             _gameContextWithLogic = new GameContextWithLogic();
             _gameContextWithViews = new GameContextWithViews();
+            _gameContextWithLessons = new GameContextWithLessons();
+            
+
+            var uiController = new UIController(ParentForLessons.transform);
+            // добавить соответствующие менюшки ниже
+            // с помощью uiController.AddUIToDictionary()
+            
            
             // тут мы создали базове типизированное меню
             var GameContextWithViewCreator = new GameContexWithViewCreator(
@@ -61,6 +79,8 @@ namespace Diploma.Controllers
                 _gameContextWithLogic,
                 ToggleGroup,
                 togglePanelPrefab,
+                ParentForLessons,
+                toggleLessonPrefab,
                 DataBaseController,
                 tables
                 );
@@ -69,6 +89,10 @@ namespace Diploma.Controllers
 
             _fileManager.DataBaseController = DataBaseController;
             _fileManager.Tables = tables;
+            _fileManager.destinationPath = destinationPath;
+            
+            
+            
             #region Creation new Lession Module
             // данный регион будет вызываться во время создания урока
             var abstractFactory = new AbstractFactory();
@@ -88,6 +112,8 @@ namespace Diploma.Controllers
             _controllers.Add(DataBaseController);
             _controllers.Add(abstractView);
             _controllers.Add(abstractFactoryController);
+            _controllers.Add(uiController);
+            _controllers.Add(AuthController);
             _controllers.Initialization();
         }
         
