@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 namespace Diploma.Controllers
 {
-    public class GameContextWithLogic
+    public sealed class GameContextWithLogic
     {
         //public PlayerModel PlayerModel;
         public Dictionary<int,GameObjectModel> GameObjectModels;

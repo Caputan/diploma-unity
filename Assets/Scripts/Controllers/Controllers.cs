@@ -3,7 +3,7 @@ using Diploma.Interfaces;
 
 namespace Diploma.Controllers
 {
-    public class Controllers: IInitialization, ICleanData, IExecute, ILateExecute
+    public sealed class Controllers: IInitialization, ICleanData, IExecute, ILateExecute
     {
         private readonly List<IInitialization> _initializeControllers;
         private readonly List<IExecute> _executeControllers;

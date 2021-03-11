@@ -2,15 +2,13 @@
 using System.Data.Linq;
 using System.IO;
 using Diploma.Interfaces;
-using Mono.Data.Sqlite;
-using Diploma.Tables;
 using SQLite4Unity3d;
 using UnityEngine;
 using ITable = Diploma.Interfaces.ITable;
 
 namespace Controllers
 {
-    public class DataBaseController : IInitialization
+    public sealed class DataBaseController : IInitialization
     {
         private const string _dbName = "MachinePartsDB.bytes";
         private static DataContext _context;

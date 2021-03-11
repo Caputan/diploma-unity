@@ -16,7 +16,7 @@ using Types = Diploma.Tables.Types;
 
 namespace Diploma.Controllers
 {
-    public class ControleerInitializer : MonoBehaviour
+    public sealed class ControleerInitializer : MonoBehaviour
     {
         [SerializeField] private Button _button;
         [SerializeField] private int countOfDetails;
@@ -31,13 +31,22 @@ namespace Diploma.Controllers
         
         private GameContextWithLogic _gameContextWithLogic;
         private GameContextWithViews _gameContextWithViews;
+        private GameContextWithLessons _gameContextWithLessons;
+        
         private Controllers _controllers;
+        public string[] destinationPath = new string[4];
         private void Start()
         {
             
 
             #region DataBase initialization
 
+            FileManager.FileManager fileManager = new FileManager.FileManager();
+            destinationPath[0] = fileManager.CreateFileFolder("Assemblies");
+            destinationPath[1] = fileManager.CreateFileFolder("Videos");
+            destinationPath[2] = fileManager.CreateFileFolder("Photos");
+            destinationPath[3] = fileManager.CreateFileFolder("Texts");
+            
             var DataBaseController = new DataBaseController();
             AssemliesTable assemblies = new AssemliesTable();
             LessonsTable lessons = new LessonsTable();
@@ -52,7 +61,7 @@ namespace Diploma.Controllers
             tables.Add(types); // 3 - types
             tables.Add(users); // 4 - users
             tables.Add(videos); // 5 - videos
-            
+
             #endregion
 
             #region Authentication
@@ -72,11 +81,11 @@ namespace Diploma.Controllers
             // добавить соответствующие менюшки ниже
             // с помощью uiController.AddUIToDictionary()
             
-           
             // тут мы создали базове типизированное меню
             var GameContextWithViewCreator = new GameContexWithViewCreator(
                 _gameContextWithViews,
                 _gameContextWithLogic,
+                _gameContextWithLessons,
                 ToggleGroup,
                 togglePanelPrefab,
                 ParentForLessons,
@@ -90,8 +99,6 @@ namespace Diploma.Controllers
             _fileManager.DataBaseController = DataBaseController;
             _fileManager.Tables = tables;
             _fileManager.destinationPath = destinationPath;
-            
-            
             
             #region Creation new Lession Module
             // данный регион будет вызываться во время создания урока
