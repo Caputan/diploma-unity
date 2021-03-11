@@ -34,7 +34,7 @@ namespace Diploma.Constructor
                 case TypesOfGearBoxes.Cylindrical:
                     return new GameObject();
                     
-                case TypesOfGearBoxes.Worm_like:
+                case TypesOfGearBoxes.WormLike:
                     return new GameObject();
                 
                 default:

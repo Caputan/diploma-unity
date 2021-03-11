@@ -43,7 +43,7 @@ namespace Diploma.Constructor
         
         public void ChoosedNextStage()
         {
-            _fileManager.ShowSaveDialog(FileTypes.Assebly);
+            _fileManager.ShowSaveDialog(FileTypes.Assembly);
             NextStage.Invoke(_gameContextWithLogic.FactoryTypeForCreating[_toggleID]);
         }
     }
