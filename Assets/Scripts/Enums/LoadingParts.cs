@@ -2,10 +2,14 @@
 {
     public enum LoadingParts
     {
-        LoadPractise = 0,
-        LoadLectures = 1,
-        LoadLesson = 2,
-        LoadAuth = 3,
-        LoadSignUp = 4,
+        None = 0,
+        LoadPractise = 1,
+        LoadLectures = 2,
+        LoadLesson = 3,
+        LoadAuth = 4,
+        LoadSignUp = 5,
+        LoadMain = 6,
+        LoadConstructor = 7,
+        LoadError
     }
 }

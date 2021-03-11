@@ -12,16 +12,6 @@ namespace Diploma.Tables
     {
         public List<Assemblies> GetAllData<Assemblies>(SQLiteConnection connection)
         {
-            // Table<Assemblies> assemblies = context.GetTable<Assemblies>();
-            //
-            // var query = from assembly in assemblies select assembly;
-            // List<ITable> assembliesList = new List<ITable>();
-            // foreach (var assembly in query)
-            // {
-            //     assembliesList.Add(assembly);
-            // }
-            //
-            // return assembliesList;
             List<Assemblies> assemliesList = new List<Assemblies>();
             assemliesList = connection.Table<Assemblies>().ToList();
             
@@ -34,20 +24,15 @@ namespace Diploma.Tables
             return connection.Table<Assemblies>().FirstOrDefault(x => x.Assembly_Id == id);
         }
 
+        public ITable GetRecordByName(SQLiteConnection connection, string name)
+        {
+            return null;
+        }
+
         public void AddNewRecord(SQLiteConnection connection, string[] assemblyParams)
         {
-            // Table<Assemblies> assemblies = context.GetTable<Assemblies>();
-            //
-            // Assemblies newAssembly = new Assemblies()
-            // {
-            //     Assembly_Link = arrayForFiles
-            // };
-            //
-            // assemblies.InsertOnSubmit(newAssembly);
-            // context.SubmitChanges();
             var newAssembly = new Assemblies()
             {
-                Assembly_Id = 4,
                 Assembly_Link = assemblyParams[0]
             };
             connection.Insert(newAssembly);

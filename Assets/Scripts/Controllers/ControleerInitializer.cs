@@ -53,8 +53,12 @@ namespace Diploma.Controllers
             tables.Add(users); // 4 - users
             tables.Add(videos); // 5 - videos
             
-            //DataBaseController.SetTable(types);
-            //DataBaseController.AddNewRecordToTable(null, "C:/Users/Артем/Desktop/kart.jpg");
+            #endregion
+
+            #region Authentication
+
+            var AuthController = new AuthController(DataBaseController, tables);
+
             #endregion
             
             #region Creation UI and GameContext
@@ -109,6 +113,7 @@ namespace Diploma.Controllers
             _controllers.Add(abstractView);
             _controllers.Add(abstractFactoryController);
             _controllers.Add(uiController);
+            _controllers.Add(AuthController);
             _controllers.Initialization();
         }
         
