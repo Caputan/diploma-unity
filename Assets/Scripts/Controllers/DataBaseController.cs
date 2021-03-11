@@ -47,6 +47,11 @@ namespace Controllers
             return _activeTable.GetRecordById(_connection, id);
         }
 
+        public ITable GetRecordFromTableByName(string name)
+        {
+            return _activeTable.GetRecordByName(_connection, name);
+        }
+
         public byte[] ConvertToBytes(string fileName)
         {
             if (fileName != null)

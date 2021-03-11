@@ -11,15 +11,6 @@ namespace Diploma.Tables
     {
         public List<Types> GetAllData<Types>(SQLiteConnection connection)
         {
-            // Table<Types> types = context.GetTable<Types>();
-            //
-            // var query = from type in types select type;
-            //
-            // List<ITable> typesList = new List<ITable>();
-            // foreach (var type in query)
-            // {
-            //     typesList.Add(type);
-            // }
             List<Types> typesList = new List<Types>();
             typesList = connection.Table<Types>().ToList();
             
@@ -28,33 +19,18 @@ namespace Diploma.Tables
     
         public ITable GetRecordById(SQLiteConnection connection, int id)
         {
-            // Table<Types> types = context.GetTable<Types>();
-            //
-            // var query = from type in types where type.Type_Id == id select type;
-            //
-            // foreach (var type in query)
-            // {
-            //     return type;
-            // }
-
             return connection.Table<Types>().FirstOrDefault(x => x.Type_Id == id);
+        }
+        
+        public ITable GetRecordByName(SQLiteConnection connection, string name)
+        {
+            return null;
         }
 
         public void AddNewRecord(SQLiteConnection connection, string[] typeParams)
         {
-            // Table<Types> types = context.GetTable<Types>();
-            //
-            // Types newType = new Types()
-            // {
-            //     Type_Id = 4,
-            //     Type_Image = arrayForFiles
-            // };
-            //
-            // types.InsertOnSubmit(newType);
-            // context.SubmitChanges();
             var newType = new Types()
             {
-                Type_Id = 4,
                 Type_Image = typeParams[0]
             };
             connection.Insert(newType);

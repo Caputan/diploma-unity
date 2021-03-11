@@ -12,15 +12,6 @@ namespace Diploma.Tables
     {
         public List<Users> GetAllData<Users>(SQLiteConnection connection)
         {
-            // Table<Users> users = context.GetTable<Users>();
-            //
-            // var query = from user in users select user;
-            //
-            // List<ITable> usersList = new List<ITable>();
-            // foreach (var user in query)
-            // {
-            //     usersList.Add(user);
-            // }
             List<Users> usersList = new List<Users>();
             usersList = connection.Table<Users>().ToList();
             
@@ -30,34 +21,18 @@ namespace Diploma.Tables
     
         public ITable GetRecordById(SQLiteConnection connection, int id)
         {
-            // Table<Users> users = context.GetTable<Users>();
-            //
-            // var query = from user in users where user.User_Id == id select user;
-            //
-            // foreach (var user in query)
-            // {
-            //     return user;
-            // }
-
             return connection.Table<Users>().FirstOrDefault(x => x.User_Id == id);
         }
+
+        public ITable GetRecordByName(SQLiteConnection connection, string name)
+        {
+            return connection.Table<Users>().FirstOrDefault(x => x.User_Name == name);
+        }
+
         public void AddNewRecord(SQLiteConnection connection, string[] userParams)
         {
-            // Table<Users> users = context.GetTable<Users>();
-            //
-            // Users newUser = new Users()
-            // {
-            //     User_Name = userParams[0],
-            //     User_Email = userParams[1],
-            //     User_Password = userParams[2],
-            //     User_Role = userParams[3]
-            // };
-            //
-            // users.InsertOnSubmit(newUser);
-            // context.SubmitChanges();
             var newUser = new Users()
             {
-                User_Id = 4,
                 User_Name = userParams[0],
                 User_Email = userParams[1],
                 User_Password = userParams[2],
