@@ -13,17 +13,6 @@ namespace Diploma.Tables
     {
         public List<Lessons> GetAllData<Lessons>(SQLiteConnection connection)
         {
-            // Table<Lessons> lessons = context.GetTable<Lessons>();
-            //
-            // var query = from lesson in lessons select lesson;
-            //
-            // List<ITable> lessonsList = new List<ITable>();
-            // foreach (var lesson in query)
-            // {
-            //     lessonsList.Add(lesson);
-            // }
-            //
-            // return lessonsList;
             List<Lessons> lessonsList = new List<Lessons>();
             lessonsList = connection.Table<Lessons>().ToList();
             
@@ -33,35 +22,18 @@ namespace Diploma.Tables
     
         public ITable GetRecordById(SQLiteConnection connection, int id)
         {
-            // Table<Lessons> lessons = context.GetTable<Lessons>();
-            //
-            // var query = from lesson in lessons where lesson.Lesson_Id == id select lesson;
-            //
-            // foreach (var lesson in query)
-            // {
-            //     return lesson;
-            // }
-
             return connection.Table<Lessons>().FirstOrDefault(x => x.Lesson_Id == id);
+        }
+
+        public ITable GetRecordByName(SQLiteConnection connection, string name)
+        {
+            return null;
         }
 
         public void AddNewRecord(SQLiteConnection connection, string[] lessonParams)
         {
-            // Table<Lessons> lessons = context.GetTable<Lessons>();
-            //
-            // Lessons newLesson = new Lessons()
-            // {
-            //     Lesson_Preview = Int32.Parse(lessonParams[0]),
-            //     Lesson_Text_Id = Int32.Parse(lessonParams[1]),
-            //     Lesson_Video_Id = Int32.Parse(lessonParams[2]),
-            //     Lesson_Assembly_Id = Int32.Parse(lessonParams[3])
-            // };
-            //
-            // lessons.InsertOnSubmit(newLesson);
-            // context.SubmitChanges();
             var newLesson = new Lessons()
             {
-                Lesson_Id = 4,
                 Lesson_Preview = lessonParams[0],
                 Lesson_Text_Id = Int32.Parse(lessonParams[1]),
                 Lesson_Video_Id = Int32.Parse(lessonParams[2]),

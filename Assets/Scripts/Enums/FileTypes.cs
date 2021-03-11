@@ -4,7 +4,7 @@
     {
         Image,
         Video,
-        Assebly,
+        Assembly,
         Text,
         LessonPreview,
         

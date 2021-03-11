@@ -12,15 +12,6 @@ namespace Diploma.Tables
     {
         public List<Videos> GetAllData<Videos>(SQLiteConnection connection)
         {
-            // Table<Videos> videos = context.GetTable<Videos>();
-            //
-            // var query = from video in videos select video;
-            ///
-            // List<ITable> videosList = new List<ITable>();
-            // foreach (var video in query)
-            // {
-            //     videosList.Add(video);
-            // }
             List<Videos> videosList = new List<Videos>();
             videosList = connection.Table<Videos>().ToList();
             
@@ -30,32 +21,18 @@ namespace Diploma.Tables
     
         public ITable GetRecordById(SQLiteConnection connection, int id)
         {
-            // Table<Videos> videos = context.GetTable<Videos>();
-            //
-            // var query = from video in videos where video.Video_Id == id select video;
-            //
-            // foreach (var video in query)
-            // {
-            //     return video;
-            // }
-
             return connection.Table<Videos>().FirstOrDefault(x => x.Video_Id == id);
+        }
+        
+        public ITable GetRecordByName(SQLiteConnection connection, string name)
+        {
+            return null;
         }
 
         public void AddNewRecord(SQLiteConnection connection, string[] videoParams)
         {
-            // Table<Videos> videos = context.GetTable<Videos>();
-            //
-            // Videos newVideo = new Videos()
-            // {
-            //     Video_Link = videoParams[0]
-            // };
-            //
-            // videos.InsertOnSubmit(newVideo);
-            // context.SubmitChanges();
             var newVideo = new Videos()
             {
-                Video_Id = 4,
                 Video_Link = videoParams[0]
             };
             connection.Insert(newVideo);

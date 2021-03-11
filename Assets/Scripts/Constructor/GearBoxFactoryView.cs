@@ -10,7 +10,7 @@ using UnityEngine.UI;
 
 namespace Diploma.Constructor
 {
-    public class GearBoxFactoryView: IFactoryView,IInitialization,IChooseGearboxLowType
+    public class GearBoxFactoryView : IFactoryView,IInitialization,IChooseGearboxLowType
     {
         public List<ITable> Tables { get; }
         private readonly GameContextWithViews _gameContextWithViews;
@@ -57,7 +57,7 @@ namespace Diploma.Constructor
 
         public void ChoosedNextStage()
         {
-           NextStage.Invoke(LoadingParts.LoadLections);
+           NextStage.Invoke(LoadingParts.LoadLectures);
         }
 
         public void LoadNextUi()

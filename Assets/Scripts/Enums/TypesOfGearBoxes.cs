@@ -4,6 +4,6 @@
     {
         Cylindrical,
         Conical,
-        Worm_like,
+        WormLike,
     }
 }

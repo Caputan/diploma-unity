@@ -57,7 +57,7 @@ namespace Controllers
                 string[] localPath = new string[1];
                 switch (fileTypes)
                 {
-                    case FileTypes.Assebly:
+                    case FileTypes.Assembly:
                         localPath[0] = Path.Combine(destinationPath[0],FileBrowserHelpers.GetFilename(FileBrowser.Result[0]));
                         
                         FileBrowserHelpers.CopyFile(FileBrowser.Result[0], localPath[0]);

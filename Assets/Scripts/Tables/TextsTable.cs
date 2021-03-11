@@ -14,16 +14,6 @@ namespace Diploma.Tables
     {
         public List<Texts> GetAllData<Texts>(SQLiteConnection connection)
         {
-            // Table<Texts> texts = context.GetTable<Texts>();
-            //
-            // var query = from text in texts select text;
-            //
-            // List<ITable> textsList = new List<ITable>();
-            // foreach (var text in query)
-            // {
-            //     Debug.Log(text.Text_Link);
-            //     textsList.Add(text);
-            // }
             List<Texts> textsList = new List<Texts>();
             textsList = connection.Table<Texts>().ToList();
             
@@ -33,32 +23,18 @@ namespace Diploma.Tables
     
         public ITable GetRecordById(SQLiteConnection connection, int id)
         {
-            // Table<Texts> texts = context.GetTable<Texts>();
-            //
-            // var query = from text in texts where text.Text_Id == id select text;
-            //
-            // foreach (var text in query)
-            // {
-            //     return text;
-            // }
-
             return connection.Table<Texts>().FirstOrDefault(x => x.Text_Id == id);
+        }
+
+        public ITable GetRecordByName(SQLiteConnection connection, string name)
+        {
+            return null;
         }
 
         public void AddNewRecord(SQLiteConnection connection, string[] textParams)
         {
-            // Table<Texts> texts = context.GetTable<Texts>();
-            //
-            // Texts newText = new Texts()
-            // {
-            //     Text_Link = textParams[0]
-            // };
-            //
-            // texts.InsertOnSubmit(newText);
-            // context.SubmitChanges();
             var newText = new Texts()
             {
-                Text_Id = 5,
                 Text_Link = textParams[0]
             };
             connection.Insert(newText);
