@@ -67,6 +67,7 @@
             <e p="GameObjectInitialization.cs" t="Include" />
             <e p="GearBoxFactoryController.cs" t="Include" />
             <e p="ListOfLessonsController.cs" t="Include" />
+            <e p="MainSceneInitialization.cs" t="Include" />
           </e>
           <e p="Enums" t="Include">
             <e p="ComboType.cs" t="Include" />

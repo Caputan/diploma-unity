@@ -7,6 +7,11 @@ namespace Controllers
     {
         public Dictionary<int, ListOfLessonsView> _lessonsViews;
 
+        public GameContextWithLessons()
+        {
+            _lessonsViews = new Dictionary<int, ListOfLessonsView>();
+        }
+        
         public void AddLessonsView(int id,ListOfLessonsView lessonsView)
         {
             _lessonsViews.Add(id,lessonsView);

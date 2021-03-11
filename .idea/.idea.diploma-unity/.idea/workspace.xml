@@ -20,25 +20,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9a27c574-4a30-4862-a74f-153a103b04b8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/GameContextWithLessons.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/GameContextWithLessons.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Interfaces/IShowInfoFromChoosing.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Interfaces/IShowInfoFromChoosing.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/ListOfLessons/ListOfLessonsViewCreator.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/ListOfLessons/ListOfLessonsViewCreator.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/MainSceneInitialization.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/MainSceneInitialization.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.diploma-unity/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.diploma-unity/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.diploma-unity/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.diploma-unity/.idea/indexLayout.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.diploma-unity/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.diploma-unity/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.diploma-unity/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.diploma-unity/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Panel.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Panel.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/TestAsset.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/TestAsset.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/ControleerInitializer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/ControleerInitializer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/ChooseALesson.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/ChooseALesson.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/GameContextWithLessons.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/GameContextWithLessons.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/GameContextWithViews.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/GameContextWithViews.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/ListOfLessonsController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/ListOfLessonsController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interfaces/IShowInfoFromChoosing.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Interfaces/IShowInfoFromChoosing.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/ListOfLessons/ListOfLessonsView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ListOfLessons/ListOfLessonsView.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/GameContexWithViewCreator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/GameContexWithViewCreator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Utils.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/MachinePartsDB.bytes" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StreamingAssets/MachinePartsDB.bytes" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -67,15 +59,16 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/FileManager/CopyNeedFilesInFolder.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/ControleerInitializer.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/ListOfLessons/ListOfLessonsViewCreator.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/GameContextWithLessons.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/GameContextWithViews.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/UI/GameContexWithViewCreator.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/ListOfLessons/ListOfLessonsView.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Interfaces/IShowInfoFromChoosing.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Tables/AssembiesTable.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Interfaces/IDataBase.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/DataBaseController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/ListOfLessonsController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Interfaces/IShowInfoFromChoosing.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/ListOfLessons/ListOfLessonsView.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/GameContextWithLessons.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/GameContextWithViews.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UI/GameContexWithViewCreator.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/MainSceneInitialization.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1oVh7QrK5P1QV67f8aHYDy536Km" />
@@ -149,6 +142,8 @@
       <workItem from="1615221709318" duration="6416000" />
       <workItem from="1615364045044" duration="4091000" />
       <workItem from="1615373341574" duration="12585000" />
+      <workItem from="1615452109043" duration="2848000" />
+      <workItem from="1615467513003" duration="2386000" />
     </task>
     <servers />
   </component>

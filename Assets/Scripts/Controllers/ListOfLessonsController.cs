@@ -36,11 +36,10 @@ namespace Controllers
             }
         }
 
-        private void ShowInfoAbout(int id,DataBaseController dataBaseController,
-            List<IDataBase> tables)
+        private void ShowInfoAbout(int id)
         {
-            dataBaseController.SetTable(tables[1]);
-            Lessons lesson = (Lessons)dataBaseController.GetRecordFromTableById(id);
+            _dataBaseController.SetTable(_dataBases[1]);
+            Lessons lesson = (Lessons)_dataBaseController.GetRecordFromTableById(id);
             
             foreach (var key in _gameContextWithViews.ChoosenLessonToggles.Keys)
             {
@@ -51,8 +50,8 @@ namespace Controllers
                     _gameContextWithViews.infoPanel.
                         GetComponentInChildren<RawImage>().texture = tex;
                     
-                    dataBaseController.SetTable(tables[2]);
-                    Texts texts = (Texts)dataBaseController.GetRecordFromTableById(lesson.Lesson_Text_Id);
+                    _dataBaseController.SetTable(_dataBases[2]);
+                    Texts texts = (Texts)_dataBaseController.GetRecordFromTableById(lesson.Lesson_Text_Id);
                     StreamReader streamReader = new StreamReader(texts.Text_Link);
                     // хз на счет этого. надо протестить.
                     _gameContextWithViews.infoPanel.

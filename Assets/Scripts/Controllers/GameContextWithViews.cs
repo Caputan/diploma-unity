@@ -15,6 +15,7 @@ namespace Diploma.Controllers
         {
             ChoosenToggles = new Dictionary<int,GameObject>();
             Buttons = new Dictionary<int, Button>();
+            ChoosenLessonToggles = new Dictionary<int, GameObject>();
         }
         
         public void AddToggles(int id,GameObject toggle)

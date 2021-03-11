@@ -73,12 +73,12 @@ namespace Diploma.UI
                 var lessonToggle = _toggleLessionsFactory.Create(_lessionsParent.transform);
                 lessonToggle.transform.localPosition = new Vector3(0,0,0);
                 var tex = new Texture2D(5, 5);
-                //tex.LoadImage(File.ReadAllBytes(lesson.Lesson_Preview));
-                //lessonToggle.GetComponentInChildren<RawImage>().texture = tex;
+                tex.LoadImage(File.ReadAllBytes(lesson.Lesson_Preview));
+                lessonToggle.GetComponentInChildren<RawImage>().texture = tex;
                 
                 _gameContextWithLessons.AddLessonsView(lesson.Lesson_Id,
                     new ListOfLessonsView(lesson.Lesson_Id,
-                        lessonToggle,_dataBaseController, _tables));
+                        lessonToggle));
                 _gameContextWithViews.AddLessonsToggles(lesson.Lesson_Id,lessonToggle);
             }
             

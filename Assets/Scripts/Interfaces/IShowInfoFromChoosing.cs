@@ -7,6 +7,6 @@ namespace Interfaces
 {
     public interface IShowInfoFromChoosing
     {
-       event Action<int,DataBaseController,List<IDataBase>> ChooseAnotherLession;
+       event Action<int> ChooseAnotherLession;
     }
 }
