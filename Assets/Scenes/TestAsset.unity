@@ -377,6 +377,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1038110743}
   - component: {fileID: 1038110744}
+  - component: {fileID: 1038110745}
   m_Layer: 5
   m_Name: ToggleGroupContainer
   m_TagString: Untagged
@@ -400,8 +401,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 994, y: 905}
+  m_AnchoredPosition: {x: 0, y: 5.1}
+  m_SizeDelta: {x: 994, y: 450.37903}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1038110744
 MonoBehaviour:
@@ -416,6 +417,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_AllowSwitchOff: 1
+--- !u!114 &1038110745
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1038110742}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a8695521f0d02e499659fee002a26c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Padding:
+    m_Left: 0
+    m_Right: 0
+    m_Top: 0
+    m_Bottom: 0
+  m_ChildAlignment: 0
+  m_StartCorner: 0
+  m_StartAxis: 0
+  m_CellSize: {x: 100, y: 100}
+  m_Spacing: {x: 0, y: 0}
+  m_Constraint: 0
+  m_ConstraintCount: 2
 --- !u!1 &1173066312
 GameObject:
   m_ObjectHideFlags: 0
@@ -613,9 +638,9 @@ MonoBehaviour:
   togglePanelPrefab: {fileID: 5877053247081451630, guid: f470d19f7a58ed9449b10ce3d899f0fa,
     type: 3}
   ToggleGroup: {fileID: 1038110742}
-  toggleLessionPrefab: {fileID: 3922595144111991877, guid: 843a12e4796e83047b95234fc24902da,
+  toggleLessonPrefab: {fileID: 8469944941155956461, guid: d1dccbba4139b764fbc4cc5cc329749d,
     type: 3}
-  ParentForLessions: {fileID: 909941071}
+  ParentForLessons: {fileID: 909941071}
   _fileManager: {fileID: 1801427347}
   _loader3Ds: {fileID: 1801427348}
   destinationPath:
@@ -649,7 +674,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dcc8c3af3a9e4038abb9663c8e9ca2e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Loader3Ds: {fileID: 0}
+  Loader3Ds: {fileID: 1801427348}
   destinationPath:
   - 
   - 
