@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.IO;
+using Coroutine;
 
 public class Loader3DS : MonoBehaviour {
 
@@ -21,7 +22,7 @@ public class Loader3DS : MonoBehaviour {
 	
 	public void StartParsing(string pathOfModel)
 	{
-		StartCoroutine(Loader(pathOfModel));
+		Loader(pathOfModel).StartCoroutine(out _);
 	}
 
 	private IEnumerator Loader (string path)
@@ -144,7 +145,8 @@ public class Loader3DS : MonoBehaviour {
 						myFileStream.BaseStream.Seek(chunk_lenght-6, SeekOrigin.Current);
 						break;
 				}
-				yield return StartCoroutine (SetMesh());
+
+				SetMesh().StartCoroutine(out _);
 			}
 
 			myFileStream.Close ();
