@@ -1,55 +1,46 @@
-﻿using System.Collections;
-using UnityEngine;
+﻿using System;
 using System.IO;
-using SimpleFileBrowser;
+using Diploma.Interfaces;
+using Interfaces;
 
-public class FileManager : MonoBehaviour
+namespace Diploma.Managers
 {
-    // Start is called before the first frame update
-    void Start()
+    public class FileManager: IFileManager
     {
-		FileBrowser.SetFilters( true, new FileBrowser.Filter( "Assemblies", ".3do" ), 
-			new FileBrowser.Filter( "Text Files", ".doc", ".pdf", ".docx" ), 
-			new FileBrowser.Filter("Videos", ".mp4") );
-		
-		FileBrowser.SetExcludedExtensions( ".lnk", ".tmp", ".zip", ".rar", ".exe" );
-		
+        private readonly string _storage;
+        
+        public FileManager()
+        {
+            var platform = Environment.OSVersion.Platform;
+            var homePath = (platform == PlatformID.Unix || platform == PlatformID.MacOSX)
+                ? Environment.GetEnvironmentVariable("HOME")
+                : Environment.ExpandEnvironmentVariables("%HOMEDRIVE%%HOMEPATH%");
+            
+            _storage = Path.Combine(Path.Combine(homePath, "Documents"), "MDGameStorage");
+            Directory.CreateDirectory(_storage);
+        }
 
-		// FileBrowser.AddQuickLink( "Users", "C:\\Users", null );
-	}
-
-    public void ShowLoadDialog()
-    {
-	    StartCoroutine(ShowLoadDialogCoroutine());
-    }
-
-    public void ShowSaveDialog()
-    {
-	    StartCoroutine(ShowSaveDialogCoroutine());
-    }
+        /// <inheritdoc />
+        public bool FileExists(int FileId, string fileName)
+        {
+            var filePath = Path.Combine(_storage, FileId.ToString(), fileName);
+            return File.Exists(filePath);
+        }
 
 
-    private IEnumerator ShowLoadDialogCoroutine()
-    {
-	    yield return FileBrowser.WaitForLoadDialog(FileBrowser.PickMode.FilesAndFolders, true, null, null,
-		    "Выберите файл для загрузки", "Загрузить");
+        /// <inheritdoc />
+        public string CreateFileFolder(string FileId)
+        {
+            var Folder = Path.Combine(_storage, FileId);
+            Directory.CreateDirectory(Folder);
+            return Folder;
+        }
 
-	    if (FileBrowser.Success)
-	    {
-		    //Manipulations with file
-	    }
-    }
-
-    private IEnumerator ShowSaveDialogCoroutine()
-    {
-	    yield return FileBrowser.WaitForSaveDialog(FileBrowser.PickMode.FilesAndFolders, true, null, null,
-		    "Save Files", "Save");
-
-	    if (FileBrowser.Success)
-	    {
-		    string destinationPath = Path.Combine(Application.persistentDataPath,
-			    FileBrowserHelpers.GetFilename(FileBrowser.Result[0]));
-		    FileBrowserHelpers.CopyFile(FileBrowser.Result[0], destinationPath);
-	    }
+        /// <inheritdoc />
+        public void DeleteFolder(int guideId)
+        {
+            var folderPath = Path.Combine(_storage, guideId.ToString());
+            Directory.Delete(folderPath, true);
+        }
     }
 }

@@ -1,8 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.IO;
+using Coroutine;
 
-public class Loader3DS : MonoBehaviour {
+public class Loader3DS {
 
 	public string modelPath = "C:/diploma-unity/Assets/Fence.3ds";
 	public Shader modelShader;
@@ -19,12 +20,12 @@ public class Loader3DS : MonoBehaviour {
 	private string hierarchyPos = "";
 	
 	
-	public void StartParsing(string pathOfModel)
+	public void StartParsing(string pathOfModel, GameObject parent)
 	{
-		StartCoroutine(Loader(pathOfModel));
+		Loader(pathOfModel, parent).StartCoroutine(out _);
 	}
 
-	private IEnumerator Loader (string path)
+	private IEnumerator Loader (string path, GameObject parent)
 	{
 		
 		if (!File.Exists (path)) 
@@ -144,7 +145,8 @@ public class Loader3DS : MonoBehaviour {
 						myFileStream.BaseStream.Seek(chunk_lenght-6, SeekOrigin.Current);
 						break;
 				}
-				yield return StartCoroutine (SetMesh());
+
+				SetMesh(parent).StartCoroutine(out _);
 			}
 
 			myFileStream.Close ();
@@ -166,7 +168,7 @@ public class Loader3DS : MonoBehaviour {
 		}
 	}
 
-	private IEnumerator SetMesh ()
+	private IEnumerator SetMesh(GameObject parent)
 	{
 		if (nameModel == prevPartName || nameModel == "")
 			yield break;
@@ -174,7 +176,7 @@ public class Loader3DS : MonoBehaviour {
 		CalculateNormals(verticesModel);
 		
 		GameObject gameObjectMesh = new GameObject(nameModel);
-		gameObjectMesh.transform.parent = gameObject.transform;
+		gameObjectMesh.transform.parent = parent.transform;
 
 		gameObjectMesh.AddComponent<MeshFilter>();
 		gameObjectMesh.AddComponent<MeshRenderer>();

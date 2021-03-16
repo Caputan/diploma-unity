@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using Controllers;
 using Diploma.Constructor;
-using Diploma.FileManager;
 using Diploma.Enums;
 using Diploma.Interfaces;
 using Diploma.Tables;
 using Diploma.UI;
+using Diploma.Managers;
 using GameObjectCreating;
 using Interfaces;
 using UnityEngine;
@@ -26,7 +26,7 @@ namespace Diploma.Controllers
         [SerializeField] private GameObject toggleLessonPrefab;
         [SerializeField] private GameObject ParentForLessons;
         
-        [SerializeField] private FileManagerController _fileManager;
+        [SerializeField] private FileManagerController _fileManagerController;
         [SerializeField] private Loader3DS _loader3Ds;
         
         private GameContextWithLogic _gameContextWithLogic;
@@ -41,7 +41,7 @@ namespace Diploma.Controllers
 
             #region DataBase initialization
 
-            FileManager.FileManager fileManager = new FileManager.FileManager();
+            var fileManager = new FileManager();
             destinationPath[0] = fileManager.CreateFileFolder("Assemblies");
             destinationPath[1] = fileManager.CreateFileFolder("Videos");
             destinationPath[2] = fileManager.CreateFileFolder("Photos");
@@ -76,6 +76,8 @@ namespace Diploma.Controllers
             _gameContextWithViews = new GameContextWithViews();
             _gameContextWithLessons = new GameContextWithLessons();
             
+            
+            
 
             var uiController = new UIController(ParentForLessons.transform);
             // добавить соответствующие менюшки ниже
@@ -96,14 +98,16 @@ namespace Diploma.Controllers
             
             #endregion
 
-            _fileManager.DataBaseController = DataBaseController;
-            _fileManager.Tables = tables;
-            _fileManager.destinationPath = destinationPath;
-            
+
+            _fileManagerController = new FileManagerController
+            {
+                DataBaseController = DataBaseController, Tables = tables, destinationPath = destinationPath
+            };
+
             #region Creation new Lession Module
             // данный регион будет вызываться во время создания урока
             var abstractFactory = new AbstractFactory();
-            var abstractView = new AbstractView(_gameContextWithViews,_gameContextWithLogic,_button,_fileManager);
+            var abstractView = new AbstractView(_gameContextWithViews,_gameContextWithLogic,_button,_fileManagerController);
             var abstractFactoryController = new AbstractFactoryController(abstractView,abstractFactory);
             
             #endregion
@@ -121,6 +125,7 @@ namespace Diploma.Controllers
             _controllers.Add(abstractFactoryController);
             _controllers.Add(uiController);
             _controllers.Add(AuthController);
+            _controllers.Add(_fileManagerController);
             _controllers.Initialization();
         }
         
