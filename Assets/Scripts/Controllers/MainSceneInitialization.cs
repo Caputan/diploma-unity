@@ -79,21 +79,22 @@ namespace Diploma.Controllers
             _gameContextWithUI = new GameContextWithUI();
             
             // тут мы создали базове типизированное меню
-            // var GameContextWithViewCreator = new GameContexWithViewCreator(
-            //     _gameContextWithViews,
-            //     _gameContextWithLogic,
-            //     _gameContextWithLessons,
-            //     _gameContextWithUI,
-            //     ToggleGroup,
-            //     togglePanelPrefab,
-            //     ParentForLessons,
-            //     toggleLessonPrefab,
-            //     DataBaseController,
-            //     tables
-            //     );
-
+            var GameContextWithViewCreator = new GameContexWithViewCreator(
+                _gameContextWithViews,
+                _gameContextWithLogic,
+                _gameContextWithLessons,
+                _gameContextWithUI,
+                ToggleGroup,
+                togglePanelPrefab,
+                ParentForLessons,
+                toggleLessonPrefab,
+                DataBaseController,
+                tables
+                );
+            
             MainMenuButtons = new List<Button>();
             MainMenuButtons.AddRange(MainMenuPrefab.GetComponentsInChildren<Button>());
+            
             new MainMenuAddButtonsToDictionary(MainMenuButtons,_gameContextWithViews);
             var MainMenuInitilization = new MainMenuInitialization(
                 _gameContextWithViews,
@@ -107,16 +108,16 @@ namespace Diploma.Controllers
             // добавить соответствующие менюшки ниже
             // с помощью uiController.AddUIToDictionary()
             #endregion
-
+            
             // _fileManager.DataBaseController = DataBaseController;
             // _fileManager.Tables = tables;
             // _fileManager.destinationPath = destinationPath;
             
             #region Creation new Lession Module
             // данный регион будет вызываться во время создания урока
-            //var abstractFactory = new AbstractFactory();
-            //var abstractView = new AbstractView(_gameContextWithViews,_gameContextWithLogic,_button,_fileManager);
-            //var abstractFactoryController = new AbstractFactoryController(abstractView,abstractFactory);
+            var abstractFactory = new AbstractFactory();
+            var abstractView = new AbstractView(_gameContextWithViews,_gameContextWithLogic,MainMenuButtons[0],_fileManager);
+            var abstractFactoryController = new AbstractFactoryController(abstractView,abstractFactory);
             
             #endregion
            

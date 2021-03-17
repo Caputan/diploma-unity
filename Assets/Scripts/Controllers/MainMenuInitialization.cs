@@ -25,6 +25,7 @@ namespace Controllers
             _mainParent = MainParent;
             _prefabMain = PrefabMain;
             _mainMenuFactory = new MainMenuFactory(_prefabMain);
+            
         }
         public void Initialization()
         {
@@ -33,6 +34,7 @@ namespace Controllers
             var MainMenu = _mainMenuFactory.Create(_mainParent.transform);
             MainMenu.transform.localPosition = new Vector3(0,0,0);
             var MainMenuLogic = new MainMenuLogic(_gameContextWithViews.Buttons);
+            MainMenuLogic.Initialization();
             _gameContextWithUI.AddUIToDictionary(LoadingParts.LoadMain, MainMenu);
             _gameContextWithUI.AddUILogic(LoadingParts.LoadMain,MainMenuLogic);
             
