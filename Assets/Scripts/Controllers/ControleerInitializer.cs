@@ -79,22 +79,22 @@ namespace Diploma.Controllers
             
             
 
-            var uiController = new UIController(ParentForLessons.transform);
+            //var uiController = new UIController();
             // добавить соответствующие менюшки ниже
             // с помощью uiController.AddUIToDictionary()
             
             // тут мы создали базове типизированное меню
-            var GameContextWithViewCreator = new GameContexWithViewCreator(
-                _gameContextWithViews,
-                _gameContextWithLogic,
-                _gameContextWithLessons,
-                ToggleGroup,
-                togglePanelPrefab,
-                ParentForLessons,
-                toggleLessonPrefab,
-                DataBaseController,
-                tables
-                );
+            // var GameContextWithViewCreator = new GameContexWithViewCreator(
+            //     _gameContextWithViews,
+            //     _gameContextWithLogic,
+            //     _gameContextWithLessons,
+            //     ToggleGroup,
+            //     togglePanelPrefab,
+            //     ParentForLessons,
+            //     toggleLessonPrefab,
+            //     DataBaseController,
+            //     tables
+            //     );
             
             #endregion
 
@@ -119,11 +119,11 @@ namespace Diploma.Controllers
             var GameObjectInitilization = new GameObjectInitialization(Pool);
 
             _controllers = new Controllers();
-            _controllers.Add(GameContextWithViewCreator);
+           // _controllers.Add(GameContextWithViewCreator);
             _controllers.Add(DataBaseController);
             _controllers.Add(abstractView);
             _controllers.Add(abstractFactoryController);
-            _controllers.Add(uiController);
+            //_controllers.Add(uiController);
             _controllers.Add(AuthController);
             _controllers.Add(_fileManagerController);
             _controllers.Initialization();

@@ -18,6 +18,7 @@ namespace Diploma.UI
         private readonly GameContextWithViews _gameContextWithViews;
         private readonly GameContextWithLogic _gameContextWithLogic;
         private readonly GameContextWithLessons _gameContextWithLessons;
+        private readonly GameContextWithUI _gameContextWithUI;
         private readonly GameObject _canvasParent;
         private GameObject _prefabTogglePanel;
         private readonly GameObject _lessionsParent;
@@ -31,13 +32,18 @@ namespace Diploma.UI
         public GameContexWithViewCreator(GameContextWithViews gameContextWithViews,
             GameContextWithLogic gameContextWithLogic,
             GameContextWithLessons gameContextWithLessons,
+            GameContextWithUI gameContextWithUI,
             GameObject CanvasParent,GameObject PrefabTogglePanel,
             GameObject LessionsParent,GameObject PrefabToggleLessions,
             DataBaseController dataBaseController,List<IDataBase> tables)
         {
+            
+            //надо бы его разгрузить...
+            
             _gameContextWithViews = gameContextWithViews;
             _gameContextWithLogic = gameContextWithLogic;
             _gameContextWithLessons = gameContextWithLessons;
+            _gameContextWithUI = gameContextWithUI;
             _canvasParent = CanvasParent;
             _prefabTogglePanel = PrefabTogglePanel;
             _lessionsParent = LessionsParent;
@@ -50,20 +56,26 @@ namespace Diploma.UI
 
         public void Initialization()
         {
+            #region Creation Toggles Creation
+
             _dataBaseController.SetTable(_tables[3]);
             List<Types> dataTypesFromTable = _dataBaseController.GetDataFromTable<Types>();
             int index = 0;
             foreach (FactoryType factoryType in Enum.GetValues(typeof(FactoryType)))
             {
                 var toggle = _togglePanelFactory.Create(_canvasParent.transform);
-                toggle.transform.localPosition = new Vector3(0,0,0);
+                toggle.transform.localPosition = new Vector3(0, 0, 0);
                 var tex = new Texture2D(5, 5);
                 tex.LoadImage(File.ReadAllBytes(dataTypesFromTable[index].Type_Image));
                 toggle.GetComponentInChildren<RawImage>().texture = tex;
-                _gameContextWithLogic.AddFactoryTypeForCreating(toggle.GetInstanceID(),factoryType);
-                _gameContextWithViews.AddToggles(toggle.GetInstanceID(),toggle);
+                _gameContextWithLogic.AddFactoryTypeForCreating(toggle.GetInstanceID(), factoryType);
+                _gameContextWithViews.AddToggles(toggle.GetInstanceID(), toggle);
                 index++;
             }
+
+            #endregion
+
+            #region Lessons Toggles Creations
 
             _dataBaseController.SetTable(_tables[1]);
             List<Lessons> dataLessonsFromTable = _dataBaseController.GetDataFromTable<Lessons>();
@@ -82,6 +94,9 @@ namespace Diploma.UI
                 _gameContextWithViews.AddLessonsToggles(lesson.Lesson_Id,lessonToggle);
             }
             
+            #endregion
+
+           
         }
     }
 }

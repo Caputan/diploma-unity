@@ -20,18 +20,34 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9a27c574-4a30-4862-a74f-153a103b04b8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/MainSceneInitialization.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/MainSceneInitialization.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scenes/StartScene.unity" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scenes/StartScene.unity.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/GameContextWithUI.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/GameContextWithUI.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/InputController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/InputController.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/MainMenuInitialization.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/MainMenuInitialization.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Interfaces/IAllButtonsEnums.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Interfaces/IAllButtonsEnums.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Interfaces/IUIMainMenu.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Interfaces/IUIMainMenu.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Interfaces/IUIObject.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Interfaces/IUIObject.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/MainMenuAddButtonsToDictionary.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/MainMenuAddButtonsToDictionary.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/MainMenuFactory.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/MainMenuFactory.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/MainMenuLogic.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/MainMenuLogic.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.diploma-unity/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.diploma-unity/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.diploma-unity/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.diploma-unity/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/ChooseALesson.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/ChooseALesson.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/GameContextWithLessons.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/GameContextWithLessons.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/ControleerInitializer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/ControleerInitializer.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/GameContextWithViews.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/GameContextWithViews.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/ListOfLessonsController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/ListOfLessonsController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interfaces/IShowInfoFromChoosing.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Interfaces/IShowInfoFromChoosing.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ListOfLessons/ListOfLessonsView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ListOfLessons/ListOfLessonsView.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/MainSceneInitialization.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/MainSceneInitialization.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/UIController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/UIController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enums/LoadingParts.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enums/LoadingParts.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/GameContexWithViewCreator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/GameContexWithViewCreator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/MachinePartsDB.bytes" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StreamingAssets/MachinePartsDB.bytes" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,7 +73,6 @@
   <component name="IdeDocumentHistory">
     <changedPaths>
       <option value="$PROJECT_DIR$/Assets/Scripts/FileManager/CopyNeedFilesInFolder.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/ControleerInitializer.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/ListOfLessons/ListOfLessonsViewCreator.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Tables/AssembiesTable.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Interfaces/IDataBase.cs" />
@@ -66,9 +81,24 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/Interfaces/IShowInfoFromChoosing.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/ListOfLessons/ListOfLessonsView.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/GameContextWithLessons.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/GameContextWithViews.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/InputController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UI/MainMenuFactory.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/UIController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Interfaces/IUIObject.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/GameContextWithUI.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/ControleerInitializer.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Interfaces/IUIMainMenu.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/GameContexWithViewCreator.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/GameContextWithViews.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/MainMenuInitialization.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UI/MainMenuLogic.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Enums/ButtonTypes.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Enums/AllButtonsEnum.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Interfaces/AllButtonsEnums.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Enums/ButtonTypesMainMenu.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Enums/LoadingParts.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/MainSceneInitialization.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UI/MainMenuAddButtonsToDictionary.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1oVh7QrK5P1QV67f8aHYDy536Km" />
@@ -144,6 +174,10 @@
       <workItem from="1615373341574" duration="12585000" />
       <workItem from="1615452109043" duration="2848000" />
       <workItem from="1615467513003" duration="2386000" />
+      <workItem from="1615714255176" duration="2361000" />
+      <workItem from="1615723965470" duration="946000" />
+      <workItem from="1615798576157" duration="15124000" />
+      <workItem from="1615971500270" duration="4107000" />
     </task>
     <servers />
   </component>
