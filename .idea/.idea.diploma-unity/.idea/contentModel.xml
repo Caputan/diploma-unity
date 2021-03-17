@@ -56,18 +56,23 @@
           </e>
           <e p="Controllers" t="Include">
             <e p="AbstractFactoryController.cs" t="Include" />
+            <e p="AuthController.cs" t="Include" />
             <e p="ControleerInitializer.cs" t="Include" />
             <e p="Controllers.cs" t="Include" />
             <e p="DataBaseController.cs" t="Include" />
             <e p="FileManagerController.cs" t="Include" />
             <e p="GameContextWithLessons.cs" t="Include" />
             <e p="GameContextWithLogic.cs" t="Include" />
+            <e p="GameContextWithUI.cs" t="Include" />
             <e p="GameContextWithViews.cs" t="Include" />
             <e p="GameObjectController.cs" t="Include" />
             <e p="GameObjectInitialization.cs" t="Include" />
             <e p="GearBoxFactoryController.cs" t="Include" />
+            <e p="InputController.cs" t="Include" />
             <e p="ListOfLessonsController.cs" t="Include" />
+            <e p="MainMenuInitialization.cs" t="Include" />
             <e p="MainSceneInitialization.cs" t="Include" />
+            <e p="UIController.cs" t="Include" />
           </e>
           <e p="Enums" t="Include">
             <e p="ComboType.cs" t="Include" />
@@ -94,6 +99,7 @@
           <e p="Interfaces" t="Include">
             <e p="IAbstractFactory.cs" t="Include" />
             <e p="IAbstractView.cs" t="Include" />
+            <e p="IAllButtonsEnums.cs" t="Include" />
             <e p="IChooseGearboxLowType.cs" t="Include" />
             <e p="ICleanData.cs" t="Include" />
             <e p="ICollision.cs" t="Include" />
@@ -108,6 +114,8 @@
             <e p="ILateExecute.cs" t="Include" />
             <e p="IShowInfoFromChoosing.cs" t="Include" />
             <e p="ITable.cs" t="Include" />
+            <e p="IUIMainMenu.cs" t="Include" />
+            <e p="IUIObject.cs" t="Include" />
             <e p="IUIObjectsFactory.cs" t="Include" />
           </e>
           <e p="ListOfLessons" t="Include">
@@ -130,6 +138,9 @@
           </e>
           <e p="UI" t="Include">
             <e p="GameContexWithViewCreator.cs" t="Include" />
+            <e p="MainMenuAddButtonsToDictionary.cs" t="Include" />
+            <e p="MainMenuFactory.cs" t="Include" />
+            <e p="MainMenuLogic.cs" t="Include" />
             <e p="TogglePanelFactory.cs" t="Include" />
           </e>
         </e>
