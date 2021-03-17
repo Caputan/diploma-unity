@@ -7,8 +7,8 @@ namespace Diploma.Controllers
 {
     public class GameContextWithUI
     {
-        private  Dictionary<LoadingParts, GameObject> UiControllers;
-        private Dictionary<LoadingParts, IUIObject> UILogic;
+        public Dictionary<LoadingParts, GameObject> UiControllers;
+        public Dictionary<LoadingParts, IUIObject> UILogic;
         public GameContextWithUI()
         {
             UiControllers = new Dictionary<LoadingParts, GameObject>();

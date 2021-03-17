@@ -10,7 +10,7 @@ namespace Diploma.UI
     {
         private readonly List<Button> _buttons;
         private readonly GameContextWithViews _gameContextWithViews;
-        private int[] _usedMenues = new[] {2,3,8,11};
+        private int[] _usedMenues = new[] {3,2,8,11,4};
 
         public MainMenuAddButtonsToDictionary(List<Button> buttons, GameContextWithViews gameContextWithViews)
         {

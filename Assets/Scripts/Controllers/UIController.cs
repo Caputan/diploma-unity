@@ -7,6 +7,7 @@ using Diploma.Interfaces;
 using Interfaces;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Debug = UnityEngine.Debug;
 
 namespace Diploma.Controllers
 {
@@ -19,43 +20,40 @@ namespace Diploma.Controllers
             _gameContextWithUI = gameContextWithUI;
         }
 
-        // Данный контрллер должен только уметь прять и показывать
-        // На входе будет только GameContextWithUI
-        
-        // private void CreateUI(IUIObjectsFactory uiController)
-        // {
-        //     var go = uiController.Create(_parents);
-        // }
-
-        private void HideUI(IUIObjectsFactory uiController)
+        public void Initialization()
         {
-            
+            foreach (var value in _gameContextWithUI.UILogic)
+            {
+                var i = (IUIMainMenu) value.Value;
+                i.LoadNext += ShowUIByUIType;
+            }
+        }
+
+        private void HideUI(GameObject Controller)
+        {
+            Controller.SetActive(false);
         }
 
         public void ShowUIByUIType(LoadingParts id)
         {
-            // if (_uiControllers.TryGetValue(id, out var uiWindow))
-            // {
-            //     CreateUI(uiWindow);
-            // }
+            HideAllUI();
+            _gameContextWithUI.UiControllers[id].SetActive(true);
+            Debug.Log(id);
         }
 
         public void HideUIByUIType(LoadingParts id)
         {
-            // if (_uiControllers.TryGetValue(id, out var uiWindow))
-            // {
-            //     HideUI(uiWindow);
-            // }
+            
         }
 
         public void HideAllUI()
         {
-            // foreach (var controller in _uiControllers)
-            // {
-            //     HideUI(controller.Value);
-            // }
+            foreach (var controller in _gameContextWithUI.UiControllers)
+            {
+                HideUI(controller.Value);
+            }
         }
 
-        public void Initialization() { }
+     
     }
 }

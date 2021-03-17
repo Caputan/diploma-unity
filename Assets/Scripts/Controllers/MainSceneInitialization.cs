@@ -2,6 +2,7 @@
 using Controllers;
 using Diploma.Constructor;
 using Diploma.Interfaces;
+using Diploma.Managers;
 using Diploma.Tables;
 using Diploma.UI;
 using GameObjectCreating;
@@ -12,11 +13,10 @@ namespace Diploma.Controllers
 {
     public class MainSceneInitialization: MonoBehaviour
     {
-        [SerializeField] private Button _button;
+        //[SerializeField] private Button _button;
         [SerializeField] private GameObject MainMenuPrefab;
         [SerializeField] private GameObject MainParent;
-
-        [SerializeField] private List<Button> MainMenuButtons;
+        private List<Button> MainMenuButtons;
         
         #region Don't Use
         [SerializeField] private GameObject togglePanelPrefab;
@@ -42,7 +42,7 @@ namespace Diploma.Controllers
 
             #region DataBase initialization
             // потом надо на отдельные инициализаторы разбить чтоль....
-            FileManager.FileManager fileManager = new FileManager.FileManager();
+            FileManager fileManager = new FileManager();
             destinationPath[0] = fileManager.CreateFileFolder("Assemblies");
             destinationPath[1] = fileManager.CreateFileFolder("Videos");
             destinationPath[2] = fileManager.CreateFileFolder("Photos");
@@ -79,19 +79,21 @@ namespace Diploma.Controllers
             _gameContextWithUI = new GameContextWithUI();
             
             // тут мы создали базове типизированное меню
-            var GameContextWithViewCreator = new GameContexWithViewCreator(
-                _gameContextWithViews,
-                _gameContextWithLogic,
-                _gameContextWithLessons,
-                _gameContextWithUI,
-                ToggleGroup,
-                togglePanelPrefab,
-                ParentForLessons,
-                toggleLessonPrefab,
-                DataBaseController,
-                tables
-                );
+            // var GameContextWithViewCreator = new GameContexWithViewCreator(
+            //     _gameContextWithViews,
+            //     _gameContextWithLogic,
+            //     _gameContextWithLessons,
+            //     _gameContextWithUI,
+            //     ToggleGroup,
+            //     togglePanelPrefab,
+            //     ParentForLessons,
+            //     toggleLessonPrefab,
+            //     DataBaseController,
+            //     tables
+            //     );
 
+            MainMenuButtons = new List<Button>();
+            MainMenuButtons.AddRange(MainMenuPrefab.GetComponentsInChildren<Button>());
             new MainMenuAddButtonsToDictionary(MainMenuButtons,_gameContextWithViews);
             var MainMenuInitilization = new MainMenuInitialization(
                 _gameContextWithViews,
@@ -102,32 +104,32 @@ namespace Diploma.Controllers
             
             var uiController = new UIController(_gameContextWithUI);
             //uiController.AddUIToDictionary();
-            
             // добавить соответствующие менюшки ниже
             // с помощью uiController.AddUIToDictionary()
             #endregion
 
-            _fileManager.DataBaseController = DataBaseController;
-            _fileManager.Tables = tables;
-            _fileManager.destinationPath = destinationPath;
+            // _fileManager.DataBaseController = DataBaseController;
+            // _fileManager.Tables = tables;
+            // _fileManager.destinationPath = destinationPath;
             
             #region Creation new Lession Module
             // данный регион будет вызываться во время создания урока
-            var abstractFactory = new AbstractFactory();
-            var abstractView = new AbstractView(_gameContextWithViews,_gameContextWithLogic,_button,_fileManager);
-            var abstractFactoryController = new AbstractFactoryController(abstractView,abstractFactory);
+            //var abstractFactory = new AbstractFactory();
+            //var abstractView = new AbstractView(_gameContextWithViews,_gameContextWithLogic,_button,_fileManager);
+            //var abstractFactoryController = new AbstractFactoryController(abstractView,abstractFactory);
             
             #endregion
            
             
 
             _controllers = new Controllers();
-            _controllers.Add(GameContextWithViewCreator);
+            // _controllers.Add(GameContextWithViewCreator);
             _controllers.Add(DataBaseController);
-            _controllers.Add(abstractView);
-            _controllers.Add(abstractFactoryController);
+            // _controllers.Add(abstractView);
+            // _controllers.Add(abstractFactoryController);
             _controllers.Add(uiController);
             _controllers.Add(AuthController);
+            _controllers.Add(MainMenuInitilization);
             _controllers.Initialization();
         }
         
