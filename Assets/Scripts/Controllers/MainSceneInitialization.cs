@@ -16,7 +16,7 @@ namespace Diploma.Controllers
         //[SerializeField] private Button _button;
         [SerializeField] private GameObject MainMenuPrefab;
         [SerializeField] private GameObject MainParent;
-        private List<Button> MainMenuButtons;
+        
         
         #region Don't Use
         [SerializeField] private GameObject togglePanelPrefab;
@@ -33,7 +33,7 @@ namespace Diploma.Controllers
         private GameContextWithViews _gameContextWithViews;
         private GameContextWithLessons _gameContextWithLessons;
         private GameContextWithUI _gameContextWithUI;
-        
+      
         private Controllers _controllers;
         public string[] destinationPath = new string[4];
         private void Start()
@@ -92,10 +92,7 @@ namespace Diploma.Controllers
                 tables
                 );
             
-            MainMenuButtons = new List<Button>();
-            MainMenuButtons.AddRange(MainMenuPrefab.GetComponentsInChildren<Button>());
             
-            new MainMenuAddButtonsToDictionary(MainMenuButtons,_gameContextWithViews);
             var MainMenuInitilization = new MainMenuInitialization(
                 _gameContextWithViews,
                 _gameContextWithUI,
@@ -115,9 +112,9 @@ namespace Diploma.Controllers
             
             #region Creation new Lession Module
             // данный регион будет вызываться во время создания урока
-            var abstractFactory = new AbstractFactory();
-            var abstractView = new AbstractView(_gameContextWithViews,_gameContextWithLogic,MainMenuButtons[0],_fileManager);
-            var abstractFactoryController = new AbstractFactoryController(abstractView,abstractFactory);
+            //var abstractFactory = new AbstractFactory();
+            //var abstractView = new AbstractView(_gameContextWithViews,_gameContextWithLogic,MainMenuButtons[0],_fileManager);
+            //var abstractFactoryController = new AbstractFactoryController(abstractView,abstractFactory);
             
             #endregion
            

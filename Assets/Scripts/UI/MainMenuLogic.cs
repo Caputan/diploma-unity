@@ -5,6 +5,8 @@ using Diploma.Interfaces;
 using Interfaces;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Events;
+using UnityEngine.EventSystems;
 
 namespace Diploma.UI
 {
@@ -30,7 +32,7 @@ namespace Diploma.UI
             foreach (var button in _buttons)
             {
                 button.Value.onClick.RemoveAllListeners();
-                button.Value.onClick.AddListener(delegate { SwitchToNextMenu(button.Key); });
+                button.Value.onClick.AddListener(()=> SwitchToNextMenu(button.Key));
             }
         }
     }
