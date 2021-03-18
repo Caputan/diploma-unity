@@ -72,6 +72,8 @@
             <e p="GameObjectInitialization.cs" t="Include" />
             <e p="GearBoxFactoryController.cs" t="Include" />
             <e p="InputController.cs" t="Include" />
+            <e p="LessonChooseController.cs" t="Include" />
+            <e p="LessonsChooseInitialization.cs" t="Include" />
             <e p="ListOfLessonsController.cs" t="Include" />
             <e p="MainMenuInitialization.cs" t="Include" />
             <e p="MainSceneInitialization.cs" t="Include" />
@@ -119,6 +121,7 @@
             <e p="ILateExecute.cs" t="Include" />
             <e p="IShowInfoFromChoosing.cs" t="Include" />
             <e p="ITable.cs" t="Include" />
+            <e p="IUILoadLessonChoose.cs" t="Include" />
             <e p="IUIMainMenu.cs" t="Include" />
             <e p="IUIObject.cs" t="Include" />
             <e p="IUIObjectsFactory.cs" t="Include" />
@@ -143,9 +146,13 @@
           </e>
           <e p="UI" t="Include">
             <e p="GameContexWithViewCreator.cs" t="Include" />
+            <e p="LessonChooseAddButtonsToDictionary.cs" t="Include" />
+            <e p="LessonChooseFactory.cs" t="Include" />
+            <e p="LessonChooseLogic.cs" t="Include" />
             <e p="MainMenuAddButtonsToDictionary.cs" t="Include" />
             <e p="MainMenuFactory.cs" t="Include" />
             <e p="MainMenuLogic.cs" t="Include" />
+            <e p="PlateWithButtonForLessonsFactory.cs" t="Include" />
             <e p="TogglePanelFactory.cs" t="Include" />
           </e>
         </e>

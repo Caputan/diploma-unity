@@ -11,7 +11,7 @@ using Debug = UnityEngine.Debug;
 
 namespace Diploma.Controllers
 {
-    public class UIController : IInitialization
+    public class UIController : IInitialization, ICleanData
     {
         private readonly GameContextWithUI _gameContextWithUI;
         private readonly ExitController _exitController;
@@ -44,7 +44,18 @@ namespace Diploma.Controllers
                 case LoadingParts.Exit:
                     _exitController.ExitApplication(); 
                     break;
-                
+                case LoadingParts.LoadAuth:
+                    
+                    break;
+                case LoadingParts.LoadLectures:
+                    
+                    break;
+                case LoadingParts.LoadConstructor:
+                    
+                    break;
+                case LoadingParts.Options:
+                    
+                    break;
             }
             // нужно обращать к контроллеру
             //_gameContextWithUI.UiControllers[id].SetActive(true);
@@ -64,6 +75,14 @@ namespace Diploma.Controllers
             }
         }
 
-     
+
+        public void CleanData()
+        {
+            foreach (var value in _gameContextWithUI.UILogic)
+            {
+                var i = (IUIMainMenu) value.Value;
+                i.LoadNext += ShowUIByUIType;
+            }
+        }
     }
 }

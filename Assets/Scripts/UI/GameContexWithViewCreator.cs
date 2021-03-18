@@ -50,51 +50,51 @@ namespace Diploma.UI
             _prefabToggleLessions = PrefabToggleLessions;
             _dataBaseController = dataBaseController;
             _tables = tables;
-            _togglePanelFactory = new TogglePanelFactory(_prefabTogglePanel,_canvasParent.GetComponent<ToggleGroup>());
-            _toggleLessionsFactory = new TogglePanelFactory(_prefabToggleLessions,_lessionsParent.GetComponent<ToggleGroup>());
+            //_togglePanelFactory = new TogglePanelFactory(_prefabTogglePanel,_canvasParent.GetComponent<ToggleGroup>());
+            //_toggleLessionsFactory = new TogglePanelFactory(_prefabToggleLessions,_lessionsParent.GetComponent<ToggleGroup>());
         }
 
         public void Initialization()
         {
-            #region Creation Toggles Creation
+            // #region Creation Toggles Creation
+            //
+            // _dataBaseController.SetTable(_tables[3]);
+            // List<Types> dataTypesFromTable = _dataBaseController.GetDataFromTable<Types>();
+            // int index = 0;
+            // foreach (FactoryType factoryType in Enum.GetValues(typeof(FactoryType)))
+            // {
+            //     var toggle = _togglePanelFactory.Create(_canvasParent.transform);
+            //     toggle.transform.localPosition = new Vector3(0, 0, 0);
+            //     var tex = new Texture2D(5, 5);
+            //     tex.LoadImage(File.ReadAllBytes(dataTypesFromTable[index].Type_Image));
+            //     toggle.GetComponentInChildren<RawImage>().texture = tex;
+            //     _gameContextWithLogic.AddFactoryTypeForCreating(toggle.GetInstanceID(), factoryType);
+            //     _gameContextWithViews.AddToggles(toggle.GetInstanceID(), toggle);
+            //     index++;
+            // }
+            //
+            // #endregion
 
-            _dataBaseController.SetTable(_tables[3]);
-            List<Types> dataTypesFromTable = _dataBaseController.GetDataFromTable<Types>();
-            int index = 0;
-            foreach (FactoryType factoryType in Enum.GetValues(typeof(FactoryType)))
-            {
-                var toggle = _togglePanelFactory.Create(_canvasParent.transform);
-                toggle.transform.localPosition = new Vector3(0, 0, 0);
-                var tex = new Texture2D(5, 5);
-                tex.LoadImage(File.ReadAllBytes(dataTypesFromTable[index].Type_Image));
-                toggle.GetComponentInChildren<RawImage>().texture = tex;
-                _gameContextWithLogic.AddFactoryTypeForCreating(toggle.GetInstanceID(), factoryType);
-                _gameContextWithViews.AddToggles(toggle.GetInstanceID(), toggle);
-                index++;
-            }
-
-            #endregion
-
-            #region Lessons Toggles Creations
-
-            _dataBaseController.SetTable(_tables[1]);
-            List<Lessons> dataLessonsFromTable = _dataBaseController.GetDataFromTable<Lessons>();
-            
-            foreach (var lesson in dataLessonsFromTable)
-            {
-                var lessonToggle = _toggleLessionsFactory.Create(_lessionsParent.transform);
-                lessonToggle.transform.localPosition = new Vector3(0,0,0);
-                var tex = new Texture2D(5, 5);
-                tex.LoadImage(File.ReadAllBytes(lesson.Lesson_Preview));
-                lessonToggle.GetComponentInChildren<RawImage>().texture = tex;
-                
-                _gameContextWithLessons.AddLessonsView(lesson.Lesson_Id,
-                    new ListOfLessonsView(lesson.Lesson_Id,
-                        lessonToggle));
-                _gameContextWithViews.AddLessonsToggles(lesson.Lesson_Id,lessonToggle);
-            }
-            
-            #endregion
+            // #region Lessons Toggles Creations
+            //
+            // _dataBaseController.SetTable(_tables[1]);
+            // List<Lessons> dataLessonsFromTable = _dataBaseController.GetDataFromTable<Lessons>();
+            //
+            // foreach (var lesson in dataLessonsFromTable)
+            // {
+            //     var lessonToggle = _toggleLessionsFactory.Create(_lessionsParent.transform);
+            //     lessonToggle.transform.localPosition = new Vector3(0,0,0);
+            //     var tex = new Texture2D(5, 5);
+            //     tex.LoadImage(File.ReadAllBytes(lesson.Lesson_Preview));
+            //     lessonToggle.GetComponentInChildren<RawImage>().texture = tex;
+            //     
+            //     _gameContextWithLessons.AddLessonsView(lesson.Lesson_Id,
+            //         new ListOfLessonsView(lesson.Lesson_Id,
+            //             lessonToggle));
+            //     _gameContextWithViews.AddLessonsToggles(lesson.Lesson_Id,lessonToggle);
+            // }
+            //
+            // #endregion
 
            
         }

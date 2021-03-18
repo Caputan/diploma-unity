@@ -34,5 +34,7 @@ namespace Diploma.UI
                 button.Value.onClick.AddListener(()=> SwitchToNextMenu(button.Key));
             }
         }
+
+       
     }
 }
