@@ -14,10 +14,12 @@ namespace Diploma.Controllers
     public class UIController : IInitialization
     {
         private readonly GameContextWithUI _gameContextWithUI;
+        private readonly ExitController _exitController;
 
-        public UIController(GameContextWithUI gameContextWithUI)
+        public UIController(GameContextWithUI gameContextWithUI,ExitController exitController)
         {
             _gameContextWithUI = gameContextWithUI;
+            _exitController = exitController;
         }
 
         public void Initialization()
@@ -37,7 +39,15 @@ namespace Diploma.Controllers
         public void ShowUIByUIType(LoadingParts id)
         {
             HideAllUI();
-            _gameContextWithUI.UiControllers[id].SetActive(true);
+            switch (id)
+            {
+                case LoadingParts.Exit:
+                    _exitController.ExitApplication(); 
+                    break;
+                
+            }
+            // нужно обращать к контроллеру
+            //_gameContextWithUI.UiControllers[id].SetActive(true);
             Debug.Log(id);
         }
 

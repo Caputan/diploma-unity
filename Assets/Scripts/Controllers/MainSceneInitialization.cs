@@ -68,7 +68,8 @@ namespace Diploma.Controllers
             #region Authentication
 
             var AuthController = new AuthController(DataBaseController, tables);
-
+            var ExitController = new ExitController();
+            
             #endregion
             
             #region Creation UI and GameContext
@@ -100,7 +101,7 @@ namespace Diploma.Controllers
                 MainMenuPrefab
                 );
             
-            var uiController = new UIController(_gameContextWithUI);
+            var uiController = new UIController(_gameContextWithUI,ExitController);
             //uiController.AddUIToDictionary();
             // добавить соответствующие менюшки ниже
             // с помощью uiController.AddUIToDictionary()
@@ -125,9 +126,11 @@ namespace Diploma.Controllers
             _controllers.Add(DataBaseController);
             // _controllers.Add(abstractView);
             // _controllers.Add(abstractFactoryController);
-            _controllers.Add(uiController);
+           
             _controllers.Add(AuthController);
             _controllers.Add(MainMenuInitilization);
+            
+            _controllers.Add(uiController);
             _controllers.Initialization();
         }
         
