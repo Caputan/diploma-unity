@@ -62,6 +62,7 @@
             <e p="Controllers.cs" t="Include" />
             <e p="CoroutineController.cs" t="Include" />
             <e p="DataBaseController.cs" t="Include" />
+            <e p="ExitController.cs" t="Include" />
             <e p="FileManagerController.cs" t="Include" />
             <e p="GameContextWithLessons.cs" t="Include" />
             <e p="GameContextWithLogic.cs" t="Include" />

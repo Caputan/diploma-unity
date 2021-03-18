@@ -22,7 +22,6 @@ namespace Diploma.UI
 
         public void SwitchToNextMenu(LoadingParts loadingParts)
         {
-            Debug.Log("Buling");
             LoadNext.Invoke(loadingParts);
         }
 
