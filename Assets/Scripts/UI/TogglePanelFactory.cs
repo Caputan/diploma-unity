@@ -8,18 +8,15 @@ namespace Diploma.UI
     public class TogglePanelFactory: IUIObjectsFactory
     {
         private readonly GameObject _togglePanel;
-        private readonly ToggleGroup _toggleGroup;
 
-        public TogglePanelFactory(GameObject togglePanel,ToggleGroup toggleGroup)
+        public TogglePanelFactory(GameObject togglePanel)
         {
             _togglePanel = togglePanel;
-            _toggleGroup = toggleGroup;
+            
         }
         public GameObject Create(Transform parent)
         {
            var gm = GameObject.Instantiate(_togglePanel, parent, true);
-
-           gm.GetComponentInChildren<Toggle>().group = _toggleGroup;
            return gm;
         }
     }
