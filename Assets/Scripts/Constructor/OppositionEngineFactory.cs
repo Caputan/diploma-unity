@@ -1,4 +1,4 @@
-﻿using Interfaces;
+﻿using Diploma.Interfaces;
 using UnityEngine;
 
 namespace Diploma.Constructor

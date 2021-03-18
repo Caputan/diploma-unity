@@ -8,7 +8,7 @@ using Diploma.Interfaces;
 using SimpleFileBrowser;
 using UnityEngine;
 
-namespace Controllers
+namespace Diploma.Controllers
 {
     public sealed class FileManagerController: IInitialization
     {

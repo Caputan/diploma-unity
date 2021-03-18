@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using Controllers;
 using Diploma.Constructor;
 using Diploma.Interfaces;
 using Diploma.Managers;
@@ -17,7 +16,11 @@ namespace Diploma.Controllers
         [SerializeField] private GameObject MainMenuPrefab;
         [SerializeField] private GameObject MainParent;
         
+        [SerializeField] private GameObject AuthPrefab;
         
+        [SerializeField] private GameObject SignUpPrefab;
+
+
         #region Don't Use
         [SerializeField] private GameObject togglePanelPrefab;
         [SerializeField] private GameObject ToggleGroup;
@@ -36,7 +39,7 @@ namespace Diploma.Controllers
       
         private Controllers _controllers;
         public string[] destinationPath = new string[4];
-        private void Start()
+        public void Start()
         {
             
 
@@ -79,26 +82,40 @@ namespace Diploma.Controllers
             _gameContextWithUI = new GameContextWithUI();
             
             // тут мы создали базове типизированное меню
-            var GameContextWithViewCreator = new GameContexWithViewCreator(
-                _gameContextWithViews,
-                _gameContextWithLogic,
-                _gameContextWithLessons,
-                _gameContextWithUI,
-                ToggleGroup,
-                togglePanelPrefab,
-                ParentForLessons,
-                toggleLessonPrefab,
-                DataBaseController,
-                tables
-                );
-            
-            
+            // var GameContextWithViewCreator = new GameContexWithViewCreator(
+            //     _gameContextWithViews,
+            //     _gameContextWithLogic,
+            //     _gameContextWithLessons,
+            //     _gameContextWithUI,
+            //     ToggleGroup,
+            //     togglePanelPrefab,
+            //     ParentForLessons,
+            //     toggleLessonPrefab,
+            //     DataBaseController,
+            //     tables
+            //     );
+
+
             var MainMenuInitilization = new MainMenuInitialization(
                 _gameContextWithViews,
                 _gameContextWithUI,
                 MainParent,
                 MainMenuPrefab
-                );
+            );
+
+            var AuthInitialization = new AuthInitialization(
+                _gameContextWithViews,
+                _gameContextWithUI,
+                MainParent,
+                AuthPrefab
+            );
+
+            var SignUpInitialization = new SignUpInitialization(
+                _gameContextWithViews,
+                _gameContextWithUI,
+                MainParent,
+                SignUpPrefab
+            );
             
             var uiController = new UIController(_gameContextWithUI);
             //uiController.AddUIToDictionary();
@@ -128,6 +145,8 @@ namespace Diploma.Controllers
             _controllers.Add(uiController);
             _controllers.Add(AuthController);
             _controllers.Add(MainMenuInitilization);
+            _controllers.Add(AuthInitialization);
+            _controllers.Add(SignUpInitialization);
             _controllers.Initialization();
         }
         

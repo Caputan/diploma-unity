@@ -3,7 +3,7 @@ using Diploma.Enums;
 using Diploma.Interfaces;
 using Diploma.Tables;
 
-namespace Controllers
+namespace Diploma.Controllers
 {
     public class AuthController : IInitialization
     {
@@ -30,7 +30,7 @@ namespace Controllers
                 switch (loginedUser.User_Role)
                 {
                     case "Teacher":
-                        return LoadingParts.LoadConstructor;
+                        return LoadingParts.LoadMain;
 
                     case "Student":
                         return LoadingParts.LoadMain;

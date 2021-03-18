@@ -6,7 +6,7 @@ using Diploma.UI;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Controllers
+namespace Diploma.Controllers
 {
     public class MainMenuInitialization: IInitialization
     {

@@ -10,22 +10,21 @@ using UnityEngine.EventSystems;
 
 namespace Diploma.UI
 {
-    public class MainMenuLogic: IUIMainMenu, IInitialization
+    public class AuthLogic: IUIObject, IInitialization
     {
         private readonly Dictionary<LoadingParts, Button> _buttons;
-        public event Action<LoadingParts> LoadNext;
         
-        public MainMenuLogic(Dictionary<LoadingParts,Button> buttons)
+        public event Action<LoadingParts> LoadNext;
+
+        public AuthLogic(Dictionary<LoadingParts, Button> buttons)
         {
             _buttons = buttons;
         }
 
-        public void SwitchToNextMenu(LoadingParts loadingParts)
+        private void SwitchToNextMenu(LoadingParts loadingParts)
         {
-            Debug.Log("Buling");
             LoadNext?.Invoke(loadingParts);
         }
-
 
         public void Initialization()
         {
