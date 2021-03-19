@@ -16,13 +16,13 @@ namespace Diploma.UI
         private readonly GameContextWithViews _gameContextWithViews;
         private readonly GameContextWithLessons _gameContextWithLessons;
         private readonly DataBaseController _dataBaseController;
-        private readonly IDataBase[] _tables;
+        private readonly List<IDataBase> _tables;
         private readonly PlateWithButtonForLessonsFactory _plateWithButtonForLessonsFactory;
         private readonly GameObject _scrollParentForLessonsView;
 
         public LessonChooseAddButtonsToDictionary(List<Button> buttons,GameContextWithViews gameContextWithViews,
             GameContextWithLessons gameContextWithLessons
-        ,DataBaseController dataBaseController, IDataBase[] tables,
+        ,DataBaseController dataBaseController, List<IDataBase> tables,
         PlateWithButtonForLessonsFactory plateWithButtonForLessonsFactory,GameObject scrollParentForLessonsView
         )
         {

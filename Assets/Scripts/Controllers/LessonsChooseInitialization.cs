@@ -12,18 +12,31 @@ namespace Controllers
     {
         private readonly GameContextWithViews _gameContextWithViews;
         private readonly GameContextWithUI _gameContextWithUI;
+        private readonly GameContextWithLessons _gameContextWithLessons;
         private readonly GameObject _lessonChooseParent;
         private readonly GameObject _prefabLessonChoose;
+        private readonly DataBaseController _dataBaseController;
+        private readonly List<IDataBase> _tables;
         private LessonChooseFactory _lessonChooseFactory;
         private List<Button> _lessonChooseButtons;
         
-        public LessonsChooseInitialization(GameContextWithViews gameContextWithViews,
-            GameContextWithUI gameContextWithUI,GameObject LessonChooseParent, GameObject PrefabLessonChoose)
+        public LessonsChooseInitialization(
+            GameContextWithViews gameContextWithViews,
+            GameContextWithUI gameContextWithUI,
+            GameContextWithLessons gameContextWithLessons,
+            GameObject LessonChooseParent, 
+            GameObject PrefabLessonChoose,
+            DataBaseController dataBaseController,
+            List<IDataBase> tables
+        )
         {
             _gameContextWithViews = gameContextWithViews;
             _gameContextWithUI = gameContextWithUI;
+            _gameContextWithLessons = gameContextWithLessons;
             _lessonChooseParent = LessonChooseParent;
             _prefabLessonChoose = PrefabLessonChoose;
+            _dataBaseController = dataBaseController;
+            _tables = tables;
 
             _lessonChooseFactory = new LessonChooseFactory(_prefabLessonChoose);
             
@@ -38,12 +51,26 @@ namespace Controllers
             _lessonChooseButtons = new List<Button>();
             _lessonChooseButtons.AddRange(LessonsChoose.GetComponentsInChildren<Button>());
             
-            // new LessonChooseAddButtonsToDictionary(_lessonChooseButtons,_gameContextWithViews);
-            //
-            // var LessonChooseLogic = new LessonChooseLogic(_gameContextWithViews.Buttons);
-            // LessonChooseLogic.Initialization();
-            // _gameContextWithUI.AddUIToDictionary(LoadingParts.LoadMain, LessonsChoose);
-            // _gameContextWithUI.AddUILogic(LoadingParts.LoadMain,LessonChooseLogic);
+            // List<Button> buttons,GameContextWithViews gameContextWithViews,
+            // GameContextWithLessons gameContextWithLessons
+            //     ,DataBaseController dataBaseController, IDataBase[] tables,
+            //     PlateWithButtonForLessonsFactory plateWithButtonForLessonsFactory,GameObject scrollParentForLessonsView
+            var plateWithButtonForLessonsFactory = new PlateWithButtonForLessonsFactory(_prefabLessonChoose);
+            
+            new LessonChooseAddButtonsToDictionary(
+                _lessonChooseButtons,
+                _gameContextWithViews,
+                _gameContextWithLessons,
+                _dataBaseController,
+                _tables,
+                plateWithButtonForLessonsFactory,
+                _lessonChooseParent
+                );
+            
+            var LessonChooseLogic = new LessonChooseLogic(_gameContextWithViews.Buttons);
+            LessonChooseLogic.Initialization();
+            _gameContextWithUI.AddUIToDictionary(LoadingParts.LoadLectures, LessonsChoose);
+            _gameContextWithUI.AddUILogic(LoadingParts.LoadLectures,LessonChooseLogic);
             
             #endregion
         }

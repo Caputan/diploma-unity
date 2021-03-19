@@ -77,6 +77,7 @@
             <e p="LessonChooseController.cs" t="Include" />
             <e p="LessonsChooseInitialization.cs" t="Include" />
             <e p="ListOfLessonsController.cs" t="Include" />
+            <e p="Loader3DS.cs" t="Include" />
             <e p="MainMenuInitialization.cs" t="Include" />
             <e p="MainSceneInitialization.cs" t="Include" />
             <e p="SignUpInitialization.cs" t="Include" />
@@ -132,7 +133,6 @@
             <e p="ListOfLessonsView.cs" t="Include" />
             <e p="ListOfLessonsViewCreator.cs" t="Include" />
           </e>
-          <e p="Loader3DS.cs" t="Include" />
           <e p="Managers" t="Include">
             <e p="FileManager.cs" t="Include" />
             <e p="PoolManager.cs" t="Include" />

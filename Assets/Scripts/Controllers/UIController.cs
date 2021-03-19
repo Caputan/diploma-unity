@@ -64,19 +64,22 @@ namespace Diploma.Controllers
                     _currentPosition = LoadingParts.LoadSignUp;
                     break;
                 case LoadingParts.LoadLectures:
+                    _gameContextWithUI.UiControllers[LoadingParts.LoadLectures].SetActive(true);
                     _backController.WhereIMustBack(_currentPosition);
                     _currentPosition = LoadingParts.LoadLectures;
                     break;
                 case LoadingParts.LoadConstructor:
+                    
                     _backController.WhereIMustBack(_currentPosition);
                     _currentPosition = LoadingParts.LoadConstructor;
                     break;
                 case LoadingParts.Options:
+                    
                     _backController.WhereIMustBack(_currentPosition);
                     _currentPosition = LoadingParts.Options;
                     break;
-                
                 case LoadingParts.LoadMain:
+                    _gameContextWithUI.UiControllers[LoadingParts.LoadMain].SetActive(true);
                     _backController.WhereIMustBack(_currentPosition);
                     _currentPosition = LoadingParts.LoadMain;
                     break;
@@ -84,8 +87,6 @@ namespace Diploma.Controllers
                     ShowUIByUIType(_backController.GoBack());
                     break;
             }
-            // нужно обращать к контроллеру
-            //_gameContextWithUI.UiControllers[id].SetActive(true);
             Debug.Log(id);
         }
 
