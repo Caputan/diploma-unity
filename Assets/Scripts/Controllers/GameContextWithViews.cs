@@ -33,7 +33,8 @@ namespace Diploma.Controllers
         }
         public void AddButtons(LoadingParts id, Button button)
         {
-            Buttons.Add(id,button);
+            if(!Buttons.ContainsKey(id))
+                Buttons.Add(id,button);
         }
 
         

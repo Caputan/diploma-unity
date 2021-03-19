@@ -3,7 +3,7 @@ using Diploma.Enums;
 using Diploma.Interfaces;
 using Interfaces;
 
-namespace Controllers
+namespace Diploma.Controllers
 {
     public sealed class GearBoxFactoryController: IInitialization,ICleanData
     {

@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using Controllers;
+using Diploma.Controllers;
 using Diploma.Enums;
 using Diploma.Interfaces;
-using Interfaces;
 using UnityEngine;
 
 namespace Diploma.Constructor

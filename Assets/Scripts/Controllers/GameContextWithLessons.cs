@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using ListOfLessons;
 
-namespace Controllers
+namespace Diploma.Controllers
 {
     public sealed class GameContextWithLessons
     {

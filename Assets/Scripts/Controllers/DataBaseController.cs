@@ -6,7 +6,7 @@ using SQLite4Unity3d;
 using UnityEngine;
 using ITable = Diploma.Interfaces.ITable;
 
-namespace Controllers
+namespace Diploma.Controllers
 {
     public sealed class DataBaseController : IInitialization
     {
