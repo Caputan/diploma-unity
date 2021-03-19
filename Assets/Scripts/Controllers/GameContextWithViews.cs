@@ -9,17 +9,21 @@ namespace Diploma.Controllers
     public sealed class GameContextWithViews
     {
         public Dictionary<int,GameObject> ChoosenToggles;
-        public Dictionary<LoadingParts, Button>  Buttons;
+        public Dictionary<LoadingParts, Button>  MainMenuButtons;
+        public Dictionary<LoadingParts, Button>  ChooseLessonButtons;
+        public Dictionary<LoadingParts, Button>  AuthButtons;
+        public Dictionary<LoadingParts, Button>  SignUpButtons;
         public Dictionary<int,GameObject> ChoosenLessonToggles;
-        
-        public GameObject infoPanel;
+    
         
         public GameContextWithViews()
         {
             ChoosenToggles = new Dictionary<int,GameObject>();
-            Buttons = new Dictionary<LoadingParts, Button>();
+            MainMenuButtons = new Dictionary<LoadingParts, Button>();
+            ChooseLessonButtons = new Dictionary<LoadingParts, Button>();
+            AuthButtons = new Dictionary<LoadingParts, Button>();
+            SignUpButtons = new Dictionary<LoadingParts, Button>();
             ChoosenLessonToggles = new Dictionary<int, GameObject>();
-            
         }
         
         public void AddToggles(int id,GameObject toggle)
@@ -31,16 +35,25 @@ namespace Diploma.Controllers
         {
             ChoosenLessonToggles.Add(id,toggle);
         }
-        public void AddButtons(LoadingParts id, Button button)
+        public void AddMainMenuButtons(LoadingParts id, Button button)
         {
-            if(!Buttons.ContainsKey(id))
-                Buttons.Add(id,button);
+            if(!MainMenuButtons.ContainsKey(id))
+                MainMenuButtons.Add(id,button);
         }
-
-        
-        public void SetInfoPanel(GameObject infopanel)
+        public void AddChooseLessonButtons(LoadingParts id, Button button)
         {
-            infoPanel = infopanel;
+            if(!ChooseLessonButtons.ContainsKey(id))
+                ChooseLessonButtons.Add(id,button);
+        }
+        public void AddAuthButtons(LoadingParts id, Button button)
+        {
+            if(!AuthButtons.ContainsKey(id))
+                AuthButtons.Add(id,button);
+        }
+        public void AddSignUpButtons(LoadingParts id, Button button)
+        {
+            if(!SignUpButtons.ContainsKey(id))
+                SignUpButtons.Add(id,button);
         }
       
     }

@@ -15,9 +15,10 @@ namespace Controllers
         private readonly GameContextWithLessons _gameContextWithLessons;
         private readonly GameObject _lessonChooseParent;
         private readonly GameObject _prefabLessonChoose;
+        private readonly GameObject _lessonPrefab;
         private readonly DataBaseController _dataBaseController;
         private readonly List<IDataBase> _tables;
-        private LessonChooseFactory _lessonChooseFactory;
+        private LessonChooseFactory _lessonCanvasChooseFactory;
         private List<Button> _lessonChooseButtons;
         
         public LessonsChooseInitialization(
@@ -26,6 +27,7 @@ namespace Controllers
             GameContextWithLessons gameContextWithLessons,
             GameObject LessonChooseParent, 
             GameObject PrefabLessonChoose,
+            GameObject LessonPrefab,
             DataBaseController dataBaseController,
             List<IDataBase> tables
         )
@@ -35,18 +37,21 @@ namespace Controllers
             _gameContextWithLessons = gameContextWithLessons;
             _lessonChooseParent = LessonChooseParent;
             _prefabLessonChoose = PrefabLessonChoose;
+            _lessonPrefab = LessonPrefab;
+
             _dataBaseController = dataBaseController;
             _tables = tables;
 
-            _lessonChooseFactory = new LessonChooseFactory(_prefabLessonChoose);
-            
+            _lessonCanvasChooseFactory = new LessonChooseFactory(_prefabLessonChoose);
         }
         public void Initialization()
         {
             #region Main Menu Creation
 
-            var LessonsChoose = _lessonChooseFactory.Create(_lessonChooseParent.transform);
+            var LessonsChoose = _lessonCanvasChooseFactory.Create(_lessonChooseParent.transform);
             LessonsChoose.transform.localPosition = new Vector3(0,0,0);
+            // решение так себе,но пока что так. может и не пока что.
+            var parentForLessons = GameObject.Find("ScrollLessonList/ListViewport/ListContent");
             
             _lessonChooseButtons = new List<Button>();
             _lessonChooseButtons.AddRange(LessonsChoose.GetComponentsInChildren<Button>());
@@ -55,19 +60,19 @@ namespace Controllers
             // GameContextWithLessons gameContextWithLessons
             //     ,DataBaseController dataBaseController, IDataBase[] tables,
             //     PlateWithButtonForLessonsFactory plateWithButtonForLessonsFactory,GameObject scrollParentForLessonsView
-            var plateWithButtonForLessonsFactory = new PlateWithButtonForLessonsFactory(_prefabLessonChoose);
+            var plateWithButtonForLessonsFactory = new PlateWithButtonForLessonsFactory(_lessonPrefab);
             
-            new LessonChooseAddButtonsToDictionary(
+            var lessonChooseAddButtonsToDictionary = new LessonChooseAddButtonsToDictionary(
                 _lessonChooseButtons,
                 _gameContextWithViews,
                 _gameContextWithLessons,
                 _dataBaseController,
                 _tables,
                 plateWithButtonForLessonsFactory,
-                _lessonChooseParent
+                parentForLessons
                 );
-            
-            var LessonChooseLogic = new LessonChooseLogic(_gameContextWithViews.Buttons);
+            lessonChooseAddButtonsToDictionary.Initialization();
+            var LessonChooseLogic = new LessonChooseLogic(_gameContextWithViews.ChooseLessonButtons);
             LessonChooseLogic.Initialization();
             _gameContextWithUI.AddUIToDictionary(LoadingParts.LoadLectures, LessonsChoose);
             _gameContextWithUI.AddUILogic(LoadingParts.LoadLectures,LessonChooseLogic);

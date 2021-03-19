@@ -39,7 +39,7 @@ namespace Diploma.Controllers
             
             new MainMenuAddButtonsToDictionary(MainMenuButtons,_gameContextWithViews);
             
-            var MainMenuLogic = new MainMenuLogic(_gameContextWithViews.Buttons);
+            var MainMenuLogic = new MainMenuLogic(_gameContextWithViews.MainMenuButtons);
             MainMenuLogic.Initialization();
             _gameContextWithUI.AddUIToDictionary(LoadingParts.LoadMain, MainMenu);
             _gameContextWithUI.AddUILogic(LoadingParts.LoadMain,MainMenuLogic);

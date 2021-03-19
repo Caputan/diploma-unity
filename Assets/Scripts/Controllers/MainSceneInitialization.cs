@@ -7,6 +7,7 @@ using Diploma.Tables;
 using Diploma.UI;
 using GameObjectCreating;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 namespace Diploma.Controllers
@@ -21,13 +22,14 @@ namespace Diploma.Controllers
         
         [SerializeField] private GameObject SignUpPrefab;
 
-
+        [SerializeField] private GameObject lessonCanvasPrefab;
+        [SerializeField] private GameObject lessonPrefab;
+        [SerializeField] private GameObject ParentForLessons;
         #region Don't Use
         [SerializeField] private GameObject togglePanelPrefab;
         [SerializeField] private GameObject ToggleGroup;
 
-        [SerializeField] private GameObject lessonPrefab;
-        [SerializeField] private GameObject ParentForLessons;
+        
         #endregion
         
         [SerializeField] private FileManagerController _fileManager;
@@ -123,6 +125,7 @@ namespace Diploma.Controllers
                 _gameContextWithUI,
                 _gameContextWithLessons,
                 ParentForLessons,
+                lessonCanvasPrefab,
                 lessonPrefab,
                 DataBaseController,
                 tables
