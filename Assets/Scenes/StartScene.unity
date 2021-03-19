@@ -146,7 +146,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 636653158}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 503.6431, y: 468.55597, z: 301.3506}
+  m_LocalPosition: {x: 503.6431, y: 103, z: 301.3506}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -174,7 +174,7 @@ MonoBehaviour:
   togglePanelPrefab: {fileID: 5877053247081451630, guid: f470d19f7a58ed9449b10ce3d899f0fa,
     type: 3}
   ToggleGroup: {fileID: 1084967671}
-  toggleLessonPrefab: {fileID: 5877053247081451630, guid: f470d19f7a58ed9449b10ce3d899f0fa,
+  lessonPrefab: {fileID: 432291019890699642, guid: 2c3629445dba1e34b98ef0831eea9811,
     type: 3}
   ParentForLessons: {fileID: 1084967671}
   destinationPath:

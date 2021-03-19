@@ -26,7 +26,7 @@ namespace Diploma.Controllers
         [SerializeField] private GameObject togglePanelPrefab;
         [SerializeField] private GameObject ToggleGroup;
 
-        [SerializeField] private GameObject toggleLessonPrefab;
+        [SerializeField] private GameObject lessonPrefab;
         [SerializeField] private GameObject ParentForLessons;
         #endregion
         
@@ -118,6 +118,16 @@ namespace Diploma.Controllers
                 SignUpPrefab
             );
             
+            var ChooseLessonInitialization = new LessonsChooseInitialization(
+                _gameContextWithViews,
+                _gameContextWithUI,
+                _gameContextWithLessons,
+                ParentForLessons,
+                lessonPrefab,
+                DataBaseController,
+                tables
+                );
+            
             var BackController = new BackController();
             
             var ExitController = new ExitController();
@@ -152,6 +162,7 @@ namespace Diploma.Controllers
             _controllers.Add(AuthInitialization);
             _controllers.Add(SignUpInitialization);
             _controllers.Add(BackController);
+            _controllers.Add(ChooseLessonInitialization);
             //этот контроллер идет самым последним
             _controllers.Add(uiController);
             _controllers.Initialization();
