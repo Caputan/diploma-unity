@@ -19,7 +19,31 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9a27c574-4a30-4862-a74f-153a103b04b8" name="Default Changelist" comment="" />
+    <list default="true" id="9a27c574-4a30-4862-a74f-153a103b04b8" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/LessonPrefab.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/LessonPrefab.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/SelectLession.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/SelectLession.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scenes/Design.unity.meta~HEAD.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scenes/Design.unity.meta~UI.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.diploma-unity/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.diploma-unity/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/SelectLesson.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/SelectLesson.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Design.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Design.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/StartScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/StartScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/AuthInitialization.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/AuthInitialization.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/GameContextWithViews.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/GameContextWithViews.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/LessonsChooseInitialization.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/LessonsChooseInitialization.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/ListOfLessonsController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/ListOfLessonsController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/MainMenuInitialization.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/MainMenuInitialization.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/MainSceneInitialization.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/MainSceneInitialization.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/SignUpInitialization.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/SignUpInitialization.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/UIController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/UIController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/AuthAddButtonsToDictionary.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/AuthAddButtonsToDictionary.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/LessonChooseAddButtonsToDictionary.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/LessonChooseAddButtonsToDictionary.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/MainMenuAddButtonsToDictionary.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/MainMenuAddButtonsToDictionary.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/SignUpAddButtonsToDictionary.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/SignUpAddButtonsToDictionary.cs" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -46,7 +70,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/MainMenuInitialization.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/ExitController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/LessonsInitialization.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/LessonChooseController.cs" />
@@ -55,7 +78,6 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/TogglePanelFactory.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/GameContexWithViewCreator.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/PlateWithButtonForLessonsFactory.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/GameContextWithViews.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Interfaces/IUIObject.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Interfaces/IUIMainMenu.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/MainMenuLogic.cs" />
@@ -63,10 +85,18 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/AuthLogic.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/BackController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/LessonChooseLogic.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/LessonChooseAddButtonsToDictionary.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/MainSceneInitialization.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/LessonsChooseInitialization.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/UIController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/MainSceneInitialization.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/GameContextWithViews.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/LessonsChooseInitialization.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/ListOfLessonsController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/MainMenuInitialization.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/SignUpInitialization.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/AuthInitialization.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/AuthAddButtonsToDictionary.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/MainMenuAddButtonsToDictionary.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/SignUpAddButtonsToDictionary.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/LessonChooseAddButtonsToDictionary.cs" />
       </list>
     </option>
   </component>
@@ -87,6 +117,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="XThreadsFramesViewSplitterKey" value="0.50097847" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
@@ -107,10 +138,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="8780">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="20772">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="8780" />
+      <option name="pid" value="20772" />
       <option name="selectedOptions">
         <set />
       </option>
@@ -155,6 +186,7 @@
       <workItem from="1616062921412" duration="2321000" />
       <workItem from="1616069947236" duration="3245000" />
       <workItem from="1616142320295" duration="7630000" />
+      <workItem from="1616156903135" duration="3388000" />
     </task>
     <servers />
   </component>
@@ -180,74 +212,74 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="558" height="464" key="DebuggerActiveHint" timestamp="1616153769445">
+    <state width="558" height="464" key="DebuggerActiveHint" timestamp="1616160257973">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="558" height="464" key="DebuggerActiveHint/0.0.1536.824@0.0.1536.824" timestamp="1616153769445" />
-    <state width="1493" height="162" key="GridCell.Tab.0.bottom" timestamp="1616155214765">
+    <state width="558" height="464" key="DebuggerActiveHint/0.0.1536.824@0.0.1536.824" timestamp="1616160257973" />
+    <state width="1493" height="162" key="GridCell.Tab.0.bottom" timestamp="1616160295126">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="162" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1616155214765" />
-    <state width="1493" height="162" key="GridCell.Tab.0.center" timestamp="1616155214765">
+    <state width="1493" height="162" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1616160295126" />
+    <state width="1493" height="162" key="GridCell.Tab.0.center" timestamp="1616160295125">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="162" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1616155214765" />
-    <state width="1493" height="162" key="GridCell.Tab.0.left" timestamp="1616155214765">
+    <state width="1493" height="162" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1616160295125" />
+    <state width="1493" height="162" key="GridCell.Tab.0.left" timestamp="1616160295125">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="162" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1616155214765" />
-    <state width="1493" height="162" key="GridCell.Tab.0.right" timestamp="1616155214765">
+    <state width="1493" height="162" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1616160295125" />
+    <state width="1493" height="162" key="GridCell.Tab.0.right" timestamp="1616160295125">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="162" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1616155214765" />
-    <state width="1493" height="162" key="GridCell.Tab.1.bottom" timestamp="1616155214768">
+    <state width="1493" height="162" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1616160295125" />
+    <state width="1493" height="162" key="GridCell.Tab.1.bottom" timestamp="1616160295126">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="162" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1616155214768" />
-    <state width="1493" height="162" key="GridCell.Tab.1.center" timestamp="1616155214766">
+    <state width="1493" height="162" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1616160295126" />
+    <state width="1493" height="162" key="GridCell.Tab.1.center" timestamp="1616160295126">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="162" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1616155214766" />
-    <state width="1493" height="162" key="GridCell.Tab.1.left" timestamp="1616155214765">
+    <state width="1493" height="162" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1616160295126" />
+    <state width="1493" height="162" key="GridCell.Tab.1.left" timestamp="1616160295126">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="162" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1616155214765" />
-    <state width="1493" height="162" key="GridCell.Tab.1.right" timestamp="1616155214767">
+    <state width="1493" height="162" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1616160295126" />
+    <state width="1493" height="162" key="GridCell.Tab.1.right" timestamp="1616160295126">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="162" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1616155214767" />
-    <state width="1493" height="162" key="GridCell.Tab.2.bottom" timestamp="1616155214769">
+    <state width="1493" height="162" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1616160295126" />
+    <state width="1493" height="162" key="GridCell.Tab.2.bottom" timestamp="1616160295127">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="162" key="GridCell.Tab.2.bottom/0.0.1536.824@0.0.1536.824" timestamp="1616155214769" />
-    <state width="1493" height="162" key="GridCell.Tab.2.center" timestamp="1616155214768">
+    <state width="1493" height="162" key="GridCell.Tab.2.bottom/0.0.1536.824@0.0.1536.824" timestamp="1616160295127" />
+    <state width="1493" height="162" key="GridCell.Tab.2.center" timestamp="1616160295126">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="162" key="GridCell.Tab.2.center/0.0.1536.824@0.0.1536.824" timestamp="1616155214768" />
-    <state width="1493" height="162" key="GridCell.Tab.2.left" timestamp="1616155214768">
+    <state width="1493" height="162" key="GridCell.Tab.2.center/0.0.1536.824@0.0.1536.824" timestamp="1616160295126" />
+    <state width="1493" height="162" key="GridCell.Tab.2.left" timestamp="1616160295126">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="162" key="GridCell.Tab.2.left/0.0.1536.824@0.0.1536.824" timestamp="1616155214768" />
-    <state width="1493" height="162" key="GridCell.Tab.2.right" timestamp="1616155214769">
+    <state width="1493" height="162" key="GridCell.Tab.2.left/0.0.1536.824@0.0.1536.824" timestamp="1616160295126" />
+    <state width="1493" height="162" key="GridCell.Tab.2.right" timestamp="1616160295126">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="162" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1616155214769" />
-    <state width="1493" height="162" key="GridCell.Tab.3.bottom" timestamp="1616155214770">
+    <state width="1493" height="162" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1616160295126" />
+    <state width="1493" height="162" key="GridCell.Tab.3.bottom" timestamp="1616160295127">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="162" key="GridCell.Tab.3.bottom/0.0.1536.824@0.0.1536.824" timestamp="1616155214770" />
-    <state width="1493" height="162" key="GridCell.Tab.3.center" timestamp="1616155214769">
+    <state width="1493" height="162" key="GridCell.Tab.3.bottom/0.0.1536.824@0.0.1536.824" timestamp="1616160295127" />
+    <state width="1493" height="162" key="GridCell.Tab.3.center" timestamp="1616160295127">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="162" key="GridCell.Tab.3.center/0.0.1536.824@0.0.1536.824" timestamp="1616155214769" />
-    <state width="1493" height="162" key="GridCell.Tab.3.left" timestamp="1616155214769">
+    <state width="1493" height="162" key="GridCell.Tab.3.center/0.0.1536.824@0.0.1536.824" timestamp="1616160295127" />
+    <state width="1493" height="162" key="GridCell.Tab.3.left" timestamp="1616160295127">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="162" key="GridCell.Tab.3.left/0.0.1536.824@0.0.1536.824" timestamp="1616155214769" />
-    <state width="1493" height="162" key="GridCell.Tab.3.right" timestamp="1616155214769">
+    <state width="1493" height="162" key="GridCell.Tab.3.left/0.0.1536.824@0.0.1536.824" timestamp="1616160295127" />
+    <state width="1493" height="162" key="GridCell.Tab.3.right" timestamp="1616160295127">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="162" key="GridCell.Tab.3.right/0.0.1536.824@0.0.1536.824" timestamp="1616155214769" />
+    <state width="1493" height="162" key="GridCell.Tab.3.right/0.0.1536.824@0.0.1536.824" timestamp="1616160295127" />
     <state x="566" y="113" key="RiderGenerateDialog" timestamp="1616147181735">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

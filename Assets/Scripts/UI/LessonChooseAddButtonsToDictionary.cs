@@ -2,6 +2,7 @@
 using System.IO;
 using Controllers;
 using Diploma.Controllers;
+using Diploma.Enums;
 using Diploma.Interfaces;
 using Diploma.Tables;
 using ListOfLessons;
@@ -19,7 +20,7 @@ namespace Diploma.UI
         private readonly List<IDataBase> _tables;
         private readonly PlateWithButtonForLessonsFactory _plateWithButtonForLessonsFactory;
         private readonly GameObject _scrollParentForLessonsView;
-
+        private int[] _usedButton = new[] {10};
         public LessonChooseAddButtonsToDictionary(List<Button> buttons,GameContextWithViews gameContextWithViews,
             GameContextWithLessons gameContextWithLessons
         ,DataBaseController dataBaseController, List<IDataBase> tables,
@@ -33,10 +34,13 @@ namespace Diploma.UI
             _tables = tables;
             _plateWithButtonForLessonsFactory = plateWithButtonForLessonsFactory;
             _scrollParentForLessonsView = scrollParentForLessonsView;
-            // foreach (var button in _buttons)
-            // {
-            //     _gameContextWithViews.AddLessonsToggles(button.GetInstanceID(),button);
-            // }
+            _buttons = buttons;
+            int i = 0;
+            foreach (var button in _buttons)
+            {
+                _gameContextWithViews.AddChooseLessonButtons((LoadingParts)_usedButton[i],button);
+                i++;
+            }
         }
 
         public void Initialization()
@@ -48,14 +52,15 @@ namespace Diploma.UI
             {
                 var lessonToggle = _plateWithButtonForLessonsFactory.Create(_scrollParentForLessonsView.transform);
                 lessonToggle.transform.localPosition = new Vector3(0,0,0);
-                var tex = new Texture2D(5, 5);
-                tex.LoadImage(File.ReadAllBytes(lesson.Lesson_Preview));
-                lessonToggle.GetComponentInChildren<RawImage>().texture = tex;
+                //var tex = new Texture2D(5, 5);
+                //tex.LoadImage(File.ReadAllBytes(lesson.Lesson_Preview));
+                //lessonToggle.GetComponentInChildren<RawImage>().texture = tex;
                 
                 _gameContextWithLessons.AddLessonsView(lesson.Lesson_Id,
                     new ListOfLessonsView(lesson.Lesson_Id,
                         lessonToggle));
                 _gameContextWithViews.AddLessonsToggles(lesson.Lesson_Id,lessonToggle);
+                
             }
         }
     }

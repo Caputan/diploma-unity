@@ -171,12 +171,14 @@ MonoBehaviour:
     type: 3}
   SignUpPrefab: {fileID: 3694359188707926974, guid: f65d1434f94076f4a809944060dbcd5b,
     type: 3}
+  lessonCanvasPrefab: {fileID: 5558593657996745692, guid: d3d23505ce3d25849b168bf572be3664,
+    type: 3}
+  lessonPrefab: {fileID: 689257228623260598, guid: 81eeb3703b97b6648b5c8e912ff842f0,
+    type: 3}
+  ParentForLessons: {fileID: 1084967671}
   togglePanelPrefab: {fileID: 5877053247081451630, guid: f470d19f7a58ed9449b10ce3d899f0fa,
     type: 3}
   ToggleGroup: {fileID: 1084967671}
-  lessonPrefab: {fileID: 432291019890699642, guid: 2c3629445dba1e34b98ef0831eea9811,
-    type: 3}
-  ParentForLessons: {fileID: 1084967671}
   destinationPath:
   - 
   - 

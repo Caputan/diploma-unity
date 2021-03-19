@@ -45,17 +45,15 @@ namespace Controllers
             {
                 if (key == id)
                 {
-                    var tex = new Texture2D(5, 5);
-                    tex.LoadImage(File.ReadAllBytes(lesson.Lesson_Preview));
-                    _gameContextWithViews.infoPanel.
-                        GetComponentInChildren<RawImage>().texture = tex;
-                    
-                    _dataBaseController.SetTable(_dataBases[2]);
-                    Texts texts = (Texts)_dataBaseController.GetRecordFromTableById(lesson.Lesson_Text_Id);
-                    StreamReader streamReader = new StreamReader(texts.Text_Link);
+                    // var tex = new Texture2D(5, 5);
+                    // tex.LoadImage(File.ReadAllBytes(lesson.Lesson_Preview));
+                    //
+                    //
+                    // _dataBaseController.SetTable(_dataBases[2]);
+                    // Texts texts = (Texts)_dataBaseController.GetRecordFromTableById(lesson.Lesson_Text_Id);
+                    // StreamReader streamReader = new StreamReader(texts.Text_Link);
                     // хз на счет этого. надо протестить.
-                    _gameContextWithViews.infoPanel.
-                        GetComponentInChildren<TextMeshPro>().text = streamReader.ReadToEnd();
+                    
                 }
             }
         }

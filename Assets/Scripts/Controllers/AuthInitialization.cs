@@ -42,7 +42,7 @@ namespace Diploma.Controllers
             _authButtons.AddRange(authMenu.GetComponentsInChildren<Button>());
 
             new AuthAddButtonsToDictionary(_authButtons, _gameContextWithViews);
-            var authLogic = new AuthLogic(_gameContextWithViews.Buttons);
+            var authLogic = new AuthLogic(_gameContextWithViews.AuthButtons);
             authLogic.Initialization();
             _gameContextWithUI.AddUIToDictionary(LoadingParts.LoadAuth, authMenu);
             _gameContextWithUI.AddUILogic(LoadingParts.LoadAuth, authLogic);

@@ -53,7 +53,6 @@ namespace Diploma.Controllers
                     _exitController.ExitApplication(); 
                     break;
                 case LoadingParts.LoadAuth:
-                    //сюда еще к UI обращение надо
                     _gameContextWithUI.UiControllers[LoadingParts.LoadAuth].SetActive(true);
                     _backController.WhereIMustBack(_currentPosition);
                     _currentPosition = LoadingParts.LoadAuth;

@@ -19,7 +19,7 @@ namespace Diploma.UI
             int i = 0;
             foreach (var button in _buttons)
             {
-                _gameContextWithViews.AddButtons((LoadingParts)_usedMenues[i], button);
+                _gameContextWithViews.AddAuthButtons((LoadingParts)_usedMenues[i], button);
                 i++;
             }
         }
