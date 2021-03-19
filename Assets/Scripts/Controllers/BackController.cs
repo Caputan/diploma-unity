@@ -7,22 +7,22 @@ namespace Controllers
 {
     public class BackController: IInitialization
     {
-        private List<LoadingParts> _loadingPartses;
+        private List<LoadingParts> _loadingParts;
 
         public void Initialization()
         {
-            _loadingPartses = new List<LoadingParts>();
+            _loadingParts = new List<LoadingParts>();
         }
 
-        public void WhereIMustBack(LoadingParts lasstback)
+        public void WhereIMustBack(LoadingParts lastback)
         {
-            _loadingPartses.Add(lasstback);
+            _loadingParts.Add(lastback);
         }
 
         public LoadingParts GoBack()
         {
-            var back = _loadingPartses[_loadingPartses.Count - 1];
-            _loadingPartses.RemoveAt(_loadingPartses.Count - 1);
+            var back = _loadingParts[_loadingParts.Count - 1];
+            _loadingParts.RemoveAt(_loadingParts.Count - 1);
             return back;
         }
     }

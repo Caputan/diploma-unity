@@ -16,16 +16,19 @@ namespace Diploma.Controllers
         private readonly GameContextWithUI _gameContextWithUI;
         private readonly ExitController _exitController;
         private readonly BackController _backController;
+        private readonly AuthController _authController;
         private LoadingParts _currentPosition;
 
         public UIController(GameContextWithUI gameContextWithUI,
             ExitController exitController,
-            BackController backController
+            BackController backController,
+            AuthController authController
         )
         {
             _gameContextWithUI = gameContextWithUI;
             _exitController = exitController;
             _backController = backController;
+            _authController = authController;
         }
 
         public void Initialization()
@@ -54,8 +57,8 @@ namespace Diploma.Controllers
                     break;
                 case LoadingParts.LoadAuth:
                     //сюда еще к UI обращение надо
-                    _gameContextWithUI.UiControllers[LoadingParts.LoadAuth].SetActive(true);
                     _backController.WhereIMustBack(_currentPosition);
+                    _gameContextWithUI.UiControllers[LoadingParts.LoadAuth].SetActive(true);
                     _currentPosition = LoadingParts.LoadAuth;
                     break;
                 case LoadingParts.LoadSignUp:
@@ -79,12 +82,24 @@ namespace Diploma.Controllers
                     _currentPosition = LoadingParts.Options;
                     break;
                 case LoadingParts.LoadMain:
-                    _gameContextWithUI.UiControllers[LoadingParts.LoadMain].SetActive(true);
-                    _backController.WhereIMustBack(_currentPosition);
-                    _currentPosition = LoadingParts.LoadMain;
+                    if (_authController.CheckAuthData())
+                    {
+                        _backController.WhereIMustBack(_currentPosition);
+                        _gameContextWithUI.UiControllers[LoadingParts.LoadMain].SetActive(true);
+                        _currentPosition = LoadingParts.LoadMain;
+                    }
+                    else
+                    {
+                        ShowUIByUIType(LoadingParts.LoadError);
+                    }
                     break;
                 case LoadingParts.Back:
                     ShowUIByUIType(_backController.GoBack());
+                    break;
+                case LoadingParts.LoadError:
+                    _backController.WhereIMustBack(_currentPosition);
+                    Debug.Log("Error!!");
+                    _currentPosition = LoadingParts.LoadError;
                     break;
             }
             Debug.Log(id);
@@ -109,7 +124,7 @@ namespace Diploma.Controllers
             foreach (var value in _gameContextWithUI.UILogic)
             {
                 var i = value.Value;
-                i.LoadNext += ShowUIByUIType;
+                i.LoadNext -= ShowUIByUIType;
             }
         }
     }

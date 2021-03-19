@@ -1,13 +1,18 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Diploma.Enums;
 using Diploma.Interfaces;
 using Diploma.Tables;
+using TMPro;
+using UnityEngine;
 
 namespace Diploma.Controllers
 {
     public class AuthController : IInitialization
     {
         private readonly DataBaseController _dataBase;
+        public TMP_InputField Login;
+        public  TMP_InputField Password;
 
         public AuthController(DataBaseController dataBase, List<IDataBase> tables)
         {
@@ -15,29 +20,21 @@ namespace Diploma.Controllers
             _dataBase.SetTable(tables[4]);
         }
 
-        public LoadingParts CheckAuthData(string username, string password)
+        public bool CheckAuthData()
         {
-            Users loginedUser = (Users) _dataBase.GetRecordFromTableByName(username);
-
-            if (loginedUser == null || password == "")
+            var loginedUser = (Users) _dataBase.GetRecordFromTableByName(Login.text);
+            if (loginedUser == null || Password.text == "")
             {
                 // вывод сообщения о неправильно введенном имени пользователя или пароле
-                return LoadingParts.LoadError;
+                return false;
             }
 
-            if (password == loginedUser.User_Password)
+            if (Password.text == loginedUser.User_Password)
             {
-                switch (loginedUser.User_Role)
-                {
-                    case "Teacher":
-                        return LoadingParts.LoadMain;
-
-                    case "Student":
-                        return LoadingParts.LoadMain;
-                }
+                return true;
             }
 
-            return LoadingParts.None;
+            return false;
         }
 
         public void AddNewUser(string[] newUserParams)

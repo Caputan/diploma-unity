@@ -66,7 +66,7 @@ namespace Diploma.Controllers
 
             #region Authentication
 
-            var AuthController = new AuthController(DataBaseController, tables);
+            // var AuthController = new AuthController(DataBaseController, tables, );
 
             #endregion
             
@@ -124,7 +124,7 @@ namespace Diploma.Controllers
             _controllers.Add(abstractView);
             _controllers.Add(abstractFactoryController);
             //_controllers.Add(uiController);
-            _controllers.Add(AuthController);
+            // _controllers.Add(AuthController);
             _controllers.Add(_fileManagerController);
             _controllers.Initialization();
         }

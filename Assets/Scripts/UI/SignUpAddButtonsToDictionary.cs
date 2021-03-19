@@ -10,7 +10,7 @@ namespace Diploma.UI
     {
         private readonly List<Button> _buttons;
         private readonly GameContextWithViews _gameContextWithViews;
-        private int[] _usedMenues = {4, 10, 8, 11};
+        private readonly int[] _usedMenus = {4, 10, 8, 11};
         
         public SignUpAddButtonsToDictionary(List<Button> buttons, GameContextWithViews gameContextWithViews)
         {
@@ -19,7 +19,7 @@ namespace Diploma.UI
             int i = 0;
             foreach (var button in _buttons)
             {
-                _gameContextWithViews.AddButtons((LoadingParts)_usedMenues[i], button);
+                _gameContextWithViews.AddButtons((LoadingParts)_usedMenus[i], button);
                 i++;
             }
         }

@@ -68,13 +68,13 @@ namespace Diploma.Controllers
             tables.Add(videos); // 5 - videos
 
             #endregion
-
+            
             #region Authentication
 
             var AuthController = new AuthController(DataBaseController, tables);
 
             #endregion
-            
+
             #region Creation UI and GameContext
             
             _gameContextWithLogic = new GameContextWithLogic();
@@ -108,7 +108,8 @@ namespace Diploma.Controllers
                 _gameContextWithViews,
                 _gameContextWithUI,
                 MainParent,
-                AuthPrefab
+                AuthPrefab,
+                AuthController
             );
 
             var SignUpInitialization = new SignUpInitialization(
@@ -132,7 +133,7 @@ namespace Diploma.Controllers
             
             var ExitController = new ExitController();
             
-            var uiController = new UIController(_gameContextWithUI,ExitController,BackController);
+            var uiController = new UIController(_gameContextWithUI,ExitController,BackController, AuthController);
             //uiController.AddUIToDictionary();
             // добавить соответствующие менюшки ниже
             // с помощью uiController.AddUIToDictionary()
