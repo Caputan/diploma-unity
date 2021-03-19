@@ -10,7 +10,7 @@ using UnityEngine.EventSystems;
 
 namespace Diploma.UI
 {
-    public class MainMenuLogic: IUIMainMenu, IInitialization
+    public class MainMenuLogic: IUIObject, IInitialization
     {
         private readonly Dictionary<LoadingParts,Button> _buttons;
         public event Action<LoadingParts> LoadNext;

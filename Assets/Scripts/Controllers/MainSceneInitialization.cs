@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Controllers;
 using Diploma.Constructor;
 using Diploma.Interfaces;
 using Diploma.Managers;
@@ -117,7 +118,11 @@ namespace Diploma.Controllers
                 SignUpPrefab
             );
             
-            var uiController = new UIController(_gameContextWithUI);
+            var BackController = new BackController();
+            
+            var ExitController = new ExitController();
+            
+            var uiController = new UIController(_gameContextWithUI,ExitController,BackController);
             //uiController.AddUIToDictionary();
             // добавить соответствующие менюшки ниже
             // с помощью uiController.AddUIToDictionary()
@@ -142,11 +147,13 @@ namespace Diploma.Controllers
             _controllers.Add(DataBaseController);
             // _controllers.Add(abstractView);
             // _controllers.Add(abstractFactoryController);
-            _controllers.Add(uiController);
             _controllers.Add(AuthController);
             _controllers.Add(MainMenuInitilization);
             _controllers.Add(AuthInitialization);
             _controllers.Add(SignUpInitialization);
+            _controllers.Add(BackController);
+            //этот контроллер идет самым последним
+            _controllers.Add(uiController);
             _controllers.Initialization();
         }
         

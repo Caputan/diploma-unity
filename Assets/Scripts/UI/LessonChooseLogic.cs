@@ -7,17 +7,17 @@ using UnityEngine.UI;
 
 namespace Diploma.UI
 {
-    public class LessonChooseLogic: IUILoadLessonChoose, IInitialization
+    public class LessonChooseLogic: IUIObject, IInitialization
     {
-        public event Action<int> LoadNext;
+        public event Action<LoadingParts> LoadNext;
         
-        private readonly Dictionary<int,Button> _buttonLogic;
+        private readonly Dictionary<LoadingParts,Button> _buttonLogic;
         private readonly Dictionary<int,int> _lessonIDPlusButtonID;
         
-        public LessonChooseLogic(Dictionary<int,Button> buttonLogic)
+        public LessonChooseLogic(Dictionary<LoadingParts,Button> buttonLogic)
         {
             _buttonLogic = buttonLogic;
-            
+            // нужно понять как передавать номер урока, который требуется загрузить на следующую сцену
             //_lessonIDPlusButtonID
         }
         public void Initialization()
@@ -25,13 +25,13 @@ namespace Diploma.UI
             foreach (var button in _buttonLogic)
             {
                 button.Value.onClick.RemoveAllListeners();
-                button.Value.onClick.AddListener(()=> SwitchToNextMenu(_lessonIDPlusButtonID[button.Key]));
+                button.Value.onClick.AddListener(()=> SwitchToNextMenu(button.Key));
             }
         }
         
-        public void SwitchToNextMenu(int id)
+        public void SwitchToNextMenu(LoadingParts loadingParts)
         {
-            LoadNext.Invoke(id);
+            LoadNext.Invoke(loadingParts);
         }
     }
 }

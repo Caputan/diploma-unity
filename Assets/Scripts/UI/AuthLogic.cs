@@ -21,7 +21,7 @@ namespace Diploma.UI
             _buttons = buttons;
         }
 
-        private void SwitchToNextMenu(LoadingParts loadingParts)
+        public void SwitchToNextMenu(LoadingParts loadingParts)
         {
             LoadNext?.Invoke(loadingParts);
         }

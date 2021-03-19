@@ -58,6 +58,8 @@
           <e p="Controllers" t="Include">
             <e p="AbstractFactoryController.cs" t="Include" />
             <e p="AuthController.cs" t="Include" />
+            <e p="AuthInitialization.cs" t="Include" />
+            <e p="BackController.cs" t="Include" />
             <e p="ControleerInitializer.cs" t="Include" />
             <e p="Controllers.cs" t="Include" />
             <e p="CoroutineController.cs" t="Include" />
@@ -77,6 +79,7 @@
             <e p="ListOfLessonsController.cs" t="Include" />
             <e p="MainMenuInitialization.cs" t="Include" />
             <e p="MainSceneInitialization.cs" t="Include" />
+            <e p="SignUpInitialization.cs" t="Include" />
             <e p="UIController.cs" t="Include" />
           </e>
           <e p="Coroutine" t="Include">
@@ -122,7 +125,6 @@
             <e p="IShowInfoFromChoosing.cs" t="Include" />
             <e p="ITable.cs" t="Include" />
             <e p="IUILoadLessonChoose.cs" t="Include" />
-            <e p="IUIMainMenu.cs" t="Include" />
             <e p="IUIObject.cs" t="Include" />
             <e p="IUIObjectsFactory.cs" t="Include" />
           </e>
@@ -145,6 +147,9 @@
             <e p="VideosTable.cs" t="Include" />
           </e>
           <e p="UI" t="Include">
+            <e p="AuthAddButtonsToDictionary.cs" t="Include" />
+            <e p="AuthFactory.cs" t="Include" />
+            <e p="AuthLogic.cs" t="Include" />
             <e p="GameContexWithViewCreator.cs" t="Include" />
             <e p="LessonChooseAddButtonsToDictionary.cs" t="Include" />
             <e p="LessonChooseFactory.cs" t="Include" />
@@ -153,6 +158,9 @@
             <e p="MainMenuFactory.cs" t="Include" />
             <e p="MainMenuLogic.cs" t="Include" />
             <e p="PlateWithButtonForLessonsFactory.cs" t="Include" />
+            <e p="SignUpAddButtonsToDictionary.cs" t="Include" />
+            <e p="SignUpFactory.cs" t="Include" />
+            <e p="SignUpLogic.cs" t="Include" />
             <e p="TogglePanelFactory.cs" t="Include" />
           </e>
         </e>
