@@ -20,6 +20,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9a27c574-4a30-4862-a74f-153a103b04b8" name="Default Changelist" comment="">
+<<<<<<< Updated upstream
       <change afterPath="$PROJECT_DIR$/Assets/Prefabs/LessonConstrucorPanel.prefab" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Assets/Prefabs/LessonConstrucorPanel.prefab.meta" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Assets/Prefabs/LessonConstructor.prefab" afterDir="false" />
@@ -34,6 +35,9 @@
       <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/LessonConstructorUILogic.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.diploma-unity/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.diploma-unity/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.diploma-unity/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.diploma-unity/.idea/modules.xml" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.diploma-unity/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.diploma-unity/.idea/contentModel.xml" afterDir="false" />
+>>>>>>> Stashed changes
       <change beforePath="$PROJECT_DIR$/.idea/.idea.diploma-unity/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.diploma-unity/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/StartScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/StartScene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/GameContextWithViews.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/GameContextWithViews.cs" afterDir="false" />
@@ -41,11 +45,14 @@
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/LessonChooseController.cs.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/MainSceneInitialization.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/MainSceneInitialization.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/UIController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/UIController.cs" afterDir="false" />
+<<<<<<< Updated upstream
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enums/LoadingParts.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enums/LoadingParts.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/AuthAddButtonsToDictionary.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/AuthAddButtonsToDictionary.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/MainMenuAddButtonsToDictionary.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/MainMenuAddButtonsToDictionary.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/SignUpAddButtonsToDictionary.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/SignUpAddButtonsToDictionary.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/TogglePanelFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/TogglePanelFactory.cs" afterDir="false" />
+=======
+>>>>>>> Stashed changes
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,6 +78,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Controllers/AuthInitialization.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
+<<<<<<< Updated upstream
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/ExitController.cs" />
@@ -108,6 +116,21 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/GameContextWithViews.cs" />
       </list>
     </option>
+=======
+    <changedPaths>
+      <option value="$PROJECT_DIR$/Assets/Scripts/UI/MainMenuAddButtonsToDictionary.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UI/AuthAddButtonsToDictionary.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/SignUpInitialization.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Enums/LoadingParts.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Tables/UsersTable.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UI/SignUpAddButtonsToDictionary.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Managers/DataManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/MainSceneInitialization.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/DataToTransfer.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/AuthController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/UIController.cs" />
+    </changedPaths>
+>>>>>>> Stashed changes
   </component>
   <component name="ProjectId" id="1oVh7QrK5P1QV67f8aHYDy536Km" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -197,7 +220,13 @@
       <workItem from="1616142320295" duration="7630000" />
       <workItem from="1616156903135" duration="3388000" />
       <workItem from="1616401293654" duration="542000" />
+<<<<<<< Updated upstream
       <workItem from="1616402231848" duration="7914000" />
+=======
+      <workItem from="1616402466839" duration="1250000" />
+      <workItem from="1616412863219" duration="1529000" />
+      <workItem from="1616414480387" duration="29000" />
+>>>>>>> Stashed changes
     </task>
     <servers />
   </component>

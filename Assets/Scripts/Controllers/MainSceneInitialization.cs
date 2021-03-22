@@ -3,6 +3,9 @@ using Controllers;
 using Diploma.Interfaces;
 using Diploma.Managers;
 using Diploma.Tables;
+using Diploma.UI;
+using GameObjectCreating;
+using Managers;
 using UnityEngine;
 
 
@@ -165,8 +168,10 @@ namespace Diploma.Controllers
             //var abstractFactoryController = new AbstractFactoryController(abstractView,abstractFactory);
             
             #endregion
-           
-            
+
+            DataManager dataManager = new DataManager(_gameContextWithLessons, _gameContextWithLogic,
+                _gameContextWithUI, _gameContextWithViews);
+            dataManager.SetDataToTransfer();
 
             _controllers = new Controllers();
             // _controllers.Add(GameContextWithViewCreator);
