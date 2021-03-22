@@ -74,6 +74,7 @@
             <e p="GameObjectInitialization.cs" t="Include" />
             <e p="GearBoxFactoryController.cs" t="Include" />
             <e p="InputController.cs" t="Include" />
+            <e p="LessonConstructorController.cs" t="Include" />
             <e p="LessonConstructorUIInitialization.cs" t="Include" />
             <e p="LessonsChooseInitialization.cs" t="Include" />
             <e p="ListOfLessonsController.cs" t="Include" />
@@ -88,7 +89,6 @@
             <e p="CoroutineExtensions.cs" t="Include" />
           </e>
           <e p="Enums" t="Include">
-            <e p="ComboType.cs" t="Include" />
             <e p="CoroutineState.cs" t="Include" />
             <e p="FactoryType.cs" t="Include" />
             <e p="FileTypes.cs" t="Include" />

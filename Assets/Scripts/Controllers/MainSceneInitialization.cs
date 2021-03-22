@@ -143,12 +143,22 @@ namespace Diploma.Controllers
                 lessonConstructorPrefab,
                 lessonConstructorPlatePrefab
             );
+            var LessonConstructorController = new LessonConstructorController(
+                DataBaseController,
+                tables
+            );
             
             var BackController = new BackController();
             
             var ExitController = new ExitController();
             
-            var uiController = new UIController(_gameContextWithUI,ExitController,BackController, AuthController);
+            var uiController = new UIController(
+                _gameContextWithUI,
+                ExitController,
+                BackController,
+                AuthController,
+                _fileManager,
+                LessonConstructorController);
             //uiController.AddUIToDictionary();
             // добавить соответствующие менюшки ниже
             // с помощью uiController.AddUIToDictionary()

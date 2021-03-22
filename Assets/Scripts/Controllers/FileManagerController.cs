@@ -5,6 +5,7 @@ using System.IO;
 using Coroutine;
 using Diploma.Enums;
 using Diploma.Interfaces;
+using Diploma.Tables;
 using SimpleFileBrowser;
 using UnityEngine;
 
@@ -44,7 +45,7 @@ namespace Diploma.Controllers
 
             if (FileBrowser.Success)
             {
-
+                
             }
         }
 
