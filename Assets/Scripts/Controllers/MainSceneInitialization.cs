@@ -1,14 +1,10 @@
 ﻿using System.Collections.Generic;
 using Controllers;
-using Diploma.Constructor;
 using Diploma.Interfaces;
 using Diploma.Managers;
 using Diploma.Tables;
-using Diploma.UI;
-using GameObjectCreating;
 using UnityEngine;
-using UnityEngine.Serialization;
-using UnityEngine.UI;
+
 
 namespace Diploma.Controllers
 {
@@ -25,6 +21,10 @@ namespace Diploma.Controllers
         [SerializeField] private GameObject lessonCanvasPrefab;
         [SerializeField] private GameObject lessonPrefab;
         [SerializeField] private GameObject ParentForLessons;
+        
+        [SerializeField] private GameObject lessonConstructorPrefab;
+        [SerializeField] private GameObject lessonConstructorPlatePrefab;
+        
         #region Don't Use
         [SerializeField] private GameObject togglePanelPrefab;
         [SerializeField] private GameObject ToggleGroup;
@@ -132,6 +132,17 @@ namespace Diploma.Controllers
                 tables
                 );
             
+            var LessonConstructorInitialization = new LessonConstructorUIInitialization(
+                _gameContextWithViews,
+                _gameContextWithUI,
+                _gameContextWithLogic,
+                DataBaseController,
+                tables,
+                MainParent,
+                lessonConstructorPrefab,
+                lessonConstructorPlatePrefab
+            );
+            
             var BackController = new BackController();
             
             var ExitController = new ExitController();
@@ -167,6 +178,7 @@ namespace Diploma.Controllers
             _controllers.Add(SignUpInitialization);
             _controllers.Add(BackController);
             _controllers.Add(ChooseLessonInitialization);
+            _controllers.Add(LessonConstructorInitialization);
             //этот контроллер идет самым последним
             _controllers.Add(uiController);
             _controllers.Initialization();

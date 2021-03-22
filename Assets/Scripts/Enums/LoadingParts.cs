@@ -14,6 +14,10 @@
         Next = 9,
         Back = 10,
         Exit = 11,
+        //Additonal part for buttons
+        DownloadModel = 12,
+        DownloadPDF = 13,
+        DownloadVideo = 14,
         LoadError
     }
 }
