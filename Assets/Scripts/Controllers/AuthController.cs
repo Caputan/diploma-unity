@@ -27,6 +27,8 @@ namespace Diploma.Controllers
 
         public bool CheckAuthData()
         {
+            _dataBase.SetTable(_table);
+            
             var loginedUser = (Users) _dataBase.GetRecordFromTableByName(Login.text);
             if (loginedUser == null || Password.text == "")
             {
@@ -38,8 +40,12 @@ namespace Diploma.Controllers
             {
                 return true;
             }
+            else
+            {
+                return false;
+            }
 
-            return false;
+            // return false;
         }
 
         public bool AddNewUser()
