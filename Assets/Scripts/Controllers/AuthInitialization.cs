@@ -2,6 +2,7 @@
 using Diploma.Enums;
 using Diploma.Interfaces;
 using Diploma.UI;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Video;
@@ -16,14 +17,19 @@ namespace Diploma.Controllers
         private readonly GameObject _authPrefab;
         private readonly AuthFactory _authFactory;
         private List<Button> _authButtons;
+        private readonly AuthController _authController;
+
+        public TMP_InputField Login;
+        public TMP_InputField Password;
 
         public AuthInitialization(GameContextWithViews gameContextWithViews,
-            GameContextWithUI gameContextWithUI, GameObject authParent, GameObject authPrefab)
+            GameContextWithUI gameContextWithUI, GameObject authParent, GameObject authPrefab, AuthController authController)
         {
             _gameContextWithViews = gameContextWithViews;
             _gameContextWithUI = gameContextWithUI;
             _authParent = authParent;
             _authPrefab = authPrefab;
+            _authController = authController;
             _authFactory = new AuthFactory(_authPrefab);
         }
 
@@ -40,6 +46,12 @@ namespace Diploma.Controllers
 
             _authButtons = new List<Button>();
             _authButtons.AddRange(authMenu.GetComponentsInChildren<Button>());
+
+            Login = authMenu.GetComponentsInChildren<TMP_InputField>()[0];
+            Password = authMenu.GetComponentsInChildren<TMP_InputField>()[1];
+
+            _authController.Login = Login;
+            _authController.Password = Password;
 
             new AuthAddButtonsToDictionary(_authButtons, _gameContextWithViews);
             var authLogic = new AuthLogic(_gameContextWithViews.AuthButtons);

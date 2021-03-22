@@ -2,6 +2,7 @@
 using Diploma.Controllers;
 using Diploma.Enums;
 using Diploma.Interfaces;
+using UnityEngine;
 using UnityEngine.UI;
 
 namespace Diploma.UI
@@ -10,7 +11,7 @@ namespace Diploma.UI
     {
         private readonly List<Button> _buttons;
         private readonly GameContextWithViews _gameContextWithViews;
-        private int[] _usedMenues = {6, 5, 8, 11};
+        private readonly int[] _usedMenus = {6, 5, 8, 11};
 
         public AuthAddButtonsToDictionary(List<Button> buttons, GameContextWithViews gameContextWithViews)
         {
@@ -19,7 +20,7 @@ namespace Diploma.UI
             int i = 0;
             foreach (var button in _buttons)
             {
-                _gameContextWithViews.AddAuthButtons((LoadingParts)_usedMenues[i], button);
+                _gameContextWithViews.AddButtons((LoadingParts)_usedMenus[i], button);
                 i++;
             }
         }

@@ -22,7 +22,7 @@ namespace Diploma.UI
 
         public void SwitchToNextMenu(LoadingParts loadingParts)
         {
-            LoadNext.Invoke(loadingParts);
+            LoadNext?.Invoke(loadingParts);
         }
 
 
