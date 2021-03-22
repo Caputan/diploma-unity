@@ -12,16 +12,23 @@ namespace Diploma.Controllers
     {
         private readonly DataBaseController _dataBase;
         public TMP_InputField Login;
-        public  TMP_InputField Password;
+        public  TMP_InputField Password; 
+        public TMP_InputField NewLogin;
+        public  TMP_InputField NewPassword;
+        public  TMP_InputField NewEmail;
+
+        private readonly IDataBase _table;
 
         public AuthController(DataBaseController dataBase, List<IDataBase> tables)
         {
             _dataBase = dataBase;
-            _dataBase.SetTable(tables[4]);
+            _table = tables[4];
         }
 
         public bool CheckAuthData()
         {
+            _dataBase.SetTable(_table);
+            
             var loginedUser = (Users) _dataBase.GetRecordFromTableByName(Login.text);
             if (loginedUser == null || Password.text == "")
             {
@@ -33,16 +40,23 @@ namespace Diploma.Controllers
             {
                 return true;
             }
+            else
+            {
+                return false;
+            }
 
-            return false;
+            // return false;
         }
 
-        public void AddNewUser(string[] newUserParams)
+        public bool AddNewUser()
         {
-            if (_dataBase.GetRecordFromTableByName(newUserParams[0]) != null)
-                return;
-            
+            if (NewLogin.text == "" || NewPassword.text == "" || NewEmail.text == "")
+                return false;
+
+            string[] newUserParams = {NewLogin.text, NewEmail.text, NewPassword.text};
+            _dataBase.SetTable(_table);
             _dataBase.AddNewRecordToTable(newUserParams);
+            return true;
         }
 
 

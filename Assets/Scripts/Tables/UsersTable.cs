@@ -36,7 +36,7 @@ namespace Diploma.Tables
                 User_Name = userParams[0],
                 User_Email = userParams[1],
                 User_Password = userParams[2],
-                User_Role = userParams[3]
+                User_Role = "Student"
             };
             connection.Insert(newUser);
         }
