@@ -176,6 +176,11 @@ MonoBehaviour:
   lessonPrefab: {fileID: 689257228623260598, guid: 81eeb3703b97b6648b5c8e912ff842f0,
     type: 3}
   ParentForLessons: {fileID: 1084967671}
+  lessonConstructorParent: {fileID: 0}
+  lessonConstructorPrefab: {fileID: 4443386616434627426, guid: 7df8992399bd42d4fad4cd5523533544,
+    type: 3}
+  lessonConstructorPlatePrefab: {fileID: 5343342984086298806, guid: 092c9b973d3e0d64cb77ab14e46486bd,
+    type: 3}
   togglePanelPrefab: {fileID: 5877053247081451630, guid: f470d19f7a58ed9449b10ce3d899f0fa,
     type: 3}
   ToggleGroup: {fileID: 1084967671}

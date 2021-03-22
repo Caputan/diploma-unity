@@ -72,7 +72,7 @@ namespace Diploma.Controllers
                     _currentPosition = LoadingParts.LoadLectures;
                     break;
                 case LoadingParts.LoadConstructor:
-                    
+                    _gameContextWithUI.UiControllers[LoadingParts.LoadConstructor].SetActive(true);
                     _backController.WhereIMustBack(_currentPosition);
                     _currentPosition = LoadingParts.LoadConstructor;
                     break;
