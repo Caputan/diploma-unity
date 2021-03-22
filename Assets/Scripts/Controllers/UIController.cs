@@ -39,7 +39,7 @@ namespace Diploma.Controllers
                 i.LoadNext += ShowUIByUIType;
             }
             HideAllUI();
-            ShowUIByUIType(LoadingParts.LoadAuth);
+            ShowUIByUIType(LoadingParts.LoadStart);
         }
 
         private void HideUI(GameObject Controller)
@@ -55,11 +55,25 @@ namespace Diploma.Controllers
                 case LoadingParts.Exit:
                     _exitController.ExitApplication(); 
                     break;
-                case LoadingParts.LoadAuth:
-                    //сюда еще к UI обращение надо
+                case LoadingParts.LoadStart:
                     _backController.WhereIMustBack(_currentPosition);
                     _gameContextWithUI.UiControllers[LoadingParts.LoadAuth].SetActive(true);
-                    _currentPosition = LoadingParts.LoadAuth;
+                    _currentPosition = LoadingParts.LoadStart;
+                    break;
+                case LoadingParts.LoadAuth:
+                    //сюда еще к UI обращение надо
+                    if (_authController.AddNewUser())
+                    {
+                        _backController.WhereIMustBack(_currentPosition);
+                        _gameContextWithUI.UiControllers[LoadingParts.LoadAuth].SetActive(true);
+                        _currentPosition = LoadingParts.LoadAuth;
+                    }
+                    else
+                    {
+                        _backController.WhereIMustBack(_currentPosition);
+                        ShowUIByUIType(LoadingParts.LoadError);
+                    }
+
                     break;
                 case LoadingParts.LoadSignUp:
                     _gameContextWithUI.UiControllers[LoadingParts.LoadSignUp].SetActive(true);
@@ -72,12 +86,10 @@ namespace Diploma.Controllers
                     _currentPosition = LoadingParts.LoadLectures;
                     break;
                 case LoadingParts.LoadConstructor:
-                    
                     _backController.WhereIMustBack(_currentPosition);
                     _currentPosition = LoadingParts.LoadConstructor;
                     break;
                 case LoadingParts.Options:
-                    
                     _backController.WhereIMustBack(_currentPosition);
                     _currentPosition = LoadingParts.Options;
                     break;

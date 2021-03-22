@@ -2,6 +2,7 @@
 using Diploma.Enums;
 using Diploma.Interfaces;
 using Diploma.UI;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Video;
@@ -17,13 +18,19 @@ namespace Diploma.Controllers
         private readonly SignUpFactory _signUpFactory;
         private List<Button> SignUpButtons;
 
+        private AuthController _authController;
+        public TMP_InputField Login;
+        public  TMP_InputField Password;
+        public  TMP_InputField Email;
+
         public SignUpInitialization(GameContextWithViews gameContextWithViews,
-            GameContextWithUI gameContextWithUI, GameObject MainParent, GameObject signUpPrefab)
+            GameContextWithUI gameContextWithUI, GameObject MainParent, GameObject signUpPrefab, AuthController authController)
         {
             _gameContextWithViews = gameContextWithViews;
             _gameContextWithUI = gameContextWithUI;
             _mainParent = MainParent;
             _signUpPrefab = signUpPrefab;
+            _authController = authController;
             _signUpFactory = new SignUpFactory(_signUpPrefab);
         }
 
@@ -40,6 +47,14 @@ namespace Diploma.Controllers
 
             SignUpButtons = new List<Button>();
             SignUpButtons.AddRange(signUpMenu.GetComponentsInChildren<Button>());
+            
+            Login = signUpMenu.GetComponentsInChildren<TMP_InputField>()[0];
+            Password = signUpMenu.GetComponentsInChildren<TMP_InputField>()[1];
+            Email = signUpMenu.GetComponentsInChildren<TMP_InputField>()[2];
+
+            _authController.NewLogin = Login;
+            _authController.NewPassword = Password;
+            _authController.NewEmail = Email;
 
             new SignUpAddButtonsToDictionary(SignUpButtons, _gameContextWithViews);
             var authLogic = new SignUpLogic(_gameContextWithViews.SignUpButtons);

@@ -14,6 +14,7 @@
         Next = 9,
         Back = 10,
         Exit = 11,
-        LoadError
+        LoadError = 12,
+        LoadStart = 13
     }
 }

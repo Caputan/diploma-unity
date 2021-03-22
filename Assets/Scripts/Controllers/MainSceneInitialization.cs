@@ -118,7 +118,8 @@ namespace Diploma.Controllers
                 _gameContextWithViews,
                 _gameContextWithUI,
                 MainParent,
-                SignUpPrefab
+                SignUpPrefab,
+                AuthController
             );
             
             var ChooseLessonInitialization = new LessonsChooseInitialization(
