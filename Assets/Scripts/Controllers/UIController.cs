@@ -56,6 +56,7 @@ namespace Diploma.Controllers
                     _exitController.ExitApplication(); 
                     break;
                 case LoadingParts.LoadStart:
+                    GameObject.Find("BackGround").SetActive(true);
                     _backController.WhereIMustBack(_currentPosition);
                     _gameContextWithUI.UiControllers[LoadingParts.LoadAuth].SetActive(true);
                     _currentPosition = LoadingParts.LoadStart;
@@ -98,6 +99,7 @@ namespace Diploma.Controllers
                     {
                         _backController.WhereIMustBack(_currentPosition);
                         _gameContextWithUI.UiControllers[LoadingParts.LoadMain].SetActive(true);
+                        GameObject.Find("BackGround").SetActive(false);
                         _currentPosition = LoadingParts.LoadMain;
                     }
                     else
