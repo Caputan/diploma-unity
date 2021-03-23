@@ -10,7 +10,7 @@ namespace Diploma.UI
     public class LessonChooseLogic: IUIObject, IInitialization
     {
         public event Action<LoadingParts> LoadNext;
-        
+
         private readonly Dictionary<LoadingParts,Button> _buttonLogic;
         private readonly Dictionary<int,int> _lessonIDPlusButtonID;
         

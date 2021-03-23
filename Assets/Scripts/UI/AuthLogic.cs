@@ -17,7 +17,7 @@ namespace Diploma.UI
         private readonly Dictionary<LoadingParts, Button> _buttons;
 
         public event Action<LoadingParts> LoadNext;
-
+        
         public AuthLogic(Dictionary<LoadingParts, Button> buttons)
         {
             _buttons = buttons;

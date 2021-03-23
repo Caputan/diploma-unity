@@ -114,6 +114,7 @@
             <e p="IConstructorFactory.cs" t="Include" />
             <e p="IController.cs" t="Include" />
             <e p="IDataBase.cs" t="Include" />
+            <e p="IDataBaseFileManager.cs" t="Include" />
             <e p="IExecute.cs" t="Include" />
             <e p="IFactory.cs" t="Include" />
             <e p="IFactoryView.cs" t="Include" />

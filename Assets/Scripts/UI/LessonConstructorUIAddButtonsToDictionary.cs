@@ -64,6 +64,7 @@ namespace Diploma.UI
                 _gameContextWithViews.AddToggles(toggle.GetInstanceID(), toggle);
                 index++;
             }
+
             
             #endregion
         }

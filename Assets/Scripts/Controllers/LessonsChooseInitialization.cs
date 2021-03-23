@@ -51,7 +51,7 @@ namespace Controllers
             var LessonsChoose = _lessonCanvasChooseFactory.Create(_lessonChooseParent.transform);
             LessonsChoose.transform.localPosition = new Vector3(0,0,0);
             // решение так себе,но пока что так. может и не пока что.
-            var parentForLessons = GameObject.Find("ScrollLessonList/ListViewport/ListContent");
+            var parentForLessons = LessonsChoose.transform.GetChild(2).GetChild(0).GetChild(0).gameObject;
             
             _lessonChooseButtons = new List<Button>();
             _lessonChooseButtons.AddRange(LessonsChoose.GetComponentsInChildren<Button>());

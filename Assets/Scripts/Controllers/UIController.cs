@@ -1,14 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using Controllers;
+﻿using Controllers;
 using Diploma.Enums;
 using Diploma.Interfaces;
-using Diploma.Tables;
-using Interfaces;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using Debug = UnityEngine.Debug;
 
 namespace Diploma.Controllers
@@ -128,13 +121,19 @@ namespace Diploma.Controllers
                     // DownloadPDF = 13,
                     // DownloadVideo = 14,   
                 case LoadingParts.DownloadModel:
+                    _gameContextWithUI.UiControllers[LoadingParts.LoadCreationOfLesson].SetActive(true);
                     _fileManagerController.ShowSaveDialog(FileTypes.Assembly);
+                    
                     break;
                 case LoadingParts.DownloadPDF:
+                    _gameContextWithUI.UiControllers[LoadingParts.LoadCreationOfLesson].SetActive(true);
                     _fileManagerController.ShowSaveDialog(FileTypes.Text);
+                    
                     break;
                 case LoadingParts.DownloadVideo:
+                    _gameContextWithUI.UiControllers[LoadingParts.LoadCreationOfLesson].SetActive(true);
                     _fileManagerController.ShowSaveDialog(FileTypes.Video);
+                    
                     break;
                 case LoadingParts.Next:
                     _lessonConstructorController.CreateALesson();
