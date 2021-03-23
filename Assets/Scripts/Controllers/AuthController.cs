@@ -16,6 +16,7 @@ namespace Diploma.Controllers
         public TMP_InputField NewLogin;
         public  TMP_InputField NewPassword;
         public  TMP_InputField NewEmail;
+        public TextMeshProUGUI greetings;
 
         private readonly IDataBase _table;
 
@@ -38,6 +39,9 @@ namespace Diploma.Controllers
 
             if (Password.text == loginedUser.User_Password)
             {
+                greetings.text = greetings.text + Login.text;
+                Login.text = "";
+                Password.text = "";
                 return true;
             }
             else

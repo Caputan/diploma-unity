@@ -38,10 +38,10 @@ namespace Diploma.Controllers
         {
             var signUpMenu = _signUpFactory.Create(_mainParent.transform);
             
-            var bgVideo = signUpMenu.GetComponentInChildren<VideoPlayer>();
-            bgVideo.renderMode = VideoRenderMode.CameraFarPlane;
-            bgVideo.targetCamera = Camera.main;
-            bgVideo.Play();
+            // var bgVideo = signUpMenu.GetComponentInChildren<VideoPlayer>();
+            // bgVideo.renderMode = VideoRenderMode.CameraFarPlane;
+            // bgVideo.targetCamera = Camera.main;
+            // bgVideo.Play();
             
             signUpMenu.transform.localPosition = new Vector3(0,0,0);
 

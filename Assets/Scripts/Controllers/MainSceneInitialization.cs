@@ -3,6 +3,7 @@ using Controllers;
 using Diploma.Interfaces;
 using Diploma.Managers;
 using Diploma.Tables;
+using UnityEditor;
 using UnityEngine;
 
 
@@ -103,7 +104,8 @@ namespace Diploma.Controllers
                 _gameContextWithViews,
                 _gameContextWithUI,
                 MainParent,
-                MainMenuPrefab
+                MainMenuPrefab,
+                AuthController
             );
 
             var AuthInitialization = new AuthInitialization(

@@ -37,10 +37,10 @@ namespace Diploma.Controllers
         {
             var authMenu = _authFactory.Create(_authParent.transform);
             
-            var bgVideo = authMenu.GetComponentInChildren<VideoPlayer>();
-            bgVideo.renderMode = VideoRenderMode.CameraFarPlane;
-            bgVideo.targetCamera = Camera.main;
-            bgVideo.Play();
+            // var bgVideo = authMenu.GetComponentInChildren<VideoPlayer>();
+            // bgVideo.renderMode = VideoRenderMode.CameraFarPlane;
+            // bgVideo.targetCamera = Camera.main;
+            // bgVideo.Play();
             
             authMenu.transform.localPosition = new Vector3(0,0,0);
 

@@ -6,6 +6,7 @@ using Diploma.Enums;
 using Diploma.Interfaces;
 using Diploma.Tables;
 using ListOfLessons;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -47,14 +48,17 @@ namespace Diploma.UI
         {
             _dataBaseController.SetTable(_tables[1]);
             List<Lessons> dataLessonsFromTable = _dataBaseController.GetDataFromTable<Lessons>();
-            
+            int i = 0;
             foreach (var lesson in dataLessonsFromTable)
             {
                 var lessonToggle = _plateWithButtonForLessonsFactory.Create(_scrollParentForLessonsView.transform);
                 lessonToggle.transform.localPosition = new Vector3(0,0,0);
-                //var tex = new Texture2D(5, 5);
-                //tex.LoadImage(File.ReadAllBytes(lesson.Lesson_Preview));
-                //lessonToggle.GetComponentInChildren<RawImage>().texture = tex;
+                var tex = new Texture2D(5, 5);
+                tex.LoadImage(File.ReadAllBytes(lesson.Lesson_Preview));
+                lessonToggle.GetComponentInChildren<RawImage>().texture = tex;
+
+                var lessonName = lessonToggle.GetComponentInChildren<TextMeshProUGUI>();
+                lessonName.text = lesson.Lesson_Type_Id.ToString();
                 
                 _gameContextWithLessons.AddLessonsView(lesson.Lesson_Id,
                     new ListOfLessonsView(lesson.Lesson_Id,
