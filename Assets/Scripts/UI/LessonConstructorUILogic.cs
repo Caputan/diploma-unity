@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using Diploma.Enums;
 using Diploma.Interfaces;
 using Interfaces;
+using TMPro;
+using UnityEngine;
 using UnityEngine.UI;
 
 namespace Diploma.UI
@@ -13,7 +15,9 @@ namespace Diploma.UI
         
         private readonly Dictionary<LoadingParts,Button> _buttonLogic;
 
-        public LessonConstructorUILogic(Dictionary<LoadingParts,Button> buttonLogic)
+        
+        public LessonConstructorUILogic(Dictionary<LoadingParts,Button> buttonLogic
+            )
         {
             _buttonLogic = buttonLogic;
             
@@ -26,7 +30,7 @@ namespace Diploma.UI
                 button.Value.onClick.AddListener(()=> SwitchToNextMenu(button.Key));
             }
         }
-        
+
         public void SwitchToNextMenu(LoadingParts loadingParts)
         {
             LoadNext.Invoke(loadingParts);

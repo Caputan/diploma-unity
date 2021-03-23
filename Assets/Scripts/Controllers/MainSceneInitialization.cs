@@ -84,6 +84,9 @@ namespace Diploma.Controllers
             _gameContextWithLessons = new GameContextWithLessons();
             _gameContextWithUI = new GameContextWithUI();
             
+            
+            
+            _fileManager = new FileManagerController(_gameContextWithUI,destinationPath);
             // тут мы создали базове типизированное меню
             // var GameContextWithViewCreator = new GameContexWithViewCreator(
             //     _gameContextWithViews,
@@ -143,9 +146,12 @@ namespace Diploma.Controllers
                 lessonConstructorPrefab,
                 lessonConstructorPlatePrefab
             );
+            
             var LessonConstructorController = new LessonConstructorController(
                 DataBaseController,
-                tables
+                tables,
+                _gameContextWithViews,
+                _fileManager
             );
             
             var BackController = new BackController();
@@ -190,6 +196,7 @@ namespace Diploma.Controllers
             _controllers.Add(BackController);
             _controllers.Add(ChooseLessonInitialization);
             _controllers.Add(LessonConstructorInitialization);
+            _controllers.Add(LessonConstructorController);
             //этот контроллер идет самым последним
             _controllers.Add(uiController);
             _controllers.Initialization();

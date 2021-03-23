@@ -1,4 +1,6 @@
-﻿namespace Interfaces
+﻿using System;
+
+namespace Interfaces
 {
     public interface IFileManager
     {
@@ -19,5 +21,7 @@
         /// <param name="fileName">Name of the file.</param>
 
         void DeleteFolder(int guideId);
+
+   
     }
 }

@@ -99,10 +99,10 @@ namespace Diploma.Controllers
             #endregion
 
 
-            _fileManagerController = new FileManagerController
-            {
-                DataBaseController = DataBaseController, Tables = tables, destinationPath = destinationPath
-            };
+            // _fileManagerController = new FileManagerController(_gameco)
+            // {
+            //     DataBaseController = DataBaseController, Tables = tables, destinationPath = destinationPath
+            // };
 
             #region Creation new Lession Module
             // данный регион будет вызываться во время создания урока

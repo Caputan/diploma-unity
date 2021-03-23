@@ -17,8 +17,8 @@ namespace Diploma.UI
         }
         public GameObject Create(Transform parent)
         {
-           var gm = GameObject.Instantiate(_togglePanel, parent, true);
-           gm.GetComponent<Toggle>().group = _toggleGroup;
+           var gm = GameObject.Instantiate(_togglePanel, parent);
+           gm.GetComponentInChildren<Toggle>().group = _toggleGroup;
            return gm;
         }
     }
