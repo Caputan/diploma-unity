@@ -21,6 +21,7 @@ namespace Controllers
         private readonly GameObject _prefabPlate;
         private LessonConstructorUIFactory _lessonConstructor;
         private List<Button> ConstructorButtons;
+        private GameObject parentForLessons;
         
         public LessonConstructorUIInitialization(GameContextWithViews gameContextWithViews,
             GameContextWithUI gameContextWithUI,
@@ -50,7 +51,7 @@ namespace Controllers
             var Constructor = _lessonConstructor.Create(_canvas.transform);
             Constructor.transform.localPosition = new Vector3(0,0,0);
             
-            var parentForLessons = Constructor.transform.GetChild(10).GetChild(0).GetChild(0).gameObject;
+            parentForLessons = Constructor.transform.GetChild(10).GetChild(0).GetChild(0).gameObject;
             
             ConstructorButtons = new List<Button>();
             ConstructorButtons.AddRange(Constructor.GetComponentsInChildren<Button>());
@@ -69,7 +70,7 @@ namespace Controllers
             ConstructorLogic.Initialization();
             _gameContextWithUI.AddUIToDictionary(LoadingParts.LoadCreationOfLesson, Constructor);
             _gameContextWithUI.AddUILogic(LoadingParts.LoadCreationOfLesson,ConstructorLogic);
-            
+            _gameContextWithViews.SetParentForLessons(parentForLessons);
             _gameContextWithViews.AddTextBoxesToListInConstructor(LoadingParts.DownloadModel,Constructor.transform.GetChild(4).gameObject);
             _gameContextWithViews.AddTextBoxesToListInConstructor(LoadingParts.DownloadPDF,Constructor.transform.GetChild(6).gameObject);
             _gameContextWithViews.AddTextBoxesToListInConstructor(LoadingParts.DownloadVideo,Constructor.transform.GetChild(8).gameObject);

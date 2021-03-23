@@ -15,6 +15,7 @@ namespace Diploma.Controllers
         private readonly FileManagerController _fileManagerController;
         private readonly LessonConstructorController _lessonConstructorController;
         private LoadingParts _currentPosition;
+        private GameObject _backGround;
 
         public UIController(GameContextWithUI gameContextWithUI,
             ExitController exitController,
@@ -30,6 +31,7 @@ namespace Diploma.Controllers
             _authController = authController;
             _fileManagerController = fileManagerController;
             _lessonConstructorController = lessonConstructorController;
+            _backGround = GameObject.Find("BackGround");
         }
 
         public void Initialization()
@@ -57,13 +59,14 @@ namespace Diploma.Controllers
                     _exitController.ExitApplication(); 
                     break;
                 case LoadingParts.LoadStart:
-                    GameObject.Find("BackGround").SetActive(true);
+                    _backGround.SetActive(true);
+                    _authController.Login.text = "";
+                    _authController.Password.text = "";
                     _backController.WhereIMustBack(_currentPosition);
                     _gameContextWithUI.UiControllers[LoadingParts.LoadAuth].SetActive(true);
                     _currentPosition = LoadingParts.LoadStart;
                     break;
                 case LoadingParts.LoadAuth:
-                    //сюда еще к UI обращение надо
                     if (_authController.AddNewUser())
                     {
                         _backController.WhereIMustBack(_currentPosition);
@@ -101,7 +104,7 @@ namespace Diploma.Controllers
                     {
                         _backController.WhereIMustBack(_currentPosition);
                         _gameContextWithUI.UiControllers[LoadingParts.LoadMain].SetActive(true);
-                        GameObject.Find("BackGround").SetActive(false);
+                        _backGround.SetActive(false);
                         _currentPosition = LoadingParts.LoadMain;
                     }
                     else

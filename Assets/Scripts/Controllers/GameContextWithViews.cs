@@ -15,7 +15,7 @@ namespace Diploma.Controllers
         public Dictionary<LoadingParts, Button>  SignUpButtons;
         public Dictionary<LoadingParts, Button>  LessonConstructorButtons;
         public Dictionary<LoadingParts,GameObject> TextBoxesOnConstructor;
-        
+        public GameObject parentForLessons;
         public Dictionary<int,GameObject> ChoosenLessonToggles;
         public GameContextWithViews()
         {
@@ -24,14 +24,19 @@ namespace Diploma.Controllers
             ChooseLessonButtons = new Dictionary<LoadingParts, Button>();
             AuthButtons = new Dictionary<LoadingParts, Button>();
             SignUpButtons = new Dictionary<LoadingParts, Button>();
-            ChoosenLessonToggles = new Dictionary<int, GameObject>();
             LessonConstructorButtons = new Dictionary<LoadingParts, Button>();
             TextBoxesOnConstructor = new Dictionary<LoadingParts,GameObject>();
+            ChoosenLessonToggles = new Dictionary<int, GameObject>();
         }
         
         public void AddToggles(int id,GameObject toggle)
         {
             ChoosenToggles.Add(id,toggle);
+        }
+
+        public void SetParentForLessons(GameObject ParentForLessons)
+        {
+            parentForLessons = ParentForLessons;
         }
 
         public void AddTextBoxesToListInConstructor(LoadingParts loadingParts,GameObject gameObject)

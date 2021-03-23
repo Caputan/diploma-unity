@@ -6,6 +6,7 @@ using Diploma.Interfaces;
 using Diploma.Tables;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Controllers
 {
@@ -21,7 +22,7 @@ namespace Controllers
             List<IDataBase>  tables,
             GameContextWithViews gameContextWithViews,
             FileManagerController fileManagerController
-            )
+        )
         {
             _dataBaseController = dataBaseController;
             _tables = tables;
@@ -53,7 +54,20 @@ namespace Controllers
             lessonPacked[3] = _dataBaseController.GetDataFromTable<Assemblies>().Last().Assembly_Id.ToString();
             lessonPacked[1] = _dataBaseController.GetDataFromTable<Texts>().Last().Text_Id.ToString();  
             lessonPacked[2] = _dataBaseController.GetDataFromTable<Videos>().Last().Video_Id.ToString();
-            lessonPacked[4] = "0"; // add type
+            // ToggleGroup. active Toggles
+            //var current = _gameContextWithViews.parentForLessons.GetComponent<ToggleGroup>().ActiveToggles().FirstOrDefault();
+            
+            //var activeToggleID = current.gameObject.GetInstanceID();
+            int count = 0;
+            foreach (var key in _gameContextWithViews.ChoosenToggles.Values) { 
+                if(key.GetComponentInChildren<Toggle>().isOn) 
+                    lessonPacked[4] = count.ToString();
+                // add type
+                count++;
+            }
+            
+
+
             _dataBaseController.SetTable(_tables[1]);
             _dataBaseController.AddNewRecordToTable(lessonPacked); 
         }

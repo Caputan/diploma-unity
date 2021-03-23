@@ -40,8 +40,6 @@ namespace Diploma.Controllers
             if (Password.text == loginedUser.User_Password)
             {
                 greetings.text = greetings.text + Login.text;
-                Login.text = "";
-                Password.text = "";
                 return true;
             }
             else
