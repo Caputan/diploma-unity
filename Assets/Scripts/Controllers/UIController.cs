@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Linq;
 using Controllers;
 using Diploma.Enums;
 using Diploma.Interfaces;
+using Diploma.Tables;
 using Interfaces;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -17,18 +19,24 @@ namespace Diploma.Controllers
         private readonly ExitController _exitController;
         private readonly BackController _backController;
         private readonly AuthController _authController;
+        private readonly FileManagerController _fileManagerController;
+        private readonly LessonConstructorController _lessonConstructorController;
         private LoadingParts _currentPosition;
 
         public UIController(GameContextWithUI gameContextWithUI,
             ExitController exitController,
             BackController backController,
-            AuthController authController
+            AuthController authController,
+            FileManagerController fileManagerController,
+            LessonConstructorController lessonConstructorController
         )
         {
             _gameContextWithUI = gameContextWithUI;
             _exitController = exitController;
             _backController = backController;
             _authController = authController;
+            _fileManagerController = fileManagerController;
+            _lessonConstructorController = lessonConstructorController;
         }
 
         public void Initialization()
@@ -86,9 +94,10 @@ namespace Diploma.Controllers
                     _backController.WhereIMustBack(_currentPosition);
                     _currentPosition = LoadingParts.LoadLectures;
                     break;
-                case LoadingParts.LoadConstructor:
+                case LoadingParts.LoadCreationOfLesson:
+                    _gameContextWithUI.UiControllers[LoadingParts.LoadCreationOfLesson].SetActive(true);
                     _backController.WhereIMustBack(_currentPosition);
-                    _currentPosition = LoadingParts.LoadConstructor;
+                    _currentPosition = LoadingParts.LoadCreationOfLesson;
                     break;
                 case LoadingParts.Options:
                     _backController.WhereIMustBack(_currentPosition);
@@ -115,6 +124,25 @@ namespace Diploma.Controllers
                     Debug.Log("Error!!");
                     _currentPosition = LoadingParts.LoadError;
                     break;
+                    // DownloadModel = 12,
+                    // DownloadPDF = 13,
+                    // DownloadVideo = 14,   
+                case LoadingParts.DownloadModel:
+                    _fileManagerController.ShowSaveDialog(FileTypes.Assembly);
+                    break;
+                case LoadingParts.DownloadPDF:
+                    _fileManagerController.ShowSaveDialog(FileTypes.Text);
+                    break;
+                case LoadingParts.DownloadVideo:
+                    _fileManagerController.ShowSaveDialog(FileTypes.Video);
+                    break;
+                case LoadingParts.Next:
+                    _lessonConstructorController.CreateALesson();
+                    _backController.WhereIMustBack(_currentPosition);
+                    _gameContextWithUI.UiControllers[LoadingParts.LoadMain].SetActive(true);
+                    _currentPosition = LoadingParts.LoadMain;
+                    break;
+                
             }
             Debug.Log(id);
         }

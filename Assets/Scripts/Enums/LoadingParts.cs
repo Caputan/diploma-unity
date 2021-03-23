@@ -9,7 +9,7 @@
         LoadAuth = 4,
         LoadSignUp = 5,
         LoadMain = 6,
-        LoadConstructor = 7,
+       
         Options = 8,
         Next = 9,
         Back = 10,
@@ -17,7 +17,8 @@
         //Additonal part for buttons
         DownloadModel = 12,
         DownloadPDF = 13,
-        DownloadVideo = 14,
+        DownloadVideo = 14,   
+        LoadStart = 15,
         LoadError
     }
 }

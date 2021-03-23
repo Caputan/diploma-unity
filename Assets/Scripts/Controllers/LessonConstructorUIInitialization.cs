@@ -67,8 +67,8 @@ namespace Controllers
             
             var ConstructorLogic = new LessonConstructorUILogic(_gameContextWithViews.LessonConstructorButtons);
             ConstructorLogic.Initialization();
-            _gameContextWithUI.AddUIToDictionary(LoadingParts.LoadConstructor, Constructor);
-            _gameContextWithUI.AddUILogic(LoadingParts.LoadConstructor,ConstructorLogic);
+            _gameContextWithUI.AddUIToDictionary(LoadingParts.LoadCreationOfLesson, Constructor);
+            _gameContextWithUI.AddUILogic(LoadingParts.LoadCreationOfLesson,ConstructorLogic);
             
             #endregion
         }

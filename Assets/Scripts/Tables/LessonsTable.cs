@@ -37,7 +37,8 @@ namespace Diploma.Tables
                 Lesson_Preview = lessonParams[0],
                 Lesson_Text_Id = Int32.Parse(lessonParams[1]),
                 Lesson_Video_Id = Int32.Parse(lessonParams[2]),
-                Lesson_Assembly_Id = Int32.Parse(lessonParams[3])
+                Lesson_Assembly_Id = Int32.Parse(lessonParams[3]),
+                Lesson_Type_Id = Int32.Parse(lessonParams[4])
             };
             connection.Insert(newLesson);
         }
@@ -52,5 +53,6 @@ namespace Diploma.Tables
         public int Lesson_Text_Id { get; set; }
         public int Lesson_Video_Id { get; set; }
         public int Lesson_Assembly_Id { get; set; }
+        public int Lesson_Type_Id { get; set; }
     }
 }
