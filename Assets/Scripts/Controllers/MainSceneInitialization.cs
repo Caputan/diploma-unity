@@ -153,7 +153,10 @@ namespace Diploma.Controllers
                 DataBaseController,
                 tables,
                 _gameContextWithViews,
-                _fileManager
+                _gameContextWithLessons,
+                _gameContextWithUI,
+                _fileManager,
+                lessonPrefab
             );
             
             var BackController = new BackController();
