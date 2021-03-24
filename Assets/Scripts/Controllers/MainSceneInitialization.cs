@@ -163,13 +163,15 @@ namespace Diploma.Controllers
             
             var ExitController = new ExitController();
             
+            
             var uiController = new UIController(
                 _gameContextWithUI,
                 ExitController,
                 BackController,
                 AuthController,
                 _fileManager,
-                LessonConstructorController);
+                LessonConstructorController
+                );
             //uiController.AddUIToDictionary();
             // добавить соответствующие менюшки ниже
             // с помощью uiController.AddUIToDictionary()

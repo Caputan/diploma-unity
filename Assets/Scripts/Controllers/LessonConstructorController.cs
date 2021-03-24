@@ -50,6 +50,7 @@ namespace Controllers
 
         public void SetTextInTextBox(LoadingParts loadingParts, string text)
         {
+            // добавить очситку при выходе
             _texts[loadingParts].transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = text;
         }
 

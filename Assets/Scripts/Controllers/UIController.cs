@@ -106,6 +106,9 @@ namespace Diploma.Controllers
                         _gameContextWithUI.UiControllers[LoadingParts.LoadMain].SetActive(true);
                         _backGround.SetActive(false);
                         _currentPosition = LoadingParts.LoadMain;
+                        _lessonConstructorController.SetTextInTextBox(LoadingParts.DownloadModel,"Выберите деталь (*.3ds");
+                        _lessonConstructorController.SetTextInTextBox(LoadingParts.DownloadVideo,"Выберите видео-фаил (*.mp4)");
+                        _lessonConstructorController.SetTextInTextBox(LoadingParts.DownloadPDF,"Выберите текстовый фаил(*.pdf)");
                     }
                     else
                     {

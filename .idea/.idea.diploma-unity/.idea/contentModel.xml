@@ -60,7 +60,6 @@
             <e p="AuthController.cs" t="Include" />
             <e p="AuthInitialization.cs" t="Include" />
             <e p="BackController.cs" t="Include" />
-            <e p="CleanAllInfoInConstructorUI.cs" t="Include" />
             <e p="ControleerInitializer.cs" t="Include" />
             <e p="Controllers.cs" t="Include" />
             <e p="CoroutineController.cs" t="Include" />
