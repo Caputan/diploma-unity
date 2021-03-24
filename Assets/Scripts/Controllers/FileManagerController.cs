@@ -125,7 +125,9 @@ namespace Diploma.Controllers
                     default:
                         throw new Exception("TAK DELAT NELZYA");
                 }
-                ShowNewText(parts,localPath[0]);
+
+                string[] splitedString = localPath[0].Split('\\');
+                ShowNewText(parts,splitedString[splitedString.Length-1]);
                 
             }
         }

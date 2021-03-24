@@ -66,10 +66,8 @@ namespace Controllers
                 count++;
             }
             
-
-
             _dataBaseController.SetTable(_tables[1]);
-            _dataBaseController.AddNewRecordToTable(lessonPacked); 
+            _dataBaseController.AddNewRecordToTable(lessonPacked);
         }
     }
 }
