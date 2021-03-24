@@ -153,12 +153,16 @@ namespace Diploma.Controllers
                 DataBaseController,
                 tables,
                 _gameContextWithViews,
-                _fileManager
+                _gameContextWithLessons,
+                _gameContextWithUI,
+                _fileManager,
+                lessonPrefab
             );
             
             var BackController = new BackController();
             
             var ExitController = new ExitController();
+            
             
             var uiController = new UIController(
                 _gameContextWithUI,
@@ -166,7 +170,8 @@ namespace Diploma.Controllers
                 BackController,
                 AuthController,
                 _fileManager,
-                LessonConstructorController);
+                LessonConstructorController
+                );
             //uiController.AddUIToDictionary();
             // добавить соответствующие менюшки ниже
             // с помощью uiController.AddUIToDictionary()
