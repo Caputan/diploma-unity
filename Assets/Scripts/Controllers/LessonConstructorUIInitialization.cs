@@ -70,7 +70,6 @@ namespace Controllers
             ConstructorLogic.Initialization();
             _gameContextWithUI.AddUIToDictionary(LoadingParts.LoadCreationOfLesson, Constructor);
             _gameContextWithUI.AddUILogic(LoadingParts.LoadCreationOfLesson,ConstructorLogic);
-            _gameContextWithViews.SetParentForLessons(parentForLessons);
             _gameContextWithViews.AddTextBoxesToListInConstructor(LoadingParts.DownloadModel,Constructor.transform.GetChild(4).gameObject);
             _gameContextWithViews.AddTextBoxesToListInConstructor(LoadingParts.DownloadPDF,Constructor.transform.GetChild(6).gameObject);
             _gameContextWithViews.AddTextBoxesToListInConstructor(LoadingParts.DownloadVideo,Constructor.transform.GetChild(8).gameObject);
