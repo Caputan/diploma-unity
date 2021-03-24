@@ -257,6 +257,8 @@ MonoBehaviour:
     type: 3}
   lessonConstructorPlatePrefab: {fileID: 5343342984086298806, guid: 092c9b973d3e0d64cb77ab14e46486bd,
     type: 3}
+  ErrorMenuPrefab: {fileID: 1301646634321958732, guid: 9e8481227436cd6439a25f98676192d7,
+    type: 3}
   togglePanelPrefab: {fileID: 5877053247081451630, guid: f470d19f7a58ed9449b10ce3d899f0fa,
     type: 3}
   ToggleGroup: {fileID: 1084967671}

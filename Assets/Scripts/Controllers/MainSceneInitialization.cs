@@ -26,6 +26,8 @@ namespace Diploma.Controllers
         [SerializeField] private GameObject lessonConstructorPrefab;
         [SerializeField] private GameObject lessonConstructorPlatePrefab;
         
+        [SerializeField] private GameObject ErrorMenuPrefab;
+        
         #region Don't Use
         [SerializeField] private GameObject togglePanelPrefab;
         [SerializeField] private GameObject ToggleGroup;
@@ -126,6 +128,13 @@ namespace Diploma.Controllers
                 SignUpPrefab,
                 AuthController
             );
+
+            var ErrorMenuInitialization = new ErrorMenuInitialization(
+                _gameContextWithViews,
+                _gameContextWithUI,
+                MainParent,
+                ErrorMenuPrefab
+            );
             
             var ChooseLessonInitialization = new LessonsChooseInitialization(
                 _gameContextWithViews,
@@ -200,6 +209,7 @@ namespace Diploma.Controllers
             _controllers.Add(MainMenuInitilization);
             _controllers.Add(AuthInitialization);
             _controllers.Add(SignUpInitialization);
+            _controllers.Add(ErrorMenuInitialization);
             _controllers.Add(BackController);
             _controllers.Add(ChooseLessonInitialization);
             _controllers.Add(LessonConstructorInitialization);

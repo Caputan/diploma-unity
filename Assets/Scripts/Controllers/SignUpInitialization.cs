@@ -57,10 +57,10 @@ namespace Diploma.Controllers
             _authController.NewEmail = Email;
 
             new SignUpAddButtonsToDictionary(SignUpButtons, _gameContextWithViews);
-            var authLogic = new SignUpLogic(_gameContextWithViews.SignUpButtons);
-            authLogic.Initialization();
+            var signUpLogic = new SignUpLogic(_gameContextWithViews.SignUpButtons);
+            signUpLogic.Initialization();
             _gameContextWithUI.AddUIToDictionary(LoadingParts.LoadSignUp, signUpMenu);
-            _gameContextWithUI.AddUILogic(LoadingParts.LoadSignUp, authLogic);
+            _gameContextWithUI.AddUILogic(LoadingParts.LoadSignUp, signUpLogic);
         }
     }
 }

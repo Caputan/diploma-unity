@@ -14,6 +14,7 @@ namespace Diploma.Controllers
         public Dictionary<LoadingParts, Button>  AuthButtons;
         public Dictionary<LoadingParts, Button>  SignUpButtons;
         public Dictionary<LoadingParts, Button>  LessonConstructorButtons;
+        public Dictionary<LoadingParts, Button>  ErrorMenuButtons;
         public Dictionary<LoadingParts,GameObject> TextBoxesOnConstructor;
         public GameObject parentForLessons;
         public Dictionary<int,GameObject> ChoosenLessonToggles;
@@ -25,6 +26,7 @@ namespace Diploma.Controllers
             AuthButtons = new Dictionary<LoadingParts, Button>();
             SignUpButtons = new Dictionary<LoadingParts, Button>();
             LessonConstructorButtons = new Dictionary<LoadingParts, Button>();
+            ErrorMenuButtons = new Dictionary<LoadingParts, Button>();
             TextBoxesOnConstructor = new Dictionary<LoadingParts,GameObject>();
             ChoosenLessonToggles = new Dictionary<int, GameObject>();
         }
@@ -68,6 +70,12 @@ namespace Diploma.Controllers
         {
             if(!SignUpButtons.ContainsKey(id))
                 SignUpButtons.Add(id,button);
+        }
+        
+        public void AddErrorMenuButtons(LoadingParts id, Button button)
+        {
+            if(!ErrorMenuButtons.ContainsKey(id))
+                ErrorMenuButtons.Add(id,button);
         }
 
         public void AddLessonConstructorButtons(LoadingParts id, Button button)

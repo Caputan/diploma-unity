@@ -4,6 +4,7 @@ using Diploma.Enums;
 using Diploma.Interfaces;
 using Diploma.Tables;
 using TMPro;
+using UnityEditor;
 using UnityEngine;
 
 namespace Diploma.Controllers
@@ -18,6 +19,8 @@ namespace Diploma.Controllers
         public  TMP_InputField NewEmail;
         public TextMeshProUGUI greetings;
 
+        private ErrorCodes _error;
+
         private readonly IDataBase _table;
 
         public AuthController(DataBaseController dataBase, List<IDataBase> tables)
@@ -26,39 +29,45 @@ namespace Diploma.Controllers
             _table = tables[4];
         }
 
-        public bool CheckAuthData()
+        public ErrorCodes CheckAuthData()
         {
             _dataBase.SetTable(_table);
-            
-            var loginedUser = (Users) _dataBase.GetRecordFromTableByName(Login.text);
-            if (loginedUser == null || Password.text == "")
-            {
-                // вывод сообщения о неправильно введенном имени пользователя или пароле
-                return false;
-            }
 
-            if (Password.text == loginedUser.User_Password)
+            if (Login.text == string.Empty)
             {
-                greetings.text = greetings.text + Login.text;
-                return true;
+                Debug.Log("Working!");
+                _error = ErrorCodes.EmptyInputError;
             }
             else
             {
-                return false;
+                var loginedUser = (Users) _dataBase.GetRecordFromTableByName(Login.text);
+                if (Login.text != "" && loginedUser == null)
+                {
+                    _error = ErrorCodes.AuthError;
+                }
+                else if (Password.text != loginedUser.User_Password)
+                {
+                    _error = ErrorCodes.AuthError;
+                }
+                else
+                {
+                    greetings.text = "Привет, " + Login.text;
+                    _error = ErrorCodes.None;
+                }
             }
 
-            // return false;
+            return _error;
         }
 
-        public bool AddNewUser()
+        public ErrorCodes AddNewUser()
         {
             if (NewLogin.text == "" || NewPassword.text == "" || NewEmail.text == "")
-                return false;
+                return ErrorCodes.EmptyInputError;
 
             string[] newUserParams = {NewLogin.text, NewEmail.text, NewPassword.text};
             _dataBase.SetTable(_table);
             _dataBase.AddNewRecordToTable(newUserParams);
-            return true;
+            return ErrorCodes.None;
         }
 
 

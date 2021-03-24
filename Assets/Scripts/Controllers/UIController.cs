@@ -14,8 +14,10 @@ namespace Diploma.Controllers
         private readonly AuthController _authController;
         private readonly FileManagerController _fileManagerController;
         private readonly LessonConstructorController _lessonConstructorController;
+        private readonly GameObject _backGround;
+        private ErrorHandler _errorHandler;
         private LoadingParts _currentPosition;
-        private GameObject _backGround;
+        private ErrorCodes _error;
 
         public UIController(GameContextWithUI gameContextWithUI,
             ExitController exitController,
@@ -25,6 +27,7 @@ namespace Diploma.Controllers
             LessonConstructorController lessonConstructorController
         )
         {
+            _error = ErrorCodes.None;
             _gameContextWithUI = gameContextWithUI;
             _exitController = exitController;
             _backController = backController;
@@ -42,6 +45,7 @@ namespace Diploma.Controllers
                 i.LoadNext += ShowUIByUIType;
             }
             HideAllUI();
+            _errorHandler = new ErrorHandler(_gameContextWithUI.UiControllers[LoadingParts.LoadError]);
             ShowUIByUIType(LoadingParts.LoadStart);
         }
 
@@ -67,7 +71,7 @@ namespace Diploma.Controllers
                     _currentPosition = LoadingParts.LoadStart;
                     break;
                 case LoadingParts.LoadAuth:
-                    if (_authController.AddNewUser())
+                    if (_authController.AddNewUser() == ErrorCodes.None)
                     {
                         _backController.WhereIMustBack(_currentPosition);
                         _gameContextWithUI.UiControllers[LoadingParts.LoadAuth].SetActive(true);
@@ -76,9 +80,10 @@ namespace Diploma.Controllers
                     else
                     {
                         _backController.WhereIMustBack(_currentPosition);
+                        _error = _authController.AddNewUser();
                         ShowUIByUIType(LoadingParts.LoadError);
+                        _currentPosition = LoadingParts.LoadStart;
                     }
-
                     break;
                 case LoadingParts.LoadSignUp:
                     _gameContextWithUI.UiControllers[LoadingParts.LoadSignUp].SetActive(true);
@@ -91,16 +96,22 @@ namespace Diploma.Controllers
                     _currentPosition = LoadingParts.LoadLectures;
                     break;
                 case LoadingParts.LoadCreationOfLesson:
+                    if (_fileManagerController.CheckForErrors() != ErrorCodes.None)
+                    {
+                        _error = _fileManagerController.CheckForErrors();
+                        ShowUIByUIType(LoadingParts.LoadError);
+                    }
                     _gameContextWithUI.UiControllers[LoadingParts.LoadCreationOfLesson].SetActive(true);
                     _backController.WhereIMustBack(_currentPosition);
                     _currentPosition = LoadingParts.LoadCreationOfLesson;
-                    break;
+                        break;
                 case LoadingParts.Options:
                     _backController.WhereIMustBack(_currentPosition);
                     _currentPosition = LoadingParts.Options;
                     break;
                 case LoadingParts.LoadMain:
-                    if (_authController.CheckAuthData())
+                    _error = _authController.CheckAuthData();
+                    if (_error == ErrorCodes.None)
                     {
                         _backController.WhereIMustBack(_currentPosition);
                         _gameContextWithUI.UiControllers[LoadingParts.LoadMain].SetActive(true);
@@ -120,8 +131,9 @@ namespace Diploma.Controllers
                     break;
                 case LoadingParts.LoadError:
                     _backController.WhereIMustBack(_currentPosition);
-                    Debug.Log("Error!!");
-                    _currentPosition = LoadingParts.LoadError;
+                    _errorHandler.ChangeErrorMessage(_error);
+                    _gameContextWithUI.UiControllers[LoadingParts.LoadError].SetActive(true);
+                    _currentPosition = LoadingParts.LoadStart;
                     break;
                     // DownloadModel = 12,
                     // DownloadPDF = 13,
@@ -129,25 +141,30 @@ namespace Diploma.Controllers
                 case LoadingParts.DownloadModel:
                     _gameContextWithUI.UiControllers[LoadingParts.LoadCreationOfLesson].SetActive(true);
                     _fileManagerController.ShowSaveDialog(FileTypes.Assembly);
-                    
                     break;
                 case LoadingParts.DownloadPDF:
                     _gameContextWithUI.UiControllers[LoadingParts.LoadCreationOfLesson].SetActive(true);
                     _fileManagerController.ShowSaveDialog(FileTypes.Text);
-                    
                     break;
                 case LoadingParts.DownloadVideo:
                     _gameContextWithUI.UiControllers[LoadingParts.LoadCreationOfLesson].SetActive(true);
                     _fileManagerController.ShowSaveDialog(FileTypes.Video);
-                    
                     break;
                 case LoadingParts.Next:
-                    _lessonConstructorController.CreateALesson();
-                    _backController.WhereIMustBack(_currentPosition);
-                    _gameContextWithUI.UiControllers[LoadingParts.LoadMain].SetActive(true);
-                    _currentPosition = LoadingParts.LoadMain;
+                    if (_fileManagerController.CheckForErrors() == ErrorCodes.None)
+                    {
+                        _lessonConstructorController.CreateALesson();
+                        _backController.WhereIMustBack(_currentPosition);
+                        _gameContextWithUI.UiControllers[LoadingParts.LoadMain].SetActive(true);
+                        _currentPosition = LoadingParts.LoadMain;
+                    }
+                    else
+                    {
+                        _error = _fileManagerController.CheckForErrors();
+                        ShowUIByUIType(LoadingParts.LoadError);
+                    }
+
                     break;
-                
             }
             Debug.Log(id);
         }

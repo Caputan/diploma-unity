@@ -3,11 +3,13 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using Controllers;
 using Coroutine;
 using Diploma.Enums;
 using Diploma.Interfaces;
 using Interfaces;
 using SimpleFileBrowser;
+using UnityEngine;
 
 
 namespace Diploma.Controllers
@@ -19,6 +21,8 @@ namespace Diploma.Controllers
         public DataBaseController DataBaseController;
         public List<IDataBase> Tables;
         public Loader3DS Loader3Ds;
+
+        private ErrorCodes _error;
         
         
 
@@ -31,14 +35,15 @@ namespace Diploma.Controllers
                 new FileBrowser.Filter("Videos", ".mp4"));
 
             FileBrowser.SetExcludedExtensions(".lnk", ".tmp", ".zip", ".rar", ".exe");
+            _error = ErrorCodes.EmptyInputError;
         }
 
         public void Initialization() { }
         public event Action<LoadingParts,string> newText;
 
-        public void ShowNewText(LoadingParts loadingParts,string text)
+        public void ShowNewText(LoadingParts loadingParts, string text)
         {
-            newText.Invoke(loadingParts,text);
+            newText?.Invoke(loadingParts, text);
         }
 
         public void ShowLoadDialog()
@@ -51,6 +56,10 @@ namespace Diploma.Controllers
             ShowSaveDialogCoroutine(fileTypes).StartCoroutine(out _);
         }
 
+        public ErrorCodes CheckForErrors()
+        {
+            return _error;
+        }
 
         private IEnumerator ShowLoadDialogCoroutine()
         {
@@ -82,11 +91,16 @@ namespace Diploma.Controllers
                         var isFormatTrue = splitedString.Last().Split('.');
                         if (isFormatTrue.Last() != "3ds")
                         {
-                            throw new Exception("TAK DELAT NELZYA");
+                            _error = ErrorCodes.WrongFormatError;
+                            splitedString[0] = @"Выберите деталь (*.3ds)";
                         }
-                        
-                        localPath[0] = Path.Combine(_destinationPath[0],FileBrowserHelpers.GetFilename(FileBrowser.Result[0])
+                        else
+                        {
+                            localPath[0] = Path.Combine(_destinationPath[0],
+                                FileBrowserHelpers.GetFilename(FileBrowser.Result[0])
                             );
+                            _error = ErrorCodes.None;
+                        }
                         parts = LoadingParts.DownloadModel;
                         // FileBrowserHelpers.CopyFile(FileBrowser.Result[0], localPath[0]);
                         //
@@ -97,11 +111,16 @@ namespace Diploma.Controllers
                         isFormatTrue = splitedString.Last().Split('.');
                         if (isFormatTrue.Last() != "pdf")
                         {
-                            throw new Exception("TAK DELAT NELZYA");
+                            _error = ErrorCodes.WrongFormatError;
+                            splitedString[0] = "Выберите текст (*.pdf)";
                         }
-                        
-                        localPath[0] = Path.Combine(_destinationPath[3],
-                            FileBrowserHelpers.GetFilename(FileBrowser.Result[0]));
+                        else
+                        {
+                            localPath[0] = Path.Combine(_destinationPath[3],
+                                FileBrowserHelpers.GetFilename(FileBrowser.Result[0]));
+                            
+                            _error = ErrorCodes.None;
+                        }
                         parts = LoadingParts.DownloadPDF;
                         // FileBrowserHelpers.CopyFile(FileBrowser.Result[0], localPath[0]);
                         //
@@ -112,10 +131,15 @@ namespace Diploma.Controllers
                         isFormatTrue = splitedString.Last().Split('.');
                         if (isFormatTrue.Last() != "mp4")
                         {
-                            throw new Exception("TAK DELAT NELZYA");
+                            _error = ErrorCodes.WrongFormatError;
+                            splitedString[0] = "Выберите видео (*.mp4)";
                         }
-                        localPath[0] = Path.Combine(_destinationPath[1],
-                            FileBrowserHelpers.GetFilename(FileBrowser.Result[0]));
+                        else
+                        {
+                            localPath[0] = Path.Combine(_destinationPath[1],
+                                FileBrowserHelpers.GetFilename(FileBrowser.Result[0]));
+                            _error = ErrorCodes.None;
+                        }
                         parts = LoadingParts.DownloadVideo;
                         // FileBrowserHelpers.CopyFile(FileBrowser.Result[0], localPath[0]);
                         //
@@ -125,7 +149,6 @@ namespace Diploma.Controllers
                     default:
                         throw new Exception("TAK DELAT NELZYA");
                 }
-
                 
                 ShowNewText(parts,splitedString.Last());
                 
