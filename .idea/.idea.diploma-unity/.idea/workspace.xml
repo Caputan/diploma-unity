@@ -20,10 +20,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9a27c574-4a30-4862-a74f-153a103b04b8" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/CleanAllInfoInConstructorUI.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/CleanAllInfoInConstructorUI.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.diploma-unity/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.diploma-unity/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/FileManagerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/FileManagerController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/LessonConstructorController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/LessonConstructorController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/MainSceneInitialization.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/MainSceneInitialization.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/MachinePartsDB.bytes" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StreamingAssets/MachinePartsDB.bytes" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,9 +88,10 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/UIController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/GameContextWithViews.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/LessonConstructorUIInitialization.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/FileManagerController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/LessonConstructorController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/MainSceneInitialization.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/LessonConstructorController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/FileManagerController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/CleanAllInfoInConstructorUI.cs" />
       </list>
     </option>
   </component>
@@ -187,7 +189,7 @@
       <workItem from="1616496587983" duration="2128000" />
       <workItem from="1616499264280" duration="771000" />
       <workItem from="1616500722444" duration="3877000" />
-      <workItem from="1616573780649" duration="2575000" />
+      <workItem from="1616573780649" duration="3770000" />
     </task>
     <servers />
   </component>

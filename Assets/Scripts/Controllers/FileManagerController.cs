@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using Coroutine;
 using Diploma.Enums;
 using Diploma.Interfaces;
@@ -67,35 +68,38 @@ namespace Diploma.Controllers
             yield return FileBrowser.WaitForSaveDialog(FileBrowser.PickMode.FilesAndFolders, true, null, null,
                 "Save Files", "Save");
 
-            // Это надо все перенести на кнопку.....
-            
             if (FileBrowser.Success)
             {
-                // = Path.Combine(Application.persistentDataPath,
-                //    FileBrowserHelpers.GetFilename(FileBrowser.Result[0]));
+               
                 string[] localPath = new string[1];
                 LoadingParts parts;
+                
+                string[] splitedString = 
+                    FileBrowserHelpers.GetFilename(FileBrowser.Result[0]).Split('\\');
                 switch (fileTypes)
                 {
                     case FileTypes.Assembly:
-                        localPath[0] = Path.Combine(_destinationPath[0],
-                            FileBrowserHelpers.GetFilename(FileBrowser.Result[0]));
+                        var isFormatTrue = splitedString.Last().Split('.');
+                        if (isFormatTrue.Last() != "3ds")
+                        {
+                            throw new Exception("TAK DELAT NELZYA");
+                        }
+                        
+                        localPath[0] = Path.Combine(_destinationPath[0],FileBrowserHelpers.GetFilename(FileBrowser.Result[0])
+                            );
                         parts = LoadingParts.DownloadModel;
                         // FileBrowserHelpers.CopyFile(FileBrowser.Result[0], localPath[0]);
                         //
                         // DataBaseController.SetTable(Tables[0]);
                         // DataBaseController.AddNewRecordToTable(localPath);
                         break;
-                    // case FileTypes.Image:
-                    //     localPath[0] = Path.Combine(destinationPath[2],
-                    //         FileBrowserHelpers.GetFilename(FileBrowser.Result[0]));
-                        
-                        // FileBrowserHelpers.CopyFile(FileBrowser.Result[0], localPath[0]);
-                        //
-                        // DataBaseController.SetTable(Tables[3]);
-                        // DataBaseController.AddNewRecordToTable(localPath);
-                        break;
                     case FileTypes.Text:
+                        isFormatTrue = splitedString.Last().Split('.');
+                        if (isFormatTrue.Last() != "pdf")
+                        {
+                            throw new Exception("TAK DELAT NELZYA");
+                        }
+                        
                         localPath[0] = Path.Combine(_destinationPath[3],
                             FileBrowserHelpers.GetFilename(FileBrowser.Result[0]));
                         parts = LoadingParts.DownloadPDF;
@@ -105,6 +109,11 @@ namespace Diploma.Controllers
                         // DataBaseController.AddNewRecordToTable(localPath);
                         break;
                     case FileTypes.Video:
+                        isFormatTrue = splitedString.Last().Split('.');
+                        if (isFormatTrue.Last() != "mp4")
+                        {
+                            throw new Exception("TAK DELAT NELZYA");
+                        }
                         localPath[0] = Path.Combine(_destinationPath[1],
                             FileBrowserHelpers.GetFilename(FileBrowser.Result[0]));
                         parts = LoadingParts.DownloadVideo;
@@ -113,21 +122,12 @@ namespace Diploma.Controllers
                         // DataBaseController.SetTable(Tables[5]);
                         // DataBaseController.AddNewRecordToTable(localPath);
                         break;
-                    // case FileTypes.LessonPreview:
-                    //     localPath[0] = Path.Combine(destinationPath[2],
-                    //         FileBrowserHelpers.GetFilename(FileBrowser.Result[0]));
-                    //
-                        //FileBrowserHelpers.CopyFile(FileBrowser.Result[0], localPath[0]);
-                
-                        // DataBaseController.SetTable(Tables[1]);
-                        // DataBaseController.AddNewRecordToTable(localPath);
-                        break;
                     default:
                         throw new Exception("TAK DELAT NELZYA");
                 }
 
-                string[] splitedString = localPath[0].Split('\\');
-                ShowNewText(parts,splitedString[splitedString.Length-1]);
+                
+                ShowNewText(parts,splitedString.Last());
                 
             }
         }

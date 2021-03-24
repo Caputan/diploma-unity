@@ -39,13 +39,7 @@ namespace Controllers
             _gameContextWithUI = gameContextWithUI;
             _fileManagerController = fileManagerController;
             _texts = _gameContextWithViews.TextBoxesOnConstructor;
-            //string[] infoForLesson = new string[5];
-            // infoForLesson[3] = _dataBaseController.GetDataFromTable<Assemblies>().Last().Assembly_Id.ToString();
-            // infoForLesson[1] = _dataBaseController.GetDataFromTable<Texts>().Last().Text_Id.ToString();  
-            // infoForLesson[2] = _dataBaseController.GetDataFromTable<Videos>().Last().Video_Id.ToString();
-            // _dataBaseController.SetTable(_tables[1]);
-            // _dataBaseController.AddNewRecordToTable(infoForLesson);   
-            
+
             _plateWithButtonForLessonsFactory = new PlateWithButtonForLessonsFactory(prefabLessonPlate);
         }
 
@@ -66,15 +60,10 @@ namespace Controllers
             lessonPacked[3] = _dataBaseController.GetDataFromTable<Assemblies>().Last().Assembly_Id.ToString();
             lessonPacked[1] = _dataBaseController.GetDataFromTable<Texts>().Last().Text_Id.ToString();  
             lessonPacked[2] = _dataBaseController.GetDataFromTable<Videos>().Last().Video_Id.ToString();
-            // ToggleGroup. active Toggles
-            //var current = _gameContextWithViews.parentForLessons.GetComponent<ToggleGroup>().ActiveToggles().FirstOrDefault();
-            
-            //var activeToggleID = current.gameObject.GetInstanceID();
             int count = 0;
             foreach (var key in _gameContextWithViews.ChoosenToggles.Values) { 
                 if(key.GetComponentInChildren<Toggle>().isOn) 
                     lessonPacked[4] = count.ToString();
-                // add type
                 count++;
             }
             _dataBaseController.SetTable(_tables[1]);
