@@ -8,6 +8,8 @@ namespace Diploma.Controllers
 {
     public class UIController : IInitialization, ICleanData
     {
+        //конечно такое себе использовать switch
+        //можно было бы более простую State Machine прописать...
         private readonly GameContextWithUI _gameContextWithUI;
         private readonly ExitController _exitController;
         private readonly BackController _backController;
