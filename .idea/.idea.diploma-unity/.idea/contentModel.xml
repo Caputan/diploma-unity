@@ -82,6 +82,7 @@
             <e p="MainMenuInitialization.cs" t="Include" />
             <e p="MainSceneInitialization.cs" t="Include" />
             <e p="OptionsController.cs" t="Include" />
+            <e p="OptionsInitialization.cs" t="Include" />
             <e p="SignUpInitialization.cs" t="Include" />
             <e p="UIController.cs" t="Include" />
           </e>
@@ -174,6 +175,11 @@
               <e p="MainMenuAddButtonsToDictionary.cs" t="Include" />
               <e p="MainMenuFactory.cs" t="Include" />
               <e p="MainMenuLogic.cs" t="Include" />
+            </e>
+            <e p="Options" t="Include">
+              <e p="OptionsAddButtonsToDictionary.cs" t="Include" />
+              <e p="OptionsFactory.cs" t="Include" />
+              <e p="OptionsLogic.cs" t="Include" />
             </e>
             <e p="SignUp" t="Include">
               <e p="SignUpAddButtonsToDictionary.cs" t="Include" />

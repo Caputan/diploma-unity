@@ -14,8 +14,9 @@ namespace Diploma.Controllers
         public Dictionary<LoadingParts, Button>  AuthButtons;
         public Dictionary<LoadingParts, Button>  SignUpButtons;
         public Dictionary<LoadingParts, Button>  LessonConstructorButtons;
+        public Dictionary<LoadingParts, Button> OptionsButtons;
         public Dictionary<LoadingParts,GameObject> TextBoxesOnConstructor;
-        public GameObject parentForLessons;
+        public Slider Slider;
         public Dictionary<int,GameObject> ChoosenLessonToggles;
         public GameContextWithViews()
         {
@@ -25,6 +26,7 @@ namespace Diploma.Controllers
             AuthButtons = new Dictionary<LoadingParts, Button>();
             SignUpButtons = new Dictionary<LoadingParts, Button>();
             LessonConstructorButtons = new Dictionary<LoadingParts, Button>();
+            OptionsButtons = new Dictionary<LoadingParts, Button>();
             TextBoxesOnConstructor = new Dictionary<LoadingParts,GameObject>();
             ChoosenLessonToggles = new Dictionary<int, GameObject>();
         }
@@ -34,11 +36,12 @@ namespace Diploma.Controllers
             ChoosenToggles.Add(id,toggle);
         }
 
-        public void SetParentForLessons(GameObject ParentForLessons)
+        public void SetSlider(Slider slider)
         {
-            parentForLessons = ParentForLessons;
+            Slider = slider;
         }
 
+        
         public void AddTextBoxesToListInConstructor(LoadingParts loadingParts,GameObject gameObject)
         {
             if(!TextBoxesOnConstructor.ContainsKey(loadingParts))
@@ -48,6 +51,12 @@ namespace Diploma.Controllers
         public void AddLessonsToggles(int id, GameObject toggle)
         {
             ChoosenLessonToggles.Add(id,toggle);
+        }
+        
+        public void AddButtonInOptionsDictionary(LoadingParts id, Button button)
+        {
+            if(!OptionsButtons.ContainsKey(id))
+                OptionsButtons.Add(id,button);
         }
         public void AddMainMenuButtons(LoadingParts id, Button button)
         {

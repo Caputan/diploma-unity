@@ -1,17 +1,23 @@
-﻿using Diploma.Interfaces;
+﻿using Diploma.Controllers;
+using Diploma.Interfaces;
+using UnityEngine.Audio;
 
 namespace Controllers
 {
     public class OptionsController: IInitialization
     {
-        public OptionsController()
+        private readonly GameContextWithViews _gameContextWithViews;
+        private readonly AudioMixer _audioMixer;
+
+        public OptionsController(GameContextWithViews gameContextWithViews, AudioMixer audioMixer)
         {
-            
+            _gameContextWithViews = gameContextWithViews;
+            _audioMixer = audioMixer;
         }
         
         public void Initialization()
         {
-            throw new System.NotImplementedException();
+            // положение слайдера и проценты
         }
     }
 }

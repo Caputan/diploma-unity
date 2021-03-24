@@ -5,6 +5,7 @@ using Diploma.Managers;
 using Diploma.Tables;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.Audio;
 
 
 namespace Diploma.Controllers
@@ -25,10 +26,14 @@ namespace Diploma.Controllers
         
         [SerializeField] private GameObject lessonConstructorPrefab;
         [SerializeField] private GameObject lessonConstructorPlatePrefab;
+
+        [SerializeField] private GameObject OptionsPrefab;
+
+        [SerializeField] private AudioMixer _mainAudioMixer;
         
         #region Don't Use
-        [SerializeField] private GameObject togglePanelPrefab;
-        [SerializeField] private GameObject ToggleGroup;
+        // [SerializeField] private GameObject togglePanelPrefab;
+        // [SerializeField] private GameObject ToggleGroup;
 
         
         #endregion
@@ -163,6 +168,17 @@ namespace Diploma.Controllers
             
             var ExitController = new ExitController();
             
+            var OptionsInitialization = new OptionsInitialization(
+                _gameContextWithViews,
+                _gameContextWithUI,
+                MainParent,
+                OptionsPrefab
+            );
+            
+            var OptionsController = new OptionsController(
+                _gameContextWithViews,
+                _mainAudioMixer
+                );
             
             var uiController = new UIController(
                 _gameContextWithUI,
@@ -204,6 +220,8 @@ namespace Diploma.Controllers
             _controllers.Add(ChooseLessonInitialization);
             _controllers.Add(LessonConstructorInitialization);
             _controllers.Add(LessonConstructorController);
+            _controllers.Add(OptionsInitialization);
+            _controllers.Add(OptionsController);
             //этот контроллер идет самым последним
             _controllers.Add(uiController);
             _controllers.Initialization();

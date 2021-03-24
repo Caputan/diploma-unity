@@ -97,10 +97,6 @@ namespace Diploma.Controllers
                     _backController.WhereIMustBack(_currentPosition);
                     _currentPosition = LoadingParts.LoadCreationOfLesson;
                     break;
-                case LoadingParts.Options:
-                    _backController.WhereIMustBack(_currentPosition);
-                    _currentPosition = LoadingParts.Options;
-                    break;
                 case LoadingParts.LoadMain:
                     if (_authController.CheckAuthData())
                     {
@@ -148,6 +144,11 @@ namespace Diploma.Controllers
                     _backController.WhereIMustBack(_currentPosition);
                     _gameContextWithUI.UiControllers[LoadingParts.LoadMain].SetActive(true);
                     _currentPosition = LoadingParts.LoadMain;
+                    break;
+                case LoadingParts.Options:
+                    _backController.WhereIMustBack(_currentPosition);
+                    _gameContextWithUI.UiControllers[LoadingParts.Options].SetActive(true);
+                    _currentPosition = LoadingParts.Options;
                     break;
                 
             }
