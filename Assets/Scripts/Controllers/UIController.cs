@@ -98,7 +98,7 @@ namespace Diploma.Controllers
                     _currentPosition = LoadingParts.LoadCreationOfLesson;
                     break;
                 case LoadingParts.LoadMain:
-                    if (_authController.CheckAuthData())
+                    if (_authController.CheckAuthData() == ErrorCodes.None)
                     {
                         _backController.WhereIMustBack(_currentPosition);
                         _gameContextWithUI.UiControllers[LoadingParts.LoadMain].SetActive(true);
@@ -110,6 +110,7 @@ namespace Diploma.Controllers
                     }
                     else
                     {
+                        
                         ShowUIByUIType(LoadingParts.LoadError);
                     }
                     break;
