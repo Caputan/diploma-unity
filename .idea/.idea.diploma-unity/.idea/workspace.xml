@@ -20,10 +20,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9a27c574-4a30-4862-a74f-153a103b04b8" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.diploma-unity/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.diploma-unity/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.diploma-unity/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.diploma-unity/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scenes/PracticeScene.unity" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scenes/PracticeScene.unity.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.diploma-unity/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.diploma-unity/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Design.unity.meta~HEAD" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Design.unity.meta~HEAD.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Design.unity.meta~UI" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Design.unity.meta~UI.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/StartScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/StartScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/SignUpInitialization.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/SignUpInitialization.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/UIController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/UIController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tables/LessonsTable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tables/LessonsTable.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/LessonChoose/LessonChooseAddButtonsToDictionary.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/LessonChoose/LessonChooseAddButtonsToDictionary.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/LessonChoose/LessonChooseLogic.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/LessonChoose/LessonChooseLogic.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/MachinePartsDB.bytes" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StreamingAssets/MachinePartsDB.bytes" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,7 +59,11 @@
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
+      <option value="$PROJECT_DIR$/Assets/Scripts/Tables/LessonsTable.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UI/LessonChoose/LessonChooseLogic.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UI/LessonChoose/LessonChooseAddButtonsToDictionary.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/UIController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/SignUpInitialization.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1oVh7QrK5P1QV67f8aHYDy536Km" />
@@ -118,7 +132,7 @@
       <workItem from="1616582442250" duration="492000" />
       <workItem from="1616583060302" duration="5379000" />
       <workItem from="1616660654097" duration="397000" />
-      <workItem from="1616661182088" duration="647000" />
+      <workItem from="1616661182088" duration="3559000" />
     </task>
     <servers />
   </component>

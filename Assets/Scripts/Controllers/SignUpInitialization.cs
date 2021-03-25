@@ -47,7 +47,7 @@ namespace Diploma.Controllers
 
             SignUpButtons = new List<Button>();
             SignUpButtons.AddRange(signUpMenu.GetComponentsInChildren<Button>());
-            
+
             Login = signUpMenu.GetComponentsInChildren<TMP_InputField>()[0];
             Password = signUpMenu.GetComponentsInChildren<TMP_InputField>()[1];
             Email = signUpMenu.GetComponentsInChildren<TMP_InputField>()[2];

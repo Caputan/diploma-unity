@@ -58,7 +58,7 @@ namespace Diploma.UI
                 //lessonToggle.GetComponentInChildren<RawImage>().texture = tex;
 
                 var lessonName = lessonToggle.GetComponentInChildren<TextMeshProUGUI>();
-                lessonName.text = lesson.Lesson_Type_Id.ToString();
+                lessonName.text = lesson.Lesson_Name;
                 
                 _gameContextWithLessons.AddLessonsView(lesson.Lesson_Id,
                     new ListOfLessonsView(lesson.Lesson_Id,

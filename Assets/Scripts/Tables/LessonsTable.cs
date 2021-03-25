@@ -49,6 +49,7 @@ namespace Diploma.Tables
     {
         [PrimaryKey, AutoIncrement]
         public int Lesson_Id { get; set; }
+        public string Lesson_Name { get; set; }
         public string Lesson_Preview { get; set; }
         public int Lesson_Text_Id { get; set; }
         public int Lesson_Video_Id { get; set; }

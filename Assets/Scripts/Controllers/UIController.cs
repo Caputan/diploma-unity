@@ -20,7 +20,7 @@ namespace Diploma.Controllers
         private ErrorHandler _errorHandler;
         private LoadingParts _currentPosition;
         private ErrorCodes _error;
-        
+
 
         public UIController(GameContextWithUI gameContextWithUI,
             ExitController exitController,
@@ -66,7 +66,7 @@ namespace Diploma.Controllers
                     _exitController.ExitApplication(); 
                     break;
                 case LoadingParts.LoadStart:
-                    _backGround.SetActive(true);
+                    // _backGround.SetActive(true);
                     _authController.Login.text = "";
                     _authController.Password.text = "";
                     _backController.WhereIMustBack(_currentPosition);
@@ -94,11 +94,13 @@ namespace Diploma.Controllers
                     _currentPosition = LoadingParts.LoadSignUp;
                     break;
                 case LoadingParts.LoadLectures:
+                    // _backGround.SetActive(false);
                     _gameContextWithUI.UiControllers[LoadingParts.LoadLectures].SetActive(true);
                     _backController.WhereIMustBack(_currentPosition);
                     _currentPosition = LoadingParts.LoadLectures;
                     break;
                 case LoadingParts.LoadCreationOfLesson:
+                    // _backGround.SetActive(false);
                     _gameContextWithUI.UiControllers[LoadingParts.LoadCreationOfLesson].SetActive(true);
                     _backController.WhereIMustBack(_currentPosition);
                     _currentPosition = LoadingParts.LoadCreationOfLesson;
@@ -108,7 +110,7 @@ namespace Diploma.Controllers
                     {
                         _backController.WhereIMustBack(_currentPosition);
                         _gameContextWithUI.UiControllers[LoadingParts.LoadMain].SetActive(true);
-                        _backGround.SetActive(false);
+                        // _backGround.SetActive(false);
                         _currentPosition = LoadingParts.LoadMain;
                         _lessonConstructorController.SetTextInTextBox(LoadingParts.DownloadModel,"Выберите деталь (*.3ds");
                         _lessonConstructorController.SetTextInTextBox(LoadingParts.DownloadVideo,"Выберите видео-фаил (*.mp4)");
@@ -124,6 +126,7 @@ namespace Diploma.Controllers
                     ShowUIByUIType(_backController.GoBack());
                     break;
                 case LoadingParts.LoadError:
+                    // _backGround.SetActive(true);
                     _backController.WhereIMustBack(_currentPosition);
                     _errorHandler.ChangeErrorMessage(_error);
                     _gameContextWithUI.UiControllers[LoadingParts.LoadError].SetActive(true);
@@ -145,11 +148,11 @@ namespace Diploma.Controllers
                 case LoadingParts.DownloadVideo:
                     _gameContextWithUI.UiControllers[LoadingParts.LoadCreationOfLesson].SetActive(true);
                     _fileManagerController.ShowSaveDialog(FileTypes.Video);
-                    
                     break;
                 case LoadingParts.Next:
                     if (_fileManagerController.CheckForErrors() == ErrorCodes.None)
                     {
+                        // _backGround.SetActive(false);
                         _lessonConstructorController.CreateALesson();
                         _backController.WhereIMustBack(_currentPosition);
                         _gameContextWithUI.UiControllers[LoadingParts.LoadMain].SetActive(true);
