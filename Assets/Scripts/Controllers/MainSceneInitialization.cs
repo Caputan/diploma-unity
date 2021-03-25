@@ -134,12 +134,12 @@ namespace Diploma.Controllers
                 AuthController
             );
 
-            var ErrorMenuInitialization = new ErrorMenuInitialization(
-                _gameContextWithViews,
-                _gameContextWithUI,
-                MainParent,
-                ErrorMenuPrefab
-            );
+            // var ErrorMenuInitialization = new ErrorMenuInitialization(
+            //     _gameContextWithViews,
+            //     _gameContextWithUI,
+            //     MainParent,
+            //     ErrorMenuPrefab
+            // );
             
             var ChooseLessonInitialization = new LessonsChooseInitialization(
                 _gameContextWithViews,
@@ -186,6 +186,7 @@ namespace Diploma.Controllers
             
             var OptionsController = new OptionsController(
                 _gameContextWithViews,
+                _gameContextWithUI,
                 _mainAudioMixer
                 );
             
@@ -195,7 +196,8 @@ namespace Diploma.Controllers
                 BackController,
                 AuthController,
                 _fileManager,
-                LessonConstructorController
+                LessonConstructorController,
+                OptionsController
                 );
             //uiController.AddUIToDictionary();
             // добавить соответствующие менюшки ниже
@@ -225,7 +227,7 @@ namespace Diploma.Controllers
             _controllers.Add(MainMenuInitilization);
             _controllers.Add(AuthInitialization);
             _controllers.Add(SignUpInitialization);
-            _controllers.Add(ErrorMenuInitialization);
+            //_controllers.Add(ErrorMenuInitialization);
             _controllers.Add(BackController);
             _controllers.Add(ChooseLessonInitialization);
             _controllers.Add(LessonConstructorInitialization);

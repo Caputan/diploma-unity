@@ -7,13 +7,18 @@ using UnityEngine.UI;
 
 namespace UI.Options
 {
-    public class OptionsLogic: IUIObject, IInitialization
+    public class OptionsLogic:  IInitialization,IUISilder
     {
         private readonly Dictionary<LoadingParts, Button> _buttons;
+        private readonly Slider _slider;
 
-        public OptionsLogic(Dictionary<LoadingParts,Button> buttons)
+        public event Action<LoadingParts> LoadNext;
+        public event Action<float> ChangePersent;
+
+        public OptionsLogic(Dictionary<LoadingParts,Button> buttons,Slider slider)
         {
             _buttons = buttons;
+            _slider = slider;
         }
         
         public void SwitchToNextMenu(LoadingParts loadingParts)
@@ -21,7 +26,7 @@ namespace UI.Options
             LoadNext?.Invoke(loadingParts);
         }
 
-        public event Action<LoadingParts> LoadNext;
+       
         public void Initialization()
         {
             foreach (var button in _buttons)
@@ -29,6 +34,16 @@ namespace UI.Options
                 button.Value.onClick.RemoveAllListeners();
                 button.Value.onClick.AddListener(()=> SwitchToNextMenu(button.Key));
             }
+            
+            _slider.onValueChanged.RemoveAllListeners();
+            _slider.onValueChanged.AddListener(delegate {SwitchPersent (_slider.value);});
         }
+
+        public void SwitchPersent(float persent)
+        {
+            ChangePersent?.Invoke(persent);
+        }
+
+       
     }
 }
