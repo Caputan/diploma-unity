@@ -64,6 +64,8 @@
             <e p="Controllers.cs" t="Include" />
             <e p="CoroutineController.cs" t="Include" />
             <e p="DataBaseController.cs" t="Include" />
+            <e p="ErrorHandler.cs" t="Include" />
+            <e p="ErrorMenuInitialization.cs" t="Include" />
             <e p="ExitController.cs" t="Include" />
             <e p="FileManagerController.cs" t="Include" />
             <e p="GameContextWithLessons.cs" t="Include" />
@@ -92,6 +94,7 @@
           </e>
           <e p="Enums" t="Include">
             <e p="CoroutineState.cs" t="Include" />
+            <e p="ErrorCodes.cs" t="Include" />
             <e p="FactoryType.cs" t="Include" />
             <e p="FileTypes.cs" t="Include" />
             <e p="LoadingParts.cs" t="Include" />
@@ -154,6 +157,11 @@
               <e p="AuthAddButtonsToDictionary.cs" t="Include" />
               <e p="AuthFactory.cs" t="Include" />
               <e p="AuthLogic.cs" t="Include" />
+            </e>
+            <e p="ErrorMenu" t="Include">
+              <e p="ErrorMenuAddButtonsToDictionary.cs" t="Include" />
+              <e p="ErrorMenuFactory.cs" t="Include" />
+              <e p="ErrorMenuLogic.cs" t="Include" />
             </e>
             <e p="generalClasses" t="Include">
               <e p="GameContexWithViewCreator.cs" t="Include" />
