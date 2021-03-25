@@ -16,6 +16,7 @@ namespace Diploma.Controllers
         private readonly AuthController _authController;
         private readonly FileManagerController _fileManagerController;
         private readonly LessonConstructorController _lessonConstructorController;
+        private readonly OptionsController _optionsController;
         private LoadingParts _currentPosition;
         private GameObject _backGround;
 
@@ -24,7 +25,8 @@ namespace Diploma.Controllers
             BackController backController,
             AuthController authController,
             FileManagerController fileManagerController,
-            LessonConstructorController lessonConstructorController
+            LessonConstructorController lessonConstructorController,
+            OptionsController optionsController
         )
         {
             _gameContextWithUI = gameContextWithUI;
@@ -33,6 +35,7 @@ namespace Diploma.Controllers
             _authController = authController;
             _fileManagerController = fileManagerController;
             _lessonConstructorController = lessonConstructorController;
+            _optionsController = optionsController;
             _backGround = GameObject.Find("BackGround");
         }
 
@@ -151,7 +154,21 @@ namespace Diploma.Controllers
                     _gameContextWithUI.UiControllers[LoadingParts.Options].SetActive(true);
                     _currentPosition = LoadingParts.Options;
                     break;
-                
+                case LoadingParts.LowGraphics:
+                    _gameContextWithUI.UiControllers[LoadingParts.Options].SetActive(true);
+                    _optionsController.SetGraphicsQuality(LoadingParts.LowGraphics);
+                    _optionsController.DeactivateButton(LoadingParts.LowGraphics);
+                    break;
+                case LoadingParts.MiddleGraphics:
+                    _gameContextWithUI.UiControllers[LoadingParts.Options].SetActive(true);
+                    _optionsController.SetGraphicsQuality(LoadingParts.MiddleGraphics);
+                    _optionsController.DeactivateButton(LoadingParts.MiddleGraphics);
+                    break;
+                case LoadingParts.HighGraphics:
+                    _gameContextWithUI.UiControllers[LoadingParts.Options].SetActive(true);
+                    _optionsController.SetGraphicsQuality(LoadingParts.HighGraphics);
+                    _optionsController.DeactivateButton(LoadingParts.HighGraphics);
+                    break;
             }
             Debug.Log(id);
         }

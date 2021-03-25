@@ -196,7 +196,8 @@ namespace Diploma.Controllers
                 BackController,
                 AuthController,
                 _fileManager,
-                LessonConstructorController
+                LessonConstructorController,
+                OptionsController
                 );
             //uiController.AddUIToDictionary();
             // добавить соответствующие менюшки ниже

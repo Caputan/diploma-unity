@@ -20,16 +20,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9a27c574-4a30-4862-a74f-153a103b04b8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Interfaces/IUISilder.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Interfaces/IUISilder.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.diploma-unity/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.diploma-unity/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.diploma-unity/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.diploma-unity/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Options_Prefab.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Options_Prefab.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/MainSceneInitialization.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/MainSceneInitialization.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/OptionsController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/OptionsController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/OptionsInitialization.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/OptionsInitialization.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/UIController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/UIController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Options/OptionsLogic.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Options/OptionsLogic.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,13 +56,13 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/LessonConstructorUIInitialization.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/Options/OptionsFactory.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/GameContextWithViews.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/UIController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Interfaces/IUIObject.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/Options/OptionsSliderLogic.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/OptionsInitialization.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/Options/OptionsLogic.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Interfaces/IUISilder.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/MainSceneInitialization.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/UIController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/OptionsController.cs" />
       </list>
     </option>
@@ -137,7 +132,8 @@
       <workItem from="1616407187426" duration="1582000" />
       <workItem from="1616582442250" duration="492000" />
       <workItem from="1616583060302" duration="5379000" />
-      <workItem from="1616660654097" duration="4178000" />
+      <workItem from="1616660654097" duration="5859000" />
+      <workItem from="1616670676551" duration="1202000" />
     </task>
     <servers />
   </component>
