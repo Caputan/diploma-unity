@@ -45,9 +45,12 @@ namespace Controllers
             
             new OptionsAddButtonsToDictionary(OptionsButtons,_gameContextWithViews);
             
-            var OptionsLogic = new OptionsLogic(_gameContextWithViews.OptionsButtons);
-            OptionsLogic.Initialization();
             _gameContextWithViews.SetSlider(Slider);
+
+            var OptionsLogic = new OptionsLogic(_gameContextWithViews.OptionsButtons,_gameContextWithViews.Slider);
+            OptionsLogic.Initialization();
+            
+            
             _gameContextWithUI.AddUIToDictionary(LoadingParts.Options, Options);
             _gameContextWithUI.AddUILogic(LoadingParts.Options,OptionsLogic);
             

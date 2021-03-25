@@ -69,7 +69,7 @@ namespace Diploma.Controllers
                     _currentPosition = LoadingParts.LoadStart;
                     break;
                 case LoadingParts.LoadAuth:
-                    if (_authController.AddNewUser())
+                    if (_authController.AddNewUser() == ErrorCodes.None)
                     {
                         _backController.WhereIMustBack(_currentPosition);
                         _gameContextWithUI.UiControllers[LoadingParts.LoadAuth].SetActive(true);

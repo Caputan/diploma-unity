@@ -20,17 +20,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9a27c574-4a30-4862-a74f-153a103b04b8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/ErrorMenu.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Interfaces/IUISilder.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Interfaces/IUISilder.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.diploma-unity/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.diploma-unity/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.diploma-unity/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.diploma-unity/.idea/indexLayout.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/GameContextWithViews.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/GameContextWithViews.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.diploma-unity/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.diploma-unity/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Options_Prefab.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Options_Prefab.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/MainSceneInitialization.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/MainSceneInitialization.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/OptionsController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/OptionsController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/OptionsInitialization.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/OptionsInitialization.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/UIController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/UIController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/ErrorMenuAddButtonsToDictionary.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/ErrorMenu/ErrorMenuAddButtonsToDictionary.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/ErrorMenuAddButtonsToDictionary.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/ErrorMenu/ErrorMenuAddButtonsToDictionary.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/ErrorMenuFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/ErrorMenu/ErrorMenuFactory.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/ErrorMenuFactory.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/ErrorMenu/ErrorMenuFactory.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/ErrorMenuLogic.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/ErrorMenu/ErrorMenuLogic.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/ErrorMenuLogic.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/ErrorMenu/ErrorMenuLogic.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Options/OptionsLogic.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Options/OptionsLogic.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,14 +58,17 @@
       <list>
         <option value="$PROJECT_DIR$/Assets/Scripts/Enums/LoadingParts.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/Options/OptionsAddButtonsToDictionary.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Options/OptionsLogic.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/LessonConstructorUIInitialization.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/OptionsInitialization.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/Options/OptionsFactory.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/OptionsController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/MainSceneInitialization.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/GameContextWithViews.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/UIController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Interfaces/IUIObject.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Options/OptionsSliderLogic.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/OptionsInitialization.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Options/OptionsLogic.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Interfaces/IUISilder.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/MainSceneInitialization.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/OptionsController.cs" />
       </list>
     </option>
   </component>
@@ -135,7 +137,7 @@
       <workItem from="1616407187426" duration="1582000" />
       <workItem from="1616582442250" duration="492000" />
       <workItem from="1616583060302" duration="5379000" />
-      <workItem from="1616660654097" duration="397000" />
+      <workItem from="1616660654097" duration="4178000" />
     </task>
     <servers />
   </component>
@@ -229,10 +231,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1493" height="162" key="GridCell.Tab.3.right/0.0.1536.824@0.0.1536.824" timestamp="1616580804666" />
-    <state x="566" y="113" key="RiderGenerateDialog" timestamp="1616584279483">
+    <state x="566" y="113" key="RiderGenerateDialog" timestamp="1616662445649">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="566" y="113" key="RiderGenerateDialog/0.0.1536.824@0.0.1536.824" timestamp="1616584279483" />
+    <state x="566" y="113" key="RiderGenerateDialog/0.0.1536.824@0.0.1536.824" timestamp="1616662445649" />
     <state x="93" y="93" width="1350" height="638" key="VCS.FileHistoryDialog" timestamp="1616492853506">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
