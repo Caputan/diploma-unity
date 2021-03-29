@@ -15,6 +15,7 @@ namespace Controllers
         private readonly GameContextWithUI _gameContextWithUI;
         private readonly AudioMixer _audioMixer;
         private const float AudioConstant = 100;
+        private const float AudioMixerLowConstant = -80;
 
 
         public OptionsController(
@@ -54,7 +55,16 @@ namespace Controllers
         private void SwitchPersent(float persent)
         {
             _gameContextWithViews.Slider.gameObject.
-                GetComponentInChildren<TextMeshProUGUI>().text = Math.Round(persent+AudioConstant)+ "%";
+                
+                // от 0 до 100
+                // от -80 до 0
+                
+                // 0 - 100
+                // -80 - 0
+                
+                
+                GetComponentInChildren<TextMeshProUGUI>().text =
+                Math.Round(AudioConstant-(persent/(AudioMixerLowConstant)*AudioConstant))+ "%";
             _audioMixer.SetFloat("MasterVol", persent);
 
         }

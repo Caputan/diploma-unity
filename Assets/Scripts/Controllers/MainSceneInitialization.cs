@@ -177,6 +177,13 @@ namespace Diploma.Controllers
             
             var ExitController = new ExitController();
             
+            var ErrorHandlerInitialization = new ErrorMenuInitialization(
+                _gameContextWithViews,
+                _gameContextWithUI,
+                MainParent,
+                ErrorMenuPrefab
+                );
+            
             var OptionsInitialization = new OptionsInitialization(
                 _gameContextWithViews,
                 _gameContextWithUI,
@@ -234,7 +241,9 @@ namespace Diploma.Controllers
             _controllers.Add(LessonConstructorController);
             _controllers.Add(OptionsInitialization);
             _controllers.Add(OptionsController);
+            _controllers.Add(ErrorHandlerInitialization);
             //этот контроллер идет самым последним
+            
             _controllers.Add(uiController);
             _controllers.Initialization();
         }
