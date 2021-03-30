@@ -20,8 +20,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9a27c574-4a30-4862-a74f-153a103b04b8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/LessonSceneControllerInitialization.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/LessonSceneControllerInitialization.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.diploma-unity/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.diploma-unity/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.diploma-unity/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.diploma-unity/.idea/indexLayout.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.diploma-unity/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.diploma-unity/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.diploma-unity/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.diploma-unity/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Design.unity.meta~HEAD" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Design.unity.meta~HEAD.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -41,20 +45,30 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Interfaces/IInitialization.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Controllers/Loader3DS.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Controllers/SignUpInitialization.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Interfaces/ICleanData.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/OtherControllers/Controllers.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.timeline@1.2.17/Editor/Window/ViewModel/ScriptableObjectViewPrefs.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Interfaces/IInitialization.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
-      <list>
-        <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/UIController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/MainSceneInitialization.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/OptionsController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/LessonSceneControllerInitialization.cs" />
-      </list>
-    </option>
+    <changedPaths>
+      <option value="$PROJECT_DIR$/Assets/LookAround.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/PlayerMovementController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/PlayerController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UI/ErrorMenu/ErrorMenuFactory.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UI/Inventory/InventoryFactory.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/PracticeScene/PlayerController/PlayerController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/GameContext/GameContextWithLogic.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/GameContext/GameContextWithViews.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/UIController/UIController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UI/Inventory/InventoryAddButtonsToDictionary.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/PracticeScene/Inventory/InventoryInitalization.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/ErrorMenu/ErrorMenuInitialization.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/GameObjectCreatingOnScene/PoolOfObjects.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/PracticeScene/Inventory/InventoryInitialization.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UI/Inventory/InventoryLogic.cs" />
+    </changedPaths>
   </component>
   <component name="ProjectId" id="1oVh7QrK5P1QV67f8aHYDy536Km" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -90,7 +104,7 @@
       <option name="listenPortForConnections" value="false" />
       <option name="pid" />
       <option name="selectedOptions">
-        <set />
+        <list />
       </option>
       <method v="2" />
     </configuration>
@@ -99,7 +113,7 @@
       <option name="listenPortForConnections" value="false" />
       <option name="pid" />
       <option name="selectedOptions">
-        <set />
+        <list />
       </option>
       <method v="2" />
     </configuration>
@@ -126,7 +140,8 @@
       <workItem from="1617005002755" duration="1701000" />
       <workItem from="1617007180893" duration="599000" />
       <workItem from="1617008533877" duration="64000" />
-      <workItem from="1617092209852" duration="757000" />
+      <workItem from="1617094816877" duration="9573000" />
+      <workItem from="1617109266162" duration="76000" />
     </task>
     <servers />
   </component>
@@ -151,106 +166,7 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
-  <component name="WindowStateProjectService">
-    <state width="599" height="464" key="DebuggerActiveHint" timestamp="1617005744003">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="599" height="464" key="DebuggerActiveHint/0.0.1536.824@0.0.1536.824" timestamp="1617005744003" />
-    <state width="1493" height="162" key="GridCell.Tab.0.bottom" timestamp="1617006723510">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="162" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1617006723510" />
-    <state width="1493" height="162" key="GridCell.Tab.0.center" timestamp="1617006723510">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="162" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1617006723510" />
-    <state width="1493" height="162" key="GridCell.Tab.0.left" timestamp="1617006723510">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="162" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1617006723510" />
-    <state width="1493" height="162" key="GridCell.Tab.0.right" timestamp="1617006723510">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="162" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1617006723510" />
-    <state width="1493" height="162" key="GridCell.Tab.1.bottom" timestamp="1617006723510">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="162" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1617006723510" />
-    <state width="1493" height="162" key="GridCell.Tab.1.center" timestamp="1617006723510">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="162" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1617006723510" />
-    <state width="1493" height="162" key="GridCell.Tab.1.left" timestamp="1617006723510">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="162" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1617006723510" />
-    <state width="1493" height="162" key="GridCell.Tab.1.right" timestamp="1617006723510">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="162" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1617006723510" />
-    <state width="1493" height="162" key="GridCell.Tab.2.bottom" timestamp="1617006723510">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="162" key="GridCell.Tab.2.bottom/0.0.1536.824@0.0.1536.824" timestamp="1617006723510" />
-    <state width="1493" height="162" key="GridCell.Tab.2.center" timestamp="1617006723510">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="162" key="GridCell.Tab.2.center/0.0.1536.824@0.0.1536.824" timestamp="1617006723510" />
-    <state width="1493" height="162" key="GridCell.Tab.2.left" timestamp="1617006723510">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="162" key="GridCell.Tab.2.left/0.0.1536.824@0.0.1536.824" timestamp="1617006723510" />
-    <state width="1493" height="162" key="GridCell.Tab.2.right" timestamp="1617006723510">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="162" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1617006723510" />
-    <state width="1493" height="162" key="GridCell.Tab.3.bottom" timestamp="1617006723510">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="162" key="GridCell.Tab.3.bottom/0.0.1536.824@0.0.1536.824" timestamp="1617006723510" />
-    <state width="1493" height="162" key="GridCell.Tab.3.center" timestamp="1617006723510">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="162" key="GridCell.Tab.3.center/0.0.1536.824@0.0.1536.824" timestamp="1617006723510" />
-    <state width="1493" height="162" key="GridCell.Tab.3.left" timestamp="1617006723510">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="162" key="GridCell.Tab.3.left/0.0.1536.824@0.0.1536.824" timestamp="1617006723510" />
-    <state width="1493" height="162" key="GridCell.Tab.3.right" timestamp="1617006723510">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="162" key="GridCell.Tab.3.right/0.0.1536.824@0.0.1536.824" timestamp="1617006723510" />
-    <state x="566" y="113" key="RiderGenerateDialog" timestamp="1616584279483">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="566" y="113" key="RiderGenerateDialog/0.0.1536.824@0.0.1536.824" timestamp="1616584279483" />
-    <state x="93" y="93" width="1350" height="638" key="VCS.FileHistoryDialog" timestamp="1616492853506">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="93" y="93" width="1350" height="638" key="VCS.FileHistoryDialog/0.0.1536.824@0.0.1536.824" timestamp="1616492853506" />
-    <state x="425" y="187" key="run.anything.popup" timestamp="1616587921715">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="425" y="187" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1616587921715" />
-  </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/Controllers/UIController.cs</url>
-          <line>54</line>
-          <properties documentPath="D:\Unity-Storage\Diploma\diploma-unity\Assets\Scripts\Controllers\UIController.cs" initialLine="54">
-            <startOffsets>
-              <option value="2098" />
-            </startOffsets>
-            <endOffsets>
-              <option value="2189" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>
         <PinnedItemInfo parentTag="Type#Diploma.Controllers.GameContextWithViews" memberName="TextBoxesOnConstructor" />
