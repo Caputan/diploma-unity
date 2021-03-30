@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using Controllers;
+using Data;
 using Diploma.Interfaces;
 using Diploma.Managers;
 using Diploma.Tables;
@@ -32,6 +33,7 @@ namespace Diploma.Controllers
         [SerializeField] private AudioMixer _mainAudioMixer;
         
         [SerializeField] private GameObject ErrorMenuPrefab;
+        [SerializeField] private ImportantDontDestroyData _data;
         
         #region Don't Use
         // [SerializeField] private GameObject togglePanelPrefab;
@@ -149,8 +151,11 @@ namespace Diploma.Controllers
                 lessonCanvasPrefab,
                 lessonPrefab,
                 DataBaseController,
-                tables
+                tables,
+                _data
                 );
+            
+           
             
             var LessonConstructorInitialization = new LessonConstructorUIInitialization(
                 _gameContextWithViews,
@@ -177,6 +182,8 @@ namespace Diploma.Controllers
             
             var ExitController = new ExitController();
             
+            var SceneLoader = new LoadingSceneController();
+            
             var ErrorHandlerInitialization = new ErrorMenuInitialization(
                 _gameContextWithViews,
                 _gameContextWithUI,
@@ -197,6 +204,13 @@ namespace Diploma.Controllers
                 _mainAudioMixer
                 );
             
+            var ChooseLessonController = new LessonsChooseController(
+                _gameContextWithViews,
+                _gameContextWithUI,
+                SceneLoader,
+                _data
+                );
+            
             var uiController = new UIController(
                 _gameContextWithUI,
                 ExitController,
@@ -204,7 +218,8 @@ namespace Diploma.Controllers
                 AuthController,
                 _fileManager,
                 LessonConstructorController,
-                OptionsController
+                OptionsController,
+                SceneLoader
                 );
             //uiController.AddUIToDictionary();
             // добавить соответствующие менюшки ниже
@@ -242,6 +257,7 @@ namespace Diploma.Controllers
             _controllers.Add(OptionsInitialization);
             _controllers.Add(OptionsController);
             _controllers.Add(ErrorHandlerInitialization);
+            _controllers.Add(ChooseLessonController);
             //этот контроллер идет самым последним
             
             _controllers.Add(uiController);

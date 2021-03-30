@@ -17,6 +17,7 @@ namespace Diploma.Controllers
         private readonly FileManagerController _fileManagerController;
         private readonly LessonConstructorController _lessonConstructorController;
         private readonly OptionsController _optionsController;
+        private readonly LoadingSceneController _loadingSceneController;
         private readonly GameObject _backGround;
         private ErrorHandler _errorHandler;
         private LoadingParts _currentPosition;
@@ -29,7 +30,8 @@ namespace Diploma.Controllers
             AuthController authController,
             FileManagerController fileManagerController,
             LessonConstructorController lessonConstructorController,
-            OptionsController optionsController
+            OptionsController optionsController,
+            LoadingSceneController loadingSceneController
         )
         {
             _error = ErrorCodes.None;
@@ -40,6 +42,7 @@ namespace Diploma.Controllers
             _fileManagerController = fileManagerController;
             _lessonConstructorController = lessonConstructorController;
             _optionsController = optionsController;
+            _loadingSceneController = loadingSceneController;
             _backGround = GameObject.Find("BackGround");
             
         }
@@ -190,6 +193,7 @@ namespace Diploma.Controllers
                     _optionsController.SetGraphicsQuality(LoadingParts.HighGraphics);
                     _optionsController.DeactivateButton(LoadingParts.HighGraphics);
                     break;
+                
             }
             Debug.Log(id);
         }

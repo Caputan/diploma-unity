@@ -79,9 +79,10 @@
             <e p="LessonConstructorController.cs" t="Include" />
             <e p="LessonConstructorUIInitialization.cs" t="Include" />
             <e p="LessonSceneControllerInitialization.cs" t="Include" />
+            <e p="LessonsChooseController.cs" t="Include" />
             <e p="LessonsChooseInitialization.cs" t="Include" />
-            <e p="ListOfLessonsController.cs" t="Include" />
             <e p="Loader3DS.cs" t="Include" />
+            <e p="LoadingSceneController.cs" t="Include" />
             <e p="MainMenuInitialization.cs" t="Include" />
             <e p="MainSceneInitialization.cs" t="Include" />
             <e p="OptionsController.cs" t="Include" />
@@ -92,6 +93,9 @@
           <e p="Coroutine" t="Include">
             <e p="AsyncOperationBehavior.cs" t="Include" />
             <e p="CoroutineExtensions.cs" t="Include" />
+          </e>
+          <e p="Data" t="Include">
+            <e p="ImportantDontDestroyData.cs" t="Include" />
           </e>
           <e p="Enums" t="Include">
             <e p="CoroutineState.cs" t="Include" />
@@ -139,7 +143,6 @@
           </e>
           <e p="ListOfLessons" t="Include">
             <e p="ListOfLessonsView.cs" t="Include" />
-            <e p="ListOfLessonsViewCreator.cs" t="Include" />
           </e>
           <e p="Managers" t="Include">
             <e p="FileManager.cs" t="Include" />
@@ -173,6 +176,7 @@
             </e>
             <e p="LessonChoose" t="Include">
               <e p="LessonChooseAddButtonsToDictionary.cs" t="Include" />
+              <e p="LessonChooseButtonsLogic.cs" t="Include" />
               <e p="LessonChooseFactory.cs" t="Include" />
               <e p="LessonChooseLogic.cs" t="Include" />
             </e>

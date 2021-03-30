@@ -12,6 +12,7 @@ namespace Diploma.Controllers
         public Dictionary<int,GameObjectModel> GameObjectModels;
         
         public Dictionary<int, FactoryType> FactoryTypeForCreating;
+
         public Camera MainCamera;
         public GameContextWithLogic()
         {

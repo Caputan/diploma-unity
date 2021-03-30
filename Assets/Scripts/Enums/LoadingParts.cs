@@ -23,6 +23,8 @@
         LowGraphics = 16,
         MiddleGraphics = 17,
         HighGraphics = 18,
+        LoadLessonScene,
+        LoadMainScene,
         LoadError
     }
 }

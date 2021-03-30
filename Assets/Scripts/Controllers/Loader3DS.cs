@@ -5,7 +5,7 @@ using Coroutine;
 
 public class Loader3DS {
 
-	public string modelPath = "C:/diploma-unity/Assets/Fence.3ds";
+	//public string modelPath = "C:/diploma-unity/Assets/Fence.3ds";
 	public Shader modelShader;
 
 	private string nameModel = "";
