@@ -2,6 +2,7 @@
 using Data;
 using Diploma.Constructor;
 using Diploma.Interfaces;
+using Diploma.Managers;
 using Diploma.Tables;
 using GameObjectCreating;
 using UnityEngine;
@@ -15,11 +16,19 @@ namespace Diploma.Controllers
 
         [SerializeField] private ImportantDontDestroyData _data;
         
+        
+        
+        private GameContextWithLogic _gameContextWithLogic;
+        private GameContextWithViews _gameContextWithViews;
+        private GameContextWithLessons _gameContextWithLessons;
+        private GameContextWithUI _gameContextWithUI;
         private Controllers _controllers;
+        public string[] destinationPath = new string[4];
+        
         public void Start()
         {
             Debug.Log("Loading is done");
-            
+
             var DataBaseController = new DataBaseController();
             AssemliesTable assemblies = new AssemliesTable();
             LessonsTable lessons = new LessonsTable();
@@ -35,22 +44,27 @@ namespace Diploma.Controllers
             tables.Add(users); // 4 - users
             tables.Add(videos); // 5 - videos
             
-            // #region Creation new Lession Module
-            // // данный регион будет вызываться во время создания урока
-            // var abstractFactory = new AbstractFactory();
-            // var abstractView = new AbstractView(_gameContextWithViews,_gameContextWithLogic,_button,_fileManagerController);
-            // var abstractFactoryController = new AbstractFactoryController(abstractView,abstractFactory);
-            //
-            // #endregion
-            //
-            //
-            // // Scene
-            // var GameObjectFactory = new GameObjectFactory();
-            // var Pool = new PoolOfObjects(countOfDetails,GameObjectFactory,_gameContextWithLogic);
-            // var GameObjectInitilization = new GameObjectInitialization(Pool);
+            DataBaseController.SetTable(tables[1]);
+            Lessons lesson = (Lessons)DataBaseController.GetRecordFromTableById(_data.lessonID);
+            DataBaseController.SetTable(tables[0]);
+            Assemblies Assembly = (Assemblies)DataBaseController.GetRecordFromTableById(lesson.Lesson_Assembly_Id);
             
-            // Loader3DS loader3Ds = new Loader3DS();
-            //loader3Ds.StartParsing();
+            var GameObjectFactory = new GameObjectFactory();
+            var Pool = new PoolOfObjects(GameObjectFactory,_gameContextWithLogic);
+            
+            Loader3DS loader3Ds = new Loader3DS();
+            loader3Ds.StartParsing(
+                Assembly.Assembly_Link,
+                Pool.GetParent().gameObject);
+            
+            // Scene
+            
+            var GameObjectInitilization = new GameObjectInitialization(Pool);
+            
+            //объекты в пуле
+            //надо проверить как они в логике появляются или нет
+            // еще надо убрать дубли
+            //еще надо переписать забор из пула по запросу
             
             
             _controllers = new Controllers();

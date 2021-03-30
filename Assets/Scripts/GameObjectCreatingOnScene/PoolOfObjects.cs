@@ -10,22 +10,26 @@ namespace GameObjectCreating
     public class PoolOfObjects
     {
         private readonly Dictionary<string, HashSet<GameObjectProvider>> _gameObjectPool;
-        private readonly int _capacityPool;
+       
         private int _count;
         private Transform _rootPool;
         private GameObjectCreator _gameObjectCreator;
-        public PoolOfObjects(int capacityPool,GameObjectFactory gameObjectFactory,GameContextWithLogic gameContext)
+        public PoolOfObjects(GameObjectFactory gameObjectFactory,GameContextWithLogic gameContext)
         {
-            
             _gameObjectCreator = new GameObjectCreator(gameObjectFactory,gameContext);
             _gameObjectPool = new Dictionary<string, HashSet<GameObjectProvider>>();
             _count = 0;
-            _capacityPool = capacityPool;
+            
             if (!_rootPool)
             {
                 _rootPool = new
                     GameObject(PoolManager.POOL_OBJECTS).transform;
             }
+        }
+
+        public Transform GetParent()
+        {
+            return _rootPool;
         }
 
         public GameObjectProvider GetEnemy(string type)
@@ -34,7 +38,7 @@ namespace GameObjectCreating
             switch (type)
             {
                 case "GameObject":
-                    result = GetAsteroid(GetListEnemies(type));
+                    result = GetGameObject(GetListEnemies(type));
                     break;
                 default:
                     throw new ArgumentOutOfRangeException(nameof(type), type,
@@ -47,28 +51,29 @@ namespace GameObjectCreating
             return _gameObjectPool.ContainsKey(type) ? _gameObjectPool[type] :
                 _gameObjectPool[type] = new HashSet<GameObjectProvider>();
         }
-        private GameObjectProvider GetAsteroid(HashSet<GameObjectProvider> enemies)
+        private GameObjectProvider GetGameObject(HashSet<GameObjectProvider> enemies)
         {
+            //переписать это для взятие конкретного объекта
             var enemy = enemies.FirstOrDefault(a => !a.gameObject.activeSelf);
             if (enemy == null )
             {
                 
-                for (var i = 0; i < _capacityPool; i++)
-                {
-                    var instantiate = _gameObjectCreator.CreateGameObjectProvider(_count);
-                    ReturnToPool(instantiate.transform);
-                    enemies.Add(instantiate);
-                    _count++;
-                }
+                // for (var i = 0; i < _capacityPool; i++)
+                // {
+                //     var instantiate = _gameObjectCreator.CreateGameObjectProvider(_count);
+                //     ReturnToPool(instantiate.transform);
+                //     enemies.Add(instantiate);
+                //     _count++;
+                // }
                 
-                GetAsteroid(enemies);
+                GetGameObject(enemies);
                 
             }
             enemy = enemies.FirstOrDefault(a => !a.gameObject.activeSelf);
             return enemy;
         }
 
-        public List<GameObjectProvider> GetAllAsteroids()
+        public List<GameObjectProvider> GetAllGameObjects()
         {
             GetEnemy("GameObject");
             List<GameObjectProvider> listOfAsteroidProviders  = _gameObjectPool["GameObject"].ToList();

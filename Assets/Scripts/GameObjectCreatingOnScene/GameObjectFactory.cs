@@ -6,9 +6,9 @@ namespace GameObjectCreating
 {
     public class GameObjectFactory : IFactory
     {
-        public GameObject CreateGameObject( int name)
+        public GameObject CreateGameObject(GameObject gameObject)
         {
-            return new GameObject($"{name}").
+            return gameObject.
                     AddRigidBody(2).
                     AddCollider()
                 ; 

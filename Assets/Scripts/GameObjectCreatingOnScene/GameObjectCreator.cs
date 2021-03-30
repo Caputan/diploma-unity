@@ -17,9 +17,9 @@ namespace GameObjectCreating
             _factory = factory;
             _gameContext = gameContext;
         }
-        public GameObjectProvider CreateGameObjectProvider(int name)
+        public GameObjectProvider CreateGameObjectProvider(GameObject gameObject)
         {
-            _gameObject = _factory.CreateGameObject(name);
+            _gameObject = _factory.CreateGameObject(gameObject);
             _gameObject.AddComponent<GameObjectProvider>();
 
             var gameObjectStruct = (GameObjectStruct)_gameObjectStruct.Clone();
