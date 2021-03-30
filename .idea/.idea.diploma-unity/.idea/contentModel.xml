@@ -78,7 +78,6 @@
             <e p="InputController.cs" t="Include" />
             <e p="LessonConstructorController.cs" t="Include" />
             <e p="LessonConstructorUIInitialization.cs" t="Include" />
-            <e p="LessonSceneControllerInitialization.cs" t="Include" />
             <e p="LessonsChooseInitialization.cs" t="Include" />
             <e p="ListOfLessonsController.cs" t="Include" />
             <e p="Loader3DS.cs" t="Include" />
