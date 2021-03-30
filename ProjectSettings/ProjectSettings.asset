@@ -14,7 +14,7 @@ PlayerSettings:
   accelerometerFrequency: 60
   companyName: Super_Mega_Ultra_Boys_and_Grill
   productName: Detali_Mashin
-  defaultCursor: {fileID: 2800000, guid: b902d766e53faf24fa8062493f7325a2, type: 3}
+  defaultCursor: {fileID: 2800000, guid: b53f60fa09e38914794828de0f5f64fe, type: 3}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
   m_ShowUnitySplashScreen: 1
