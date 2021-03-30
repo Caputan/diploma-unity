@@ -9,7 +9,7 @@ namespace Diploma.Controllers
     public sealed class GameContextWithLogic
     {
         //public PlayerModel PlayerModel;
-        public Dictionary<int,GameObjectModel> GameObjectModels;
+        public Dictionary<int, GameObjectModel> GameObjectModels;
         
         public Dictionary<int, FactoryType> FactoryTypeForCreating;
         public Camera MainCamera;
@@ -28,7 +28,7 @@ namespace Diploma.Controllers
         {
             FactoryTypeForCreating.Add(id,factoryType);
         }
-        public void AddGameObjectToList(int id,GameObjectModel gameObjectModel)
+        public void AddGameObjectToList(int id, GameObjectModel gameObjectModel)
         {
             GameObjectModels.Add(id,gameObjectModel);
         }

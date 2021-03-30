@@ -93,6 +93,9 @@ namespace Diploma.Controllers
                     }
                     break;
                 case LoadingParts.LoadSignUp:
+                    _authController.NewLogin.text = "";
+                    _authController.NewPassword.text = "";
+                    _authController.NewEmail.text = "";
                     _gameContextWithUI.UiControllers[LoadingParts.LoadSignUp].SetActive(true);
                     _backController.WhereIMustBack(_currentPosition);
                     _currentPosition = LoadingParts.LoadSignUp;

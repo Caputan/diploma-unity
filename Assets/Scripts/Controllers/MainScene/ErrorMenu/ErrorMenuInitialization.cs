@@ -16,7 +16,7 @@ namespace Controllers
         private readonly GameObject _errorMenuPrefab;
         private readonly ErrorMenuFactory _errorMenuFactory;
         private List<Button> ErrorMenuButtons;
-        
+
         public ErrorMenuInitialization(GameContextWithViews gameContextWithViews,
             GameContextWithUI gameContextWithUI, GameObject MainParent, GameObject errorMenuPrefab)
         {

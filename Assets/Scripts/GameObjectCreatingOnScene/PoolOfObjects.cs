@@ -14,7 +14,7 @@ namespace GameObjectCreating
         private int _count;
         private Transform _rootPool;
         private GameObjectCreator _gameObjectCreator;
-        public PoolOfObjects(int capacityPool,GameObjectFactory gameObjectFactory,GameContextWithLogic gameContext)
+        public PoolOfObjects(int capacityPool, GameObjectFactory gameObjectFactory,GameContextWithLogic gameContext)
         {
             
             _gameObjectCreator = new GameObjectCreator(gameObjectFactory,gameContext);

@@ -5,15 +5,15 @@ namespace Diploma.UI
 {
     public class ErrorMenuFactory: IUIObjectsFactory
     {
-        private GameObject _errorMenuPrafab;
+        private GameObject _errorMenuPrefab;
 
         public ErrorMenuFactory(GameObject errorMenuPrafab)
         {
-            _errorMenuPrafab = errorMenuPrafab;
+            _errorMenuPrefab = errorMenuPrafab;
         }
         public GameObject Create(Transform Parent)
         {
-            var gm = GameObject.Instantiate(_errorMenuPrafab, Parent, true);
+            var gm = GameObject.Instantiate(_errorMenuPrefab, Parent, true);
             return gm;
         }
     }
