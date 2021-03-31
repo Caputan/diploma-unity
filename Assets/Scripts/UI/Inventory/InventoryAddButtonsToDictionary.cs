@@ -11,8 +11,8 @@ namespace Diploma.UI
         private readonly GameContextWithViews _gameContextWithViews;
         private GameObject[] _partsOfAssembly;
 
-        public InventoryAddButtonsToDictionary(List<Button> buttons, GameContextWithViews gameContextWithViews,
-            GameObject[] partsOfAssembly)
+        public InventoryAddButtonsToDictionary(GameObject[] partsOfAssembly, List<Button> buttons, 
+            GameContextWithViews gameContextWithViews)
         {
             _buttons = buttons;
             _gameContextWithViews = gameContextWithViews;

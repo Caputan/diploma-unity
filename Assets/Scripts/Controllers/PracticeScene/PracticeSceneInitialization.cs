@@ -12,6 +12,7 @@ namespace Diploma.Controllers
         [SerializeField] private Transform spawnPoint;
 
         [SerializeField] private GameObject inventoryPrefab;
+        [SerializeField] private GameObject inventorySlotPrefab;
         
         [SerializeField] private GameObject[] partOfAssembly;
 
@@ -27,7 +28,7 @@ namespace Diploma.Controllers
             var playerInitialization = new PlayerInitialization(playerPrefab, spawnPoint);
 
             var inventoryInitialization = new InventoryInitialization(_gameContextWithViews, _gameContextWithUI,
-                mainParent, inventoryPrefab, partOfAssembly);
+                mainParent, inventoryPrefab, partOfAssembly, inventorySlotPrefab);
 
             _controllers = new Controllers();
             _controllers.Add(playerInitialization);

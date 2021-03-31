@@ -13,6 +13,7 @@ namespace Controllers.PracticeScene.Inventory
         private readonly GameContextWithUI _gameContextWithUI;
         private readonly GameObject _mainParent;
         private readonly GameObject _inventoryPrefab;
+        private readonly GameObject _inventorySlotPrefab;
         private readonly InventoryFactory _inventoryFactory;
         private List<Button> InventoryButtons;
 
@@ -22,12 +23,13 @@ namespace Controllers.PracticeScene.Inventory
 
         public InventoryInitialization(GameContextWithViews gameContextWithViews,
             GameContextWithUI gameContextWithUI, GameObject MainParent, GameObject inventoryPrefab, 
-            GameObject[] parts)
+            GameObject[] parts, GameObject inventorySlotPrefab)
         {
             _gameContextWithViews = gameContextWithViews;
             _gameContextWithUI = gameContextWithUI;
             _mainParent = MainParent;
             _inventoryPrefab = inventoryPrefab;
+            _inventorySlotPrefab = inventorySlotPrefab;
             _parts = parts;
             _inventoryFactory = new InventoryFactory(_inventoryPrefab);
         }
@@ -39,11 +41,20 @@ namespace Controllers.PracticeScene.Inventory
             _player = new PlayerController(GameObject.Find("Player(Clone)"));
             
             inventory.transform.localPosition = Vector3.zero;
-
+            
             InventoryButtons = new List<Button>();
-            InventoryButtons.AddRange(inventory.GetComponentsInChildren<Button>());
 
-            new InventoryAddButtonsToDictionary(InventoryButtons, _gameContextWithViews, _parts);
+            foreach (var part in _parts)
+            {
+                var inventorySlot = GameObject.Instantiate(_inventorySlotPrefab, inventory.transform, true);
+                inventorySlot.transform.localPosition = Vector3.zero;
+                
+                // прикрепить изображение к кнопке
+                
+                InventoryButtons.Add(inventorySlot.GetComponent<Button>());
+            }
+
+            new InventoryAddButtonsToDictionary(_parts, InventoryButtons, _gameContextWithViews);
             var inventoryLogic = new InventoryLogic(_gameContextWithViews.InventoryButtons, _player);
             inventoryLogic.Initialization();
         }
