@@ -9,8 +9,8 @@ namespace GameObjectCreating
         public GameObject CreateGameObject(GameObject gameObject)
         {
             return gameObject.
-                    AddRigidBody(2).
-                    AddCollider()
+                    AddRigidBody(0).
+                    AddMeshCollider()
                 ; 
         }
     }

@@ -16,6 +16,8 @@ namespace GameObjectCreating
         {
             _factory = factory;
             _gameContext = gameContext;
+            _gameObjectStruct = new GameObjectStruct();
+            _gameObjectComponents = new GameObjectComponents();
         }
         public GameObjectProvider CreateGameObjectProvider(GameObject gameObject)
         {
@@ -26,7 +28,9 @@ namespace GameObjectCreating
             gameObjectStruct.GameObject = _gameObject;
 
             var gameObjectComponents = (GameObjectComponents) _gameObjectComponents.Clone();
-
+            gameObjectComponents.Collider = _gameObject.GetComponent<MeshCollider>();
+            gameObjectComponents.Rigidbody = _gameObject.GetComponent<Rigidbody>();
+            
             var gameObjectModel = new GameObjectModel(gameObjectComponents,gameObjectStruct);
             _gameContext.AddGameObjectToList(_gameObject.GetInstanceID(),gameObjectModel);
             return _gameObject.GetComponent<GameObjectProvider>();

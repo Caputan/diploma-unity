@@ -44,6 +44,10 @@ namespace Diploma.Controllers
             tables.Add(users); // 4 - users
             tables.Add(videos); // 5 - videos
             
+            _gameContextWithLogic = new GameContextWithLogic();
+            _gameContextWithViews = new GameContextWithViews();
+            _gameContextWithUI = new GameContextWithUI();
+            
             DataBaseController.SetTable(tables[1]);
             Lessons lesson = (Lessons)DataBaseController.GetRecordFromTableById(_data.lessonID);
             DataBaseController.SetTable(tables[0]);
@@ -51,15 +55,7 @@ namespace Diploma.Controllers
             
             var GameObjectFactory = new GameObjectFactory();
             var Pool = new PoolOfObjects(GameObjectFactory,_gameContextWithLogic);
-            
-            Loader3DS loader3Ds = new Loader3DS();
-            loader3Ds.StartParsing(
-                Assembly.Assembly_Link,
-                Pool.GetParent().gameObject);
-            
-            // Scene
-            
-            var GameObjectInitilization = new GameObjectInitialization(Pool);
+            var GameObjectInitilization = new GameObjectInitialization(Pool, Assembly);
             
             //объекты в пуле
             //надо проверить как они в логике появляются или нет
@@ -68,6 +64,8 @@ namespace Diploma.Controllers
             
             
             _controllers = new Controllers();
+
+            _controllers.Add(GameObjectInitilization);
             
             _controllers.Initialization();
         }
