@@ -22,20 +22,21 @@ namespace Controllers.PracticeScene.Inventory
 
         public InventoryInitialization(GameContextWithViews gameContextWithViews,
             GameContextWithUI gameContextWithUI, GameObject MainParent, GameObject inventoryPrefab, 
-            GameObject[] parts, PlayerController player)
+            GameObject[] parts)
         {
             _gameContextWithViews = gameContextWithViews;
             _gameContextWithUI = gameContextWithUI;
             _mainParent = MainParent;
             _inventoryPrefab = inventoryPrefab;
             _parts = parts;
-            _player = player;
             _inventoryFactory = new InventoryFactory(_inventoryPrefab);
         }
         
         public void Initialization()
         {
             var inventory = _inventoryFactory.Create(_mainParent.transform);
+            
+            _player = new PlayerController(GameObject.Find("Player(Clone)"));
             
             inventory.transform.localPosition = Vector3.zero;
 

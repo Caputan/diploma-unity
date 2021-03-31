@@ -109,9 +109,11 @@
               <e p="Inventory" t="Include">
                 <e p="InventoryInitialization.cs" t="Include" />
               </e>
-              <e p="PlayerController" t="Include">
+              <e p="Player" t="Include">
                 <e p="PlayerController.cs" t="Include" />
+                <e p="PlayerInitialization.cs" t="Include" />
               </e>
+              <e p="PracticeSceneInitialization.cs" t="Include" />
             </e>
           </e>
           <e p="Coroutine" t="Include">
