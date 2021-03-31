@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using Diploma.Enums;
+using Diploma.UI;
 using Interfaces;
 using UnityEngine;
 using UnityEngine.UI;
@@ -19,6 +20,7 @@ namespace Diploma.Controllers
         public Dictionary<LoadingParts, Button> ErrorMenuButtons;
         public Slider Slider;
         public Dictionary<int,GameObject> ChoosenLessonToggles;
+        public LessonChooseButtonsLogic LessonChooseButtonsLogic;
 
         public Dictionary<GameObject, Button> InventoryButtons;
         public GameContextWithViews()
@@ -40,6 +42,11 @@ namespace Diploma.Controllers
         public void AddToggles(int id,GameObject toggle)
         {
             ChoosenToggles.Add(id,toggle);
+        }
+        
+        public void SetLessonChooseButtonsLogic(LessonChooseButtonsLogic lessonChooseButtonsLogic)
+        {
+            LessonChooseButtonsLogic = lessonChooseButtonsLogic;
         }
 
         public void SetSlider(Slider slider)

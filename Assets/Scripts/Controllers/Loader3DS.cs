@@ -152,14 +152,15 @@ public class Loader3DS {
 
 			myFileStream.Close ();
 		}
-		
-		// yield return StartCoroutine (SetMesh());
 
 		yield return new WaitForEndOfFrame();
 	}
 
 	private void CalculateNormals(Vector3[] vertices)
 	{
+		if(vertices == null)
+			return;
+		
 		normalsModel = new Vector3[vertices.Length];
 		for (int i = 2; i < vertices.Length; i++)
 		{
@@ -169,10 +170,12 @@ public class Loader3DS {
 		}
 	}
 
-	private IEnumerator SetMesh(GameObject parent,PoolOfObjects poolOfObjects)
+	private IEnumerator SetMesh(GameObject parent, PoolOfObjects poolOfObjects)
 	{
 		if (nameModel == prevPartName || nameModel == "")
 			yield break;
+		
+		Debug.Log(nameModel + " || " + prevPartName);
 		
 		CalculateNormals(verticesModel);
 		
@@ -194,17 +197,16 @@ public class Loader3DS {
 		
 		meshFilter.RecalculateBounds();
 		
-		Material modelMaterial = new Material (modelShader);
+		// Material modelMaterial = new Material (modelShader);
 		
 		// wwwTexture.LoadImageIntoTexture ((Texture2D) modelMaterial.mainTexture);
 		// modelMaterial.mainTexture = wwwTexture.texture;
-		Texture2D texture = Texture2D.normalTexture;
-		modelMaterial.mainTexture = texture;
-		MeshRenderer meshRenderer = gameObjectMesh.GetComponent<MeshRenderer>();
-		meshRenderer.material = modelMaterial;
+		// Texture2D texture = Texture2D.normalTexture;
+		// modelMaterial.mainTexture = texture;
+		// MeshRenderer meshRenderer = gameObjectMesh.GetComponent<MeshRenderer>();
+		// meshRenderer.material = modelMaterial;
 
 		prevPartName = nameModel;
-		
 		
 		yield return new WaitForEndOfFrame();
 	}
