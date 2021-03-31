@@ -18,6 +18,7 @@ namespace Controllers
         private readonly GameObject _lessonPrefab;
         private readonly DataBaseController _dataBaseController;
         private readonly List<IDataBase> _tables;
+        private readonly ScriptableObject _data;
         private LessonChooseFactory _lessonCanvasChooseFactory;
         private List<Button> _lessonChooseButtons;
         
@@ -29,7 +30,8 @@ namespace Controllers
             GameObject PrefabLessonChoose,
             GameObject LessonPrefab,
             DataBaseController dataBaseController,
-            List<IDataBase> tables
+            List<IDataBase> tables,
+            ScriptableObject data
         )
         {
             _gameContextWithViews = gameContextWithViews;
@@ -41,6 +43,7 @@ namespace Controllers
 
             _dataBaseController = dataBaseController;
             _tables = tables;
+            _data = data;
 
             _lessonCanvasChooseFactory = new LessonChooseFactory(_prefabLessonChoose);
         }
@@ -74,9 +77,13 @@ namespace Controllers
             lessonChooseAddButtonsToDictionary.Initialization();
             var LessonChooseLogic = new LessonChooseLogic(_gameContextWithViews.ChooseLessonButtons);
             LessonChooseLogic.Initialization();
+            var LessonButtons = new LessonChooseButtonsLogic(_gameContextWithViews.ChoosenLessonToggles);
+            LessonButtons.Initialization();
+            
             _gameContextWithUI.AddUIToDictionary(LoadingParts.LoadLectures, LessonsChoose);
             _gameContextWithUI.AddUILogic(LoadingParts.LoadLectures,LessonChooseLogic);
-            
+            _gameContextWithViews.SetLessonChooseButtonsLogic(LessonButtons);
+
             #endregion
         }
     }

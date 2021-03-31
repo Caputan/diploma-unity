@@ -104,25 +104,25 @@ namespace Diploma.Controllers
             //     DataBaseController = DataBaseController, Tables = tables, destinationPath = destinationPath
             // };
 
-            #region Creation new Lession Module
-            // данный регион будет вызываться во время создания урока
-            var abstractFactory = new AbstractFactory();
-            var abstractView = new AbstractView(_gameContextWithViews,_gameContextWithLogic,_button,_fileManagerController);
-            var abstractFactoryController = new AbstractFactoryController(abstractView,abstractFactory);
-            
-            #endregion
-           
-            
-            // Scene
-            var GameObjectFactory = new GameObjectFactory();
-            var Pool = new PoolOfObjects(countOfDetails,GameObjectFactory,_gameContextWithLogic);
-            var GameObjectInitilization = new GameObjectInitialization(Pool);
+            // #region Creation new Lession Module
+            // // данный регион будет вызываться во время создания урока
+            // var abstractFactory = new AbstractFactory();
+            // var abstractView = new AbstractView(_gameContextWithViews,_gameContextWithLogic,_button,_fileManagerController);
+            // var abstractFactoryController = new AbstractFactoryController(abstractView,abstractFactory);
+            //
+            // #endregion
+            //
+            //
+            // // Scene
+            // var GameObjectFactory = new GameObjectFactory();
+            // var Pool = new PoolOfObjects(countOfDetails,GameObjectFactory,_gameContextWithLogic);
+            // var GameObjectInitilization = new GameObjectInitialization(Pool);
 
             _controllers = new Controllers();
            // _controllers.Add(GameContextWithViewCreator);
             _controllers.Add(DataBaseController);
-            _controllers.Add(abstractView);
-            _controllers.Add(abstractFactoryController);
+            // _controllers.Add(abstractView);
+            // _controllers.Add(abstractFactoryController);
             //_controllers.Add(uiController);
             // _controllers.Add(AuthController);
             _controllers.Add(_fileManagerController);

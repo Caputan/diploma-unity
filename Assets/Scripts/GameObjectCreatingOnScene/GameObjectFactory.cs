@@ -6,11 +6,11 @@ namespace GameObjectCreating
 {
     public class GameObjectFactory : IFactory
     {
-        public GameObject CreateGameObject( int name)
+        public GameObject CreateGameObject(GameObject gameObject)
         {
-            return new GameObject($"{name}").
-                    AddRigidBody(2).
-                    AddCollider()
+            return gameObject.
+                    AddRigidBody(0).
+                    AddMeshCollider()
                 ; 
         }
     }

@@ -4,6 +4,6 @@ namespace Diploma.Interfaces
 {
     public interface IFactory
     {
-        GameObject CreateGameObject(int name);
+        GameObject CreateGameObject(GameObject gameObject);
     }
 }

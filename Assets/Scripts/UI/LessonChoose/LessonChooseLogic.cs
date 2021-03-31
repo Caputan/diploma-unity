@@ -17,8 +17,6 @@ namespace Diploma.UI
         public LessonChooseLogic(Dictionary<LoadingParts,Button> buttonLogic)
         {
             _buttonLogic = buttonLogic;
-            // нужно понять как передавать номер урока, который требуется загрузить на следующую сцену
-            //_lessonIDPlusButtonID
         }
         public void Initialization()
         {
