@@ -17,7 +17,7 @@
         //Additonal part for buttons
         DownloadModel = 12,
         DownloadPDF = 13,
-        DownloadVideo = 14,   
+        DownloadVideo = 14,
         LoadStart = 15,
         //Options buttons
         LowGraphics = 16,
@@ -25,6 +25,7 @@
         HighGraphics = 18,
         LoadLessonScene,
         LoadMainScene,
+        SetNameToLesson,
         LoadError
     }
 }

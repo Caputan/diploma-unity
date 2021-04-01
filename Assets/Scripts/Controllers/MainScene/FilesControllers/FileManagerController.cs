@@ -83,16 +83,16 @@ namespace Diploma.Controllers
                 string[] localPath = new string[1];
                 LoadingParts parts;
                 
-                string[] splitedString = 
-                    FileBrowserHelpers.GetFilename(FileBrowser.Result[0]).Split('\\');
+                string splitedString = 
+                    FileBrowserHelpers.GetFilename(FileBrowser.Result[0]);
                 switch (fileTypes)
                 {
                     case FileTypes.Assembly:
-                        var isFormatTrue = splitedString.Last().Split('.');
+                        var isFormatTrue = splitedString.Split('\\').Last().Split('.');
                         if (isFormatTrue.Last() != "3ds")
                         {
                             _error = ErrorCodes.WrongFormatError;
-                            splitedString[0] = @"Выберите деталь (*.3ds)";
+                            splitedString = @"Выберите деталь (*.3ds)";
                         }
                         else
                         {
@@ -108,11 +108,11 @@ namespace Diploma.Controllers
                         // DataBaseController.AddNewRecordToTable(localPath);
                         break;
                     case FileTypes.Text:
-                        isFormatTrue = splitedString.Last().Split('.');
+                        isFormatTrue = splitedString.Split('\\').Last().Split('.');
                         if (isFormatTrue.Last() != "pdf")
                         {
                             _error = ErrorCodes.WrongFormatError;
-                            splitedString[0] = "Выберите текст (*.pdf)";
+                            splitedString = "Выберите текстовый фаил(*.pdf)";
                         }
                         else
                         {
@@ -128,11 +128,11 @@ namespace Diploma.Controllers
                         // DataBaseController.AddNewRecordToTable(localPath);
                         break;
                     case FileTypes.Video:
-                        isFormatTrue = splitedString.Last().Split('.');
+                        isFormatTrue = splitedString.Split('\\').Last().Split('.');
                         if (isFormatTrue.Last() != "mp4")
                         {
                             _error = ErrorCodes.WrongFormatError;
-                            splitedString[0] = "Выберите видео (*.mp4)";
+                            splitedString = "Выберите видео-фаил (*.mp4)";
                         }
                         else
                         {
@@ -150,7 +150,7 @@ namespace Diploma.Controllers
                         throw new Exception("TAK DELAT NELZYA");
                 }
                 
-                ShowNewText(parts,splitedString.Last());
+                ShowNewText(parts,splitedString);
                 
             }
         }
