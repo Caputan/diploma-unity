@@ -20,11 +20,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9a27c574-4a30-4862-a74f-153a103b04b8" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.diploma-unity/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.diploma-unity/.idea/indexLayout.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.diploma-unity/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.diploma-unity/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/LessonsControllers/LessonConstructorController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/LessonsControllers/LessonConstructorController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tables/LessonsTable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tables/LessonsTable.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/MachinePartsDB.bytes" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StreamingAssets/MachinePartsDB.bytes" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/LectionsDemonstration.meta" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -142,6 +138,7 @@
       <workItem from="1617449472440" duration="150000" />
       <workItem from="1617702137446" duration="645000" />
       <workItem from="1617704473308" duration="433000" />
+      <workItem from="1617707898538" duration="394000" />
     </task>
     <servers />
   </component>
