@@ -155,7 +155,7 @@ namespace Controllers
             //lessonToggle.GetComponentInChildren<RawImage>().texture = tex;
 
             var lessonName = lessonToggle.GetComponentInChildren<TextMeshProUGUI>();
-            lessonName.text = lastLessonInDb.Lesson_Type_Id.ToString();
+            lessonName.text = lastLessonInDb.Lesson_Name;
                 
             _gameContextWithLessons.AddLessonsView(lastLessonInDb.Lesson_Id,
                 new ListOfLessonsView(lastLessonInDb.Lesson_Id,

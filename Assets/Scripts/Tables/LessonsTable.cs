@@ -36,7 +36,7 @@ namespace Diploma.Tables
             {
                 Lesson_Preview = lessonParams[0],
                 Lesson_Text_Id = Int32.Parse(lessonParams[1]),
-                Lesson_Video_Id = Int32.Parse(lessonParams[2]),
+                Lesson_Video_Id = lessonParams[2] != null ? Int32.Parse(lessonParams[2]):-1,
                 Lesson_Assembly_Id = Int32.Parse(lessonParams[3]),
                 Lesson_Type_Id = Int32.Parse(lessonParams[4]),
                 Lesson_Name = lessonParams[5]
