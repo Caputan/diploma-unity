@@ -1,4 +1,5 @@
 ﻿using Diploma.Interfaces;
+using Diploma.Tables;
 using GameObjectCreating;
 using UnityEngine;
 
@@ -7,17 +8,28 @@ namespace Diploma.Controllers
     public sealed class GameObjectInitialization: IInitialization
     {
         private readonly PoolOfObjects _poolOfObjects;
+        private readonly Assemblies _assemblies;
 
-        public GameObjectInitialization(PoolOfObjects poolOfObjects)
+        public GameObjectInitialization(PoolOfObjects poolOfObjects,Assemblies assemblies)
         {
             _poolOfObjects = poolOfObjects;
+            _assemblies = assemblies;
         }
-        public void Initialize()
+        // public void Initialize()
+        // {
+        //     var gameObjectOnScene = _poolOfObjects.GetEnemy("GameObject");
+        //     gameObjectOnScene.transform.position = new Vector3(0,0,0); ;
+        //     gameObjectOnScene.gameObject.SetActive(true);
+        // }
+
+        public void Initialization()
         {
-            var gameObjectOnScene = _poolOfObjects.GetEnemy("GameObject");
-            gameObjectOnScene.transform.position = new Vector3(Random.Range(-10f,10f),Random.Range(-10f,10f),0); ;
-            gameObjectOnScene.gameObject.SetActive(true);
+            // физически выбросили модель на сцену
+            Loader3DS loader3Ds = new Loader3DS();
+            loader3Ds.StartParsing(
+                _assemblies.Assembly_Link,
+                _poolOfObjects._rootPool.gameObject,
+                _poolOfObjects);
         }
-        public void Initialization() { }
     }
 }

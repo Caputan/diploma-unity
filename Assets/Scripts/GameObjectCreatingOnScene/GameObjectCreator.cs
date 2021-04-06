@@ -16,17 +16,21 @@ namespace GameObjectCreating
         {
             _factory = factory;
             _gameContext = gameContext;
+            _gameObjectStruct = new GameObjectStruct();
+            _gameObjectComponents = new GameObjectComponents();
         }
-        public GameObjectProvider CreateGameObjectProvider(int name)
+        public GameObjectProvider CreateGameObjectProvider(GameObject gameObject)
         {
-            _gameObject = _factory.CreateGameObject(name);
+            _gameObject = _factory.CreateGameObject(gameObject);
             _gameObject.AddComponent<GameObjectProvider>();
 
             var gameObjectStruct = (GameObjectStruct)_gameObjectStruct.Clone();
             gameObjectStruct.GameObject = _gameObject;
 
             var gameObjectComponents = (GameObjectComponents) _gameObjectComponents.Clone();
-
+            gameObjectComponents.Collider = _gameObject.GetComponent<MeshCollider>();
+            gameObjectComponents.Rigidbody = _gameObject.GetComponent<Rigidbody>();
+            
             var gameObjectModel = new GameObjectModel(gameObjectComponents,gameObjectStruct);
             _gameContext.AddGameObjectToList(_gameObject.GetInstanceID(),gameObjectModel);
             return _gameObject.GetComponent<GameObjectProvider>();

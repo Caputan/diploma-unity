@@ -2,10 +2,11 @@
 using System.Collections;
 using System.IO;
 using Coroutine;
+using GameObjectCreating;
 
 public class Loader3DS {
 
-	public string modelPath = "C:/diploma-unity/Assets/Fence.3ds";
+	//public string modelPath = "C:/diploma-unity/Assets/Fence.3ds";
 	public Shader modelShader;
 
 	private string nameModel = "";
@@ -20,12 +21,12 @@ public class Loader3DS {
 	private string hierarchyPos = "";
 	
 	
-	public void StartParsing(string pathOfModel, GameObject parent)
+	public void StartParsing(string pathOfModel, GameObject parent, PoolOfObjects poolOfObjects)
 	{
-		Loader(pathOfModel, parent).StartCoroutine(out _);
+		Loader(pathOfModel, parent,poolOfObjects).StartCoroutine(out _);
 	}
 
-	private IEnumerator Loader (string path, GameObject parent)
+	private IEnumerator Loader (string path, GameObject parent, PoolOfObjects poolOfObjects)
 	{
 		
 		if (!File.Exists (path)) 
@@ -50,7 +51,7 @@ public class Loader3DS {
 			{
 				chunk_id = myFileStream.ReadUInt16 ();
 				chunk_lenght = myFileStream.ReadUInt32 ();
-
+				Debug.Log(chunk_id);
 				switch (chunk_id) 
 				{
 					case 0x4d4d:
@@ -146,19 +147,20 @@ public class Loader3DS {
 						break;
 				}
 
-				SetMesh(parent).StartCoroutine(out _);
+				SetMesh(parent,poolOfObjects).StartCoroutine(out _);
 			}
 
 			myFileStream.Close ();
 		}
-		
-		// yield return StartCoroutine (SetMesh());
 
 		yield return new WaitForEndOfFrame();
 	}
 
 	private void CalculateNormals(Vector3[] vertices)
 	{
+		if(vertices == null)
+			return;
+		
 		normalsModel = new Vector3[vertices.Length];
 		for (int i = 2; i < vertices.Length; i++)
 		{
@@ -168,16 +170,21 @@ public class Loader3DS {
 		}
 	}
 
-	private IEnumerator SetMesh(GameObject parent)
+	private IEnumerator SetMesh(GameObject parent, PoolOfObjects poolOfObjects)
 	{
 		if (nameModel == prevPartName || nameModel == "")
 			yield break;
+		
+		Debug.Log(nameModel + " || " + prevPartName);
 		
 		CalculateNormals(verticesModel);
 		
 		GameObject gameObjectMesh = new GameObject(nameModel);
 		gameObjectMesh.transform.parent = parent.transform;
 
+		//тут пихаем в пул элементы
+		poolOfObjects.AddInfoInPool(gameObjectMesh);
+		
 		gameObjectMesh.AddComponent<MeshFilter>();
 		gameObjectMesh.AddComponent<MeshRenderer>();
 
@@ -187,17 +194,17 @@ public class Loader3DS {
 		meshFilter.uv = uvsModel;
 		meshFilter.triangles = facesModel;
 		//meshFilter.no
-
+		
 		meshFilter.RecalculateBounds();
 		
-		Material modelMaterial = new Material (modelShader);
+		// Material modelMaterial = new Material (modelShader);
 		
 		// wwwTexture.LoadImageIntoTexture ((Texture2D) modelMaterial.mainTexture);
 		// modelMaterial.mainTexture = wwwTexture.texture;
-		Texture2D texture = Texture2D.normalTexture;
-		modelMaterial.mainTexture = texture;
-		MeshRenderer meshRenderer = gameObjectMesh.GetComponent<MeshRenderer>();
-		meshRenderer.material = modelMaterial;
+		// Texture2D texture = Texture2D.normalTexture;
+		// modelMaterial.mainTexture = texture;
+		// MeshRenderer meshRenderer = gameObjectMesh.GetComponent<MeshRenderer>();
+		// meshRenderer.material = modelMaterial;
 
 		prevPartName = nameModel;
 		

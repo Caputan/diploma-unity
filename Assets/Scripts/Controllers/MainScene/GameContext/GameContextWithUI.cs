@@ -1,0 +1,40 @@
+﻿using System.Collections.Generic;
+using Diploma.Enums;
+using Interfaces;
+using UnityEngine;
+
+namespace Diploma.Controllers
+{
+    public class GameContextWithUI
+    {
+        public Dictionary<LoadingParts, GameObject> UiControllers;
+        public Dictionary<LoadingParts, IUIObject> UILogic;
+        
+        public GameContextWithUI()
+        {
+            UiControllers = new Dictionary<LoadingParts, GameObject>();
+            UILogic = new Dictionary<LoadingParts, IUIObject>();
+        }
+
+        public void AddUILogic(LoadingParts loadingPart,IUIObject uiObject)
+        {
+            UILogic.Add(loadingPart,uiObject);
+        }
+        
+        public void AddUIToDictionary(LoadingParts loadingPart, GameObject uiController)
+        {
+            if (!UiControllers.ContainsKey(loadingPart))
+            {
+                UiControllers.Add(loadingPart, uiController);
+            }
+        }
+        
+        public void RemoveUIFromDictionary(LoadingParts loadingPart, GameObject uiController)
+        {
+            if (UiControllers.ContainsKey(loadingPart))
+            {
+                UiControllers.Remove(loadingPart);
+            }
+        }
+    }
+}

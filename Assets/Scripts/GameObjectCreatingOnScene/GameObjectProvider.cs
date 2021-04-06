@@ -4,6 +4,5 @@ namespace GameObjectCreating
 {
     public class GameObjectProvider : MonoBehaviour
     {
-        
     }
 }
