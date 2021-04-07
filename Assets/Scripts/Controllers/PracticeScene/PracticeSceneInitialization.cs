@@ -6,12 +6,13 @@ using Diploma.Interfaces;
 using Diploma.Tables;
 using GameObjectCreating;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Diploma.Controllers
 {
     public class PracticeSceneInitialization: MonoBehaviour
     {
-        [SerializeField] private ImportantDontDestroyData _data;
+        [SerializeField] private ImportantDontDestroyData data;
         
         [SerializeField] private GameObject mainParent;
 
@@ -21,7 +22,9 @@ namespace Diploma.Controllers
         [SerializeField] private GameObject inventoryPrefab;
         [SerializeField] private GameObject inventorySlotPrefab;
         
-        [SerializeField] private GameObject[] partOfAssembly;
+        [SerializeField] private GameObject[] partsOfAssembly;
+        
+        [SerializeField] private Material modelMaterial;
 
         private GameContextWithLogic _gameContextWithLogic;
         private GameContextWithViews _gameContextWithViews;
@@ -32,6 +35,7 @@ namespace Diploma.Controllers
 
         public void Start()
         {
+
             var DataBaseController = new DataBaseController();
             AssemliesTable assemblies = new AssemliesTable();
             LessonsTable lessons = new LessonsTable();
@@ -52,24 +56,30 @@ namespace Diploma.Controllers
             _gameContextWithUI = new GameContextWithUI();
             
             DataBaseController.SetTable(tables[1]);
-            Lessons lesson = (Lessons)DataBaseController.GetRecordFromTableById(_data.lessonID);
+            Lessons lesson = (Lessons)DataBaseController.GetRecordFromTableById(data.lessonID);
             DataBaseController.SetTable(tables[0]);
-            Assemblies Assembly = (Assemblies)DataBaseController.GetRecordFromTableById(lesson.Lesson_Assembly_Id);
+            Assemblies assembly = (Assemblies)DataBaseController.GetRecordFromTableById(lesson.Lesson_Assembly_Id);
             
             var GameObjectFactory = new GameObjectFactory();
-            var Pool = new PoolOfObjects(GameObjectFactory,_gameContextWithLogic);
-            var GameObjectInitilization = new GameObjectInitialization(Pool, Assembly);
-            
+            var Pool = new PoolOfObjects(GameObjectFactory, _gameContextWithLogic);
+            var GameObjectInitilization = new GameObjectInitialization(Pool, assembly, modelMaterial);
+
             var playerInitialization = new PlayerInitialization(playerPrefab, spawnPoint);
 
             var inventoryInitialization = new InventoryInitialization(_gameContextWithViews, _gameContextWithUI,
-                mainParent, inventoryPrefab, partOfAssembly, inventorySlotPrefab);
+                mainParent, inventoryPrefab, partsOfAssembly, inventorySlotPrefab);
 
             _controllers = new Controllers();
             _controllers.Add(playerInitialization);
             _controllers.Add(inventoryInitialization);
             _controllers.Add(GameObjectInitilization);
             _controllers.Initialization();
+            
+            var sceneSetUp = GameObject.Find("WareHouse");
+            // var offset = new Vector3(GameObjectInitilization.Loader3Ds.LongestVert.x / 4,
+                // GameObjectInitilization.Loader3Ds.LongestVert.y / 10 , GameObjectInitilization.Loader3Ds.LongestVert.z);
+            // sceneSetUp.transform.position =
+                // GameObjectInitilization.Loader3Ds.LongestVert + offset;
         }
 
         private void Update()

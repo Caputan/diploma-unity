@@ -1,4 +1,5 @@
-﻿using Diploma.Interfaces;
+﻿using Diploma.Controllers.Importer;
+using Diploma.Interfaces;
 using Diploma.Tables;
 using GameObjectCreating;
 using UnityEngine;
@@ -10,8 +11,13 @@ namespace Diploma.Controllers
         private readonly PoolOfObjects _poolOfObjects;
         private readonly Assemblies _assemblies;
 
-        public GameObjectInitialization(PoolOfObjects poolOfObjects,Assemblies assemblies)
+        private readonly Material _modelMaterial;
+
+        public FbxImporter FBXImporter;
+
+        public GameObjectInitialization(PoolOfObjects poolOfObjects, Assemblies assemblies, Material modelMaterial)
         {
+            _modelMaterial = modelMaterial;
             _poolOfObjects = poolOfObjects;
             _assemblies = assemblies;
         }
@@ -25,11 +31,13 @@ namespace Diploma.Controllers
         public void Initialization()
         {
             // физически выбросили модель на сцену
-            Loader3DS loader3Ds = new Loader3DS();
-            loader3Ds.StartParsing(
+            FBXImporter = new FbxImporter();
+            FBXImporter.StartParsing(
                 _assemblies.Assembly_Link,
                 _poolOfObjects._rootPool.gameObject,
-                _poolOfObjects);
+                _poolOfObjects,
+                _modelMaterial
+                );
         }
     }
 }
