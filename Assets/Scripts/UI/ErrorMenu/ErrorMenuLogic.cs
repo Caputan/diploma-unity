@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 namespace Diploma.UI
 {
-    public class ErrorMenuLogic: IUIObject, IInitialization
+    public class ErrorMenuLogic: IMenuButton, IInitialization
     {
         private readonly Dictionary<LoadingParts, Button> _buttons;
 

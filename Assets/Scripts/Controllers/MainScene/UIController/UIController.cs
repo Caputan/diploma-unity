@@ -4,6 +4,7 @@ using Coroutine;
 using Controllers.MainScene.LessonsControllers;
 using Diploma.Enums;
 using Diploma.Interfaces;
+using Interfaces;
 using UnityEngine;
 
 namespace Diploma.Controllers
@@ -56,7 +57,7 @@ namespace Diploma.Controllers
         {
             foreach (var value in _gameContextWithUI.UILogic)
             {
-                var i =  value.Value;
+                var i = (IMenuButton) value.Value;
                 i.LoadNext += ShowUIByUIType;
             }
 
@@ -242,7 +243,7 @@ namespace Diploma.Controllers
         {
             foreach (var value in _gameContextWithUI.UILogic)
             {
-                var i = value.Value;
+                var i = (IMenuButton)value.Value;
                 i.LoadNext -= ShowUIByUIType;
             }
             _lessonConstructorController.TakeScreanShoot -= TakeScreenShoot;

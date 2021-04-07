@@ -12,7 +12,7 @@ using UnityEngine.EventSystems;
 
 namespace Diploma.UI
 {
-    public class AuthLogic: IUIObject, IInitialization
+    public class AuthLogic: IMenuButton, IInitialization
     {
         private readonly Dictionary<LoadingParts, Button> _buttons;
 

@@ -20,69 +20,41 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9a27c574-4a30-4862-a74f-153a103b04b8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/BouncyCastle.1.8.6.1.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/BouncyCastle.1.8.6.1/.signature.p7s" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/BouncyCastle.1.8.6.1/BouncyCastle.1.8.6.1.nupkg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/BouncyCastle.1.8.6.1/BouncyCastle.1.8.6.1.nupkg.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/BouncyCastle.1.8.6.1/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/BouncyCastle.1.8.6.1/README.md.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/BouncyCastle.1.8.6.1/lib.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/BouncyCastle.1.8.6.1/lib/BouncyCastle.Crypto.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/BouncyCastle.1.8.6.1/lib/BouncyCastle.Crypto.dll.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/iTextSharp.5.5.13.2.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/iTextSharp.5.5.13.2/.signature.p7s" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/iTextSharp.5.5.13.2/LICENSE.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/iTextSharp.5.5.13.2/LICENSE.md.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/iTextSharp.5.5.13.2/gnu-agpl-v3.0.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/iTextSharp.5.5.13.2/gnu-agpl-v3.0.md.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/iTextSharp.5.5.13.2/iTextSharp.5.5.13.2.nupkg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/iTextSharp.5.5.13.2/iTextSharp.5.5.13.2.nupkg.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/iTextSharp.5.5.13.2/lib.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/iTextSharp.5.5.13.2/lib/iTextSharp.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/iTextSharp.5.5.13.2/lib/iTextSharp.xml.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/iTextSharp.5.5.13.2/lib/itextsharp.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/iTextSharp.5.5.13.2/lib/itextsharp.dll.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/iTextSharp.5.5.13.2/notice.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/iTextSharp.5.5.13.2/notice.txt.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/LessonsControllers/ScreenShotController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/LessonsControllers/ScreenShotController.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Interfaces/INeedScreenShoot.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Interfaces/INeedScreenShoot.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/LectionsDemonstration/PDFReader.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/LectionsDemonstration/PDFReader.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Packages/BouncyCastle.1.8.6.1/.signature.p7s" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Packages/BouncyCastle.1.8.6.1/BouncyCastle.1.8.6.1.nupkg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Packages/BouncyCastle.1.8.6.1/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Packages/BouncyCastle.1.8.6.1/lib/BouncyCastle.Crypto.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Packages/iTextSharp.5.5.13.2/.signature.p7s" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Packages/iTextSharp.5.5.13.2/LICENSE.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Packages/iTextSharp.5.5.13.2/LICENSE.md.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Packages/iTextSharp.5.5.13.2/gnu-agpl-v3.0.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Packages/iTextSharp.5.5.13.2/gnu-agpl-v3.0.md.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Packages/iTextSharp.5.5.13.2/iTextSharp.5.5.13.2.nupkg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Packages/iTextSharp.5.5.13.2/iTextSharp.5.5.13.2.nupkg.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Packages/iTextSharp.5.5.13.2/lib.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Packages/iTextSharp.5.5.13.2/lib/iTextSharp.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Packages/iTextSharp.5.5.13.2/lib/iTextSharp.xml.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Packages/iTextSharp.5.5.13.2/lib/itextsharp.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Packages/iTextSharp.5.5.13.2/lib/itextsharp.dll.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Packages/iTextSharp.5.5.13.2/notice.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Packages/iTextSharp.5.5.13.2/notice.txt.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages.config" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Animation.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Animation/AnimationChainPlayer.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Animation/AnimationChainPlayer.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Animation/GameHandler.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Animation/GameHandler.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Animation/MoveToPosition.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Animation/MoveToPosition.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Animation/RotateAFewSeconds.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Animation/RotateAFewSeconds.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Enums/AnimatorButtons.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Enums/AnimatorButtons.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Interfaces/IAnimatorButtons.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Interfaces/IAnimatorButtons.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Interfaces/IGameHandler.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Interfaces/IGameHandler.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Interfaces/IMenuButton.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Interfaces/IMenuButton.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/AnimationCreator.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/AnimationCreator/AnimatorAddButtonsToDictionary.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/AnimationCreator/AnimatorAddButtonsToDictionary.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/AnimationCreator/AnimatorFactory.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/AnimationCreator/AnimatorFactory.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/AnimationCreator/AnimatorLogic.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/AnimationCreator/AnimatorLogic.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.diploma-unity/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.diploma-unity/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.diploma-unity/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.diploma-unity/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/StartScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/StartScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/FilesControllers/FileManagerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/FilesControllers/FileManagerController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/LessonsControllers/LessonConstructorController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/LessonsControllers/LessonConstructorController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/MainSceneInitialization.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/MainSceneInitialization.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/GameContext/GameContextWithViews.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/GameContext/GameContextWithViews.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/UIController/UIController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/UIController/UIController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enums/LoadingParts.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enums/LoadingParts.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameObjectCreatingOnScene/PoolOfObjects.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameObjectCreatingOnScene/PoolOfObjects.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interfaces/IAllButtonsEnums.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interfaces/IAllButtonsEnums.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interfaces/IUILoadLessonChoose.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interfaces/IUILoadLessonChoose.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/MachinePartsDB.bytes" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StreamingAssets/MachinePartsDB.bytes" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interfaces/IUIObject.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Interfaces/IUIObject.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Auth/AuthLogic.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Auth/AuthLogic.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/ErrorMenu/ErrorMenuLogic.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/ErrorMenu/ErrorMenuLogic.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/LessonChoose/LessonChooseLogic.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/LessonChoose/LessonChooseLogic.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/LessonConstructor/LessonConstructorUILogic.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/LessonConstructor/LessonConstructorUILogic.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/MainMenu/MainMenuLogic.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/MainMenu/MainMenuLogic.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/SignUp/SignUpLogic.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/SignUp/SignUpLogic.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -115,7 +87,6 @@
       <list>
         <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/LessonsControllers/LessonConstructorUIInitialization.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Tables/LessonsTable.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Enums/LoadingParts.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/LectionsDemonstration/PDFReader.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Interfaces/IScreenShoot.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Interfaces/INeedScreenShoot.cs" />
@@ -124,7 +95,27 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/LessonsControllers/ScreenShotController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/MainSceneInitialization.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/LessonsControllers/LessonConstructorController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Interfaces/IGameHandler.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Animation/MoveToPosition.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Animation/RotateAFewSeconds.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Animation/AnimationChainPlayer.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Animation/GameHandler.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Enums/LoadingParts.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Enums/AnimatorButtons.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/GameContext/GameContextWithViews.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/AnimationCreator/AnimatorAddButtonsToDictionary.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Interfaces/IUIObject.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Interfaces/IMenuButton.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/UIController/UIController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Auth/AuthLogic.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/ErrorMenu/ErrorMenuLogic.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/LessonChoose/LessonChooseLogic.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/LessonConstructor/LessonConstructorUILogic.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/MainMenu/MainMenuLogic.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/SignUp/SignUpLogic.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Interfaces/IAnimatorButtons.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/AnimationCreator/AnimatorLogic.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/AnimationCreator/AnimatorFactory.cs" />
       </list>
     </option>
   </component>
@@ -166,10 +157,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="8148">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="8148" />
+      <option name="pid" />
       <option name="selectedOptions">
         <set />
       </option>
@@ -211,6 +202,7 @@
       <workItem from="1617710133563" duration="11051000" />
       <workItem from="1617721629530" duration="1976000" />
       <workItem from="1617783627831" duration="308000" />
+      <workItem from="1617794926914" duration="5138000" />
     </task>
     <servers />
   </component>
@@ -304,10 +296,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1493" height="161" key="GridCell.Tab.3.right/0.0.1536.824@0.0.1536.824" timestamp="1617790569338" />
-    <state x="601" y="113" key="RiderGenerateDialog" timestamp="1617784788144">
+    <state x="601" y="113" key="RiderGenerateDialog" timestamp="1617800289755">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="601" y="113" key="RiderGenerateDialog/0.0.1536.824@0.0.1536.824" timestamp="1617784788144" />
+    <state x="601" y="113" key="RiderGenerateDialog/0.0.1536.824@0.0.1536.824" timestamp="1617800289755" />
     <state x="277" y="57" key="SettingsEditor" timestamp="1617708901693">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -322,23 +314,6 @@
     <state x="425" y="187" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1617786458856" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/LessonsControllers/LessonConstructorController.cs</url>
-          <line>150</line>
-          <properties documentPath="D:\Unity-Storage\Diploma\diploma-unity\Assets\Scripts\Controllers\MainScene\LessonsControllers\LessonConstructorController.cs" initialLine="150">
-            <startOffsets>
-              <option value="6312" />
-            </startOffsets>
-            <endOffsets>
-              <option value="6360" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>
         <PinnedItemInfo parentTag="Type#Diploma.Controllers.GameContextWithViews" memberName="TextBoxesOnConstructor" />

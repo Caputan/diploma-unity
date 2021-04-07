@@ -42,6 +42,12 @@
           </e>
         </e>
         <e p="Scripts" t="Include">
+          <e p="Animation" t="Include">
+            <e p="AnimationChainPlayer.cs" t="Include" />
+            <e p="GameHandler.cs" t="Include" />
+            <e p="MoveToPosition.cs" t="Include" />
+            <e p="RotateAFewSeconds.cs" t="Include" />
+          </e>
           <e p="Constructor" t="Include">
             <e p="AbstractFactory.cs" t="Include" />
             <e p="AbstractView.cs" t="Include" />
@@ -129,6 +135,7 @@
             <e p="ImportantDontDestroyData.cs" t="Include" />
           </e>
           <e p="Enums" t="Include">
+            <e p="AnimatorButtons.cs" t="Include" />
             <e p="CoroutineState.cs" t="Include" />
             <e p="ErrorCodes.cs" t="Include" />
             <e p="FactoryType.cs" t="Include" />
@@ -151,6 +158,7 @@
           <e p="Interfaces" t="Include">
             <e p="IAbstractFactory.cs" t="Include" />
             <e p="IAbstractView.cs" t="Include" />
+            <e p="IAnimatorButtons.cs" t="Include" />
             <e p="IChooseGearboxLowType.cs" t="Include" />
             <e p="ICleanData.cs" t="Include" />
             <e p="ICollision.cs" t="Include" />
@@ -162,8 +170,10 @@
             <e p="IFactory.cs" t="Include" />
             <e p="IFactoryView.cs" t="Include" />
             <e p="IFileManager.cs" t="Include" />
+            <e p="IGameHandler.cs" t="Include" />
             <e p="IInitialization.cs" t="Include" />
             <e p="ILateExecute.cs" t="Include" />
+            <e p="IMenuButton.cs" t="Include" />
             <e p="INeedScreenShoot.cs" t="Include" />
             <e p="IShowInfoFromChoosing.cs" t="Include" />
             <e p="ITable.cs" t="Include" />
@@ -191,6 +201,11 @@
             <e p="VideosTable.cs" t="Include" />
           </e>
           <e p="UI" t="Include">
+            <e p="AnimationCreator" t="Include">
+              <e p="AnimatorAddButtonsToDictionary.cs" t="Include" />
+              <e p="AnimatorFactory.cs" t="Include" />
+              <e p="AnimatorLogic.cs" t="Include" />
+            </e>
             <e p="Auth" t="Include">
               <e p="AuthAddButtonsToDictionary.cs" t="Include" />
               <e p="AuthFactory.cs" t="Include" />
