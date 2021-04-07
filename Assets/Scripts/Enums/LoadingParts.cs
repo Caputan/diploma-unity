@@ -2,7 +2,6 @@
 {
     public enum LoadingParts
     {
-        None = 0,
         LoadPractise = 1,
         LoadLectures = 2,
         LoadCreationOfLesson = 3,

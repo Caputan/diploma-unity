@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using Controllers;
+using Controllers.MainScene.LessonsControllers;
 using Data;
 using Diploma.Interfaces;
 using Diploma.Managers;
@@ -96,7 +97,7 @@ namespace Diploma.Controllers
             
             
             
-            _fileManager = new FileManagerController(_gameContextWithUI,destinationPath);
+            _fileManager = new FileManagerController(destinationPath);
             // тут мы создали базове типизированное меню
             // var GameContextWithViewCreator = new GameContexWithViewCreator(
             //     _gameContextWithViews,
@@ -174,9 +175,13 @@ namespace Diploma.Controllers
                 _gameContextWithViews,
                 _gameContextWithLessons,
                 _gameContextWithUI,
+                _gameContextWithLogic,
                 _fileManager,
-                lessonPrefab
+                lessonPrefab,
+                destinationPath
             );
+            
+            var ScreenShootController = new ScreenShotController();
             
             var BackController = new BackController();
             
@@ -219,7 +224,8 @@ namespace Diploma.Controllers
                 _fileManager,
                 LessonConstructorController,
                 OptionsController,
-                SceneLoader
+                SceneLoader,
+                ScreenShootController
                 );
             //uiController.AddUIToDictionary();
             // добавить соответствующие менюшки ниже

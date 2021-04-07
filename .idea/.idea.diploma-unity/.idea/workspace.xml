@@ -20,7 +20,69 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9a27c574-4a30-4862-a74f-153a103b04b8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/LectionsDemonstration.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/BouncyCastle.1.8.6.1.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/BouncyCastle.1.8.6.1/.signature.p7s" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/BouncyCastle.1.8.6.1/BouncyCastle.1.8.6.1.nupkg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/BouncyCastle.1.8.6.1/BouncyCastle.1.8.6.1.nupkg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/BouncyCastle.1.8.6.1/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/BouncyCastle.1.8.6.1/README.md.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/BouncyCastle.1.8.6.1/lib.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/BouncyCastle.1.8.6.1/lib/BouncyCastle.Crypto.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/BouncyCastle.1.8.6.1/lib/BouncyCastle.Crypto.dll.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/iTextSharp.5.5.13.2.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/iTextSharp.5.5.13.2/.signature.p7s" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/iTextSharp.5.5.13.2/LICENSE.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/iTextSharp.5.5.13.2/LICENSE.md.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/iTextSharp.5.5.13.2/gnu-agpl-v3.0.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/iTextSharp.5.5.13.2/gnu-agpl-v3.0.md.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/iTextSharp.5.5.13.2/iTextSharp.5.5.13.2.nupkg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/iTextSharp.5.5.13.2/iTextSharp.5.5.13.2.nupkg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/iTextSharp.5.5.13.2/lib.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/iTextSharp.5.5.13.2/lib/iTextSharp.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/iTextSharp.5.5.13.2/lib/iTextSharp.xml.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/iTextSharp.5.5.13.2/lib/itextsharp.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/iTextSharp.5.5.13.2/lib/itextsharp.dll.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/iTextSharp.5.5.13.2/notice.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/iTextSharp.5.5.13.2/notice.txt.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/LessonsControllers/ScreenShotController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/LessonsControllers/ScreenShotController.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Interfaces/INeedScreenShoot.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Interfaces/INeedScreenShoot.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/LectionsDemonstration/PDFReader.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/LectionsDemonstration/PDFReader.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Packages/BouncyCastle.1.8.6.1/.signature.p7s" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Packages/BouncyCastle.1.8.6.1/BouncyCastle.1.8.6.1.nupkg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Packages/BouncyCastle.1.8.6.1/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Packages/BouncyCastle.1.8.6.1/lib/BouncyCastle.Crypto.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Packages/iTextSharp.5.5.13.2/.signature.p7s" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Packages/iTextSharp.5.5.13.2/LICENSE.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Packages/iTextSharp.5.5.13.2/LICENSE.md.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Packages/iTextSharp.5.5.13.2/gnu-agpl-v3.0.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Packages/iTextSharp.5.5.13.2/gnu-agpl-v3.0.md.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Packages/iTextSharp.5.5.13.2/iTextSharp.5.5.13.2.nupkg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Packages/iTextSharp.5.5.13.2/iTextSharp.5.5.13.2.nupkg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Packages/iTextSharp.5.5.13.2/lib.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Packages/iTextSharp.5.5.13.2/lib/iTextSharp.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Packages/iTextSharp.5.5.13.2/lib/iTextSharp.xml.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Packages/iTextSharp.5.5.13.2/lib/itextsharp.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Packages/iTextSharp.5.5.13.2/lib/itextsharp.dll.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Packages/iTextSharp.5.5.13.2/notice.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Packages/iTextSharp.5.5.13.2/notice.txt.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages.config" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.diploma-unity/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.diploma-unity/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.diploma-unity/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.diploma-unity/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/StartScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/StartScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/FilesControllers/FileManagerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/FilesControllers/FileManagerController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/LessonsControllers/LessonConstructorController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/LessonsControllers/LessonConstructorController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/MainSceneInitialization.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/MainSceneInitialization.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/UIController/UIController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/UIController/UIController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enums/LoadingParts.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enums/LoadingParts.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameObjectCreatingOnScene/PoolOfObjects.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameObjectCreatingOnScene/PoolOfObjects.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interfaces/IAllButtonsEnums.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interfaces/IAllButtonsEnums.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interfaces/IUILoadLessonChoose.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interfaces/IUILoadLessonChoose.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/MachinePartsDB.bytes" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StreamingAssets/MachinePartsDB.bytes" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,16 +108,23 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Interfaces/ICleanData.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.timeline@1.2.17/Editor/Window/ViewModel/ScriptableObjectViewPrefs.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/OtherControllers/Controllers.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/6F0A172A-57F7-4527-BAA2-17742039C9AD/45/b8e4a19d/Utilities.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/LessonsControllers/LessonConstructorUIInitialization.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/UIController/UIController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Enums/LoadingParts.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/FilesControllers/FileManagerController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Tables/LessonsTable.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Enums/LoadingParts.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/LectionsDemonstration/PDFReader.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Interfaces/IScreenShoot.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Interfaces/INeedScreenShoot.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/FilesControllers/FileManagerController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GameObjectCreatingOnScene/PoolOfObjects.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/LessonsControllers/ScreenShotController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/MainSceneInitialization.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/LessonsControllers/LessonConstructorController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/UIController/UIController.cs" />
       </list>
     </option>
   </component>
@@ -97,10 +166,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="8148">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" />
+      <option name="pid" value="8148" />
       <option name="selectedOptions">
         <set />
       </option>
@@ -139,6 +208,9 @@
       <workItem from="1617702137446" duration="645000" />
       <workItem from="1617704473308" duration="433000" />
       <workItem from="1617707898538" duration="394000" />
+      <workItem from="1617710133563" duration="11051000" />
+      <workItem from="1617721629530" duration="1976000" />
+      <workItem from="1617783627831" duration="308000" />
     </task>
     <servers />
   </component>
@@ -164,80 +236,109 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="506" height="464" key="DebuggerActiveHint" timestamp="1617702457344">
+    <state width="812" height="464" key="DebuggerActiveHint" timestamp="1617788502098">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="506" height="464" key="DebuggerActiveHint/0.0.1536.824@0.0.1536.824" timestamp="1617702457344" />
-    <state width="1493" height="162" key="GridCell.Tab.0.bottom" timestamp="1617702786932">
+    <state width="812" height="464" key="DebuggerActiveHint/0.0.1536.824@0.0.1536.824" timestamp="1617788502098" />
+    <state width="1493" height="161" key="GridCell.Tab.0.bottom" timestamp="1617790569337">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="162" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1617702786932" />
-    <state width="1493" height="162" key="GridCell.Tab.0.center" timestamp="1617702786932">
+    <state width="1493" height="161" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1617790569337" />
+    <state width="1493" height="161" key="GridCell.Tab.0.center" timestamp="1617790569337">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="162" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1617702786932" />
-    <state width="1493" height="162" key="GridCell.Tab.0.left" timestamp="1617702786932">
+    <state width="1493" height="161" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1617790569337" />
+    <state width="1493" height="161" key="GridCell.Tab.0.left" timestamp="1617790569337">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="162" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1617702786932" />
-    <state width="1493" height="162" key="GridCell.Tab.0.right" timestamp="1617702786932">
+    <state width="1493" height="161" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1617790569337" />
+    <state width="1493" height="161" key="GridCell.Tab.0.right" timestamp="1617790569337">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="162" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1617702786932" />
-    <state width="1493" height="162" key="GridCell.Tab.1.bottom" timestamp="1617702786933">
+    <state width="1493" height="161" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1617790569337" />
+    <state width="1493" height="161" key="GridCell.Tab.1.bottom" timestamp="1617790569337">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="162" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1617702786933" />
-    <state width="1493" height="162" key="GridCell.Tab.1.center" timestamp="1617702786932">
+    <state width="1493" height="161" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1617790569337" />
+    <state width="1493" height="161" key="GridCell.Tab.1.center" timestamp="1617790569337">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="162" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1617702786932" />
-    <state width="1493" height="162" key="GridCell.Tab.1.left" timestamp="1617702786932">
+    <state width="1493" height="161" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1617790569337" />
+    <state width="1493" height="161" key="GridCell.Tab.1.left" timestamp="1617790569337">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="162" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1617702786932" />
-    <state width="1493" height="162" key="GridCell.Tab.1.right" timestamp="1617702786932">
+    <state width="1493" height="161" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1617790569337" />
+    <state width="1493" height="161" key="GridCell.Tab.1.right" timestamp="1617790569337">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="162" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1617702786932" />
-    <state width="1493" height="162" key="GridCell.Tab.2.bottom" timestamp="1617702786933">
+    <state width="1493" height="161" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1617790569337" />
+    <state width="1493" height="161" key="GridCell.Tab.2.bottom" timestamp="1617790569338">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="162" key="GridCell.Tab.2.bottom/0.0.1536.824@0.0.1536.824" timestamp="1617702786933" />
-    <state width="1493" height="162" key="GridCell.Tab.2.center" timestamp="1617702786933">
+    <state width="1493" height="161" key="GridCell.Tab.2.bottom/0.0.1536.824@0.0.1536.824" timestamp="1617790569338" />
+    <state width="1493" height="161" key="GridCell.Tab.2.center" timestamp="1617790569338">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="162" key="GridCell.Tab.2.center/0.0.1536.824@0.0.1536.824" timestamp="1617702786933" />
-    <state width="1493" height="162" key="GridCell.Tab.2.left" timestamp="1617702786933">
+    <state width="1493" height="161" key="GridCell.Tab.2.center/0.0.1536.824@0.0.1536.824" timestamp="1617790569338" />
+    <state width="1493" height="161" key="GridCell.Tab.2.left" timestamp="1617790569338">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="162" key="GridCell.Tab.2.left/0.0.1536.824@0.0.1536.824" timestamp="1617702786933" />
-    <state width="1493" height="162" key="GridCell.Tab.2.right" timestamp="1617702786933">
+    <state width="1493" height="161" key="GridCell.Tab.2.left/0.0.1536.824@0.0.1536.824" timestamp="1617790569337" />
+    <state width="1493" height="161" key="GridCell.Tab.2.right" timestamp="1617790569338">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="162" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1617702786933" />
-    <state width="1493" height="162" key="GridCell.Tab.3.bottom" timestamp="1617702786933">
+    <state width="1493" height="161" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1617790569338" />
+    <state width="1493" height="161" key="GridCell.Tab.3.bottom" timestamp="1617790569338">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="162" key="GridCell.Tab.3.bottom/0.0.1536.824@0.0.1536.824" timestamp="1617702786933" />
-    <state width="1493" height="162" key="GridCell.Tab.3.center" timestamp="1617702786933">
+    <state width="1493" height="161" key="GridCell.Tab.3.bottom/0.0.1536.824@0.0.1536.824" timestamp="1617790569338" />
+    <state width="1493" height="161" key="GridCell.Tab.3.center" timestamp="1617790569338">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="162" key="GridCell.Tab.3.center/0.0.1536.824@0.0.1536.824" timestamp="1617702786933" />
-    <state width="1493" height="162" key="GridCell.Tab.3.left" timestamp="1617702786933">
+    <state width="1493" height="161" key="GridCell.Tab.3.center/0.0.1536.824@0.0.1536.824" timestamp="1617790569338" />
+    <state width="1493" height="161" key="GridCell.Tab.3.left" timestamp="1617790569338">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="162" key="GridCell.Tab.3.left/0.0.1536.824@0.0.1536.824" timestamp="1617702786933" />
-    <state width="1493" height="162" key="GridCell.Tab.3.right" timestamp="1617702786933">
+    <state width="1493" height="161" key="GridCell.Tab.3.left/0.0.1536.824@0.0.1536.824" timestamp="1617790569338" />
+    <state width="1493" height="161" key="GridCell.Tab.3.right" timestamp="1617790569338">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="162" key="GridCell.Tab.3.right/0.0.1536.824@0.0.1536.824" timestamp="1617702786933" />
+    <state width="1493" height="161" key="GridCell.Tab.3.right/0.0.1536.824@0.0.1536.824" timestamp="1617790569338" />
+    <state x="601" y="113" key="RiderGenerateDialog" timestamp="1617784788144">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="601" y="113" key="RiderGenerateDialog/0.0.1536.824@0.0.1536.824" timestamp="1617784788144" />
+    <state x="277" y="57" key="SettingsEditor" timestamp="1617708901693">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="277" y="57" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1617708901693" />
     <state width="775" height="419" key="XDebugger.FullValuePopup" timestamp="1617282875410">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="775" height="419" key="XDebugger.FullValuePopup/0.0.1536.824@0.0.1536.824" timestamp="1617282875410" />
+    <state x="425" y="187" key="run.anything.popup" timestamp="1617786458856">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="425" y="187" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1617786458856" />
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/LessonsControllers/LessonConstructorController.cs</url>
+          <line>150</line>
+          <properties documentPath="D:\Unity-Storage\Diploma\diploma-unity\Assets\Scripts\Controllers\MainScene\LessonsControllers\LessonConstructorController.cs" initialLine="150">
+            <startOffsets>
+              <option value="6312" />
+            </startOffsets>
+            <endOffsets>
+              <option value="6360" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>
         <PinnedItemInfo parentTag="Type#Diploma.Controllers.GameContextWithViews" memberName="TextBoxesOnConstructor" />

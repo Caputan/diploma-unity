@@ -16,19 +16,16 @@ namespace Diploma.Controllers
 {
     public sealed class FileManagerController: IInitialization, IDataBaseFileManager
     {
-        private readonly GameContextWithUI _gameContextWithUI;
         private readonly string[] _destinationPath;
-        public DataBaseController DataBaseController;
-        public List<IDataBase> Tables;
-        public Loader3DS Loader3Ds;
+        
 
         private ErrorCodes _error;
         
         
 
-        public FileManagerController(GameContextWithUI gameContextWithUI,string[] destinationPath)
+        public FileManagerController(string[] destinationPath)
         {
-            _gameContextWithUI = gameContextWithUI;
+           
             _destinationPath = destinationPath;
             FileBrowser.SetFilters(true, new FileBrowser.Filter("Assemblies", ".3ds"),
                 new FileBrowser.Filter("Text Files", ".doc", ".pdf", ".docx"),

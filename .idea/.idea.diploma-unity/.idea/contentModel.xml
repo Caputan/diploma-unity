@@ -93,6 +93,7 @@
                 <e p="LessonConstructorUIInitialization.cs" t="Include" />
                 <e p="LessonSceneControllerInitialization.cs" t="Include" />
                 <e p="LessonsChooseInitialization.cs" t="Include" />
+                <e p="ScreenShotController.cs" t="Include" />
               </e>
               <e p="MainMenuInitialization.cs" t="Include" />
               <e p="MainSceneInitialization.cs" t="Include" />
@@ -150,7 +151,6 @@
           <e p="Interfaces" t="Include">
             <e p="IAbstractFactory.cs" t="Include" />
             <e p="IAbstractView.cs" t="Include" />
-            <e p="IAllButtonsEnums.cs" t="Include" />
             <e p="IChooseGearboxLowType.cs" t="Include" />
             <e p="ICleanData.cs" t="Include" />
             <e p="ICollision.cs" t="Include" />
@@ -164,14 +164,16 @@
             <e p="IFileManager.cs" t="Include" />
             <e p="IInitialization.cs" t="Include" />
             <e p="ILateExecute.cs" t="Include" />
+            <e p="INeedScreenShoot.cs" t="Include" />
             <e p="IShowInfoFromChoosing.cs" t="Include" />
             <e p="ITable.cs" t="Include" />
-            <e p="IUILoadLessonChoose.cs" t="Include" />
             <e p="IUIObject.cs" t="Include" />
             <e p="IUIObjectsFactory.cs" t="Include" />
             <e p="IUISilder.cs" t="Include" />
           </e>
-          <e p="LectionsDemonstration" t="Include" />
+          <e p="LectionsDemonstration" t="Include">
+            <e p="PDFReader.cs" t="Include" />
+          </e>
           <e p="ListOfLessons" t="Include">
             <e p="ListOfLessonsView.cs" t="Include" />
           </e>
