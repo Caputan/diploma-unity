@@ -71,6 +71,10 @@
             <e p="Loader3DS.cs" t="Include" />
             <e p="LoadingSceneController.cs" t="Include" />
             <e p="MainScene" t="Include">
+              <e p="AnimatorCreatorControllers" t="Include">
+                <e p="AnimationCreatorController.cs" t="Include" />
+                <e p="AnimationCreatorInitialization.cs" t="Include" />
+              </e>
               <e p="Authorisation" t="Include">
                 <e p="AuthController.cs" t="Include" />
                 <e p="AuthInitialization.cs" t="Include" />
