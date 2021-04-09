@@ -14,7 +14,7 @@ namespace Diploma.Controllers
 {
     public class MainSceneInitialization: MonoBehaviour
     {
-        //[SerializeField] private Button _button;
+        [SerializeField] private Camera _camera;
         [SerializeField] private GameObject MainMenuPrefab;
         [SerializeField] private GameObject MainParent;
         
@@ -94,8 +94,8 @@ namespace Diploma.Controllers
             _gameContextWithViews = new GameContextWithViews();
             _gameContextWithLessons = new GameContextWithLessons();
             _gameContextWithUI = new GameContextWithUI();
-            
-            
+
+            _gameContextWithLogic.MainCamera = _camera;
             
             _fileManager = new FileManagerController(destinationPath);
             // тут мы создали базове типизированное меню

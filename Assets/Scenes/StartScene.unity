@@ -241,6 +241,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12a774873ed74587bc1d3352379a59cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _camera: {fileID: 1239178557}
   MainMenuPrefab: {fileID: 6515268690936001924, guid: 034aed284a0442946be7b0b496b5a363,
     type: 3}
   MainParent: {fileID: 1084967671}

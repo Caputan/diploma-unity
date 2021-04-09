@@ -2,7 +2,7 @@
 
 namespace Animation
 {
-    public class AnimationChainPlayer
+    public sealed class AnimationChain
     {
         public void StartAnimation(List<GameHandler> gameHandlers)
         {

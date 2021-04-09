@@ -20,14 +20,31 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9a27c574-4a30-4862-a74f-153a103b04b8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/AnimatorCreatorControllers.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/AnimatorCreatorControllers/AnimationCreatorController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/AnimatorCreatorControllers/AnimationCreatorController.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/AnimatorCreatorControllers/AnimationCreatorInitialization.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/AnimatorCreatorControllers/AnimationCreatorInitialization.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Animation/AddingInChainController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Animation/AddingInChainController.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Animation/AnimatorPlayer.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Animation/AnimatorPlayer.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Animation/AnimatorPlayerInitialization.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Animation/AnimatorPlayerInitialization.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/AnimatorCreatorControllers/AnimatorController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/AnimatorCreatorControllers/AnimatorController.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Enums/TypesOfAnimation.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Enums/TypesOfAnimation.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Interfaces/IAnimatorAdding.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Interfaces/IAnimatorAdding.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.diploma-unity/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.diploma-unity/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.diploma-unity/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.diploma-unity/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.diploma-unity/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.diploma-unity/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AssetStoreOriginals/_SNAPS_PrototypingAssets/SciFi_Industrial/Materials.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AssetStoreOriginals/_SNAPS_PrototypingAssets/SciFi_Industrial/Prefabs/NestedPrefabs/Deck_Wall_3X1.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AssetStoreOriginals/_SNAPS_PrototypingAssets/SciFi_Industrial/Prefabs/NestedPrefabs/Stairway_Balcony_3X1.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AssetStoreOriginals/_SNAPS_PrototypingAssets/SciFi_Industrial/Structure/Floors_Ceilings/Meshes.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AssetStoreOriginals/_SNAPS_PrototypingAssets/SciFi_Industrial/Structure/Walls/Meshes.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Design.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Design.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/StartScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/StartScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Animation/AnimationChainPlayer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Animation/AnimationChain.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Animation/AnimationChainPlayer.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Animation/AnimationChain.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/MainSceneInitialization.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/MainSceneInitialization.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameObjectCreatingOnScene/GameObjectModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameObjectCreatingOnScene/GameObjectModel.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,53 +63,27 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Interfaces/IInitialization.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9577AC7A-62EF-4317-9789-031239BA8798/eb/cebff4b0/Int32.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Controllers/Loader3DS.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../Unity/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/EventSystem/ExecuteEvents.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Interfaces/ICleanData.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.timeline@1.2.17/Editor/Window/ViewModel/ScriptableObjectViewPrefs.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/OtherControllers/Controllers.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/6F0A172A-57F7-4527-BAA2-17742039C9AD/45/b8e4a19d/Utilities.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Interfaces/IInitialization.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.timeline@1.2.17/Editor/Window/ViewModel/ScriptableObjectViewPrefs.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Interfaces/ICleanData.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Controllers/Loader3DS.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
-      <list>
-        <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/LessonsControllers/LessonConstructorUIInitialization.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Tables/LessonsTable.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/LectionsDemonstration/PDFReader.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Interfaces/IScreenShoot.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Interfaces/INeedScreenShoot.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/FilesControllers/FileManagerController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/GameObjectCreatingOnScene/PoolOfObjects.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/LessonsControllers/ScreenShotController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/MainSceneInitialization.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/LessonsControllers/LessonConstructorController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Interfaces/IGameHandler.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Animation/MoveToPosition.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Animation/RotateAFewSeconds.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Animation/AnimationChainPlayer.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Animation/GameHandler.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Enums/LoadingParts.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Enums/AnimatorButtons.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/GameContext/GameContextWithViews.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/AnimationCreator/AnimatorAddButtonsToDictionary.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Interfaces/IUIObject.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Interfaces/IMenuButton.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/UIController/UIController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Auth/AuthLogic.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/ErrorMenu/ErrorMenuLogic.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/LessonChoose/LessonChooseLogic.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/LessonConstructor/LessonConstructorUILogic.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/MainMenu/MainMenuLogic.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/SignUp/SignUpLogic.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Interfaces/IAnimatorButtons.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/AnimationCreator/AnimatorLogic.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/AnimationCreator/AnimatorFactory.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/AnimatorCreatorControllers/AnimationCreatorController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/AnimatorCreatorControllers/AnimationCreatorInitialization.cs" />
-      </list>
-    </option>
+    <changedPaths>
+      <option value="$PROJECT_DIR$/Assets/Scripts/Animation/AnimationChainPlayer.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Animation/AnimatorPlayerInitialization.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Animation/AnimatorPlayer.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Animation/AnimationChain.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/MainSceneInitialization.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/GameObjectCreatingOnScene/GameObjectModel.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Interfaces/IAnimatorAdding.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/AnimatorController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Animation/AddingInChainController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Enums/TypeOfAnimation.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Enums/TypesOfAnimation.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/AnimatorCreatorControllers/AnimatorController.cs" />
+    </changedPaths>
   </component>
   <component name="ProjectId" id="1oVh7QrK5P1QV67f8aHYDy536Km" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -128,16 +119,16 @@
       <option name="listenPortForConnections" value="false" />
       <option name="pid" />
       <option name="selectedOptions">
-        <set />
+        <list />
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="13924">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="13924" />
+      <option name="pid" />
       <option name="selectedOptions">
-        <set />
+        <list />
       </option>
       <method v="2" />
     </configuration>
@@ -203,106 +194,13 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
-  <component name="WindowStateProjectService">
-    <state width="812" height="464" key="DebuggerActiveHint" timestamp="1617788502098">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="812" height="464" key="DebuggerActiveHint/0.0.1536.824@0.0.1536.824" timestamp="1617788502098" />
-    <state width="1493" height="161" key="GridCell.Tab.0.bottom" timestamp="1617790569337">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="161" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1617790569337" />
-    <state width="1493" height="161" key="GridCell.Tab.0.center" timestamp="1617790569337">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="161" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1617790569337" />
-    <state width="1493" height="161" key="GridCell.Tab.0.left" timestamp="1617790569337">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="161" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1617790569337" />
-    <state width="1493" height="161" key="GridCell.Tab.0.right" timestamp="1617790569337">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="161" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1617790569337" />
-    <state width="1493" height="161" key="GridCell.Tab.1.bottom" timestamp="1617790569337">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="161" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1617790569337" />
-    <state width="1493" height="161" key="GridCell.Tab.1.center" timestamp="1617790569337">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="161" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1617790569337" />
-    <state width="1493" height="161" key="GridCell.Tab.1.left" timestamp="1617790569337">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="161" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1617790569337" />
-    <state width="1493" height="161" key="GridCell.Tab.1.right" timestamp="1617790569337">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="161" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1617790569337" />
-    <state width="1493" height="161" key="GridCell.Tab.2.bottom" timestamp="1617790569338">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="161" key="GridCell.Tab.2.bottom/0.0.1536.824@0.0.1536.824" timestamp="1617790569338" />
-    <state width="1493" height="161" key="GridCell.Tab.2.center" timestamp="1617790569338">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="161" key="GridCell.Tab.2.center/0.0.1536.824@0.0.1536.824" timestamp="1617790569338" />
-    <state width="1493" height="161" key="GridCell.Tab.2.left" timestamp="1617790569338">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="161" key="GridCell.Tab.2.left/0.0.1536.824@0.0.1536.824" timestamp="1617790569337" />
-    <state width="1493" height="161" key="GridCell.Tab.2.right" timestamp="1617790569338">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="161" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1617790569338" />
-    <state width="1493" height="161" key="GridCell.Tab.3.bottom" timestamp="1617790569338">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="161" key="GridCell.Tab.3.bottom/0.0.1536.824@0.0.1536.824" timestamp="1617790569338" />
-    <state width="1493" height="161" key="GridCell.Tab.3.center" timestamp="1617790569338">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="161" key="GridCell.Tab.3.center/0.0.1536.824@0.0.1536.824" timestamp="1617790569338" />
-    <state width="1493" height="161" key="GridCell.Tab.3.left" timestamp="1617790569338">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="161" key="GridCell.Tab.3.left/0.0.1536.824@0.0.1536.824" timestamp="1617790569338" />
-    <state width="1493" height="161" key="GridCell.Tab.3.right" timestamp="1617790569338">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="161" key="GridCell.Tab.3.right/0.0.1536.824@0.0.1536.824" timestamp="1617790569338" />
-    <state x="601" y="113" key="RiderGenerateDialog" timestamp="1617800289755">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="601" y="113" key="RiderGenerateDialog/0.0.1536.824@0.0.1536.824" timestamp="1617800289755" />
-    <state x="277" y="57" key="SettingsEditor" timestamp="1617708901693">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="277" y="57" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1617708901693" />
-    <state width="775" height="419" key="XDebugger.FullValuePopup" timestamp="1617282875410">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="775" height="419" key="XDebugger.FullValuePopup/0.0.1536.824@0.0.1536.824" timestamp="1617282875410" />
-    <state x="425" y="187" key="run.anything.popup" timestamp="1617786458856">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="425" y="187" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1617786458856" />
-  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/Scripts/Controllers/UIController.cs</url>
           <line>54</line>
-          <properties documentPath="D:\Unity-Storage\Diploma\diploma-unity\Assets\Scripts\Controllers\UIController.cs" initialLine="54">
-            <startOffsets>
-              <option value="2098" />
-            </startOffsets>
-            <endOffsets>
-              <option value="2189" />
-            </endOffsets>
-          </properties>
+          <properties documentPath="D:\Unity-Storage\Diploma\diploma-unity\Assets\Scripts\Controllers\UIController.cs" initialLine="54" />
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>
