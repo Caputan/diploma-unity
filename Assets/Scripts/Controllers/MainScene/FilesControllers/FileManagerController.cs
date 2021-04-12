@@ -16,17 +16,15 @@ namespace Diploma.Controllers
 {
     public sealed class FileManagerController: IInitialization, IDataBaseFileManager
     {
-        private readonly string[] _destinationPath;
+      
         
 
         private ErrorCodes _error;
         
         
 
-        public FileManagerController(string[] destinationPath)
+        public FileManagerController()
         {
-           
-            _destinationPath = destinationPath;
             FileBrowser.SetFilters(true, new FileBrowser.Filter("Assemblies", ".3ds"),
                 new FileBrowser.Filter("Text Files", ".doc", ".pdf", ".docx"),
                 new FileBrowser.Filter("Videos", ".mp4"));
@@ -36,11 +34,11 @@ namespace Diploma.Controllers
         }
 
         public void Initialization() { }
-        public event Action<LoadingParts,string> newText;
+        public event Action<LoadingParts,string,string> newText;
 
-        public void ShowNewText(LoadingParts loadingParts, string text)
+        public void ShowNewText(LoadingParts loadingParts, string text,string firstPath)
         {
-            newText?.Invoke(loadingParts, text);
+            newText?.Invoke(loadingParts, text,firstPath);
         }
 
         public void ShowLoadDialog()
@@ -93,9 +91,8 @@ namespace Diploma.Controllers
                         }
                         else
                         {
-                            localPath[0] = Path.Combine(_destinationPath[0],
-                                FileBrowserHelpers.GetFilename(FileBrowser.Result[0])
-                            );
+                            localPath[0] = FileBrowser.Result[0];
+                          
                             _error = ErrorCodes.None;
                         }
                         parts = LoadingParts.DownloadModel;
@@ -113,8 +110,7 @@ namespace Diploma.Controllers
                         }
                         else
                         {
-                            localPath[0] = Path.Combine(_destinationPath[3],
-                                FileBrowserHelpers.GetFilename(FileBrowser.Result[0]));
+                            localPath[0] = FileBrowser.Result[0];
                             
                             _error = ErrorCodes.None;
                         }
@@ -133,8 +129,7 @@ namespace Diploma.Controllers
                         }
                         else
                         {
-                            localPath[0] = Path.Combine(_destinationPath[1],
-                                FileBrowserHelpers.GetFilename(FileBrowser.Result[0]));
+                            localPath[0] = FileBrowser.Result[0];
                             _error = ErrorCodes.None;
                         }
                         parts = LoadingParts.DownloadVideo;
@@ -147,7 +142,7 @@ namespace Diploma.Controllers
                         throw new Exception("TAK DELAT NELZYA");
                 }
                 
-                ShowNewText(parts,splitedString);
+                ShowNewText(parts,splitedString,localPath[0]);
                 
             }
         }

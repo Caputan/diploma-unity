@@ -5,6 +5,7 @@ using System.Linq;
 using Diploma.Controllers;
 using Diploma.Enums;
 using Diploma.Interfaces;
+using Diploma.Managers;
 using Diploma.Tables;
 using Diploma.UI;
 using GameObjectCreating;
@@ -13,6 +14,7 @@ using ListOfLessons;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using Types = Diploma.Tables.Types;
 
 namespace Controllers
 {
@@ -25,10 +27,12 @@ namespace Controllers
         private readonly GameContextWithUI _gameContextWithUI;
         private readonly GameContextWithLogic _gameContextWithLogic;
         private readonly FileManagerController _fileManagerController;
-        private readonly string[] _destination;
+        private string[] _destination = new string[4];
+        private readonly FileManager _fileManager;
         private Dictionary<LoadingParts, GameObject> _texts;
         private PlateWithButtonForLessonsFactory _plateWithButtonForLessonsFactory;
-        private string[] localText = new string[4];
+        private string[] _localText = new string[4];
+        private string[] _massForCopy = new string[3];
         public LessonConstructorController(
             DataBaseController dataBaseController,
             List<IDataBase>  tables,
@@ -38,7 +42,7 @@ namespace Controllers
             GameContextWithLogic gameContextWithLogic,
             FileManagerController fileManagerController,
             GameObject prefabLessonPlate,
-            string[] destination
+            FileManager fileManager
         )
         {
             _dataBaseController = dataBaseController;
@@ -48,9 +52,8 @@ namespace Controllers
             _gameContextWithUI = gameContextWithUI;
             _gameContextWithLogic = gameContextWithLogic;
             _fileManagerController = fileManagerController;
-            _destination = destination;
+            _fileManager = fileManager;
             _texts = _gameContextWithViews.TextBoxesOnConstructor;
-
             _plateWithButtonForLessonsFactory = new PlateWithButtonForLessonsFactory(prefabLessonPlate);
         }
 
@@ -59,26 +62,27 @@ namespace Controllers
             _fileManagerController.newText += SetTextInTextBox;
         }
 
-        public void SetTextInTextBox(LoadingParts loadingParts, string text)
+        public void SetTextInTextBox(LoadingParts loadingParts, string text,string firstPath)
         {
-            // добавить очситку при выходе
-            //надо передавать полную строку,а тут сокращать.
             switch (loadingParts)
             {
                 case LoadingParts.DownloadModel:
-                    localText[0] =_destination[0]+ "\\" + text;
+                    _localText[0] = text;
                     _texts[loadingParts].transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = 
-                        localText[0].Split('\\').Last();
+                        _localText[0].Split('\\').Last();
+                    _massForCopy[0] = firstPath;
                     break;
                 case LoadingParts.DownloadVideo:
-                    localText[2] = _destination[1]+ "\\" + text;
+                    _localText[2] = _destination[1]+ "\\" + text;
                     _texts[loadingParts].transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = 
-                        localText[2].Split('\\').Last();
+                        _localText[2].Split('\\').Last();
+                    _massForCopy[2] = firstPath;
                     break;
                 case LoadingParts.DownloadPDF:
-                    localText[1] = _destination[3]+ "\\" + text;
+                    _localText[1] = _destination[3]+ "\\" + text;
                     _texts[loadingParts].transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = 
-                        localText[1].Split('\\').Last();
+                        _localText[1].Split('\\').Last();
+                    _massForCopy[1] = firstPath;
                     break;
                     // destinationPath[0] = fileManager.CreateFileFolder("Assemblies");
                     // destinationPath[1] = fileManager.CreateFileFolder("Videos");
@@ -106,22 +110,37 @@ namespace Controllers
             
             string[] lessonPacked = new string[6];
             
+            
+            // creating Folder-packed
+            // нужно добавить id
+            _dataBaseController.SetTable(_tables[1]);
+            var id = _dataBaseController.GetDataFromTable<Lessons>().Count+1;
+            _destination[0] = _fileManager.CreateFileFolder(id +"\\"+ "Assemblies");
+            _destination[1] = _fileManager.CreateFileFolder(id +"\\"+ "Videos");
+            _destination[2] = _fileManager.CreateFileFolder(id +"\\"+ "Photos");
+            _destination[3] = _fileManager.CreateFileFolder(id +"\\"+ "Texts");
+            
+            
             // add new assembly
-            if (localText[0] != @"Выберите деталь (*.3ds)")
+            if (_localText[0] != @"Выберите деталь (*.3ds)")
             {
+                _localText[0] =_destination[0]+ "\\" +_localText[0];
                 _dataBaseController.SetTable(_tables[0]);
                 string[] assemblyPacked = new string[1];
-                assemblyPacked[0] = localText[0];
+                assemblyPacked[0] = _localText[0];
                 _dataBaseController.AddNewRecordToTable(assemblyPacked);
                 lessonPacked[3] = _dataBaseController.GetDataFromTable<Assemblies>().Last().Assembly_Id.ToString();
             }
 
             // add new text
-            if (localText[1] != @"Выберите текстовый фаил(*.pdf)")
+            if (_localText[1] != @"Выберите текстовый фаил(*.pdf)")
             {
+                _localText[1] = _destination[3]+ "\\" + _localText[1];
+                if(_massForCopy[1]!="")
+                    File.Copy(_massForCopy[1],_localText[1]);
                 _dataBaseController.SetTable(_tables[2]);
                 string[] textPacked = new string[1];
-                textPacked[0] = localText[1];
+                textPacked[0] = _localText[1];
                 _dataBaseController.AddNewRecordToTable(textPacked);
                 lessonPacked[1] = _dataBaseController.GetDataFromTable<Texts>().Last().Text_Id.ToString();  
                 //PDFReader pdfReader = new PDFReader();
@@ -129,11 +148,14 @@ namespace Controllers
             }
 
             // add new video
-            if (localText[2] != @"Выберите видео-фаил (*.mp4)")
+            if (_localText[2] != @"Выберите видео-фаил (*.mp4)")
             {
+                _localText[2] = _destination[1]+ "\\" +  _localText[2];
+                if(_massForCopy[2]!="")
+                    File.Copy(_massForCopy[2],_localText[2]);
                 _dataBaseController.SetTable(_tables[5]);
                 string[] videoPacked = new string[1];
-                videoPacked[0] = localText[2];
+                videoPacked[0] = _localText[2];
                 _dataBaseController.AddNewRecordToTable(videoPacked);
                 lessonPacked[2] = _dataBaseController.GetDataFromTable<Videos>().Last().Video_Id.ToString();
             }
@@ -144,11 +166,12 @@ namespace Controllers
             lessonPacked[5] = _texts[LoadingParts.SetNameToLesson].
                 GetComponent<TMP_InputField>().text;
 
+
             // add screens
+            File.Copy(_massForCopy[0],_localText[0]);
             _dataBaseController.SetTable(_tables[0]);
             Assemblies Assembly = (Assemblies)_dataBaseController.GetRecordFromTableById(Convert.ToInt32(lessonPacked[3]));
-            
-            var GameObjectFactory = new GameObjectFactory();
+            var GameObjectFactory = new GameObjectFactory(false);
             var Pool = new PoolOfObjects(GameObjectFactory,_gameContextWithLogic);
             var GameObjectInitilization = new GameObjectInitialization(Pool, Assembly);
             GameObjectInitilization.Initialization();
@@ -161,12 +184,17 @@ namespace Controllers
             //
             
             int count = 0;
-            foreach (var key in _gameContextWithViews.ChoosenToggles.Values) { 
-                if(key.GetComponentInChildren<Toggle>().isOn) 
-                    lessonPacked[4] += count + ",";
+            _dataBaseController.SetTable(_tables[3]);
+            string[] typePacked = new string[1];
+            foreach (var key in _gameContextWithViews.ChoosenToggles.Values) {
+                if (key.GetComponentInChildren<Toggle>().isOn)
+                {
+                    typePacked[0] += count + ",";
+                }
                 count++;
             }
-            
+            _dataBaseController.AddNewRecordToTable(typePacked);
+            lessonPacked[4] = _dataBaseController.GetDataFromTable<Types>().Last().Type_Id.ToString();
             
             _dataBaseController.SetTable(_tables[1]);
             _dataBaseController.AddNewRecordToTable(lessonPacked);
@@ -177,7 +205,7 @@ namespace Controllers
         private void AddNewLessonToListOnUI()
         {
             _dataBaseController.SetTable(_tables[1]);
-
+            
             Lessons lastLessonInDb = _dataBaseController.GetDataFromTable<Lessons>().Last();
             
             var lessonToggle = _plateWithButtonForLessonsFactory.Create(

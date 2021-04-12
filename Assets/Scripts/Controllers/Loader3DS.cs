@@ -28,7 +28,6 @@ public class Loader3DS {
 
 	private IEnumerator Loader (string path, GameObject parent, PoolOfObjects poolOfObjects)
 	{
-		
 		if (!File.Exists (path)) 
 		{
 			Debug.LogError("File does not exist.");

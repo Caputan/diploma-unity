@@ -5,8 +5,8 @@ namespace Interfaces
 {
     public interface IDataBaseFileManager
     {
-        event Action<LoadingParts,string> newText;
+        event Action<LoadingParts,string,string> newText;
 
-        void ShowNewText(LoadingParts loadingParts,string text);
+        void ShowNewText(LoadingParts loadingParts,string text,string firstPath);
     }
 }

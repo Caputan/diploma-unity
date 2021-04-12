@@ -12,10 +12,11 @@ namespace Diploma.Extensions
         }
 
 
-        public static GameObject AddRigidBody(this GameObject gameObject,float mass)
+        public static GameObject AddRigidBody(this GameObject gameObject,float mass,bool gravity)
         { 
             var component = gameObject.GetOrAddComponent<Rigidbody>();
-            component.mass = mass; 
+            component.mass = mass;
+            component.useGravity = gravity;
             return gameObject;
         }
 

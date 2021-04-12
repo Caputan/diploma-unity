@@ -56,7 +56,7 @@ namespace Diploma.Controllers
             DataBaseController.SetTable(tables[0]);
             Assemblies Assembly = (Assemblies)DataBaseController.GetRecordFromTableById(lesson.Lesson_Assembly_Id);
             
-            var GameObjectFactory = new GameObjectFactory();
+            var GameObjectFactory = new GameObjectFactory(true);
             var Pool = new PoolOfObjects(GameObjectFactory,_gameContextWithLogic);
             var GameObjectInitilization = new GameObjectInitialization(Pool, Assembly);
             

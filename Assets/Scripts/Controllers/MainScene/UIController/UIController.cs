@@ -55,14 +55,16 @@ namespace Diploma.Controllers
 
         public void Initialization()
         {
+            
             foreach (var value in _gameContextWithUI.UILogic)
             {
+                Debug.Log(value.Key);
                 var i = (IMenuButton) value.Value;
                 i.LoadNext += ShowUIByUIType;
             }
-
             _lessonConstructorController.TakeScreanShoot += TakeScreenShoot;
             HideAllUI();
+            
             _errorHandler = new ErrorHandler(_gameContextWithUI.UiControllers[LoadingParts.LoadError]);
             ShowUIByUIType(LoadingParts.LoadStart);
         }
@@ -146,9 +148,9 @@ namespace Diploma.Controllers
                         _gameContextWithUI.UiControllers[LoadingParts.LoadMain].SetActive(true);
                         // _backGround.SetActive(false);
                         _currentPosition = LoadingParts.LoadMain;
-                        _lessonConstructorController.SetTextInTextBox(LoadingParts.DownloadModel,"Выберите деталь (*.3ds)");
-                        _lessonConstructorController.SetTextInTextBox(LoadingParts.DownloadVideo,"Выберите видео-фаил (*.mp4)");
-                        _lessonConstructorController.SetTextInTextBox(LoadingParts.DownloadPDF,"Выберите текстовый фаил(*.pdf)");
+                        _lessonConstructorController.SetTextInTextBox(LoadingParts.DownloadModel,"Выберите деталь (*.3ds)","");
+                        _lessonConstructorController.SetTextInTextBox(LoadingParts.DownloadVideo,"Выберите видео-фаил (*.mp4)","");
+                        _lessonConstructorController.SetTextInTextBox(LoadingParts.DownloadPDF,"Выберите текстовый фаил(*.pdf)","");
                     }
                     else
                     {

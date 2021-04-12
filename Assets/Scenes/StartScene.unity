@@ -265,11 +265,6 @@ MonoBehaviour:
     type: 3}
   _data: {fileID: 11400000, guid: 03ce9d4a4a736824db6636fb7cc1202c, type: 2}
   _library: {fileID: 11400000, guid: 8527d7f87a23f0b45bc6f567a36e8d7c, type: 2}
-  destinationPath:
-  - 
-  - 
-  - 
-  - 
 --- !u!1 &655199805
 GameObject:
   m_ObjectHideFlags: 0
@@ -513,7 +508,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1239178555}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 631, y: 1, z: -10}
+  m_LocalPosition: {x: 0, y: 0, z: -30}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

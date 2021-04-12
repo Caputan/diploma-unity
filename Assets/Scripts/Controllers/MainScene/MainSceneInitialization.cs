@@ -53,7 +53,7 @@ namespace Diploma.Controllers
         private GameContextWithUI _gameContextWithUI;
       
         private Controllers _controllers;
-        public string[] destinationPath = new string[4];
+        //public string[] destinationPath = new string[4];
         public void Start()
         {
             
@@ -61,10 +61,10 @@ namespace Diploma.Controllers
             #region DataBase initialization
             // потом надо на отдельные инициализаторы разбить чтоль....
             FileManager fileManager = new FileManager();
-            destinationPath[0] = fileManager.CreateFileFolder("Assemblies");
-            destinationPath[1] = fileManager.CreateFileFolder("Videos");
-            destinationPath[2] = fileManager.CreateFileFolder("Photos");
-            destinationPath[3] = fileManager.CreateFileFolder("Texts");
+            // destinationPath[0] = fileManager.CreateFileFolder("Assemblies");
+            // destinationPath[1] = fileManager.CreateFileFolder("Videos");
+            // destinationPath[2] = fileManager.CreateFileFolder("Photos");
+            // destinationPath[3] = fileManager.CreateFileFolder("Texts");
             
             var DataBaseController = new DataBaseController();
             AssemliesTable assemblies = new AssemliesTable();
@@ -98,7 +98,7 @@ namespace Diploma.Controllers
 
             _gameContextWithLogic.MainCamera = _camera;
             
-            _fileManager = new FileManagerController(destinationPath);
+            _fileManager = new FileManagerController();
             // тут мы создали базове типизированное меню
             // var GameContextWithViewCreator = new GameContexWithViewCreator(
             //     _gameContextWithViews,
@@ -180,7 +180,7 @@ namespace Diploma.Controllers
                 _gameContextWithLogic,
                 _fileManager,
                 lessonPrefab,
-                destinationPath
+                fileManager
             );
             
             var ScreenShootController = new ScreenShotController();
@@ -266,10 +266,10 @@ namespace Diploma.Controllers
             _controllers.Add(OptionsController);
             _controllers.Add(ErrorHandlerInitialization);
             _controllers.Add(ChooseLessonController);
-            //этот контроллер идет самым последним
             
-            _controllers.Add(uiController);
             _controllers.Initialization();
+            //этот контроллер идет самым последним
+            uiController.Initialization();
         }
         
         private void Update()

@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Users\Jasto\AppData\Local\JetBrains\Rider2020.3\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\Jasto\AppData\Local\JetBrains\Rider2020.3\resharper-host\Local\Transient\Rider\v203\SolutionCaches\_diploma-unity.-1575445037.00" t="ExcludeRecursive" />
-    <e p="D:\Unity-Storage\diploma-unity" t="IncludeRecursive">
+    <e p="C:\Users\georg\AppData\Local\JetBrains\Rider2020.2\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\georg\AppData\Local\JetBrains\Rider2020.2\resharper-host\Local\Transient\Rider\v202\SolutionCaches\_diploma-unity.1767244633.00" t="ExcludeRecursive" />
+    <e p="C:\Users\georg\AppData\Roaming\JetBrains\Rider2020.2\consoles\db" t="IncludeRecursive" />
+    <e p="D:\Unity-Storage\Diploma\diploma-unity" t="IncludeRecursive">
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="CopyAsset.txt" t="Include" />
@@ -41,6 +42,15 @@
           </e>
         </e>
         <e p="Scripts" t="Include">
+          <e p="Animation" t="Include">
+            <e p="AddingInChainController.cs" t="Include" />
+            <e p="AnimationChain.cs" t="Include" />
+            <e p="AnimatorPlayer.cs" t="Include" />
+            <e p="AnimatorPlayerInitialization.cs" t="Include" />
+            <e p="GameHandler.cs" t="Include" />
+            <e p="MoveToPosition.cs" t="Include" />
+            <e p="RotateAFewSeconds.cs" t="Include" />
+          </e>
           <e p="Controllers" t="Include">
             <e p="GameObjectController.cs" t="Include" />
             <e p="GameObjectInitialization.cs" t="Include" />
@@ -49,6 +59,11 @@
             <e p="Loader3DS.cs" t="Include" />
             <e p="LoadingSceneController.cs" t="Include" />
             <e p="MainScene" t="Include">
+              <e p="AnimatorCreatorControllers" t="Include">
+                <e p="AnimationCreatorController.cs" t="Include" />
+                <e p="AnimationCreatorInitialization.cs" t="Include" />
+                <e p="AnimatorController.cs" t="Include" />
+              </e>
               <e p="Authorisation" t="Include">
                 <e p="AuthController.cs" t="Include" />
                 <e p="AuthInitialization.cs" t="Include" />
@@ -77,6 +92,7 @@
                 <e p="LessonConstructorUIInitialization.cs" t="Include" />
                 <e p="LessonSceneControllerInitialization.cs" t="Include" />
                 <e p="LessonsChooseInitialization.cs" t="Include" />
+                <e p="ScreenShotController.cs" t="Include" />
               </e>
               <e p="MainMenuInitialization.cs" t="Include" />
               <e p="MainSceneInitialization.cs" t="Include" />
@@ -119,6 +135,7 @@
             <e p="ErrorCodes.cs" t="Include" />
             <e p="FileTypes.cs" t="Include" />
             <e p="LoadingParts.cs" t="Include" />
+            <e p="TypesOfAnimation.cs" t="Include" />
           </e>
           <e p="Extensions" t="Include">
             <e p="Extensions.cs" t="Include" />
@@ -133,7 +150,8 @@
             <e p="PoolOfObjects.cs" t="Include" />
           </e>
           <e p="Interfaces" t="Include">
-            <e p="IAllButtonsEnums.cs" t="Include" />
+            <e p="IAnimatorAdding.cs" t="Include" />
+            <e p="IAnimatorButtons.cs" t="Include" />
             <e p="ICleanData.cs" t="Include" />
             <e p="ICollision.cs" t="Include" />
             <e p="IConstructorFactory.cs" t="Include" />

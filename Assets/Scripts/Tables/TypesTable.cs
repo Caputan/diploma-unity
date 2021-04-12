@@ -29,6 +29,8 @@ namespace Diploma.Tables
 
         public void AddNewRecord(SQLiteConnection connection, string[] typeParams)
         {
+            if (typeParams[0] == null || typeParams[0]=="")
+                typeParams[0] = "-1";
             var newType = new Types()
             {
                 TypeS = typeParams[0]
