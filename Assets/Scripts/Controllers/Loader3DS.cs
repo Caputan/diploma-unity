@@ -94,7 +94,7 @@ public class Loader3DS {
 						qty = myFileStream.ReadUInt16();
 						_facesModel = new int[qty * 3];
 					
-						for (i = 0; i < qty*3; i++)
+						for (i = 0; i < qty * 3; i++)
 						{
 							_facesModel[i] = myFileStream.ReadUInt16();
 							i++;
