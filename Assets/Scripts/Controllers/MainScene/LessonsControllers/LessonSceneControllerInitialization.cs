@@ -1,8 +1,6 @@
 ﻿using System.Collections.Generic;
 using Data;
-using Diploma.Constructor;
 using Diploma.Interfaces;
-using Diploma.Managers;
 using Diploma.Tables;
 using GameObjectCreating;
 using UnityEngine;

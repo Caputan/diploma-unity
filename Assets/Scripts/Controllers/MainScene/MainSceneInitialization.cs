@@ -34,6 +34,7 @@ namespace Diploma.Controllers
         
         [SerializeField] private GameObject ErrorMenuPrefab;
         [SerializeField] private ImportantDontDestroyData _data;
+        [SerializeField] private AdditionalInfomationLibrary _library;
         
         #region Don't Use
         // [SerializeField] private GameObject togglePanelPrefab;
@@ -165,7 +166,8 @@ namespace Diploma.Controllers
                 tables,
                 MainParent,
                 lessonConstructorPrefab,
-                lessonConstructorPlatePrefab
+                lessonConstructorPlatePrefab,
+                _library
             );
             
             var LessonConstructorController = new LessonConstructorController(

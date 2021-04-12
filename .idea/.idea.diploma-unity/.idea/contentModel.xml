@@ -42,63 +42,83 @@
           </e>
         </e>
         <e p="Scripts" t="Include">
-          <e p="Constructor" t="Include">
-            <e p="AbstractFactory.cs" t="Include" />
-            <e p="AbstractView.cs" t="Include" />
-            <e p="BrakeFactory.cs" t="Include" />
-            <e p="BrakeFactoryView.cs" t="Include" />
-            <e p="BrakeStruct.cs" t="Include" />
-            <e p="GearBoxFactory.cs" t="Include" />
-            <e p="GearBoxFactoryView.cs" t="Include" />
-            <e p="GearBoxStruct.cs" t="Include" />
-            <e p="OppositionEngineFactory.cs" t="Include" />
-            <e p="OppositionEngineFactoryView.cs" t="Include" />
-            <e p="OppositionEngineStruct.cs" t="Include" />
-          </e>
           <e p="Controllers" t="Include">
-            <e p="AbstractFactoryController.cs" t="Include" />
-            <e p="AuthController.cs" t="Include" />
-            <e p="AuthInitialization.cs" t="Include" />
-            <e p="BackController.cs" t="Include" />
-            <e p="ControleerInitializer.cs" t="Include" />
-            <e p="Controllers.cs" t="Include" />
-            <e p="CoroutineController.cs" t="Include" />
-            <e p="DataBaseController.cs" t="Include" />
-            <e p="ErrorHandler.cs" t="Include" />
-            <e p="ErrorMenuInitialization.cs" t="Include" />
-            <e p="ExitController.cs" t="Include" />
-            <e p="FileManagerController.cs" t="Include" />
-            <e p="GameContextWithLessons.cs" t="Include" />
-            <e p="GameContextWithLogic.cs" t="Include" />
-            <e p="GameContextWithUI.cs" t="Include" />
-            <e p="GameContextWithViews.cs" t="Include" />
             <e p="GameObjectController.cs" t="Include" />
             <e p="GameObjectInitialization.cs" t="Include" />
-            <e p="GearBoxFactoryController.cs" t="Include" />
             <e p="InputController.cs" t="Include" />
-            <e p="LessonConstructorController.cs" t="Include" />
-            <e p="LessonConstructorUIInitialization.cs" t="Include" />
-            <e p="LessonsChooseInitialization.cs" t="Include" />
-            <e p="ListOfLessonsController.cs" t="Include" />
+            <e p="LessonsChooseController.cs" t="Include" />
             <e p="Loader3DS.cs" t="Include" />
-            <e p="MainMenuInitialization.cs" t="Include" />
-            <e p="MainSceneInitialization.cs" t="Include" />
-            <e p="OptionsController.cs" t="Include" />
-            <e p="OptionsInitialization.cs" t="Include" />
-            <e p="SignUpInitialization.cs" t="Include" />
-            <e p="UIController.cs" t="Include" />
+            <e p="LoadingSceneController.cs" t="Include" />
+            <e p="MainScene" t="Include">
+              <e p="Authorisation" t="Include">
+                <e p="AuthController.cs" t="Include" />
+                <e p="AuthInitialization.cs" t="Include" />
+                <e p="SignUpInitialization.cs" t="Include" />
+              </e>
+              <e p="ButtonsControllers" t="Include">
+                <e p="BackController.cs" t="Include" />
+                <e p="ExitController.cs" t="Include" />
+              </e>
+              <e p="ErrorMenu" t="Include">
+                <e p="ErrorHandler.cs" t="Include" />
+                <e p="ErrorMenuInitialization.cs" t="Include" />
+              </e>
+              <e p="FilesControllers" t="Include">
+                <e p="DataBaseController.cs" t="Include" />
+                <e p="FileManagerController.cs" t="Include" />
+              </e>
+              <e p="GameContext" t="Include">
+                <e p="GameContextWithLessons.cs" t="Include" />
+                <e p="GameContextWithLogic.cs" t="Include" />
+                <e p="GameContextWithUI.cs" t="Include" />
+                <e p="GameContextWithViews.cs" t="Include" />
+              </e>
+              <e p="LessonsControllers" t="Include">
+                <e p="LessonConstructorController.cs" t="Include" />
+                <e p="LessonConstructorUIInitialization.cs" t="Include" />
+                <e p="LessonSceneControllerInitialization.cs" t="Include" />
+                <e p="LessonsChooseInitialization.cs" t="Include" />
+              </e>
+              <e p="MainMenuInitialization.cs" t="Include" />
+              <e p="MainSceneInitialization.cs" t="Include" />
+              <e p="OptionsControllers" t="Include">
+                <e p="OptionsController.cs" t="Include" />
+                <e p="OptionsInitialization.cs" t="Include" />
+              </e>
+              <e p="OtherControllers" t="Include">
+                <e p="ControleerInitializer.cs" t="Include" />
+                <e p="Controllers.cs" t="Include" />
+                <e p="CoroutineController.cs" t="Include" />
+              </e>
+              <e p="UIController" t="Include">
+                <e p="UIController.cs" t="Include" />
+              </e>
+            </e>
+            <e p="PracticeScene" t="Include">
+              <e p="Inventory" t="Include">
+                <e p="InventoryInitialization.cs" t="Include" />
+              </e>
+              <e p="Player" t="Include">
+                <e p="PlayerController.cs" t="Include" />
+                <e p="PlayerInitialization.cs" t="Include" />
+              </e>
+              <e p="PracticeSceneInitialization.cs" t="Include" />
+            </e>
           </e>
           <e p="Coroutine" t="Include">
             <e p="AsyncOperationBehavior.cs" t="Include" />
             <e p="CoroutineExtensions.cs" t="Include" />
           </e>
+          <e p="Data" t="Include">
+            <e p="AdditionalInfomationLibrary.cs" t="Include" />
+            <e p="ImportantDontDestroyData.cs" t="Include" />
+            <e p="LibraryObjcet.cs" t="Include" />
+          </e>
           <e p="Enums" t="Include">
             <e p="CoroutineState.cs" t="Include" />
             <e p="ErrorCodes.cs" t="Include" />
-            <e p="FactoryType.cs" t="Include" />
             <e p="FileTypes.cs" t="Include" />
             <e p="LoadingParts.cs" t="Include" />
-            <e p="TypesOfGearBoxes.cs" t="Include" />
           </e>
           <e p="Extensions" t="Include">
             <e p="Extensions.cs" t="Include" />
@@ -113,10 +133,7 @@
             <e p="PoolOfObjects.cs" t="Include" />
           </e>
           <e p="Interfaces" t="Include">
-            <e p="IAbstractFactory.cs" t="Include" />
-            <e p="IAbstractView.cs" t="Include" />
             <e p="IAllButtonsEnums.cs" t="Include" />
-            <e p="IChooseGearboxLowType.cs" t="Include" />
             <e p="ICleanData.cs" t="Include" />
             <e p="ICollision.cs" t="Include" />
             <e p="IConstructorFactory.cs" t="Include" />
@@ -138,7 +155,6 @@
           </e>
           <e p="ListOfLessons" t="Include">
             <e p="ListOfLessonsView.cs" t="Include" />
-            <e p="ListOfLessonsViewCreator.cs" t="Include" />
           </e>
           <e p="Managers" t="Include">
             <e p="FileManager.cs" t="Include" />
@@ -165,13 +181,18 @@
               <e p="ErrorMenuLogic.cs" t="Include" />
             </e>
             <e p="generalClasses" t="Include">
-              <e p="GameContexWithViewCreator.cs" t="Include" />
               <e p="PlateWithButtonForLessonsFactory.cs" t="Include" />
               <e p="SceneLoading.cs" t="Include" />
               <e p="TogglePanelFactory.cs" t="Include" />
             </e>
+            <e p="Inventory" t="Include">
+              <e p="InventoryAddButtonsToDictionary.cs" t="Include" />
+              <e p="InventoryFactory.cs" t="Include" />
+              <e p="InventoryLogic.cs" t="Include" />
+            </e>
             <e p="LessonChoose" t="Include">
               <e p="LessonChooseAddButtonsToDictionary.cs" t="Include" />
+              <e p="LessonChooseButtonsLogic.cs" t="Include" />
               <e p="LessonChooseFactory.cs" t="Include" />
               <e p="LessonChooseLogic.cs" t="Include" />
             </e>

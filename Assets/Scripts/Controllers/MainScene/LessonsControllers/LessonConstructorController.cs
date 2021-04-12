@@ -64,7 +64,7 @@ namespace Controllers
             int count = 0;
             foreach (var key in _gameContextWithViews.ChoosenToggles.Values) { 
                 if(key.GetComponentInChildren<Toggle>().isOn) 
-                    lessonPacked[4] = count.ToString();
+                    lessonPacked[4] += count + ",";
                 count++;
             }
             _dataBaseController.SetTable(_tables[1]);
