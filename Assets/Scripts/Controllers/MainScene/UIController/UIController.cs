@@ -62,7 +62,7 @@ namespace Diploma.Controllers
                 var i = (IMenuButton) value.Value;
                 i.LoadNext += ShowUIByUIType;
             }
-            _lessonConstructorController.TakeScreanShoot += TakeScreenShoot;
+            _lessonConstructorController.TakeScreenShoot += TakeScreenShoot;
             HideAllUI();
             
             _errorHandler = new ErrorHandler(_gameContextWithUI.UiControllers[LoadingParts.LoadError]);
@@ -248,7 +248,7 @@ namespace Diploma.Controllers
                 var i = (IMenuButton)value.Value;
                 i.LoadNext -= ShowUIByUIType;
             }
-            _lessonConstructorController.TakeScreanShoot -= TakeScreenShoot;
+            _lessonConstructorController.TakeScreenShoot -= TakeScreenShoot;
         }
     }
 }

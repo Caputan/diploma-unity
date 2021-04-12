@@ -4,7 +4,7 @@ namespace Interfaces
 {
     public interface INeedScreenShoot
     {
-        event Action<string> TakeScreanShoot;
+        event Action<string> TakeScreenShoot;
         void TakingScreen(string name);
     }
 }

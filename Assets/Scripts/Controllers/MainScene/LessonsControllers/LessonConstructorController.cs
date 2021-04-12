@@ -33,6 +33,7 @@ namespace Controllers
         private PlateWithButtonForLessonsFactory _plateWithButtonForLessonsFactory;
         private string[] _localText = new string[4];
         private string[] _massForCopy = new string[3];
+        Plane[] planes;
         public LessonConstructorController(
             DataBaseController dataBaseController,
             List<IDataBase>  tables,
@@ -175,6 +176,8 @@ namespace Controllers
             var Pool = new PoolOfObjects(GameObjectFactory,_gameContextWithLogic);
             var GameObjectInitilization = new GameObjectInitialization(Pool, Assembly);
             GameObjectInitilization.Initialization();
+
+            SetCameraNearObject(Pool);
             
             TakingScreen(_destination[2]+"\\"+lessonPacked[5]+".png");
             lessonPacked[0] = _destination[2] + "\\" + lessonPacked[5]+".png";
@@ -202,6 +205,13 @@ namespace Controllers
             AddNewLessonToListOnUI();
         }
 
+        public void SetCameraNearObject(PoolOfObjects poolOfObjects)
+        {
+            // нужно поправить нормали
+            //vertex = head.GetComponent<MeshFilter>().mesh.vertices[0];
+            _gameContextWithLogic.MainCamera.transform.LookAt(poolOfObjects._rootPool);
+        }
+
         private void AddNewLessonToListOnUI()
         {
             _dataBaseController.SetTable(_tables[1]);
@@ -224,10 +234,10 @@ namespace Controllers
             _gameContextWithViews.AddLessonsToggles(lastLessonInDb.Lesson_Id,lessonToggle);
         }
 
-        public event Action<string> TakeScreanShoot;
+        public event Action<string> TakeScreenShoot;
         public void TakingScreen(string name)
         {
-            TakeScreanShoot.Invoke(name);
+            TakeScreenShoot?.Invoke(name);
         }
     }
 }

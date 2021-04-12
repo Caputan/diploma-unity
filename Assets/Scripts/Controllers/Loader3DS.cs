@@ -50,7 +50,6 @@ public class Loader3DS {
 			{
 				chunk_id = myFileStream.ReadUInt16 ();
 				chunk_lenght = myFileStream.ReadUInt32 ();
-				Debug.Log(chunk_id);
 				switch (chunk_id) 
 				{
 					case 0x4d4d:
@@ -174,7 +173,6 @@ public class Loader3DS {
 		if (nameModel == prevPartName || nameModel == "")
 			yield break;
 		
-		Debug.Log(nameModel + " || " + prevPartName);
 		
 		CalculateNormals(verticesModel);
 		
@@ -192,6 +190,7 @@ public class Loader3DS {
 		meshFilter.vertices = verticesModel;
 		meshFilter.uv = uvsModel;
 		meshFilter.triangles = facesModel;
+		
 		//meshFilter.no
 		
 		meshFilter.RecalculateBounds();
