@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Users\georg\AppData\Local\JetBrains\Rider2020.2\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\georg\AppData\Local\JetBrains\Rider2020.2\resharper-host\Local\Transient\Rider\v202\SolutionCaches\_diploma-unity.1767244633.00" t="ExcludeRecursive" />
-    <e p="C:\Users\georg\AppData\Roaming\JetBrains\Rider2020.2\consoles\db" t="IncludeRecursive" />
-    <e p="D:\Unity-Storage\Diploma\diploma-unity" t="IncludeRecursive">
+    <e p="C:\Users\Jasto\AppData\Local\JetBrains\Rider2020.3\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\Jasto\AppData\Local\JetBrains\Rider2020.3\resharper-host\Local\Transient\Rider\v203\SolutionCaches\_diploma-unity.-1575445037.00" t="ExcludeRecursive" />
+    <e p="D:\Unity-Storage\diploma-unity" t="IncludeRecursive">
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="CopyAsset.txt" t="Include" />
@@ -115,6 +114,7 @@
             <e p="LibraryObjcet.cs" t="Include" />
           </e>
           <e p="Enums" t="Include">
+            <e p="AnimatorButtons.cs" t="Include" />
             <e p="CoroutineState.cs" t="Include" />
             <e p="ErrorCodes.cs" t="Include" />
             <e p="FileTypes.cs" t="Include" />
@@ -144,14 +144,19 @@
             <e p="IFactory.cs" t="Include" />
             <e p="IFactoryView.cs" t="Include" />
             <e p="IFileManager.cs" t="Include" />
+            <e p="IGameHandler.cs" t="Include" />
             <e p="IInitialization.cs" t="Include" />
             <e p="ILateExecute.cs" t="Include" />
+            <e p="IMenuButton.cs" t="Include" />
+            <e p="INeedScreenShoot.cs" t="Include" />
             <e p="IShowInfoFromChoosing.cs" t="Include" />
             <e p="ITable.cs" t="Include" />
-            <e p="IUILoadLessonChoose.cs" t="Include" />
             <e p="IUIObject.cs" t="Include" />
             <e p="IUIObjectsFactory.cs" t="Include" />
             <e p="IUISilder.cs" t="Include" />
+          </e>
+          <e p="LectionsDemonstration" t="Include">
+            <e p="PDFReader.cs" t="Include" />
           </e>
           <e p="ListOfLessons" t="Include">
             <e p="ListOfLessonsView.cs" t="Include" />
@@ -170,6 +175,11 @@
             <e p="VideosTable.cs" t="Include" />
           </e>
           <e p="UI" t="Include">
+            <e p="AnimationCreator" t="Include">
+              <e p="AnimatorAddButtonsToDictionary.cs" t="Include" />
+              <e p="AnimatorFactory.cs" t="Include" />
+              <e p="AnimatorLogic.cs" t="Include" />
+            </e>
             <e p="Auth" t="Include">
               <e p="AuthAddButtonsToDictionary.cs" t="Include" />
               <e p="AuthFactory.cs" t="Include" />

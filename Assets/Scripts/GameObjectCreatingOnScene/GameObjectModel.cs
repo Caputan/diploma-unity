@@ -2,13 +2,13 @@
 {
     public class GameObjectModel
     {
-        private readonly GameObjectComponents _gameObjectComponents;
-        private readonly GameObjectStruct _gameObjectStruct;
+        public readonly GameObjectComponents gameObjectComponents;
+        public readonly GameObjectStruct gameObjectStruct;
 
         public GameObjectModel(GameObjectComponents gameObjectComponents, GameObjectStruct gameObjectStruct)
         {
-            _gameObjectComponents = gameObjectComponents;
-            _gameObjectStruct = gameObjectStruct;
+            this.gameObjectComponents = gameObjectComponents;
+            this.gameObjectStruct = gameObjectStruct;
         }
     }
 }

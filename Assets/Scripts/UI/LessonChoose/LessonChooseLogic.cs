@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 namespace Diploma.UI
 {
-    public class LessonChooseLogic: IUIObject, IInitialization
+    public class LessonChooseLogic: IMenuButton, IInitialization
     {
         public event Action<LoadingParts> LoadNext;
 
