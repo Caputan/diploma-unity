@@ -25,6 +25,7 @@ namespace Diploma.Controllers
         {
             _playerController.RotateCamera();
             _playerController.MovePlayer();
+            _playerController.OutlineAssemblyParts();
         }
     }
 }

@@ -2,6 +2,7 @@
 using Diploma.Controllers;
 using Diploma.Interfaces;
 using Diploma.UI;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -15,6 +16,7 @@ namespace Controllers.PracticeScene.Inventory
         private readonly GameObject _inventoryPrefab;
         private readonly GameObject _inventorySlotPrefab;
         private readonly InventoryFactory _inventoryFactory;
+        private readonly InventorySlotFactory _inventorySlotFactory;
         private List<Button> InventoryButtons;
 
         private PlayerController _player;
@@ -32,12 +34,13 @@ namespace Controllers.PracticeScene.Inventory
             _inventorySlotPrefab = inventorySlotPrefab;
             _parts = parts;
             _inventoryFactory = new InventoryFactory(_inventoryPrefab);
+            _inventorySlotFactory = new InventorySlotFactory(_inventorySlotPrefab);
         }
         
         public void Initialization()
         {
             var inventory = _inventoryFactory.Create(_mainParent.transform);
-            
+            // var inventory = GameObject.Instantiate(_inventoryPrefab, _mainParent.transform, true);
             _player = new PlayerController(GameObject.Find("Player(Clone)"));
             
             inventory.transform.localPosition = Vector3.zero;
@@ -46,16 +49,22 @@ namespace Controllers.PracticeScene.Inventory
 
             foreach (var part in _parts)
             {
-                var inventorySlot = GameObject.Instantiate(_inventorySlotPrefab, inventory.transform, true);
-                inventorySlot.transform.localPosition = Vector3.zero;
+                var inventorySlot = _inventorySlotFactory.Create(inventory.GetComponentsInChildren<RectTransform>()[2]);
+
+                part.tag = "Assembly";
+                part.AddComponent<MeshCollider>();
                 
                 // прикрепить изображение к кнопке
                 
+                inventorySlot.GetComponentInChildren<TextMeshProUGUI>().text =
+                    part.GetComponentsInParent<Transform>()[1].name;
+                
                 InventoryButtons.Add(inventorySlot.GetComponent<Button>());
             }
-
+            
             new InventoryAddButtonsToDictionary(_parts, InventoryButtons, _gameContextWithViews);
             var inventoryLogic = new InventoryLogic(_gameContextWithViews.InventoryButtons, _player);
+            inventory.SetActive(false);
             inventoryLogic.Initialization();
         }
     }

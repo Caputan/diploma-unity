@@ -17,7 +17,7 @@ namespace GameObjectCreating
         public PoolOfObjects(GameObjectFactory gameObjectFactory,GameContextWithLogic gameContext)
         {
             _gameObjectCreator = new GameObjectCreator(gameObjectFactory,gameContext);
-            _gameObjectPool = new Dictionary<int,GameObjectProvider>();
+            _gameObjectPool = new Dictionary<int, GameObjectProvider>();
             _count = 0;
             
             if (!_rootPool)
