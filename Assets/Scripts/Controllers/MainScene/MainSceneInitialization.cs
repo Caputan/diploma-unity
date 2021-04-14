@@ -36,6 +36,7 @@ namespace Diploma.Controllers
         [SerializeField] private GameObject ErrorMenuPrefab;
         [SerializeField] private ImportantDontDestroyData _data;
         [SerializeField] private AdditionalInfomationLibrary _library;
+        [SerializeField] private Material _material;
         
         #region Don't Use
         // [SerializeField] private GameObject togglePanelPrefab;
@@ -180,7 +181,8 @@ namespace Diploma.Controllers
                 _gameContextWithLogic,
                 _fileManager,
                 lessonPrefab,
-                fileManager
+                fileManager,
+                _material
             );
             
             var ScreenShootController = new ScreenShotController();

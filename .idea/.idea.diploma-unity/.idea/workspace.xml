@@ -20,14 +20,156 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9a27c574-4a30-4862-a74f-153a103b04b8" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Brake.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Brake.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Materials.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Materials/BaseMaterial.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Materials/BaseMaterial.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Real Materials.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/!UV density checker.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/!UV density checker.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/Real materials vol.0 [High definition render pipeline].unitypackage.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/Real materials vol.0 [Standard render pipeline].unitypackage.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/Real materials vol.0 [Universal render pipeline].unitypackage.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/Textures.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/Textures/!UV density checker diffuse.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/Textures/!UV density checker diffuse.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/Textures/brass color variations diffuse.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/Textures/brass color variations diffuse.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/Textures/brass common diffuse.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/Textures/brass common diffuse.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/Textures/brass spotty diffuse.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/Textures/brass spotty diffuse.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/Textures/brass spotty metalness.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/Textures/brass spotty metalness.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/Textures/common 10 percent mask.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/Textures/common 10 percent mask.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/Textures/common 15 percent c_mask.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/Textures/common 15 percent c_mask.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/Textures/common 15 percent mask.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/Textures/common 15 percent mask.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/Textures/common 2 percent mask.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/Textures/common 2 percent mask.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/Textures/common 40 percent c_mask.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/Textures/common 40 percent c_mask.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/Textures/common 5 percent mask.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/Textures/common 5 percent mask.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/Textures/common bumpy metal normal.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/Textures/common bumpy metal normal.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/Textures/common clouds diffuse.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/Textures/common clouds diffuse.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/Textures/common grunge diffuse 3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/Textures/common grunge diffuse 3.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/Textures/common grunge diffuse.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/Textures/common grunge diffuse.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/Textures/common huge bumps normal.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/Textures/common huge bumps normal.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/Textures/common leaking diffuse.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/Textures/common leaking diffuse.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/Textures/common non-metal smooth metalness 2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/Textures/common non-metal smooth metalness 2.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/Textures/common non-metal smooth metalness.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/Textures/common non-metal smooth metalness.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/Textures/common overheat diffuse.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/Textures/common overheat diffuse.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/Textures/common rusted diffuse.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/Textures/common rusted diffuse.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/Textures/common sand noise normal.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/Textures/common sand noise normal.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/Textures/common white cloud noise diffuse.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/Textures/common white cloud noise diffuse.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/Textures/common white cloud noise normal.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/Textures/common white cloud noise normal.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/Textures/copper common diffuse.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/Textures/copper common diffuse.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/Textures/copper common metalness.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/Textures/copper common metalness.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/Textures/copper common occlusion.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/Textures/copper common occlusion.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/Textures/copper with patina diffuse.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/Textures/copper with patina diffuse.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/Textures/copper with patina metalness.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/Textures/copper with patina metalness.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/Textures/floor marble scattered diffuse.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/Textures/floor marble scattered diffuse.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/Textures/floor marble scattered metalness.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/Textures/floor marble scattered metalness.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/Textures/floor marble scattered normal.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/Textures/floor marble scattered normal.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/Textures/glass generic slightly dusty diffuse.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/Textures/glass generic slightly dusty diffuse.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/Textures/granite rough diffuse.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/Textures/granite rough diffuse.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/Textures/granite rough height.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/Textures/granite rough height.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/Textures/granite rough metalness.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/Textures/granite rough metalness.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/Textures/granite rough normal.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/Textures/granite rough normal.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/Textures/marble rough metalness.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/Textures/marble rough metalness.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/Textures/marble white diffuse.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/Textures/marble white diffuse.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/Textures/plaster common diffuse.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/Textures/plaster common diffuse.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/Textures/plaster common metalness.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/Textures/plaster common metalness.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/Textures/plaster common normal.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/Textures/plaster common normal.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/Textures/steel galvanized iridescent colorful metalness.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/Textures/steel galvanized iridescent colorful metalness.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/[free] Aluminum common.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/[free] Aluminum common.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/[free] Brass common.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/[free] Brass common.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/[free] Copper common.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/[free] Copper common.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/[free] Copper very old.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/[free] Copper very old.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/[free] Floor marble scattered.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/[free] Floor marble scattered.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/[free] Glass generic slightly dusty.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/[free] Glass generic slightly dusty.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/[free] Granite polished.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/[free] Granite polished.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/[free] Granite rough.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/[free] Granite rough.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/[free] Marble polished white.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/[free] Marble polished white.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/[free] Marble rough white.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/[free] Marble rough white.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/[free] Plaster common.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/[free] Plaster common.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/[free] Steel common.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/[free] Steel common.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Library.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Library/LibraryUIAddButtonsToDictionary.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Library/LibraryUIAddButtonsToDictionary.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Library/LibraryUIFactory.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Library/LibraryUIFactory.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Library/LibraryUILogic.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Library/LibraryUILogic.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.diploma-unity/.idea/contentModel.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.diploma-unity/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.diploma-unity/.idea/indexLayout.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.diploma-unity/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.diploma-unity/.idea/riderModule.iml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.diploma-unity/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.diploma-unity/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.diploma-unity/riderModule.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/MainScene/LessonConstrucorPanel.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/MainScene/LessonConstrucorPanel.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/LessonScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/LessonScene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/StartScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/StartScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/Loader3DS.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/Loader3DS.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/LessonsControllers/LessonConstructorController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/LessonsControllers/LessonConstructorController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/LessonsControllers/ScreenShotController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/LessonsControllers/ScreenShotController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/UIController/UIController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/UIController/UIController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interfaces/INeedScreenShoot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Interfaces/INeedScreenShoot.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/LessonsControllers/LessonSceneControllerInitialization.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/LessonsControllers/LessonSceneControllerInitialization.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/MainSceneInitialization.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/MainSceneInitialization.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/PracticeScene/PracticeSceneInitialization.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/PracticeScene/PracticeSceneInitialization.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Extensions/Extensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Extensions/Extensions.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameObjectCreatingOnScene/GameObjectComponents.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameObjectCreatingOnScene/GameObjectComponents.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameObjectCreatingOnScene/GameObjectCreator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameObjectCreatingOnScene/GameObjectCreator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameObjectCreatingOnScene/GameObjectFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameObjectCreatingOnScene/GameObjectFactory.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/MachinePartsDB.bytes" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StreamingAssets/MachinePartsDB.bytes" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/motor.3ds.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/motor.3ds.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,47 +188,29 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Interfaces/IInitialization.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Controllers/Loader3DS.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Interfaces/ICleanData.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9577AC7A-62EF-4317-9789-031239BA8798/38/366218c6/KeyValuePair`2.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9577AC7A-62EF-4317-9789-031239BA8798/f8/73158266/Environment.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/OtherControllers/Controllers.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9577AC7A-62EF-4317-9789-031239BA8798/ae/73053cd0/InvalidCastException.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9577AC7A-62EF-4317-9789-031239BA8798/38/366218c6/KeyValuePair`2.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Controllers/Loader3DS.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/OtherControllers/Controllers.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Interfaces/IInitialization.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9577AC7A-62EF-4317-9789-031239BA8798/f8/73158266/Environment.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Interfaces/ICleanData.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
-      <list>
-        <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/UIController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/MainSceneInitialization.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/OptionsController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/OtherControllers/ControleerInitializer.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Data/ImportantDontDestroyData.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Data/AdditionalInfomationLibrary.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Data/LibraryObjcet.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/generalClasses/TogglePanelFactory.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/GameContext/GameContextWithLogic.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/LessonsControllers/LessonConstructorUIInitialization.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/LessonConstructor/LessonConstructorUIAddButtonsToDictionary.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Options/OptionsLogic.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Interfaces/IDataBaseFileManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Tables/TypesTable.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Interfaces/IFactory.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/GameObjectCreatingOnScene/GameObjectCreator.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/GameObjectCreatingOnScene/PoolOfObjects.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/PracticeScene/PracticeSceneInitialization.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/LessonsControllers/LessonSceneControllerInitialization.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Extensions/Extensions.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/GameObjectCreatingOnScene/GameObjectFactory.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/FilesControllers/FileManagerController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/MainSceneInitialization.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Interfaces/INeedScreenShoot.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/UIController/UIController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/LessonsControllers/ScreenShotController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/Loader3DS.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/LessonsControllers/LessonConstructorController.cs" />
-      </list>
-    </option>
+    <changedPaths>
+      <option value="$PROJECT_DIR$/Assets/Scripts/Extensions/Extensions.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/GameObjectCreatingOnScene/GameObjectFactory.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/PracticeScene/PracticeSceneInitialization.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/MainSceneInitialization.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/LessonsControllers/LessonSceneControllerInitialization.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/GameObjectCreatingOnScene/GameObjectComponents.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/GameObjectCreatingOnScene/GameObjectCreator.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/LessonsControllers/LessonConstructorController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UI/Library/LibraryUIAddButtonsToDictionary.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UI/Library/LabraryUIFactory.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UI/Library/LibraryUIFactory.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UI/Library/LibraryUILogic.cs" />
+    </changedPaths>
   </component>
   <component name="ProjectId" id="1oVh7QrK5P1QV67f8aHYDy536Km" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -100,7 +224,7 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="DebuggerViewTab_PTCS_FirstProportionKey" value="0.3502052" />
-    <property name="DebuggerViewTab_PTCS_LastProportionKey" value="0.032831736" />
+    <property name="DebuggerViewTab_PTCS_LastProportionKey" value="0.0" />
     <property name="Discover.Launch.Via.Unity" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
@@ -122,17 +246,19 @@
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
       <option name="pid" />
+      <option name="projectPathOnTarget" />
       <option name="selectedOptions">
-        <set />
+        <list />
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="24368">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="1848">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="24368" />
+      <option name="pid" value="1848" />
+      <option name="projectPathOnTarget" />
       <option name="selectedOptions">
-        <set />
+        <list />
       </option>
       <method v="2" />
     </configuration>
@@ -158,7 +284,9 @@
       <workItem from="1616661182088" duration="3559000" />
       <workItem from="1617005002755" duration="1701000" />
       <workItem from="1618215697757" duration="6555000" />
-      <workItem from="1618223541488" duration="10505000" />
+      <workItem from="1618223541488" duration="10555000" />
+      <workItem from="1618301859837" duration="114000" />
+      <workItem from="1618303231957" duration="6740000" />
     </task>
     <servers />
   </component>
@@ -182,92 +310,6 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state width="599" height="464" key="DebuggerActiveHint" timestamp="1618227342856">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="599" height="464" key="DebuggerActiveHint/0.0.1536.824@0.0.1536.824" timestamp="1618227342856" />
-    <state width="1493" height="230" key="GridCell.Tab.0.bottom" timestamp="1618227260501">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="230" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1618227260501" />
-    <state width="1493" height="230" key="GridCell.Tab.0.center" timestamp="1618227260501">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="230" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1618227260501" />
-    <state width="1493" height="230" key="GridCell.Tab.0.left" timestamp="1618227260501">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="230" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1618227260501" />
-    <state width="1493" height="230" key="GridCell.Tab.0.right" timestamp="1618227260501">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="230" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1618227260501" />
-    <state width="1493" height="230" key="GridCell.Tab.1.bottom" timestamp="1618227308807">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="230" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1618227308807" />
-    <state width="1493" height="230" key="GridCell.Tab.1.center" timestamp="1618227308807">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="230" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1618227308807" />
-    <state width="1493" height="230" key="GridCell.Tab.1.left" timestamp="1618227308806">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="230" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1618227308806" />
-    <state width="1493" height="230" key="GridCell.Tab.1.right" timestamp="1618227308807">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="230" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1618227308807" />
-    <state width="1493" height="230" key="GridCell.Tab.2.bottom" timestamp="1618227260240">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="230" key="GridCell.Tab.2.bottom/0.0.1536.824@0.0.1536.824" timestamp="1618227260240" />
-    <state width="1493" height="230" key="GridCell.Tab.2.center" timestamp="1618227260239">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="230" key="GridCell.Tab.2.center/0.0.1536.824@0.0.1536.824" timestamp="1618227260239" />
-    <state width="1493" height="230" key="GridCell.Tab.2.left" timestamp="1618227260239">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="230" key="GridCell.Tab.2.left/0.0.1536.824@0.0.1536.824" timestamp="1618227260239" />
-    <state width="1493" height="230" key="GridCell.Tab.2.right" timestamp="1618227260240">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="230" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1618227260240" />
-    <state width="1493" height="230" key="GridCell.Tab.3.bottom" timestamp="1618227260241">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="230" key="GridCell.Tab.3.bottom/0.0.1536.824@0.0.1536.824" timestamp="1618227260241" />
-    <state width="1493" height="230" key="GridCell.Tab.3.center" timestamp="1618227260241">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="230" key="GridCell.Tab.3.center/0.0.1536.824@0.0.1536.824" timestamp="1618227260241" />
-    <state width="1493" height="230" key="GridCell.Tab.3.left" timestamp="1618227260240">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="230" key="GridCell.Tab.3.left/0.0.1536.824@0.0.1536.824" timestamp="1618227260240" />
-    <state width="1493" height="230" key="GridCell.Tab.3.right" timestamp="1618227260241">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="230" key="GridCell.Tab.3.right/0.0.1536.824@0.0.1536.824" timestamp="1618227260241" />
-    <state x="566" y="113" key="RiderGenerateDialog" timestamp="1616584279483">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="566" y="113" key="RiderGenerateDialog/0.0.1536.824@0.0.1536.824" timestamp="1616584279483" />
-    <state x="93" y="93" width="1350" height="638" key="VCS.FileHistoryDialog" timestamp="1616492853506">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="93" y="93" width="1350" height="638" key="VCS.FileHistoryDialog/0.0.1536.824@0.0.1536.824" timestamp="1616492853506" />
-    <state x="425" y="187" key="run.anything.popup" timestamp="1618230170520">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="425" y="187" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1618230170520" />
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1618221309151">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1618221309151" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

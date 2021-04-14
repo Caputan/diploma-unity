@@ -29,6 +29,7 @@ namespace Controllers
         private readonly FileManagerController _fileManagerController;
         private string[] _destination = new string[4];
         private readonly FileManager _fileManager;
+        private readonly Material _material;
         private Dictionary<LoadingParts, GameObject> _texts;
         private PlateWithButtonForLessonsFactory _plateWithButtonForLessonsFactory;
         private string[] _localText = new string[4];
@@ -43,7 +44,8 @@ namespace Controllers
             GameContextWithLogic gameContextWithLogic,
             FileManagerController fileManagerController,
             GameObject prefabLessonPlate,
-            FileManager fileManager
+            FileManager fileManager,
+            Material material
         )
         {
             _dataBaseController = dataBaseController;
@@ -54,6 +56,7 @@ namespace Controllers
             _gameContextWithLogic = gameContextWithLogic;
             _fileManagerController = fileManagerController;
             _fileManager = fileManager;
+            _material = material;
             _texts = _gameContextWithViews.TextBoxesOnConstructor;
             _plateWithButtonForLessonsFactory = new PlateWithButtonForLessonsFactory(prefabLessonPlate);
         }
@@ -172,7 +175,7 @@ namespace Controllers
             File.Copy(_massForCopy[0],_localText[0]);
             _dataBaseController.SetTable(_tables[0]);
             Assemblies Assembly = (Assemblies)_dataBaseController.GetRecordFromTableById(Convert.ToInt32(lessonPacked[3]));
-            var GameObjectFactory = new GameObjectFactory(false);
+            var GameObjectFactory = new GameObjectFactory(false,_material);
             var Pool = new PoolOfObjects(GameObjectFactory,_gameContextWithLogic);
             var GameObjectInitilization = new GameObjectInitialization(Pool, Assembly);
             GameObjectInitilization.Initialization();
@@ -208,7 +211,22 @@ namespace Controllers
         public void SetCameraNearObject(PoolOfObjects poolOfObjects)
         {
             // нужно поправить нормали
+            // gameObjectComponents.MeshFilter = _gameObject.GetComponent<MeshFilter>();
+            // Debug.Log(gameObjectComponents.MeshFilter.mesh.vertices);
+            // Debug.Log(gameObjectComponents.MeshFilter.mesh.vertices.Length);
             //vertex = head.GetComponent<MeshFilter>().mesh.vertices[0];
+            // foreach (var meshFilter in poolOfObjects._rootPool.GetComponentsInChildren<MeshFilter>())
+            // {
+            //     var vertices = meshFilter.mesh.vertices;
+            //     
+            //     Vector3[] newVerticles = new Vector3[vertices.Length];
+            //     int i = 0;
+            //     foreach (var vector3 in vertices)
+            //     {
+            //         newVerticles[i] = vector3 + (poolOfObjects._rootPool.position-vector3);
+            //         i++;
+            //     }
+            // }
             _gameContextWithLogic.MainCamera.transform.LookAt(poolOfObjects._rootPool);
         }
 

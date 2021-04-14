@@ -6,6 +6,7 @@ using Diploma.Interfaces;
 using Diploma.Tables;
 using GameObjectCreating;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Diploma.Controllers
 {
@@ -22,6 +23,7 @@ namespace Diploma.Controllers
         [SerializeField] private GameObject inventorySlotPrefab;
         
         [SerializeField] private GameObject[] partOfAssembly;
+        [SerializeField] private Material baseMaterial;
 
         private GameContextWithLogic _gameContextWithLogic;
         private GameContextWithViews _gameContextWithViews;
@@ -56,7 +58,7 @@ namespace Diploma.Controllers
             DataBaseController.SetTable(tables[0]);
             Assemblies Assembly = (Assemblies)DataBaseController.GetRecordFromTableById(lesson.Lesson_Assembly_Id);
             
-            var GameObjectFactory = new GameObjectFactory(true);
+            var GameObjectFactory = new GameObjectFactory(true,baseMaterial);
             var Pool = new PoolOfObjects(GameObjectFactory,_gameContextWithLogic);
             var GameObjectInitilization = new GameObjectInitialization(Pool, Assembly);
             

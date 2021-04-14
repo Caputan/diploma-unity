@@ -265,6 +265,7 @@ MonoBehaviour:
     type: 3}
   _data: {fileID: 11400000, guid: 03ce9d4a4a736824db6636fb7cc1202c, type: 2}
   _library: {fileID: 11400000, guid: 8527d7f87a23f0b45bc6f567a36e8d7c, type: 2}
+  _material: {fileID: 0}
 --- !u!1 &655199805
 GameObject:
   m_ObjectHideFlags: 0
