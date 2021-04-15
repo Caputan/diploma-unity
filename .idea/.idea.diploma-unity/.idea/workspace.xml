@@ -20,156 +20,64 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9a27c574-4a30-4862-a74f-153a103b04b8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Brake.fbx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Brake.fbx.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Materials.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Materials/BaseMaterial.mat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Materials/BaseMaterial.mat.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Real Materials.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/!UV density checker.mat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/!UV density checker.mat.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/Real materials vol.0 [High definition render pipeline].unitypackage.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/Real materials vol.0 [Standard render pipeline].unitypackage.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/Real materials vol.0 [Universal render pipeline].unitypackage.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/Textures.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/Textures/!UV density checker diffuse.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/Textures/!UV density checker diffuse.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/Textures/brass color variations diffuse.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/Textures/brass color variations diffuse.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/Textures/brass common diffuse.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/Textures/brass common diffuse.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/Textures/brass spotty diffuse.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/Textures/brass spotty diffuse.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/Textures/brass spotty metalness.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/Textures/brass spotty metalness.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/Textures/common 10 percent mask.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/Textures/common 10 percent mask.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/Textures/common 15 percent c_mask.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/Textures/common 15 percent c_mask.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/Textures/common 15 percent mask.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/Textures/common 15 percent mask.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/Textures/common 2 percent mask.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/Textures/common 2 percent mask.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/Textures/common 40 percent c_mask.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/Textures/common 40 percent c_mask.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/Textures/common 5 percent mask.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/Textures/common 5 percent mask.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/Textures/common bumpy metal normal.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/Textures/common bumpy metal normal.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/Textures/common clouds diffuse.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/Textures/common clouds diffuse.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/Textures/common grunge diffuse 3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/Textures/common grunge diffuse 3.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/Textures/common grunge diffuse.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/Textures/common grunge diffuse.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/Textures/common huge bumps normal.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/Textures/common huge bumps normal.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/Textures/common leaking diffuse.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/Textures/common leaking diffuse.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/Textures/common non-metal smooth metalness 2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/Textures/common non-metal smooth metalness 2.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/Textures/common non-metal smooth metalness.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/Textures/common non-metal smooth metalness.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/Textures/common overheat diffuse.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/Textures/common overheat diffuse.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/Textures/common rusted diffuse.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/Textures/common rusted diffuse.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/Textures/common sand noise normal.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/Textures/common sand noise normal.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/Textures/common white cloud noise diffuse.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/Textures/common white cloud noise diffuse.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/Textures/common white cloud noise normal.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/Textures/common white cloud noise normal.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/Textures/copper common diffuse.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/Textures/copper common diffuse.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/Textures/copper common metalness.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/Textures/copper common metalness.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/Textures/copper common occlusion.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/Textures/copper common occlusion.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/Textures/copper with patina diffuse.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/Textures/copper with patina diffuse.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/Textures/copper with patina metalness.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/Textures/copper with patina metalness.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/Textures/floor marble scattered diffuse.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/Textures/floor marble scattered diffuse.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/Textures/floor marble scattered metalness.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/Textures/floor marble scattered metalness.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/Textures/floor marble scattered normal.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/Textures/floor marble scattered normal.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/Textures/glass generic slightly dusty diffuse.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/Textures/glass generic slightly dusty diffuse.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/Textures/granite rough diffuse.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/Textures/granite rough diffuse.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/Textures/granite rough height.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/Textures/granite rough height.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/Textures/granite rough metalness.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/Textures/granite rough metalness.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/Textures/granite rough normal.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/Textures/granite rough normal.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/Textures/marble rough metalness.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/Textures/marble rough metalness.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/Textures/marble white diffuse.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/Textures/marble white diffuse.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/Textures/plaster common diffuse.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/Textures/plaster common diffuse.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/Textures/plaster common metalness.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/Textures/plaster common metalness.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/Textures/plaster common normal.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/Textures/plaster common normal.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/Textures/steel galvanized iridescent colorful metalness.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/Textures/steel galvanized iridescent colorful metalness.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/[free] Aluminum common.mat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/[free] Aluminum common.mat.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/[free] Brass common.mat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/[free] Brass common.mat.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/[free] Copper common.mat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/[free] Copper common.mat.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/[free] Copper very old.mat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/[free] Copper very old.mat.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/[free] Floor marble scattered.mat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/[free] Floor marble scattered.mat.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/[free] Glass generic slightly dusty.mat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/[free] Glass generic slightly dusty.mat.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/[free] Granite polished.mat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/[free] Granite polished.mat.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/[free] Granite rough.mat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/[free] Granite rough.mat.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/[free] Marble polished white.mat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/[free] Marble polished white.mat.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/[free] Marble rough white.mat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/[free] Marble rough white.mat.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/[free] Plaster common.mat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/[free] Plaster common.mat.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/[free] Steel common.mat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Real Materials/[free] Steel common.mat.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Library.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Library/LibraryUIAddButtonsToDictionary.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Library/LibraryUIAddButtonsToDictionary.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Library/LibraryUIFactory.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Library/LibraryUIFactory.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Library/LibraryUILogic.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Library/LibraryUILogic.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.diploma-unity/.idea/contentModel.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.diploma-unity/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.diploma-unity/.idea/indexLayout.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.diploma-unity/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.diploma-unity/.idea/riderModule.iml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Ghostscript.NET.1.2.3.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Ghostscript.NET.1.2.3/.signature.p7s" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Ghostscript.NET.1.2.3/Ghostscript.NET.1.2.3.nupkg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Ghostscript.NET.1.2.3/Ghostscript.NET.1.2.3.nupkg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Ghostscript.NET.1.2.3/lib.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Ghostscript.NET.1.2.3/lib/net40.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Ghostscript.NET.1.2.3/lib/net40/Ghostscript.NET.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Ghostscript.NET.1.2.3/lib/net40/Ghostscript.NET.dll.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Ghostscript.NET.1.2.3/lib/net40/Ghostscript.NET.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Ghostscript.NET.1.2.3/lib/net40/Ghostscript.NET.xml.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/TheoryScene.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scenes/TheoryScene.unity" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scenes/TheoryScene.unity.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/GameContext/GameContextWithViewsTheory.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/GameContext/GameContextWithViewsTheory.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/TheoryScene.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/TheoryScene/TheoryControllers.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/TheoryScene/TheoryControllers/PDFReaderUIInitialization.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/TheoryScene/TheoryControllers/PdfReaderUIInitialization.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/TheoryScene/TheoryControllers/TheoryController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/TheoryScene/TheoryControllers/TheoryController.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/TheoryScene/TheoryControllers/TheoryUIInitialization.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/TheoryScene/TheoryControllers/TheoryUIInitialization.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/TheoryScene/TheorySceneInitialization.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/TheoryScene/TheorySceneInitialization.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/TheoryScene/UIController.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/TheoryScene/UIController/UIControllerTheoryScene.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/TheoryScene/UIController/UIControllerTheoryScene.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Enums/LoadingPartsTheoryScene.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Enums/LoadingPartsTheoryScene.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Interfaces/ITheorySceneButton.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Interfaces/ITheorySceneButton.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/PDFWorker.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/PDFWorker/PDFReader.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/PDFWorker/PDFReader.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/PauseUI.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/TheoryUI.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/TheoryUI/PDFReaderUI.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/TheoryUI/PDFReaderUI/PDFReaderUIFactory.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/TheoryUI/PDFReaderUI/PDFReaderUIFactory.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/TheoryUI/TheoryLibraryTree.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/TheoryUI/TheoryLibraryTree/TheoryLibraryTreeFactory.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/TheoryUI/TheoryLibraryTree/TheoryLibraryTreeFactory.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/TheoryUI/TheoryLibraryTree/TheoryLibraryTreeLogic.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/TheoryUI/TheoryLibraryTree/TheoryLibraryTreeLogic.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/TheoryUI/TheoryUIAddButtonsToDictionary.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/TheoryUI/TheoryUIAddButtonsToDictionary.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/TheoryUI/TheoryUIFactory.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/TheoryUI/TheoryUIFactory.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/TheoryUI/TheoryUILogic.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/TheoryUI/TheoryUILogic.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Packages/Ghostscript.NET.1.2.3/.signature.p7s" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Packages/Ghostscript.NET.1.2.3/Ghostscript.NET.1.2.3.nupkg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Packages/Ghostscript.NET.1.2.3/lib/net40/Ghostscript.NET.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Packages/Ghostscript.NET.1.2.3/lib/net40/Ghostscript.NET.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.diploma-unity/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.diploma-unity/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.diploma-unity/riderModule.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/MainScene/LessonConstrucorPanel.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/MainScene/LessonConstrucorPanel.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/LessonScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/LessonScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/StartScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/StartScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/LessonsControllers/LessonConstructorController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/LessonsControllers/LessonConstructorController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/LessonsControllers/LessonSceneControllerInitialization.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/LessonsControllers/LessonSceneControllerInitialization.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/MainSceneInitialization.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/MainSceneInitialization.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/PracticeScene/PracticeSceneInitialization.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/PracticeScene/PracticeSceneInitialization.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Extensions/Extensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Extensions/Extensions.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameObjectCreatingOnScene/GameObjectComponents.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameObjectCreatingOnScene/GameObjectComponents.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameObjectCreatingOnScene/GameObjectCreator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameObjectCreatingOnScene/GameObjectCreator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameObjectCreatingOnScene/GameObjectFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameObjectCreatingOnScene/GameObjectFactory.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/MachinePartsDB.bytes" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StreamingAssets/MachinePartsDB.bytes" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/motor.3ds.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/motor.3ds.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enums/LoadingParts.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enums/LoadingParts.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages.config" beforeDir="false" afterPath="$PROJECT_DIR$/packages.config" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -210,6 +118,30 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/Library/LabraryUIFactory.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/Library/LibraryUIFactory.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/Library/LibraryUILogic.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/TheoryScene/UIController/UIControllerTheoryScene.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UI/TheoryUI/TheoryUIFactory.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Interfaces/ITheorySceneButton.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UI/TheoryUI/TheoryUILogic.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/GameContext/GameContextWithViewsTheory.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Enums/LoadingParts.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Enums/LoadingPartsTheoryScene.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Interfaces/ITheory.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Interfaces/ITextTheory.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Interfaces/IVideoTheory.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Interfaces/IImageTheory.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Enums/TypeOfTheory.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UI/TheoryUI/TheoryComplex.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/PDFWorker/PDFReader.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UI/TheoryUI/PDFReaderUI/PDFReaderUILogic.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UI/TheoryUI/TheoryLibraryTree/TheoryLibraryTreeLogic.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UI/TheoryUI/PDFReaderUI/PDFReaderUIFactory.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/TheoryScene/TheoryControllers/PDFReaderUIInitialization.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UI/TheoryUI/TheoryLibraryTree/TheoryLibraryTreeFactory.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UI/TheoryUI/TheoryUIAddButtonsToDictionary.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/TheoryScene/TheoryControllers/TheoryUIInitialization.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/TheoryScene/TheoryControllers/PdfReaderUIInitialization.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/TheoryScene/TheoryControllers/TheoryController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/TheoryScene/TheorySceneInitialization.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1oVh7QrK5P1QV67f8aHYDy536Km" />
@@ -252,10 +184,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="1848">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="1848" />
+      <option name="pid" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -287,6 +219,9 @@
       <workItem from="1618223541488" duration="10555000" />
       <workItem from="1618301859837" duration="114000" />
       <workItem from="1618303231957" duration="6740000" />
+      <workItem from="1618403544966" duration="7025000" />
+      <workItem from="1618474590621" duration="6227000" />
+      <workItem from="1618483740236" duration="4992000" />
     </task>
     <servers />
   </component>
