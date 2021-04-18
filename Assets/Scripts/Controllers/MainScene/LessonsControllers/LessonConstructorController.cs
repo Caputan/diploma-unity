@@ -77,13 +77,13 @@ namespace Controllers
                     _massForCopy[0] = firstPath;
                     break;
                 case LoadingParts.DownloadVideo:
-                    _localText[2] = _destination[1]+ "\\" + text;
+                    _localText[2] = _destination[1] + text;
                     _texts[loadingParts].transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = 
                         _localText[2].Split('\\').Last();
                     _massForCopy[2] = firstPath;
                     break;
                 case LoadingParts.DownloadPDF:
-                    _localText[1] = _destination[3]+ "\\" + text;
+                    _localText[1] = _destination[3] + text;
                     _texts[loadingParts].transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = 
                         _localText[1].Split('\\').Last();
                     _massForCopy[1] = firstPath;

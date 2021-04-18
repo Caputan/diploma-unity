@@ -12,3 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a8d1c310fa841459b422764fa0bce52, type: 3}
   m_Name: DataConfig
   m_EditorClassIdentifier: 
+  lessonID: 17

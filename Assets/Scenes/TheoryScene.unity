@@ -196,7 +196,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
@@ -228,6 +228,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 801124744}
+  - component: {fileID: 801124745}
   m_Layer: 0
   m_Name: ControllerInitializer
   m_TagString: Untagged
@@ -249,6 +250,27 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &801124745
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 801124743}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 547072be4baf4a208cd9ea537cd40d29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _data: {fileID: 11400000, guid: 03ce9d4a4a736824db6636fb7cc1202c, type: 2}
+  _library: {fileID: 11400000, guid: 8527d7f87a23f0b45bc6f567a36e8d7c, type: 2}
+  canvas: {fileID: 171018249}
+  theoryPrefab: {fileID: 5558593657996745692, guid: 11d14898cd4aa2542a892d652893d209,
+    type: 3}
+  pdfPrefab: {fileID: 7868027905282949829, guid: 128c7c4f5ee20ef46b20fba87f7f2229,
+    type: 3}
+  libraryPrefab: {fileID: 6601951751408707313, guid: 541725f5693c6e44b938a8b58eddda32,
+    type: 3}
 --- !u!1 &1423623221
 GameObject:
   m_ObjectHideFlags: 0

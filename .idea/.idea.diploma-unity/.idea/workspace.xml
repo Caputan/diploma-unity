@@ -20,64 +20,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9a27c574-4a30-4862-a74f-153a103b04b8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Ghostscript.NET.1.2.3.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Ghostscript.NET.1.2.3/.signature.p7s" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Ghostscript.NET.1.2.3/Ghostscript.NET.1.2.3.nupkg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Ghostscript.NET.1.2.3/Ghostscript.NET.1.2.3.nupkg.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Ghostscript.NET.1.2.3/lib.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Ghostscript.NET.1.2.3/lib/net40.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Ghostscript.NET.1.2.3/lib/net40/Ghostscript.NET.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Ghostscript.NET.1.2.3/lib/net40/Ghostscript.NET.dll.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Ghostscript.NET.1.2.3/lib/net40/Ghostscript.NET.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Ghostscript.NET.1.2.3/lib/net40/Ghostscript.NET.xml.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/TheoryScene.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scenes/TheoryScene.unity" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scenes/TheoryScene.unity.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/GameContext/GameContextWithViewsTheory.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/GameContext/GameContextWithViewsTheory.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/TheoryScene.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/TheoryScene/TheoryControllers.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/TheoryScene/TheoryControllers/PDFReaderUIInitialization.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/TheoryScene/TheoryControllers/PdfReaderUIInitialization.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/TheoryScene/TheoryControllers/TheoryController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/TheoryScene/TheoryControllers/TheoryController.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/TheoryScene/TheoryControllers/TheoryUIInitialization.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/TheoryScene/TheoryControllers/TheoryUIInitialization.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/TheoryScene/TheorySceneInitialization.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/TheoryScene/TheorySceneInitialization.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/TheoryScene/UIController.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/TheoryScene/UIController/UIControllerTheoryScene.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/TheoryScene/UIController/UIControllerTheoryScene.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Enums/LoadingPartsTheoryScene.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Enums/LoadingPartsTheoryScene.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Interfaces/ITheorySceneButton.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Interfaces/ITheorySceneButton.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/PDFWorker.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/PDFWorker/PDFReader.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/PDFWorker/PDFReader.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/PauseUI.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/TheoryUI.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/TheoryUI/PDFReaderUI.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/TheoryUI/PDFReaderUI/PDFReaderUIFactory.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/TheoryUI/PDFReaderUI/PDFReaderUIFactory.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/TheoryUI/TheoryLibraryTree.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/TheoryUI/TheoryLibraryTree/TheoryLibraryTreeFactory.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/TheoryUI/TheoryLibraryTree/TheoryLibraryTreeFactory.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/TheoryUI/TheoryLibraryTree/TheoryLibraryTreeLogic.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/TheoryUI/TheoryLibraryTree/TheoryLibraryTreeLogic.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/TheoryUI/TheoryUIAddButtonsToDictionary.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/TheoryUI/TheoryUIAddButtonsToDictionary.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/TheoryUI/TheoryUIFactory.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/TheoryUI/TheoryUIFactory.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/TheoryUI/TheoryUILogic.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/TheoryUI/TheoryUILogic.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Packages/Ghostscript.NET.1.2.3/.signature.p7s" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Packages/Ghostscript.NET.1.2.3/Ghostscript.NET.1.2.3.nupkg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Packages/Ghostscript.NET.1.2.3/lib/net40/Ghostscript.NET.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Packages/Ghostscript.NET.1.2.3/lib/net40/Ghostscript.NET.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/TheoryScene/ImageForPage.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/TheoryScene/ImageForPage.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/TheoryScene/LibraryButton.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/TheoryScene/LibraryButton.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/TheoryScene/Theory.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/TheoryScene/Theory.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/TheoryScene/TheoryControllers/LibraryTreeController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/TheoryScene/TheoryControllers/LibraryTreeController.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/TheoryScene/TheoryControllers/LibraryTreeUIInitialization.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/TheoryScene/TheoryControllers/LibraryTreeUIInitialization.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Distr/gs9540w64.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.diploma-unity/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.diploma-unity/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enums/LoadingParts.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enums/LoadingParts.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages.config" beforeDir="false" afterPath="$PROJECT_DIR$/packages.config" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SceneData/DataConfig.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SceneData/DataConfig.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/TheoryScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/TheoryScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/LessonsControllers/LessonConstructorController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/LessonsControllers/LessonConstructorController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/TheoryScene/TheoryControllers/PdfReaderUIInitialization.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/TheoryScene/TheoryControllers/PdfReaderUIInitialization.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/TheoryScene/TheoryControllers/TheoryController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/TheoryScene/TheoryControllers/TheoryController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/TheoryScene/TheoryControllers/TheoryUIInitialization.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/TheoryScene/TheoryControllers/TheoryUIInitialization.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/TheoryScene/TheorySceneInitialization.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/TheoryScene/TheorySceneInitialization.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interfaces/IFileManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Interfaces/IFileManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/FileManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/FileManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PDFWorker/PDFReader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PDFWorker/PDFReader.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/MachinePartsDB.bytes" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StreamingAssets/MachinePartsDB.bytes" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,6 +66,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Controllers/Loader3DS.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/OtherControllers/Controllers.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Interfaces/IInitialization.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9577AC7A-62EF-4317-9789-031239BA8798/75/4a7565af/Directory.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9577AC7A-62EF-4317-9789-031239BA8798/f8/73158266/Environment.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Interfaces/ICleanData.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -113,7 +79,6 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/LessonsControllers/LessonSceneControllerInitialization.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/GameObjectCreatingOnScene/GameObjectComponents.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/GameObjectCreatingOnScene/GameObjectCreator.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/LessonsControllers/LessonConstructorController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/Library/LibraryUIAddButtonsToDictionary.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/Library/LabraryUIFactory.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/Library/LibraryUIFactory.cs" />
@@ -131,16 +96,21 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/Interfaces/IImageTheory.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Enums/TypeOfTheory.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/TheoryUI/TheoryComplex.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/PDFWorker/PDFReader.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/TheoryUI/PDFReaderUI/PDFReaderUILogic.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/TheoryUI/TheoryLibraryTree/TheoryLibraryTreeLogic.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/TheoryUI/PDFReaderUI/PDFReaderUIFactory.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/TheoryScene/TheoryControllers/PDFReaderUIInitialization.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/TheoryUI/TheoryLibraryTree/TheoryLibraryTreeFactory.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/TheoryUI/TheoryUIAddButtonsToDictionary.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/TheoryScene/TheoryControllers/LibraryTreeController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/TheoryScene/TheoryControllers/LibraryTreeUIInitialization.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/LessonsControllers/LessonConstructorController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Interfaces/IFileManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/PDFWorker/PDFReader.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/TheoryScene/TheoryControllers/TheoryController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Managers/FileManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/TheoryScene/TheoryControllers/TheoryUIInitialization.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/TheoryScene/TheoryControllers/PdfReaderUIInitialization.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/TheoryScene/TheoryControllers/TheoryController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/TheoryScene/TheorySceneInitialization.cs" />
     </changedPaths>
   </component>
@@ -162,6 +132,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="XThreadsFramesViewSplitterKey" value="0.50097847" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -184,10 +155,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="12596">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" />
+      <option name="pid" value="12596" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -222,6 +193,8 @@
       <workItem from="1618403544966" duration="7025000" />
       <workItem from="1618474590621" duration="6227000" />
       <workItem from="1618483740236" duration="4992000" />
+      <workItem from="1618491210973" duration="271000" />
+      <workItem from="1618574794464" duration="15283000" />
     </task>
     <servers />
   </component>

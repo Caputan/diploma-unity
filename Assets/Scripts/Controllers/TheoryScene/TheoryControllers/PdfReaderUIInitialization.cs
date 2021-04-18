@@ -1,5 +1,6 @@
 ﻿using System.IO;
 using Diploma.Interfaces;
+using Diploma.Managers;
 using TMPro;
 using UI.TheoryUI.PDFReaderUI;
 using UnityEngine;
@@ -9,11 +10,13 @@ namespace Controllers.TheoryScene.TheoryControllers
 {
     public sealed class PdfReaderUIInitialization: IInitialization
     {
-        private readonly Transform _parent;
+        private readonly FileManager _fileManager;
+        private readonly GameObject _parent;
         private PDFReaderUIFactory _factory;
 
-        public PdfReaderUIInitialization(GameObject prefab, Transform parent)
+        public PdfReaderUIInitialization(GameObject prefab, GameObject parent,FileManager fileManager)
         {
+            _fileManager = fileManager;
             _parent = parent;
             _factory = new PDFReaderUIFactory(prefab);
         }
@@ -22,7 +25,7 @@ namespace Controllers.TheoryScene.TheoryControllers
         {
             #region Creation PDF Reader
 
-            var paths = Directory.GetFiles(mainPath);
+            var paths = Directory.GetFiles(Path.Combine(mainPath,_fileManager.GetStorage()));
             
             foreach(var path in paths)
             {
@@ -31,7 +34,8 @@ namespace Controllers.TheoryScene.TheoryControllers
                 Texture2D tex = new Texture2D(2, 2);
                 tex.LoadImage(bytes);
                 //создание элемента UI
-                var pdfReaderObject = _factory.Create(_parent);
+                
+                var pdfReaderObject = _factory.Create(_parent.transform.GetChild(2).GetChild(0).GetChild(0).transform);
                 //pdfReaderObject.transform.localPosition = new Vector3(0, 0, 0);
                 pdfReaderObject.GetComponentInChildren<RawImage>().texture = tex;
 

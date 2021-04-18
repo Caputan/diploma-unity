@@ -11,27 +11,36 @@ namespace PDFWorker
     public sealed class PDFReader
     {
         private readonly FileManager _fileManager;
-        
+        private readonly string _positionPath;
+
         private string _fileName;
         private string _inputPdfFile;
         
-        public PDFReader(FileManager fileManager)
+        public PDFReader(FileManager fileManager,string positionPath)
         {
+            //"LocalPDFDocumentsInImages"
             _fileManager = fileManager;
-            _fileManager.CreateFileFolder("LocalPDFDocumentsInImages");
+            _positionPath = positionPath;
+            _fileManager.CreateFileFolder(_positionPath);
         }
 
         public void RaedFile(string inputPdfFile)
         {
             _inputPdfFile = inputPdfFile;
             var numberOfPages = GetNumberOfPages(inputPdfFile);
-            var destinationPath = _fileManager.CreateFileFolder("LocalPDFDocumentsInImages"+"\\"+
-                Path.GetFileNameWithoutExtension(_inputPdfFile).
-                Split('\\').Last());
+            var destinationPath = _fileManager.CreateFileFolder(_positionPath+ 
+                     "\\"+ 
+                     Path.GetFileNameWithoutExtension(_inputPdfFile).
+                     Split('\\').Last());
             for (int i = 1; i < numberOfPages; i++)
             {
                 ConvertPageToImage(i,destinationPath);
             }
+        }
+
+        public void DeleteStorage()
+        {
+            _fileManager.DeleteFolder(_positionPath);
         }
         
         private static int GetNumberOfPages(String FilePath)

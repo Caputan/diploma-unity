@@ -33,14 +33,13 @@ namespace Controllers.TheoryScene.TheoryControllers
         public void Initialization()
         {
             #region Theory UI Creation
-
+            //нужен этот объект
             var TheoryUI = _theoryUIFactory.Create(_canvas.transform);
             TheoryUI.transform.localPosition = new Vector3(0,0,0);
             
             
             TheoryUIButtons = new List<Button>();
             TheoryUIButtons.AddRange(TheoryUI.GetComponentsInChildren<Button>());
-            
             var LessonConstructorUIAddButtonsToDictionary = new TheoryUIAddButtonsToDictionary(
                 TheoryUIButtons,
                 _gameContextWithViews
