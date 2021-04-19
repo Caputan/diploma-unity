@@ -2,49 +2,144 @@
 using Diploma.Controllers;
 using Diploma.Enums;
 using Diploma.Interfaces;
+using Interfaces;
 using UnityEngine;
 
 namespace Controllers.TheoryScene.UIController
 {
     public class UIControllerTheoryScene: IInitialization, ICleanData
     {
-        private readonly GameContextWithUI _gameContextWithUI;
-        private readonly ExitController _exitController;
-        private readonly BackController _backController;
-        private readonly OptionsController _optionsController;
-        private readonly TheoryController _theoryController;
+        private readonly GameContextWithViewsTheory _gameContextWithViewsTheory;
+        private readonly GameContextWithUITheory _gameContextWithUITheory;
         private readonly LoadingSceneController _loadingSceneController;
+        private readonly TheoryController _theoryController;
+        private readonly TheoryController _libraryController;
         private readonly GameObject _backGround;
         private ErrorHandler _errorHandler;
         private LoadingPartsTheoryScene _currentPosition;
-        private ErrorCodes _error;
 
-        public UIControllerTheoryScene(GameContextWithUI gameContextWithUI,
-            ExitController exitController,
-            BackController backController,
+        public UIControllerTheoryScene(
+            GameContextWithViewsTheory gameContextWithViewsTheory,
+            GameContextWithUITheory gameContextWithUITheory,
+            LoadingSceneController loadingSceneController,
             TheoryController theoryController,
-            OptionsController optionsController,
-            LoadingSceneController loadingSceneController
+            TheoryController libraryController
         )
         {
-            _error = ErrorCodes.None;
-            _gameContextWithUI = gameContextWithUI;
-            _exitController = exitController;
-            _backController = backController;
-            _theoryController = theoryController;
-            _optionsController = optionsController;
+            _gameContextWithViewsTheory = gameContextWithViewsTheory;
+            _gameContextWithUITheory = gameContextWithUITheory;
             _loadingSceneController = loadingSceneController;
+            _theoryController = theoryController;
+            _libraryController = libraryController;
+
             _backGround = GameObject.Find("BackGround");
-            
+            ShowUIByUIType(LoadingPartsTheoryScene.FirstOpen);
         }
         public void Initialization()
         {
-            throw new System.NotImplementedException();
+
+            foreach (var value in _gameContextWithUITheory.UILogic)
+            {
+                Debug.Log(value.Key);
+                var i = (ITheorySceneButton)value.Value;
+                i.LoadNext += ShowUIByUIType;
+            }
+            // var j = (ITheorySceneButton) _gameContextWithUITheory.UILogic[LoadingPartsTheoryScene.LoadPractise];
+            // j.LoadNext += ShowUIByUIType;
+            //RebindBack(false);
+            foreach (var value in _gameContextWithUITheory.UITreeLogic)
+            {
+                Debug.Log(value.Key);
+                var i = (ILibraryOnSceneButton)value.Value;
+                i.LoadNext += ShowLibraryObject;
+            }
         }
 
         public void CleanData()
         {
-            throw new System.NotImplementedException();
+            foreach (var value in _gameContextWithUITheory.UILogic)
+            {
+                Debug.Log(value.Key);
+                var i = (ITheorySceneButton)value.Value;
+                i.LoadNext -= ShowUIByUIType;
+            }
+            foreach (var value in _gameContextWithUITheory.UITreeLogic)
+            {
+                Debug.Log(value.Key);
+                var i = (ILibraryOnSceneButton)value.Value;
+                i.LoadNext -= ShowLibraryObject;
+            }
+        }
+        
+        private void HideUI(GameObject Controller)
+        {
+            Controller.SetActive(false);
+        }
+
+        public void HideAllUI()
+        {
+            foreach (var controller in _gameContextWithUITheory.UiControllers)
+            {
+                HideUI(controller.Value);
+            }
+        }
+        
+        
+        private void ShowLibraryObject(int obj)
+        {
+            
+        }
+
+        private void RebindBack(bool buttonType)
+        {
+            //не работает. переделать на 2 кнопки
+            if (buttonType)
+            {
+                
+                var i = (ITheorySceneButton)_gameContextWithUITheory.UILogic[LoadingPartsTheoryScene.CloseLibrary];
+                i.LoadNext += ShowUIByUIType;
+            }
+            else
+            {
+                var i = (ITheorySceneButton)_gameContextWithUITheory.UILogic[LoadingPartsTheoryScene.ExitToMain];
+                i.LoadNext += ShowUIByUIType;
+            }
+        }
+        
+        public void ShowUIByUIType(LoadingPartsTheoryScene id)
+        {
+            HideAllUI();
+            switch (id)
+            {
+                case LoadingPartsTheoryScene.FirstOpen:
+                    _theoryController.Initialization();
+                    Initialization();
+                    break;
+                case LoadingPartsTheoryScene.ExitToMain:
+                    _theoryController.RemoveDocumentPng();
+                    Debug.Log("GoingToMenu");
+                    _loadingSceneController.LoadNextScene(0);
+                    break;
+                case LoadingPartsTheoryScene.LoadPractise:
+                    Debug.Log("GoingToPractice");
+                    _loadingSceneController.LoadNextScene(2);
+                    break;
+                case LoadingPartsTheoryScene.CloseLibrary:
+                    _libraryController.CleanData();
+                    _theoryController.Initialization();
+                    _gameContextWithViewsTheory.TheoryButtons[LoadingPartsTheoryScene.LoadPractise].
+                        gameObject.SetActive(true);
+                    RebindBack(false);
+                    break;
+                case LoadingPartsTheoryScene.OpenLibrary:
+                    _theoryController.CleanData();
+                    _libraryController.Initialization();
+                    _gameContextWithViewsTheory.TheoryButtons[LoadingPartsTheoryScene.LoadPractise].
+                        gameObject.SetActive(false);
+                    RebindBack(true);
+                    break;
+            }
+            Debug.Log(id);
         }
     }
 }

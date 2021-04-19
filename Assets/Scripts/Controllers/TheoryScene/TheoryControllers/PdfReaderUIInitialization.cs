@@ -1,4 +1,5 @@
 ﻿using System.IO;
+using Diploma.Controllers;
 using Diploma.Interfaces;
 using Diploma.Managers;
 using TMPro;
@@ -11,21 +12,24 @@ namespace Controllers.TheoryScene.TheoryControllers
     public sealed class PdfReaderUIInitialization: IInitialization
     {
         private readonly FileManager _fileManager;
-        private readonly GameObject _parent;
+        private readonly GameContextWithViewsTheory _gameContextWithViewsTheory;
+        private Transform _parent;
         private PDFReaderUIFactory _factory;
 
-        public PdfReaderUIInitialization(GameObject prefab, GameObject parent,FileManager fileManager)
+        public PdfReaderUIInitialization(GameObject prefab, FileManager fileManager,
+            GameContextWithViewsTheory gameContextWithViewsTheory)
         {
             _fileManager = fileManager;
-            _parent = parent;
+            _gameContextWithViewsTheory = gameContextWithViewsTheory;
+
             _factory = new PDFReaderUIFactory(prefab);
         }
         public void Initialization() { }
-        public void ReadANewPdfDocument(string mainPath)
+        public void ReadANewPdfDocument()
         {
             #region Creation PDF Reader
-
-            var paths = Directory.GetFiles(Path.Combine(mainPath,_fileManager.GetStorage()));
+            _parent = _gameContextWithViewsTheory.Parents[0];
+            var paths = Directory.GetFiles(_gameContextWithViewsTheory.nameOfFolder);
             
             foreach(var path in paths)
             {
@@ -35,12 +39,21 @@ namespace Controllers.TheoryScene.TheoryControllers
                 tex.LoadImage(bytes);
                 //создание элемента UI
                 
-                var pdfReaderObject = _factory.Create(_parent.transform.GetChild(2).GetChild(0).GetChild(0).transform);
+                GameObject pdfReaderObject = _factory.Create(_parent);
                 //pdfReaderObject.transform.localPosition = new Vector3(0, 0, 0);
                 pdfReaderObject.GetComponentInChildren<RawImage>().texture = tex;
 
             }
             #endregion
+        }
+
+        public void UnloadDocument()
+        {
+            for(int i = 0;i<_parent.childCount; i++)
+            {
+                Object.Destroy(_parent.GetChild(i).gameObject);
+            }
+            
         }
     }
 }

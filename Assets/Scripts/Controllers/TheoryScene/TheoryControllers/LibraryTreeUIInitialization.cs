@@ -13,18 +13,20 @@ namespace Controllers.TheoryScene.TheoryControllers
 {
     public class LibraryTreeUIInitialization: IInitialization
     {
-        private readonly Transform _treeParent;
+        
+        private readonly GameContextWithViewsTheory _gameContextWithViewsTheory;
         private readonly string _types;
         private readonly AdditionalInfomationLibrary _library;
+        private Transform _treeParent;
         private TheoryLibraryTreeFactory _theoryLibraryTreeFactory;
         public LibraryTreeUIInitialization(
             GameObject prefabTreeWindow,
-            Transform treeParent,
+            GameContextWithViewsTheory gameContextWithViewsTheory,
             string types,
             AdditionalInfomationLibrary library
         )
         {
-            _treeParent = treeParent;
+            _gameContextWithViewsTheory = gameContextWithViewsTheory;
             _types = types;
             _library = library;
 
@@ -34,16 +36,12 @@ namespace Controllers.TheoryScene.TheoryControllers
         public void Initialization()
         {
             #region Library Tree UI Creation
-
-            var sm = _treeParent.GetChild(4).GetChild(0).GetChild(0).transform;
-            
+            _treeParent = _gameContextWithViewsTheory.Parents[1];
             foreach (var libraryItem in _types.Split(','))
             {
                 if (libraryItem != "")
                 {
-                    Debug.Log(libraryItem);
-                    //надо будет добавить на всяки случай проверку на пустую строку или пробел
-                    var libraryTreeUI = _theoryLibraryTreeFactory.Create(sm);
+                    var libraryTreeUI = _theoryLibraryTreeFactory.Create(_treeParent);
                     libraryTreeUI.GetComponent<TextMeshProUGUI>().text =
                         _library.libraryObjcets[Convert.ToInt32(libraryItem)].name;
                     libraryTreeUI.GetComponent<Button>().onClick.AddListener(() => OpenLibraryItem(libraryItem));

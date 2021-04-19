@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Linq;
+using Diploma.Controllers;
 using Diploma.Managers;
 using Ghostscript.NET;
 using iTextSharp.text.pdf;
@@ -12,15 +13,16 @@ namespace PDFWorker
     {
         private readonly FileManager _fileManager;
         private readonly string _positionPath;
-
+        private readonly GameContextWithViewsTheory _gameContextWithViewsTheory;
         private string _fileName;
         private string _inputPdfFile;
         
-        public PDFReader(FileManager fileManager,string positionPath)
+        public PDFReader(FileManager fileManager,string positionPath,GameContextWithViewsTheory gameContextWithViewsTheory)
         {
             //"LocalPDFDocumentsInImages"
             _fileManager = fileManager;
             _positionPath = positionPath;
+            _gameContextWithViewsTheory = gameContextWithViewsTheory;
             _fileManager.CreateFileFolder(_positionPath);
         }
 
@@ -29,9 +31,10 @@ namespace PDFWorker
             _inputPdfFile = inputPdfFile;
             var numberOfPages = GetNumberOfPages(inputPdfFile);
             var destinationPath = _fileManager.CreateFileFolder(_positionPath+ 
-                     "\\"+ 
-                     Path.GetFileNameWithoutExtension(_inputPdfFile).
-                     Split('\\').Last());
+                                                                 "\\"+ 
+                                                                 Path.GetFileNameWithoutExtension(_inputPdfFile).
+                                                                     Split('\\').Last());
+            _gameContextWithViewsTheory.SetNameOfFolder(destinationPath);
             for (int i = 1; i < numberOfPages; i++)
             {
                 ConvertPageToImage(i,destinationPath);

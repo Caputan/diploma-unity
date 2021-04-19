@@ -7,26 +7,24 @@ using UnityEngine.UI;
 
 namespace UI.TheoryUI
 {
-    public class TheoryUILogic: ITheorySceneButton, IInitialization
+    public class TheoryUILogic: ITheorySceneButton, IInitialization, ICleanData
     {
-       
+        private readonly LoadingPartsTheoryScene _loadingPartsTheoryScene;
+        private readonly Button _button;
         
-        private readonly Dictionary<LoadingPartsTheoryScene,Button> _buttonLogic;
         public event Action<LoadingPartsTheoryScene> LoadNext;
         
-        public TheoryUILogic(Dictionary<LoadingPartsTheoryScene,Button> buttonLogic
+        public TheoryUILogic(LoadingPartsTheoryScene loadingPartsTheoryScene,Button button
         )
         {
-            _buttonLogic = buttonLogic;
+            _loadingPartsTheoryScene = loadingPartsTheoryScene;
+            _button = button;
             
         }
         public void Initialization()
         {
-            foreach (var button in _buttonLogic)
-            {
-                button.Value.onClick.RemoveAllListeners();
-                button.Value.onClick.AddListener(()=> SwitchToNextMenu(button.Key));
-            }
+            _button.onClick.RemoveAllListeners();
+            _button.onClick.AddListener(()=> SwitchToNextMenu(_loadingPartsTheoryScene));
         }
 
         public void SwitchToNextMenu(LoadingPartsTheoryScene loadingParts)
@@ -34,6 +32,10 @@ namespace UI.TheoryUI
             LoadNext?.Invoke(loadingParts);
         }
 
-        
+
+        public void CleanData()
+        {
+            _button.onClick.RemoveAllListeners();
+        }
     }
 }

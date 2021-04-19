@@ -2,11 +2,10 @@
 {
     public enum LoadingPartsTheoryScene
     {
+        FirstOpen = 0,
         LoadPractise = 1,
-        PauseMenu = 2,
-        CloseMenu = 3,
-        //Next = 9,
-        //Back = 10,
-        ExitToMain = 11,
+        CloseLibrary = 2,
+        OpenLibrary = 3,
+        ExitToMain = 4
     }
 }
