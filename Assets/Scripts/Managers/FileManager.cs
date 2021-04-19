@@ -27,6 +27,10 @@ namespace Diploma.Managers
             return File.Exists(filePath);
         }
 
+        public string GetStorage()
+        {
+            return _storage;
+        }
 
         /// <inheritdoc />
         public string CreateFileFolder(string FileId)
@@ -37,10 +41,9 @@ namespace Diploma.Managers
         }
 
         /// <inheritdoc />
-        public void DeleteFolder(int guideId)
+        public void DeleteFolder(string folder)
         {
-            var folderPath = Path.Combine(_storage, guideId.ToString());
-            Directory.Delete(folderPath, true);
+            Directory.Delete(folder, true);
         }
     }
 }

@@ -1,12 +1,10 @@
 ﻿using System.Collections.Generic;
 using Data;
-using Diploma.Constructor;
 using Diploma.Interfaces;
-using Diploma.Managers;
 using Diploma.Tables;
 using GameObjectCreating;
 using UnityEngine;
-
+using UnityEngine.Serialization;
 
 
 namespace Diploma.Controllers
@@ -15,7 +13,7 @@ namespace Diploma.Controllers
     {
 
         [SerializeField] private ImportantDontDestroyData _data;
-        
+        [SerializeField] private Material material;
         
         
         private GameContextWithLogic _gameContextWithLogic;
@@ -53,7 +51,7 @@ namespace Diploma.Controllers
             DataBaseController.SetTable(tables[0]);
             Assemblies Assembly = (Assemblies)DataBaseController.GetRecordFromTableById(lesson.Lesson_Assembly_Id);
             
-            var GameObjectFactory = new GameObjectFactory();
+            var GameObjectFactory = new GameObjectFactory(false,material);
             var Pool = new PoolOfObjects(GameObjectFactory,_gameContextWithLogic);
             var GameObjectInitilization = new GameObjectInitialization(Pool, Assembly);
             

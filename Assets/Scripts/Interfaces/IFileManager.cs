@@ -20,7 +20,7 @@ namespace Interfaces
         /// <param name="guideId">Id of the guide.</param>
         /// <param name="fileName">Name of the file.</param>
 
-        void DeleteFolder(int guideId);
+        void DeleteFolder(string folder);
 
    
     }

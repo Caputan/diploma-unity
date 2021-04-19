@@ -1,8 +1,11 @@
-﻿using Controllers;
+﻿using System.Collections;
+using Controllers;
+using Coroutine;
+using Controllers.MainScene.LessonsControllers;
 using Diploma.Enums;
 using Diploma.Interfaces;
+using Interfaces;
 using UnityEngine;
-using Debug = UnityEngine.Debug;
 
 namespace Diploma.Controllers
 {
@@ -18,6 +21,7 @@ namespace Diploma.Controllers
         private readonly LessonConstructorController _lessonConstructorController;
         private readonly OptionsController _optionsController;
         private readonly LoadingSceneController _loadingSceneController;
+        private readonly ScreenShotController _screenShotController;
         private readonly GameObject _backGround;
         private ErrorHandler _errorHandler;
         private LoadingParts _currentPosition;
@@ -31,7 +35,8 @@ namespace Diploma.Controllers
             FileManagerController fileManagerController,
             LessonConstructorController lessonConstructorController,
             OptionsController optionsController,
-            LoadingSceneController loadingSceneController
+            LoadingSceneController loadingSceneController,
+            ScreenShotController screenShotController
         )
         {
             _error = ErrorCodes.None;
@@ -43,20 +48,41 @@ namespace Diploma.Controllers
             _lessonConstructorController = lessonConstructorController;
             _optionsController = optionsController;
             _loadingSceneController = loadingSceneController;
+            _screenShotController = screenShotController;
             _backGround = GameObject.Find("BackGround");
             
         }
 
         public void Initialization()
         {
+            
             foreach (var value in _gameContextWithUI.UILogic)
             {
-                var i =  value.Value;
+                Debug.Log(value.Key);
+                var i = (IMenuButton) value.Value;
                 i.LoadNext += ShowUIByUIType;
             }
+            _lessonConstructorController.TakeScreenShoot += TakeScreenShoot;
             HideAllUI();
+            
             _errorHandler = new ErrorHandler(_gameContextWithUI.UiControllers[LoadingParts.LoadError]);
             ShowUIByUIType(LoadingParts.LoadStart);
+        }
+
+        private void TakeScreenShoot(string obj)
+        {
+            HideAllUI();
+            _backGround.SetActive(false);
+            _screenShotController.TakeAScreanShoot(obj);
+            WaitForTakingScreenShot().StartCoroutine(out _);
+            
+        }
+
+        private IEnumerator WaitForTakingScreenShot()
+        {
+            yield return new WaitForEndOfFrame();
+            ShowUIByUIType(LoadingParts.LoadMain);
+            _backGround.SetActive(true);
         }
 
         private void HideUI(GameObject Controller)
@@ -122,9 +148,9 @@ namespace Diploma.Controllers
                         _gameContextWithUI.UiControllers[LoadingParts.LoadMain].SetActive(true);
                         // _backGround.SetActive(false);
                         _currentPosition = LoadingParts.LoadMain;
-                        _lessonConstructorController.SetTextInTextBox(LoadingParts.DownloadModel,"Выберите деталь (*.3ds");
-                        _lessonConstructorController.SetTextInTextBox(LoadingParts.DownloadVideo,"Выберите видео-фаил (*.mp4)");
-                        _lessonConstructorController.SetTextInTextBox(LoadingParts.DownloadPDF,"Выберите текстовый фаил(*.pdf)");
+                        _lessonConstructorController.SetTextInTextBox(LoadingParts.DownloadModel,"Выберите деталь (*.3ds)","");
+                        _lessonConstructorController.SetTextInTextBox(LoadingParts.DownloadVideo,"Выберите видео-фаил (*.mp4)","");
+                        _lessonConstructorController.SetTextInTextBox(LoadingParts.DownloadPDF,"Выберите текстовый фаил(*.pdf)","");
                     }
                     else
                     {
@@ -164,9 +190,9 @@ namespace Diploma.Controllers
                     {
                         // _backGround.SetActive(false);
                         _lessonConstructorController.CreateALesson();
-                        _backController.WhereIMustBack(_currentPosition);
-                        _gameContextWithUI.UiControllers[LoadingParts.LoadMain].SetActive(true);
-                        _currentPosition = LoadingParts.LoadMain;
+                        //_backController.WhereIMustBack(_currentPosition);
+                        //_gameContextWithUI.UiControllers[LoadingParts.LoadMain].SetActive(true);
+                        //_currentPosition = LoadingParts.LoadMain;
                     } else
                     {
                         _backController.WhereIMustBack(_currentPosition);
@@ -219,9 +245,10 @@ namespace Diploma.Controllers
         {
             foreach (var value in _gameContextWithUI.UILogic)
             {
-                var i = value.Value;
+                var i = (IMenuButton)value.Value;
                 i.LoadNext -= ShowUIByUIType;
             }
+            _lessonConstructorController.TakeScreenShoot -= TakeScreenShoot;
         }
     }
 }

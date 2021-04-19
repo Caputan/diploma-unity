@@ -12,10 +12,11 @@ namespace Diploma.Extensions
         }
 
 
-        public static GameObject AddRigidBody(this GameObject gameObject,float mass)
+        public static GameObject AddRigidBody(this GameObject gameObject,float mass,bool gravity)
         { 
             var component = gameObject.GetOrAddComponent<Rigidbody>();
-            component.mass = mass; 
+            component.mass = mass;
+            component.useGravity = gravity;
             return gameObject;
         }
 
@@ -32,6 +33,12 @@ namespace Diploma.Extensions
             return gameObject;
         }
 
+        public static GameObject SetNewMaterial(this GameObject gameObject, Material material)
+        {
+            var component = gameObject.GetOrAddComponent<MeshRenderer>();
+            component.material = material;
+            return gameObject;
+        }
         // public static GameObject AddMeshFilter(this GameObject gameObject, Mesh mesh)
         // {
         //     var component = gameObject.GetOrAddComponent<MeshFilter>();

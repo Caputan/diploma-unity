@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Data;
 using Diploma.Controllers;
 using Diploma.Enums;
 using Diploma.Interfaces;
@@ -19,6 +20,7 @@ namespace Controllers
 
         private readonly GameObject _prefabConstructor;
         private readonly GameObject _prefabPlate;
+        private readonly AdditionalInfomationLibrary _additionalInfomationLibrary;
         private LessonConstructorUIFactory _lessonConstructor;
         private List<Button> ConstructorButtons;
         private GameObject parentForLessons;
@@ -30,7 +32,8 @@ namespace Controllers
             List<IDataBase> tables,
             GameObject Canvas,
             GameObject PrefabConstructor,
-            GameObject PrefabPlate
+            GameObject PrefabPlate,
+            AdditionalInfomationLibrary additionalInfomationLibrary
             )
         {
             _gameContextWithViews = gameContextWithViews;
@@ -41,6 +44,7 @@ namespace Controllers
             _canvas = Canvas;
             _prefabConstructor = PrefabConstructor;
             _prefabPlate = PrefabPlate;
+            _additionalInfomationLibrary = additionalInfomationLibrary;
             _lessonConstructor = new LessonConstructorUIFactory(_prefabConstructor);
             
         }
@@ -60,19 +64,24 @@ namespace Controllers
                 ConstructorButtons,
                 _gameContextWithViews,
                 _gameContextWithLogic,
-                _dataBaseController,
-                _tables,
                 _prefabPlate,
-                parentForLessons
+                parentForLessons,
+                _additionalInfomationLibrary
                 );
             LessonConstructorUIAddButtonsToDictionary.Initialization();
             var ConstructorLogic = new LessonConstructorUILogic(_gameContextWithViews.LessonConstructorButtons);
             ConstructorLogic.Initialization();
             _gameContextWithUI.AddUIToDictionary(LoadingParts.LoadCreationOfLesson, Constructor);
             _gameContextWithUI.AddUILogic(LoadingParts.LoadCreationOfLesson,ConstructorLogic);
-            _gameContextWithViews.AddTextBoxesToListInConstructor(LoadingParts.DownloadModel,Constructor.transform.GetChild(4).gameObject);
-            _gameContextWithViews.AddTextBoxesToListInConstructor(LoadingParts.DownloadPDF,Constructor.transform.GetChild(6).gameObject);
-            _gameContextWithViews.AddTextBoxesToListInConstructor(LoadingParts.DownloadVideo,Constructor.transform.GetChild(8).gameObject);
+            _gameContextWithViews.AddTextBoxesToListInConstructor(LoadingParts.DownloadModel,
+                Constructor.transform.GetChild(4).gameObject);
+            _gameContextWithViews.AddTextBoxesToListInConstructor(LoadingParts.DownloadPDF,
+                Constructor.transform.GetChild(6).gameObject);
+            _gameContextWithViews.AddTextBoxesToListInConstructor(LoadingParts.DownloadVideo,
+                Constructor.transform.GetChild(8).gameObject);
+            _gameContextWithViews.AddTextBoxesToListInConstructor(LoadingParts.SetNameToLesson,
+                Constructor.transform.GetChild(11).gameObject);
+
             #endregion
         }
     }

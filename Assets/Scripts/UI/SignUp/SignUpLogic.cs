@@ -10,7 +10,7 @@ using UnityEngine.EventSystems;
 
 namespace Diploma.UI
 {
-    public class SignUpLogic: IUIObject, IInitialization
+    public class SignUpLogic: IMenuButton, IInitialization
     {
         private readonly Dictionary<LoadingParts, Button> _buttons;
         

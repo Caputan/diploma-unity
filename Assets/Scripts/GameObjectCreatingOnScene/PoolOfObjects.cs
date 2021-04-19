@@ -4,6 +4,7 @@ using System.Linq;
 using Diploma.Controllers;
 using Managers;
 using UnityEngine;
+using Object = UnityEngine.Object;
 
 namespace GameObjectCreating
 {
@@ -68,7 +69,7 @@ namespace GameObjectCreating
 
         public void RemovePool()
         {
-            GameObject.Destroy(_rootPool);
+            Object.Destroy(_rootPool);
         }
     }
 }

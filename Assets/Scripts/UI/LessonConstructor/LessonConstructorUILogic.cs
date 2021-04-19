@@ -9,7 +9,7 @@ using UnityEngine.UI;
 
 namespace Diploma.UI
 {
-    public class LessonConstructorUILogic: IUIObject, IInitialization
+    public class LessonConstructorUILogic: IMenuButton, IInitialization
     {
         public event Action<LoadingParts> LoadNext;
         

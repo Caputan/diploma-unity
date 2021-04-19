@@ -16,20 +16,15 @@ namespace Diploma.Controllers
 {
     public sealed class FileManagerController: IInitialization, IDataBaseFileManager
     {
-        private readonly GameContextWithUI _gameContextWithUI;
-        private readonly string[] _destinationPath;
-        public DataBaseController DataBaseController;
-        public List<IDataBase> Tables;
-        public Loader3DS Loader3Ds;
+      
+        
 
         private ErrorCodes _error;
         
         
 
-        public FileManagerController(GameContextWithUI gameContextWithUI,string[] destinationPath)
+        public FileManagerController()
         {
-            _gameContextWithUI = gameContextWithUI;
-            _destinationPath = destinationPath;
             FileBrowser.SetFilters(true, new FileBrowser.Filter("Assemblies", ".3ds"),
                 new FileBrowser.Filter("Text Files", ".doc", ".pdf", ".docx"),
                 new FileBrowser.Filter("Videos", ".mp4"));
@@ -39,11 +34,11 @@ namespace Diploma.Controllers
         }
 
         public void Initialization() { }
-        public event Action<LoadingParts,string> newText;
+        public event Action<LoadingParts,string,string> newText;
 
-        public void ShowNewText(LoadingParts loadingParts, string text)
+        public void ShowNewText(LoadingParts loadingParts, string text,string firstPath)
         {
-            newText?.Invoke(loadingParts, text);
+            newText?.Invoke(loadingParts, text,firstPath);
         }
 
         public void ShowLoadDialog()
@@ -83,22 +78,21 @@ namespace Diploma.Controllers
                 string[] localPath = new string[1];
                 LoadingParts parts;
                 
-                string[] splitedString = 
-                    FileBrowserHelpers.GetFilename(FileBrowser.Result[0]).Split('\\');
+                string splitedString = 
+                    FileBrowserHelpers.GetFilename(FileBrowser.Result[0]);
                 switch (fileTypes)
                 {
                     case FileTypes.Assembly:
-                        var isFormatTrue = splitedString.Last().Split('.');
+                        var isFormatTrue = splitedString.Split('\\').Last().Split('.');
                         if (isFormatTrue.Last() != "3ds")
                         {
                             _error = ErrorCodes.WrongFormatError;
-                            splitedString[0] = @"Выберите деталь (*.3ds)";
+                            splitedString = @"Выберите деталь (*.3ds)";
                         }
                         else
                         {
-                            localPath[0] = Path.Combine(_destinationPath[0],
-                                FileBrowserHelpers.GetFilename(FileBrowser.Result[0])
-                            );
+                            localPath[0] = FileBrowser.Result[0];
+                          
                             _error = ErrorCodes.None;
                         }
                         parts = LoadingParts.DownloadModel;
@@ -108,16 +102,15 @@ namespace Diploma.Controllers
                         // DataBaseController.AddNewRecordToTable(localPath);
                         break;
                     case FileTypes.Text:
-                        isFormatTrue = splitedString.Last().Split('.');
+                        isFormatTrue = splitedString.Split('\\').Last().Split('.');
                         if (isFormatTrue.Last() != "pdf")
                         {
                             _error = ErrorCodes.WrongFormatError;
-                            splitedString[0] = "Выберите текст (*.pdf)";
+                            splitedString = "Выберите текстовый фаил(*.pdf)";
                         }
                         else
                         {
-                            localPath[0] = Path.Combine(_destinationPath[3],
-                                FileBrowserHelpers.GetFilename(FileBrowser.Result[0]));
+                            localPath[0] = FileBrowser.Result[0];
                             
                             _error = ErrorCodes.None;
                         }
@@ -128,16 +121,15 @@ namespace Diploma.Controllers
                         // DataBaseController.AddNewRecordToTable(localPath);
                         break;
                     case FileTypes.Video:
-                        isFormatTrue = splitedString.Last().Split('.');
+                        isFormatTrue = splitedString.Split('\\').Last().Split('.');
                         if (isFormatTrue.Last() != "mp4")
                         {
                             _error = ErrorCodes.WrongFormatError;
-                            splitedString[0] = "Выберите видео (*.mp4)";
+                            splitedString = "Выберите видео-фаил (*.mp4)";
                         }
                         else
                         {
-                            localPath[0] = Path.Combine(_destinationPath[1],
-                                FileBrowserHelpers.GetFilename(FileBrowser.Result[0]));
+                            localPath[0] = FileBrowser.Result[0];
                             _error = ErrorCodes.None;
                         }
                         parts = LoadingParts.DownloadVideo;
@@ -150,7 +142,7 @@ namespace Diploma.Controllers
                         throw new Exception("TAK DELAT NELZYA");
                 }
                 
-                ShowNewText(parts,splitedString.Last());
+                ShowNewText(parts,splitedString,localPath[0]);
                 
             }
         }

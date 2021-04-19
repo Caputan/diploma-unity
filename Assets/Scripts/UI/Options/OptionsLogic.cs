@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 namespace UI.Options
 {
-    public class OptionsLogic:  IInitialization,IUISilder
+    public class OptionsLogic:  IInitialization,IMenuButton,IUISilder
     {
         private readonly Dictionary<LoadingParts, Button> _buttons;
         private readonly Slider _slider;

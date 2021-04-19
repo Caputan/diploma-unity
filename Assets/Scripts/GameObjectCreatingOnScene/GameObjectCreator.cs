@@ -30,6 +30,7 @@ namespace GameObjectCreating
             var gameObjectComponents = (GameObjectComponents) _gameObjectComponents.Clone();
             gameObjectComponents.Collider = _gameObject.GetComponent<MeshCollider>();
             gameObjectComponents.Rigidbody = _gameObject.GetComponent<Rigidbody>();
+            gameObjectComponents.MeshRenderer = _gameObject.GetComponent<MeshRenderer>();
             
             var gameObjectModel = new GameObjectModel(gameObjectComponents,gameObjectStruct);
             _gameContext.AddGameObjectToList(_gameObject.GetInstanceID(),gameObjectModel);

@@ -29,9 +29,11 @@ namespace Diploma.Tables
 
         public void AddNewRecord(SQLiteConnection connection, string[] typeParams)
         {
+            if (typeParams[0] == null || typeParams[0]=="")
+                typeParams[0] = "-1";
             var newType = new Types()
             {
-                Type_Image = typeParams[0]
+                TypeS = typeParams[0]
             };
             connection.Insert(newType);
         }
@@ -42,6 +44,6 @@ namespace Diploma.Tables
     {
         [PrimaryKey, AutoIncrement]
         public int Type_Id { get; set; }
-        public string Type_Image { get; set; }
+        public string TypeS { get; set; }
     }
 }
