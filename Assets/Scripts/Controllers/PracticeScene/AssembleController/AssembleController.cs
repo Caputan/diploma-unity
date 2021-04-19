@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using Coroutine;
 using UnityEngine;
 
@@ -7,10 +8,10 @@ namespace Diploma.Controllers.AssembleController
     public class AssembleController
     {
         private GameObject _basePart;
-        private string[] _disassembleOrder = 
+        private readonly string[] _disassembleOrder = 
         {
-            "Ось прижимного рычага",
-            "Ось прижимного рычага",
+            // "Ось прижимного рычага",
+            // "Ось прижимного рычага",
             "Рычаг суппорта",
             "Рычаг суппорта",
             "Болт M10x1.25x25",
@@ -30,10 +31,11 @@ namespace Diploma.Controllers.AssembleController
             "Направляющая колодок",
             "Кожух защитный"
         };
-        private GameObject[] _partsOfAssembly;
-        private GameObject _partToDisassemble;
+        private readonly GameObject[] _partsOfAssembly;
 
         private int _index;
+
+        private bool _isDisassembling;
 
         public AssembleController(GameObject basePart, GameObject[] partsOfAssembly)
         {
@@ -41,27 +43,34 @@ namespace Diploma.Controllers.AssembleController
             _basePart = basePart;
             _partsOfAssembly = partsOfAssembly;
 
+            _isDisassembling = true;
+
             PlayerController.OnPartClicked += StartDisassembling;
         }
 
         private void StartDisassembling(GameObject partOfAssembly)
         {
-            if (partOfAssembly.transform.parent.name == _disassembleOrder[_index])
+            if (_index == _disassembleOrder.Length)
             {
+                _isDisassembling = false;
+                _index--;
+                _partsOfAssembly[_index].GetComponent<MeshCollider>().enabled = true;
+            }
+            
+            if (partOfAssembly.transform.parent.name != _disassembleOrder[_index]) return;
+            if (_isDisassembling)
+            {
+                _partsOfAssembly[_index] = partOfAssembly;
                 _index++;
-                _partToDisassemble = partOfAssembly;
-                DisassemblePart();
+                partOfAssembly.GetComponent<MeshCollider>().enabled = false;
+                partOfAssembly.GetComponent<MeshRenderer>().enabled = false;
             }
             else
             {
-                // вызвать сообщение об ошибке
+                _index--;
+                _partsOfAssembly[_index].GetComponent<MeshCollider>().enabled = true;
+                partOfAssembly.GetComponent<MeshRenderer>().enabled = true;
             }
-        }
-
-        private void DisassemblePart()
-        {
-            _partToDisassemble.SetActive(false);
-            
         }
     }
 }

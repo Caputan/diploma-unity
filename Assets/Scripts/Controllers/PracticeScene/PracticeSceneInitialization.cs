@@ -60,7 +60,7 @@ namespace Diploma.Controllers
             
             var GameObjectFactory = new GameObjectFactory();
             var Pool = new PoolOfObjects(GameObjectFactory, _gameContextWithLogic);
-            // var GameObjectInitilization = new GameObjectInitialization(Pool, assembly, modelMaterial);
+            // var GameObjectInitialization = new GameObjectInitialization(Pool, assembly, modelMaterial);
 
             var playerInitialization = new PlayerInitialization(playerPrefab, spawnPoint);
 
@@ -73,7 +73,7 @@ namespace Diploma.Controllers
             _controllers.Add(playerInitialization);
             _controllers.Add(inventoryInitialization);
             _controllers.Add(assemblyInitialization);
-            // _controllers.Add(GameObjectInitilization);
+            // _controllers.Add(GameObjectInitialization);
             _controllers.Initialization();
         }
 

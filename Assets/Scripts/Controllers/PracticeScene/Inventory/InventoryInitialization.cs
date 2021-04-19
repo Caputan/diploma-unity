@@ -5,6 +5,7 @@ using Diploma.UI;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using Outline = QuickOutline.Scripts.Outline;
 
 namespace Controllers.PracticeScene.Inventory
 {
@@ -52,8 +53,12 @@ namespace Controllers.PracticeScene.Inventory
                 var inventorySlot = _inventorySlotFactory.Create(inventory.GetComponentsInChildren<RectTransform>()[2]);
 
                 part.tag = "Assembly";
-                part.AddComponent<MeshCollider>();
-                
+                // var partCollider = part.AddComponent<MeshCollider>();
+                // partCollider.convex = true;
+                var partRb = part.AddComponent<Rigidbody>();
+                partRb.useGravity = false;
+                partRb.isKinematic = true;
+
                 // прикрепить изображение к кнопке
                 
                 inventorySlot.GetComponentInChildren<TextMeshProUGUI>().text =

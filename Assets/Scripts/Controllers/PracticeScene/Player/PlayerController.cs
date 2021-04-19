@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Diploma.Interfaces;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController
 {
@@ -90,15 +91,11 @@ public class PlayerController
     public void OutlineAssemblyParts()
     {
         Ray hitRay = _camera.ScreenPointToRay(new Vector3(Screen.currentResolution.width / 2f, Screen.currentResolution.height / 2f, 0));
-        if (Physics.Raycast(hitRay, out var hit, 10))
-        {
-            if (hit.collider.CompareTag("Assembly"))
-            {
-                Debug.DrawLine(_camera.transform.position, hit.point);
-                _objectHitted = hit.collider.gameObject;
-                if(Input.GetMouseButtonDown(0))
-                    OnPartClicked?.Invoke(_objectHitted);
-            }
-        }
+        if (!Physics.Raycast(hitRay, out var hit, 10)) return;
+        if (!hit.collider.CompareTag("Assembly")) return;
+        _objectHitted = hit.collider.gameObject;
+        // _objectHitted.GetComponent<Outline>().enabled = true;
+        if(Input.GetMouseButtonDown(0))
+            OnPartClicked?.Invoke(_objectHitted);
     }
 }
