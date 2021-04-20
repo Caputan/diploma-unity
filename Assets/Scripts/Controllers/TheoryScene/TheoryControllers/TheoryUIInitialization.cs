@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Diploma.Controllers;
 using Diploma.Interfaces;
 using UI.TheoryUI;
@@ -14,6 +15,7 @@ namespace Controllers.TheoryScene.TheoryControllers
         private readonly GameObject _prefabMainWindow;
         private readonly GameContextWithViewsTheory _gameContextWithViews;
         private readonly GameContextWithUITheory _gameContextWithUITheory;
+        private readonly string _types;
         private TheoryUIFactory _theoryUIFactory;
         private List<Button> TheoryUIButtons;
         private GameObject TheoryUI;
@@ -24,13 +26,15 @@ namespace Controllers.TheoryScene.TheoryControllers
             GameObject canvas,
             GameObject prefabMainWindow,
             GameContextWithViewsTheory gameContextWithViews,
-            GameContextWithUITheory gameContextWithUITheory
+            GameContextWithUITheory gameContextWithUITheory,
+            string types
             )
         {
             _canvas = canvas;
             _prefabMainWindow = prefabMainWindow;
             _gameContextWithViews = gameContextWithViews;
             _gameContextWithUITheory = gameContextWithUITheory;
+            _types = types;
 
             _theoryUIFactory = new TheoryUIFactory(_prefabMainWindow);
         }
@@ -38,7 +42,6 @@ namespace Controllers.TheoryScene.TheoryControllers
         public void Initialization()
         {
             #region Theory UI Creation
-            //нужен этот объект
             TheoryUI = _theoryUIFactory.Create(_canvas.transform);
             TheoryUI.transform.localPosition = new Vector3(0,0,0);
             
@@ -51,9 +54,11 @@ namespace Controllers.TheoryScene.TheoryControllers
         {
             TheoryUIButtons = new List<Button>();
             TheoryUIButtons.AddRange(TheoryUI.GetComponentsInChildren<Button>());
+            var usingTypes =_types.Split(',');
             LessonConstructorUIAddButtonsToDictionary  = new TheoryUIAddButtonsToDictionary(
                 TheoryUIButtons,
-                _gameContextWithViews
+                _gameContextWithViews,
+                usingTypes
             );
             LessonConstructorUIAddButtonsToDictionary.Initialization();
 

@@ -36,7 +36,7 @@ namespace Controllers.TheoryScene.TheoryControllers
         }
         public void CleanData()
         {
-           _theoryUIInitialization.CleanData();
+           //_theoryUIInitialization.CleanData();
            UnloadDocument();
         }
         

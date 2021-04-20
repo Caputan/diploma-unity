@@ -59,7 +59,7 @@ namespace PDFWorker
             GhostscriptPngDevice dev = new GhostscriptPngDevice(GhostscriptPngDeviceType.Png256);
             dev.GraphicsAlphaBits = GhostscriptImageDeviceAlphaBits.V_4;
             dev.TextAlphaBits = GhostscriptImageDeviceAlphaBits.V_4;
-            dev.ResolutionXY = new GhostscriptImageDeviceResolution(290, 290);
+            dev.ResolutionXY = new GhostscriptImageDeviceResolution(594, 846);
             dev.InputFiles.Add(_inputPdfFile);
             dev.Pdf.FirstPage = pageNumber;
             dev.Pdf.LastPage = pageNumber;

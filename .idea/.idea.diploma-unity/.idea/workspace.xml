@@ -20,27 +20,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9a27c574-4a30-4862-a74f-153a103b04b8" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.diploma-unity/.idea/contentModel.xml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/Валы_и_оси.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/Валы_и_оси.pdf.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/Дисковый тормоз.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/Дисковый тормоз.pdf.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/Ременные_передачи.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/Ременные_передачи.pdf.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.diploma-unity/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.diploma-unity/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Brake Disassemble.anim.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Brake Disassemble.anim.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Brake.controller.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Brake.controller.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/PracticeScene/Brake.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/PracticeScene/Brake.prefab.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/TheoryScene/ImageForPage.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/TheoryScene/ImageForPage.prefab.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/TheoryScene/LibraryButton.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/TheoryScene/LibraryButton.prefab.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/TheoryScene/Theory.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/TheoryScene/Theory.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/TheoryScene/Theory.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/TheoryScene/Theory.prefab.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/LessonScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/LessonScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/TheoryScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/TheoryScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/PracticeScene/Inventory/InventoryInitialization.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/PracticeScene/Inventory/InventoryInitialization.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/PracticeScene/PracticeSceneInitialization.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/PracticeScene/PracticeSceneInitialization.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/TheoryScene/LibraryButton.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/TheoryScene/LibraryButton.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SceneData/Library.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SceneData/Library.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/TheoryScene/TheoryControllers/LibraryTreeController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/TheoryScene/TheoryControllers/LibraryTreeController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/TheoryScene/TheoryControllers/TheoryController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/TheoryScene/TheoryControllers/TheoryController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/TheoryScene/TheoryControllers/TheoryUIInitialization.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/TheoryScene/TheoryControllers/TheoryUIInitialization.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/TheoryScene/TheorySceneInitialization.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/TheoryScene/TheorySceneInitialization.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/TheoryScene/UIController/UIControllerTheoryScene.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/TheoryScene/UIController/UIControllerTheoryScene.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/LectionsDemonstration.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/LectionsDemonstration/PDFReader.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/LectionsDemonstration/PDFReader.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PDFWorker/PDFReader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PDFWorker/PDFReader.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/TheoryUI/TheoryUIAddButtonsToDictionary.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/TheoryUI/TheoryUIAddButtonsToDictionary.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/MachinePartsDB.bytes" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StreamingAssets/MachinePartsDB.bytes" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,21 +101,21 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/Managers/FileManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/TheoryScene/TheoryControllers/LibraryTreeUIInitialization.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/TheoryScene/GameContextTheory/GameContextWithViewsTheory.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/PDFWorker/PDFReader.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Interfaces/ILibraryOnSceneButton.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Enums/LoadingPartsTheoryScene.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/TheoryScene/TheoryControllers/PdfReaderUIInitialization.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/TheoryScene/TheoryControllers/LibraryTreeController.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/TheoryScene/TheoryControllers/TheoryController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/TheoryScene/GameContextTheory/GameContextWithUITheory.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/TheoryUI/TheoryUILogic.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/TheoryUI/TheoryLibraryTree/TheoryLibraryTreeLogic.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/PracticeScene/Inventory/InventoryInitialization.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/PracticeScene/PracticeSceneInitialization.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/TheoryScene/TheoryControllers/TheoryUIInitialization.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/UI/TheoryUI/TheoryUIAddButtonsToDictionary.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/TheoryScene/TheorySceneInitialization.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/TheoryScene/TheoryControllers/LibraryTreeController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/TheoryScene/TheoryControllers/TheoryController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/TheoryScene/UIController/UIControllerTheoryScene.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/TheoryScene/TheoryControllers/TheoryUIInitialization.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/TheoryScene/TheorySceneInitialization.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UI/TheoryUI/TheoryUIAddButtonsToDictionary.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/PDFWorker/PDFReader.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1oVh7QrK5P1QV67f8aHYDy536Km" />
@@ -201,7 +200,7 @@
       <workItem from="1618491210973" duration="271000" />
       <workItem from="1618574794464" duration="15283000" />
       <workItem from="1618820437617" duration="14136000" />
-      <workItem from="1618905906822" duration="2704000" />
+      <workItem from="1618905906822" duration="7052000" />
     </task>
     <servers />
   </component>
@@ -234,6 +233,32 @@
           <line>54</line>
           <properties documentPath="D:\Unity-Storage\Diploma\diploma-unity\Assets\Scripts\Controllers\UIController.cs" initialLine="54" />
           <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/Controllers/TheoryScene/UIController/UIControllerTheoryScene.cs</url>
+          <line>93</line>
+          <properties documentPath="D:\Unity-Storage\Diploma\diploma-unity\Assets\Scripts\Controllers\TheoryScene\UIController\UIControllerTheoryScene.cs" initialLine="93" containingFunctionPresentation="method 'ShowLibraryObject'">
+            <startOffsets>
+              <option value="3375" />
+            </startOffsets>
+            <endOffsets>
+              <option value="3463" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/UI/TheoryUI/TheoryUIAddButtonsToDictionary.cs</url>
+          <line>33</line>
+          <properties documentPath="D:\Unity-Storage\Diploma\diploma-unity\Assets\Scripts\UI\TheoryUI\TheoryUIAddButtonsToDictionary.cs" initialLine="33" containingFunctionPresentation="constructor 'TheoryUIAddButtonsToDictionary'">
+            <startOffsets>
+              <option value="1028" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1072" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="7" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

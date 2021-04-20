@@ -14,7 +14,7 @@ namespace Controllers.TheoryScene.UIController
         private readonly GameContextWithUITheory _gameContextWithUITheory;
         private readonly LoadingSceneController _loadingSceneController;
         private readonly TheoryController _theoryController;
-        private readonly TheoryController _libraryController;
+        private readonly LibraryTreeController _libraryController;
         private readonly AdditionalInfomationLibrary _additionalInfomationLibrary;
         private readonly GameObject _backGround;
         private ErrorHandler _errorHandler;
@@ -25,7 +25,7 @@ namespace Controllers.TheoryScene.UIController
             GameContextWithUITheory gameContextWithUITheory,
             LoadingSceneController loadingSceneController,
             TheoryController theoryController,
-            TheoryController libraryController,
+            LibraryTreeController libraryController,
             AdditionalInfomationLibrary additionalInfomationLibrary
         )
         {
@@ -91,10 +91,10 @@ namespace Controllers.TheoryScene.UIController
         private void ShowLibraryObject(int id)
         {
             _theoryController.CleanData();
-            _libraryController.Initialization();
+            _libraryController.Initialization(_additionalInfomationLibrary.libraryObjcets[id].file);
             _gameContextWithViewsTheory.TheoryButtons[LoadingPartsTheoryScene.LoadPractise].
                 gameObject.SetActive(false);
-            //_additionalInfomationLibrary.libraryObjcets[id].file
+            
             SetVisiableBack(true);
         }
 

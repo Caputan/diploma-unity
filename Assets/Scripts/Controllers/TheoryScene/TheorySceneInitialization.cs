@@ -25,9 +25,7 @@ namespace Controllers.TheoryScene
         [SerializeField] private GameObject libraryPrefab;
 
         [SerializeField] private string _pngStoragePath = "LocalPDFDocumentsInImages";
-       
-        private Transform _theoryParent;
-        private Transform _treeParent;
+        
 
         private GameContextWithViewsTheory _gameContextWithViewsTheory;
         private GameContextWithUITheory _gameContextWithUITheory;
@@ -39,10 +37,6 @@ namespace Controllers.TheoryScene
             _gameContextWithViewsTheory = new GameContextWithViewsTheory();
             _gameContextWithUITheory = new GameContextWithUITheory();
             
-            //не работает тк обращается к префабу
-            _theoryParent = theoryPrefab.transform;
-            _treeParent = theoryPrefab.transform;
-            //
             _fileManager = new FileManager();
             _pngStoragePath =Path.Combine(_fileManager.GetStorage(),
                 _pngStoragePath);
@@ -75,7 +69,8 @@ namespace Controllers.TheoryScene
                 canvas,
                 theoryPrefab,
                 _gameContextWithViewsTheory,
-                _gameContextWithUITheory
+                _gameContextWithUITheory,
+                Types.TypeS
                 );
 
             PdfReaderUIInitialization pdfReaderUIInitialization = new PdfReaderUIInitialization
@@ -103,14 +98,12 @@ namespace Controllers.TheoryScene
                 _library
             );
 
-            // TheoryController libraryController = new TheoryController(
-            //     pdfReaderUIInitialization,
-            //     /*library,*/,
-            //     _fileManager,
-            //     _pngStoragePath,//нужен другой временный буфер
-            //     _gameContextWithViewsTheory,
-            //     theoryUIInitialization
-            //     );
+            LibraryTreeController libraryController = new LibraryTreeController(
+                pdfReaderUIInitialization,
+                _fileManager,
+                _pngStoragePath,
+                _gameContextWithViewsTheory
+            );
 
            
             
@@ -128,7 +121,7 @@ namespace Controllers.TheoryScene
                 _gameContextWithUITheory,
                 loadingSceneController,
                 theoryController,
-                theoryController,
+                libraryController,
                 _library
             );
         }
