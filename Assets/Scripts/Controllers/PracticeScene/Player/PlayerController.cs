@@ -15,7 +15,7 @@ public class PlayerController
 
     private readonly Transform _pickUpParent;
     
-    private readonly float _gravity = 0f;
+    private readonly float _gravity = -12f;
 
     private readonly float _mouseSmoothTime = 0.02f;
     private Vector2 _currentMouseDelta = Vector2.zero;
@@ -91,7 +91,8 @@ public class PlayerController
     public void OutlineAssemblyParts()
     {
         Ray hitRay = _camera.ScreenPointToRay(new Vector3(Screen.currentResolution.width / 2f, Screen.currentResolution.height / 2f, 0));
-        if (!Physics.Raycast(hitRay, out var hit, 10)) return;
+        LayerMask boundingBoxMask = LayerMask.GetMask("BoundingBox");
+        if (!Physics.Raycast(hitRay, out var hit, 10, ~boundingBoxMask)) return;
         if (!hit.collider.CompareTag("Assembly")) return;
         _objectHitted = hit.collider.gameObject;
         // _objectHitted.GetComponent<Outline>().enabled = true;

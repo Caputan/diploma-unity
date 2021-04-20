@@ -45,31 +45,35 @@ namespace Diploma.Controllers.AssembleController
 
             _isDisassembling = true;
 
+            Debug.Log(_disassembleOrder.Length);
+            
             PlayerController.OnPartClicked += StartDisassembling;
         }
 
         private void StartDisassembling(GameObject partOfAssembly)
         {
+            if (partOfAssembly.transform.parent.name != _disassembleOrder[_index]) return;
+            if (_isDisassembling)
+            {
+                _partsOfAssembly[_index] = partOfAssembly;
+                partOfAssembly.GetComponent<MeshCollider>().enabled = false;
+                partOfAssembly.GetComponent<MeshRenderer>().enabled = false;
+                _index++;
+            }
+            else
+            {
+                partOfAssembly.GetComponent<MeshRenderer>().enabled = true;
+                _index--;
+                _partsOfAssembly[_index + 1].GetComponent<MeshCollider>().enabled = false;
+                if(_index != 0)
+                    _partsOfAssembly[_index].GetComponent<MeshCollider>().enabled = true;
+            }
+            
             if (_index == _disassembleOrder.Length)
             {
                 _isDisassembling = false;
                 _index--;
                 _partsOfAssembly[_index].GetComponent<MeshCollider>().enabled = true;
-            }
-            
-            if (partOfAssembly.transform.parent.name != _disassembleOrder[_index]) return;
-            if (_isDisassembling)
-            {
-                _partsOfAssembly[_index] = partOfAssembly;
-                _index++;
-                partOfAssembly.GetComponent<MeshCollider>().enabled = false;
-                partOfAssembly.GetComponent<MeshRenderer>().enabled = false;
-            }
-            else
-            {
-                _index--;
-                _partsOfAssembly[_index].GetComponent<MeshCollider>().enabled = true;
-                partOfAssembly.GetComponent<MeshRenderer>().enabled = true;
             }
         }
     }
