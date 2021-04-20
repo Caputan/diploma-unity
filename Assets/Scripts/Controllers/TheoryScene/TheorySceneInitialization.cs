@@ -128,7 +128,8 @@ namespace Controllers.TheoryScene
                 _gameContextWithUITheory,
                 loadingSceneController,
                 theoryController,
-                theoryController
+                theoryController,
+                _library
             );
         }
 

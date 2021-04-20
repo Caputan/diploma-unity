@@ -58,8 +58,8 @@ namespace Diploma.Controllers
             DataBaseController.SetTable(tables[0]);
             Assemblies assembly = (Assemblies)DataBaseController.GetRecordFromTableById(1);
             
-            var GameObjectFactory = new GameObjectFactory();
-            var Pool = new PoolOfObjects(GameObjectFactory, _gameContextWithLogic);
+            //var GameObjectFactory = new GameObjectFactory();
+            //var Pool = new PoolOfObjects(GameObjectFactory, _gameContextWithLogic);
             // var GameObjectInitialization = new GameObjectInitialization(Pool, assembly, modelMaterial);
 
             var playerInitialization = new PlayerInitialization(playerPrefab, spawnPoint);

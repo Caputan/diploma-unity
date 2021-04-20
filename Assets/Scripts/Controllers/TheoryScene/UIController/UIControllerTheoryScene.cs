@@ -1,4 +1,5 @@
 ﻿using Controllers.TheoryScene.TheoryControllers;
+using Data;
 using Diploma.Controllers;
 using Diploma.Enums;
 using Diploma.Interfaces;
@@ -14,6 +15,7 @@ namespace Controllers.TheoryScene.UIController
         private readonly LoadingSceneController _loadingSceneController;
         private readonly TheoryController _theoryController;
         private readonly TheoryController _libraryController;
+        private readonly AdditionalInfomationLibrary _additionalInfomationLibrary;
         private readonly GameObject _backGround;
         private ErrorHandler _errorHandler;
         private LoadingPartsTheoryScene _currentPosition;
@@ -23,7 +25,8 @@ namespace Controllers.TheoryScene.UIController
             GameContextWithUITheory gameContextWithUITheory,
             LoadingSceneController loadingSceneController,
             TheoryController theoryController,
-            TheoryController libraryController
+            TheoryController libraryController,
+            AdditionalInfomationLibrary additionalInfomationLibrary
         )
         {
             _gameContextWithViewsTheory = gameContextWithViewsTheory;
@@ -31,6 +34,7 @@ namespace Controllers.TheoryScene.UIController
             _loadingSceneController = loadingSceneController;
             _theoryController = theoryController;
             _libraryController = libraryController;
+            _additionalInfomationLibrary = additionalInfomationLibrary;
 
             _backGround = GameObject.Find("BackGround");
             ShowUIByUIType(LoadingPartsTheoryScene.FirstOpen);
@@ -44,15 +48,14 @@ namespace Controllers.TheoryScene.UIController
                 var i = (ITheorySceneButton)value.Value;
                 i.LoadNext += ShowUIByUIType;
             }
-            // var j = (ITheorySceneButton) _gameContextWithUITheory.UILogic[LoadingPartsTheoryScene.LoadPractise];
-            // j.LoadNext += ShowUIByUIType;
-            //RebindBack(false);
             foreach (var value in _gameContextWithUITheory.UITreeLogic)
             {
                 Debug.Log(value.Key);
                 var i = (ILibraryOnSceneButton)value.Value;
                 i.LoadNext += ShowLibraryObject;
             }
+
+            SetVisiableBack(false);
         }
 
         public void CleanData()
@@ -85,24 +88,31 @@ namespace Controllers.TheoryScene.UIController
         }
         
         
-        private void ShowLibraryObject(int obj)
+        private void ShowLibraryObject(int id)
         {
-            
+            _theoryController.CleanData();
+            _libraryController.Initialization();
+            _gameContextWithViewsTheory.TheoryButtons[LoadingPartsTheoryScene.LoadPractise].
+                gameObject.SetActive(false);
+            //_additionalInfomationLibrary.libraryObjcets[id].file
+            SetVisiableBack(true);
         }
 
-        private void RebindBack(bool buttonType)
+        private void SetVisiableBack(bool set)
         {
-            //не работает. переделать на 2 кнопки
-            if (buttonType)
+            if (set)
             {
-                
-                var i = (ITheorySceneButton)_gameContextWithUITheory.UILogic[LoadingPartsTheoryScene.CloseLibrary];
-                i.LoadNext += ShowUIByUIType;
+                _gameContextWithViewsTheory.TheoryButtons[LoadingPartsTheoryScene.ExitToMain].
+                    gameObject.SetActive(false);
+                _gameContextWithViewsTheory.TheoryButtons[LoadingPartsTheoryScene.CloseLibrary].
+                    gameObject.SetActive(true);
             }
             else
             {
-                var i = (ITheorySceneButton)_gameContextWithUITheory.UILogic[LoadingPartsTheoryScene.ExitToMain];
-                i.LoadNext += ShowUIByUIType;
+                _gameContextWithViewsTheory.TheoryButtons[LoadingPartsTheoryScene.ExitToMain].
+                    gameObject.SetActive(true);
+                _gameContextWithViewsTheory.TheoryButtons[LoadingPartsTheoryScene.CloseLibrary].
+                    gameObject.SetActive(false);
             }
         }
         
@@ -129,14 +139,7 @@ namespace Controllers.TheoryScene.UIController
                     _theoryController.Initialization();
                     _gameContextWithViewsTheory.TheoryButtons[LoadingPartsTheoryScene.LoadPractise].
                         gameObject.SetActive(true);
-                    RebindBack(false);
-                    break;
-                case LoadingPartsTheoryScene.OpenLibrary:
-                    _theoryController.CleanData();
-                    _libraryController.Initialization();
-                    _gameContextWithViewsTheory.TheoryButtons[LoadingPartsTheoryScene.LoadPractise].
-                        gameObject.SetActive(false);
-                    RebindBack(true);
+                    SetVisiableBack(false);
                     break;
             }
             Debug.Log(id);

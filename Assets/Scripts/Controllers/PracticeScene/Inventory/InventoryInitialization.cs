@@ -5,7 +5,7 @@ using Diploma.UI;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-using Outline = QuickOutline.Scripts.Outline;
+
 
 namespace Controllers.PracticeScene.Inventory
 {

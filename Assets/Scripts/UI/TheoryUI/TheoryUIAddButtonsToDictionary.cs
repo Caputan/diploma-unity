@@ -14,7 +14,7 @@ namespace UI.TheoryUI
         private readonly List<Button> _buttons;
         private readonly GameContextWithViewsTheory _gameContextWithViews;
         // нужно определеить кнопки
-        private readonly int[] _usedMenus = new[] {4, 1};
+        private readonly int[] _usedMenus = new[] {4 ,2, 1};
         public TheoryUIAddButtonsToDictionary(
             List<Button> buttons,
             GameContextWithViewsTheory gameContextWithViews
@@ -25,13 +25,9 @@ namespace UI.TheoryUI
             int i = 0;
             foreach (var button in _buttons)
             {
-                if (i < 2)
+                if (i <= 2)
                 {
                     _gameContextWithViews.AddTheoryButtons((LoadingPartsTheoryScene) _usedMenus[i], button);
-                    if (i == 0)
-                    {
-                        _gameContextWithViews.AddTheoryButtons((LoadingPartsTheoryScene) 2, button);
-                    }
                 }
                 else 
                     _gameContextWithViews.AddLibraryButtons(i-2,button);

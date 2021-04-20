@@ -265,12 +265,13 @@ MonoBehaviour:
   _data: {fileID: 11400000, guid: 03ce9d4a4a736824db6636fb7cc1202c, type: 2}
   _library: {fileID: 11400000, guid: 8527d7f87a23f0b45bc6f567a36e8d7c, type: 2}
   canvas: {fileID: 171018249}
-  theoryPrefab: {fileID: 5558593657996745692, guid: 11d14898cd4aa2542a892d652893d209,
+  theoryPrefab: {fileID: 5558593657996745692, guid: f849c04525960e840bf181082f38a37b,
     type: 3}
-  pdfPrefab: {fileID: 7868027905282949829, guid: 128c7c4f5ee20ef46b20fba87f7f2229,
+  pdfPrefab: {fileID: 7868027905282949829, guid: 8e55ad88a4dbbe443b93edf979ae11e8,
     type: 3}
-  libraryPrefab: {fileID: 6601951751408707313, guid: 541725f5693c6e44b938a8b58eddda32,
+  libraryPrefab: {fileID: 6601951751408707313, guid: 3383cc16673eba64786582b0f654dec5,
     type: 3}
+  _pngStoragePath: LocalPDFDocumentsInImages
 --- !u!1 &1423623221
 GameObject:
   m_ObjectHideFlags: 0

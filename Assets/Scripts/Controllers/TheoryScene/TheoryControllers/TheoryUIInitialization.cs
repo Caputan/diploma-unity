@@ -42,8 +42,8 @@ namespace Controllers.TheoryScene.TheoryControllers
             TheoryUI = _theoryUIFactory.Create(_canvas.transform);
             TheoryUI.transform.localPosition = new Vector3(0,0,0);
             
-            _gameContextWithViews.AddParentsToList(TheoryUI.transform.GetChild(4).GetChild(0).GetChild(0));
             _gameContextWithViews.AddParentsToList(TheoryUI.transform.GetChild(5).GetChild(0).GetChild(0));
+            _gameContextWithViews.AddParentsToList(TheoryUI.transform.GetChild(6).GetChild(0).GetChild(0));
             #endregion
         }
         
