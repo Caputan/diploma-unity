@@ -4,6 +4,7 @@ using Diploma.Interfaces;
 using Diploma.Managers;
 using UnityEngine;
 using PDFWorker;
+using UI.LoadingUI;
 using UI.TheoryUI;
 using UnityEngine.UI;
 
@@ -20,19 +21,22 @@ namespace Controllers.TheoryScene.TheoryControllers
         public TheoryController(PdfReaderUIInitialization pdfReaderUIInitialization,string pdfPath,
             FileManager fileManager,string pdfStoragePath,
             GameContextWithViewsTheory gameContextWithViewsTheory,
-            TheoryUIInitialization theoryUIInitialization)
+            TheoryUIInitialization theoryUIInitialization,
+            LoadingUILogic loadingUILogic)
         {
             _pdfReaderUIInitialization = pdfReaderUIInitialization;
             _pdfPath = pdfPath;
             _gameContextWithViewsTheory = gameContextWithViewsTheory;
             _theoryUIInitialization = theoryUIInitialization;
-            _pdfReader = new PDFReader(fileManager,pdfStoragePath,_gameContextWithViewsTheory);
+            _pdfReader = new PDFReader(
+                fileManager,pdfStoragePath,
+                _gameContextWithViewsTheory,_pdfReaderUIInitialization,
+                loadingUILogic);
         }
         public void Initialization()
         {
             _theoryUIInitialization.SetButtons();
             CreateDocumentLocaly(_pdfPath);
-            LoadDocument();
         }
         public void CleanData()
         {
@@ -50,11 +54,7 @@ namespace Controllers.TheoryScene.TheoryControllers
         {
             _pdfReader.DeleteStorage();
         }
-
-        private void LoadDocument()
-        {
-            _pdfReaderUIInitialization.ReadANewPdfDocument();
-        }
+        
 
         private void UnloadDocument()
         {

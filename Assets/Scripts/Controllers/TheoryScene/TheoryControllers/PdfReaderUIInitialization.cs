@@ -1,4 +1,6 @@
-﻿using System.IO;
+﻿using System.Collections;
+using System.IO;
+using Coroutine;
 using Diploma.Controllers;
 using Diploma.Interfaces;
 using Diploma.Managers;
@@ -25,7 +27,12 @@ namespace Controllers.TheoryScene.TheoryControllers
             _factory = new PDFReaderUIFactory(prefab);
         }
         public void Initialization() { }
-        public void ReadANewPdfDocument()
+        
+        public void ReadNextDoc()
+        {
+            ReadANewPdfDocument().StartCoroutine(out _);
+        }
+        public IEnumerator ReadANewPdfDocument()
         {
             #region Creation PDF Reader
             _parent = _gameContextWithViewsTheory.Parents[0];
@@ -45,8 +52,32 @@ namespace Controllers.TheoryScene.TheoryControllers
 
             }
             #endregion
+
+            yield return null;
         }
 
+        // public void ReadANewPdfDocument()
+        // {
+        //     #region Creation PDF Reader
+        //     _parent = _gameContextWithViewsTheory.Parents[0];
+        //     var paths = Directory.GetFiles(_gameContextWithViewsTheory.nameOfFolder);
+        //     
+        //     foreach(var path in paths)
+        //     {
+        //         //загрузка картинки в текстуру
+        //         byte[] bytes = File.ReadAllBytes(path);
+        //         Texture2D tex = new Texture2D(2, 2);
+        //         tex.LoadImage(bytes);
+        //         //создание элемента UI
+        //         
+        //         GameObject pdfReaderObject = _factory.Create(_parent);
+        //         //pdfReaderObject.transform.localPosition = new Vector3(0, 0, 0);
+        //         pdfReaderObject.GetComponentInChildren<RawImage>().texture = tex;
+        //
+        //     }
+        //     #endregion
+        // }
+        
         public void UnloadDocument()
         {
             for(int i = 0;i<_parent.childCount; i++)

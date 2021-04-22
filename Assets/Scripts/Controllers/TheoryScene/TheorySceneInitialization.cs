@@ -8,7 +8,10 @@ using Diploma.Controllers;
 using Diploma.Interfaces;
 using Diploma.Managers;
 using Diploma.Tables;
+using TMPro;
+using UI.LoadingUI;
 using UnityEngine;
+using UnityEngine.UI;
 using Types = Diploma.Tables.Types;
 
 namespace Controllers.TheoryScene
@@ -23,12 +26,17 @@ namespace Controllers.TheoryScene
         [SerializeField] private GameObject theoryPrefab;
         [SerializeField] private GameObject pdfPrefab;
         [SerializeField] private GameObject libraryPrefab;
-
+        [SerializeField] private GameObject _loadingCanvas;
+        [SerializeField] private TextMeshProUGUI _loadingText;
+        [SerializeField] private Slider _loadingSlider;
+        [SerializeField] private Canvas _canvas;
+        
         [SerializeField] private string _pngStoragePath = "LocalPDFDocumentsInImages";
         
 
         private GameContextWithViewsTheory _gameContextWithViewsTheory;
         private GameContextWithUITheory _gameContextWithUITheory;
+        private GameContextWithUI _gameContextWithUI;
         private Diploma.Controllers.Controllers _controllers;
         private FileManager _fileManager;
         private void Start()
@@ -36,6 +44,7 @@ namespace Controllers.TheoryScene
             
             _gameContextWithViewsTheory = new GameContextWithViewsTheory();
             _gameContextWithUITheory = new GameContextWithUITheory();
+            _gameContextWithUI = new GameContextWithUI();
             
             _fileManager = new FileManager();
             _pngStoragePath =Path.Combine(_fileManager.GetStorage(),
@@ -79,6 +88,13 @@ namespace Controllers.TheoryScene
                 _fileManager,
                 _gameContextWithViewsTheory
             );
+
+            LoadingUILogic loadingUILogic = new LoadingUILogic(
+                _loadingCanvas,
+                _loadingText,
+                _loadingSlider,
+                _canvas.transform
+            );
             
             TheoryController theoryController = new TheoryController
                 (
@@ -87,7 +103,7 @@ namespace Controllers.TheoryScene
                 _fileManager,
                 _pngStoragePath,
                 _gameContextWithViewsTheory,
-                theoryUIInitialization
+                theoryUIInitialization,loadingUILogic
                 );
            
             LibraryTreeUIInitialization libraryTreeUIInitialization = new LibraryTreeUIInitialization
@@ -102,7 +118,7 @@ namespace Controllers.TheoryScene
                 pdfReaderUIInitialization,
                 _fileManager,
                 _pngStoragePath,
-                _gameContextWithViewsTheory
+                _gameContextWithViewsTheory,loadingUILogic
             );
 
            

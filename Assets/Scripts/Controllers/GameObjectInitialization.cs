@@ -24,12 +24,13 @@ namespace Diploma.Controllers
 
         public void Initialization()
         {
-            // физически выбросили модель на сцену
+            // заменяем Loader на addressable
             Loader3DS loader3Ds = new Loader3DS();
             loader3Ds.StartParsing(
                 _assemblies.Assembly_Link,
                 _poolOfObjects._rootPool.gameObject,
                 _poolOfObjects);
+            
         }
     }
 }

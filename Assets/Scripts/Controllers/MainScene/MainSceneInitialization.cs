@@ -5,9 +5,12 @@ using Data;
 using Diploma.Interfaces;
 using Diploma.Managers;
 using Diploma.Tables;
+using TMPro;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.Serialization;
+using UnityEngine.UI;
 
 
 namespace Diploma.Controllers
@@ -19,7 +22,6 @@ namespace Diploma.Controllers
         [SerializeField] private GameObject MainParent;
         
         [SerializeField] private GameObject AuthPrefab;
-        
         [SerializeField] private GameObject SignUpPrefab;
 
         [SerializeField] private GameObject lessonCanvasPrefab;
@@ -37,13 +39,7 @@ namespace Diploma.Controllers
         [SerializeField] private ImportantDontDestroyData _data;
         [SerializeField] private AdditionalInfomationLibrary _library;
         [SerializeField] private Material _material;
-        
-        #region Don't Use
-        // [SerializeField] private GameObject togglePanelPrefab;
-        // [SerializeField] private GameObject ToggleGroup;
-
-        
-        #endregion
+        [SerializeField] private GameObject _loadingPrefab;
         
         [SerializeField] private FileManagerController _fileManager;
         [SerializeField] private Loader3DS _loader3Ds;
@@ -57,7 +53,6 @@ namespace Diploma.Controllers
         //public string[] destinationPath = new string[4];
         public void Start()
         {
-            
 
             #region DataBase initialization
             // потом надо на отдельные инициализаторы разбить чтоль....
@@ -190,9 +185,7 @@ namespace Diploma.Controllers
             var BackController = new BackController();
             
             var ExitController = new ExitController();
-            
-            var SceneLoader = new LoadingSceneController();
-            
+
             var ErrorHandlerInitialization = new ErrorMenuInitialization(
                 _gameContextWithViews,
                 _gameContextWithUI,
@@ -213,12 +206,7 @@ namespace Diploma.Controllers
                 _mainAudioMixer
                 );
             
-            var ChooseLessonController = new LessonsChooseController(
-                _gameContextWithViews,
-                _gameContextWithUI,
-                SceneLoader,
-                _data
-                );
+            
             
             var uiController = new UIController(
                 _gameContextWithUI,
@@ -228,9 +216,18 @@ namespace Diploma.Controllers
                 _fileManager,
                 LessonConstructorController,
                 OptionsController,
-                SceneLoader,
                 ScreenShootController
                 );
+            
+            var SceneLoader = new LoadingSceneController();
+            
+            var ChooseLessonController = new LessonsChooseController(
+                _gameContextWithViews,
+                _gameContextWithUI,
+                SceneLoader,
+                _data,
+                uiController
+            );
             //uiController.AddUIToDictionary();
             // добавить соответствующие менюшки ниже
             // с помощью uiController.AddUIToDictionary()
@@ -268,6 +265,7 @@ namespace Diploma.Controllers
             _controllers.Add(OptionsController);
             _controllers.Add(ErrorHandlerInitialization);
             _controllers.Add(ChooseLessonController);
+            _controllers.Add(SceneLoader);
             
             _controllers.Initialization();
             //этот контроллер идет самым последним

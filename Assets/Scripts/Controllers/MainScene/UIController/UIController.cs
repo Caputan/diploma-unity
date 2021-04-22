@@ -20,7 +20,6 @@ namespace Diploma.Controllers
         private readonly FileManagerController _fileManagerController;
         private readonly LessonConstructorController _lessonConstructorController;
         private readonly OptionsController _optionsController;
-        private readonly LoadingSceneController _loadingSceneController;
         private readonly ScreenShotController _screenShotController;
         private readonly GameObject _backGround;
         private ErrorHandler _errorHandler;
@@ -35,7 +34,6 @@ namespace Diploma.Controllers
             FileManagerController fileManagerController,
             LessonConstructorController lessonConstructorController,
             OptionsController optionsController,
-            LoadingSceneController loadingSceneController,
             ScreenShotController screenShotController
         )
         {
@@ -47,7 +45,7 @@ namespace Diploma.Controllers
             _fileManagerController = fileManagerController;
             _lessonConstructorController = lessonConstructorController;
             _optionsController = optionsController;
-            _loadingSceneController = loadingSceneController;
+            
             _screenShotController = screenShotController;
             _backGround = GameObject.Find("BackGround");
             

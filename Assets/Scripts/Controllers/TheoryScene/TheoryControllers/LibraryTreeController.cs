@@ -2,6 +2,7 @@
 using Diploma.Interfaces;
 using Diploma.Managers;
 using PDFWorker;
+using UI.LoadingUI;
 
 namespace Controllers.TheoryScene.TheoryControllers
 {
@@ -12,17 +13,20 @@ namespace Controllers.TheoryScene.TheoryControllers
         private PDFReader _pdfReader;
         public LibraryTreeController(PdfReaderUIInitialization pdfReaderUIInitialization,
             FileManager fileManager,string pdfStoragePath,
-            GameContextWithViewsTheory gameContextWithViewsTheory
+            GameContextWithViewsTheory gameContextWithViewsTheory,
+            LoadingUILogic loadingUILogic
             )
         {
             _pdfReaderUIInitialization = pdfReaderUIInitialization;
             _gameContextWithViewsTheory = gameContextWithViewsTheory;
-            _pdfReader = new PDFReader(fileManager,pdfStoragePath,_gameContextWithViewsTheory);
+            _pdfReader = new PDFReader(fileManager,pdfStoragePath,
+                _gameContextWithViewsTheory,_pdfReaderUIInitialization,
+                loadingUILogic);
         }
         public void Initialization(string pdfPath)
         {
             CreateDocumentLocaly(pdfPath);
-            LoadDocument();
+            
         }
         public void CleanData()
         {
@@ -39,10 +43,7 @@ namespace Controllers.TheoryScene.TheoryControllers
             _pdfReader.DeleteStorage();
         }
 
-        private void LoadDocument()
-        {
-            _pdfReaderUIInitialization.ReadANewPdfDocument();
-        }
+        
 
         private void UnloadDocument()
         {

@@ -20,26 +20,47 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9a27c574-4a30-4862-a74f-153a103b04b8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Валы_и_оси.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Валы_и_оси.pdf.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Дисковый тормоз.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Дисковый тормоз.pdf.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Ременные_передачи.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Ременные_передачи.pdf.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/TheoryScene/BG.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/TheoryScene/BG.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/TheoryScene/Loading.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/TheoryScene/Loading.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scenes/Test2.unity" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scenes/TestLoading.unity" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Interfaces/IGameContextUI.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Interfaces/IGameContextUI.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/LoadingUI.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/LoadingUI/LoadingUILogic.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/LoadingUI/LoadingUILogic.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.diploma-unity/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.diploma-unity/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/TheoryScene/LibraryButton.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/TheoryScene/LibraryButton.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SceneData/Library.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SceneData/Library.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AssetStoreOriginals.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Brake_Package.unitypackage.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AssetStoreOriginals/_SNAPS_PrototypingAssets.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Test2.unity.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AssetStoreOriginals/_SNAPS_PrototypingAssets/SciFi_Industrial.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/TestLoading.unity.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AssetStoreOriginals/_SNAPS_PrototypingAssets/SciFi_Industrial/Prefabs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AssetStoreOriginals/_SNAPS_PrototypingAssets/SciFi_Industrial/Prefabs/NestedPrefabs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AssetStoreOriginals/_SNAPS_PrototypingAssets/SciFi_Industrial/Structure.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AssetStoreOriginals/_SNAPS_PrototypingAssets/SciFi_Industrial/Structure/Floors_Ceilings.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AssetStoreOriginals/_SNAPS_PrototypingAssets/SciFi_Industrial/Structure/Walls.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/TheoryScene/Theory.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/TheoryScene/Theory.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/StartScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/StartScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/TheoryScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/TheoryScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/GameObjectInitialization.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/GameObjectInitialization.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/LessonsChooseController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/LessonsControllers/LessonsChooseController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/LessonsChooseController.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/LessonsControllers/LessonsChooseController.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/LoadingSceneController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/LoadingSceneController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/LoadingSceneController.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/GameContext/GameContextWithUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/GameContext/GameContextWithUI.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/MainSceneInitialization.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/MainSceneInitialization.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/UIController/UIController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/UIController/UIController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/TheoryScene/GameContextTheory/GameContextWithUITheory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/TheoryScene/GameContextTheory/GameContextWithUITheory.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/TheoryScene/TheoryControllers/LibraryTreeController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/TheoryScene/TheoryControllers/LibraryTreeController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/TheoryScene/TheoryControllers/PdfReaderUIInitialization.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/TheoryScene/TheoryControllers/PdfReaderUIInitialization.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/TheoryScene/TheoryControllers/TheoryController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/TheoryScene/TheoryControllers/TheoryController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/TheoryScene/TheoryControllers/TheoryUIInitialization.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/TheoryScene/TheoryControllers/TheoryUIInitialization.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/TheoryScene/TheorySceneInitialization.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/TheoryScene/TheorySceneInitialization.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/TheoryScene/UIController/UIControllerTheoryScene.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/TheoryScene/UIController/UIControllerTheoryScene.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/LectionsDemonstration.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/LectionsDemonstration/PDFReader.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/LectionsDemonstration/PDFReader.cs.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/PDFWorker/PDFReader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PDFWorker/PDFReader.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/TheoryUI/TheoryUIAddButtonsToDictionary.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/TheoryUI/TheoryUIAddButtonsToDictionary.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/generalClasses/SceneLoading.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/generalClasses/SceneLoading.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,27 +79,21 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9577AC7A-62EF-4317-9789-031239BA8798/ae/73053cd0/InvalidCastException.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9577AC7A-62EF-4317-9789-031239BA8798/18/a0967889/List`1.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../Unity/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/UI/Core/Button.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9577AC7A-62EF-4317-9789-031239BA8798/38/366218c6/KeyValuePair`2.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Controllers/Loader3DS.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/OtherControllers/Controllers.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Interfaces/IInitialization.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9577AC7A-62EF-4317-9789-031239BA8798/75/4a7565af/Directory.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9577AC7A-62EF-4317-9789-031239BA8798/f8/73158266/Environment.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Interfaces/ICleanData.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9577AC7A-62EF-4317-9789-031239BA8798/ad/928ff290/KeyValuePair`2.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9577AC7A-62EF-4317-9789-031239BA8798/38/366218c6/KeyValuePair`2.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Interfaces/IInitialization.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9577AC7A-62EF-4317-9789-031239BA8798/18/a0967889/List`1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Controllers/Loader3DS.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9577AC7A-62EF-4317-9789-031239BA8798/ae/73053cd0/InvalidCastException.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../Unity/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/UI/Core/Button.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Interfaces/ICleanData.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Controllers/LoadingSceneController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9577AC7A-62EF-4317-9789-031239BA8798/f8/73158266/Environment.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
-      <option value="$PROJECT_DIR$/Assets/Scripts/Extensions/Extensions.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/GameObjectCreatingOnScene/GameObjectFactory.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/MainSceneInitialization.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/LessonsControllers/LessonSceneControllerInitialization.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/GameObjectCreatingOnScene/GameObjectComponents.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/GameObjectCreatingOnScene/GameObjectCreator.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/UI/Library/LibraryUIAddButtonsToDictionary.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/Library/LabraryUIFactory.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/Library/LibraryUIFactory.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/Library/LibraryUILogic.cs" />
@@ -103,19 +118,33 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/TheoryScene/GameContextTheory/GameContextWithViewsTheory.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Interfaces/ILibraryOnSceneButton.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Enums/LoadingPartsTheoryScene.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/TheoryScene/TheoryControllers/PdfReaderUIInitialization.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/TheoryScene/GameContextTheory/GameContextWithUITheory.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/TheoryUI/TheoryUILogic.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/TheoryUI/TheoryLibraryTree/TheoryLibraryTreeLogic.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/PracticeScene/Inventory/InventoryInitialization.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/PracticeScene/PracticeSceneInitialization.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/TheoryScene/TheoryControllers/LibraryTreeController.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/TheoryScene/TheoryControllers/TheoryController.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/TheoryScene/UIController/UIControllerTheoryScene.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/TheoryScene/TheoryControllers/TheoryUIInitialization.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/TheoryScene/TheorySceneInitialization.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/TheoryUI/TheoryUIAddButtonsToDictionary.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UI/generalClasses/SceneLoading.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UI/LoadingUI/LoadingUIFactory.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UI/Inventory/IGameContextUI.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Interfaces/IGameContextUI.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/GameContext/GameContextWithUI.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/TheoryScene/GameContextTheory/GameContextWithUITheory.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/LoadingSceneInitialization.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/LessonsControllers/LessonsChooseController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/SceenLoader.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/SceneLoader.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/TheoryScene/TheoryControllers/PdfReaderUIInitialization.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/UIController/UIController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/TheoryScene/UIController/UIControllerTheoryScene.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/LoadingSceneController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/MainSceneInitialization.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/TheoryScene/TheoryControllers/TheoryController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/TheoryScene/TheoryControllers/LibraryTreeController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/TheoryScene/TheorySceneInitialization.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/PDFWorker/PDFReader.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UI/LoadingUI/LoadingUILogic.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/GameObjectInitialization.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1oVh7QrK5P1QV67f8aHYDy536Km" />
@@ -138,6 +167,7 @@
     <property name="XThreadsFramesViewSplitterKey" value="0.50097847" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
@@ -159,10 +189,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="21636">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="19572">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="21636" />
+      <option name="pid" value="19572" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -201,6 +231,9 @@
       <workItem from="1618574794464" duration="15283000" />
       <workItem from="1618820437617" duration="14136000" />
       <workItem from="1618905906822" duration="7052000" />
+      <workItem from="1618913748395" duration="1022000" />
+      <workItem from="1618917980781" duration="5374000" />
+      <workItem from="1619078802829" duration="17169000" />
     </task>
     <servers />
   </component>
@@ -233,32 +266,6 @@
           <line>54</line>
           <properties documentPath="D:\Unity-Storage\Diploma\diploma-unity\Assets\Scripts\Controllers\UIController.cs" initialLine="54" />
           <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/Controllers/TheoryScene/UIController/UIControllerTheoryScene.cs</url>
-          <line>93</line>
-          <properties documentPath="D:\Unity-Storage\Diploma\diploma-unity\Assets\Scripts\Controllers\TheoryScene\UIController\UIControllerTheoryScene.cs" initialLine="93" containingFunctionPresentation="method 'ShowLibraryObject'">
-            <startOffsets>
-              <option value="3375" />
-            </startOffsets>
-            <endOffsets>
-              <option value="3463" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/UI/TheoryUI/TheoryUIAddButtonsToDictionary.cs</url>
-          <line>33</line>
-          <properties documentPath="D:\Unity-Storage\Diploma\diploma-unity\Assets\Scripts\UI\TheoryUI\TheoryUIAddButtonsToDictionary.cs" initialLine="33" containingFunctionPresentation="constructor 'TheoryUIAddButtonsToDictionary'">
-            <startOffsets>
-              <option value="1028" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1072" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="7" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

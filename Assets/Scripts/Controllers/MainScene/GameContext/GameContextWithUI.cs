@@ -1,11 +1,12 @@
 ﻿using System.Collections.Generic;
 using Diploma.Enums;
+using Diploma.Interfaces;
 using Interfaces;
 using UnityEngine;
 
 namespace Diploma.Controllers
 {
-    public class GameContextWithUI
+    public class GameContextWithUI: IGameContextUI
     {
         public Dictionary<LoadingParts, GameObject> UiControllers;
         public Dictionary<LoadingParts, IUIObject> UILogic;
