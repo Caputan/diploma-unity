@@ -54,25 +54,26 @@ namespace Diploma.Controllers
             _gameContextWithUI = new GameContextWithUI();
             
             DataBaseController.SetTable(tables[1]);
-            Lessons lesson = (Lessons)DataBaseController.GetRecordFromTableById(1);
+            Lessons lesson = (Lessons)DataBaseController.GetRecordFromTableById(_data.lessonID);
             DataBaseController.SetTable(tables[0]);
-            Assemblies assembly = (Assemblies)DataBaseController.GetRecordFromTableById(1);
+            Assemblies assembly = (Assemblies)DataBaseController.GetRecordFromTableById(lesson.Lesson_Assembly_Id);
             
             //var GameObjectFactory = new GameObjectFactory();
             //var Pool = new PoolOfObjects(GameObjectFactory, _gameContextWithLogic);
-            // var GameObjectInitialization = new GameObjectInitialization(Pool, assembly, modelMaterial);
+            var GameObjectInitialization = new GameObjectInitialization(assembly);
 
             var playerInitialization = new PlayerInitialization(playerPrefab, spawnPoint);
 
-            var inventoryInitialization = new InventoryInitialization(_gameContextWithViews, _gameContextWithUI,
-                mainParent, inventoryPrefab, partOfAssembly, inventorySlotPrefab);
+            //var inventoryInitialization = new InventoryInitialization(_gameContextWithViews, _gameContextWithUI,
+               // mainParent, inventoryPrefab, partOfAssembly, inventorySlotPrefab);
 
-            var assemblyInitialization = new AssemblyInitialization(basePart, partOfAssembly);
+           // var assemblyInitialization = new AssemblyInitialization(basePart, partOfAssembly);
 
             _controllers = new Controllers();
             _controllers.Add(playerInitialization);
-            _controllers.Add(inventoryInitialization);
-            _controllers.Add(assemblyInitialization);
+            _controllers.Add(GameObjectInitialization);
+            //_controllers.Add(inventoryInitialization);
+            //_controllers.Add(assemblyInitialization);
             // _controllers.Add(GameObjectInitialization);
             _controllers.Initialization();
         }

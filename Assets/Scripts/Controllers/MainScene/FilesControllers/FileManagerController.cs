@@ -84,17 +84,17 @@ namespace Diploma.Controllers
                 {
                     case FileTypes.Assembly:
                         var isFormatTrue = splitedString.Split('\\').Last().Split('.');
-                        if (isFormatTrue.Last() != "3ds")
-                        {
-                            _error = ErrorCodes.WrongFormatError;
-                            splitedString = @"Выберите деталь (*.3ds)";
-                        }
-                        else
-                        {
+                        //if (isFormatTrue.Last() != "3ds")
+                        //{
+                            //_error = ErrorCodes.WrongFormatError;
+                            //splitedString = @"Выберите деталь (*.3ds)";
+                        //}
+                        //else
+                        //{
                             localPath[0] = FileBrowser.Result[0];
                           
                             _error = ErrorCodes.None;
-                        }
+                        //}
                         parts = LoadingParts.DownloadModel;
                         // FileBrowserHelpers.CopyFile(FileBrowser.Result[0], localPath[0]);
                         //

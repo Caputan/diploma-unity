@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using Controllers.TheoryScene.TheoryControllers;
@@ -38,16 +39,20 @@ namespace PDFWorker
             _fileManager.CreateFileFolder(_positionPath);
         }
 
-        public void RaedFile(string inputPdfFile)
+        public void RaedFile( Dictionary<int, string> libraryObjects)
         {
             _loadingUILogic.SetActiveLoading(true);
-            RaedFileCorutine(inputPdfFile).StartCoroutine(out _);
+            foreach (var library in libraryObjects)
+            {
+                RaedFileCorutine(library.Key,library.Value).StartCoroutine(out _);
+            }
+            
         }
         
-        public IEnumerator RaedFileCorutine(string inputPdfFile)
+        public IEnumerator RaedFileCorutine(int id, string inputPdfFile)
         {
             
-            yield return new WaitForSeconds(1);
+            yield return new WaitForEndOfFrame();
 
             _inputPdfFile = inputPdfFile;
             float numberOfPages = GetNumberOfPages(inputPdfFile);
@@ -55,7 +60,7 @@ namespace PDFWorker
                                                                  "\\"+ 
                                                                  Path.GetFileNameWithoutExtension(_inputPdfFile).
                                                                      Split('\\').Last());
-            _gameContextWithViewsTheory.SetNameOfFolder(destinationPath);
+            _gameContextWithViewsTheory.SetNameOfFolder(id,destinationPath);
             for (float i = 1; i < numberOfPages; i++)
             {
                 float paramForText =i*100/numberOfPages;
@@ -67,15 +72,12 @@ namespace PDFWorker
             }
 
             _loadingUILogic.SetActiveLoading(false);
-            LoadDocument();
+            //LoadDocument();
             
             yield return null;
         }
         
-        private void LoadDocument()
-        {
-            _pdfReaderUIInitialization.ReadNextDoc();
-        }
+        
 
         public void DeleteStorage()
         {

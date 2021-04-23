@@ -175,12 +175,12 @@ namespace Controllers
             File.Copy(_massForCopy[0],_localText[0]);
             _dataBaseController.SetTable(_tables[0]);
             Assemblies Assembly = (Assemblies)_dataBaseController.GetRecordFromTableById(Convert.ToInt32(lessonPacked[3]));
-            var GameObjectFactory = new GameObjectFactory(false,_material);
-            var Pool = new PoolOfObjects(GameObjectFactory,_gameContextWithLogic);
-            var GameObjectInitilization = new GameObjectInitialization(Pool, Assembly);
+            //ar GameObjectFactory = new GameObjectFactory(false,_material);
+            //var Pool = new PoolOfObjects(GameObjectFactory,_gameContextWithLogic);
+            var GameObjectInitilization = new GameObjectInitialization(Assembly);
             GameObjectInitilization.Initialization();
 
-            SetCameraNearObject(Pool);
+            //SetCameraNearObject(Pool);
             
             TakingScreen(_destination[2]+"\\"+lessonPacked[5]+".png");
             lessonPacked[0] = _destination[2] + "\\" + lessonPacked[5]+".png";

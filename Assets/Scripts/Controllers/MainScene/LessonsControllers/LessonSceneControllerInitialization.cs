@@ -51,9 +51,9 @@ namespace Diploma.Controllers
             DataBaseController.SetTable(tables[0]);
             Assemblies Assembly = (Assemblies)DataBaseController.GetRecordFromTableById(lesson.Lesson_Assembly_Id);
             
-            var GameObjectFactory = new GameObjectFactory(false,material);
-            var Pool = new PoolOfObjects(GameObjectFactory,_gameContextWithLogic);
-            var GameObjectInitilization = new GameObjectInitialization(Pool, Assembly);
+            //var GameObjectFactory = new GameObjectFactory(false,material);
+            //var Pool = new PoolOfObjects(GameObjectFactory,_gameContextWithLogic);
+            var GameObjectInitilization = new GameObjectInitialization(Assembly);
             
             //объекты в пуле
             //надо проверить как они в логике появляются или нет

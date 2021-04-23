@@ -2,6 +2,7 @@
 using Diploma.Controllers;
 using Diploma.Interfaces;
 using Diploma.Managers;
+using Diploma.Tables;
 using UnityEngine;
 using PDFWorker;
 using UI.LoadingUI;
@@ -13,12 +14,12 @@ namespace Controllers.TheoryScene.TheoryControllers
     public sealed class TheoryController: IInitialization, ICleanData
     {
         private readonly PdfReaderUIInitialization _pdfReaderUIInitialization;
-        private readonly string _pdfPath;
+        private readonly Texts _pdfPath;
         private readonly GameContextWithViewsTheory _gameContextWithViewsTheory;
         private readonly TheoryUIInitialization _theoryUIInitialization;
         private PDFReader _pdfReader;
        
-        public TheoryController(PdfReaderUIInitialization pdfReaderUIInitialization,string pdfPath,
+        public TheoryController(PdfReaderUIInitialization pdfReaderUIInitialization,Texts pdfPath,
             FileManager fileManager,string pdfStoragePath,
             GameContextWithViewsTheory gameContextWithViewsTheory,
             TheoryUIInitialization theoryUIInitialization,
@@ -36,7 +37,10 @@ namespace Controllers.TheoryScene.TheoryControllers
         public void Initialization()
         {
             _theoryUIInitialization.SetButtons();
-            CreateDocumentLocaly(_pdfPath);
+            Dictionary<int, string> obj = new Dictionary<int, string>();
+            obj.Add(_pdfPath.Text_Id,_pdfPath.Text_Link);
+            CreateDocumentLocaly(obj);
+            LoadDocumentTheory();
         }
         public void CleanData()
         {
@@ -44,10 +48,14 @@ namespace Controllers.TheoryScene.TheoryControllers
            UnloadDocument();
         }
         
-
-        private void CreateDocumentLocaly(string pdfPath)
+        private void LoadDocumentTheory()
         {
-            _pdfReader.RaedFile(pdfPath);
+            _pdfReaderUIInitialization.ReadNextDoc(0);
+        }
+
+        private void CreateDocumentLocaly(Dictionary<int, string> obj)
+        {
+            _pdfReader.RaedFile(obj);
         }
 
         public void RemoveDocumentPng()

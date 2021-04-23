@@ -99,7 +99,7 @@ namespace Controllers.TheoryScene
             TheoryController theoryController = new TheoryController
                 (
                 pdfReaderUIInitialization,
-                pdf.Text_Link,
+                pdf,
                 _fileManager,
                 _pngStoragePath,
                 _gameContextWithViewsTheory,
@@ -119,6 +119,8 @@ namespace Controllers.TheoryScene
                 _fileManager,
                 _pngStoragePath,
                 _gameContextWithViewsTheory,loadingUILogic
+                ,_library,
+                Types
             );
 
            

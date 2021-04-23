@@ -1,4 +1,5 @@
-﻿using Diploma.Interfaces;
+﻿using AssetBundle;
+using Diploma.Interfaces;
 using Diploma.Tables;
 using GameObjectCreating;
 using UnityEngine;
@@ -7,12 +8,10 @@ namespace Diploma.Controllers
 {
     public sealed class GameObjectInitialization: IInitialization
     {
-        private readonly PoolOfObjects _poolOfObjects;
         private readonly Assemblies _assemblies;
 
-        public GameObjectInitialization(PoolOfObjects poolOfObjects,Assemblies assemblies)
+        public GameObjectInitialization(Assemblies assemblies)
         {
-            _poolOfObjects = poolOfObjects;
             _assemblies = assemblies;
         }
         // public void Initialize()
@@ -25,12 +24,13 @@ namespace Diploma.Controllers
         public void Initialization()
         {
             // заменяем Loader на addressable
-            Loader3DS loader3Ds = new Loader3DS();
-            loader3Ds.StartParsing(
-                _assemblies.Assembly_Link,
-                _poolOfObjects._rootPool.gameObject,
-                _poolOfObjects);
-            
+            // Loader3DS loader3Ds = new Loader3DS();
+            // loader3Ds.StartParsing(
+            //     _assemblies.Assembly_Link,
+            //     _poolOfObjects._rootPool.gameObject,
+            //     _poolOfObjects);
+            LoadAssetBundleFromFile loadAssetBundleFromFile = new LoadAssetBundleFromFile();
+            loadAssetBundleFromFile.GetBaseObjects(_assemblies.Assembly_Link);
         }
     }
 }

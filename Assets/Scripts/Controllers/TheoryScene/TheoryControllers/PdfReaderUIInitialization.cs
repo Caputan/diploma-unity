@@ -28,15 +28,15 @@ namespace Controllers.TheoryScene.TheoryControllers
         }
         public void Initialization() { }
         
-        public void ReadNextDoc()
+        public void ReadNextDoc(int id)
         {
-            ReadANewPdfDocument().StartCoroutine(out _);
+            ReadANewPdfDocument(id).StartCoroutine(out _);
         }
-        public IEnumerator ReadANewPdfDocument()
+        public IEnumerator ReadANewPdfDocument(int id)
         {
             #region Creation PDF Reader
             _parent = _gameContextWithViewsTheory.Parents[0];
-            var paths = Directory.GetFiles(_gameContextWithViewsTheory.nameOfFolder);
+            var paths = Directory.GetFiles(_gameContextWithViewsTheory.nameOfFolders[id]);
             
             foreach(var path in paths)
             {

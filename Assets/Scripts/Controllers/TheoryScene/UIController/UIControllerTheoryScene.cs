@@ -91,7 +91,7 @@ namespace Controllers.TheoryScene.UIController
         private void ShowLibraryObject(int id)
         {
             _theoryController.CleanData();
-            _libraryController.Initialization(_additionalInfomationLibrary.libraryObjcets[id].file);
+            _libraryController.Show(id);
             _gameContextWithViewsTheory.TheoryButtons[LoadingPartsTheoryScene.LoadPractise].
                 gameObject.SetActive(false);
             
@@ -123,6 +123,7 @@ namespace Controllers.TheoryScene.UIController
             {
                 case LoadingPartsTheoryScene.FirstOpen:
                     _theoryController.Initialization();
+                    _libraryController.Initialization();
                     Initialization();
                     break;
                 case LoadingPartsTheoryScene.ExitToMain:
