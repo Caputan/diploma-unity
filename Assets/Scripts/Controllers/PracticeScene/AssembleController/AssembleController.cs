@@ -8,29 +8,29 @@ namespace Diploma.Controllers.AssembleController
     public class AssembleController
     {
         private GameObject _basePart;
-        private readonly string[] _disassembleOrder = 
-        {
-            // "Ось прижимного рычага",
-            // "Ось прижимного рычага",
-            "Рычаг суппорта",
-            "Рычаг суппорта",
-            "Болт M10x1.25x25",
-            "Болт M10x1.25x25",
-            "Коллектор",
-            "Штуцер",
-            "Штуцер",
-            "Пружина",
-            "Пружина",
-            "Пружина",
-            "Пружина",
-            "Защитный кожух суппорта",
-            "Блок цилиндров",
-            "Поршень",
-            "Поршень",
-            "Поршень",
-            "Направляющая колодок",
-            "Кожух защитный"
-        };
+        // private readonly string[] _disassembleOrder = 
+        // {
+        //     "Ось прижимного рычага",
+        //     "Ось прижимного рычага",
+        //     "Рычаг суппорта",
+        //     "Рычаг суппорта",
+        //     "Болт M10x1.25x25",
+        //     "Болт M10x1.25x25",
+        //     "Коллектор",
+        //     "Штуцер",
+        //     "Штуцер",
+        //     "Пружина",
+        //     "Пружина",
+        //     "Пружина",
+        //     "Пружина",
+        //     "Защитный кожух суппорта",
+        //     "Блок цилиндров",
+        //     "Поршень",
+        //     "Поршень",
+        //     "Поршень",
+        //     "Направляющая колодок",
+        //     "Кожух защитный"
+        // };
         private readonly GameObject[] _partsOfAssembly;
 
         private int _index;
@@ -45,14 +45,14 @@ namespace Diploma.Controllers.AssembleController
 
             _isDisassembling = true;
 
-            Debug.Log(_disassembleOrder.Length);
+            Debug.Log(_partsOfAssembly.Length);
             
             PlayerController.OnPartClicked += StartDisassembling;
         }
 
         private void StartDisassembling(GameObject partOfAssembly)
         {
-            if (partOfAssembly.transform.parent.name != _disassembleOrder[_index]) return;
+            if (partOfAssembly.transform.parent.name != _partsOfAssembly[_index].transform.parent.name) return;
             if (_isDisassembling)
             {
                 _partsOfAssembly[_index] = partOfAssembly;
@@ -65,11 +65,11 @@ namespace Diploma.Controllers.AssembleController
                 partOfAssembly.GetComponent<MeshRenderer>().enabled = true;
                 _index--;
                 _partsOfAssembly[_index + 1].GetComponent<MeshCollider>().enabled = false;
-                if(_index != 0)
+                if(_index > -1)
                     _partsOfAssembly[_index].GetComponent<MeshCollider>().enabled = true;
             }
             
-            if (_index == _disassembleOrder.Length)
+            if (_index == _partsOfAssembly.Length)
             {
                 _isDisassembling = false;
                 _index--;
