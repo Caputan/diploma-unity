@@ -18,6 +18,7 @@ namespace Diploma.Controllers
             TheoryButtons = new Dictionary<LoadingPartsTheoryScene, Button>();
             LibraryButtons = new Dictionary<int, Button>();
             Parents = new List<Transform>();
+            nameOfFolders = new Dictionary<int, string>();
         }
 
         public void SetNameOfFolder(int id,string name)

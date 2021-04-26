@@ -24,6 +24,8 @@ namespace PDFWorker
         private readonly LoadingUILogic _loadingUILogic;
         private string _fileName;
         private string _inputPdfFile;
+        private int _indexx;
+        public event Action<bool> EndLoading;  
         
         public PDFReader(FileManager fileManager,
             string positionPath,
@@ -41,15 +43,15 @@ namespace PDFWorker
 
         public void RaedFile( Dictionary<int, string> libraryObjects)
         {
-            _loadingUILogic.SetActiveLoading(true);
+            _indexx = 0;
             foreach (var library in libraryObjects)
             {
-                RaedFileCorutine(library.Key,library.Value).StartCoroutine(out _);
+               RaedFileCorutine(library.Key,library.Value,libraryObjects.Count).StartCoroutine(out _);
             }
             
         }
         
-        public IEnumerator RaedFileCorutine(int id, string inputPdfFile)
+        public IEnumerator RaedFileCorutine(int id, string inputPdfFile,int count)
         {
             
             yield return new WaitForEndOfFrame();
@@ -61,19 +63,22 @@ namespace PDFWorker
                                                                  Path.GetFileNameWithoutExtension(_inputPdfFile).
                                                                      Split('\\').Last());
             _gameContextWithViewsTheory.SetNameOfFolder(id,destinationPath);
-            for (float i = 1; i < numberOfPages; i++)
+            Debug.Log("File is going to read: "+ _inputPdfFile);
+            for (float i = 1; i <= numberOfPages; i++)
             {
                 float paramForText =i*100/numberOfPages;
                 float paramForSlider =  Mathf.Clamp01(i / numberOfPages);
                 yield return _loadingUILogic.
                     LoadingParams(paramForSlider,Mathf.Round(paramForText)).StartCoroutine(out _);
                 //SetLoadingParameter(paramForSlider,Mathf.Round(paramForText));
-                yield return ConvertPageToImage(i,destinationPath).StartCoroutine(out _);
+                ConvertPageToImage(i,destinationPath).StartCoroutine(out _);
             }
 
-            _loadingUILogic.SetActiveLoading(false);
-            //LoadDocument();
-            
+            if (_indexx == count-1)
+            {
+                EndLoading?.Invoke(false);
+            }
+            _indexx++;
             yield return null;
         }
         
@@ -91,7 +96,7 @@ namespace PDFWorker
         }
         public IEnumerator ConvertPageToImage(float pageNumber, string pathToSave)
         {
-            yield return new WaitForEndOfFrame();
+            //yield return new WaitForEndOfFrame();
             string outImageName = Path.GetFileNameWithoutExtension(_inputPdfFile);
             outImageName = outImageName+"_"+pageNumber.ToString() + "_.png";
             

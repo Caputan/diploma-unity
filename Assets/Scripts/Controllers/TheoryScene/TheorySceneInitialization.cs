@@ -133,14 +133,15 @@ namespace Controllers.TheoryScene
             //_controllers.Add(libraryTreeController);
             
             _controllers.Initialization();
-            
+            //loadingUILogic.SetActiveLoading(true);
             UIControllerTheoryScene uiControllerTheoryScene = new UIControllerTheoryScene(
                 _gameContextWithViewsTheory,
                 _gameContextWithUITheory,
                 loadingSceneController,
                 theoryController,
                 libraryController,
-                _library
+                _library,
+                loadingUILogic
             );
         }
 

@@ -4,6 +4,7 @@ using Diploma.Controllers;
 using Diploma.Enums;
 using Diploma.Interfaces;
 using Interfaces;
+using UI.LoadingUI;
 using UnityEngine;
 
 namespace Controllers.TheoryScene.UIController
@@ -16,6 +17,7 @@ namespace Controllers.TheoryScene.UIController
         private readonly TheoryController _theoryController;
         private readonly LibraryTreeController _libraryController;
         private readonly AdditionalInfomationLibrary _additionalInfomationLibrary;
+        private readonly LoadingUILogic _loadingUILogic;
         private readonly GameObject _backGround;
         private ErrorHandler _errorHandler;
         private LoadingPartsTheoryScene _currentPosition;
@@ -26,7 +28,8 @@ namespace Controllers.TheoryScene.UIController
             LoadingSceneController loadingSceneController,
             TheoryController theoryController,
             LibraryTreeController libraryController,
-            AdditionalInfomationLibrary additionalInfomationLibrary
+            AdditionalInfomationLibrary additionalInfomationLibrary,
+            LoadingUILogic loadingUILogic
         )
         {
             _gameContextWithViewsTheory = gameContextWithViewsTheory;
@@ -35,6 +38,7 @@ namespace Controllers.TheoryScene.UIController
             _theoryController = theoryController;
             _libraryController = libraryController;
             _additionalInfomationLibrary = additionalInfomationLibrary;
+            _loadingUILogic = loadingUILogic;
 
             _backGround = GameObject.Find("BackGround");
             ShowUIByUIType(LoadingPartsTheoryScene.FirstOpen);
@@ -44,13 +48,11 @@ namespace Controllers.TheoryScene.UIController
 
             foreach (var value in _gameContextWithUITheory.UILogic)
             {
-                Debug.Log(value.Key);
                 var i = (ITheorySceneButton)value.Value;
                 i.LoadNext += ShowUIByUIType;
             }
             foreach (var value in _gameContextWithUITheory.UITreeLogic)
             {
-                Debug.Log(value.Key);
                 var i = (ILibraryOnSceneButton)value.Value;
                 i.LoadNext += ShowLibraryObject;
             }
@@ -122,6 +124,7 @@ namespace Controllers.TheoryScene.UIController
             switch (id)
             {
                 case LoadingPartsTheoryScene.FirstOpen:
+                    _loadingUILogic.SetActiveLoading(true);
                     _theoryController.Initialization();
                     _libraryController.Initialization();
                     Initialization();

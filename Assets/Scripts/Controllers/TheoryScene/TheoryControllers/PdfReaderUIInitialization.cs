@@ -34,6 +34,8 @@ namespace Controllers.TheoryScene.TheoryControllers
         }
         public IEnumerator ReadANewPdfDocument(int id)
         {
+            yield return new WaitForEndOfFrame();
+            
             #region Creation PDF Reader
             _parent = _gameContextWithViewsTheory.Parents[0];
             var paths = Directory.GetFiles(_gameContextWithViewsTheory.nameOfFolders[id]);
@@ -56,28 +58,6 @@ namespace Controllers.TheoryScene.TheoryControllers
             yield return null;
         }
 
-        // public void ReadANewPdfDocument()
-        // {
-        //     #region Creation PDF Reader
-        //     _parent = _gameContextWithViewsTheory.Parents[0];
-        //     var paths = Directory.GetFiles(_gameContextWithViewsTheory.nameOfFolder);
-        //     
-        //     foreach(var path in paths)
-        //     {
-        //         //загрузка картинки в текстуру
-        //         byte[] bytes = File.ReadAllBytes(path);
-        //         Texture2D tex = new Texture2D(2, 2);
-        //         tex.LoadImage(bytes);
-        //         //создание элемента UI
-        //         
-        //         GameObject pdfReaderObject = _factory.Create(_parent);
-        //         //pdfReaderObject.transform.localPosition = new Vector3(0, 0, 0);
-        //         pdfReaderObject.GetComponentInChildren<RawImage>().texture = tex;
-        //
-        //     }
-        //     #endregion
-        // }
-        
         public void UnloadDocument()
         {
             for(int i = 0;i<_parent.childCount; i++)

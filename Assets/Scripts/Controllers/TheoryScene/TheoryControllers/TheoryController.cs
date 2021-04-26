@@ -38,7 +38,7 @@ namespace Controllers.TheoryScene.TheoryControllers
         {
             _theoryUIInitialization.SetButtons();
             Dictionary<int, string> obj = new Dictionary<int, string>();
-            obj.Add(_pdfPath.Text_Id,_pdfPath.Text_Link);
+            obj.Add(0,_pdfPath.Text_Link);
             CreateDocumentLocaly(obj);
             LoadDocumentTheory();
         }
