@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Diploma.Controllers;
 using Diploma.Interfaces;
 using Diploma.Managers;
@@ -18,7 +19,8 @@ namespace Controllers.TheoryScene.TheoryControllers
         private readonly GameContextWithViewsTheory _gameContextWithViewsTheory;
         private readonly TheoryUIInitialization _theoryUIInitialization;
         private PDFReader _pdfReader;
-       
+        public event Action<Dictionary<int, string>> rewriteDictionary;
+            
         public TheoryController(PdfReaderUIInitialization pdfReaderUIInitialization,Texts pdfPath,
             FileManager fileManager,string pdfStoragePath,
             GameContextWithViewsTheory gameContextWithViewsTheory,
@@ -39,8 +41,9 @@ namespace Controllers.TheoryScene.TheoryControllers
             _theoryUIInitialization.SetButtons();
             Dictionary<int, string> obj = new Dictionary<int, string>();
             obj.Add(0,_pdfPath.Text_Link);
-            CreateDocumentLocaly(obj);
-            LoadDocumentTheory();
+            rewriteDictionary?.Invoke(obj);
+            //CreateDocumentLocaly(obj);
+            //LoadDocumentTheory();
         }
         public void CleanData()
         {
@@ -48,14 +51,14 @@ namespace Controllers.TheoryScene.TheoryControllers
            UnloadDocument();
         }
         
-        private void LoadDocumentTheory()
+        public void LoadDocumentTheory()
         {
             _pdfReaderUIInitialization.ReadNextDoc(0);
         }
 
-        private void CreateDocumentLocaly(Dictionary<int, string> obj)
+        public void CreateDocumentLocaly(int id, string obj)
         {
-            _pdfReader.RaedFile(obj);
+            _pdfReader.RaedFile(id,obj);
         }
 
         public void RemoveDocumentPng()

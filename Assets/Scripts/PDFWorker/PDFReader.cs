@@ -24,9 +24,7 @@ namespace PDFWorker
         private readonly LoadingUILogic _loadingUILogic;
         private string _fileName;
         private string _inputPdfFile;
-        private int _indexx;
-        public event Action<bool> EndLoading;  
-        
+
         public PDFReader(FileManager fileManager,
             string positionPath,
             GameContextWithViewsTheory gameContextWithViewsTheory,
@@ -41,20 +39,16 @@ namespace PDFWorker
             _fileManager.CreateFileFolder(_positionPath);
         }
 
-        public void RaedFile( Dictionary<int, string> libraryObjects)
+        public void RaedFile( int id, string strings)
         {
-            _indexx = 0;
-            foreach (var library in libraryObjects)
-            {
-               RaedFileCorutine(library.Key,library.Value,libraryObjects.Count).StartCoroutine(out _);
-            }
-            
+            RaedFileCorutine(id, strings); //.StartCoroutine(out _);
         }
         
-        public IEnumerator RaedFileCorutine(int id, string inputPdfFile,int count)
-        {
+       // public IEnumerator RaedFileCorutine(int id, string inputPdfFile)
+       private void RaedFileCorutine(int id, string inputPdfFile)
+       {
             
-            yield return new WaitForEndOfFrame();
+           // yield return new WaitForEndOfFrame();
 
             _inputPdfFile = inputPdfFile;
             float numberOfPages = GetNumberOfPages(inputPdfFile);
@@ -68,19 +62,14 @@ namespace PDFWorker
             {
                 float paramForText =i*100/numberOfPages;
                 float paramForSlider =  Mathf.Clamp01(i / numberOfPages);
-                yield return _loadingUILogic.
-                    LoadingParams(paramForSlider,Mathf.Round(paramForText)).StartCoroutine(out _);
-                //SetLoadingParameter(paramForSlider,Mathf.Round(paramForText));
-                ConvertPageToImage(i,destinationPath).StartCoroutine(out _);
+                _loadingUILogic.
+                    LoadingParams(paramForSlider,Mathf.Round(paramForText),
+                        _inputPdfFile.Split('/').Last());//.StartCoroutine(out _);
+                ConvertPageToImage(i, destinationPath); //.StartCoroutine(out _);
             }
-
-            if (_indexx == count-1)
-            {
-                EndLoading?.Invoke(false);
-            }
-            _indexx++;
-            yield return null;
-        }
+            
+            // yield return null;
+       }
         
         
 
@@ -94,7 +83,8 @@ namespace PDFWorker
             PdfReader pdfReader = new PdfReader(FilePath); 
             return pdfReader.NumberOfPages; 
         }
-        public IEnumerator ConvertPageToImage(float pageNumber, string pathToSave)
+        //public IEnumerator ConvertPageToImage(float pageNumber, string pathToSave)
+        public void ConvertPageToImage(float pageNumber, string pathToSave)
         {
             //yield return new WaitForEndOfFrame();
             string outImageName = Path.GetFileNameWithoutExtension(_inputPdfFile);
@@ -108,10 +98,9 @@ namespace PDFWorker
             dev.Pdf.FirstPage = (int)pageNumber;
             dev.Pdf.LastPage = (int)pageNumber;
             dev.CustomSwitches.Add("-dDOINTERPOLATE");
-            //тут указан путь куда.
             dev.OutputPath = pathToSave +"\\"+ outImageName;
             dev.Process();
-            yield return null;
+            //yield return null;
         }
     }
 }

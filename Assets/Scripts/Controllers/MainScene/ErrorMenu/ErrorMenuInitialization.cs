@@ -3,6 +3,7 @@ using Diploma.Controllers;
 using Diploma.Enums;
 using Diploma.Interfaces;
 using Diploma.UI;
+using Tools;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -13,18 +14,19 @@ namespace Controllers
         private readonly GameContextWithViews _gameContextWithViews;
         private readonly GameContextWithUI _gameContextWithUI;
         private readonly GameObject _mainParent;
-        private readonly GameObject _errorMenuPrefab;
+        
         private readonly ErrorMenuFactory _errorMenuFactory;
         private List<Button> ErrorMenuButtons;
 
+        private readonly ResourcePath _viewPath = new ResourcePath {PathResource = "Prefabs/MainScene/ErrorMenu"};
+        
         public ErrorMenuInitialization(GameContextWithViews gameContextWithViews,
-            GameContextWithUI gameContextWithUI, GameObject MainParent, GameObject errorMenuPrefab)
+            GameContextWithUI gameContextWithUI, GameObject MainParent)
         {
             _gameContextWithViews = gameContextWithViews;
             _gameContextWithUI = gameContextWithUI;
             _mainParent = MainParent;
-            _errorMenuPrefab = errorMenuPrefab;
-            _errorMenuFactory = new ErrorMenuFactory(_errorMenuPrefab);
+            _errorMenuFactory = new ErrorMenuFactory(ResourceLoader.LoadPrefab(_viewPath));
         }
 
         public void Initialization()

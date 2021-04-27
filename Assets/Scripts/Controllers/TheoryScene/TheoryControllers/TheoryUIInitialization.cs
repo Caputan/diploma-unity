@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Diploma.Controllers;
 using Diploma.Interfaces;
+using Tools;
 using UI.TheoryUI;
 using UI.TheoryUI.TheoryLibraryTree;
 using UnityEngine;
@@ -12,7 +13,6 @@ namespace Controllers.TheoryScene.TheoryControllers
     public class TheoryUIInitialization: IInitialization, ICleanData
     {
         private readonly GameObject _canvas;
-        private readonly GameObject _prefabMainWindow;
         private readonly GameContextWithViewsTheory _gameContextWithViews;
         private readonly GameContextWithUITheory _gameContextWithUITheory;
         private readonly string _types;
@@ -22,21 +22,21 @@ namespace Controllers.TheoryScene.TheoryControllers
         private TheoryUIAddButtonsToDictionary LessonConstructorUIAddButtonsToDictionary;
         private TheoryUILogic TheoryUILogic;
         
+        private readonly ResourcePath _viewPath = new ResourcePath {PathResource = "Prefabs/TheoryScene/Theory"};
+        
         public TheoryUIInitialization(
             GameObject canvas,
-            GameObject prefabMainWindow,
             GameContextWithViewsTheory gameContextWithViews,
             GameContextWithUITheory gameContextWithUITheory,
             string types
             )
         {
             _canvas = canvas;
-            _prefabMainWindow = prefabMainWindow;
             _gameContextWithViews = gameContextWithViews;
             _gameContextWithUITheory = gameContextWithUITheory;
             _types = types;
 
-            _theoryUIFactory = new TheoryUIFactory(_prefabMainWindow);
+            _theoryUIFactory = new TheoryUIFactory(ResourceLoader.LoadPrefab(_viewPath));
         }
         
         public void Initialization()

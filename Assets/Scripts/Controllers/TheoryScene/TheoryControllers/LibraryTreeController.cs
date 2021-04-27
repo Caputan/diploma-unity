@@ -21,6 +21,7 @@ namespace Controllers.TheoryScene.TheoryControllers
         private PDFReader _pdfReader;
         private Dictionary<int, string> _libraryObjects;
         
+        public event Action<Dictionary<int, string>> rewriteDictionary;
         public LibraryTreeController(PdfReaderUIInitialization pdfReaderUIInitialization,
             FileManager fileManager,string pdfStoragePath,
             GameContextWithViewsTheory gameContextWithViewsTheory,
@@ -50,7 +51,8 @@ namespace Controllers.TheoryScene.TheoryControllers
                         _libraryObjects.Add(libraryObject.id, libraryObject.file);
                     }
             }
-            CreateDocumentLocaly(_libraryObjects);
+            rewriteDictionary?.Invoke(_libraryObjects);
+            //CreateDocumentLocaly(_libraryObjects);
         }
 
         public void Show(int id)
@@ -63,10 +65,13 @@ namespace Controllers.TheoryScene.TheoryControllers
             UnloadDocument();
         }
         
-        private void CreateDocumentLocaly( Dictionary<int, string> libraryObjects)
+        public void CreateDocumentLocaly( int id, string obj)
         {
-            _pdfReader.RaedFile(libraryObjects);
-            _pdfReader.EndLoading += HideLoading;
+            _pdfReader.RaedFile(id,obj);
+        }
+        private void UnloadDocument()
+        {
+            _pdfReaderUIInitialization.UnloadDocument();
         }
 
         private void HideLoading(bool flag)
@@ -77,13 +82,6 @@ namespace Controllers.TheoryScene.TheoryControllers
         public void RemoveDocumentPng()
         {
             _pdfReader.DeleteStorage();
-        }
-
-        
-
-        private void UnloadDocument()
-        {
-            _pdfReaderUIInitialization.UnloadDocument();
         }
     }
 }

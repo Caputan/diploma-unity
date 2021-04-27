@@ -20,14 +20,11 @@ namespace Controllers.TheoryScene
     {
         [SerializeField] private ImportantDontDestroyData _data;
         [SerializeField] private AdditionalInfomationLibrary _library;
-        
         [SerializeField] private GameObject canvas;
-
-        [SerializeField] private GameObject theoryPrefab;
-        [SerializeField] private GameObject pdfPrefab;
-        [SerializeField] private GameObject libraryPrefab;
+        
         [SerializeField] private GameObject _loadingCanvas;
         [SerializeField] private TextMeshProUGUI _loadingText;
+        [SerializeField] private TextMeshProUGUI _whatIsloadingText;
         [SerializeField] private Slider _loadingSlider;
         [SerializeField] private Canvas _canvas;
         
@@ -36,7 +33,6 @@ namespace Controllers.TheoryScene
 
         private GameContextWithViewsTheory _gameContextWithViewsTheory;
         private GameContextWithUITheory _gameContextWithUITheory;
-        private GameContextWithUI _gameContextWithUI;
         private Diploma.Controllers.Controllers _controllers;
         private FileManager _fileManager;
         private void Start()
@@ -44,8 +40,7 @@ namespace Controllers.TheoryScene
             
             _gameContextWithViewsTheory = new GameContextWithViewsTheory();
             _gameContextWithUITheory = new GameContextWithUITheory();
-            _gameContextWithUI = new GameContextWithUI();
-            
+
             _fileManager = new FileManager();
             _pngStoragePath =Path.Combine(_fileManager.GetStorage(),
                 _pngStoragePath);
@@ -76,7 +71,6 @@ namespace Controllers.TheoryScene
             TheoryUIInitialization theoryUIInitialization = new TheoryUIInitialization
             (
                 canvas,
-                theoryPrefab,
                 _gameContextWithViewsTheory,
                 _gameContextWithUITheory,
                 Types.TypeS
@@ -84,14 +78,13 @@ namespace Controllers.TheoryScene
 
             PdfReaderUIInitialization pdfReaderUIInitialization = new PdfReaderUIInitialization
             (
-                pdfPrefab,
-                _fileManager,
                 _gameContextWithViewsTheory
             );
 
             LoadingUILogic loadingUILogic = new LoadingUILogic(
                 _loadingCanvas,
                 _loadingText,
+                _whatIsloadingText,
                 _loadingSlider,
                 _canvas.transform
             );
@@ -108,7 +101,6 @@ namespace Controllers.TheoryScene
            
             LibraryTreeUIInitialization libraryTreeUIInitialization = new LibraryTreeUIInitialization
                 (
-                libraryPrefab,
                 _gameContextWithViewsTheory,
                 Types.TypeS,
                 _library
@@ -123,7 +115,7 @@ namespace Controllers.TheoryScene
                 Types
             );
 
-           
+            MainTheoryController mainTheoryController = new MainTheoryController(theoryController,libraryController);
             
             _controllers = new Diploma.Controllers.Controllers();
             _controllers.Add(theoryUIInitialization);
@@ -141,7 +133,8 @@ namespace Controllers.TheoryScene
                 theoryController,
                 libraryController,
                 _library,
-                loadingUILogic
+                loadingUILogic,
+                mainTheoryController
             );
         }
 

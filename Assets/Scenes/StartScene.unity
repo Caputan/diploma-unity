@@ -245,9 +245,6 @@ MonoBehaviour:
   MainMenuPrefab: {fileID: 6515268690936001924, guid: 034aed284a0442946be7b0b496b5a363,
     type: 3}
   MainParent: {fileID: 1084967671}
-  AuthPrefab: {fileID: 1187465585781468124, guid: 22f0c92dc86df8546968656f4b3c51ed,
-    type: 3}
-  sceneLoader: {fileID: 0}
   SignUpPrefab: {fileID: 3694359188707926974, guid: f65d1434f94076f4a809944060dbcd5b,
     type: 3}
   lessonCanvasPrefab: {fileID: 5558593657996745692, guid: d3d23505ce3d25849b168bf572be3664,
@@ -267,8 +264,6 @@ MonoBehaviour:
   _data: {fileID: 11400000, guid: 03ce9d4a4a736824db6636fb7cc1202c, type: 2}
   _library: {fileID: 11400000, guid: 8527d7f87a23f0b45bc6f567a36e8d7c, type: 2}
   _material: {fileID: 0}
-  _loadingPrefab: {fileID: 6953503411594182753, guid: f0e312f5af0947447a55b6a1bec40068,
-    type: 3}
 --- !u!1 &655199805
 GameObject:
   m_ObjectHideFlags: 0

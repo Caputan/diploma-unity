@@ -5,6 +5,7 @@ using Diploma.Controllers;
 using Diploma.Interfaces;
 using Diploma.Managers;
 using TMPro;
+using Tools;
 using UI.TheoryUI.PDFReaderUI;
 using UnityEngine;
 using UnityEngine.UI;
@@ -13,18 +14,16 @@ namespace Controllers.TheoryScene.TheoryControllers
 {
     public sealed class PdfReaderUIInitialization: IInitialization
     {
-        private readonly FileManager _fileManager;
         private readonly GameContextWithViewsTheory _gameContextWithViewsTheory;
         private Transform _parent;
         private PDFReaderUIFactory _factory;
 
-        public PdfReaderUIInitialization(GameObject prefab, FileManager fileManager,
-            GameContextWithViewsTheory gameContextWithViewsTheory)
-        {
-            _fileManager = fileManager;
-            _gameContextWithViewsTheory = gameContextWithViewsTheory;
+        private readonly ResourcePath _viewPath = new ResourcePath {PathResource = "Prefabs/TheoryScene/ImageForPage"};
 
-            _factory = new PDFReaderUIFactory(prefab);
+        public PdfReaderUIInitialization(GameContextWithViewsTheory gameContextWithViewsTheory)
+        {
+            _gameContextWithViewsTheory = gameContextWithViewsTheory;
+            _factory = new PDFReaderUIFactory(ResourceLoader.LoadPrefab(_viewPath));
         }
         public void Initialization() { }
         

@@ -4,6 +4,7 @@ using Data;
 using Diploma.Controllers;
 using Diploma.Interfaces;
 using TMPro;
+using Tools;
 using UI.TheoryUI;
 using UI.TheoryUI.TheoryLibraryTree;
 using UnityEngine;
@@ -19,8 +20,10 @@ namespace Controllers.TheoryScene.TheoryControllers
         private readonly AdditionalInfomationLibrary _library;
         private Transform _treeParent;
         private TheoryLibraryTreeFactory _theoryLibraryTreeFactory;
+        
+        private readonly ResourcePath _viewPath = new ResourcePath {PathResource = "Prefabs/TheoryScene/LibraryButton"};
+
         public LibraryTreeUIInitialization(
-            GameObject prefabTreeWindow,
             GameContextWithViewsTheory gameContextWithViewsTheory,
             string types,
             AdditionalInfomationLibrary library
@@ -29,9 +32,7 @@ namespace Controllers.TheoryScene.TheoryControllers
             _gameContextWithViewsTheory = gameContextWithViewsTheory;
             _types = types;
             _library = library;
-
-
-            _theoryLibraryTreeFactory = new TheoryLibraryTreeFactory(prefabTreeWindow);
+            _theoryLibraryTreeFactory = new TheoryLibraryTreeFactory(ResourceLoader.LoadPrefab(_viewPath));
         }
         public void Initialization()
         {
@@ -44,16 +45,9 @@ namespace Controllers.TheoryScene.TheoryControllers
                     var libraryTreeUI = _theoryLibraryTreeFactory.Create(_treeParent);
                     libraryTreeUI.GetComponent<TextMeshProUGUI>().text =
                         _library.libraryObjcets[Convert.ToInt32(libraryItem)].name;
-                    libraryTreeUI.GetComponent<Button>().onClick.AddListener(() => OpenLibraryItem(libraryItem));
                 }
             }
-            
             #endregion
-        }
-
-        private void OpenLibraryItem(string libraryItem)
-        {
-            // сюда передаем data. и воспроизводим новое окно
         }
     }
 }

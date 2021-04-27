@@ -10,6 +10,7 @@ namespace UI.LoadingUI
     {
         private readonly GameObject _settingActiveGameObject;
         private readonly TextMeshProUGUI _textMeshProUGUI;
+        private readonly TextMeshProUGUI _textMeshProUGUIWhatIsLoading;
         private readonly Slider _slider;
         private readonly Transform _canvas;
 
@@ -17,12 +18,14 @@ namespace UI.LoadingUI
         public LoadingUILogic(
             GameObject settingActiveGameObject,
             TextMeshProUGUI textMeshProUGUI,
+            TextMeshProUGUI textMeshProUGUIWhatIsLoading,
             Slider slider,
             Transform canvas
             )
         {
             _settingActiveGameObject = settingActiveGameObject;
             _textMeshProUGUI = textMeshProUGUI;
+            _textMeshProUGUIWhatIsLoading = textMeshProUGUIWhatIsLoading;
             _slider = slider;
             _canvas = canvas;
         }
@@ -35,16 +38,18 @@ namespace UI.LoadingUI
 
         }
 
-        public void SetLoadingParameter(float parameterForSlider,float parameterFoText)
-        {
-            LoadingParams(parameterForSlider,parameterFoText).StartCoroutine(out _);
-        }
+        // public void SetLoadingParameter(float parameterForSlider,float parameterFoText)
+        // {
+        //     LoadingParams(parameterForSlider,parameterFoText).StartCoroutine(out _);
+        // }
 
-        public IEnumerator LoadingParams(float parameterForSlider,float parameterFoText)
+        //public IEnumerator LoadingParams(float parameterForSlider,float parameterFoText, string whatIsLoading)
+        public void LoadingParams(float parameterForSlider,float parameterFoText, string whatIsLoading)
         {
+            _textMeshProUGUIWhatIsLoading.text = "Загружается: " + whatIsLoading;
             _textMeshProUGUI.text = "Загружено " + parameterFoText +"%";
             _slider.value = parameterForSlider;
-            yield return null;
+            //yield return null;
         }
         
     }

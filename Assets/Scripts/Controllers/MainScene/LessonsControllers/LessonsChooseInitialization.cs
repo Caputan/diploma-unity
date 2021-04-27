@@ -3,6 +3,7 @@ using Diploma.Controllers;
 using Diploma.Enums;
 using Diploma.Interfaces;
 using Diploma.UI;
+using Tools;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -14,38 +15,32 @@ namespace Controllers
         private readonly GameContextWithUI _gameContextWithUI;
         private readonly GameContextWithLessons _gameContextWithLessons;
         private readonly GameObject _lessonChooseParent;
-        private readonly GameObject _prefabLessonChoose;
-        private readonly GameObject _lessonPrefab;
         private readonly DataBaseController _dataBaseController;
         private readonly List<IDataBase> _tables;
-        private readonly ScriptableObject _data;
         private LessonChooseFactory _lessonCanvasChooseFactory;
         private List<Button> _lessonChooseButtons;
+        
+        private readonly ResourcePath _viewPath = new ResourcePath {PathResource = "Prefabs/MainScene/SelectLession"};
+        private readonly ResourcePath _viewPathForPlate = new ResourcePath {PathResource = "Prefabs/MainScene/LessonPrefab"};
+
         
         public LessonsChooseInitialization(
             GameContextWithViews gameContextWithViews,
             GameContextWithUI gameContextWithUI,
             GameContextWithLessons gameContextWithLessons,
-            GameObject LessonChooseParent, 
-            GameObject PrefabLessonChoose,
-            GameObject LessonPrefab,
+            GameObject LessonChooseParent,
             DataBaseController dataBaseController,
-            List<IDataBase> tables,
-            ScriptableObject data
+            List<IDataBase> tables
         )
         {
             _gameContextWithViews = gameContextWithViews;
             _gameContextWithUI = gameContextWithUI;
             _gameContextWithLessons = gameContextWithLessons;
             _lessonChooseParent = LessonChooseParent;
-            _prefabLessonChoose = PrefabLessonChoose;
-            _lessonPrefab = LessonPrefab;
-
             _dataBaseController = dataBaseController;
             _tables = tables;
-            _data = data;
 
-            _lessonCanvasChooseFactory = new LessonChooseFactory(_prefabLessonChoose);
+            _lessonCanvasChooseFactory = new LessonChooseFactory(ResourceLoader.LoadPrefab(_viewPath));
         }
         public void Initialization()
         {
@@ -53,17 +48,12 @@ namespace Controllers
 
             var LessonsChoose = _lessonCanvasChooseFactory.Create(_lessonChooseParent.transform);
             LessonsChoose.transform.localPosition = new Vector3(0,0,0);
-            // решение так себе,но пока что так. может и не пока что.
             var parentForLessons = LessonsChoose.transform.GetChild(2).GetChild(0).GetChild(0).gameObject;
             
             _lessonChooseButtons = new List<Button>();
             _lessonChooseButtons.AddRange(LessonsChoose.GetComponentsInChildren<Button>());
             
-            // List<Button> buttons,GameContextWithViews gameContextWithViews,
-            // GameContextWithLessons gameContextWithLessons
-            //     ,DataBaseController dataBaseController, IDataBase[] tables,
-            //     PlateWithButtonForLessonsFactory plateWithButtonForLessonsFactory,GameObject scrollParentForLessonsView
-            var plateWithButtonForLessonsFactory = new PlateWithButtonForLessonsFactory(_lessonPrefab);
+            var plateWithButtonForLessonsFactory = new PlateWithButtonForLessonsFactory(ResourceLoader.LoadPrefab(_viewPathForPlate));
             
             var lessonChooseAddButtonsToDictionary = new LessonChooseAddButtonsToDictionary(
                 _lessonChooseButtons,

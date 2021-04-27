@@ -1,4 +1,5 @@
 ﻿using Controllers.TheoryScene.TheoryControllers;
+using Coroutine;
 using Data;
 using Diploma.Controllers;
 using Diploma.Enums;
@@ -18,6 +19,7 @@ namespace Controllers.TheoryScene.UIController
         private readonly LibraryTreeController _libraryController;
         private readonly AdditionalInfomationLibrary _additionalInfomationLibrary;
         private readonly LoadingUILogic _loadingUILogic;
+        private readonly MainTheoryController _mainTheoryController;
         private readonly GameObject _backGround;
         private ErrorHandler _errorHandler;
         private LoadingPartsTheoryScene _currentPosition;
@@ -29,7 +31,8 @@ namespace Controllers.TheoryScene.UIController
             TheoryController theoryController,
             LibraryTreeController libraryController,
             AdditionalInfomationLibrary additionalInfomationLibrary,
-            LoadingUILogic loadingUILogic
+            LoadingUILogic loadingUILogic,
+            MainTheoryController mainTheoryController
         )
         {
             _gameContextWithViewsTheory = gameContextWithViewsTheory;
@@ -39,6 +42,7 @@ namespace Controllers.TheoryScene.UIController
             _libraryController = libraryController;
             _additionalInfomationLibrary = additionalInfomationLibrary;
             _loadingUILogic = loadingUILogic;
+            _mainTheoryController = mainTheoryController;
 
             _backGround = GameObject.Find("BackGround");
             ShowUIByUIType(LoadingPartsTheoryScene.FirstOpen);
@@ -127,20 +131,24 @@ namespace Controllers.TheoryScene.UIController
                     _loadingUILogic.SetActiveLoading(true);
                     _theoryController.Initialization();
                     _libraryController.Initialization();
+                    _mainTheoryController.StartDoingSomeThingWithQueue();
                     Initialization();
                     break;
                 case LoadingPartsTheoryScene.ExitToMain:
                     _theoryController.RemoveDocumentPng();
+                    _libraryController.RemoveDocumentPng();
                     Debug.Log("GoingToMenu");
                     _loadingSceneController.LoadNextScene(0);
                     break;
                 case LoadingPartsTheoryScene.LoadPractise:
                     Debug.Log("GoingToPractice");
+                    _theoryController.RemoveDocumentPng();
+                    _libraryController.RemoveDocumentPng();
                     _loadingSceneController.LoadNextScene(2);
                     break;
                 case LoadingPartsTheoryScene.CloseLibrary:
                     _libraryController.CleanData();
-                    _theoryController.Initialization();
+                    _theoryController.LoadDocumentTheory();
                     _gameContextWithViewsTheory.TheoryButtons[LoadingPartsTheoryScene.LoadPractise].
                         gameObject.SetActive(true);
                     SetVisiableBack(false);

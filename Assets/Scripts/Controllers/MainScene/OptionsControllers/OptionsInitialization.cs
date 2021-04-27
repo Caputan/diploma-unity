@@ -3,6 +3,7 @@ using Diploma.Controllers;
 using Diploma.Enums;
 using Diploma.Interfaces;
 using Diploma.UI;
+using Tools;
 using UI.Options;
 using UnityEngine;
 using UnityEngine.UI;
@@ -14,45 +15,44 @@ namespace Controllers
         private readonly GameContextWithViews _gameContextWithViews;
         private readonly GameContextWithUI _gameContextWithUI;
         private readonly GameObject _optionsParent;
-        private readonly GameObject _optionsPrefab;
         private OptionsFactory _optionsFactory;
-        private List<Button> OptionsButtons;
+        private List<Button> _optionsButtons;
 
+        private readonly ResourcePath _viewPath = new ResourcePath {PathResource = "Prefabs/MainScene/Options_Prefab"};
+        
         public OptionsInitialization(GameContextWithViews gameContextWithViews,
             GameContextWithUI gameContextWithUI,
-            GameObject optionsParent,
-            GameObject optionsPrefab
+            GameObject optionsParent
             )
         {
             _gameContextWithViews = gameContextWithViews;
             _gameContextWithUI = gameContextWithUI;
             _optionsParent = optionsParent;
-            _optionsPrefab = optionsPrefab;
-            _optionsFactory = new OptionsFactory(_optionsPrefab);
+            _optionsFactory = new OptionsFactory(ResourceLoader.LoadPrefab(_viewPath));
         }
         
         public void Initialization()
         {
             #region Options Creation
 
-            var Options = _optionsFactory.Create(_optionsParent.transform);
-            Options.transform.localPosition = new Vector3(0,0,0);
+            var options = _optionsFactory.Create(_optionsParent.transform);
+            options.transform.localPosition = new Vector3(0,0,0);
             
-            OptionsButtons = new List<Button>();
-            OptionsButtons.AddRange(Options.GetComponentsInChildren<Button>());
+            _optionsButtons = new List<Button>();
+            _optionsButtons.AddRange(options.GetComponentsInChildren<Button>());
 
-            var Slider = Options.GetComponentInChildren<Slider>();
+            var slider = options.GetComponentInChildren<Slider>();
             
-            new OptionsAddButtonsToDictionary(OptionsButtons,_gameContextWithViews);
+            new OptionsAddButtonsToDictionary(_optionsButtons,_gameContextWithViews);
             
-            _gameContextWithViews.SetSlider(Slider);
+            _gameContextWithViews.SetSlider(slider);
 
-            var OptionsLogic = new OptionsLogic(_gameContextWithViews.OptionsButtons,_gameContextWithViews.Slider);
-            OptionsLogic.Initialization();
+            var optionsLogic = new OptionsLogic(_gameContextWithViews.OptionsButtons,_gameContextWithViews.Slider);
+            optionsLogic.Initialization();
             
             
-            _gameContextWithUI.AddUIToDictionary(LoadingParts.Options, Options);
-            _gameContextWithUI.AddUILogic(LoadingParts.Options,OptionsLogic);
+            _gameContextWithUI.AddUIToDictionary(LoadingParts.Options, options);
+            _gameContextWithUI.AddUILogic(LoadingParts.Options,optionsLogic);
             
             #endregion
         }
