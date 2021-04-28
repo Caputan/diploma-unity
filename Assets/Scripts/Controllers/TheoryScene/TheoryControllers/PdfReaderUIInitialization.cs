@@ -29,7 +29,7 @@ namespace Controllers.TheoryScene.TheoryControllers
         
         public void ReadNextDoc(int id)
         {
-            ReadANewPdfDocument(id).StartCoroutine(out _);
+            ReadANewPdfDocument(id).StartCoroutine(out _, out _);
         }
         public IEnumerator ReadANewPdfDocument(int id)
         {

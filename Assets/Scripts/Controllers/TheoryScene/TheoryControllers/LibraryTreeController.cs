@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using Data;
 using Diploma.Controllers;
@@ -65,9 +66,9 @@ namespace Controllers.TheoryScene.TheoryControllers
             UnloadDocument();
         }
         
-        public void CreateDocumentLocaly( int id, string obj)
+        public void CreateDocumentLocaly( int id, string obj, IEnumerator enumerator)
         {
-            _pdfReader.RaedFile(id,obj);
+            _pdfReader.RaedFile(id,obj,enumerator);
         }
         private void UnloadDocument()
         {

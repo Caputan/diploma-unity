@@ -133,6 +133,7 @@ namespace Controllers.TheoryScene.UIController
                     _libraryController.Initialization();
                     _mainTheoryController.StartDoingSomeThingWithQueue();
                     Initialization();
+                    //_loadingUILogic.SetActiveLoading(false);
                     break;
                 case LoadingPartsTheoryScene.ExitToMain:
                     _theoryController.RemoveDocumentPng();

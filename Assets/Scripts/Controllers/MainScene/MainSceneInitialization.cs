@@ -6,6 +6,7 @@ using Diploma.Interfaces;
 using Diploma.Managers;
 using Diploma.Tables;
 using TMPro;
+using UI.LoadingUI;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.Audio;
@@ -164,6 +165,13 @@ namespace Diploma.Controllers
             
             
             
+            
+            
+            var SceneLoader = new LoadingSceneController();
+
+            var loading = new LoadingUILogic(MainParent.transform);
+            
+            
             var uiController = new UIController(
                 _gameContextWithUI,
                 ExitController,
@@ -172,17 +180,17 @@ namespace Diploma.Controllers
                 _fileManager,
                 LessonConstructorController,
                 OptionsController,
-                ScreenShootController
-                );
-            
-            var SceneLoader = new LoadingSceneController();
+                ScreenShootController,
+                loading
+            );
             
             var ChooseLessonController = new LessonsChooseController(
                 _gameContextWithViews,
                 _gameContextWithUI,
                 SceneLoader,
                 _data,
-                uiController
+                uiController,
+                loading
             );
             #endregion
 
@@ -201,6 +209,7 @@ namespace Diploma.Controllers
             _controllers.Add(ErrorHandlerInitialization);
             _controllers.Add(ChooseLessonController);
             _controllers.Add(SceneLoader);
+            _controllers.Add(loading);
             
             _controllers.Initialization();
             //этот контроллер идет самым последним

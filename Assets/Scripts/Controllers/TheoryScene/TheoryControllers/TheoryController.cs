@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using Diploma.Controllers;
 using Diploma.Interfaces;
@@ -56,14 +57,14 @@ namespace Controllers.TheoryScene.TheoryControllers
             _pdfReaderUIInitialization.ReadNextDoc(0);
         }
 
-        public void CreateDocumentLocaly(int id, string obj)
+        public void CreateDocumentLocaly(int id, string obj, IEnumerator enumerator)
         {
-            _pdfReader.RaedFile(id,obj);
+            _pdfReader.RaedFile(id,obj, enumerator);
         }
 
         public void RemoveDocumentPng()
         {
-            _pdfReader.DeleteStorage();
+           // _pdfReader.DeleteStorage();
         }
         
 

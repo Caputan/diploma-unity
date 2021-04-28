@@ -5,6 +5,7 @@ using Controllers.MainScene.LessonsControllers;
 using Diploma.Enums;
 using Diploma.Interfaces;
 using Interfaces;
+using UI.LoadingUI;
 using UnityEngine;
 
 namespace Diploma.Controllers
@@ -21,6 +22,7 @@ namespace Diploma.Controllers
         private readonly LessonConstructorController _lessonConstructorController;
         private readonly OptionsController _optionsController;
         private readonly ScreenShotController _screenShotController;
+        private readonly LoadingUILogic _loadingUILogic;
         private readonly GameObject _backGround;
         private ErrorHandler _errorHandler;
         private LoadingParts _currentPosition;
@@ -34,7 +36,8 @@ namespace Diploma.Controllers
             FileManagerController fileManagerController,
             LessonConstructorController lessonConstructorController,
             OptionsController optionsController,
-            ScreenShotController screenShotController
+            ScreenShotController screenShotController,
+            LoadingUILogic loadingUILogic
         )
         {
             _error = ErrorCodes.None;
@@ -47,6 +50,7 @@ namespace Diploma.Controllers
             _optionsController = optionsController;
             
             _screenShotController = screenShotController;
+            _loadingUILogic = loadingUILogic;
             _backGround = GameObject.Find("BackGround");
             
         }
@@ -72,7 +76,7 @@ namespace Diploma.Controllers
             HideAllUI();
             _backGround.SetActive(false);
             _screenShotController.TakeAScreanShoot(obj);
-            WaitForTakingScreenShot().StartCoroutine(out _);
+            WaitForTakingScreenShot().StartCoroutine(out _,out _);
             
         }
 
@@ -98,6 +102,7 @@ namespace Diploma.Controllers
                     break;
                 case LoadingParts.LoadStart:
                     // _backGround.SetActive(true);
+                    _loadingUILogic.SetActiveLoading(false);
                     _authController.Login.text = "";
                     _authController.Password.text = "";
                     _backController.WhereIMustBack(_currentPosition);

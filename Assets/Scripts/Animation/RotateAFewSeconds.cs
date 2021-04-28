@@ -32,7 +32,7 @@ namespace Animation
 
         public override IGameHandler Handle()
         {
-            StartRotating().StartCoroutine(out _);
+            StartRotating().StartCoroutine(out _,out _);
             return this;
         }
 

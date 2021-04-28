@@ -2,6 +2,7 @@
 using Diploma.Controllers;
 using Diploma.Enums;
 using Diploma.Interfaces;
+using UI.LoadingUI;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -14,13 +15,15 @@ namespace Controllers
         private readonly LoadingSceneController _loadingSceneController;
         private readonly ImportantDontDestroyData _importantDontDestroyData;
         private readonly UIController _uiController;
+        private readonly LoadingUILogic _loadingUILogic;
 
         public LessonsChooseController(
             GameContextWithViews gameContextWithViews,
             GameContextWithUI gameContextWithUI,
             LoadingSceneController loadingSceneController,
             ImportantDontDestroyData importantDontDestroyData,
-            UIController uiController
+            UIController uiController,
+            LoadingUILogic loadingUILogic
         )
         {
             _gameContextWithViews = gameContextWithViews;
@@ -28,6 +31,7 @@ namespace Controllers
             _loadingSceneController = loadingSceneController;
             _importantDontDestroyData = importantDontDestroyData;
             _uiController = uiController;
+            _loadingUILogic = loadingUILogic;
         }
 
         public void Initialization()
@@ -39,6 +43,7 @@ namespace Controllers
         {
             _uiController.ShowUIByUIType(LoadingParts.LoadLessonScene);
             _importantDontDestroyData.lessonID = id;
+            _loadingUILogic.SetActiveLoading(true);
             _loadingSceneController.LoadNextScene(1);
         }
     }

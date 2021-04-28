@@ -16,7 +16,7 @@ namespace Controllers
 
         public void LoadNextScene(int idScene)
         {
-            AsyncLoad(idScene).StartCoroutine(out _);
+            AsyncLoad(idScene).StartCoroutine(out _, out _);
         }
         
         IEnumerator AsyncLoad(int sceneID)

@@ -21,13 +21,7 @@ namespace Controllers.TheoryScene
         [SerializeField] private ImportantDontDestroyData _data;
         [SerializeField] private AdditionalInfomationLibrary _library;
         [SerializeField] private GameObject canvas;
-        
-        [SerializeField] private GameObject _loadingCanvas;
-        [SerializeField] private TextMeshProUGUI _loadingText;
-        [SerializeField] private TextMeshProUGUI _whatIsloadingText;
-        [SerializeField] private Slider _loadingSlider;
-        [SerializeField] private Canvas _canvas;
-        
+
         [SerializeField] private string _pngStoragePath = "LocalPDFDocumentsInImages";
         
 
@@ -82,11 +76,7 @@ namespace Controllers.TheoryScene
             );
 
             LoadingUILogic loadingUILogic = new LoadingUILogic(
-                _loadingCanvas,
-                _loadingText,
-                _whatIsloadingText,
-                _loadingSlider,
-                _canvas.transform
+                canvas.transform
             );
             
             TheoryController theoryController = new TheoryController
@@ -115,15 +105,18 @@ namespace Controllers.TheoryScene
                 Types
             );
 
-            MainTheoryController mainTheoryController = new MainTheoryController(theoryController,libraryController);
+            MainTheoryController mainTheoryController = new MainTheoryController(
+                theoryController,
+                libraryController,
+                loadingUILogic
+                );
             
             _controllers = new Diploma.Controllers.Controllers();
             _controllers.Add(theoryUIInitialization);
             _controllers.Add(pdfReaderUIInitialization);
             //_controllers.Add(theoryController);
             _controllers.Add(libraryTreeUIInitialization);
-            //_controllers.Add(libraryTreeController);
-            
+            _controllers.Add(loadingUILogic);
             _controllers.Initialization();
             //loadingUILogic.SetActiveLoading(true);
             UIControllerTheoryScene uiControllerTheoryScene = new UIControllerTheoryScene(

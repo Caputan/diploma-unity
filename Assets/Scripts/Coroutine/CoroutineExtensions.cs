@@ -7,7 +7,9 @@ namespace Coroutine
     {
         private static AsyncOperationBehavior _asyncOperationBehavior = null;
         
-        public static UnityEngine.Coroutine StartCoroutine(this IEnumerator task, out CoroutineController coroutineController)
+        public static UnityEngine.Coroutine StartCoroutine(this IEnumerator task, 
+            out IEnumerator back,
+            out CoroutineController coroutineController)
         {
             Initialize();
             if (task == null)
@@ -16,20 +18,20 @@ namespace Coroutine
             }
             
             coroutineController = new CoroutineController(task);
+            back = task;
             return _asyncOperationBehavior.StartCoroutine(coroutineController.Start());
         }
 
-        public static void StopCoroutine(this IEnumerator task,
-            out CoroutineController coroutineController)
+        public static void StopCoroutine(this IEnumerator task)
+            //out CoroutineController coroutineController)
         {
             Initialize();
             if (task == null)
             {
                 throw new System.ArgumentNullException(nameof(task));
             }
-
-            coroutineController = new CoroutineController(task);
-            _asyncOperationBehavior.StopAllCoroutines();
+            
+            _asyncOperationBehavior.StopCoroutine(task);
         } 
 
         public static void Initialize()

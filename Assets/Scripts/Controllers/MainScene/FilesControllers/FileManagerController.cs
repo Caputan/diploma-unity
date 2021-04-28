@@ -43,12 +43,12 @@ namespace Diploma.Controllers
 
         public void ShowLoadDialog()
         {
-            ShowLoadDialogCoroutine().StartCoroutine(out _);
+            ShowLoadDialogCoroutine().StartCoroutine(out _,out _);
         }
 
         public void ShowSaveDialog(FileTypes fileTypes)
         {
-            ShowSaveDialogCoroutine(fileTypes).StartCoroutine(out _);
+            ShowSaveDialogCoroutine(fileTypes).StartCoroutine(out _,out _);
         }
 
         public ErrorCodes CheckForErrors()
