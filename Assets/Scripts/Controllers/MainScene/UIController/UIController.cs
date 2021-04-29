@@ -151,7 +151,7 @@ namespace Diploma.Controllers
                         _gameContextWithUI.UiControllers[LoadingParts.LoadMain].SetActive(true);
                         // _backGround.SetActive(false);
                         _currentPosition = LoadingParts.LoadMain;
-                        _lessonConstructorController.SetTextInTextBox(LoadingParts.DownloadModel,"Выберите деталь (*.3ds)","");
+                        _lessonConstructorController.SetTextInTextBox(LoadingParts.DownloadModel,"Выберите UnityBundle ()","");
                         _lessonConstructorController.SetTextInTextBox(LoadingParts.DownloadVideo,"Выберите видео-фаил (*.mp4)","");
                         _lessonConstructorController.SetTextInTextBox(LoadingParts.DownloadPDF,"Выберите текстовый фаил(*.pdf)","");
                     }
@@ -160,6 +160,11 @@ namespace Diploma.Controllers
                         _error = _authController.CheckAuthData();
                         ShowUIByUIType(LoadingParts.LoadError);
                     }
+                    break;
+                case LoadingParts.About:
+                    _gameContextWithUI.UiControllers[LoadingParts.About].SetActive(true);
+                    _backController.WhereIMustBack(_currentPosition);
+                    _currentPosition = LoadingParts.About;
                     break;
                 case LoadingParts.Back:
                     ShowUIByUIType(_backController.GoBack());

@@ -25,7 +25,7 @@ namespace Diploma.Controllers
 
         public FileManagerController()
         {
-            FileBrowser.SetFilters(true, new FileBrowser.Filter("Assemblies", ".3ds"),
+            FileBrowser.SetFilters(true,
                 new FileBrowser.Filter("Text Files", ".doc", ".pdf", ".docx"),
                 new FileBrowser.Filter("Videos", ".mp4"));
 

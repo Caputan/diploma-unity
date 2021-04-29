@@ -2,6 +2,7 @@
 using Controllers;
 using Controllers.MainScene.LessonsControllers;
 using Data;
+using Diploma.Controllers.AboutControllers;
 using Diploma.Interfaces;
 using Diploma.Managers;
 using Diploma.Tables;
@@ -157,6 +158,12 @@ namespace Diploma.Controllers
                 MainParent
             );
             
+            var AboutInitialization = new AboutInitialization(
+                _gameContextWithViews,
+                _gameContextWithUI,
+                MainParent
+            );
+            
             var OptionsController = new OptionsController(
                 _gameContextWithViews,
                 _gameContextWithUI,
@@ -192,6 +199,7 @@ namespace Diploma.Controllers
                 uiController,
                 loading
             );
+
             #endregion
 
             _controllers = new Controllers();
@@ -210,6 +218,7 @@ namespace Diploma.Controllers
             _controllers.Add(ChooseLessonController);
             _controllers.Add(SceneLoader);
             _controllers.Add(loading);
+            _controllers.Add(AboutInitialization);
             
             _controllers.Initialization();
             //этот контроллер идет самым последним

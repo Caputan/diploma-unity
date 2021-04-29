@@ -15,7 +15,6 @@ namespace Diploma.Controllers
         private readonly GameContextWithViews _gameContextWithViews;
         private readonly GameContextWithUI _gameContextWithUI;
         private readonly GameObject _authParent;
-        private readonly GameObject _authPrefab;
         private readonly AuthFactory _authFactory;
         private List<Button> _authButtons;
         private readonly AuthController _authController;

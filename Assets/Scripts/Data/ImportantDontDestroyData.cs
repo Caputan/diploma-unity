@@ -6,6 +6,9 @@ namespace Data
     public sealed class ImportantDontDestroyData: ScriptableObject
     {
         public int lessonID;
+
+        public int activatedUserID;
+        
         //дополнить по мере надобности
     }
 }

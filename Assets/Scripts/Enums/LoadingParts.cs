@@ -7,7 +7,7 @@
         LoadAuth = 4,
         LoadSignUp = 5,
         LoadMain = 6,
-       
+        About = 7,
         Options = 8,
         Next = 9,
         Back = 10,
