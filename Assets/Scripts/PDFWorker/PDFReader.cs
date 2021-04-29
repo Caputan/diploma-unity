@@ -99,7 +99,7 @@ namespace PDFWorker
         {
             yield return new WaitForEndOfFrame();
             
-            if (pageNumber >= numberOfPages)
+            if (pageNumber > numberOfPages)
             {
                 Debug.Log("Сейчас корутина будет остановлена");
                 сoroutineController[hand].state = CoroutineState.Finished;
@@ -123,13 +123,13 @@ namespace PDFWorker
             float paramForText =pageNumber*100/numberOfPages;
             float paramForSlider =  Mathf.Clamp01(pageNumber / numberOfPages);
             _loadingUILogic.LoadingParams(paramForSlider, Mathf.Round(paramForText),
-                _inputPdfFile.Split('/').Last());//.StartCoroutine(out _);
+                _inputPdfFile.Split('/').Last().Split('\\').Last());
             yield return new WaitForEndOfFrame();
             i++;
             
             
             ConvertPageToImage(i, pathToSave, numberOfPages,сoroutineController,hand).StartCoroutine(out _,out var routine);
-            if (pageNumber == numberOfPages-1)
+            if (pageNumber == numberOfPages)
             {
                 сoroutineController.Add(routine);
             }

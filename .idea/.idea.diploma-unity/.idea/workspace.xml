@@ -21,11 +21,7 @@
   <component name="ChangeListManager">
     <list default="true" id="9a27c574-4a30-4862-a74f-153a103b04b8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.diploma-unity/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.diploma-unity/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/OtherControllers/CoroutineController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/OtherControllers/CoroutineController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/TheoryScene/TheoryControllers/LibraryTreeController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/TheoryScene/TheoryControllers/LibraryTreeController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/TheoryScene/TheoryControllers/MainTheoryController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/TheoryScene/TheoryControllers/MainTheoryController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/TheoryScene/TheoryControllers/TheoryController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/TheoryScene/TheoryControllers/TheoryController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Coroutine/CoroutineExtensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Coroutine/CoroutineExtensions.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/PDFWorker/PDFReader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PDFWorker/PDFReader.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -130,10 +126,10 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/Animation/RotateAFewSeconds.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Animation/MoveToPosition.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/OtherControllers/CoroutineController.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/TheoryScene/TheoryControllers/TheoryController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/TheoryScene/TheoryControllers/LibraryTreeController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Coroutine/CoroutineExtensions.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/TheoryScene/TheoryControllers/MainTheoryController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/TheoryScene/TheoryControllers/TheoryController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/PDFWorker/PDFReader.cs" />
     </changedPaths>
   </component>
@@ -231,7 +227,7 @@
       <workItem from="1619435935664" duration="1812000" />
       <workItem from="1619510771413" duration="11199000" />
       <workItem from="1619525750589" duration="9024000" />
-      <workItem from="1619683159776" duration="5482000" />
+      <workItem from="1619683159776" duration="6663000" />
     </task>
     <servers />
   </component>
@@ -264,6 +260,19 @@
           <line>54</line>
           <properties documentPath="D:\Unity-Storage\Diploma\diploma-unity\Assets\Scripts\Controllers\UIController.cs" initialLine="54" />
           <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/Controllers/TheoryScene/TheoryControllers/MainTheoryController.cs</url>
+          <line>61</line>
+          <properties documentPath="D:\Unity-Storage\Diploma\diploma-unity\Assets\Scripts\Controllers\TheoryScene\TheoryControllers\MainTheoryController.cs" initialLine="61" containingFunctionPresentation="method 'StartDoingSomeThingWithQueue'">
+            <startOffsets>
+              <option value="2140" />
+            </startOffsets>
+            <endOffsets>
+              <option value="2199" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="6" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
