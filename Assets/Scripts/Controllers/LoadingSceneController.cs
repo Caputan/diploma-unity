@@ -1,20 +1,39 @@
-﻿using System.Net.Mime;
+﻿using System.Collections;
+using System.Net.Mime;
+using Coroutine;
 using Diploma.Interfaces;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+
 
 namespace Controllers
 {
-    public class LoadingSceneController: IInitialization
+    public sealed class LoadingSceneController: IInitialization
     {
+        
+
         public void LoadNextScene(int idScene)
         {
-            SceneManager.LoadScene(idScene, LoadSceneMode.Single);
+            AsyncLoad(idScene).StartCoroutine(out _, out _);
         }
+        
+        IEnumerator AsyncLoad(int sceneID)
+        {
+            AsyncOperation operation = SceneManager.LoadSceneAsync(sceneID);
+            while (!operation.isDone)
+            {
+                yield return null;
+            }
+
+        }
+        
         
         public void Initialization()
         {
-            throw new System.NotImplementedException();
         }
+
+        
     }
 }

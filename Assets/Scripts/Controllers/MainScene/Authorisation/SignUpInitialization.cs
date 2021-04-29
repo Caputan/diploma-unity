@@ -3,6 +3,7 @@ using Diploma.Enums;
 using Diploma.Interfaces;
 using Diploma.UI;
 using TMPro;
+using Tools;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Video;
@@ -14,35 +15,30 @@ namespace Diploma.Controllers
         private readonly GameContextWithViews _gameContextWithViews;
         private readonly GameContextWithUI _gameContextWithUI;
         private readonly GameObject _mainParent;
-        private readonly GameObject _signUpPrefab;
         private readonly SignUpFactory _signUpFactory;
         private List<Button> SignUpButtons;
-
         private AuthController _authController;
+        
+        private readonly ResourcePath _viewPath = new ResourcePath {PathResource = "Prefabs/MainScene/Registration"};
+        
         public TMP_InputField Login;
         public  TMP_InputField Password;
         public  TMP_InputField Email;
 
         public SignUpInitialization(GameContextWithViews gameContextWithViews,
-            GameContextWithUI gameContextWithUI, GameObject MainParent, GameObject signUpPrefab, AuthController authController)
+            GameContextWithUI gameContextWithUI, GameObject MainParent, AuthController authController)
         {
             _gameContextWithViews = gameContextWithViews;
             _gameContextWithUI = gameContextWithUI;
             _mainParent = MainParent;
-            _signUpPrefab = signUpPrefab;
             _authController = authController;
-            _signUpFactory = new SignUpFactory(_signUpPrefab);
+            _signUpFactory = new SignUpFactory(ResourceLoader.LoadPrefab(_viewPath));
         }
 
         public void Initialization()
         {
             var signUpMenu = _signUpFactory.Create(_mainParent.transform);
-            
-            // var bgVideo = signUpMenu.GetComponentInChildren<VideoPlayer>();
-            // bgVideo.renderMode = VideoRenderMode.CameraFarPlane;
-            // bgVideo.targetCamera = Camera.main;
-            // bgVideo.Play();
-            
+
             signUpMenu.transform.localPosition = new Vector3(0,0,0);
 
             SignUpButtons = new List<Button>();

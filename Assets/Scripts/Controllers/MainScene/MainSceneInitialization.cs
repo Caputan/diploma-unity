@@ -2,12 +2,17 @@
 using Controllers;
 using Controllers.MainScene.LessonsControllers;
 using Data;
+using Diploma.Controllers.AboutControllers;
 using Diploma.Interfaces;
 using Diploma.Managers;
 using Diploma.Tables;
+using TMPro;
+using UI.LoadingUI;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.Serialization;
+using UnityEngine.UI;
 
 
 namespace Diploma.Controllers
@@ -15,52 +20,28 @@ namespace Diploma.Controllers
     public class MainSceneInitialization: MonoBehaviour
     {
         [SerializeField] private Camera _camera;
-        [SerializeField] private GameObject MainMenuPrefab;
         [SerializeField] private GameObject MainParent;
         
-        [SerializeField] private GameObject AuthPrefab;
-        
-        [SerializeField] private GameObject SignUpPrefab;
-
-        [SerializeField] private GameObject lessonCanvasPrefab;
-        [SerializeField] private GameObject lessonPrefab;
-        [SerializeField] private GameObject ParentForLessons;
-        
-        [SerializeField] private GameObject lessonConstructorPrefab;
-        [SerializeField] private GameObject lessonConstructorPlatePrefab;
-
-        [SerializeField] private GameObject OptionsPrefab;
-
         [SerializeField] private AudioMixer _mainAudioMixer;
         
-        [SerializeField] private GameObject ErrorMenuPrefab;
         [SerializeField] private ImportantDontDestroyData _data;
         [SerializeField] private AdditionalInfomationLibrary _library;
-        [SerializeField] private Material _material;
         
-        #region Don't Use
-        // [SerializeField] private GameObject togglePanelPrefab;
-        // [SerializeField] private GameObject ToggleGroup;
 
-        
-        #endregion
-        
-        [SerializeField] private FileManagerController _fileManager;
-        [SerializeField] private Loader3DS _loader3Ds;
-        
+        private FileManagerController _fileManager;
+        private Loader3DS _loader3Ds;
         private GameContextWithLogic _gameContextWithLogic;
         private GameContextWithViews _gameContextWithViews;
         private GameContextWithLessons _gameContextWithLessons;
         private GameContextWithUI _gameContextWithUI;
       
         private Controllers _controllers;
-        //public string[] destinationPath = new string[4];
+       
         public void Start()
         {
-            
 
             #region DataBase initialization
-            // потом надо на отдельные инициализаторы разбить чтоль....
+            
             FileManager fileManager = new FileManager();
             // destinationPath[0] = fileManager.CreateFileFolder("Assemblies");
             // destinationPath[1] = fileManager.CreateFileFolder("Videos");
@@ -100,26 +81,11 @@ namespace Diploma.Controllers
             _gameContextWithLogic.MainCamera = _camera;
             
             _fileManager = new FileManagerController();
-            // тут мы создали базове типизированное меню
-            // var GameContextWithViewCreator = new GameContexWithViewCreator(
-            //     _gameContextWithViews,
-            //     _gameContextWithLogic,
-            //     _gameContextWithLessons,
-            //     _gameContextWithUI,
-            //     ToggleGroup,
-            //     togglePanelPrefab,
-            //     ParentForLessons,
-            //     toggleLessonPrefab,
-            //     DataBaseController,
-            //     tables
-            //     );
-
 
             var MainMenuInitilization = new MainMenuInitialization(
                 _gameContextWithViews,
                 _gameContextWithUI,
                 MainParent,
-                MainMenuPrefab,
                 AuthController
             );
 
@@ -127,7 +93,6 @@ namespace Diploma.Controllers
                 _gameContextWithViews,
                 _gameContextWithUI,
                 MainParent,
-                AuthPrefab,
                 AuthController
             );
 
@@ -135,7 +100,6 @@ namespace Diploma.Controllers
                 _gameContextWithViews,
                 _gameContextWithUI,
                 MainParent,
-                SignUpPrefab,
                 AuthController
             );
 
@@ -150,12 +114,9 @@ namespace Diploma.Controllers
                 _gameContextWithViews,
                 _gameContextWithUI,
                 _gameContextWithLessons,
-                ParentForLessons,
-                lessonCanvasPrefab,
-                lessonPrefab,
+                MainParent,
                 DataBaseController,
-                tables,
-                _data
+                tables
                 );
             
            
@@ -164,11 +125,7 @@ namespace Diploma.Controllers
                 _gameContextWithViews,
                 _gameContextWithUI,
                 _gameContextWithLogic,
-                DataBaseController,
-                tables,
                 MainParent,
-                lessonConstructorPrefab,
-                lessonConstructorPlatePrefab,
                 _library
             );
             
@@ -180,9 +137,7 @@ namespace Diploma.Controllers
                 _gameContextWithUI,
                 _gameContextWithLogic,
                 _fileManager,
-                lessonPrefab,
-                fileManager,
-                _material
+                fileManager
             );
             
             var ScreenShootController = new ScreenShotController();
@@ -190,21 +145,23 @@ namespace Diploma.Controllers
             var BackController = new BackController();
             
             var ExitController = new ExitController();
-            
-            var SceneLoader = new LoadingSceneController();
-            
+
             var ErrorHandlerInitialization = new ErrorMenuInitialization(
                 _gameContextWithViews,
                 _gameContextWithUI,
-                MainParent,
-                ErrorMenuPrefab
-                );
+                MainParent
+            );
             
             var OptionsInitialization = new OptionsInitialization(
                 _gameContextWithViews,
                 _gameContextWithUI,
-                MainParent,
-                OptionsPrefab
+                MainParent
+            );
+            
+            var AboutInitialization = new AboutInitialization(
+                _gameContextWithViews,
+                _gameContextWithUI,
+                MainParent
             );
             
             var OptionsController = new OptionsController(
@@ -213,12 +170,14 @@ namespace Diploma.Controllers
                 _mainAudioMixer
                 );
             
-            var ChooseLessonController = new LessonsChooseController(
-                _gameContextWithViews,
-                _gameContextWithUI,
-                SceneLoader,
-                _data
-                );
+            
+            
+            
+            
+            var SceneLoader = new LoadingSceneController();
+
+            var loading = new LoadingUILogic(MainParent.transform);
+            
             
             var uiController = new UIController(
                 _gameContextWithUI,
@@ -228,38 +187,27 @@ namespace Diploma.Controllers
                 _fileManager,
                 LessonConstructorController,
                 OptionsController,
+                ScreenShootController,
+                loading
+            );
+            
+            var ChooseLessonController = new LessonsChooseController(
+                _gameContextWithViews,
+                _gameContextWithUI,
                 SceneLoader,
-                ScreenShootController
-                );
-            //uiController.AddUIToDictionary();
-            // добавить соответствующие менюшки ниже
-            // с помощью uiController.AddUIToDictionary()
+                _data,
+                uiController,
+                loading
+            );
+
             #endregion
-            
-            // _fileManager.DataBaseController = DataBaseController;
-            // _fileManager.Tables = tables;
-            // _fileManager.destinationPath = destinationPath;
-            
-            #region Creation new Lession Module
-            // данный регион будет вызываться во время создания урока
-            //var abstractFactory = new AbstractFactory();
-            //var abstractView = new AbstractView(_gameContextWithViews,_gameContextWithLogic,MainMenuButtons[0],_fileManager);
-            //var abstractFactoryController = new AbstractFactoryController(abstractView,abstractFactory);
-            
-            #endregion
-           
-            
 
             _controllers = new Controllers();
-            // _controllers.Add(GameContextWithViewCreator);
             _controllers.Add(DataBaseController);
-            // _controllers.Add(abstractView);
-            // _controllers.Add(abstractFactoryController);
             _controllers.Add(AuthController);
             _controllers.Add(MainMenuInitilization);
             _controllers.Add(AuthInitialization);
             _controllers.Add(SignUpInitialization);
-            //_controllers.Add(ErrorMenuInitialization);
             _controllers.Add(BackController);
             _controllers.Add(ChooseLessonInitialization);
             _controllers.Add(LessonConstructorInitialization);
@@ -268,6 +216,9 @@ namespace Diploma.Controllers
             _controllers.Add(OptionsController);
             _controllers.Add(ErrorHandlerInitialization);
             _controllers.Add(ChooseLessonController);
+            _controllers.Add(SceneLoader);
+            _controllers.Add(loading);
+            _controllers.Add(AboutInitialization);
             
             _controllers.Initialization();
             //этот контроллер идет самым последним

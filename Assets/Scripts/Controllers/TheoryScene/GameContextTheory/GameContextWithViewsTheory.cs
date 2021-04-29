@@ -11,18 +11,19 @@ namespace Diploma.Controllers
         public Dictionary<int, Button> LibraryButtons;
         //капелька хардкода.
         public List<Transform> Parents;
-        public string nameOfFolder;
+        public Dictionary<int,string> nameOfFolders;
 
         public GameContextWithViewsTheory()
         {
             TheoryButtons = new Dictionary<LoadingPartsTheoryScene, Button>();
             LibraryButtons = new Dictionary<int, Button>();
             Parents = new List<Transform>();
+            nameOfFolders = new Dictionary<int, string>();
         }
 
-        public void SetNameOfFolder(string name)
+        public void SetNameOfFolder(int id,string name)
         {
-            nameOfFolder = name;
+            nameOfFolders.Add(id,name);
         }
         
         public void AddTheoryButtons(LoadingPartsTheoryScene id, Button button)

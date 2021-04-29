@@ -8,7 +8,10 @@ using Diploma.Controllers;
 using Diploma.Interfaces;
 using Diploma.Managers;
 using Diploma.Tables;
+using TMPro;
+using UI.LoadingUI;
 using UnityEngine;
+using UnityEngine.UI;
 using Types = Diploma.Tables.Types;
 
 namespace Controllers.TheoryScene
@@ -17,17 +20,10 @@ namespace Controllers.TheoryScene
     {
         [SerializeField] private ImportantDontDestroyData _data;
         [SerializeField] private AdditionalInfomationLibrary _library;
-        
         [SerializeField] private GameObject canvas;
 
-        [SerializeField] private GameObject theoryPrefab;
-        [SerializeField] private GameObject pdfPrefab;
-        [SerializeField] private GameObject libraryPrefab;
-
         [SerializeField] private string _pngStoragePath = "LocalPDFDocumentsInImages";
-       
-        private Transform _theoryParent;
-        private Transform _treeParent;
+        
 
         private GameContextWithViewsTheory _gameContextWithViewsTheory;
         private GameContextWithUITheory _gameContextWithUITheory;
@@ -38,11 +34,7 @@ namespace Controllers.TheoryScene
             
             _gameContextWithViewsTheory = new GameContextWithViewsTheory();
             _gameContextWithUITheory = new GameContextWithUITheory();
-            
-            //не работает тк обращается к префабу
-            _theoryParent = theoryPrefab.transform;
-            _treeParent = theoryPrefab.transform;
-            //
+
             _fileManager = new FileManager();
             _pngStoragePath =Path.Combine(_fileManager.GetStorage(),
                 _pngStoragePath);
@@ -73,63 +65,69 @@ namespace Controllers.TheoryScene
             TheoryUIInitialization theoryUIInitialization = new TheoryUIInitialization
             (
                 canvas,
-                theoryPrefab,
                 _gameContextWithViewsTheory,
-                _gameContextWithUITheory
+                _gameContextWithUITheory,
+                Types.TypeS
                 );
 
             PdfReaderUIInitialization pdfReaderUIInitialization = new PdfReaderUIInitialization
             (
-                pdfPrefab,
-                _fileManager,
                 _gameContextWithViewsTheory
+            );
+
+            LoadingUILogic loadingUILogic = new LoadingUILogic(
+                canvas.transform
             );
             
             TheoryController theoryController = new TheoryController
                 (
                 pdfReaderUIInitialization,
-                pdf.Text_Link,
+                pdf,
                 _fileManager,
                 _pngStoragePath,
                 _gameContextWithViewsTheory,
-                theoryUIInitialization
+                theoryUIInitialization,loadingUILogic
                 );
            
             LibraryTreeUIInitialization libraryTreeUIInitialization = new LibraryTreeUIInitialization
                 (
-                libraryPrefab,
                 _gameContextWithViewsTheory,
                 Types.TypeS,
                 _library
             );
 
-            // TheoryController libraryController = new TheoryController(
-            //     pdfReaderUIInitialization,
-            //     /*library,*/,
-            //     _fileManager,
-            //     _pngStoragePath,//нужен другой временный буфер
-            //     _gameContextWithViewsTheory,
-            //     theoryUIInitialization
-            //     );
+            LibraryTreeController libraryController = new LibraryTreeController(
+                pdfReaderUIInitialization,
+                _fileManager,
+                _pngStoragePath,
+                _gameContextWithViewsTheory,loadingUILogic
+                ,_library,
+                Types
+            );
 
-           
+            MainTheoryController mainTheoryController = new MainTheoryController(
+                theoryController,
+                libraryController,
+                loadingUILogic
+                );
             
             _controllers = new Diploma.Controllers.Controllers();
             _controllers.Add(theoryUIInitialization);
             _controllers.Add(pdfReaderUIInitialization);
             //_controllers.Add(theoryController);
             _controllers.Add(libraryTreeUIInitialization);
-            //_controllers.Add(libraryTreeController);
-            
+            _controllers.Add(loadingUILogic);
             _controllers.Initialization();
-            
+            //loadingUILogic.SetActiveLoading(true);
             UIControllerTheoryScene uiControllerTheoryScene = new UIControllerTheoryScene(
                 _gameContextWithViewsTheory,
                 _gameContextWithUITheory,
                 loadingSceneController,
                 theoryController,
-                theoryController,
-                _library
+                libraryController,
+                _library,
+                loadingUILogic,
+                mainTheoryController
             );
         }
 

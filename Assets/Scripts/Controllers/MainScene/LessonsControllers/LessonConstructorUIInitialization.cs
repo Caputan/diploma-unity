@@ -4,6 +4,7 @@ using Diploma.Controllers;
 using Diploma.Enums;
 using Diploma.Interfaces;
 using Diploma.UI;
+using Tools;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -14,12 +15,13 @@ namespace Controllers
         private readonly GameContextWithViews _gameContextWithViews;
         private readonly GameContextWithUI _gameContextWithUI;
         private readonly GameContextWithLogic _gameContextWithLogic;
-        private readonly DataBaseController _dataBaseController;
-        private readonly List<IDataBase> _tables;
         private readonly GameObject _canvas;
 
+        private readonly ResourcePath _viewPath = new ResourcePath {PathResource = "Prefabs/MainScene/LessonConstructor"};
+        private readonly ResourcePath _viewPathForPlate = new ResourcePath {PathResource = "Prefabs/MainScene/LessonConstructorPanel"};
+        
+        
         private readonly GameObject _prefabConstructor;
-        private readonly GameObject _prefabPlate;
         private readonly AdditionalInfomationLibrary _additionalInfomationLibrary;
         private LessonConstructorUIFactory _lessonConstructor;
         private List<Button> ConstructorButtons;
@@ -28,24 +30,17 @@ namespace Controllers
         public LessonConstructorUIInitialization(GameContextWithViews gameContextWithViews,
             GameContextWithUI gameContextWithUI,
             GameContextWithLogic gameContextWithLogic,
-            DataBaseController dataBaseController,
-            List<IDataBase> tables,
             GameObject Canvas,
-            GameObject PrefabConstructor,
-            GameObject PrefabPlate,
             AdditionalInfomationLibrary additionalInfomationLibrary
             )
         {
             _gameContextWithViews = gameContextWithViews;
             _gameContextWithUI = gameContextWithUI;
             _gameContextWithLogic = gameContextWithLogic;
-            _dataBaseController = dataBaseController;
-            _tables = tables;
             _canvas = Canvas;
-            _prefabConstructor = PrefabConstructor;
-            _prefabPlate = PrefabPlate;
+            
             _additionalInfomationLibrary = additionalInfomationLibrary;
-            _lessonConstructor = new LessonConstructorUIFactory(_prefabConstructor);
+            _lessonConstructor = new LessonConstructorUIFactory(ResourceLoader.LoadPrefab(_viewPath));
             
         }
         public void Initialization()
@@ -64,7 +59,7 @@ namespace Controllers
                 ConstructorButtons,
                 _gameContextWithViews,
                 _gameContextWithLogic,
-                _prefabPlate,
+                ResourceLoader.LoadPrefab(_viewPathForPlate),
                 parentForLessons,
                 _additionalInfomationLibrary
                 );

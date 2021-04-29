@@ -3,6 +3,7 @@ using Diploma.Enums;
 using Diploma.Interfaces;
 using Diploma.UI;
 using TMPro;
+using Tools;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Video;
@@ -14,34 +15,29 @@ namespace Diploma.Controllers
         private readonly GameContextWithViews _gameContextWithViews;
         private readonly GameContextWithUI _gameContextWithUI;
         private readonly GameObject _authParent;
-        private readonly GameObject _authPrefab;
         private readonly AuthFactory _authFactory;
         private List<Button> _authButtons;
         private readonly AuthController _authController;
 
+        private readonly ResourcePath _viewPath = new ResourcePath {PathResource = "Prefabs/MainScene/Authorization"};
+        
         public TMP_InputField Login;
         public TMP_InputField Password;
 
         public AuthInitialization(GameContextWithViews gameContextWithViews,
-            GameContextWithUI gameContextWithUI, GameObject authParent, GameObject authPrefab, AuthController authController)
+            GameContextWithUI gameContextWithUI, GameObject authParent, AuthController authController)
         {
             _gameContextWithViews = gameContextWithViews;
             _gameContextWithUI = gameContextWithUI;
             _authParent = authParent;
-            _authPrefab = authPrefab;
             _authController = authController;
-            _authFactory = new AuthFactory(_authPrefab);
+            _authFactory = new AuthFactory(ResourceLoader.LoadPrefab(_viewPath));
         }
 
         public void Initialization()
         {
             var authMenu = _authFactory.Create(_authParent.transform);
-            
-            // var bgVideo = authMenu.GetComponentInChildren<VideoPlayer>();
-            // bgVideo.renderMode = VideoRenderMode.CameraFarPlane;
-            // bgVideo.targetCamera = Camera.main;
-            // bgVideo.Play();
-            
+
             authMenu.transform.localPosition = new Vector3(0,0,0);
 
             _authButtons = new List<Button>();

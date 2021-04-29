@@ -23,7 +23,7 @@ public class Loader3DS {
 	
 	public void StartParsing(string pathOfModel, GameObject parent, PoolOfObjects poolOfObjects)
 	{
-		Loader(pathOfModel, parent,poolOfObjects).StartCoroutine(out _);
+		Loader(pathOfModel, parent,poolOfObjects).StartCoroutine(out _, out _);
 	}
 
 	private IEnumerator Loader (string path, GameObject parent, PoolOfObjects poolOfObjects)
@@ -145,7 +145,7 @@ public class Loader3DS {
 						break;
 				}
 
-				SetMesh(parent,poolOfObjects).StartCoroutine(out _);
+				SetMesh(parent,poolOfObjects).StartCoroutine(out _, out _);
 			}
 
 			myFileStream.Close ();

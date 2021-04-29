@@ -27,6 +27,7 @@ namespace Coroutine
 
                 if (state == CoroutineState.Finished)
                 {
+                    //_routine.StopCoroutine();
                     yield break;
                 }
             }

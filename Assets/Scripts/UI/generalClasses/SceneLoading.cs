@@ -9,7 +9,6 @@ public class SceneLoading : MonoBehaviour
     public int sceneID;
     public Image loadingImg;
 
-    // Start is called before the first frame update
     void Start()
     {
         StartCoroutine(AsyncLoad());
@@ -26,10 +25,5 @@ public class SceneLoading : MonoBehaviour
         }
         
     }
-        
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+   
 }

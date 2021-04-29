@@ -5,6 +5,7 @@ using Diploma.Enums;
 using Diploma.Interfaces;
 using Diploma.UI;
 using TMPro;
+using Tools;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -15,20 +16,21 @@ namespace Diploma.Controllers
         private readonly GameContextWithViews _gameContextWithViews;
         private readonly GameContextWithUI _gameContextWithUI;
         private readonly GameObject _mainParent;
-        private readonly GameObject _prefabMain;
+        
         private MainMenuFactory _mainMenuFactory;
         private List<Button> MainMenuButtons;
         private AuthController _authController;
         
+        private readonly ResourcePath _viewPath = new ResourcePath {PathResource = "Prefabs/MainScene/MainMenu"};
+        
         public MainMenuInitialization(GameContextWithViews gameContextWithViews,
-            GameContextWithUI gameContextWithUI,GameObject MainParent, GameObject PrefabMain, AuthController authController)
+            GameContextWithUI gameContextWithUI,GameObject MainParent, AuthController authController)
         {
             _gameContextWithViews = gameContextWithViews;
             _gameContextWithUI = gameContextWithUI;
             _mainParent = MainParent;
-            _prefabMain = PrefabMain;
             _authController = authController;
-            _mainMenuFactory = new MainMenuFactory(_prefabMain);
+            _mainMenuFactory = new MainMenuFactory(ResourceLoader.LoadPrefab(_viewPath));
             
         }
         public void Initialization()

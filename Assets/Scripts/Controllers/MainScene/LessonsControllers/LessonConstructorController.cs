@@ -12,6 +12,7 @@ using GameObjectCreating;
 using Interfaces;
 using ListOfLessons;
 using TMPro;
+using Tools;
 using UnityEngine;
 using UnityEngine.UI;
 using Types = Diploma.Tables.Types;
@@ -29,12 +30,14 @@ namespace Controllers
         private readonly FileManagerController _fileManagerController;
         private string[] _destination = new string[4];
         private readonly FileManager _fileManager;
-        private readonly Material _material;
         private Dictionary<LoadingParts, GameObject> _texts;
         private PlateWithButtonForLessonsFactory _plateWithButtonForLessonsFactory;
         private string[] _localText = new string[4];
         private string[] _massForCopy = new string[3];
         Plane[] planes;
+        
+        private readonly ResourcePath _viewPath = new ResourcePath {PathResource = "Prefabs/MainScene/LessonConstructorPanel"};
+        
         public LessonConstructorController(
             DataBaseController dataBaseController,
             List<IDataBase>  tables,
@@ -43,9 +46,7 @@ namespace Controllers
             GameContextWithUI gameContextWithUI,
             GameContextWithLogic gameContextWithLogic,
             FileManagerController fileManagerController,
-            GameObject prefabLessonPlate,
-            FileManager fileManager,
-            Material material
+            FileManager fileManager
         )
         {
             _dataBaseController = dataBaseController;
@@ -56,9 +57,8 @@ namespace Controllers
             _gameContextWithLogic = gameContextWithLogic;
             _fileManagerController = fileManagerController;
             _fileManager = fileManager;
-            _material = material;
             _texts = _gameContextWithViews.TextBoxesOnConstructor;
-            _plateWithButtonForLessonsFactory = new PlateWithButtonForLessonsFactory(prefabLessonPlate);
+            _plateWithButtonForLessonsFactory = new PlateWithButtonForLessonsFactory(ResourceLoader.LoadPrefab(_viewPath));
         }
 
         public void Initialization()
@@ -175,12 +175,12 @@ namespace Controllers
             File.Copy(_massForCopy[0],_localText[0]);
             _dataBaseController.SetTable(_tables[0]);
             Assemblies Assembly = (Assemblies)_dataBaseController.GetRecordFromTableById(Convert.ToInt32(lessonPacked[3]));
-            var GameObjectFactory = new GameObjectFactory(false,_material);
-            var Pool = new PoolOfObjects(GameObjectFactory,_gameContextWithLogic);
-            var GameObjectInitilization = new GameObjectInitialization(Pool, Assembly);
+            //ar GameObjectFactory = new GameObjectFactory(false,_material);
+            //var Pool = new PoolOfObjects(GameObjectFactory,_gameContextWithLogic);
+            var GameObjectInitilization = new GameObjectInitialization(Assembly);
             GameObjectInitilization.Initialization();
 
-            SetCameraNearObject(Pool);
+            //SetCameraNearObject(Pool);
             
             TakingScreen(_destination[2]+"\\"+lessonPacked[5]+".png");
             lessonPacked[0] = _destination[2] + "\\" + lessonPacked[5]+".png";

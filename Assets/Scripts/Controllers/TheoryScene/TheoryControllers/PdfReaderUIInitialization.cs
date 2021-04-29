@@ -1,8 +1,11 @@
-﻿using System.IO;
+﻿using System.Collections;
+using System.IO;
+using Coroutine;
 using Diploma.Controllers;
 using Diploma.Interfaces;
 using Diploma.Managers;
 using TMPro;
+using Tools;
 using UI.TheoryUI.PDFReaderUI;
 using UnityEngine;
 using UnityEngine.UI;
@@ -11,25 +14,30 @@ namespace Controllers.TheoryScene.TheoryControllers
 {
     public sealed class PdfReaderUIInitialization: IInitialization
     {
-        private readonly FileManager _fileManager;
         private readonly GameContextWithViewsTheory _gameContextWithViewsTheory;
         private Transform _parent;
         private PDFReaderUIFactory _factory;
 
-        public PdfReaderUIInitialization(GameObject prefab, FileManager fileManager,
-            GameContextWithViewsTheory gameContextWithViewsTheory)
-        {
-            _fileManager = fileManager;
-            _gameContextWithViewsTheory = gameContextWithViewsTheory;
+        private readonly ResourcePath _viewPath = new ResourcePath {PathResource = "Prefabs/TheoryScene/ImageForPage"};
 
-            _factory = new PDFReaderUIFactory(prefab);
+        public PdfReaderUIInitialization(GameContextWithViewsTheory gameContextWithViewsTheory)
+        {
+            _gameContextWithViewsTheory = gameContextWithViewsTheory;
+            _factory = new PDFReaderUIFactory(ResourceLoader.LoadPrefab(_viewPath));
         }
         public void Initialization() { }
-        public void ReadANewPdfDocument()
+        
+        public void ReadNextDoc(int id)
         {
+            ReadANewPdfDocument(id).StartCoroutine(out _, out _);
+        }
+        public IEnumerator ReadANewPdfDocument(int id)
+        {
+            yield return new WaitForEndOfFrame();
+            
             #region Creation PDF Reader
             _parent = _gameContextWithViewsTheory.Parents[0];
-            var paths = Directory.GetFiles(_gameContextWithViewsTheory.nameOfFolder);
+            var paths = Directory.GetFiles(_gameContextWithViewsTheory.nameOfFolders[id]);
             
             foreach(var path in paths)
             {
@@ -45,6 +53,8 @@ namespace Controllers.TheoryScene.TheoryControllers
 
             }
             #endregion
+
+            yield return null;
         }
 
         public void UnloadDocument()
