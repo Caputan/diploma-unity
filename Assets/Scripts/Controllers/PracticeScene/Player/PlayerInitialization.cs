@@ -15,7 +15,7 @@ namespace Diploma.Controllers
             _playerGameObject = player;
             _spawnPoint = spawnPoint;
             
-            var playerGO = GameObject.Instantiate(_playerGameObject, _spawnPoint.position, _playerGameObject.transform.rotation, _spawnPoint);
+            var playerGO = GameObject.Instantiate(_playerGameObject, _spawnPoint.position, _spawnPoint.rotation, _spawnPoint);
 
             _playerController = new PlayerController(playerGO);
         }

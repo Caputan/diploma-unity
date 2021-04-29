@@ -19,7 +19,135 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9a27c574-4a30-4862-a74f-153a103b04b8" name="Default Changelist" comment="" />
+    <list default="true" id="9a27c574-4a30-4862-a74f-153a103b04b8" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.diploma-unity/.idea/contentModel.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.diploma-unity/.idea/riderModule.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Bricks.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Bricks.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Office Ceiling.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Office Ceiling.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/PracticeScene.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/PracticeScene.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Texture Bricks 'n Blocks.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Texture Bricks 'n Blocks/Bricks n Blocks.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Texture Bricks 'n Blocks/Bricks n Blocks.pdf.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Texture Bricks 'n Blocks/Demo Scene.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Texture Bricks 'n Blocks/Demo Scene/Demo_Scene.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Texture Bricks 'n Blocks/Demo Scene/Demo_Scene.unity" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Texture Bricks 'n Blocks/Demo Scene/Demo_Scene.unity.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Texture Bricks 'n Blocks/Demo Scene/Demo_Scene/LightingData.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Texture Bricks 'n Blocks/Demo Scene/Demo_Scene/LightingData.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Texture Bricks 'n Blocks/Demo Scene/Demo_Scene/ReflectionProbe-0.exr" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Texture Bricks 'n Blocks/Demo Scene/Demo_Scene/ReflectionProbe-0.exr.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Texture Bricks 'n Blocks/Materials.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Texture Bricks 'n Blocks/Materials/Block_Pavers.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Texture Bricks 'n Blocks/Materials/Block_Pavers.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Texture Bricks 'n Blocks/Materials/Brick_Cobble_withgrout.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Texture Bricks 'n Blocks/Materials/Brick_Cobble_withgrout.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Texture Bricks 'n Blocks/Materials/Brick_Shiny.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Texture Bricks 'n Blocks/Materials/Brick_Shiny.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Texture Bricks 'n Blocks/Materials/Ston_Stack_Grassy.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Texture Bricks 'n Blocks/Materials/Ston_Stack_Grassy.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Texture Bricks 'n Blocks/SkyBox.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Texture Bricks 'n Blocks/SkyBox.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Texture Bricks 'n Blocks/Textures.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Texture Bricks 'n Blocks/Textures/Block_pavers_diffuseOriginal.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Texture Bricks 'n Blocks/Textures/Block_pavers_diffuseOriginal.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Texture Bricks 'n Blocks/Textures/Brick_cobble_whitegrout_diffuseOriginal.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Texture Bricks 'n Blocks/Textures/Brick_cobble_whitegrout_diffuseOriginal.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Texture Bricks 'n Blocks/Textures/Brick_shiny_diffuseOriginal.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Texture Bricks 'n Blocks/Textures/Brick_shiny_diffuseOriginal.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Texture Bricks 'n Blocks/Textures/Stone_stack_grassy_diffuseOriginal.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Texture Bricks 'n Blocks/Textures/Stone_stack_grassy_diffuseOriginal.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Wooden floor.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Wooden floor/Wooden floor 01.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Wooden floor/Wooden floor 01/Wooden floor 01.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Wooden floor/Wooden floor 01/Wooden floor 01.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Wooden floor/Wooden floor 01/Wooden floor diffuse.tga" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Wooden floor/Wooden floor 01/Wooden floor diffuse.tga.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Wooden floor/Wooden floor 01/Wooden floor normal.tga" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Wooden floor/Wooden floor 01/Wooden floor normal.tga.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Wooden floor/Wooden floor 02.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Wooden floor/Wooden floor 02/Wooden floor 02.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Wooden floor/Wooden floor 02/Wooden floor 02.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Wooden floor/Wooden floor 02/Wooden floor diffuse.tga" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Wooden floor/Wooden floor 02/Wooden floor diffuse.tga.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Wooden floor/Wooden floor 02/Wooden floor normal.tga" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Wooden floor/Wooden floor 02/Wooden floor normal.tga.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Wooden floor/Wooden floor 03.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Wooden floor/Wooden floor 03/Wooden floor 03.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Wooden floor/Wooden floor 03/Wooden floor 03.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Wooden floor/Wooden floor 03/Wooden floor diffuse.tga" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Wooden floor/Wooden floor 03/Wooden floor diffuse.tga.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Wooden floor/Wooden floor 03/Wooden floor normal.tga" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Wooden floor/Wooden floor 03/Wooden floor normal.tga.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Wooden floor/Wooden floor 04.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Wooden floor/Wooden floor 04/Wooden floor 04.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Wooden floor/Wooden floor 04/Wooden floor 04.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Wooden floor/Wooden floor 04/Wooden floor diffuse.tga" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Wooden floor/Wooden floor 04/Wooden floor diffuse.tga.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Wooden floor/Wooden floor 04/Wooden floor normal.tga" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Wooden floor/Wooden floor 04/Wooden floor normal.tga.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Wooden floor/Wooden floor 05.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Wooden floor/Wooden floor 05/Wooden floor 05.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Wooden floor/Wooden floor 05/Wooden floor 05.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Wooden floor/Wooden floor 05/Wooden floor diffuse.tga" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Wooden floor/Wooden floor 05/Wooden floor diffuse.tga.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Wooden floor/Wooden floor 05/Wooden floor normal.tga" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Wooden floor/Wooden floor 05/Wooden floor normal.tga.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Wooden floor/Wooden floor 06.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Wooden floor/Wooden floor 06/Wooden floor 06.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Wooden floor/Wooden floor 06/Wooden floor 06.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Wooden floor/Wooden floor 06/Wooden floor diffuse.tga" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Wooden floor/Wooden floor 06/Wooden floor diffuse.tga.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Wooden floor/Wooden floor 06/Wooden floor normal.tga" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Wooden floor/Wooden floor 06/Wooden floor normal.tga.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Wooden floor/Wooden floor 07.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Wooden floor/Wooden floor 07/Wooden floor 07.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Wooden floor/Wooden floor 07/Wooden floor 07.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Wooden floor/Wooden floor 07/Wooden floor diffuse.tga" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Wooden floor/Wooden floor 07/Wooden floor diffuse.tga.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Wooden floor/Wooden floor 07/Wooden floor normal.tga" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Wooden floor/Wooden floor 07/Wooden floor normal.tga.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Wooden floor/Wooden floor 08.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Wooden floor/Wooden floor 08/Wooden floor 08.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Wooden floor/Wooden floor 08/Wooden floor 08.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Wooden floor/Wooden floor 08/Wooden floor diffuse.tga" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Wooden floor/Wooden floor 08/Wooden floor diffuse.tga.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Wooden floor/Wooden floor 08/Wooden floor normal.tga" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Wooden floor/Wooden floor 08/Wooden floor normal.tga.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Wooden floor/Wooden floor 09.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Wooden floor/Wooden floor 09/Wooden floor 09.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Wooden floor/Wooden floor 09/Wooden floor 09.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Wooden floor/Wooden floor 09/Wooden floor diffuse.tga" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Wooden floor/Wooden floor 09/Wooden floor diffuse.tga.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Wooden floor/Wooden floor 09/Wooden floor normal.tga" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Wooden floor/Wooden floor 09/Wooden floor normal.tga.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Wooden floor/Wooden floor 10.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Wooden floor/Wooden floor 10/Wooden floor 10.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Wooden floor/Wooden floor 10/Wooden floor 10.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Wooden floor/Wooden floor 10/Wooden floor diffuse.tga" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Wooden floor/Wooden floor 10/Wooden floor diffuse.tga.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Wooden floor/Wooden floor 10/Wooden floor normal.tga" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Wooden floor/Wooden floor 10/Wooden floor normal.tga.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Workbench.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Workbench.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.diploma-unity/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.diploma-unity/.idea/indexLayout.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.diploma-unity/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.diploma-unity/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AssetStoreOriginals/_SNAPS_PrototypingAssets.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/PracticeScene/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/PracticeScene/Player.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/QuickOutline/Resources/Materials.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/QuickOutline/Resources/Shaders.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/QuickOutline/Samples/Materials.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/QuickOutline/Samples/Scenes.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/QuickOutline/Scripts.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/LessonScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/LessonScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/PracticeScene/Player/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/PracticeScene/Player/PlayerController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/PracticeScene/Player/PlayerInitialization.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/PracticeScene/Player/PlayerInitialization.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Structure.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/Packages/com.unity.probuilder/Settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/Packages/com.unity.probuilder/Settings.json" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -38,11 +166,11 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Controllers/Loader3DS.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Interfaces/ICleanData.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/OtherControllers/Controllers.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.probuilder@4.4.0/Editor/EditorCore/EditorToolbar.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Interfaces/IInitialization.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Interfaces/ICleanData.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/62FFEEB7-EC02-4BEA-B61E-5FBF8D44AC5B/6a/e2c9e210/Directory.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.timeline@1.2.17/Editor/Window/ViewModel/ScriptableObjectViewPrefs.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Interfaces/IInitialization.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
@@ -91,6 +219,8 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/TheoryScene/UIController/UIControllerTheoryScene.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/PracticeScene/Inventory/InventoryInitialization.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/PracticeScene/AssembleController/AssembleController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/PracticeScene/Player/PlayerInitialization.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/PracticeScene/Player/PlayerController.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1oVh7QrK5P1QV67f8aHYDy536Km" />
@@ -109,6 +239,7 @@
     <property name="Discover.Launch.Via.Unity" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="XThreadsFramesViewSplitterKey" value="0.50097847" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -128,17 +259,15 @@
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
       <option name="pid" />
-      <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="14156">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="14156" />
-      <option name="projectPathOnTarget" />
+      <option name="pid" />
       <option name="selectedOptions">
         <list />
       </option>
@@ -177,6 +306,7 @@
       <workItem from="1618820437617" duration="14136000" />
       <workItem from="1618905906822" duration="2704000" />
       <workItem from="1619439278025" duration="941000" />
+      <workItem from="1619697086399" duration="1230000" />
     </task>
     <servers />
   </component>
@@ -213,14 +343,7 @@
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/Scripts/Controllers/PracticeScene/AssembleController/AssembleController.cs</url>
           <line>43</line>
-          <properties documentPath="D:\Users\CADExp\Documents\GitHub\diploma-unity\Assets\Scripts\Controllers\PracticeScene\AssembleController\AssembleController.cs" initialLine="43" containingFunctionPresentation="constructor 'AssembleController'">
-            <startOffsets>
-              <option value="1206" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1241" />
-            </endOffsets>
-          </properties>
+          <properties documentPath="D:\Users\CADExp\Documents\GitHub\diploma-unity\Assets\Scripts\Controllers\PracticeScene\AssembleController\AssembleController.cs" initialLine="43" containingFunctionPresentation="constructor 'AssembleController'" />
           <option name="timeStamp" value="4" />
         </line-breakpoint>
       </breakpoints>

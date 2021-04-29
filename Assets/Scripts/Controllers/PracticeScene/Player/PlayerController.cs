@@ -33,7 +33,7 @@ public class PlayerController
     
     public PlayerController(GameObject playerGameObject)
     {
-        _speed = 2f;
+        _speed = 6f;
         _mouseSensitivity = 2f;
         
         _playerGameObject = playerGameObject;
