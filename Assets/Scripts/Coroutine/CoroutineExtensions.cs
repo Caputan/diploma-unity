@@ -25,13 +25,16 @@ namespace Coroutine
         public static void StopCoroutine(this IEnumerator task)
             //out CoroutineController coroutineController)
         {
-            Initialize();
+            //Initialize();
             if (task == null)
             {
                 throw new System.ArgumentNullException(nameof(task));
             }
-            
+            //CoroutineController coroutineController = new CoroutineController(task);
+            // _asyncOperationBehavior = task.
+            //coroutineController.Stop();
             _asyncOperationBehavior.StopCoroutine(task);
+            
         } 
 
         public static void Initialize()

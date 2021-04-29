@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using Coroutine;
 using Diploma.Controllers;
 using Diploma.Interfaces;
 using Diploma.Managers;
@@ -57,9 +58,14 @@ namespace Controllers.TheoryScene.TheoryControllers
             _pdfReaderUIInitialization.ReadNextDoc(0);
         }
 
-        public void CreateDocumentLocaly(int id, string obj, IEnumerator enumerator)
+        public void CreateDocumentLocaly(
+            int id, 
+            string obj,
+            List<CoroutineController> сoroutineController,
+            int hand
+            )
         {
-            _pdfReader.RaedFile(id,obj, enumerator);
+            _pdfReader.RaedFile(id,obj, сoroutineController,hand);
         }
 
         public void RemoveDocumentPng()

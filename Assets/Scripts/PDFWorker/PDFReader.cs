@@ -6,6 +6,7 @@ using System.Linq;
 using Controllers.TheoryScene.TheoryControllers;
 using Coroutine;
 using Diploma.Controllers;
+using Diploma.Enums;
 using Diploma.Managers;
 using Ghostscript.NET;
 using iTextSharp.text.pdf;
@@ -40,13 +41,23 @@ namespace PDFWorker
             _fileManager.CreateFileFolder(_positionPath);
         }
 
-        public void RaedFile( int id, string strings, IEnumerator enumerator)
+        public void RaedFile(
+            int id,
+            string strings,
+            List<CoroutineController> сoroutineController,
+            int hand
+            )
         {
-            RaedFileCorutine(id, strings, enumerator); //.StartCoroutine(out _);
+            RaedFileCorutine(id, strings, сoroutineController,hand); //.StartCoroutine(out _);
         }
         
        // public IEnumerator RaedFileCorutine(int id, string inputPdfFile)
-       private void RaedFileCorutine(int id, string inputPdfFile, IEnumerator enumerator)
+       private void RaedFileCorutine(
+           int id,
+           string inputPdfFile,
+           List<CoroutineController> сoroutineController,
+           int hand
+           )
        {
             
            // yield return new WaitForEndOfFrame();
@@ -60,7 +71,9 @@ namespace PDFWorker
             _gameContextWithViewsTheory.SetNameOfFolder(id, destinationPath);
            
             i = 1;
-            ConvertPageToImage(i, destinationPath,numberOfPages,enumerator).StartCoroutine(out _,out _);
+            ConvertPageToImage(i, destinationPath,numberOfPages,сoroutineController,hand).
+                StartCoroutine(out _,out _);
+            
        }
         
         
@@ -76,13 +89,20 @@ namespace PDFWorker
             return pdfReader.NumberOfPages; 
         }
         //public IEnumerator ConvertPageToImage(float pageNumber, string pathToSave)
-        private IEnumerator ConvertPageToImage(float pageNumber, string pathToSave
-        ,float numberOfPages,IEnumerator enumerator)
+        private IEnumerator ConvertPageToImage(
+            float pageNumber,
+            string pathToSave,
+            float numberOfPages,
+            List<CoroutineController> сoroutineController,
+            int hand
+            )
         {
+            yield return new WaitForEndOfFrame();
+            
             if (pageNumber >= numberOfPages)
             {
-                //Мы не можем остановить маму-корутину
-                enumerator?.StopCoroutine();
+                Debug.Log("Сейчас корутина будет остановлена");
+                сoroutineController[hand].state = CoroutineState.Finished;
                 yield break;
             }
             Debug.Log(pageNumber);
@@ -106,7 +126,13 @@ namespace PDFWorker
                 _inputPdfFile.Split('/').Last());//.StartCoroutine(out _);
             yield return new WaitForEndOfFrame();
             i++;
-            ConvertPageToImage(i, pathToSave, numberOfPages,enumerator).StartCoroutine(out _,out _);
+            
+            
+            ConvertPageToImage(i, pathToSave, numberOfPages,сoroutineController,hand).StartCoroutine(out _,out var routine);
+            if (pageNumber == numberOfPages-1)
+            {
+                сoroutineController.Add(routine);
+            }
             yield return null;
         }
     }

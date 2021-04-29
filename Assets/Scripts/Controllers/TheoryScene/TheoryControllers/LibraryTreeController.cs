@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using Coroutine;
 using Data;
 using Diploma.Controllers;
 using Diploma.Interfaces;
@@ -66,9 +67,14 @@ namespace Controllers.TheoryScene.TheoryControllers
             UnloadDocument();
         }
         
-        public void CreateDocumentLocaly( int id, string obj, IEnumerator enumerator)
+        public void CreateDocumentLocaly( 
+            int id,
+            string obj,
+            List<CoroutineController> coroutineController,
+            int hand
+            )
         {
-            _pdfReader.RaedFile(id,obj,enumerator);
+            _pdfReader.RaedFile(id,obj,coroutineController,hand);
         }
         private void UnloadDocument()
         {
