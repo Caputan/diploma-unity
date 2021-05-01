@@ -7,21 +7,21 @@ using UnityEngine.UI;
 
 namespace UI.Options
 {
-    public class OptionsLogic:  IInitialization,IMenuButton,IUISilder
+    public class OptionsLogic:  IInitialization,IUIOptions,IUISilder
     {
-        private readonly Dictionary<LoadingParts, Button> _buttons;
+        private readonly Dictionary<OptionsButtons, Button> _buttons;
         private readonly Slider _slider;
 
-        public event Action<LoadingParts> LoadNext;
+        public event Action<OptionsButtons> LoadNext;
         public event Action<float> ChangePersent;
 
-        public OptionsLogic(Dictionary<LoadingParts,Button> buttons,Slider slider)
+        public OptionsLogic(Dictionary<OptionsButtons,Button> buttons,Slider slider)
         {
             _buttons = buttons;
             _slider = slider;
         }
         
-        public void SwitchToNextMenu(LoadingParts loadingParts)
+        public void SwitchToNextMenu(OptionsButtons loadingParts)
         {
             LoadNext?.Invoke(loadingParts);
         }

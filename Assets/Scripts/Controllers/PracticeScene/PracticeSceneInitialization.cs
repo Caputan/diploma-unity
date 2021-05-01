@@ -1,14 +1,17 @@
-﻿using System;
+﻿
 using System.Collections.Generic;
-using Controllers.PracticeScene.Inventory;
+using Controllers.PracticeScene.UIController;
 using Data;
-using Diploma.Controllers.AssembleController;
+using Diploma.Controllers;
 using Diploma.Interfaces;
+using Diploma.PracticeScene.GameContext;
 using Diploma.Tables;
-using GameObjectCreating;
 using UnityEngine;
+using GameContextWithLogic = Diploma.PracticeScene.GameContext.GameContextWithLogic;
+using GameContextWithUI = Diploma.PracticeScene.GameContext.GameContextWithUI;
+using UIController = Controllers.PracticeScene.UIController.UIController;
 
-namespace Diploma.Controllers
+namespace Diploma.PracticeScene.Controllers
 {
     public class PracticeSceneInitialization: MonoBehaviour
     {
@@ -25,12 +28,11 @@ namespace Diploma.Controllers
         [SerializeField] private GameObject basePart;
         [SerializeField] private GameObject[] partOfAssembly;
 
-        private GameContextWithLogic _gameContextWithLogic;
-        private GameContextWithViews _gameContextWithViews;
-        private GameContextWithLessons _gameContextWithLessons;
+        private GameContextWithView _gameContextView;
         private GameContextWithUI _gameContextWithUI;
-
-        private Controllers _controllers;
+        private GameContextWithLogic _gameContextWithLogic;
+        
+        private Diploma.Controllers.Controllers _controllers;
 
         public void Start()
         {
@@ -48,9 +50,9 @@ namespace Diploma.Controllers
             tables.Add(types); // 3 - types
             tables.Add(users); // 4 - users
             tables.Add(videos); // 5 - videos
-            
+
+            _gameContextView = new GameContextWithView();
             _gameContextWithLogic = new GameContextWithLogic();
-            _gameContextWithViews = new GameContextWithViews();
             _gameContextWithUI = new GameContextWithUI();
             
             DataBaseController.SetTable(tables[1]);
@@ -69,12 +71,17 @@ namespace Diploma.Controllers
 
            // var assemblyInitialization = new AssemblyInitialization(basePart, partOfAssembly);
 
-            _controllers = new Controllers();
+
+            var uiController = new UIController(_gameContextWithUI);
+           
+            _controllers = new Diploma.Controllers.Controllers();
             _controllers.Add(playerInitialization);
             _controllers.Add(GameObjectInitialization);
             //_controllers.Add(inventoryInitialization);
             //_controllers.Add(assemblyInitialization);
-            // _controllers.Add(GameObjectInitialization);
+            
+            //
+            _controllers.Add(uiController);
             _controllers.Initialization();
         }
 

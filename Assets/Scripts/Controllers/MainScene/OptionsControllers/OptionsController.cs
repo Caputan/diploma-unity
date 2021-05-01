@@ -34,18 +34,18 @@ namespace Controllers
             sliderController.ChangePersent += SwitchPersent;
         }
 
-        public void SetGraphicsQuality(LoadingParts loadingParts)
+        public void SetGraphicsQuality(OptionsButtons loadingParts)
         {
             //какая-то херня у них с индексами....
             switch (loadingParts)
             {
-                case LoadingParts.LowGraphics:
+                case OptionsButtons.LowGraphics:
                     QualitySettings.SetQualityLevel(1,true);
                     break;
-                case LoadingParts.MiddleGraphics:
+                case OptionsButtons.MiddleGraphics:
                     QualitySettings.SetQualityLevel(2,true);
                     break;
-                case LoadingParts.HighGraphics:
+                case OptionsButtons.HighGraphics:
                     QualitySettings.SetQualityLevel(3,true);
                     break;
             }
@@ -69,24 +69,24 @@ namespace Controllers
 
         }
 
-        public void DeactivateButton(LoadingParts id)
+        public void DeactivateButton(OptionsButtons id)
         {
             switch (id)
             {
-                case LoadingParts.LowGraphics:
-                    _gameContextWithViews.OptionsButtons[LoadingParts.LowGraphics].interactable = false;
-                    _gameContextWithViews.OptionsButtons[LoadingParts.MiddleGraphics].interactable = true;
-                    _gameContextWithViews.OptionsButtons[LoadingParts.HighGraphics].interactable = true;
+                case OptionsButtons.LowGraphics:
+                    _gameContextWithViews.OptionsButtons[OptionsButtons.LowGraphics].interactable = false;
+                    _gameContextWithViews.OptionsButtons[OptionsButtons.MiddleGraphics].interactable = true;
+                    _gameContextWithViews.OptionsButtons[OptionsButtons.HighGraphics].interactable = true;
                     break;
-                case LoadingParts.MiddleGraphics:
-                    _gameContextWithViews.OptionsButtons[LoadingParts.LowGraphics].interactable = true;
-                    _gameContextWithViews.OptionsButtons[LoadingParts.MiddleGraphics].interactable = false;
-                    _gameContextWithViews.OptionsButtons[LoadingParts.HighGraphics].interactable = true;
+                case OptionsButtons.MiddleGraphics:
+                    _gameContextWithViews.OptionsButtons[OptionsButtons.LowGraphics].interactable = true;
+                    _gameContextWithViews.OptionsButtons[OptionsButtons.MiddleGraphics].interactable = false;
+                    _gameContextWithViews.OptionsButtons[OptionsButtons.HighGraphics].interactable = true;
                     break;
-                case LoadingParts.HighGraphics:
-                    _gameContextWithViews.OptionsButtons[LoadingParts.LowGraphics].interactable = true;
-                    _gameContextWithViews.OptionsButtons[LoadingParts.MiddleGraphics].interactable = true;
-                    _gameContextWithViews.OptionsButtons[LoadingParts.HighGraphics].interactable = false;
+                case OptionsButtons.HighGraphics:
+                    _gameContextWithViews.OptionsButtons[OptionsButtons.LowGraphics].interactable = true;
+                    _gameContextWithViews.OptionsButtons[OptionsButtons.MiddleGraphics].interactable = true;
+                    _gameContextWithViews.OptionsButtons[OptionsButtons.HighGraphics].interactable = false;
                     break;
             }
             

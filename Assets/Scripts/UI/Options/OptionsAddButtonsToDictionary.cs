@@ -9,7 +9,7 @@ namespace UI.Options
     {
         private readonly List<Button> _buttons;
         private readonly GameContextWithViews _gameContextWithViews;
-        private readonly int[] _usedMenus = new[] {10,16,17,18};
+        private readonly int[] _usedMenus = new[] {4,0,1,2};
 
         public OptionsAddButtonsToDictionary(List<Button> buttons, GameContextWithViews gameContextWithViews)
         {
@@ -18,7 +18,7 @@ namespace UI.Options
             int i = 0;
             foreach (var button in _buttons)
             {
-                _gameContextWithViews.AddButtonInOptionsDictionary((LoadingParts)_usedMenus[i],button);
+                _gameContextWithViews.AddButtonInOptionsDictionary((OptionsButtons)_usedMenus[i],button);
                 i++;
             }
         }

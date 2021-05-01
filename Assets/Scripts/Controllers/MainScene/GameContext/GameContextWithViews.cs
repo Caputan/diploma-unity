@@ -15,7 +15,7 @@ namespace Diploma.Controllers
         public Dictionary<LoadingParts, Button>  AuthButtons;
         public Dictionary<LoadingParts, Button>  SignUpButtons;
         public Dictionary<LoadingParts, Button>  LessonConstructorButtons;
-        public Dictionary<LoadingParts, Button> OptionsButtons;
+        public Dictionary<OptionsButtons, Button> OptionsButtons;
         public Dictionary<LoadingParts,GameObject> TextBoxesOnConstructor;
         public Dictionary<LoadingParts, Button> ErrorMenuButtons;
         public Dictionary<LoadingParts, Button> AboutButtons;
@@ -34,7 +34,7 @@ namespace Diploma.Controllers
             AuthButtons = new Dictionary<LoadingParts, Button>();
             SignUpButtons = new Dictionary<LoadingParts, Button>();
             LessonConstructorButtons = new Dictionary<LoadingParts, Button>();
-            OptionsButtons = new Dictionary<LoadingParts, Button>();
+            OptionsButtons = new Dictionary<OptionsButtons, Button>();
             TextBoxesOnConstructor = new Dictionary<LoadingParts,GameObject>();
             ChoosenLessonToggles = new Dictionary<int, GameObject>();
             ErrorMenuButtons = new Dictionary<LoadingParts, Button>();
@@ -84,7 +84,7 @@ namespace Diploma.Controllers
             ChoosenLessonToggles.Add(id,toggle);
         }
         
-        public void AddButtonInOptionsDictionary(LoadingParts id, Button button)
+        public void AddButtonInOptionsDictionary(OptionsButtons id, Button button)
         {
             if(!OptionsButtons.ContainsKey(id))
                 OptionsButtons.Add(id,button);

@@ -35,7 +35,7 @@ namespace Diploma.Controllers
             _cryptoGrath = new CryptoGrath();
         }
 
-        public ErrorCodes CheckAuthData(out int Role)
+        public ErrorCodes CheckAuthData(out int role)
         {
             _dataBase.SetTable(_table);
 
@@ -66,7 +66,7 @@ namespace Diploma.Controllers
                     _error = ErrorCodes.None;
                 }
             }
-            Role = Convert.ToInt32(_loginedUser.User_Role);
+            role = Convert.ToInt32(_loginedUser.User_Role);
             return _error;
         }
 

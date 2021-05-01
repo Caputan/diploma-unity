@@ -64,9 +64,20 @@ namespace Diploma.Controllers
             
             foreach (var value in _gameContextWithUI.UILogic)
             {
-                Debug.Log(value.Key);
-                var i = (IMenuButton) value.Value;
-                i.LoadNext += ShowUIByUIType;
+                if (value.Value is IMenuButton)
+                {
+                    Debug.Log("MainMenu "+value.Key);
+                    var i = (IMenuButton) value.Value;
+                    i.LoadNext += ShowUIByUIType;
+                }
+
+                if (value.Value is IUIOptions)
+                {
+                    Debug.Log("Options "+value.Key);
+                    var i = (IUIOptions) value.Value;
+                    i.LoadNext += ShowUIByUIType;
+                }
+                
             }
             _lessonConstructorController.TakeScreenShoot += TakeScreenShoot;
             HideAllUI();
@@ -101,6 +112,30 @@ namespace Diploma.Controllers
             Controller.SetActive(false);
         }
 
+        public void ShowUIByUIType(OptionsButtons id)
+        {
+            switch (id)
+            {
+                case OptionsButtons.LowGraphics:
+                    _gameContextWithUI.UiControllers[LoadingParts.Options].SetActive(true);
+                    _optionsController.SetGraphicsQuality(OptionsButtons.LowGraphics);
+                    _optionsController.DeactivateButton(OptionsButtons.LowGraphics);
+                    break;
+                case OptionsButtons.MiddleGraphics:
+                    _gameContextWithUI.UiControllers[LoadingParts.Options].SetActive(true);
+                    _optionsController.SetGraphicsQuality(OptionsButtons.MiddleGraphics);
+                    _optionsController.DeactivateButton(OptionsButtons.MiddleGraphics);
+                    break;
+                case OptionsButtons.HighGraphics:
+                    _gameContextWithUI.UiControllers[LoadingParts.Options].SetActive(true);
+                    _optionsController.SetGraphicsQuality(OptionsButtons.HighGraphics);
+                    _optionsController.DeactivateButton(OptionsButtons.HighGraphics);
+                    break;
+                case OptionsButtons.Back:
+                    ShowUIByUIType(_backController.GoBack());
+                    break;
+            }
+        }
         public void ShowUIByUIType(LoadingParts id)
         {
             HideAllUI();
@@ -164,9 +199,9 @@ namespace Diploma.Controllers
                             Debug.Log("Должны быть видимым 3 кнопки");
                             _buttonMass[0].gameObject.SetActive(false);
                             _buttonMass[3].transform.position = 
-                                _buttonMass[2].transform.position;
+                                _transforms[2];
                             _buttonMass[2].transform.position = 
-                                _buttonMass[0].transform.position;
+                                _transforms[0];
                         }
                         if (role == 1)
                         {
@@ -243,21 +278,7 @@ namespace Diploma.Controllers
                     _gameContextWithUI.UiControllers[LoadingParts.Options].SetActive(true);
                     _currentPosition = LoadingParts.Options;
                     break;
-                case LoadingParts.LowGraphics:
-                    _gameContextWithUI.UiControllers[LoadingParts.Options].SetActive(true);
-                    _optionsController.SetGraphicsQuality(LoadingParts.LowGraphics);
-                    _optionsController.DeactivateButton(LoadingParts.LowGraphics);
-                    break;
-                case LoadingParts.MiddleGraphics:
-                    _gameContextWithUI.UiControllers[LoadingParts.Options].SetActive(true);
-                    _optionsController.SetGraphicsQuality(LoadingParts.MiddleGraphics);
-                    _optionsController.DeactivateButton(LoadingParts.MiddleGraphics);
-                    break;
-                case LoadingParts.HighGraphics:
-                    _gameContextWithUI.UiControllers[LoadingParts.Options].SetActive(true);
-                    _optionsController.SetGraphicsQuality(LoadingParts.HighGraphics);
-                    _optionsController.DeactivateButton(LoadingParts.HighGraphics);
-                    break;
+                
                 
             }
             Debug.Log(id);

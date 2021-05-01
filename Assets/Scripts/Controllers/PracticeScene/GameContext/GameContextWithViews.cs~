@@ -1,0 +1,7 @@
+﻿namespace Diploma.PracticeScene.GameContext
+{
+    public class GameContextWithViews
+    {
+        
+    }
+}
