@@ -36,7 +36,8 @@ namespace Diploma.Tables
                 User_Name = userParams[0],
                 User_Email = userParams[1],
                 User_Password = userParams[2],
-                User_Role = "Student"
+                User_Salt = userParams[3],
+                User_Role = userParams[4]
             };
             connection.Insert(newUser);
         }
@@ -50,6 +51,7 @@ namespace Diploma.Tables
         public string User_Name { get; set; }
         public string User_Email { get; set; }
         public string User_Password { get; set; }
+        public string User_Salt { get; set; }
         public string User_Role { get; set; }
     }
 }

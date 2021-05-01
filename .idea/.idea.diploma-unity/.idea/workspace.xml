@@ -20,9 +20,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9a27c574-4a30-4862-a74f-153a103b04b8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Crypto/CryptoGrath.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Crypto/CryptoGrath.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.diploma-unity/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.diploma-unity/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/MainScene/MainMenu.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/MainScene/MainMenu.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/MainScene/Registration.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/MainScene/Registration.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/Authorisation/AuthController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/Authorisation/AuthController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/Authorisation/AuthInitialization.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/Authorisation/AuthInitialization.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/Authorisation/SignUpInitialization.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/Authorisation/SignUpInitialization.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/MainMenuInitialization.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/MainMenuInitialization.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/UIController/UIController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/UIController/UIController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Crypto/CryptoGrath.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Crypto/CryptoGrath.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tables/UsersTable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tables/UsersTable.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/MachinePartsDB.bytes" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StreamingAssets/MachinePartsDB.bytes" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,9 +90,6 @@
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
-      <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/LoadingSceneInitialization.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/SceenLoader.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/SceneLoader.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/AddressableAssetsController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/LessonsControllers/LessonSceneControllerInitialization.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/PracticeScene/PracticeSceneInitialization.cs" />
@@ -94,7 +100,6 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/Tools/ResourseLoader.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Tools/ResourceLoader.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Tools/ResourcePath.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/Authorisation/SignUpInitialization.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/ErrorMenu/ErrorMenuInitialization.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/LessonsControllers/LessonsChooseInitialization.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/OptionsControllers/OptionsInitialization.cs" />
@@ -120,18 +125,22 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/PDFWorker/PDFReader.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/FilesControllers/FileManagerController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Enums/LoadingParts.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/UIController/UIController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Data/ImportantDontDestroyData.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/GameContext/GameContextWithViews.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/About/AboutFactory.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/About/AboutLogic.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/Authorisation/AuthInitialization.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/AboutControllers/AboutInitialization.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/MainSceneInitialization.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/Auth/AuthAddButtonsToDictionary.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/About/AboutAddButtonsToDictionary.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/AboutControllers/AboutController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Crypto/CryptoGrath.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/Authorisation/SignUpInitialization.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/Authorisation/AuthInitialization.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Enums/ErrorCodes.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Tables/UsersTable.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/Authorisation/AuthController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/UIController/UIController.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1oVh7QrK5P1QV67f8aHYDy536Km" />
@@ -176,10 +185,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="8060">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" />
+      <option name="pid" value="8060" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -232,6 +241,10 @@
       <workItem from="1619690866257" duration="4176000" />
       <workItem from="1619697940073" duration="16000" />
       <workItem from="1619698378288" duration="886000" />
+      <workItem from="1619700344996" duration="936000" />
+      <workItem from="1619854392366" duration="3915000" />
+      <workItem from="1619858922910" duration="85000" />
+      <workItem from="1619868282260" duration="1973000" />
     </task>
     <servers />
   </component>
@@ -279,17 +292,17 @@
           <option name="timeStamp" value="6" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/AboutControllers/AboutInitialization.cs</url>
-          <line>45</line>
-          <properties documentPath="D:\Unity-Storage\Diploma\diploma-unity\Assets\Scripts\Controllers\MainScene\AboutControllers\AboutInitialization.cs" initialLine="45" containingFunctionPresentation="method 'Initialization'">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/UIController/UIController.cs</url>
+          <line>174</line>
+          <properties documentPath="D:\Unity-Storage\Diploma\diploma-unity\Assets\Scripts\Controllers\MainScene\UIController\UIController.cs" initialLine="174" containingFunctionPresentation="method 'ShowUIByUIType'">
             <startOffsets>
-              <option value="1690" />
+              <option value="7651" />
             </startOffsets>
             <endOffsets>
-              <option value="1752" />
+              <option value="7754" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="7" />
+          <option name="timeStamp" value="10" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

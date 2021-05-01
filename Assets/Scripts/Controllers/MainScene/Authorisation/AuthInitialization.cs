@@ -42,9 +42,9 @@ namespace Diploma.Controllers
 
             _authButtons = new List<Button>();
             _authButtons.AddRange(authMenu.GetComponentsInChildren<Button>());
-
-            Login = authMenu.GetComponentsInChildren<TMP_InputField>()[0];
-            Password = authMenu.GetComponentsInChildren<TMP_InputField>()[1];
+            var buff = authMenu.GetComponentsInChildren<TMP_InputField>();
+            Login = buff[0];
+            Password = buff[1];
 
             _authController.Login = Login;
             _authController.Password = Password;

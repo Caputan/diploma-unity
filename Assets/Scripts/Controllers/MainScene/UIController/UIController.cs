@@ -7,6 +7,7 @@ using Diploma.Interfaces;
 using Interfaces;
 using UI.LoadingUI;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Diploma.Controllers
 {
@@ -27,6 +28,9 @@ namespace Diploma.Controllers
         private ErrorHandler _errorHandler;
         private LoadingParts _currentPosition;
         private ErrorCodes _error;
+        private Button[] _buttonMass;
+        private Vector3[] _transforms = new Vector3[4];
+        
 
 
         public UIController(GameContextWithUI gameContextWithUI,
@@ -48,9 +52,9 @@ namespace Diploma.Controllers
             _fileManagerController = fileManagerController;
             _lessonConstructorController = lessonConstructorController;
             _optionsController = optionsController;
-            
             _screenShotController = screenShotController;
             _loadingUILogic = loadingUILogic;
+            
             _backGround = GameObject.Find("BackGround");
             
         }
@@ -66,7 +70,12 @@ namespace Diploma.Controllers
             }
             _lessonConstructorController.TakeScreenShoot += TakeScreenShoot;
             HideAllUI();
-            
+            _buttonMass = _gameContextWithUI.UiControllers[LoadingParts.LoadMain].
+                GetComponentsInChildren<Button>();
+            for (int i=0;i<4;i++)
+            {
+                _transforms[i] = _buttonMass[i].transform.position;
+            }
             _errorHandler = new ErrorHandler(_gameContextWithUI.UiControllers[LoadingParts.LoadError]);
             ShowUIByUIType(LoadingParts.LoadStart);
         }
@@ -145,10 +154,29 @@ namespace Diploma.Controllers
                     _currentPosition = LoadingParts.LoadCreationOfLesson;
                     break;
                 case LoadingParts.LoadMain:
-                    if (_authController.CheckAuthData() == ErrorCodes.None)
+                    if (_authController.CheckAuthData(out var role) == ErrorCodes.None)
                     {
                         _backController.WhereIMustBack(_currentPosition);
                         _gameContextWithUI.UiControllers[LoadingParts.LoadMain].SetActive(true);
+                        
+                        if (role == 2)
+                        {
+                            Debug.Log("Должны быть видимым 3 кнопки");
+                            _buttonMass[0].gameObject.SetActive(false);
+                            _buttonMass[3].transform.position = 
+                                _buttonMass[2].transform.position;
+                            _buttonMass[2].transform.position = 
+                                _buttonMass[0].transform.position;
+                        }
+                        if (role == 1)
+                        {
+                            Debug.Log("Должны быть видимым 4 кнопки");
+                            _buttonMass[0].gameObject.SetActive(true);
+                            _buttonMass[3].transform.position = 
+                                _transforms[3];
+                            _buttonMass[2].transform.position = 
+                                _transforms[2];
+                        }
                         // _backGround.SetActive(false);
                         _currentPosition = LoadingParts.LoadMain;
                         _lessonConstructorController.SetTextInTextBox(LoadingParts.DownloadModel,"Выберите UnityBundle ()","");
@@ -157,7 +185,7 @@ namespace Diploma.Controllers
                     }
                     else
                     {
-                        _error = _authController.CheckAuthData();
+                        _error = _authController.CheckAuthData(out _);
                         ShowUIByUIType(LoadingParts.LoadError);
                     }
                     break;
