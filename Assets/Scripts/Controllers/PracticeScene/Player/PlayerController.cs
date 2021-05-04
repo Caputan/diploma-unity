@@ -41,9 +41,6 @@ public class PlayerController
         _playerController = _playerGameObject.GetComponent<CharacterController>();
         _camera = Camera.main;
         _pickUpParent = _playerGameObject.GetComponentsInChildren<Transform>()[2];
-        
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
     }
 
     public void RotateCamera()

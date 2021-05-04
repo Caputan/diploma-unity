@@ -4,7 +4,7 @@
     {
         Resume = 0,
         Restart = 1,
-        Back = 2,
+        BackToMenu = 2,
         PauseMenu
     }
 }

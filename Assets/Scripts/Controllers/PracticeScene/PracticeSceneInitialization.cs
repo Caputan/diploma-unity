@@ -1,8 +1,11 @@
 ﻿
 using System.Collections.Generic;
+using Controllers;
+using Controllers.PracticeScene.PauseController;
 using Controllers.PracticeScene.UIController;
 using Data;
 using Diploma.Controllers;
+using Diploma.Controllers.AssembleController;
 using Diploma.Interfaces;
 using Diploma.PracticeScene.GameContext;
 using Diploma.Tables;
@@ -65,19 +68,19 @@ namespace Diploma.PracticeScene.Controllers
             var GameObjectInitialization = new GameObjectInitialization(assembly);
 
             var playerInitialization = new PlayerInitialization(playerPrefab, spawnPoint);
-
             //var inventoryInitialization = new InventoryInitialization(_gameContextWithViews, _gameContextWithUI,
                // mainParent, inventoryPrefab, partOfAssembly, inventorySlotPrefab);
+            //var assemblyInitialization = new AssemblyInitialization(basePart, partOfAssembly);
 
-           // var assemblyInitialization = new AssemblyInitialization(basePart, partOfAssembly);
-
-
-            var uiController = new UIController(_gameContextWithUI);
+            var pauseInitialization = new PauseInitialization(_gameContextView,_gameContextWithUI,mainParent);
+            var pauseController = new PauseController(_data,new LoadingSceneController());
+            
+            var uiController = new UIController(_gameContextWithUI,pauseController,playerInitialization);
            
             _controllers = new Diploma.Controllers.Controllers();
             _controllers.Add(playerInitialization);
             _controllers.Add(GameObjectInitialization);
-            //_controllers.Add(inventoryInitialization);
+            _controllers.Add(pauseInitialization);
             //_controllers.Add(assemblyInitialization);
             
             //
@@ -85,7 +88,7 @@ namespace Diploma.PracticeScene.Controllers
             _controllers.Initialization();
         }
 
-        private void FixedUpdate()
+        private void Update()
         {
             var deltaTime = Time.deltaTime;
             _controllers.Execute(deltaTime);

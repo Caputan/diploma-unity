@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Diploma.Enums;
 using Diploma.Interfaces;
 using Interfaces;
+using UnityEngine;
 using UnityEngine.UI;
 
 namespace UI.PauseUI
@@ -20,6 +21,7 @@ namespace UI.PauseUI
 
         public void SwitchToNextMenu(PauseButtons loadingParts)
         {
+            Debug.Log("Button is pressed");
             LoadNext?.Invoke(loadingParts);
         }
 

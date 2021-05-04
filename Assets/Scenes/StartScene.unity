@@ -242,28 +242,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _camera: {fileID: 1239178557}
-  MainMenuPrefab: {fileID: 6515268690936001924, guid: 034aed284a0442946be7b0b496b5a363,
-    type: 3}
   MainParent: {fileID: 1084967671}
-  SignUpPrefab: {fileID: 3694359188707926974, guid: f65d1434f94076f4a809944060dbcd5b,
-    type: 3}
-  lessonCanvasPrefab: {fileID: 5558593657996745692, guid: d3d23505ce3d25849b168bf572be3664,
-    type: 3}
-  lessonPrefab: {fileID: 689257228623260598, guid: 81eeb3703b97b6648b5c8e912ff842f0,
-    type: 3}
-  ParentForLessons: {fileID: 1084967671}
-  lessonConstructorPrefab: {fileID: 4443386616434627426, guid: 7df8992399bd42d4fad4cd5523533544,
-    type: 3}
-  lessonConstructorPlatePrefab: {fileID: 5343342984086298806, guid: 092c9b973d3e0d64cb77ab14e46486bd,
-    type: 3}
-  OptionsPrefab: {fileID: 8704122258205304260, guid: af92d6e728e3a6042b2391d45c20c242,
-    type: 3}
   _mainAudioMixer: {fileID: 24100000, guid: cf6d7f734239e504bbe4db1aa1ffbc0d, type: 2}
-  ErrorMenuPrefab: {fileID: 1301646634321958732, guid: 9e8481227436cd6439a25f98676192d7,
-    type: 3}
   _data: {fileID: 11400000, guid: 03ce9d4a4a736824db6636fb7cc1202c, type: 2}
   _library: {fileID: 11400000, guid: 8527d7f87a23f0b45bc6f567a36e8d7c, type: 2}
-  _material: {fileID: 0}
 --- !u!1 &655199805
 GameObject:
   m_ObjectHideFlags: 0

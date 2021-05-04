@@ -1,35 +1,48 @@
 ﻿using System;
+using Diploma.Controllers;
 using Diploma.Enums;
 using Diploma.Interfaces;
-using Diploma.PracticeScene.GameContext;
 using Interfaces;
 using UnityEngine;
+using GameContextWithUI = Diploma.PracticeScene.GameContext.GameContextWithUI;
 
 namespace Controllers.PracticeScene.UIController
 {
-    public class UIController: IInitialization, IExecute
+    public class UIController: IInitialization, IExecute, ICleanData
     {
         private readonly GameContextWithUI _gameContextWithUI;
+        private readonly PauseController.PauseController _pauseController;
+        private readonly PlayerInitialization _playerInitialization;
         private readonly KeyCode _pauseKeyCode = KeyCode.Escape;
         private bool _pauseParam;
 
-        public UIController(GameContextWithUI gameContextWithUI)
+        public UIController(
+            GameContextWithUI gameContextWithUI,
+            PauseController.PauseController pauseController,
+            PlayerInitialization playerInitialization
+            )
         {
             _gameContextWithUI = gameContextWithUI;
-            _pauseParam = false;
+           
+            _pauseController = pauseController;
+            _playerInitialization = playerInitialization;
+            _pauseParam = true;
+            SetCursorParameters(false);
+            SetPlayersRotationAndMovement(false);
         }
 
         public void Initialization()
         {
-            foreach (var value in _gameContextWithUI.UILogic)
+            foreach (var value in _gameContextWithUI.UILogic.Values)
             {
-                if (value.Value is IPauseButtons)
+                if (value is IPauseButtons)
                 {
-                    Debug.Log("PauseButtons "+value.Key);
-                    var i = (IPauseButtons) value.Value;
+                    Debug.Log("PauseButtons "+value);
+                    var i = (IPauseButtons) value;
                     i.LoadNext += ShowUIByUIType;
                 }
             }
+            
             HideUI(_gameContextWithUI.UiControllers[PauseButtons.PauseMenu]);
         }
 
@@ -38,10 +51,16 @@ namespace Controllers.PracticeScene.UIController
             switch (obj)
             {
                 case PauseButtons.Resume:
+                    ActivatePauseMenu(_pauseParam);
+                    SetCursorParameters(_pauseParam);
+                    SetPlayersRotationAndMovement(_pauseParam);
+                    _pauseParam = !_pauseParam;
                     break;
                 case PauseButtons.Restart:
+                    _pauseController.Restart();
                     break;
-                case PauseButtons.Back:
+                case PauseButtons.BackToMenu:
+                    _pauseController.BackToMenu();
                     break;
             }
         }
@@ -51,9 +70,30 @@ namespace Controllers.PracticeScene.UIController
             if (Input.GetKeyDown(_pauseKeyCode))
             {
                 ActivatePauseMenu(_pauseParam);
+                SetCursorParameters(_pauseParam);
+                SetPlayersRotationAndMovement(_pauseParam);
                 _pauseParam = !_pauseParam;
             }
             
+        }
+
+        public void SetPlayersRotationAndMovement(bool pause)
+        {
+            _playerInitialization.SetPause(pause);
+        }
+        
+        public void SetCursorParameters(bool isOnOrOff)
+        {
+            if (isOnOrOff)
+            {
+                Cursor.lockState = CursorLockMode.Confined;
+                Cursor.visible = true;
+            }
+            else
+            {
+                Cursor.lockState = CursorLockMode.Locked;
+                Cursor.visible = false;
+            }
         }
 
         private void ActivatePauseMenu(bool activateOrDeactivate)
@@ -76,6 +116,19 @@ namespace Controllers.PracticeScene.UIController
         private void ShowPauseMenu()
         {
             _gameContextWithUI.UiControllers[PauseButtons.PauseMenu].SetActive(true);
+        }
+
+        public void CleanData()
+        {
+            foreach (var value in _gameContextWithUI.UILogic)
+            {
+                if (value.Value is IPauseButtons)
+                {
+                    Debug.Log("PauseButtons "+value.Key);
+                    var i = (IPauseButtons) value.Value;
+                    i.LoadNext += ShowUIByUIType;
+                }
+            }
         }
     }
 }
