@@ -17,10 +17,7 @@
         DownloadPDF = 13,
         DownloadVideo = 14,
         LoadStart = 15,
-        //Options buttons
-        LowGraphics = 16,
-        MiddleGraphics = 17,
-        HighGraphics = 18,
+        ChangeUser = 16,
         LoadLessonScene,
         LoadMainScene,
         SetNameToLesson,

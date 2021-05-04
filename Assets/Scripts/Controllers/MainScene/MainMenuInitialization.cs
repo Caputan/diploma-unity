@@ -46,7 +46,7 @@ namespace Diploma.Controllers
             new MainMenuAddButtonsToDictionary(MainMenuButtons,_gameContextWithViews);
 
             var greetingsArray = MainMenu.GetComponentsInChildren<TextMeshProUGUI>();
-            _authController.greetings = greetingsArray[greetingsArray.Length - 1];
+            _authController.Greetings = greetingsArray[greetingsArray.Length - 1];
 
             var MainMenuLogic = new MainMenuLogic(_gameContextWithViews.MainMenuButtons);
             MainMenuLogic.Initialization();

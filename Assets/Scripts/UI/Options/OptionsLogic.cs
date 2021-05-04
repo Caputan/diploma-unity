@@ -7,21 +7,21 @@ using UnityEngine.UI;
 
 namespace UI.Options
 {
-    public class OptionsLogic:  IInitialization,IMenuButton,IUISilder
+    public class OptionsLogic:  IInitialization,IUIOptions,IUISilder
     {
-        private readonly Dictionary<LoadingParts, Button> _buttons;
-        private readonly Slider _slider;
+        private readonly Dictionary<OptionsButtons, Button> _buttons;
+        private readonly Dictionary<OptionsButtons,Slider> _sliders;
 
-        public event Action<LoadingParts> LoadNext;
-        public event Action<float> ChangePersent;
+        public event Action<OptionsButtons> LoadNext;
+        public event Action<OptionsButtons,float> ChangePersent;
 
-        public OptionsLogic(Dictionary<LoadingParts,Button> buttons,Slider slider)
+        public OptionsLogic(Dictionary<OptionsButtons,Button> buttons,Dictionary<OptionsButtons,Slider> slider)
         {
             _buttons = buttons;
-            _slider = slider;
+            _sliders = slider;
         }
         
-        public void SwitchToNextMenu(LoadingParts loadingParts)
+        public void SwitchToNextMenu(OptionsButtons loadingParts)
         {
             LoadNext?.Invoke(loadingParts);
         }
@@ -34,14 +34,17 @@ namespace UI.Options
                 button.Value.onClick.RemoveAllListeners();
                 button.Value.onClick.AddListener(()=> SwitchToNextMenu(button.Key));
             }
-            
-            _slider.onValueChanged.RemoveAllListeners();
-            _slider.onValueChanged.AddListener(delegate {SwitchPersent (_slider.value);});
+
+            foreach (var slider in _sliders)
+            {
+                slider.Value.onValueChanged.RemoveAllListeners();
+                slider.Value.onValueChanged.AddListener(delegate {SwitchPersent (slider.Key,slider.Value.value);});
+            }
         }
 
-        public void SwitchPersent(float persent)
+        public void SwitchPersent(OptionsButtons optionsButtons,float persent)
         {
-            ChangePersent?.Invoke(persent);
+            ChangePersent?.Invoke(optionsButtons,persent);
         }
 
        

@@ -10,6 +10,7 @@ using Diploma.Enums;
 using Diploma.Managers;
 using Ghostscript.NET;
 using iTextSharp.text.pdf;
+using Tools;
 using UI.LoadingUI;
 using UnityEngine;
 
@@ -61,8 +62,9 @@ namespace PDFWorker
        {
             
            // yield return new WaitForEndOfFrame();
-
+            
             _inputPdfFile = inputPdfFile;
+            
             float numberOfPages = GetNumberOfPages(inputPdfFile);
             var destinationPath = _fileManager.CreateFileFolder(_positionPath+ 
                                                                  "\\"+ 

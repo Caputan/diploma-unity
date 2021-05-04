@@ -1,14 +1,20 @@
-﻿using System;
+﻿
 using System.Collections.Generic;
-using Controllers.PracticeScene.Inventory;
+using Controllers;
+using Controllers.PracticeScene.PauseController;
+using Controllers.PracticeScene.UIController;
 using Data;
+using Diploma.Controllers;
 using Diploma.Controllers.AssembleController;
 using Diploma.Interfaces;
+using Diploma.PracticeScene.GameContext;
 using Diploma.Tables;
-using GameObjectCreating;
 using UnityEngine;
+using GameContextWithLogic = Diploma.PracticeScene.GameContext.GameContextWithLogic;
+using GameContextWithUI = Diploma.PracticeScene.GameContext.GameContextWithUI;
+using UIController = Controllers.PracticeScene.UIController.UIController;
 
-namespace Diploma.Controllers
+namespace Diploma.PracticeScene.Controllers
 {
     public class PracticeSceneInitialization: MonoBehaviour
     {
@@ -25,12 +31,11 @@ namespace Diploma.Controllers
         [SerializeField] private GameObject basePart;
         [SerializeField] private GameObject[] partOfAssembly;
 
-        private GameContextWithLogic _gameContextWithLogic;
-        private GameContextWithViews _gameContextWithViews;
-        private GameContextWithLessons _gameContextWithLessons;
+        private GameContextWithView _gameContextView;
         private GameContextWithUI _gameContextWithUI;
-
-        private Controllers _controllers;
+        private GameContextWithLogic _gameContextWithLogic;
+        
+        private Diploma.Controllers.Controllers _controllers;
 
         public void Start()
         {
@@ -48,9 +53,9 @@ namespace Diploma.Controllers
             tables.Add(types); // 3 - types
             tables.Add(users); // 4 - users
             tables.Add(videos); // 5 - videos
-            
+
+            _gameContextView = new GameContextWithView();
             _gameContextWithLogic = new GameContextWithLogic();
-            _gameContextWithViews = new GameContextWithViews();
             _gameContextWithUI = new GameContextWithUI();
             
             DataBaseController.SetTable(tables[1]);
@@ -62,23 +67,29 @@ namespace Diploma.Controllers
             //var Pool = new PoolOfObjects(GameObjectFactory, _gameContextWithLogic);
             var GameObjectInitialization = new GameObjectInitialization(assembly);
 
-            var playerInitialization = new PlayerInitialization(playerPrefab, spawnPoint);
-
+            var playerInitialization = new PlayerInitialization(playerPrefab, spawnPoint, _data);
             //var inventoryInitialization = new InventoryInitialization(_gameContextWithViews, _gameContextWithUI,
                // mainParent, inventoryPrefab, partOfAssembly, inventorySlotPrefab);
+            //var assemblyInitialization = new AssemblyInitialization(basePart, partOfAssembly);
 
-           // var assemblyInitialization = new AssemblyInitialization(basePart, partOfAssembly);
-
-            _controllers = new Controllers();
+            var pauseInitialization = new PauseInitialization(_gameContextView,_gameContextWithUI,mainParent);
+            var pauseController = new PauseController(_data,new LoadingSceneController());
+            var ExitController = new ExitController(_data);
+            var uiController = new UIController(_gameContextWithUI,pauseController,playerInitialization);
+           
+            _controllers = new Diploma.Controllers.Controllers();
             _controllers.Add(playerInitialization);
             _controllers.Add(GameObjectInitialization);
-            //_controllers.Add(inventoryInitialization);
+            _controllers.Add(pauseInitialization);
+            _controllers.Add(ExitController);
             //_controllers.Add(assemblyInitialization);
-            // _controllers.Add(GameObjectInitialization);
+            
+            //
+            _controllers.Add(uiController);
             _controllers.Initialization();
         }
 
-        private void FixedUpdate()
+        private void Update()
         {
             var deltaTime = Time.deltaTime;
             _controllers.Execute(deltaTime);

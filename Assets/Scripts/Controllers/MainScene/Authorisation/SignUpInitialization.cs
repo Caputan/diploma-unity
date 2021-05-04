@@ -24,6 +24,7 @@ namespace Diploma.Controllers
         public TMP_InputField Login;
         public  TMP_InputField Password;
         public  TMP_InputField Email;
+        private TMP_Dropdown Role;
 
         public SignUpInitialization(GameContextWithViews gameContextWithViews,
             GameContextWithUI gameContextWithUI, GameObject MainParent, AuthController authController)
@@ -43,15 +44,17 @@ namespace Diploma.Controllers
 
             SignUpButtons = new List<Button>();
             SignUpButtons.AddRange(signUpMenu.GetComponentsInChildren<Button>());
-
-            Login = signUpMenu.GetComponentsInChildren<TMP_InputField>()[0];
-            Password = signUpMenu.GetComponentsInChildren<TMP_InputField>()[1];
-            Email = signUpMenu.GetComponentsInChildren<TMP_InputField>()[2];
-
+            var buff = signUpMenu.GetComponentsInChildren<TMP_InputField>();
+            Login = buff[0];
+            Password = buff[1];
+            Email = buff[2];
+            Role = signUpMenu.GetComponentInChildren<TMP_Dropdown>();
+            
             _authController.NewLogin = Login;
             _authController.NewPassword = Password;
             _authController.NewEmail = Email;
-
+            _authController.Role = Role;
+            
             new SignUpAddButtonsToDictionary(SignUpButtons, _gameContextWithViews);
             var signUpLogic = new SignUpLogic(_gameContextWithViews.SignUpButtons);
             signUpLogic.Initialization();

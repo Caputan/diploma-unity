@@ -1,12 +1,13 @@
 ﻿using System;
+using Diploma.Enums;
 
 
 namespace Interfaces
 {
     public interface IUISilder: IUIObject
     {
-        void SwitchPersent(float persent);
+        void SwitchPersent(OptionsButtons optionsButtons,float persent);
         
-        event Action<float> ChangePersent;
+        event Action<OptionsButtons,float> ChangePersent;
     }
 }

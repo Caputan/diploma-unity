@@ -1,7 +1,9 @@
 ﻿using System.Collections.Generic;
+using Data;
 using Diploma.Controllers;
 using Diploma.Enums;
 using Diploma.Interfaces;
+using UnityEngine;
 
 namespace Controllers
 {
@@ -25,5 +27,6 @@ namespace Controllers
             _loadingParts.RemoveAt(_loadingParts.Count - 1);
             return back;
         }
+        
     }
 }

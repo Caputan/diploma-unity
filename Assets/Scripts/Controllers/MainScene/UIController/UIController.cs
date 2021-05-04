@@ -2,11 +2,13 @@
 using Controllers;
 using Coroutine;
 using Controllers.MainScene.LessonsControllers;
+using Data;
 using Diploma.Enums;
 using Diploma.Interfaces;
 using Interfaces;
 using UI.LoadingUI;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Diploma.Controllers
 {
@@ -23,11 +25,13 @@ namespace Diploma.Controllers
         private readonly OptionsController _optionsController;
         private readonly ScreenShotController _screenShotController;
         private readonly LoadingUILogic _loadingUILogic;
+        private readonly ImportantDontDestroyData _importantDontDestroyData;
         private readonly GameObject _backGround;
         private ErrorHandler _errorHandler;
         private LoadingParts _currentPosition;
         private ErrorCodes _error;
-
+        private Button[] _buttonMass;
+        private Vector3[] _transforms = new Vector3[4];
 
         public UIController(GameContextWithUI gameContextWithUI,
             ExitController exitController,
@@ -37,7 +41,8 @@ namespace Diploma.Controllers
             LessonConstructorController lessonConstructorController,
             OptionsController optionsController,
             ScreenShotController screenShotController,
-            LoadingUILogic loadingUILogic
+            LoadingUILogic loadingUILogic,
+            ImportantDontDestroyData importantDontDestroyData
         )
         {
             _error = ErrorCodes.None;
@@ -48,9 +53,10 @@ namespace Diploma.Controllers
             _fileManagerController = fileManagerController;
             _lessonConstructorController = lessonConstructorController;
             _optionsController = optionsController;
-            
             _screenShotController = screenShotController;
             _loadingUILogic = loadingUILogic;
+            _importantDontDestroyData = importantDontDestroyData;
+
             _backGround = GameObject.Find("BackGround");
             
         }
@@ -60,13 +66,29 @@ namespace Diploma.Controllers
             
             foreach (var value in _gameContextWithUI.UILogic)
             {
-                Debug.Log(value.Key);
-                var i = (IMenuButton) value.Value;
-                i.LoadNext += ShowUIByUIType;
+                if (value.Value is IMenuButton)
+                {
+                    Debug.Log("MainMenu "+value.Key);
+                    var i = (IMenuButton) value.Value;
+                    i.LoadNext += ShowUIByUIType;
+                }
+
+                if (value.Value is IUIOptions)
+                {
+                    Debug.Log("Options "+value.Key);
+                    var i = (IUIOptions) value.Value;
+                    i.LoadNext += ShowUIByUIType;
+                }
+                
             }
             _lessonConstructorController.TakeScreenShoot += TakeScreenShoot;
             HideAllUI();
-            
+            _buttonMass = _gameContextWithUI.UiControllers[LoadingParts.LoadMain].
+                GetComponentsInChildren<Button>();
+            for (int i=0;i<4;i++)
+            {
+                _transforms[i] = _buttonMass[i].transform.position;
+            }
             _errorHandler = new ErrorHandler(_gameContextWithUI.UiControllers[LoadingParts.LoadError]);
             ShowUIByUIType(LoadingParts.LoadStart);
         }
@@ -92,19 +114,66 @@ namespace Diploma.Controllers
             Controller.SetActive(false);
         }
 
+        public void ShowUIByUIType(OptionsButtons id)
+        {
+            switch (id)
+            {
+                case OptionsButtons.LowGraphics:
+                    _gameContextWithUI.UiControllers[LoadingParts.Options].SetActive(true);
+                    _optionsController.SetGraphicsQuality(OptionsButtons.LowGraphics);
+                    _optionsController.DeactivateButton(OptionsButtons.LowGraphics);
+                    break;
+                case OptionsButtons.MiddleGraphics:
+                    _gameContextWithUI.UiControllers[LoadingParts.Options].SetActive(true);
+                    _optionsController.SetGraphicsQuality(OptionsButtons.MiddleGraphics);
+                    _optionsController.DeactivateButton(OptionsButtons.MiddleGraphics);
+                    break;
+                case OptionsButtons.HighGraphics:
+                    _gameContextWithUI.UiControllers[LoadingParts.Options].SetActive(true);
+                    _optionsController.SetGraphicsQuality(OptionsButtons.HighGraphics);
+                    _optionsController.DeactivateButton(OptionsButtons.HighGraphics);
+                    break;
+                case OptionsButtons.Back:
+                    ShowUIByUIType(_backController.GoBack());
+                    break;
+            }
+        }
         public void ShowUIByUIType(LoadingParts id)
         {
             HideAllUI();
             switch (id)
             {
                 case LoadingParts.Exit:
+                    _importantDontDestroyData.activatedUserID = -1;
+                    _importantDontDestroyData.lessonID = -1;
                     _exitController.ExitApplication(); 
                     break;
                 case LoadingParts.LoadStart:
                     // _backGround.SetActive(true);
                     _loadingUILogic.SetActiveLoading(false);
+                    //_authController.Login.text = "";
+                    //_authController.Password.text = "";
+                    // _importantDontDestroyData.activatedUserID = -1;
+                    // _importantDontDestroyData.lessonID = -1;
+                    _backController.WhereIMustBack(_currentPosition);
+                    if (_importantDontDestroyData.activatedUserID == -1)
+                    {
+                        ShowUIByUIType(LoadingParts.ChangeUser);
+                    }
+                    else
+                    {
+                        _authController.ReopenUser(out int sameRole);
+                        MainLoading(sameRole);
+                        _gameContextWithUI.UiControllers[LoadingParts.LoadMain].SetActive(true);
+                    }
+                    _currentPosition = LoadingParts.LoadStart;
+                    break;
+                case LoadingParts.ChangeUser:
+                    _loadingUILogic.SetActiveLoading(false);
                     _authController.Login.text = "";
                     _authController.Password.text = "";
+                    _importantDontDestroyData.activatedUserID = -1;
+                    _importantDontDestroyData.lessonID = -1;
                     _backController.WhereIMustBack(_currentPosition);
                     _gameContextWithUI.UiControllers[LoadingParts.LoadAuth].SetActive(true);
                     _currentPosition = LoadingParts.LoadStart;
@@ -145,19 +214,16 @@ namespace Diploma.Controllers
                     _currentPosition = LoadingParts.LoadCreationOfLesson;
                     break;
                 case LoadingParts.LoadMain:
-                    if (_authController.CheckAuthData() == ErrorCodes.None)
+                    if (_authController.CheckAuthData(out var role) == ErrorCodes.None)
                     {
                         _backController.WhereIMustBack(_currentPosition);
                         _gameContextWithUI.UiControllers[LoadingParts.LoadMain].SetActive(true);
-                        // _backGround.SetActive(false);
-                        _currentPosition = LoadingParts.LoadMain;
-                        _lessonConstructorController.SetTextInTextBox(LoadingParts.DownloadModel,"Выберите UnityBundle ()","");
-                        _lessonConstructorController.SetTextInTextBox(LoadingParts.DownloadVideo,"Выберите видео-фаил (*.mp4)","");
-                        _lessonConstructorController.SetTextInTextBox(LoadingParts.DownloadPDF,"Выберите текстовый фаил(*.pdf)","");
+
+                        MainLoading(role);
                     }
                     else
                     {
-                        _error = _authController.CheckAuthData();
+                        _error = _authController.CheckAuthData(out _);
                         ShowUIByUIType(LoadingParts.LoadError);
                     }
                     break;
@@ -170,15 +236,11 @@ namespace Diploma.Controllers
                     ShowUIByUIType(_backController.GoBack());
                     break;
                 case LoadingParts.LoadError:
-                    // _backGround.SetActive(true);
                     _backController.WhereIMustBack(_currentPosition);
                     _errorHandler.ChangeErrorMessage(_error);
                     _gameContextWithUI.UiControllers[LoadingParts.LoadError].SetActive(true);
                     _currentPosition = LoadingParts.LoadError;
                     break;
-                    // DownloadModel = 12,
-                    // DownloadPDF = 13,
-                    // DownloadVideo = 14,   
                 case LoadingParts.DownloadModel:
                     _gameContextWithUI.UiControllers[LoadingParts.LoadCreationOfLesson].SetActive(true);
                     _fileManagerController.ShowSaveDialog(FileTypes.Assembly);
@@ -215,21 +277,7 @@ namespace Diploma.Controllers
                     _gameContextWithUI.UiControllers[LoadingParts.Options].SetActive(true);
                     _currentPosition = LoadingParts.Options;
                     break;
-                case LoadingParts.LowGraphics:
-                    _gameContextWithUI.UiControllers[LoadingParts.Options].SetActive(true);
-                    _optionsController.SetGraphicsQuality(LoadingParts.LowGraphics);
-                    _optionsController.DeactivateButton(LoadingParts.LowGraphics);
-                    break;
-                case LoadingParts.MiddleGraphics:
-                    _gameContextWithUI.UiControllers[LoadingParts.Options].SetActive(true);
-                    _optionsController.SetGraphicsQuality(LoadingParts.MiddleGraphics);
-                    _optionsController.DeactivateButton(LoadingParts.MiddleGraphics);
-                    break;
-                case LoadingParts.HighGraphics:
-                    _gameContextWithUI.UiControllers[LoadingParts.Options].SetActive(true);
-                    _optionsController.SetGraphicsQuality(LoadingParts.HighGraphics);
-                    _optionsController.DeactivateButton(LoadingParts.HighGraphics);
-                    break;
+                
                 
             }
             Debug.Log(id);
@@ -248,7 +296,30 @@ namespace Diploma.Controllers
             }
         }
 
-
+        private void MainLoading(int role)
+        {
+            if (role == 2)
+            {
+                _buttonMass[0].gameObject.SetActive(false);
+                _buttonMass[3].transform.position = 
+                    _transforms[2];
+                _buttonMass[2].transform.position = 
+                    _transforms[0];
+            }
+            if (role == 1)
+            {
+                _buttonMass[0].gameObject.SetActive(true);
+                _buttonMass[3].transform.position = 
+                    _transforms[3];
+                _buttonMass[2].transform.position = 
+                    _transforms[2];
+            }
+            _currentPosition = LoadingParts.LoadMain;
+            _lessonConstructorController.SetTextInTextBox(LoadingParts.DownloadModel,"Выберите UnityBundle ()","");
+            _lessonConstructorController.SetTextInTextBox(LoadingParts.DownloadVideo,"Выберите видео-фаил (*.mp4)","");
+            _lessonConstructorController.SetTextInTextBox(LoadingParts.DownloadPDF,"Выберите текстовый фаил(*.pdf)","");
+        }
+        
         public void CleanData()
         {
             foreach (var value in _gameContextWithUI.UILogic)

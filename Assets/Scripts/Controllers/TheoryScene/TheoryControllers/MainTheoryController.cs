@@ -1,12 +1,14 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using Coroutine;
 using Diploma.Enums;
 using iTextSharp.text;
 using PDFWorker;
 using UI.LoadingUI;
+using UnityEditor;
 using UnityEngine;
 
 namespace Controllers.TheoryScene.TheoryControllers
@@ -24,8 +26,8 @@ namespace Controllers.TheoryScene.TheoryControllers
         private List<CoroutineController> _states;
         private IEnumerator _coroutine;
         private CoroutineController _state;
-        
-        
+        private string _mainDomain;
+
         public MainTheoryController(
             TheoryController theoryController, 
             LibraryTreeController libraryTreeController,
@@ -43,6 +45,11 @@ namespace Controllers.TheoryScene.TheoryControllers
             _hand = 0;
             _theoryController.rewriteDictionary += CreateQueue;
             _libraryTreeController.rewriteDictionary += CreateQueue;
+
+            
+            _mainDomain = AppDomain.CurrentDomain.BaseDirectory;
+            var directoryInfo = new DirectoryInfo(_mainDomain);
+            _mainDomain = directoryInfo.GetDirectories()[0].ToString();
         }
 
         private void CreateQueue(Dictionary<int,string> controllerInfo)
@@ -53,7 +60,6 @@ namespace Controllers.TheoryScene.TheoryControllers
                 _corutineQueue.Add(_countOfUnitInQueue,info.Key);
                 _countOfUnitInQueue++;
             }
-            Debug.Log("Creating Queue");
         }
         
         public void StartDoingSomeThingWithQueue()
@@ -86,32 +92,22 @@ namespace Controllers.TheoryScene.TheoryControllers
                     _hand
                 );
                 _hand++;
-                Debug.Log("я жду создания читалки");
                 yield return new WaitUntil(() => _states.Count == _hand);
-                Debug.Log("читалка создана, ждем окончания чтения");
                 yield return new WaitUntil(() => _states[index].state == CoroutineState.Finished);
-                Debug.Log("состояние "+_states[index].state);
-                Debug.Log("Начинаем новую короутину");
-                //_coroutineController[index].StopCoroutine();
                 QueueCorutine(_hand).StartCoroutine(out _coroutine, out _);
                 _coroutineController.Add(_coroutine);
             }
             else
             {
-               // yield return new WaitUntil(() => _coroutineController.state == CoroutineState.Finished );
                 _libraryTreeController.CreateDocumentLocaly(
                     _corutineQueue[_hand],
-                    _realQueue[_corutineQueue[_hand]],
+                    _mainDomain+"\\"+_realQueue[_corutineQueue[_hand]],
                     _states,
                     _hand
                 );
                 _hand++;
-                Debug.Log("я жду создания читалки");
                 yield return new WaitUntil(() => _states.Count == _hand);
-                Debug.Log("читалка создана, ждем окончания чтения");
                 yield return new WaitUntil(() => _states[index].state == CoroutineState.Finished );
-                Debug.Log("состояние "+_states[index].state);
-                Debug.Log("Начинаем новую короутину");
                 QueueCorutine(_hand).StartCoroutine(out _coroutine, out _);
                 _coroutineController.Add(_coroutine);
             }

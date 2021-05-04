@@ -42,7 +42,8 @@ namespace Controllers.PracticeScene.Inventory
         {
             var inventory = _inventoryFactory.Create(_mainParent.transform);
             // var inventory = GameObject.Instantiate(_inventoryPrefab, _mainParent.transform, true);
-            _player = new PlayerController(GameObject.Find("Player(Clone)"));
+            //2ой Player Controller... я его закомитил короч.
+            //_player = new PlayerController(GameObject.Find("Player(Clone)"));
             
             inventory.transform.localPosition = Vector3.zero;
             
