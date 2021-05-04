@@ -20,25 +20,40 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9a27c574-4a30-4862-a74f-153a103b04b8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/PracticeScene/Pause.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/PracticeScene/Pause.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/PracticeScene/PauseController.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/PracticeScene/PauseController/PauseController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/PracticeScene/PauseController/PauseController.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/PracticeScene/PauseController/PauseInitialization.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/PracticeScene/PauseController/PauseInitialization.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/StreamingAssets/Валы_и_оси.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/StreamingAssets/Валы_и_оси.pdf.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/StreamingAssets/Дисковый тормоз.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/StreamingAssets/Дисковый тормоз.pdf.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/StreamingAssets/Ременные_передачи.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/StreamingAssets/Ременные_передачи.pdf.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.diploma-unity/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.diploma-unity/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/PracticeScene/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/PracticeScene/Player.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Design.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Design.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/LessonScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/LessonScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/StartScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/StartScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/MainScene/Options_Prefab.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/MainScene/Options_Prefab.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SceneData/DataConfig.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SceneData/DataConfig.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SceneData/Library.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SceneData/Library.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/Authorisation/AuthController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/Authorisation/AuthController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/ButtonsControllers/BackController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/ButtonsControllers/BackController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/ButtonsControllers/ExitController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/ButtonsControllers/ExitController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/GameContext/GameContextWithViews.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/GameContext/GameContextWithViews.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/MainSceneInitialization.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/MainSceneInitialization.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/OptionsControllers/OptionsController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/OptionsControllers/OptionsController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/OptionsControllers/OptionsInitialization.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/OptionsControllers/OptionsInitialization.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/UIController/UIController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/UIController/UIController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/PracticeScene/Inventory/InventoryInitialization.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/PracticeScene/Inventory/InventoryInitialization.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/PracticeScene/Player/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/PracticeScene/Player/PlayerController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/PracticeScene/Player/PlayerInitialization.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/PracticeScene/Player/PlayerInitialization.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/PracticeScene/PracticeSceneInitialization.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/PracticeScene/PracticeSceneInitialization.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/PracticeScene/UIController/UIController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/PracticeScene/UIController/UIController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enums/PauseButtons.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enums/PauseButtons.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/PauseUI/PauseLogic.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/PauseUI/PauseLogic.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/InputManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/InputManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/TheoryScene/TheoryControllers/MainTheoryController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/TheoryScene/TheoryControllers/MainTheoryController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/TheoryScene/TheorySceneInitialization.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/TheoryScene/TheorySceneInitialization.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Data/ImportantDontDestroyData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Data/ImportantDontDestroyData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enums/LoadingParts.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enums/LoadingParts.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enums/OptionsButtons.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enums/OptionsButtons.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interfaces/IUISilder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Interfaces/IUISilder.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PDFWorker/PDFReader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PDFWorker/PDFReader.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tools/ResourceLoader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tools/ResourceLoader.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/MainMenu/MainMenuAddButtonsToDictionary.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/MainMenu/MainMenuAddButtonsToDictionary.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Options/OptionsAddButtonsToDictionary.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Options/OptionsAddButtonsToDictionary.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Options/OptionsLogic.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Options/OptionsLogic.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,6 +88,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/OtherControllers/Controllers.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9577AC7A-62EF-4317-9789-031239BA8798/ad/928ff290/KeyValuePair`2.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9577AC7A-62EF-4317-9789-031239BA8798/38/366218c6/KeyValuePair`2.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/6F0A172A-57F7-4527-BAA2-17742039C9AD/6d/bb6c8933/PdfReader.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Interfaces/IInitialization.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Controllers/Loader3DS.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9577AC7A-62EF-4317-9789-031239BA8798/ae/73053cd0/InvalidCastException.cs" root0="SKIP_HIGHLIGHTING" />
@@ -98,18 +114,7 @@
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
-      <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/OtherControllers/CoroutineController.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/TheoryScene/TheoryControllers/LibraryTreeController.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Coroutine/CoroutineExtensions.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/TheoryScene/TheoryControllers/MainTheoryController.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/TheoryScene/TheoryControllers/TheoryController.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/PDFWorker/PDFReader.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/FilesControllers/FileManagerController.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Data/ImportantDontDestroyData.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/UI/About/AboutFactory.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/UI/About/AboutLogic.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/AboutControllers/AboutInitialization.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/MainSceneInitialization.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/Auth/AuthAddButtonsToDictionary.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/About/AboutAddButtonsToDictionary.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/AboutControllers/AboutController.cs" />
@@ -118,22 +123,13 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/Authorisation/AuthInitialization.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Enums/ErrorCodes.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Tables/UsersTable.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/Authorisation/AuthController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/PracticeScene/PracticeSceneController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/PracticeScene/GameContext/_gameContextWithLogic.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/PracticeScene/GameContext/GameContextUI.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/PracticeScene/GameContext/GameContextWithLogic.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/PracticeScene/GameContext/GameContextView.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/GameContext/GameContextWithUI.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/OptionsControllers/OptionsInitialization.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/OptionsControllers/OptionsController.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/GameContext/GameContextWithViews.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Interfaces/IUIOptions.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/UI/Options/OptionsLogic.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Enums/OptionsButtons.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/UI/Options/OptionsAddButtonsToDictionary.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Enums/LoadingParts.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/UIController/UIController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/PauseUI/PauseFactory.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Tools/InputController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/PracticeScene/GameContext/GameContextWithUI.cs" />
@@ -145,10 +141,30 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/PracticeScene/PauseController/PauseController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/PauseUI/PauseLogic.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/PracticeScene/PauseController/PauseInitialization.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/PracticeScene/UIController/UIController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Enums/OptionsButtons.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Interfaces/IUISilder.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UI/Options/OptionsLogic.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UI/Options/OptionsAddButtonsToDictionary.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/OptionsControllers/OptionsInitialization.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Data/ImportantDontDestroyData.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/PracticeScene/Player/PlayerController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/PracticeScene/Player/PlayerInitialization.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/PracticeScene/UIController/UIController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/PracticeScene/Inventory/InventoryInitialization.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/GameContext/GameContextWithViews.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/OptionsControllers/OptionsController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UI/MainMenu/MainMenuAddButtonsToDictionary.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Enums/LoadingParts.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/Authorisation/AuthController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/UIController/UIController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/ButtonsControllers/ExitController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/ButtonsControllers/BackController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/PracticeScene/PracticeSceneInitialization.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/MainSceneInitialization.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/TheoryScene/TheorySceneInitialization.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Tools/ResourceLoader.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/PDFWorker/PDFReader.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/TheoryScene/TheoryControllers/MainTheoryController.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1oVh7QrK5P1QV67f8aHYDy536Km" />
@@ -193,10 +209,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="23596">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="14316">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="23596" />
+      <option name="pid" value="14316" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -255,6 +271,7 @@
       <workItem from="1619868282260" duration="11299000" />
       <workItem from="1620054902732" duration="5410000" />
       <workItem from="1620110858739" duration="2797000" />
+      <workItem from="1620114260121" duration="8731000" />
     </task>
     <servers />
   </component>
@@ -287,19 +304,6 @@
           <line>54</line>
           <properties documentPath="D:\Unity-Storage\Diploma\diploma-unity\Assets\Scripts\Controllers\UIController.cs" initialLine="54" />
           <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/Controllers/TheoryScene/TheoryControllers/MainTheoryController.cs</url>
-          <line>61</line>
-          <properties documentPath="D:\Unity-Storage\Diploma\diploma-unity\Assets\Scripts\Controllers\TheoryScene\TheoryControllers\MainTheoryController.cs" initialLine="61" containingFunctionPresentation="method 'StartDoingSomeThingWithQueue'">
-            <startOffsets>
-              <option value="2140" />
-            </startOffsets>
-            <endOffsets>
-              <option value="2199" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="6" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

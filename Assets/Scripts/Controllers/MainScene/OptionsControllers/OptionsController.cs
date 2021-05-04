@@ -1,4 +1,5 @@
 ﻿using System;
+using Data;
 using Diploma.Controllers;
 using Diploma.Enums;
 using Diploma.Interfaces;
@@ -14,6 +15,7 @@ namespace Controllers
         private readonly GameContextWithViews _gameContextWithViews;
         private readonly GameContextWithUI _gameContextWithUI;
         private readonly AudioMixer _audioMixer;
+        private readonly ImportantDontDestroyData _importantDontDestroyData;
         private const float AudioConstant = 100;
         private const float AudioMixerLowConstant = -80;
 
@@ -21,11 +23,18 @@ namespace Controllers
         public OptionsController(
             GameContextWithViews gameContextWithViews,
             GameContextWithUI gameContextWithUI, 
-            AudioMixer audioMixer)
+            AudioMixer audioMixer,
+            ImportantDontDestroyData importantDontDestroyData)
         {
             _gameContextWithViews = gameContextWithViews;
             _gameContextWithUI = gameContextWithUI;
             _audioMixer = audioMixer;
+            _importantDontDestroyData = importantDontDestroyData;
+            if (_importantDontDestroyData.mouseSensitivity <= 0 
+                || _importantDontDestroyData.mouseSensitivity >= 1.001f)
+            {
+                _importantDontDestroyData.mouseSensitivity = 0.289f;
+            }
         }
         
         public void Initialization()
@@ -52,20 +61,26 @@ namespace Controllers
             
         }
 
-        private void SwitchPersent(float persent)
+        private void SwitchPersent(OptionsButtons optionsButtons,float persent)
         {
-            _gameContextWithViews.Slider.gameObject.
+            switch (optionsButtons)
+            {
+                case OptionsButtons.SliderSound:
+                    _gameContextWithViews.Sliders[OptionsButtons.SliderSound].gameObject.
+                            GetComponentInChildren<TextMeshProUGUI>().text =
+                        Math.Round(AudioConstant-(persent/(AudioMixerLowConstant)*AudioConstant))+ "%";
+                    _audioMixer.SetFloat("MasterVol", persent);
+                    break;
+                case OptionsButtons.SliderMouse:
+                    // sens [0.01-1]
+                    _gameContextWithViews.Sliders[OptionsButtons.SliderMouse].gameObject.
+                            GetComponentInChildren<TextMeshProUGUI>().text = Math.Round(persent,3).ToString();
+                    _importantDontDestroyData.mouseSensitivity = persent;
+                    break;
+            }
                 
-                // от 0 до 100
-                // от -80 до 0
-                
-                // 0 - 100
-                // -80 - 0
-                
-                
-                GetComponentInChildren<TextMeshProUGUI>().text =
-                Math.Round(AudioConstant-(persent/(AudioMixerLowConstant)*AudioConstant))+ "%";
-            _audioMixer.SetFloat("MasterVol", persent);
+            
+
 
         }
 

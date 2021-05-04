@@ -78,7 +78,7 @@ namespace Controllers.TheoryScene
             LoadingUILogic loadingUILogic = new LoadingUILogic(
                 canvas.transform
             );
-            
+            var ExitController = new ExitController(_data);
             TheoryController theoryController = new TheoryController
                 (
                 pdfReaderUIInitialization,
@@ -117,6 +117,7 @@ namespace Controllers.TheoryScene
             //_controllers.Add(theoryController);
             _controllers.Add(libraryTreeUIInitialization);
             _controllers.Add(loadingUILogic);
+            _controllers.Add(ExitController);
             _controllers.Initialization();
             //loadingUILogic.SetActiveLoading(true);
             UIControllerTheoryScene uiControllerTheoryScene = new UIControllerTheoryScene(

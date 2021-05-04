@@ -8,6 +8,8 @@ namespace Data
         public int lessonID;
 
         public int activatedUserID;
+
+        public float mouseSensitivity;
         
         //дополнить по мере надобности
     }

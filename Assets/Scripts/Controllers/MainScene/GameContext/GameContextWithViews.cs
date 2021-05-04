@@ -21,7 +21,7 @@ namespace Diploma.Controllers
         public Dictionary<LoadingParts, Button> AboutButtons;
         
         public Dictionary<AnimatorButtons, Button> AnimatorButtons;
-        public Slider Slider;
+        public Dictionary<OptionsButtons,Slider> Sliders;
         public Dictionary<int,GameObject> ChoosenLessonToggles;
         public LessonChooseButtonsLogic LessonChooseButtonsLogic;
 
@@ -41,6 +41,7 @@ namespace Diploma.Controllers
             AnimatorButtons = new Dictionary<AnimatorButtons, Button>();
             InventoryButtons = new Dictionary<GameObject, Button>();
             AboutButtons = new Dictionary<LoadingParts, Button>();
+            Sliders = new Dictionary<OptionsButtons,Slider>();
         }
         
         public void AddToggles(int id,GameObject toggle)
@@ -53,9 +54,10 @@ namespace Diploma.Controllers
             LessonChooseButtonsLogic = lessonChooseButtonsLogic;
         }
 
-        public void SetSlider(Slider slider)
+        public void SetSlider(OptionsButtons id,Slider slider)
         {
-            Slider = slider;
+            if (!Sliders.ContainsKey(id))
+                Sliders.Add(id,slider);
         }
 
         public void AddErrorMenuButtons(LoadingParts id, Button button)

@@ -67,7 +67,7 @@ namespace Diploma.Controllers
             
             #region Authentication
 
-            var AuthController = new AuthController(DataBaseController, tables);
+            var AuthController = new AuthController(DataBaseController, tables,_data);
 
             #endregion
 
@@ -144,7 +144,7 @@ namespace Diploma.Controllers
             
             var BackController = new BackController();
             
-            var ExitController = new ExitController();
+            var ExitController = new ExitController(_data);
 
             var ErrorHandlerInitialization = new ErrorMenuInitialization(
                 _gameContextWithViews,
@@ -167,7 +167,8 @@ namespace Diploma.Controllers
             var OptionsController = new OptionsController(
                 _gameContextWithViews,
                 _gameContextWithUI,
-                _mainAudioMixer
+                _mainAudioMixer,
+                _data
                 );
             
             
@@ -188,7 +189,8 @@ namespace Diploma.Controllers
                 LessonConstructorController,
                 OptionsController,
                 ScreenShootController,
-                loading
+                loading,
+                _data
             );
             
             var ChooseLessonController = new LessonsChooseController(
@@ -209,6 +211,7 @@ namespace Diploma.Controllers
             _controllers.Add(AuthInitialization);
             _controllers.Add(SignUpInitialization);
             _controllers.Add(BackController);
+            _controllers.Add(ExitController);
             _controllers.Add(ChooseLessonInitialization);
             _controllers.Add(LessonConstructorInitialization);
             _controllers.Add(LessonConstructorController);

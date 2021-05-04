@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using Crypto;
+using Data;
 using Diploma.Enums;
 using Diploma.Interfaces;
 using Diploma.Tables;
@@ -13,6 +14,7 @@ namespace Diploma.Controllers
     public class AuthController : IInitialization
     {
         private readonly DataBaseController _dataBase;
+        private readonly ImportantDontDestroyData _data;
         private readonly CryptoGrath _cryptoGrath;
         private readonly IDataBase _table;
         
@@ -28,13 +30,25 @@ namespace Diploma.Controllers
         public TextMeshProUGUI Greetings;
         
 
-        public AuthController(DataBaseController dataBase, List<IDataBase> tables)
+        public AuthController(
+            DataBaseController dataBase,
+            List<IDataBase> tables,
+            ImportantDontDestroyData data)
         {
             _dataBase = dataBase;
+            _data = data;
             _table = tables[4];
             _cryptoGrath = new CryptoGrath();
         }
 
+        public void ReopenUser(out int role)
+        {
+            _dataBase.SetTable(_table);
+            _loginedUser = (Users) _dataBase.GetRecordFromTableById(_data.activatedUserID);
+            Greetings.text = "Привет, " + _loginedUser.User_Name;
+            role = Convert.ToInt32(_loginedUser.User_Role);
+        }
+        
         public ErrorCodes CheckAuthData(out int role)
         {
             _dataBase.SetTable(_table);
@@ -67,6 +81,7 @@ namespace Diploma.Controllers
                 }
             }
             role = Convert.ToInt32(_loginedUser.User_Role);
+            _data.activatedUserID = _loginedUser.User_Id;
             return _error;
         }
 

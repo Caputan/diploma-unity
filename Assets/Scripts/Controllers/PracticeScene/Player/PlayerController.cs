@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using Data;
 using Diploma.Interfaces;
 using UnityEngine;
 using UnityEngine.UI;
@@ -31,10 +32,10 @@ public class PlayerController
     private GameObject _objectHitted;
     public static Action<GameObject> OnPartClicked;
     
-    public PlayerController(GameObject playerGameObject)
+    public PlayerController(GameObject playerGameObject,ImportantDontDestroyData importantDontDestroyData)
     {
         _speed = 2f;
-        _mouseSensitivity = 2f;
+        _mouseSensitivity = importantDontDestroyData.mouseSensitivity;
         
         _playerGameObject = playerGameObject;
 

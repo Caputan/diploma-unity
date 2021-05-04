@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using Diploma.Controllers;
 using Diploma.Enums;
 using Diploma.Interfaces;
@@ -41,13 +42,11 @@ namespace Controllers
             _optionsButtons = new List<Button>();
             _optionsButtons.AddRange(options.GetComponentsInChildren<Button>());
 
-            var slider = options.GetComponentInChildren<Slider>();
+            var sliders = options.GetComponentsInChildren<Slider>().ToList();
             
-            new OptionsAddButtonsToDictionary(_optionsButtons,_gameContextWithViews);
-            
-            _gameContextWithViews.SetSlider(slider);
+            new OptionsAddButtonsToDictionary(_optionsButtons,sliders,_gameContextWithViews);
 
-            var optionsLogic = new OptionsLogic(_gameContextWithViews.OptionsButtons,_gameContextWithViews.Slider);
+            var optionsLogic = new OptionsLogic(_gameContextWithViews.OptionsButtons,_gameContextWithViews.Sliders);
             optionsLogic.Initialization();
             
             

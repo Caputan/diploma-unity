@@ -17,7 +17,7 @@
         DownloadPDF = 13,
         DownloadVideo = 14,
         LoadStart = 15,
-        
+        ChangeUser = 16,
         LoadLessonScene,
         LoadMainScene,
         SetNameToLesson,

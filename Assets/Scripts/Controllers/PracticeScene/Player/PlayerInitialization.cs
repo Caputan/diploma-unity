@@ -1,4 +1,5 @@
-﻿using Diploma.Interfaces;
+﻿using Data;
+using Diploma.Interfaces;
 using UnityEngine;
 
 namespace Diploma.Controllers
@@ -10,7 +11,9 @@ namespace Diploma.Controllers
         private readonly Transform _spawnPoint;
         private bool _isPaused;
             
-        public PlayerInitialization(GameObject player, Transform spawnPoint)
+        public PlayerInitialization(GameObject player, 
+            Transform spawnPoint, 
+            ImportantDontDestroyData importantDontDestroyData)
         {
             _playerGameObject = player;
             _spawnPoint = spawnPoint;
@@ -18,7 +21,7 @@ namespace Diploma.Controllers
 
             var playerGO = GameObject.Instantiate(_playerGameObject, _spawnPoint.position, _playerGameObject.transform.rotation, _spawnPoint);
 
-            _playerController = new PlayerController(playerGO);
+            _playerController = new PlayerController(playerGO,importantDontDestroyData);
         }
 
         public void SetPause(bool pause)
