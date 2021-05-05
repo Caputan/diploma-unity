@@ -12,6 +12,7 @@ namespace Diploma.Controllers
         //капелька хардкода.
         public List<Transform> Parents;
         public Dictionary<int,string> nameOfFolders;
+        public string urlVideo;
 
         public GameContextWithViewsTheory()
         {
@@ -19,11 +20,17 @@ namespace Diploma.Controllers
             LibraryButtons = new Dictionary<int, Button>();
             Parents = new List<Transform>();
             nameOfFolders = new Dictionary<int, string>();
+            urlVideo = "-1";
         }
 
         public void SetNameOfFolder(int id,string name)
         {
             nameOfFolders.Add(id,name);
+        }
+
+        public void SetVideo(string url)
+        {
+            urlVideo = url;
         }
         
         public void AddTheoryButtons(LoadingPartsTheoryScene id, Button button)

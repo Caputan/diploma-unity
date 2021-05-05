@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Diploma.Controllers;
 using Diploma.Interfaces;
+using TMPro;
 using Tools;
 using UI.TheoryUI;
 using UI.TheoryUI.TheoryLibraryTree;
@@ -16,6 +17,7 @@ namespace Controllers.TheoryScene.TheoryControllers
         private readonly GameContextWithViewsTheory _gameContextWithViews;
         private readonly GameContextWithUITheory _gameContextWithUITheory;
         private readonly string _types;
+        private readonly string _nameOfLesson;
         private TheoryUIFactory _theoryUIFactory;
         private List<Button> TheoryUIButtons;
         private GameObject TheoryUI;
@@ -28,13 +30,15 @@ namespace Controllers.TheoryScene.TheoryControllers
             GameObject canvas,
             GameContextWithViewsTheory gameContextWithViews,
             GameContextWithUITheory gameContextWithUITheory,
-            string types
+            string types,
+            string nameOfLesson
             )
         {
             _canvas = canvas;
             _gameContextWithViews = gameContextWithViews;
             _gameContextWithUITheory = gameContextWithUITheory;
             _types = types;
+            _nameOfLesson = nameOfLesson;
 
             _theoryUIFactory = new TheoryUIFactory(ResourceLoader.LoadPrefab(_viewPath));
         }
@@ -44,7 +48,7 @@ namespace Controllers.TheoryScene.TheoryControllers
             #region Theory UI Creation
             TheoryUI = _theoryUIFactory.Create(_canvas.transform);
             TheoryUI.transform.localPosition = new Vector3(0,0,0);
-            
+            TheoryUI.GetComponent<TextMeshProUGUI>().text = "Урок: "+_nameOfLesson;
             _gameContextWithViews.AddParentsToList(TheoryUI.transform.GetChild(5).GetChild(0).GetChild(0));
             _gameContextWithViews.AddParentsToList(TheoryUI.transform.GetChild(6).GetChild(0).GetChild(0));
             #endregion

@@ -36,7 +36,7 @@ namespace Controllers.TheoryScene.TheoryControllers
             _theoryUIInitialization = theoryUIInitialization;
             _pdfReader = new PDFReader(
                 fileManager,pdfStoragePath,
-                _gameContextWithViewsTheory,_pdfReaderUIInitialization,
+                _gameContextWithViewsTheory,
                 loadingUILogic);
         }
         public void Initialization()

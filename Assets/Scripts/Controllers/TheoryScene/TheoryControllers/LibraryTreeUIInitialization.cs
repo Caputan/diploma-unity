@@ -20,8 +20,8 @@ namespace Controllers.TheoryScene.TheoryControllers
         private readonly AdditionalInfomationLibrary _library;
         private Transform _treeParent;
         private TheoryLibraryTreeFactory _theoryLibraryTreeFactory;
-        
         private readonly ResourcePath _viewPath = new ResourcePath {PathResource = "Prefabs/TheoryScene/LibraryButton"};
+
 
         public LibraryTreeUIInitialization(
             GameContextWithViewsTheory gameContextWithViewsTheory,
@@ -38,6 +38,11 @@ namespace Controllers.TheoryScene.TheoryControllers
         {
             #region Library Tree UI Creation
             _treeParent = _gameContextWithViewsTheory.Parents[1];
+            if (_gameContextWithViewsTheory.urlVideo != "-1")
+            {
+                var videoTreeUI = _theoryLibraryTreeFactory.Create(_treeParent);
+                videoTreeUI.GetComponent<TextMeshProUGUI>().text = "Видео-лекция";
+            }
             foreach (var libraryItem in _types.Split(','))
             {
                 if (libraryItem != "")

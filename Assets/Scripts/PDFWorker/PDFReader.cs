@@ -22,7 +22,6 @@ namespace PDFWorker
         private readonly FileManager _fileManager;
         private readonly string _positionPath;
         private readonly GameContextWithViewsTheory _gameContextWithViewsTheory;
-        private readonly PdfReaderUIInitialization _pdfReaderUIInitialization;
         private readonly LoadingUILogic _loadingUILogic;
         private string _fileName;
         private string _inputPdfFile;
@@ -31,13 +30,11 @@ namespace PDFWorker
         public PDFReader(FileManager fileManager,
             string positionPath,
             GameContextWithViewsTheory gameContextWithViewsTheory,
-            PdfReaderUIInitialization pdfReaderUIInitialization,
             LoadingUILogic loadingUILogic)
         {
             _fileManager = fileManager;
             _positionPath = positionPath;
             _gameContextWithViewsTheory = gameContextWithViewsTheory;
-            _pdfReaderUIInitialization = pdfReaderUIInitialization;
             _loadingUILogic = loadingUILogic;
             _fileManager.CreateFileFolder(_positionPath);
         }

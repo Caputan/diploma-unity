@@ -66,7 +66,7 @@ namespace Diploma.PracticeScene.Controllers
             //var GameObjectFactory = new GameObjectFactory();
             //var Pool = new PoolOfObjects(GameObjectFactory, _gameContextWithLogic);
             var GameObjectInitialization = new GameObjectInitialization(assembly);
-
+            GameObjectInitialization.InstantiateGameObject();
             var playerInitialization = new PlayerInitialization(playerPrefab, spawnPoint, _data);
             //var inventoryInitialization = new InventoryInitialization(_gameContextWithViews, _gameContextWithUI,
                // mainParent, inventoryPrefab, partOfAssembly, inventorySlotPrefab);
@@ -79,7 +79,6 @@ namespace Diploma.PracticeScene.Controllers
            
             _controllers = new Diploma.Controllers.Controllers();
             _controllers.Add(playerInitialization);
-            _controllers.Add(GameObjectInitialization);
             _controllers.Add(pauseInitialization);
             _controllers.Add(ExitController);
             //_controllers.Add(assemblyInitialization);

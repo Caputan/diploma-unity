@@ -67,8 +67,6 @@ namespace Controllers.TheoryScene.TheoryControllers
             
             QueueCorutine(_hand).StartCoroutine(out _coroutine, out _);
             _coroutineController.Add(_coroutine);
-            //надо подумать над переводом этого метода в корутину,чтобы останавливать остальные.
-            
         }
 
         private IEnumerator QueueCorutine(int index)

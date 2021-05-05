@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace Diploma.Controllers
 {
-    public sealed class GameObjectInitialization: IInitialization
+    public sealed class GameObjectInitialization
     {
         private readonly Assemblies _assemblies;
 
@@ -21,7 +21,7 @@ namespace Diploma.Controllers
         //     gameObjectOnScene.gameObject.SetActive(true);
         // }
 
-        public void Initialization()
+        public GameObject InstantiateGameObject()
         {
             // заменяем Loader на addressable
             // Loader3DS loader3Ds = new Loader3DS();
@@ -30,7 +30,7 @@ namespace Diploma.Controllers
             //     _poolOfObjects._rootPool.gameObject,
             //     _poolOfObjects);
             LoadAssetBundleFromFile loadAssetBundleFromFile = new LoadAssetBundleFromFile();
-            loadAssetBundleFromFile.GetBaseObjects(_assemblies.Assembly_Link);
+            return loadAssetBundleFromFile.GetBaseObjects(_assemblies.Assembly_Link);
         }
     }
 }

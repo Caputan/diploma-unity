@@ -18,7 +18,7 @@ namespace Controllers.TheoryScene.TheoryControllers
         private readonly PdfReaderUIInitialization _pdfReaderUIInitialization;
         private readonly GameContextWithViewsTheory _gameContextWithViewsTheory;
         private readonly LoadingUILogic _loadingUILogic;
-        private readonly AdditionalInfomationLibrary _additionalInfomationLibrary;
+        private readonly AdditionalInfomationLibrary _additionalInformationLibrary;
         private readonly Types _types;
         private PDFReader _pdfReader;
         private Dictionary<int, string> _libraryObjects;
@@ -28,23 +28,23 @@ namespace Controllers.TheoryScene.TheoryControllers
             FileManager fileManager,string pdfStoragePath,
             GameContextWithViewsTheory gameContextWithViewsTheory,
             LoadingUILogic loadingUILogic,
-            AdditionalInfomationLibrary additionalInfomationLibrary,
+            AdditionalInfomationLibrary additionalInformationLibrary,
             Types types 
         )
         {
             _pdfReaderUIInitialization = pdfReaderUIInitialization;
             _gameContextWithViewsTheory = gameContextWithViewsTheory;
             _loadingUILogic = loadingUILogic;
-            _additionalInfomationLibrary = additionalInfomationLibrary;
+            _additionalInformationLibrary = additionalInformationLibrary;
             _types = types;
             _pdfReader = new PDFReader(fileManager,pdfStoragePath,
-                _gameContextWithViewsTheory,_pdfReaderUIInitialization,
+                _gameContextWithViewsTheory,
                 _loadingUILogic);
         }
         public void Initialization()
         {
             _libraryObjects = new Dictionary<int, string>();
-            foreach (var libraryObject in _additionalInfomationLibrary.libraryObjcets)
+            foreach (var libraryObject in _additionalInformationLibrary.libraryObjcets)
             foreach (var type in _types.TypeS.Split(','))
             {
                 if(type!="")
@@ -59,7 +59,15 @@ namespace Controllers.TheoryScene.TheoryControllers
 
         public void Show(int id)
         {
-            _pdfReaderUIInitialization.ReadNextDoc(id);
+            Debug.Log("id: "+id);
+            if (id == -1)
+            {
+                _pdfReaderUIInitialization.PlayANewVideo();
+            }
+            else
+            {
+                _pdfReaderUIInitialization.ReadNextDoc(id);
+            }
         }
         
         public void CleanData()
@@ -79,11 +87,6 @@ namespace Controllers.TheoryScene.TheoryControllers
         private void UnloadDocument()
         {
             _pdfReaderUIInitialization.UnloadDocument();
-        }
-
-        private void HideLoading(bool flag)
-        {
-            _loadingUILogic.SetActiveLoading(flag);
         }
 
         public void RemoveDocumentPng()

@@ -27,6 +27,7 @@ namespace UI.TheoryUI
             _buttons = buttons;
             _gameContextWithViews = gameContextWithViews;
             _usedLibraryItem = new List<int>();
+            _usedLibraryItem.Add(-1);
             foreach (var type in types)
             {
                 if (type != "")

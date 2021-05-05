@@ -12,6 +12,7 @@ using TMPro;
 using UI.LoadingUI;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Video;
 using Types = Diploma.Tables.Types;
 
 namespace Controllers.TheoryScene
@@ -21,7 +22,7 @@ namespace Controllers.TheoryScene
         [SerializeField] private ImportantDontDestroyData _data;
         [SerializeField] private AdditionalInfomationLibrary _library;
         [SerializeField] private GameObject canvas;
-
+        [SerializeField] private VideoPlayer _videoPlayer;
         [SerializeField] private string _pngStoragePath = "LocalPDFDocumentsInImages";
         
 
@@ -59,6 +60,13 @@ namespace Controllers.TheoryScene
             Texts pdf = (Texts)DataBaseController.GetRecordFromTableById(lesson.Lesson_Text_Id);
             DataBaseController.SetTable(tables[3]);
             Types Types = (Types) DataBaseController.GetRecordFromTableById(lesson.Lesson_Type_Id);
+            if (lesson.Lesson_Video_Id != -1)
+            {
+                DataBaseController.SetTable(tables[5]);
+                Videos Video = (Videos) DataBaseController.GetRecordFromTableById(lesson.Lesson_Video_Id);
+                _gameContextWithViewsTheory.SetVideo(Video.Video_Link);
+            }
+
 
             LoadingSceneController loadingSceneController = new LoadingSceneController();
             
@@ -67,12 +75,14 @@ namespace Controllers.TheoryScene
                 canvas,
                 _gameContextWithViewsTheory,
                 _gameContextWithUITheory,
-                Types.TypeS
+                Types.TypeS,
+                lesson.Lesson_Name
                 );
 
             PdfReaderUIInitialization pdfReaderUIInitialization = new PdfReaderUIInitialization
             (
-                _gameContextWithViewsTheory
+                _gameContextWithViewsTheory,
+                _videoPlayer
             );
 
             LoadingUILogic loadingUILogic = new LoadingUILogic(

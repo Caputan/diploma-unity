@@ -36,7 +36,7 @@ namespace Controllers
         private string[] _massForCopy = new string[3];
         Plane[] planes;
         
-        private readonly ResourcePath _viewPath = new ResourcePath {PathResource = "Prefabs/MainScene/LessonConstructorPanel"};
+        private readonly ResourcePath _viewPath = new ResourcePath {PathResource = "Prefabs/MainScene/LessonPrefab"};
         
         public LessonConstructorController(
             DataBaseController dataBaseController,
@@ -77,13 +77,13 @@ namespace Controllers
                     _massForCopy[0] = firstPath;
                     break;
                 case LoadingParts.DownloadVideo:
-                    _localText[2] = _destination[1] + text;
+                    _localText[2] =  text;
                     _texts[loadingParts].transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = 
                         _localText[2].Split('\\').Last();
                     _massForCopy[2] = firstPath;
                     break;
                 case LoadingParts.DownloadPDF:
-                    _localText[1] = _destination[3] + text;
+                    _localText[1] = text;
                     _texts[loadingParts].transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = 
                         _localText[1].Split('\\').Last();
                     _massForCopy[1] = firstPath;
@@ -139,9 +139,10 @@ namespace Controllers
             // add new text
             if (_localText[1] != @"Выберите текстовый фаил(*.pdf)")
             {
-                _localText[1] = _destination[3]+ "\\" + _localText[1];
-                if(_massForCopy[1]!="")
-                    File.Copy(_massForCopy[1],_localText[1]);
+                _localText[1] = _destination[3] + "\\" + _localText[1];
+                if (_massForCopy[1] != "")
+                    if (!File.Exists(_localText[1]))
+                        File.Copy(_massForCopy[1], _localText[1]);
                 _dataBaseController.SetTable(_tables[2]);
                 string[] textPacked = new string[1];
                 textPacked[0] = _localText[1];
@@ -156,7 +157,8 @@ namespace Controllers
             {
                 _localText[2] = _destination[1]+ "\\" +  _localText[2];
                 if(_massForCopy[2]!="")
-                    File.Copy(_massForCopy[2],_localText[2]);
+                    if (!File.Exists(_localText[2]))
+                        File.Copy(_massForCopy[2],_localText[2]);
                 _dataBaseController.SetTable(_tables[5]);
                 string[] videoPacked = new string[1];
                 videoPacked[0] = _localText[2];
@@ -172,15 +174,15 @@ namespace Controllers
 
 
             // add screens
-            File.Copy(_massForCopy[0],_localText[0]);
+            if (!File.Exists(_localText[0])) 
+                File.Copy(_massForCopy[0],_localText[0]);
             _dataBaseController.SetTable(_tables[0]);
             Assemblies Assembly = (Assemblies)_dataBaseController.GetRecordFromTableById(Convert.ToInt32(lessonPacked[3]));
             //ar GameObjectFactory = new GameObjectFactory(false,_material);
             //var Pool = new PoolOfObjects(GameObjectFactory,_gameContextWithLogic);
             var GameObjectInitilization = new GameObjectInitialization(Assembly);
-            GameObjectInitilization.Initialization();
 
-            //SetCameraNearObject(Pool);
+            SetCameraNearObject(GameObjectInitilization.InstantiateGameObject());
             
             TakingScreen(_destination[2]+"\\"+lessonPacked[5]+".png");
             lessonPacked[0] = _destination[2] + "\\" + lessonPacked[5]+".png";
@@ -208,26 +210,11 @@ namespace Controllers
             AddNewLessonToListOnUI();
         }
 
-        public void SetCameraNearObject(PoolOfObjects poolOfObjects)
+        public void SetCameraNearObject(GameObject gameObject)
         {
-            // нужно поправить нормали
-            // gameObjectComponents.MeshFilter = _gameObject.GetComponent<MeshFilter>();
-            // Debug.Log(gameObjectComponents.MeshFilter.mesh.vertices);
-            // Debug.Log(gameObjectComponents.MeshFilter.mesh.vertices.Length);
-            //vertex = head.GetComponent<MeshFilter>().mesh.vertices[0];
-            // foreach (var meshFilter in poolOfObjects._rootPool.GetComponentsInChildren<MeshFilter>())
-            // {
-            //     var vertices = meshFilter.mesh.vertices;
-            //     
-            //     Vector3[] newVerticles = new Vector3[vertices.Length];
-            //     int i = 0;
-            //     foreach (var vector3 in vertices)
-            //     {
-            //         newVerticles[i] = vector3 + (poolOfObjects._rootPool.position-vector3);
-            //         i++;
-            //     }
-            // }
-            _gameContextWithLogic.MainCamera.transform.LookAt(poolOfObjects._rootPool);
+            _gameContextWithLogic.MainCamera.transform.LookAt(gameObject.transform);
+            //Plane[] planes = GeometryUtility.CalculateFrustumPlanes(Camera.main);
+            //if (GeometryUtility.TestPlanesAABB(planes, obj.GetComponent<Collider>().bounds)) ;
         }
 
         private void AddNewLessonToListOnUI()
@@ -239,9 +226,9 @@ namespace Controllers
             var lessonToggle = _plateWithButtonForLessonsFactory.Create(
                 _gameContextWithUI.UiControllers[LoadingParts.LoadLectures].transform.GetChild(2).GetChild(0).GetChild(0).gameObject.transform);
             lessonToggle.transform.localPosition = new Vector3(0,0,0);
-            //var tex = new Texture2D(5, 5);
-            //tex.LoadImage(File.ReadAllBytes(lesson.Lesson_Preview));
-            //lessonToggle.GetComponentInChildren<RawImage>().texture = tex;
+            var tex = new Texture2D(5, 5);
+            tex.LoadImage(File.ReadAllBytes(lastLessonInDb.Lesson_Preview));
+            lessonToggle.GetComponentInChildren<RawImage>().texture = tex;
 
             var lessonName = lessonToggle.GetComponentInChildren<TextMeshProUGUI>();
             lessonName.text = lastLessonInDb.Lesson_Name;
