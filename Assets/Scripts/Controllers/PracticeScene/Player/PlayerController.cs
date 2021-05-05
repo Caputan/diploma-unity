@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using Data;
 using Diploma.Interfaces;
 using UnityEngine;
 using UnityEngine.UI;
@@ -31,19 +32,16 @@ public class PlayerController
     private GameObject _objectHitted;
     public static Action<GameObject> OnPartClicked;
     
-    public PlayerController(GameObject playerGameObject)
+    public PlayerController(GameObject playerGameObject, ImportantDontDestroyData importantDontDestroyData)
     {
         _speed = 6f;
-        _mouseSensitivity = 2f;
+        _mouseSensitivity = importantDontDestroyData.mouseSensitivity;
         
         _playerGameObject = playerGameObject;
 
         _playerController = _playerGameObject.GetComponent<CharacterController>();
         _camera = Camera.main;
         _pickUpParent = _playerGameObject.GetComponentsInChildren<Transform>()[2];
-        
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
     }
 
     public void RotateCamera()
