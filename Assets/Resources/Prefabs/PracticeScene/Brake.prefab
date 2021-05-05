@@ -885,6 +885,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3416080642238852647}
   - component: {fileID: 2964747718080634448}
+  - component: {fileID: 1993619216}
   m_Layer: 0
   m_Name: Brake
   m_TagString: Untagged
@@ -919,7 +920,7 @@ Animator:
   m_GameObject: {fileID: 2604078469504332957}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 8fddf53e9b9dece4faa46277b3161837, type: 2}
+  m_Controller: {fileID: 9100000, guid: 4b3151b1e78030f45bd5fb55b29dec4d, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -928,6 +929,22 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!54 &1993619216
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2604078469504332957}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &2656179330313817991
 GameObject:
   m_ObjectHideFlags: 0

@@ -65,8 +65,11 @@ namespace Controllers.PracticeScene.Inventory
                 inventorySlot.GetComponentInChildren<TextMeshProUGUI>().text =
                     part.GetComponentsInParent<Transform>()[1].name;
                 
+                
                 InventoryButtons.Add(inventorySlot.GetComponent<Button>());
             }
+            
+            inventory.SetActive(false);
             
             new InventoryAddButtonsToDictionary(_parts, InventoryButtons, _gameContextWithViews);
             var inventoryLogic = new InventoryLogic(_gameContextWithViews.InventoryButtons, _player);

@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using Data;
 using Diploma.Interfaces;
 using UnityEngine;
 using UnityEngine.UI;
@@ -16,7 +15,7 @@ public class PlayerController
 
     private readonly Transform _pickUpParent;
     
-    private readonly float _gravity = 0f;
+    private readonly float _gravity = -12f;
 
     private readonly float _mouseSmoothTime = 0.02f;
     private Vector2 _currentMouseDelta = Vector2.zero;
@@ -32,16 +31,19 @@ public class PlayerController
     private GameObject _objectHitted;
     public static Action<GameObject> OnPartClicked;
     
-    public PlayerController(GameObject playerGameObject,ImportantDontDestroyData importantDontDestroyData)
+    public PlayerController(GameObject playerGameObject)
     {
-        _speed = 2f;
-        _mouseSensitivity = importantDontDestroyData.mouseSensitivity;
+        _speed = 6f;
+        _mouseSensitivity = 2f;
         
         _playerGameObject = playerGameObject;
 
         _playerController = _playerGameObject.GetComponent<CharacterController>();
         _camera = Camera.main;
         _pickUpParent = _playerGameObject.GetComponentsInChildren<Transform>()[2];
+        
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
     public void RotateCamera()
@@ -89,7 +91,8 @@ public class PlayerController
     public void OutlineAssemblyParts()
     {
         Ray hitRay = _camera.ScreenPointToRay(new Vector3(Screen.currentResolution.width / 2f, Screen.currentResolution.height / 2f, 0));
-        if (!Physics.Raycast(hitRay, out var hit, 10)) return;
+        LayerMask boundingBoxMask = LayerMask.GetMask("BoundingBox");
+        if (!Physics.Raycast(hitRay, out var hit, 10, ~boundingBoxMask)) return;
         if (!hit.collider.CompareTag("Assembly")) return;
         _objectHitted = hit.collider.gameObject;
         // _objectHitted.GetComponent<Outline>().enabled = true;
