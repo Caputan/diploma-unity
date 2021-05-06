@@ -34,7 +34,7 @@ namespace Controllers
         private PlateWithButtonForLessonsFactory _plateWithButtonForLessonsFactory;
         private string[] _localText = new string[4];
         private string[] _massForCopy = new string[3];
-        Plane[] planes;
+        //Plane[] planes;
         
         private readonly ResourcePath _viewPath = new ResourcePath {PathResource = "Prefabs/MainScene/LessonPrefab"};
         
@@ -124,7 +124,9 @@ namespace Controllers
             _destination[2] = _fileManager.CreateFileFolder(id +"\\"+ "Photos");
             _destination[3] = _fileManager.CreateFileFolder(id +"\\"+ "Texts");
             
-            
+            // _mainDomain = AppDomain.CurrentDomain.BaseDirectory;
+            // var directoryInfo = new DirectoryInfo(_mainDomain);
+            // _mainDomain = directoryInfo.GetDirectories()[0].ToString();
             // add new assembly
             if (_localText[0] != @"Выберите деталь (*.3ds)")
             {
@@ -212,11 +214,10 @@ namespace Controllers
 
         public void SetCameraNearObject(GameObject gameObject)
         {
+            gameObject.transform.position = gameObject.transform.position.Change(x:0f,y: 0f,z: 0f);
             _gameContextWithLogic.MainCamera.transform.LookAt(gameObject.transform);
-            //Plane[] planes = GeometryUtility.CalculateFrustumPlanes(Camera.main);
-            //if (GeometryUtility.TestPlanesAABB(planes, obj.GetComponent<Collider>().bounds)) ;
         }
-
+        
         private void AddNewLessonToListOnUI()
         {
             _dataBaseController.SetTable(_tables[1]);

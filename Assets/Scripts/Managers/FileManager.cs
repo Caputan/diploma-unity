@@ -11,13 +11,15 @@ namespace Diploma.Managers
         
         public FileManager()
         {
-            var platform = Environment.OSVersion.Platform;
-            var homePath = (platform == PlatformID.Unix || platform == PlatformID.MacOSX)
-                ? Environment.GetEnvironmentVariable("HOME")
-                : Environment.ExpandEnvironmentVariables("%HOMEDRIVE%%HOMEPATH%");
-            
-            _storage = Path.Combine(Path.Combine(homePath, "Documents"), "MDGameStorage");
-            Directory.CreateDirectory(_storage);
+            // var platform = Environment.OSVersion.Platform;
+            // var homePath = (platform == PlatformID.Unix || platform == PlatformID.MacOSX)
+            //     ? Environment.GetEnvironmentVariable("HOME")
+            //     : Environment.ExpandEnvironmentVariables("%HOMEDRIVE%%HOMEPATH%");
+            //
+            _storage = AppDomain.CurrentDomain.BaseDirectory;
+            CreateFileFolder("LocalDataStorage");
+            var directoryInfo = new DirectoryInfo(_storage);
+            _storage = directoryInfo.GetDirectories()[0].ToString();
         }
 
         /// <inheritdoc />
