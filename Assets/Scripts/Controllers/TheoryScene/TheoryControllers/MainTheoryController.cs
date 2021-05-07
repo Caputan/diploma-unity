@@ -49,7 +49,7 @@ namespace Controllers.TheoryScene.TheoryControllers
             
             _mainDomain = AppDomain.CurrentDomain.BaseDirectory;
             var directoryInfo = new DirectoryInfo(_mainDomain);
-            _mainDomain = directoryInfo.GetDirectories()[1].ToString();
+            _mainDomain = directoryInfo.GetDirectories()[0].ToString();
         }
 
         private void CreateQueue(Dictionary<int,string> controllerInfo)

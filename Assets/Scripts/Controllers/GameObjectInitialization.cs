@@ -1,5 +1,7 @@
-﻿using AssetBundle;
+﻿using System.IO;
+using AssetBundle;
 using Diploma.Interfaces;
+using Diploma.Managers;
 using Diploma.Tables;
 using GameObjectCreating;
 using UnityEngine;
@@ -9,10 +11,12 @@ namespace Diploma.Controllers
     public sealed class GameObjectInitialization
     {
         private readonly Assemblies _assemblies;
+        private readonly FileManager _fileManager;
 
-        public GameObjectInitialization(Assemblies assemblies)
+        public GameObjectInitialization(Assemblies assemblies, FileManager fileManager)
         {
             _assemblies = assemblies;
+            _fileManager = fileManager;
         }
         // public void Initialize()
         // {
@@ -30,7 +34,7 @@ namespace Diploma.Controllers
             //     _poolOfObjects._rootPool.gameObject,
             //     _poolOfObjects);
             LoadAssetBundleFromFile loadAssetBundleFromFile = new LoadAssetBundleFromFile();
-            return loadAssetBundleFromFile.GetBaseObjects(_assemblies.Assembly_Link);
+            return loadAssetBundleFromFile.GetBaseObjects(_fileManager.GetStorage() + "\\" +_assemblies.Assembly_Link);
         }
     }
 }

@@ -64,7 +64,7 @@ namespace Controllers.TheoryScene
             {
                 DataBaseController.SetTable(tables[5]);
                 Videos Video = (Videos) DataBaseController.GetRecordFromTableById(lesson.Lesson_Video_Id);
-                _gameContextWithViewsTheory.SetVideo(Video.Video_Link);
+                _gameContextWithViewsTheory.SetVideo(_fileManager.GetStorage() + "\\" + Video.Video_Link);
             }
 
 

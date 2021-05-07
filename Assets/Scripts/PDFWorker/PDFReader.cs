@@ -60,7 +60,7 @@ namespace PDFWorker
             
            // yield return new WaitForEndOfFrame();
             
-            _inputPdfFile = inputPdfFile;
+            _inputPdfFile = _fileManager.GetStorage() + "\\" + inputPdfFile;
             
             float numberOfPages = GetNumberOfPages(inputPdfFile);
             var destinationPath = _fileManager.CreateFileFolder(_positionPath+ 

@@ -107,6 +107,7 @@ namespace Diploma.Controllers
             yield return new WaitForEndOfFrame();
             ShowUIByUIType(LoadingParts.LoadMain);
             _backGround.SetActive(true);
+            _lessonConstructorController.AddNewLessonToListOnUI();
         }
 
         private void HideUI(GameObject Controller)
@@ -270,7 +271,6 @@ namespace Diploma.Controllers
                         ShowUIByUIType(LoadingParts.LoadError);
                         _currentPosition = LoadingParts.LoadMain;
                     }
-
                     break;
                 case LoadingParts.Options:
                     _backController.WhereIMustBack(_currentPosition);

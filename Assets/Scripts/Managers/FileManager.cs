@@ -17,9 +17,11 @@ namespace Diploma.Managers
             //     : Environment.ExpandEnvironmentVariables("%HOMEDRIVE%%HOMEPATH%");
             //
             _storage = AppDomain.CurrentDomain.BaseDirectory;
-            CreateFileFolder("LocalDataStorage");
+            //CreateFileFolder("LocalDataStorage");
             var directoryInfo = new DirectoryInfo(_storage);
             _storage = directoryInfo.GetDirectories()[0].ToString();
+            _storage = Path.Combine(_storage, "StreamingAssets");
+            _storage = CreateFileFolder("LocalDataStorage");
         }
 
         /// <inheritdoc />

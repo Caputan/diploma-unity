@@ -80,10 +80,11 @@ namespace Diploma.Controllers
                 
                 string splitedString = 
                     FileBrowserHelpers.GetFilename(FileBrowser.Result[0]);
+                string[] isFormatTrue;
                 switch (fileTypes)
                 {
                     case FileTypes.Assembly:
-                        var isFormatTrue = splitedString.Split('\\').Last().Split('.');
+                        //var isFormatTrue = splitedString.Split('\\').Last().Split('.');
                         //if (isFormatTrue.Last() != "3ds")
                         //{
                             //_error = ErrorCodes.WrongFormatError;
@@ -91,9 +92,8 @@ namespace Diploma.Controllers
                         //}
                         //else
                         //{
-                            localPath[0] = FileBrowser.Result[0];
-                          
-                            _error = ErrorCodes.None;
+                        localPath[0] = FileBrowser.Result[0];
+                        _error = ErrorCodes.None;
                         //}
                         parts = LoadingParts.DownloadModel;
                         // FileBrowserHelpers.CopyFile(FileBrowser.Result[0], localPath[0]);
@@ -103,7 +103,7 @@ namespace Diploma.Controllers
                         break;
                     case FileTypes.Text:
                         isFormatTrue = splitedString.Split('\\').Last().Split('.');
-                        if (isFormatTrue.Last() != "pdf")
+                        if (isFormatTrue.Last() != "pdf" )
                         {
                             _error = ErrorCodes.WrongFormatError;
                             splitedString = "Выберите текстовый фаил(*.pdf)";

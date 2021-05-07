@@ -20,31 +20,78 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9a27c574-4a30-4862-a74f-153a103b04b8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/AssetBundles/StandaloneWindows/GearBox/GearBox" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AssetBundles/StandaloneWindows/GearBox/GearBox.manifest" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AssetBundles/StandaloneWindows/GearBox/gear box" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AssetBundles/StandaloneWindows/GearBox/gear box.manifest" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Gear box.fbx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Gear box.fbx.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Materials.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Materials/BaseMaterial.mat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Materials/BaseMaterial.mat.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/ScreenShotTesting.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Tools/VectorTools.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Tools/VectorTools.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/Images.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/Images/Винт-гайка_передача.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/Images/Винт-гайка_передача.jpg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/Images/Зубчатые передачи.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/Images/Зубчатые передачи.jpg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/Images/валы.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/Images/валы.jpg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/Images/муфта.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/Images/муфта.jpeg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/Images/подшипник качения.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/Images/подшипник качения.jpg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/Images/подшипник скольжения.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/Images/подшипник скольжения.jpg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/Images/пружина.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/Images/пружина.jpg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/Images/ременная передача.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/Images/ременная передача.jpg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/Images/соединение.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/Images/соединение.jpg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/Images/фрикционная передача.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/Images/фрикционная передача.jpg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/Images/цепная передача.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/Images/цепная передача.jpg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/Images/червячные передачи.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/Images/червячные передачи.jpg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/StreamingAssets/Винт-гайка_передачи.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/StreamingAssets/Винт-гайка_передачи.pdf.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/StreamingAssets/Зубчатые_передачи.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/StreamingAssets/Зубчатые_передачи.pdf.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/StreamingAssets/Муфты.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/StreamingAssets/Муфты.pdf.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/StreamingAssets/Подшипники_качения.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/StreamingAssets/Подшипники_качения.pdf.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/StreamingAssets/Подшипники_скольжения.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/StreamingAssets/Подшипники_скольжения.pdf.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/StreamingAssets/Соединения.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/StreamingAssets/Соединения.pdf.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/StreamingAssets/Упругие_элементы.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/StreamingAssets/Упругие_элементы.pdf.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/StreamingAssets/Фрикционные_передачи.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/StreamingAssets/Фрикционные_передачи.pdf.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/StreamingAssets/Цепные_передачи.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/StreamingAssets/Цепные_передачи.pdf.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/StreamingAssets/Червячные_передачи.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/StreamingAssets/Червячные_передачи.pdf.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.diploma-unity/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.diploma-unity/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Brake.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Brake.fbx.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/BaseMaterial.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/BaseMaterial.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/StartScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/StartScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Test2.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Test2.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AssetBundle/LoadAssetBundleFromFile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AssetBundle/LoadAssetBundleFromFile.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Валы_и_оси.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Валы_и_оси.pdf.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Дисковый тормоз.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Дисковый тормоз.pdf.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Ременные_передачи.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Ременные_передачи.pdf.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/дет маш лекции.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/дет маш лекции.pdf.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SceneData/Library.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SceneData/Library.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/GameObjectInitialization.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/GameObjectInitialization.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/FilesControllers/FileManagerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/FilesControllers/FileManagerController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/LessonsControllers/LessonConstructorController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/LessonsControllers/LessonConstructorController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/UIController/UIController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/UIController/UIController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/PracticeScene/PracticeSceneInitialization.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/PracticeScene/PracticeSceneInitialization.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/TheoryScene/TheoryControllers/MainTheoryController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/TheoryScene/TheoryControllers/MainTheoryController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Extensions/Extensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Extensions/Extensions.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/TheoryScene/TheorySceneInitialization.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/TheoryScene/TheorySceneInitialization.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/FileManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/FileManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PDFWorker/PDFReader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PDFWorker/PDFReader.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/MachinePartsDB.bytes" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StreamingAssets/MachinePartsDB.bytes" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/Валы_и_оси.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StreamingAssets/Валы_и_оси.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/Валы_и_оси.pdf.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StreamingAssets/Валы_и_оси.pdf.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/Дисковый тормоз.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/Дисковый тормоз.pdf.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/Ременные_передачи.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StreamingAssets/Ременные_передачи.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/Ременные_передачи.pdf.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StreamingAssets/Ременные_передачи.pdf.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,6 +138,7 @@
     <setting file="file://$PROJECT_DIR$/../../../Unity/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/UI/Core/Button.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Controllers/LoadingSceneController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.addressables@1.16.19/Runtime/ResourceManager/ResourceLocations/IResourceLocation.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/220F2AAB-ED1D-4738-94A8-8B65AAF6C105/55/ec8faad6/Action`1.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/ScreenShotTesting.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/BEF6D2FB-EF13-4893-9B77-102B4CF6A6E6/1d/6381cb3c/EditorCompilationInterface.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/A555715E-F291-462E-B190-C2C939543F55/14/68ccb773/MonoBehaviour.cs" root0="SKIP_HIGHLIGHTING" />
@@ -112,7 +160,6 @@
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
-      <option value="$PROJECT_DIR$/Assets/Scripts/UI/PauseUI/PauseFactory.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Tools/InputController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/PracticeScene/GameContext/GameContextWithUI.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Interfaces/IPauseButtons.cs" />
@@ -138,13 +185,11 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/MainMenu/MainMenuAddButtonsToDictionary.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Enums/LoadingParts.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/Authorisation/AuthController.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/UIController/UIController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/ButtonsControllers/ExitController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/ButtonsControllers/BackController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/MainSceneInitialization.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Tools/ResourceLoader.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/TheoryUI/TheoryUIAddButtonsToDictionary.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/PDFWorker/PDFReader.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/TheoryScene/TheoryControllers/TheoryController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/TheoryScene/GameContextTheory/GameContextWithViewsTheory.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/TheoryScene/TheoryControllers/LibraryTreeController.cs" />
@@ -152,17 +197,20 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/TheoryScene/TheoryControllers/LibraryTreeUIInitialization.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/TheoryScene/TheoryControllers/PdfReaderUIInitialization.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/TheoryScene/TheoryControllers/TheoryUIInitialization.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/TheoryScene/TheorySceneInitialization.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/LessonChoose/LessonChooseAddButtonsToDictionary.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/GameObjectInitialization.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/PracticeScene/PracticeSceneInitialization.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/AssetBundle/LoadAssetBundleFromFile.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Extensions/Extensions.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Tools/VectorTools.cs" />
       <option value="$PROJECT_DIR$/Assets/ScreenShotTesting.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/LessonsControllers/LessonConstructorController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/TheoryScene/TheoryControllers/MainTheoryController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Managers/FileManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/FilesControllers/FileManagerController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/UIController/UIController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/PDFWorker/PDFReader.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/TheoryScene/TheorySceneInitialization.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/GameObjectInitialization.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/PracticeScene/PracticeSceneInitialization.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/LessonsControllers/LessonConstructorController.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1oVh7QrK5P1QV67f8aHYDy536Km" />
@@ -207,10 +255,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="12068">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" />
+      <option name="pid" value="12068" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -274,6 +322,7 @@
       <workItem from="1620219680121" duration="3345000" />
       <workItem from="1620284763546" duration="5810000" />
       <workItem from="1620303050818" duration="3068000" />
+      <workItem from="1620369731621" duration="4249000" />
     </task>
     <servers />
   </component>

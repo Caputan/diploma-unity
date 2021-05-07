@@ -7,6 +7,7 @@ using Data;
 using Diploma.Controllers;
 using Diploma.Controllers.AssembleController;
 using Diploma.Interfaces;
+using Diploma.Managers;
 using Diploma.PracticeScene.GameContext;
 using Diploma.Tables;
 using UnityEngine;
@@ -62,10 +63,12 @@ namespace Diploma.PracticeScene.Controllers
             Lessons lesson = (Lessons)DataBaseController.GetRecordFromTableById(_data.lessonID);
             DataBaseController.SetTable(tables[0]);
             Assemblies assembly = (Assemblies)DataBaseController.GetRecordFromTableById(lesson.Lesson_Assembly_Id);
+
+            var fileManager = new FileManager();
             
             //var GameObjectFactory = new GameObjectFactory();
             //var Pool = new PoolOfObjects(GameObjectFactory, _gameContextWithLogic);
-            var GameObjectInitialization = new GameObjectInitialization(assembly);
+            var GameObjectInitialization = new GameObjectInitialization(assembly,fileManager);
             GameObjectInitialization.InstantiateGameObject();
             var playerInitialization = new PlayerInitialization(playerPrefab, spawnPoint, _data);
             //var inventoryInitialization = new InventoryInitialization(_gameContextWithViews, _gameContextWithUI,
