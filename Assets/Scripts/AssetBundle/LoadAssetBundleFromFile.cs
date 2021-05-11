@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Diploma.Extensions;
+using UnityEngine;
 
 
 namespace AssetBundle
@@ -21,6 +22,7 @@ namespace AssetBundle
             {
                 GameObject prefab = baseAsset as GameObject; 
                 gameObject = GameObject.Instantiate(prefab,prefab.transform.position,prefab.transform.rotation);
+                gameObject.AddMeshCollider();
                 if (i==0)
                 {
                     gameObject.transform.position = Vector3.zero;

@@ -7,6 +7,7 @@ using Data;
 using Diploma.Controllers;
 using Diploma.Controllers.AssembleController;
 using Diploma.Interfaces;
+using Diploma.Managers;
 using Diploma.PracticeScene.GameContext;
 using Diploma.Tables;
 using UnityEngine;
@@ -58,15 +59,17 @@ namespace Diploma.PracticeScene.Controllers
             _gameContextWithLogic = new GameContextWithLogic();
             _gameContextWithUI = new GameContextWithUI();
             
-            // DataBaseController.SetTable(tables[1]);
-            // Lessons lesson = (Lessons)DataBaseController.GetRecordFromTableById(_data.lessonID);
-            // DataBaseController.SetTable(tables[0]);
-            // Assemblies assembly = (Assemblies)DataBaseController.GetRecordFromTableById(lesson.Lesson_Assembly_Id);
+            DataBaseController.SetTable(tables[1]);
+            Lessons lesson = (Lessons)DataBaseController.GetRecordFromTableById(_data.lessonID);
+            DataBaseController.SetTable(tables[0]);
+            Assemblies assembly = (Assemblies)DataBaseController.GetRecordFromTableById(lesson.Lesson_Assembly_Id);
+
+            var fileManager = new FileManager();
             
             //var GameObjectFactory = new GameObjectFactory();
             //var Pool = new PoolOfObjects(GameObjectFactory, _gameContextWithLogic);
-            // var GameObjectInitialization = new GameObjectInitialization(assembly);
-            // GameObjectInitialization.InstantiateGameObject();
+            var GameObjectInitialization = new GameObjectInitialization(assembly,fileManager);
+            GameObjectInitialization.InstantiateGameObject();
             var playerInitialization = new PlayerInitialization(playerPrefab, spawnPoint, _data);
             //var inventoryInitialization = new InventoryInitialization(_gameContextWithViews, _gameContextWithUI,
                // mainParent, inventoryPrefab, partOfAssembly, inventorySlotPrefab);

@@ -25,6 +25,11 @@ namespace Diploma.Extensions
             var component = gameObject.GetOrAddComponent<MeshCollider>();
             return gameObject;
         }
+        public static GameObject AddBoxCollider(this GameObject gameObject)
+        {
+            var component = gameObject.GetOrAddComponent<BoxCollider>();
+            return gameObject;
+        }
         
         public static GameObject AddSpriteRenderer(this GameObject gameObject, Sprite sprite)
         {

@@ -22,12 +22,15 @@ namespace UI.TheoryUI
             List<Button> buttons,
             GameContextWithViewsTheory gameContextWithViews,
             string[] types
-            )
+        )
         {
             _buttons = buttons;
             _gameContextWithViews = gameContextWithViews;
             _usedLibraryItem = new List<int>();
-            _usedLibraryItem.Add(-1);
+            if (gameContextWithViews.urlVideo!="-1")
+            {
+                _usedLibraryItem.Add(-1);
+            }
             foreach (var type in types)
             {
                 if (type != "")

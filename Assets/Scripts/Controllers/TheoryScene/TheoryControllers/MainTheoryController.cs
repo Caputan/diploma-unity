@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 using Coroutine;
 using Diploma.Enums;
+using Diploma.Managers;
 using iTextSharp.text;
 using PDFWorker;
 using UI.LoadingUI;
@@ -18,6 +19,7 @@ namespace Controllers.TheoryScene.TheoryControllers
         private readonly TheoryController _theoryController;
         private readonly LibraryTreeController _libraryTreeController;
         private readonly LoadingUILogic _loadingUILogic;
+        private readonly FileManager _fileManager;
         private Dictionary<int, int> _corutineQueue;
         private Dictionary<int, string> _realQueue;
         private int _countOfUnitInQueue;
@@ -31,12 +33,14 @@ namespace Controllers.TheoryScene.TheoryControllers
         public MainTheoryController(
             TheoryController theoryController, 
             LibraryTreeController libraryTreeController,
-            LoadingUILogic loadingUILogic
+            LoadingUILogic loadingUILogic,
+            FileManager fileManager
              )
         {
             _theoryController = theoryController;
             _libraryTreeController = libraryTreeController;
             _loadingUILogic = loadingUILogic;
+            _fileManager = fileManager;
             _corutineQueue = new Dictionary<int, int>();
             _realQueue = new Dictionary<int, string>();
             _coroutineController = new List<IEnumerator>();
@@ -45,18 +49,21 @@ namespace Controllers.TheoryScene.TheoryControllers
             _hand = 0;
             _theoryController.rewriteDictionary += CreateQueue;
             _libraryTreeController.rewriteDictionary += CreateQueue;
-
             
             _mainDomain = AppDomain.CurrentDomain.BaseDirectory;
+            //CreateFileFolder("LocalDataStorage");
             var directoryInfo = new DirectoryInfo(_mainDomain);
-            _mainDomain = directoryInfo.GetDirectories()[0].ToString();
+            _mainDomain = directoryInfo.GetDirectories()[0].GetDirectories()[3].ToString();
         }
 
         private void CreateQueue(Dictionary<int,string> controllerInfo)
         {
             foreach (var info in controllerInfo)
             {
-                _realQueue.Add(info.Key,info.Value);
+                if (!_realQueue.ContainsKey(info.Key))
+                {
+                    _realQueue.Add(info.Key,info.Value);
+                }
                 _corutineQueue.Add(_countOfUnitInQueue,info.Key);
                 _countOfUnitInQueue++;
             }
@@ -85,7 +92,7 @@ namespace Controllers.TheoryScene.TheoryControllers
             {
                 _theoryController.CreateDocumentLocaly(
                     _corutineQueue[_hand],
-                    _realQueue[_corutineQueue[_hand]],
+                    _fileManager.GetStorage() + "\\" +_realQueue[_corutineQueue[_hand]],
                     _states,
                     _hand
                 );
@@ -99,7 +106,7 @@ namespace Controllers.TheoryScene.TheoryControllers
             {
                 _libraryTreeController.CreateDocumentLocaly(
                     _corutineQueue[_hand],
-                    _mainDomain+"\\"+_realQueue[_corutineQueue[_hand]],
+                    _mainDomain + "\\" +_realQueue[_corutineQueue[_hand]],
                     _states,
                     _hand
                 );

@@ -14,82 +14,50 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   libraryObjcets:
   - id: 0
-    name: DetMash
-    texture2D: {fileID: 2800000, guid: c31e1edee7dc8d44299513462ba3ca58, type: 3}
-    file: "Assets/Resources/\u0434\u0435\u0442 \u043C\u0430\u0448 \u043B\u0435\u043A\u0446\u0438\u0438.pdf"
+    name: "\u0412\u0430\u043B\u044B \u0438 \u043E\u0441\u0438"
+    texture2D: {fileID: 2800000, guid: 679da02e787a65f42a548b78c1776ee6, type: 3}
+    file: "\u0412\u0430\u043B\u044B_\u0438_\u043E\u0441\u0438.pdf"
   - id: 1
-    name: DetMash1
-    texture2D: {fileID: 2800000, guid: 333531526b7edd14b971f2bfaf27eb22, type: 3}
-    file: "\u0414\u0438\u0441\u043A\u043E\u0432\u044B\u0439 \u0442\u043E\u0440\u043C\u043E\u0437.pdf"
+    name: "\u0412\u0438\u043D\u0442-\u0433\u0430\u0439\u043A\u0430 \u043F\u0435\u0440\u0435\u0434\u0430\u0447\u0438"
+    texture2D: {fileID: 2800000, guid: d48c7b5d0da546d47b497df19ee6229f, type: 3}
+    file: "\u0412\u0438\u043D\u0442-\u0433\u0430\u0439\u043A\u0430_\u043F\u0435\u0440\u0435\u0434\u0430\u0447\u0438.pdf"
   - id: 2
-    name: DetMash2
-    texture2D: {fileID: 2800000, guid: c31e1edee7dc8d44299513462ba3ca58, type: 3}
-    file: "\u0414\u0438\u0441\u043A\u043E\u0432\u044B\u0439 \u0442\u043E\u0440\u043C\u043E\u0437.pdf"
+    name: "\u0417\u0443\u0431\u0447\u0430\u0442\u044B\u0435 \u043F\u0435\u0440\u0435\u0434\u0430\u0447\u0438"
+    texture2D: {fileID: 2800000, guid: b6abf951eae6296488f9813436c08c02, type: 3}
+    file: "\u0417\u0443\u0431\u0447\u0430\u0442\u044B\u0435_\u043F\u0435\u0440\u0435\u0434\u0430\u0447\u0438.pdf"
   - id: 3
-    name: 3333
-    texture2D: {fileID: 2800000, guid: 159ad69ebc60b8b418d2c8485862ae05, type: 3}
-    file: "Assets/Resources/\u0414\u0438\u0441\u043A\u043E\u0432\u044B\u0439 \u0442\u043E\u0440\u043C\u043E\u0437.pdf"
-  - id: 3
-    name: 3333
-    texture2D: {fileID: 2800000, guid: 159ad69ebc60b8b418d2c8485862ae05, type: 3}
-    file: "Assets/Resources/\u0414\u0438\u0441\u043A\u043E\u0432\u044B\u0439 \u0442\u043E\u0440\u043C\u043E\u0437.pdf"
-  - id: 3
-    name: 3333
-    texture2D: {fileID: 2800000, guid: 159ad69ebc60b8b418d2c8485862ae05, type: 3}
-    file: "Assets/Resources/\u0414\u0438\u0441\u043A\u043E\u0432\u044B\u0439 \u0442\u043E\u0440\u043C\u043E\u0437.pdf"
-  - id: 3
-    name: 3333
-    texture2D: {fileID: 2800000, guid: 159ad69ebc60b8b418d2c8485862ae05, type: 3}
-    file: "Assets/Resources/\u0414\u0438\u0441\u043A\u043E\u0432\u044B\u0439 \u0442\u043E\u0440\u043C\u043E\u0437.pdf"
-  - id: 3
-    name: 3333
-    texture2D: {fileID: 2800000, guid: 159ad69ebc60b8b418d2c8485862ae05, type: 3}
-    file: "Assets/Resources/\u0414\u0438\u0441\u043A\u043E\u0432\u044B\u0439 \u0442\u043E\u0440\u043C\u043E\u0437.pdf"
-  - id: 3
-    name: 3333
-    texture2D: {fileID: 2800000, guid: 159ad69ebc60b8b418d2c8485862ae05, type: 3}
-    file: "Assets/Resources/\u0414\u0438\u0441\u043A\u043E\u0432\u044B\u0439 \u0442\u043E\u0440\u043C\u043E\u0437.pdf"
+    name: "\u041C\u0443\u0444\u0442\u044B"
+    texture2D: {fileID: 2800000, guid: ab0397574480cb942bccd00425bdd363, type: 3}
+    file: "\u041C\u0443\u0444\u0442\u044B.pdf"
+  - id: 4
+    name: "\u041F\u043E\u0434\u0448\u0438\u043F\u043D\u0438\u043A\u0438 \u043A\u0430\u0447\u0435\u043D\u0438\u044F"
+    texture2D: {fileID: 2800000, guid: 5521fb15914ffd14881e828d21a2cb1c, type: 3}
+    file: "\u041F\u043E\u0434\u0448\u0438\u043F\u043D\u0438\u043A\u0438_\u043A\u0430\u0447\u0435\u043D\u0438\u044F.pdf"
+  - id: 5
+    name: "\u041F\u043E\u0434\u0448\u0438\u043F\u043D\u0438\u043A\u0438 \u0441\u043A\u043E\u043B\u044C\u0436\u0435\u043D\u0438\u044F"
+    texture2D: {fileID: 2800000, guid: bf659b8ca2e368646837fb565e3c4742, type: 3}
+    file: "\u041F\u043E\u0434\u0448\u0438\u043F\u043D\u0438\u043A\u0438_\u0441\u043A\u043E\u043B\u044C\u0436\u0435\u043D\u0438\u044F.pdf"
+  - id: 6
+    name: "\u0420\u0435\u043C\u0435\u043D\u043D\u044B\u0435 \u043F\u0435\u0440\u0435\u0434\u0430\u0447\u0438"
+    texture2D: {fileID: 2800000, guid: ead62d9c0103d2c41a5d14577c2ae91b, type: 3}
+    file: "\u0420\u0435\u043C\u0435\u043D\u043D\u044B\u0435_\u043F\u0435\u0440\u0435\u0434\u0430\u0447\u0438.pdf"
+  - id: 7
+    name: "\u0421\u043E\u0435\u0434\u0438\u043D\u0435\u043D\u0438\u044F"
+    texture2D: {fileID: 2800000, guid: a9dbdb0894c2b2a4fa6414dda842e4f4, type: 3}
+    file: "\u0421\u043E\u0435\u0434\u0438\u043D\u0435\u043D\u0438\u044F.pdf"
+  - id: 8
+    name: "\u0423\u043F\u0440\u0443\u0433\u0438\u0435 \u044D\u043B\u0435\u043C\u0435\u043D\u0442\u044B"
+    texture2D: {fileID: 2800000, guid: f3191377f6ac0bc4b8324c8b8247c2b9, type: 3}
+    file: "\u0423\u043F\u0440\u0443\u0433\u0438\u0435_\u044D\u043B\u0435\u043C\u0435\u043D\u0442\u044B.pdf"
   - id: 9
-    name: "\u0414\u0438\u0441\u043A\u043E\u0432\u044B\u0439 \u0442\u043E\u0440\u043C\u043E\u0437"
-    texture2D: {fileID: 2800000, guid: 159ad69ebc60b8b418d2c8485862ae05, type: 3}
-    file: "StreamingAssets\\\u0414\u0438\u0441\u043A\u043E\u0432\u044B\u0439 \u0442\u043E\u0440\u043C\u043E\u0437.pdf"
+    name: "\u0424\u0440\u0438\u043A\u0446\u0438\u043E\u043D\u043D\u044B\u0435 \u043F\u0435\u0440\u0435\u0434\u0430\u0447\u0438"
+    texture2D: {fileID: 2800000, guid: 9834ce76bfb1bd74daec22969e7fc567, type: 3}
+    file: "\u0424\u0440\u0438\u043A\u0446\u0438\u043E\u043D\u043D\u044B\u0435_\u043F\u0435\u0440\u0435\u0434\u0430\u0447\u0438.pdf"
   - id: 10
-    name: "\u0420\u0435\u043C\u0435\u043D\u043D\u044B\u0435_\u043F\u0435\u0440\u0435\u0434\u0430\u0447\u0438"
-    texture2D: {fileID: 2800000, guid: 159ad69ebc60b8b418d2c8485862ae05, type: 3}
-    file: "StreamingAssets\\\u0420\u0435\u043C\u0435\u043D\u043D\u044B\u0435_\u043F\u0435\u0440\u0435\u0434\u0430\u0447\u0438.pdf"
+    name: "\u0426\u0435\u043F\u043D\u044B\u0435 \u043F\u0435\u0440\u0435\u0434\u0430\u0447\u0438"
+    texture2D: {fileID: 2800000, guid: 4392e0502fbacdf4681cd6f37a2af272, type: 3}
+    file: "\u0426\u0435\u043F\u043D\u044B\u0435_\u043F\u0435\u0440\u0435\u0434\u0430\u0447\u0438.pdf"
   - id: 11
-    name: "\u0412\u0430\u043B\u044B_\u0438_\u043E\u0441\u0438"
-    texture2D: {fileID: 2800000, guid: 159ad69ebc60b8b418d2c8485862ae05, type: 3}
-    file: "StreamingAssets\\\u0412\u0430\u043B\u044B_\u0438_\u043E\u0441\u0438.pdf"
-  - id: 3
-    name: 3333
-    texture2D: {fileID: 2800000, guid: 159ad69ebc60b8b418d2c8485862ae05, type: 3}
-    file: "Assets/Resources/\u0414\u0438\u0441\u043A\u043E\u0432\u044B\u0439 \u0442\u043E\u0440\u043C\u043E\u0437.pdf"
-  - id: 3
-    name: 3333
-    texture2D: {fileID: 2800000, guid: 159ad69ebc60b8b418d2c8485862ae05, type: 3}
-    file: "Assets/Resources/\u0414\u0438\u0441\u043A\u043E\u0432\u044B\u0439 \u0442\u043E\u0440\u043C\u043E\u0437.pdf"
-  - id: 3
-    name: 3333
-    texture2D: {fileID: 2800000, guid: 159ad69ebc60b8b418d2c8485862ae05, type: 3}
-    file: "Assets/Resources/\u0414\u0438\u0441\u043A\u043E\u0432\u044B\u0439 \u0442\u043E\u0440\u043C\u043E\u0437.pdf"
-  - id: 3
-    name: 3333
-    texture2D: {fileID: 2800000, guid: 159ad69ebc60b8b418d2c8485862ae05, type: 3}
-    file: "Assets/Resources/\u0414\u0438\u0441\u043A\u043E\u0432\u044B\u0439 \u0442\u043E\u0440\u043C\u043E\u0437.pdf"
-  - id: 3
-    name: 3333
-    texture2D: {fileID: 2800000, guid: 159ad69ebc60b8b418d2c8485862ae05, type: 3}
-    file: "Assets/Resources/\u0414\u0438\u0441\u043A\u043E\u0432\u044B\u0439 \u0442\u043E\u0440\u043C\u043E\u0437.pdf"
-  - id: 3
-    name: 3333
-    texture2D: {fileID: 2800000, guid: 159ad69ebc60b8b418d2c8485862ae05, type: 3}
-    file: "Assets/Resources/\u0414\u0438\u0441\u043A\u043E\u0432\u044B\u0439 \u0442\u043E\u0440\u043C\u043E\u0437.pdf"
-  - id: 3
-    name: 3333
-    texture2D: {fileID: 2800000, guid: 159ad69ebc60b8b418d2c8485862ae05, type: 3}
-    file: "Assets/Resources/\u0414\u0438\u0441\u043A\u043E\u0432\u044B\u0439 \u0442\u043E\u0440\u043C\u043E\u0437.pdf"
-  - id: 3
-    name: 3333
-    texture2D: {fileID: 2800000, guid: 159ad69ebc60b8b418d2c8485862ae05, type: 3}
-    file: "Assets/Resources/\u0414\u0438\u0441\u043A\u043E\u0432\u044B\u0439 \u0442\u043E\u0440\u043C\u043E\u0437.pdf"
+    name: "\u0427\u0435\u0440\u0432\u044F\u0447\u043D\u044B\u0435 \u043F\u0435\u0440\u0435\u0434\u0430\u0447\u0438"
+    texture2D: {fileID: 2800000, guid: 2bdee90765f0ac44d94bc3fdea180052, type: 3}
+    file: "\u0427\u0435\u0440\u0432\u044F\u0447\u043D\u044B\u0435_\u043F\u0435\u0440\u0435\u0434\u0430\u0447\u0438.pdf"

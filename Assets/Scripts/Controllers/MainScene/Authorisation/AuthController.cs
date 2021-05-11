@@ -81,7 +81,10 @@ namespace Diploma.Controllers
                 }
             }
             role = Convert.ToInt32(_loginedUser.User_Role);
-            _data.activatedUserID = _loginedUser.User_Id;
+            if (_error == ErrorCodes.None)
+            {
+                _data.activatedUserID = _loginedUser.User_Id;
+            }
             return _error;
         }
 

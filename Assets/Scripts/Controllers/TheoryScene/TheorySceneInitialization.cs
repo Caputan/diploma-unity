@@ -64,7 +64,7 @@ namespace Controllers.TheoryScene
             {
                 DataBaseController.SetTable(tables[5]);
                 Videos Video = (Videos) DataBaseController.GetRecordFromTableById(lesson.Lesson_Video_Id);
-                _gameContextWithViewsTheory.SetVideo(Video.Video_Link);
+                _gameContextWithViewsTheory.SetVideo(_fileManager.GetStorage() + "\\" + Video.Video_Link);
             }
 
 
@@ -77,7 +77,7 @@ namespace Controllers.TheoryScene
                 _gameContextWithUITheory,
                 Types.TypeS,
                 lesson.Lesson_Name
-                );
+            );
 
             PdfReaderUIInitialization pdfReaderUIInitialization = new PdfReaderUIInitialization
             (
@@ -118,7 +118,8 @@ namespace Controllers.TheoryScene
             MainTheoryController mainTheoryController = new MainTheoryController(
                 theoryController,
                 libraryController,
-                loadingUILogic
+                loadingUILogic,
+                _fileManager
                 );
             
             _controllers = new Diploma.Controllers.Controllers();

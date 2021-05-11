@@ -21,7 +21,10 @@ namespace Controllers.TheoryScene.TheoryControllers
         private Transform _parent;
         private PDFReaderUIFactory _factory;
         private VideoFactory _videoFactory;
-
+        private Textures2DPool _textures2DPool;
+        private Transform _POOL;
+        
+        
         private readonly ResourcePath _viewPath = new ResourcePath {PathResource = "Prefabs/TheoryScene/ImageForPage"};
         private readonly ResourcePath _viewVideoPrefabPath = 
             new ResourcePath {PathResource = "Prefabs/TheoryScene/VideoPlayer"};
@@ -35,8 +38,15 @@ namespace Controllers.TheoryScene.TheoryControllers
             _videoPlayer = videoPlayer;
             _factory = new PDFReaderUIFactory(ResourceLoader.LoadPrefab(_viewPath));
             _videoFactory = new VideoFactory(ResourceLoader.LoadPrefab(_viewVideoPrefabPath));
+            
         }
-        public void Initialization() { }
+
+        public void Initialization()
+        {
+            _parent = _gameContextWithViewsTheory.Parents[0];
+            _textures2DPool = new Textures2DPool(_parent,_factory);
+            _parent.GetComponent<GridLayoutGroup>().cellSize = new Vector2(1000,1300);
+        }
         
         public void ReadNextDoc(int id)
         {
@@ -48,31 +58,25 @@ namespace Controllers.TheoryScene.TheoryControllers
             yield return new WaitForEndOfFrame();
             
             #region Creation PDF Reader
-            _parent = _gameContextWithViewsTheory.Parents[0];
-            _parent.GetComponent<GridLayoutGroup>().cellSize = new Vector2(1000,1300);
             var paths = Directory.GetFiles(_gameContextWithViewsTheory.nameOfFolders[id]);
-            
+            _textures2DPool.TurnOnAll();
+            _textures2DPool.SetAllTexturesFree();
             foreach(var path in paths)
             {
-                //загрузка картинки в текстуру
                 byte[] bytes = File.ReadAllBytes(path);
                 Texture2D tex = new Texture2D(2, 2);
                 tex.LoadImage(bytes);
-                //создание элемента UI
-                
-                GameObject pdfReaderObject = _factory.Create(_parent);
-                //pdfReaderObject.transform.localPosition = new Vector3(0, 0, 0);
-                pdfReaderObject.GetComponentInChildren<RawImage>().texture = tex;
-
+                var idOfElement = _textures2DPool.AskForFreeElement();
+                var needToSetAnTexture = _textures2DPool.AddInfoInPool(idOfElement);
+                needToSetAnTexture.texture = tex;
             }
             #endregion
-
+            _textures2DPool.TurnOffFree();
             yield return null;
         }
 
         public void PlayANewVideo()
         {
-            _parent = _gameContextWithViewsTheory.Parents[0];
             _parent.GetComponent<GridLayoutGroup>().cellSize = new Vector2(1350,750);
             GameObject videoObject = _videoFactory.Create(_parent);
             videoObject.GetComponent<RawImage>().texture = ResourceLoader.LoadObject<Texture>(_videoTexture);

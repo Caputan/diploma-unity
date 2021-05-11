@@ -2,6 +2,7 @@
 using Diploma.Controllers;
 using Diploma.Enums;
 using Diploma.Interfaces;
+using Diploma.Managers;
 using Diploma.UI;
 using Tools;
 using UnityEngine;
@@ -17,6 +18,7 @@ namespace Controllers
         private readonly GameObject _lessonChooseParent;
         private readonly DataBaseController _dataBaseController;
         private readonly List<IDataBase> _tables;
+        private readonly FileManager _fileManager;
         private LessonChooseFactory _lessonCanvasChooseFactory;
         private List<Button> _lessonChooseButtons;
         
@@ -30,7 +32,8 @@ namespace Controllers
             GameContextWithLessons gameContextWithLessons,
             GameObject LessonChooseParent,
             DataBaseController dataBaseController,
-            List<IDataBase> tables
+            List<IDataBase> tables,
+            FileManager fileManager
         )
         {
             _gameContextWithViews = gameContextWithViews;
@@ -39,6 +42,7 @@ namespace Controllers
             _lessonChooseParent = LessonChooseParent;
             _dataBaseController = dataBaseController;
             _tables = tables;
+            _fileManager = fileManager;
 
             _lessonCanvasChooseFactory = new LessonChooseFactory(ResourceLoader.LoadPrefab(_viewPath));
         }
@@ -62,7 +66,8 @@ namespace Controllers
                 _dataBaseController,
                 _tables,
                 plateWithButtonForLessonsFactory,
-                parentForLessons
+                parentForLessons,
+                _fileManager
                 );
             lessonChooseAddButtonsToDictionary.Initialization();
             var LessonChooseLogic = new LessonChooseLogic(_gameContextWithViews.ChooseLessonButtons);

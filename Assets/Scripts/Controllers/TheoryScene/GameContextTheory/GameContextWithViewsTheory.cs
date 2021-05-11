@@ -9,7 +9,6 @@ namespace Diploma.Controllers
     {
         public Dictionary<LoadingPartsTheoryScene, Button>  TheoryButtons;
         public Dictionary<int, Button> LibraryButtons;
-        //капелька хардкода.
         public List<Transform> Parents;
         public Dictionary<int,string> nameOfFolders;
         public string urlVideo;

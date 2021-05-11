@@ -13,7 +13,7 @@ using Types = Diploma.Tables.Types;
 
 namespace Controllers.TheoryScene.TheoryControllers
 {
-    public class LibraryTreeController: ICleanData
+    public class LibraryTreeController
     {
         private readonly PdfReaderUIInitialization _pdfReaderUIInitialization;
         private readonly GameContextWithViewsTheory _gameContextWithViewsTheory;
@@ -69,12 +69,7 @@ namespace Controllers.TheoryScene.TheoryControllers
                 _pdfReaderUIInitialization.ReadNextDoc(id);
             }
         }
-        
-        public void CleanData()
-        {
-            UnloadDocument();
-        }
-        
+
         public void CreateDocumentLocaly( 
             int id,
             string obj,
@@ -83,10 +78,6 @@ namespace Controllers.TheoryScene.TheoryControllers
             )
         {
             _pdfReader.RaedFile(id,obj,coroutineController,hand);
-        }
-        private void UnloadDocument()
-        {
-            _pdfReaderUIInitialization.UnloadDocument();
         }
 
         public void RemoveDocumentPng()

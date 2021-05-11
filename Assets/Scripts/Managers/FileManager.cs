@@ -2,6 +2,7 @@
 using System.IO;
 using Diploma.Interfaces;
 using Interfaces;
+using UnityEngine;
 
 namespace Diploma.Managers
 {
@@ -11,16 +12,16 @@ namespace Diploma.Managers
         
         public FileManager()
         {
-            var platform = Environment.OSVersion.Platform;
-            var homePath = (platform == PlatformID.Unix || platform == PlatformID.MacOSX)
-                ? Environment.GetEnvironmentVariable("HOME")
-                : Environment.ExpandEnvironmentVariables("%HOMEDRIVE%%HOMEPATH%");
-            
-            _storage = Path.Combine(Path.Combine(homePath, "Documents"), "MDGameStorage");
-            Directory.CreateDirectory(_storage);
+            _storage = AppDomain.CurrentDomain.BaseDirectory;
+            var directoryInfo = new DirectoryInfo(_storage);
+            #if UNITY_EDITOR
+            _storage = directoryInfo.GetDirectories()[0].ToString();
+            #else
+            _storage = directoryInfo.GetDirectories()[0].GetDirectories()[3].ToString();
+            #endif
+            _storage = CreateFileFolder("LocalDataStorage");
         }
-
-        /// <inheritdoc />
+        
         public bool FileExists(int FileId, string fileName)
         {
             var filePath = Path.Combine(_storage, FileId.ToString(), fileName);

@@ -4,6 +4,7 @@ using Controllers;
 using Diploma.Controllers;
 using Diploma.Enums;
 using Diploma.Interfaces;
+using Diploma.Managers;
 using Diploma.Tables;
 using ListOfLessons;
 using TMPro;
@@ -21,11 +22,13 @@ namespace Diploma.UI
         private readonly List<IDataBase> _tables;
         private readonly PlateWithButtonForLessonsFactory _plateWithButtonForLessonsFactory;
         private readonly GameObject _scrollParentForLessonsView;
+        private readonly FileManager _fileManager;
         private int[] _usedButton = new[] {10};
         public LessonChooseAddButtonsToDictionary(List<Button> buttons,GameContextWithViews gameContextWithViews,
             GameContextWithLessons gameContextWithLessons
         ,DataBaseController dataBaseController, List<IDataBase> tables,
-        PlateWithButtonForLessonsFactory plateWithButtonForLessonsFactory,GameObject scrollParentForLessonsView
+        PlateWithButtonForLessonsFactory plateWithButtonForLessonsFactory,GameObject scrollParentForLessonsView,
+            FileManager fileManager
         )
         {
             _buttons = buttons;
@@ -35,6 +38,7 @@ namespace Diploma.UI
             _tables = tables;
             _plateWithButtonForLessonsFactory = plateWithButtonForLessonsFactory;
             _scrollParentForLessonsView = scrollParentForLessonsView;
+            _fileManager = fileManager;
             _buttons = buttons;
             int i = 0;
             foreach (var button in _buttons)
@@ -54,7 +58,7 @@ namespace Diploma.UI
                 var lessonToggle = _plateWithButtonForLessonsFactory.Create(_scrollParentForLessonsView.transform);
                 lessonToggle.transform.localPosition = new Vector3(0,0,0);
                 var tex = new Texture2D(5, 5);
-                tex.LoadImage(File.ReadAllBytes(lesson.Lesson_Preview));
+                tex.LoadImage(File.ReadAllBytes(_fileManager.GetStorage()+ "\\" +lesson.Lesson_Preview));
                 lessonToggle.GetComponentInChildren<RawImage>().texture = tex;
 
                 var lessonName = lessonToggle.GetComponentInChildren<TextMeshProUGUI>();

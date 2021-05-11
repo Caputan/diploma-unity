@@ -20,9 +20,39 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9a27c574-4a30-4862-a74f-153a103b04b8" name="Default Changelist" comment="">
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/Assets/QuickOutline/Scripts/Outline.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/QuickOutline/Scripts/Outline.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/Packages/com.unity.probuilder/Settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/Packages/com.unity.probuilder/Settings.json" afterDir="false" />
+=======
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/TheoryScene/TheoryControllers/Textures2DPool.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/TheoryScene/TheoryControllers/Textures2DPool.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.diploma-unity/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.diploma-unity/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/MainScene/About.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/MainScene/About.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/TheoryScene/ImageForPage.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/TheoryScene/ImageForPage.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SceneData/Library.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SceneData/Library.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/Authorisation/AuthController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/Authorisation/AuthController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/LessonsControllers/LessonConstructorController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/LessonsControllers/LessonConstructorController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/LessonsControllers/LessonsChooseInitialization.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/LessonsControllers/LessonsChooseInitialization.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/MainSceneInitialization.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/MainSceneInitialization.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/UIController/UIController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/UIController/UIController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/TheoryScene/GameContextTheory/GameContextWithViewsTheory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/TheoryScene/GameContextTheory/GameContextWithViewsTheory.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/TheoryScene/TheoryControllers/LibraryTreeController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/TheoryScene/TheoryControllers/LibraryTreeController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/TheoryScene/TheoryControllers/MainTheoryController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/TheoryScene/TheoryControllers/MainTheoryController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/TheoryScene/TheoryControllers/PdfReaderUIInitialization.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/TheoryScene/TheoryControllers/PdfReaderUIInitialization.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/TheoryScene/TheoryControllers/TheoryController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/TheoryScene/TheoryControllers/TheoryController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/TheoryScene/TheoryControllers/TheoryUIInitialization.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/TheoryScene/TheoryControllers/TheoryUIInitialization.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/TheoryScene/TheorySceneInitialization.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/TheoryScene/TheorySceneInitialization.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/TheoryScene/UIController/UIControllerTheoryScene.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/TheoryScene/UIController/UIControllerTheoryScene.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/FileManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/FileManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/PoolManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/PoolManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PDFWorker/PDFReader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PDFWorker/PDFReader.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/LessonChoose/LessonChooseAddButtonsToDictionary.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/LessonChoose/LessonChooseAddButtonsToDictionary.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/LessonChoose/LessonChooseButtonsLogic.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/LessonChoose/LessonChooseButtonsLogic.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/TheoryUI/TheoryUIAddButtonsToDictionary.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/TheoryUI/TheoryUIAddButtonsToDictionary.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/MachinePartsDB.bytes" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StreamingAssets/MachinePartsDB.bytes" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
+>>>>>>> ScreenShotsAndNewWay
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,6 +71,7 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
+<<<<<<< HEAD
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Controllers/LoadingSceneController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/QuickOutline/Scripts/Outline.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Controllers/Loader3DS.cs" root0="FORCE_HIGHLIGHTING" />
@@ -60,6 +91,59 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/Interfaces/IPauseButtons.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/PracticeScene/GameContext/GameContextWithViews.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/PracticeScene/GameContext/GameContextWithView.cs" />
+=======
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/06214B24-5DBB-4D10-A9CE-FD10639BB04E/61/3da07a1e/Panel.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../Unity/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/EventSystem/InputModules/BaseInput.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/220F2AAB-ED1D-4738-94A8-8B65AAF6C105/55/ec8faad6/Action`1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../Unity/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/EventSystem/ExecuteEvents.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9577AC7A-62EF-4317-9789-031239BA8798/38/366218c6/KeyValuePair`2.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/06214B24-5DBB-4D10-A9CE-FD10639BB04E/da/52b11c6c/RenderChainCommand.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9577AC7A-62EF-4317-9789-031239BA8798/18/a0967889/List`1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../Unity/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/EventSystem/UIBehaviour.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/6F0A172A-57F7-4527-BAA2-17742039C9AD/6d/bb6c8933/PdfReader.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/06214B24-5DBB-4D10-A9CE-FD10639BB04E/b4/71b72c2b/IMGUIContainer.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Interfaces/IInitialization.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Controllers/Loader3DS.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/53FA4D04-FF9E-437D-AC8E-1BA5C15E99CE/fb/b58bfc18/NativeInputSystem.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9577AC7A-62EF-4317-9789-031239BA8798/ae/73053cd0/InvalidCastException.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.textmeshpro@2.1.1/Scripts/Editor/TMPro_CreateObjectMenu.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/A555715E-F291-462E-B190-C2C939543F55/fd/6312bb0d/SetupCoroutine.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../Unity/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/UI/Core/Button.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9577AC7A-62EF-4317-9789-031239BA8798/f7/97195718/String.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Controllers/LoadingSceneController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9577AC7A-62EF-4317-9789-031239BA8798/e7/90c53cf0/Dictionary`2.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../Unity/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/UI/Core/Layout/CanvasScaler.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.addressables@1.16.19/Runtime/ResourceManager/ResourceLocations/IResourceLocation.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/A555715E-F291-462E-B190-C2C939543F55/be/cfbcf9fa/CustomYieldInstruction.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../Unity/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/EventSystem/EventSystem.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/BEF6D2FB-EF13-4893-9B77-102B4CF6A6E6/1d/6381cb3c/EditorCompilationInterface.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../Unity/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/EventSystem/InputModules/StandaloneInputModule.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Interfaces/ICleanData.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/A555715E-F291-462E-B190-C2C939543F55/14/68ccb773/MonoBehaviour.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../Unity/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/UI/Core/RawImage.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9577AC7A-62EF-4317-9789-031239BA8798/75/4a7565af/Directory.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/FE7EE188-1B52-4B0D-9443-F74417FB598B/c4/46d64d38/Event.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/BEF6D2FB-EF13-4893-9B77-102B4CF6A6E6/67/2d54e782/GameView.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/OtherControllers/Controllers.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/A555715E-F291-462E-B190-C2C939543F55/32/39164971/Coroutine.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/A555715E-F291-462E-B190-C2C939543F55/ad/0c9bdbd2/Transform.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/A555715E-F291-462E-B190-C2C939543F55/15/5d0f805a/WaitUntil.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/A555715E-F291-462E-B190-C2C939543F55/fe/be08b130/Object.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/06214B24-5DBB-4D10-A9CE-FD10639BB04E/6d/42e5f92e/VisualTreeUpdater.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/A555715E-F291-462E-B190-C2C939543F55/16/835c7127/UnitySynchronizationContext.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/A555715E-F291-462E-B190-C2C939543F55/b6/6ff8fe5c/GeometryUtility.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/FE7EE188-1B52-4B0D-9443-F74417FB598B/4d/7b84cf6f/GUIUtility.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9577AC7A-62EF-4317-9789-031239BA8798/f8/73158266/Environment.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/ScreenShotTesting.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/BEF6D2FB-EF13-4893-9B77-102B4CF6A6E6/04/44ef616c/HostView.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/06214B24-5DBB-4D10-A9CE-FD10639BB04E/97/33b79fa6/UIRRepaintUpdater.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9577AC7A-62EF-4317-9789-031239BA8798/ad/928ff290/KeyValuePair`2.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/06214B24-5DBB-4D10-A9CE-FD10639BB04E/41/ee2a6c4b/UIElementsUtility.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/BEF6D2FB-EF13-4893-9B77-102B4CF6A6E6/14/909682ac/PlayModeView.cs" root0="SKIP_HIGHLIGHTING" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <changedPaths>
+>>>>>>> ScreenShotsAndNewWay
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/PauseUI/PauseButtonsAdd.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Enums/PauseButtons.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/PracticeScene/PauseController/PauseController.cs" />
@@ -77,32 +161,47 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/OptionsControllers/OptionsController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/MainMenu/MainMenuAddButtonsToDictionary.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Enums/LoadingParts.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/Authorisation/AuthController.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/UIController/UIController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/ButtonsControllers/ExitController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/ButtonsControllers/BackController.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/MainSceneInitialization.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Tools/ResourceLoader.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/TheoryScene/TheoryControllers/MainTheoryController.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/UI/TheoryUI/TheoryUIAddButtonsToDictionary.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/PDFWorker/PDFReader.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/TheoryScene/TheoryControllers/TheoryController.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/TheoryScene/GameContextTheory/GameContextWithViewsTheory.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/TheoryScene/TheoryControllers/LibraryTreeController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/TheoryUI/VideoFactory/VideoFactory.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/TheoryScene/TheoryControllers/LibraryTreeUIInitialization.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/TheoryScene/TheoryControllers/PdfReaderUIInitialization.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/TheoryScene/TheoryControllers/TheoryUIInitialization.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/TheoryScene/TheorySceneInitialization.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/UI/LessonChoose/LessonChooseAddButtonsToDictionary.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/AssetBundle/LoadAssetBundleFromFile.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Extensions/Extensions.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Tools/VectorTools.cs" />
+      <option value="$PROJECT_DIR$/Assets/ScreenShotTesting.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/FilesControllers/FileManagerController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/GameObjectInitialization.cs" />
+<<<<<<< HEAD
       <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/LessonsControllers/LessonConstructorController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/PracticeScene/Player/PlayerInitialization.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/PracticeScene/PracticeSceneInitialization.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/PracticeScene/Player/PlayerController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/PracticeScene/AssembleController/AssembleController.cs" />
       <option value="$PROJECT_DIR$/Assets/QuickOutline/Scripts/Outline.cs" />
+=======
+      <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/PracticeScene/PracticeSceneInitialization.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UI/LessonChoose/LessonChooseAddButtonsToDictionary.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/LessonsControllers/LessonsChooseInitialization.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/MainSceneInitialization.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UI/LessonChoose/LessonChooseButtonsLogic.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/LessonsControllers/LessonConstructorController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/UIController/UIController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/PDFWorker/PDFReader.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/MainScene/Authorisation/AuthController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Managers/FileManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Managers/PoolManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/TheoryScene/TheoryControllers/TheoryController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/TheoryScene/TheoryControllers/LibraryTreeController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/TheoryScene/UIController/UIControllerTheoryScene.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/TheoryScene/TheoryControllers/MainTheoryController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/TheoryScene/TheorySceneInitialization.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/TheoryScene/TheoryControllers/Textures2DPool.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/TheoryScene/TheoryControllers/PdfReaderUIInitialization.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UI/TheoryUI/TheoryUIAddButtonsToDictionary.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/TheoryScene/TheoryControllers/TheoryUIInitialization.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/TheoryScene/GameContextTheory/GameContextWithViewsTheory.cs" />
+>>>>>>> ScreenShotsAndNewWay
     </changedPaths>
   </component>
   <component name="ProjectId" id="1oVh7QrK5P1QV67f8aHYDy536Km" />
@@ -150,6 +249,10 @@
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
       <option name="pid" />
+<<<<<<< HEAD
+=======
+      <option name="projectPathOnTarget" />
+>>>>>>> ScreenShotsAndNewWay
       <option name="selectedOptions">
         <list />
       </option>
@@ -209,10 +312,19 @@
       <workItem from="1620110858739" duration="2797000" />
       <workItem from="1620114260121" duration="8731000" />
       <workItem from="1620197600685" duration="14525000" />
+<<<<<<< HEAD
       <workItem from="1620220473584" duration="948000" />
       <workItem from="1620383437956" duration="6541000" />
       <workItem from="1620731851590" duration="5550000" />
       <workItem from="1620743373836" duration="205000" />
+=======
+      <workItem from="1620219680121" duration="3345000" />
+      <workItem from="1620284763546" duration="5810000" />
+      <workItem from="1620303050818" duration="3068000" />
+      <workItem from="1620369731621" duration="4249000" />
+      <workItem from="1620463735936" duration="8495000" />
+      <workItem from="1620721503569" duration="9886000" />
+>>>>>>> ScreenShotsAndNewWay
     </task>
     <servers />
   </component>
