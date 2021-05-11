@@ -48,7 +48,7 @@ namespace Controllers.TheoryScene.TheoryControllers
             #region Theory UI Creation
             TheoryUI = _theoryUIFactory.Create(_canvas.transform);
             TheoryUI.transform.localPosition = new Vector3(0,0,0);
-            TheoryUI.GetComponent<TextMeshProUGUI>().text = "Урок: "+_nameOfLesson;
+            TheoryUI.GetComponentInChildren<TextMeshProUGUI>().text = "Урок: "+_nameOfLesson;
             _gameContextWithViews.AddParentsToList(TheoryUI.transform.GetChild(5).GetChild(0).GetChild(0));
             _gameContextWithViews.AddParentsToList(TheoryUI.transform.GetChild(6).GetChild(0).GetChild(0));
             #endregion

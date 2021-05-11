@@ -15,7 +15,7 @@ using UnityEngine.UI;
 
 namespace Controllers.TheoryScene.TheoryControllers
 {
-    public sealed class TheoryController: IInitialization, ICleanData
+    public sealed class TheoryController: IInitialization
     {
         private readonly PdfReaderUIInitialization _pdfReaderUIInitialization;
         private readonly Texts _pdfPath;
@@ -48,12 +48,7 @@ namespace Controllers.TheoryScene.TheoryControllers
             //CreateDocumentLocaly(obj);
             //LoadDocumentTheory();
         }
-        public void CleanData()
-        {
-           //_theoryUIInitialization.CleanData();
-           UnloadDocument();
-        }
-        
+
         public void LoadDocumentTheory()
         {
             _pdfReaderUIInitialization.ReadNextDoc(0);
@@ -73,12 +68,6 @@ namespace Controllers.TheoryScene.TheoryControllers
         {
            // _pdfReader.DeleteStorage();
         }
-        
 
-        private void UnloadDocument()
-        {
-            _pdfReaderUIInitialization.UnloadDocument();
-        }
-        
     }
 }

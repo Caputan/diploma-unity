@@ -26,6 +26,11 @@ namespace Diploma.UI
             }
         }
 
+        public void AddNewButton(int id)
+        {
+            _buttonLogic[id].GetComponentInChildren<Button>().onClick.AddListener(()=> SwitchToLesson(id));
+        }
+
         public void SwitchToLesson(int lessonID)
         {
             LoadLesson?.Invoke(lessonID);

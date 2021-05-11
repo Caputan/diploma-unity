@@ -116,7 +116,8 @@ namespace Diploma.Controllers
                 _gameContextWithLessons,
                 MainParent,
                 DataBaseController,
-                tables
+                tables,
+                fileManager
                 );
             
            

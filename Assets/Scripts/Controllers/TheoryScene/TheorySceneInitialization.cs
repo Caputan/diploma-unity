@@ -77,7 +77,7 @@ namespace Controllers.TheoryScene
                 _gameContextWithUITheory,
                 Types.TypeS,
                 lesson.Lesson_Name
-                );
+            );
 
             PdfReaderUIInitialization pdfReaderUIInitialization = new PdfReaderUIInitialization
             (
@@ -118,7 +118,8 @@ namespace Controllers.TheoryScene
             MainTheoryController mainTheoryController = new MainTheoryController(
                 theoryController,
                 libraryController,
-                loadingUILogic
+                loadingUILogic,
+                _fileManager
                 );
             
             _controllers = new Diploma.Controllers.Controllers();

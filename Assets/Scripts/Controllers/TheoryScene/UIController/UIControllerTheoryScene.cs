@@ -96,7 +96,6 @@ namespace Controllers.TheoryScene.UIController
         
         private void ShowLibraryObject(int id)
         {
-            _theoryController.CleanData();
             _libraryController.Show(id);
             _gameContextWithViewsTheory.TheoryButtons[LoadingPartsTheoryScene.LoadPractise].
                 gameObject.SetActive(false);
@@ -148,7 +147,6 @@ namespace Controllers.TheoryScene.UIController
                     _loadingSceneController.LoadNextScene(2);
                     break;
                 case LoadingPartsTheoryScene.CloseLibrary:
-                    _libraryController.CleanData();
                     _theoryController.LoadDocumentTheory();
                     _gameContextWithViewsTheory.TheoryButtons[LoadingPartsTheoryScene.LoadPractise].
                         gameObject.SetActive(true);

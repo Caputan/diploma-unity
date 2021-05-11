@@ -92,7 +92,8 @@ namespace Diploma.Controllers
             _errorHandler = new ErrorHandler(_gameContextWithUI.UiControllers[LoadingParts.LoadError]);
             ShowUIByUIType(LoadingParts.LoadStart);
         }
-
+        
+        
         private void TakeScreenShoot(string obj)
         {
             HideAllUI();
@@ -107,6 +108,7 @@ namespace Diploma.Controllers
             yield return new WaitForEndOfFrame();
             ShowUIByUIType(LoadingParts.LoadMain);
             _backGround.SetActive(true);
+            yield return new WaitForSeconds(1);
             _lessonConstructorController.AddNewLessonToListOnUI();
         }
 
@@ -324,9 +326,20 @@ namespace Diploma.Controllers
         {
             foreach (var value in _gameContextWithUI.UILogic)
             {
-                var i = (IMenuButton)value.Value;
-                i.LoadNext -= ShowUIByUIType;
+                if (value.Value is IMenuButton)
+                {
+                    Debug.Log("MainMenu "+value.Key);
+                    var i = (IMenuButton) value.Value;
+                    i.LoadNext -= ShowUIByUIType;
+                }
+                if (value.Value is IUIOptions)
+                {
+                    Debug.Log("Options "+value.Key);
+                    var i = (IUIOptions) value.Value;
+                    i.LoadNext -= ShowUIByUIType;
+                }
             }
+            
             _lessonConstructorController.TakeScreenShoot -= TakeScreenShoot;
         }
     }

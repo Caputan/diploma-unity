@@ -119,7 +119,15 @@ namespace Controllers
             // creating Folder-packed
             // нужно добавить id
             _dataBaseController.SetTable(_tables[1]);
-            var id = _dataBaseController.GetDataFromTable<Lessons>().Last().Lesson_Id+1;
+            int id;
+            if (_dataBaseController.GetDataFromTable<Lessons>().Count == 0)
+            {
+                id = 0;
+            }
+            else
+            {
+                id = _dataBaseController.GetDataFromTable<Lessons>().Last().Lesson_Id+1;
+            }
             _destination[0] = _fileManager.CreateFileFolder(id +"\\"+ "Assemblies");
             _destination[1] = _fileManager.CreateFileFolder(id +"\\"+ "Videos");
             _destination[2] = _fileManager.CreateFileFolder(id +"\\"+ "Photos");
@@ -132,6 +140,7 @@ namespace Controllers
             if (_localText[0] != @"Выберите UnityBundle ()")
             {
                 _localBufferText[0] =_destination[0]+ "\\" +_localText[0];
+                Debug.Log(_localBufferText[0]);
                 _dataBaseController.SetTable(_tables[0]);
                 string[] assemblyPacked = new string[1];
                 assemblyPacked[0] = id +"\\"+ "Assemblies"+ "\\" +_localText[0];
@@ -143,6 +152,7 @@ namespace Controllers
             if (_localText[1] != @"Выберите текстовый фаил(*.pdf)")
             {
                 _localBufferText[1] = _destination[3] + "\\" + _localText[1];
+                Debug.Log(_localBufferText[1]);
                 if (_massForCopy[1] != "")
                     if (!File.Exists(_localBufferText[1]))
                         File.Copy(_massForCopy[1], _localBufferText[1]);
@@ -158,6 +168,7 @@ namespace Controllers
             // add new video
             if (_localText[2] != @"Выберите видео-фаил (*.mp4)")
             {
+                Debug.Log(_localBufferText[2]);
                 _localBufferText[2] = _destination[1]+ "\\" +  _localText[2];
                 if(_massForCopy[2]!="")
                     if (!File.Exists(_localBufferText[2]))
@@ -186,7 +197,7 @@ namespace Controllers
             var GameObjectInitilization = new GameObjectInitialization(Assembly, _fileManager);
 
             SetCameraNearObject(GameObjectInitilization.InstantiateGameObject());
-            
+            Debug.Log(_destination[2]+"\\"+lessonPacked[5]+".png");
             TakingScreen(_destination[2]+"\\"+lessonPacked[5]+".png");
             lessonPacked[0] = id +"\\"+ "Photos"+  "\\" + lessonPacked[5]+".png";
             // string filepath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
@@ -228,7 +239,7 @@ namespace Controllers
             lessonToggle.transform.localPosition = new Vector3(0,0,0);
             
             var tex = new Texture2D(5, 5);
-            tex.LoadImage(File.ReadAllBytes(lastLessonInDb.Lesson_Preview));
+            tex.LoadImage(File.ReadAllBytes(_fileManager.GetStorage() +"\\"+ lastLessonInDb.Lesson_Preview));
             lessonToggle.GetComponentInChildren<RawImage>().texture = tex;
 
             var lessonName = lessonToggle.GetComponentInChildren<TextMeshProUGUI>();
@@ -238,8 +249,12 @@ namespace Controllers
                 new ListOfLessonsView(lastLessonInDb.Lesson_Id,
                     lessonToggle));
             _gameContextWithViews.AddLessonsToggles(lastLessonInDb.Lesson_Id,lessonToggle);
-        }
 
+            //var lessonChooseButtonsLogic = new LessonChooseButtonsLogic(_gameContextWithViews.ChoosenLessonToggles);
+            //lessonChooseButtonsLogic.AddNewButton(lastLessonInDb.Lesson_Id);
+            _gameContextWithViews.LessonChooseButtonsLogic.AddNewButton(lastLessonInDb.Lesson_Id);
+           
+        }
         public event Action<string> TakeScreenShoot;
         public void TakingScreen(string name)
         {

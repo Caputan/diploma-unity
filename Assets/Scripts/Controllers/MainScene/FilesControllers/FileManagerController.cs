@@ -26,7 +26,7 @@ namespace Diploma.Controllers
         public FileManagerController()
         {
             FileBrowser.SetFilters(true,
-                new FileBrowser.Filter("Text Files", ".doc", ".pdf", ".docx"),
+                new FileBrowser.Filter("Text Files",".pdf"),
                 new FileBrowser.Filter("Videos", ".mp4"));
 
             FileBrowser.SetExcludedExtensions(".lnk", ".tmp", ".zip", ".rar", ".exe");

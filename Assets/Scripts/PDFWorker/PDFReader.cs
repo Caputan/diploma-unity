@@ -60,9 +60,9 @@ namespace PDFWorker
             
            // yield return new WaitForEndOfFrame();
             
-            _inputPdfFile = _fileManager.GetStorage() + "\\" + inputPdfFile;
+            _inputPdfFile = inputPdfFile;
             
-            float numberOfPages = GetNumberOfPages(inputPdfFile);
+            float numberOfPages = GetNumberOfPages(_inputPdfFile);
             var destinationPath = _fileManager.CreateFileFolder(_positionPath+ 
                                                                  "\\"+ 
                                                                  Path.GetFileNameWithoutExtension(_inputPdfFile).
@@ -74,19 +74,16 @@ namespace PDFWorker
                 StartCoroutine(out _,out _);
             
        }
-        
-        
-
-        public void DeleteStorage()
-        {
+       public void DeleteStorage()
+       {
             _fileManager.DeleteFolder(_positionPath);
-        }
+       }
         
-        private static int GetNumberOfPages(String FilePath)
-        {
-            PdfReader pdfReader = new PdfReader(FilePath); 
-            return pdfReader.NumberOfPages; 
-        }
+       private static int GetNumberOfPages(String FilePath)
+       { 
+           PdfReader pdfReader = new PdfReader(FilePath); 
+           return pdfReader.NumberOfPages; 
+       }
         //public IEnumerator ConvertPageToImage(float pageNumber, string pathToSave)
         private IEnumerator ConvertPageToImage(
             float pageNumber,
