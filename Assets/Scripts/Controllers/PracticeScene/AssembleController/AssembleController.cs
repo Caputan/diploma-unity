@@ -45,19 +45,46 @@ namespace Diploma.Controllers.AssembleController
 
             _isDisassembling = true;
 
-            Debug.Log(_partsOfAssembly.Length);
+            int partId = 0;
+            foreach (var part in _partsOfAssembly)
+            {
+                var outline = part.AddComponent<Outline>();
+                outline.part_Id = partId;
+                partId++;
+                
+                var rb = part.AddComponent<Rigidbody>();
+                rb.isKinematic = true; 
+                
+                part.AddComponent<MeshCollider>();
+                
+                part.tag = "Assembly";
+            }
+
+            Debug.Log(_partsOfAssembly[_index].transform.parent.name.Split(':')[0]);
             
             PlayerController.OnPartClicked += StartDisassembling;
         }
 
         private void StartDisassembling(GameObject partOfAssembly)
         {
-            if (partOfAssembly.transform.parent.name != _partsOfAssembly[_index].transform.parent.name) return;
+            if (partOfAssembly.transform.parent.name.Split(':')[0] 
+                != _partsOfAssembly[_index].transform.parent.name.Split(':')[0]) return;
             if (_isDisassembling)
             {
-                _partsOfAssembly[_index] = partOfAssembly;
-                partOfAssembly.GetComponent<MeshCollider>().enabled = false;
-                partOfAssembly.GetComponent<MeshRenderer>().enabled = false;
+                if (_partsOfAssembly[_index].transform.parent.childCount > 1)
+                {
+                    for (var i = 0; i < _partsOfAssembly[_index].transform.parent.childCount; i++)
+                    {
+                        partOfAssembly.transform.parent.GetComponentsInChildren<MeshRenderer>()[i].enabled = false;
+                    }
+                    partOfAssembly.GetComponent<MeshCollider>().enabled = false;
+                }
+                else
+                {
+                    partOfAssembly.GetComponent<MeshCollider>().enabled = false;
+                    partOfAssembly.GetComponent<MeshRenderer>().enabled = false;
+                }
+
                 _index++;
             }
             else

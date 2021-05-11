@@ -58,19 +58,19 @@ namespace Diploma.PracticeScene.Controllers
             _gameContextWithLogic = new GameContextWithLogic();
             _gameContextWithUI = new GameContextWithUI();
             
-            DataBaseController.SetTable(tables[1]);
-            Lessons lesson = (Lessons)DataBaseController.GetRecordFromTableById(_data.lessonID);
-            DataBaseController.SetTable(tables[0]);
-            Assemblies assembly = (Assemblies)DataBaseController.GetRecordFromTableById(lesson.Lesson_Assembly_Id);
+            // DataBaseController.SetTable(tables[1]);
+            // Lessons lesson = (Lessons)DataBaseController.GetRecordFromTableById(_data.lessonID);
+            // DataBaseController.SetTable(tables[0]);
+            // Assemblies assembly = (Assemblies)DataBaseController.GetRecordFromTableById(lesson.Lesson_Assembly_Id);
             
             //var GameObjectFactory = new GameObjectFactory();
             //var Pool = new PoolOfObjects(GameObjectFactory, _gameContextWithLogic);
-            var GameObjectInitialization = new GameObjectInitialization(assembly);
-            GameObjectInitialization.InstantiateGameObject();
+            // var GameObjectInitialization = new GameObjectInitialization(assembly);
+            // GameObjectInitialization.InstantiateGameObject();
             var playerInitialization = new PlayerInitialization(playerPrefab, spawnPoint, _data);
             //var inventoryInitialization = new InventoryInitialization(_gameContextWithViews, _gameContextWithUI,
                // mainParent, inventoryPrefab, partOfAssembly, inventorySlotPrefab);
-            //var assemblyInitialization = new AssemblyInitialization(basePart, partOfAssembly);
+            var assemblyInitialization = new AssemblyInitialization(basePart, partOfAssembly);
 
             var pauseInitialization = new PauseInitialization(_gameContextView,_gameContextWithUI,mainParent);
             var pauseController = new PauseController(_data,new LoadingSceneController());
@@ -81,9 +81,7 @@ namespace Diploma.PracticeScene.Controllers
             _controllers.Add(playerInitialization);
             _controllers.Add(pauseInitialization);
             _controllers.Add(ExitController);
-            //_controllers.Add(assemblyInitialization);
-            
-            //
+            _controllers.Add(assemblyInitialization);
             _controllers.Add(uiController);
             _controllers.Initialization();
         }

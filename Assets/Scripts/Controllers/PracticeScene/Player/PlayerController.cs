@@ -35,7 +35,7 @@ public class PlayerController
     public PlayerController(GameObject playerGameObject, ImportantDontDestroyData importantDontDestroyData)
     {
         _speed = 6f;
-        _mouseSensitivity = importantDontDestroyData.mouseSensitivity;
+        _mouseSensitivity = 2f;
         
         _playerGameObject = playerGameObject;
 
@@ -90,10 +90,9 @@ public class PlayerController
     {
         Ray hitRay = _camera.ScreenPointToRay(new Vector3(Screen.currentResolution.width / 2f, Screen.currentResolution.height / 2f, 0));
         LayerMask boundingBoxMask = LayerMask.GetMask("BoundingBox");
-        if (!Physics.Raycast(hitRay, out var hit, 10, ~boundingBoxMask)) return;
+        if (!Physics.Raycast(hitRay, out var hit, 50, ~boundingBoxMask)) return;
         if (!hit.collider.CompareTag("Assembly")) return;
         _objectHitted = hit.collider.gameObject;
-        // _objectHitted.GetComponent<Outline>().enabled = true;
         if(Input.GetMouseButtonDown(0))
             OnPartClicked?.Invoke(_objectHitted);
     }
