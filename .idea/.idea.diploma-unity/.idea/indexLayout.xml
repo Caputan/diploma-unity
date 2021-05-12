@@ -22,6 +22,7 @@
       <Path>.git</Path>
       <Path>.idea</Path>
       <Path>AssetBundles</Path>
+      <Path>Build</Path>
       <Path>Distr</Path>
       <Path>Documentation</Path>
       <Path>Library</Path>

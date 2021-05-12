@@ -58,7 +58,8 @@ namespace Diploma.PracticeScene.Controllers
             _gameContextView = new GameContextWithView();
             _gameContextWithLogic = new GameContextWithLogic();
             _gameContextWithUI = new GameContextWithUI();
-            
+            Debug.Log("ID lesson"+_data.lessonID);
+            Debug.Log("User " +_data.activatedUserID);
             DataBaseController.SetTable(tables[1]);
             Lessons lesson = (Lessons)DataBaseController.GetRecordFromTableById(_data.lessonID);
             DataBaseController.SetTable(tables[0]);

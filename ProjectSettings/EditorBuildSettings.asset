@@ -11,10 +11,10 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/StartScene.unity
     guid: a46877e04435c3b47b30fce3ca1dbd39
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/TheoryScene.unity
     guid: a4600ae10d24aed45ab92405df8189e1
   - enabled: 1
