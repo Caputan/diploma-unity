@@ -29,6 +29,11 @@ namespace Diploma.Tables
             return connection.Table<Users>().FirstOrDefault(x => x.User_Name == name);
         }
 
+        public void DeleteLastRecord(SQLiteConnection connection, int id)
+        {
+            connection.Delete<Users>(id);
+        }
+        
         public void AddNewRecord(SQLiteConnection connection, string[] userParams)
         {
             var newUser = new Users()

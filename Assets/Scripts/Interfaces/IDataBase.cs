@@ -10,5 +10,6 @@ namespace Diploma.Interfaces
         ITable GetRecordById(SQLiteConnection connection, int id);
         ITable GetRecordByName(SQLiteConnection connection, string name);
         void AddNewRecord(SQLiteConnection connection, string[] recordParams);
+        void DeleteLastRecord(SQLiteConnection connection, int id);
     }
 }

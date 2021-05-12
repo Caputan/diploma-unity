@@ -40,6 +40,11 @@ namespace Diploma.Controllers
             _activeTable.AddNewRecord(_connection, recordParams);
         }
 
+        public void DeleteLastRecord(int id)
+        {
+            _activeTable.DeleteLastRecord(_connection,id);
+        }
+
         public ITable GetRecordFromTableById(int id)
         {
             return _activeTable.GetRecordById(_connection, id);

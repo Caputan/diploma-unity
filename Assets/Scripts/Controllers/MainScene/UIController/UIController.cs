@@ -216,6 +216,7 @@ namespace Diploma.Controllers
                     _backController.WhereIMustBack(_currentPosition);
                     _currentPosition = LoadingParts.LoadCreationOfLesson;
                     break;
+                //ТУТ ОШИБКА ЛОГИНА
                 case LoadingParts.LoadMain:
                     if (_authController.CheckAuthData(out var role) == ErrorCodes.None)
                     {
@@ -262,7 +263,16 @@ namespace Diploma.Controllers
                     if (_fileManagerController.CheckForErrors() == ErrorCodes.None)
                     {
                         // _backGround.SetActive(false);
-                        _lessonConstructorController.CreateALesson();
+                        if (_lessonConstructorController.CreateALesson())
+                        {
+                            _error = ErrorCodes.None;
+                        }
+                        else
+                        {
+                            _backController.WhereIMustBack(_currentPosition);
+                            ShowUIByUIType(LoadingParts.LoadError);
+                            _currentPosition = LoadingParts.LoadMain;
+                        }
                         //_backController.WhereIMustBack(_currentPosition);
                         //_gameContextWithUI.UiControllers[LoadingParts.LoadMain].SetActive(true);
                         //_currentPosition = LoadingParts.LoadMain;
@@ -279,8 +289,6 @@ namespace Diploma.Controllers
                     _gameContextWithUI.UiControllers[LoadingParts.Options].SetActive(true);
                     _currentPosition = LoadingParts.Options;
                     break;
-                
-                
             }
             Debug.Log(id);
         }
