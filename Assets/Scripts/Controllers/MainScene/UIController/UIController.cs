@@ -14,8 +14,6 @@ namespace Diploma.Controllers
 {
     public class UIController : IInitialization, ICleanData
     {
-        //конечно такое себе использовать switch
-        //можно было бы более простую State Machine прописать...
         private readonly GameContextWithUI _gameContextWithUI;
         private readonly ExitController _exitController;
         private readonly BackController _backController;
@@ -106,7 +104,7 @@ namespace Diploma.Controllers
         private IEnumerator WaitForTakingScreenShot()
         {
             yield return new WaitForEndOfFrame();
-            ShowUIByUIType(LoadingParts.LoadMain);
+            ShowUIByUIType(LoadingParts.LoadStart);
             _backGround.SetActive(true);
             yield return new WaitForSeconds(1);
             _lessonConstructorController.AddNewLessonToListOnUI();
@@ -216,7 +214,6 @@ namespace Diploma.Controllers
                     _backController.WhereIMustBack(_currentPosition);
                     _currentPosition = LoadingParts.LoadCreationOfLesson;
                     break;
-                //ТУТ ОШИБКА ЛОГИНА
                 case LoadingParts.LoadMain:
                     if (_authController.CheckAuthData(out var role) == ErrorCodes.None)
                     {
@@ -266,12 +263,13 @@ namespace Diploma.Controllers
                         if (_lessonConstructorController.CreateALesson())
                         {
                             _error = ErrorCodes.None;
+                            //ShowUIByUIType(LoadingParts.LoadStart);
                         }
                         else
                         {
                             _backController.WhereIMustBack(_currentPosition);
                             ShowUIByUIType(LoadingParts.LoadError);
-                            _currentPosition = LoadingParts.LoadMain;
+                            _currentPosition = LoadingParts.LoadStart;
                         }
                         //_backController.WhereIMustBack(_currentPosition);
                         //_gameContextWithUI.UiControllers[LoadingParts.LoadMain].SetActive(true);
@@ -281,7 +279,7 @@ namespace Diploma.Controllers
                         _backController.WhereIMustBack(_currentPosition);
                         _error = _fileManagerController.CheckForErrors();
                         ShowUIByUIType(LoadingParts.LoadError);
-                        _currentPosition = LoadingParts.LoadMain;
+                        _currentPosition = LoadingParts.LoadStart;
                     }
                     break;
                 case LoadingParts.Options:
