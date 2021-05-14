@@ -1,7 +1,9 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using Coroutine;
 using Diploma.Controllers;
 using Diploma.Enums;
 using Diploma.Interfaces;
@@ -28,7 +30,7 @@ namespace Controllers
         private readonly GameContextWithUI _gameContextWithUI;
         private readonly GameContextWithLogic _gameContextWithLogic;
         private readonly FileManagerController _fileManagerController;
-        private string[] _destination = new string[4];
+        private string[] _destination = new string[5];
         private readonly FileManager _fileManager;
         private Dictionary<LoadingParts, GameObject> _texts;
         private PlateWithButtonForLessonsFactory _plateWithButtonForLessonsFactory;
@@ -36,6 +38,7 @@ namespace Controllers
         private string[] _localBufferText = new string[4];
         private string[] _massForCopy = new string[3];
         private ErrorCodes _error;
+        private GameObject _main;
         //Plane[] planes;
         
         private readonly ResourcePath _viewPath = new ResourcePath {PathResource = "Prefabs/MainScene/LessonPrefab"};
@@ -140,6 +143,7 @@ namespace Controllers
             _destination[1] = _fileManager.CreateFileFolder(id +"\\"+ "Videos");
             _destination[2] = _fileManager.CreateFileFolder(id +"\\"+ "Photos");
             _destination[3] = _fileManager.CreateFileFolder(id +"\\"+ "Texts");
+            _destination[4] = _fileManager.CreateFileFolder(_destination[2] + "\\" + "Parts");
             
             // add new assembly
             if (_localText[0] != @"Выберите UnityBundle ()")
@@ -227,25 +231,74 @@ namespace Controllers
                 }
                 return false;
             }
-            // add screens
+            
+            //Screens of parts
             File.Copy(_massForCopy[0],_localBufferText[0],true);
             _dataBaseController.SetTable(_tables[0]);
             Assemblies Assembly = (Assemblies)_dataBaseController.GetRecordFromTableById(Convert.ToInt32(lessonPacked[3]));
             var GameObjectInitilization = new GameObjectInitialization(Assembly, _fileManager);
-
-            SetCameraNearObject(GameObjectInitilization.InstantiateGameObject());
-            Debug.Log(_destination[2]+"\\"+lessonPacked[5]+".png");
-            TakingScreen(_destination[2]+"\\"+lessonPacked[5]+".png");
-            lessonPacked[0] = id +"\\"+ "Photos"+  "\\" + lessonPacked[5]+".png";
-
-
-            _dataBaseController.SetTable(_tables[1]);
-            _dataBaseController.AddNewRecordToTable(lessonPacked);
+            _main = GameObjectInitilization.InstantiateGameObject();
+            
+            var parts = _main.GetComponentsInChildren<MeshRenderer>();
+            foreach (var meshRenderer in parts)
+            {
+                meshRenderer.enabled = false;
+            }
+            TakingScreensOfParts(parts,lessonPacked,id);
+            
             _error = ErrorCodes.None;
+            
             return true;
             
         }
 
+        private void TakingScreensOfParts(
+            MeshRenderer[] meshRenderers,
+            string[] lessonPacked,
+            int id
+            )
+        {
+            int i = 0;
+            ScreenShotsCoroutine(meshRenderers,i,lessonPacked,id).StartCoroutine(out _,out _);
+        }
+
+        private IEnumerator ScreenShotsCoroutine(
+            MeshRenderer[] meshRenderer, 
+            int i,
+            string[] lessonPacked,
+            int assemblyId)
+        {
+            if (i >= meshRenderer.Length)
+            {
+                // add screens
+                foreach (var mesh in meshRenderer)
+                {
+                    mesh.enabled = true;
+                }
+                SetCameraNearObject(_main,_gameContextWithLogic.MainCamera);
+                yield return new WaitForFixedUpdate();
+                TakingScreen(_destination[2]+"\\"+lessonPacked[5]+".png");
+                lessonPacked[0] = assemblyId +"\\"+ "Photos"+  "\\" + lessonPacked[5]+".png";
+                _dataBaseController.SetTable(_tables[1]);
+                _dataBaseController.AddNewRecordToTable(lessonPacked);
+                yield break;
+            }
+            
+            meshRenderer[i].enabled = true;
+            yield return new WaitForFixedUpdate();
+            SetCameraNearObject(meshRenderer[i].gameObject,_gameContextWithLogic.ScreenShotCamera);
+            TakingScreenShotOfPart(_destination[4]+"\\PartNumber"+i+".png");
+            yield return new WaitForSeconds(0.1f);
+            meshRenderer[i].enabled = false;
+            i++;
+            ScreenShotsCoroutine(meshRenderer,i,lessonPacked,assemblyId).StartCoroutine(out _,out _);
+            yield break;
+        }
+        public void SetCameraNearObject(GameObject gameObject, Camera witchCamera)
+        {
+            //gameObject.transform.position = gameObject.transform.position.Change(x:0f,y: 0f,z: 0f);
+            witchCamera.transform.LookAt(gameObject.transform);
+        }
         private void DeleteNotUsingLesson(string[] lessonPacked)
         {
             
@@ -271,12 +324,8 @@ namespace Controllers
             }
         }
 
-        public void SetCameraNearObject(GameObject gameObject)
-        {
-            gameObject.transform.position = gameObject.transform.position.Change(x:0f,y: 0f,z: 0f);
-            _gameContextWithLogic.MainCamera.transform.LookAt(gameObject.transform);
-        }
         
+
         public void AddNewLessonToListOnUI()
         {
             _dataBaseController.SetTable(_tables[1]);
@@ -305,9 +354,16 @@ namespace Controllers
            
         }
         public event Action<string> TakeScreenShoot;
+        
+        public event Action<string> TakeScreenShootOfPart;
         public void TakingScreen(string name)
         {
             TakeScreenShoot?.Invoke(name);
+        }
+
+        public void TakingScreenShotOfPart(string name)
+        {
+            TakeScreenShootOfPart?.Invoke(name);
         }
     }
 }

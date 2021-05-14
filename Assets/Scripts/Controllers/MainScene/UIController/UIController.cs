@@ -80,6 +80,7 @@ namespace Diploma.Controllers
                 
             }
             _lessonConstructorController.TakeScreenShoot += TakeScreenShoot;
+            _lessonConstructorController.TakeScreenShootOfPart += TakeAScreenShotOfPart;
             HideAllUI();
             _buttonMass = _gameContextWithUI.UiControllers[LoadingParts.LoadMain].
                 GetComponentsInChildren<Button>();
@@ -90,8 +91,15 @@ namespace Diploma.Controllers
             _errorHandler = new ErrorHandler(_gameContextWithUI.UiControllers[LoadingParts.LoadError]);
             ShowUIByUIType(LoadingParts.LoadStart);
         }
-        
-        
+
+        private void TakeAScreenShotOfPart(string obj)
+        {
+            HideAllUI();
+            _backGround.SetActive(false);
+            _screenShotController.TakeAScreanShoot(obj);
+        }
+
+
         private void TakeScreenShoot(string obj)
         {
             HideAllUI();
@@ -99,6 +107,12 @@ namespace Diploma.Controllers
             _screenShotController.TakeAScreanShoot(obj);
             WaitForTakingScreenShot().StartCoroutine(out _,out _);
             
+            
+        }
+        private IEnumerator WaitForTakingScreenShotParts()
+        {
+            yield return new WaitForEndOfFrame();
+            yield break;
         }
 
         private IEnumerator WaitForTakingScreenShot()
@@ -108,6 +122,7 @@ namespace Diploma.Controllers
             _backGround.SetActive(true);
             yield return new WaitForSeconds(1);
             _lessonConstructorController.AddNewLessonToListOnUI();
+            yield break;
         }
 
         private void HideUI(GameObject Controller)

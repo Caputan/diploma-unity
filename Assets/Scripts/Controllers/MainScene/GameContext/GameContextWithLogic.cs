@@ -15,15 +15,11 @@ namespace Diploma.Controllers
         public Dictionary<int, int> FactoryTypeForCreating;
 
         public Camera MainCamera;
+        public Camera ScreenShotCamera;
         public GameContextWithLogic()
         {
             GameObjectModels = new Dictionary<int, GameObjectModel>();
             FactoryTypeForCreating = new Dictionary<int, int>();
-        }
-
-        public void AddCamera(Camera camera)
-        {
-            MainCamera = camera;
         }
 
         public void AddFactoryTypeForCreating(int id, int LibraryTom)
