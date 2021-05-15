@@ -14,8 +14,6 @@ namespace Diploma.Controllers
 {
     public class UIController : IInitialization, ICleanData
     {
-        //конечно такое себе использовать switch
-        //можно было бы более простую State Machine прописать...
         private readonly GameContextWithUI _gameContextWithUI;
         private readonly ExitController _exitController;
         private readonly BackController _backController;
@@ -82,6 +80,7 @@ namespace Diploma.Controllers
                 
             }
             _lessonConstructorController.TakeScreenShoot += TakeScreenShoot;
+            _lessonConstructorController.TakeScreenShootOfPart += TakeAScreenShotOfPart;
             HideAllUI();
             _buttonMass = _gameContextWithUI.UiControllers[LoadingParts.LoadMain].
                 GetComponentsInChildren<Button>();
@@ -92,8 +91,15 @@ namespace Diploma.Controllers
             _errorHandler = new ErrorHandler(_gameContextWithUI.UiControllers[LoadingParts.LoadError]);
             ShowUIByUIType(LoadingParts.LoadStart);
         }
-        
-        
+
+        private void TakeAScreenShotOfPart(string obj)
+        {
+            HideAllUI();
+            _backGround.SetActive(false);
+            _screenShotController.TakeAScreanShoot(obj);
+        }
+
+
         private void TakeScreenShoot(string obj)
         {
             HideAllUI();
@@ -101,15 +107,22 @@ namespace Diploma.Controllers
             _screenShotController.TakeAScreanShoot(obj);
             WaitForTakingScreenShot().StartCoroutine(out _,out _);
             
+            
+        }
+        private IEnumerator WaitForTakingScreenShotParts()
+        {
+            yield return new WaitForEndOfFrame();
+            yield break;
         }
 
         private IEnumerator WaitForTakingScreenShot()
         {
             yield return new WaitForEndOfFrame();
-            ShowUIByUIType(LoadingParts.LoadMain);
+            ShowUIByUIType(LoadingParts.LoadStart);
             _backGround.SetActive(true);
             yield return new WaitForSeconds(1);
             _lessonConstructorController.AddNewLessonToListOnUI();
+            yield break;
         }
 
         private void HideUI(GameObject Controller)
@@ -262,7 +275,17 @@ namespace Diploma.Controllers
                     if (_fileManagerController.CheckForErrors() == ErrorCodes.None)
                     {
                         // _backGround.SetActive(false);
-                        _lessonConstructorController.CreateALesson();
+                        if (_lessonConstructorController.CreateALesson())
+                        {
+                            _error = ErrorCodes.None;
+                            //ShowUIByUIType(LoadingParts.LoadStart);
+                        }
+                        else
+                        {
+                            _backController.WhereIMustBack(_currentPosition);
+                            ShowUIByUIType(LoadingParts.LoadError);
+                            _currentPosition = LoadingParts.LoadStart;
+                        }
                         //_backController.WhereIMustBack(_currentPosition);
                         //_gameContextWithUI.UiControllers[LoadingParts.LoadMain].SetActive(true);
                         //_currentPosition = LoadingParts.LoadMain;
@@ -271,7 +294,7 @@ namespace Diploma.Controllers
                         _backController.WhereIMustBack(_currentPosition);
                         _error = _fileManagerController.CheckForErrors();
                         ShowUIByUIType(LoadingParts.LoadError);
-                        _currentPosition = LoadingParts.LoadMain;
+                        _currentPosition = LoadingParts.LoadStart;
                     }
                     break;
                 case LoadingParts.Options:
@@ -279,8 +302,6 @@ namespace Diploma.Controllers
                     _gameContextWithUI.UiControllers[LoadingParts.Options].SetActive(true);
                     _currentPosition = LoadingParts.Options;
                     break;
-                
-                
             }
             Debug.Log(id);
         }

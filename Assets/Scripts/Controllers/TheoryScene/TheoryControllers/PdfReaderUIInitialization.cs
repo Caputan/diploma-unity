@@ -1,5 +1,7 @@
 ﻿using System.Collections;
+using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using Coroutine;
 using Diploma.Controllers;
 using Diploma.Interfaces;
@@ -61,7 +63,8 @@ namespace Controllers.TheoryScene.TheoryControllers
             var paths = Directory.GetFiles(_gameContextWithViewsTheory.nameOfFolders[id]);
             _textures2DPool.TurnOnAll();
             _textures2DPool.SetAllTexturesFree();
-            foreach(var path in paths)
+            IEnumerable<string> query = paths.OrderBy(file => file.Length);
+            foreach(var path in query)
             {
                 byte[] bytes = File.ReadAllBytes(path);
                 Texture2D tex = new Texture2D(2, 2);

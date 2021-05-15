@@ -37,6 +37,11 @@ namespace Diploma.Tables
             };
             connection.Insert(newVideo);
         }
+
+        public void DeleteLastRecord(SQLiteConnection connection, int id)
+        {
+            connection.Delete<Videos>(id);
+        }
     }
 
 

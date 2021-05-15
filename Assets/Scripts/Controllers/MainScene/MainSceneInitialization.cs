@@ -20,6 +20,7 @@ namespace Diploma.Controllers
     public class MainSceneInitialization: MonoBehaviour
     {
         [SerializeField] private Camera _camera;
+        [SerializeField] private Camera _screenShotCamera;
         [SerializeField] private GameObject MainParent;
         
         [SerializeField] private AudioMixer _mainAudioMixer;
@@ -79,7 +80,7 @@ namespace Diploma.Controllers
             _gameContextWithUI = new GameContextWithUI();
 
             _gameContextWithLogic.MainCamera = _camera;
-            
+            _gameContextWithLogic.ScreenShotCamera = _screenShotCamera;
             _fileManager = new FileManagerController();
 
             var MainMenuInitilization = new MainMenuInitialization(

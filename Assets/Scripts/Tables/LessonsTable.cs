@@ -35,15 +35,19 @@ namespace Diploma.Tables
             var newLesson = new Lessons()
             {
                 Lesson_Preview = lessonParams[0],
-                Lesson_Text_Id = Int32.Parse(lessonParams[1]),
-                Lesson_Video_Id = lessonParams[2] != null ? Int32.Parse(lessonParams[2]):-1,
-                Lesson_Assembly_Id = Int32.Parse(lessonParams[3]),
-                Lesson_Type_Id = Int32.Parse(lessonParams[4]),
+                Lesson_Text_Id = Convert.ToInt32(lessonParams[1]),
+                Lesson_Video_Id = lessonParams[2] != null ? Convert.ToInt32(lessonParams[2]):-1,
+                Lesson_Assembly_Id = Convert.ToInt32(lessonParams[3]),
+                Lesson_Type_Id = Convert.ToInt32(lessonParams[4]),
                 Lesson_Name = lessonParams[5]
             };
             connection.Insert(newLesson);
         }
-        
+
+        public void DeleteLastRecord(SQLiteConnection connection, int id)
+        {
+            connection.Delete<Lessons>(id);
+        }
     }
     
     public class Lessons : ITable

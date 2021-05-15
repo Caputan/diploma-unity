@@ -39,7 +39,11 @@ namespace Diploma.Tables
             };
             connection.Insert(newText);
         }
-        
+
+        public void DeleteLastRecord(SQLiteConnection connection, int id)
+        {
+            connection.Delete<Texts>(id);
+        }
     }
     
 
