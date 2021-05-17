@@ -60,5 +60,6 @@ namespace Diploma.Tables
         public int Lesson_Video_Id { get; set; }
         public int Lesson_Assembly_Id { get; set; }
         public int Lesson_Type_Id { get; set; }
+        public string Lesson_Assembly_Order { get; set; }
     }
 }

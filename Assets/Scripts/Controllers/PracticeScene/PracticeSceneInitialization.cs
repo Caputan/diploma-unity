@@ -28,8 +28,8 @@ namespace Diploma.PracticeScene.Controllers
 
         [SerializeField] private GameObject inventoryPrefab;
         [SerializeField] private GameObject inventorySlotPrefab;
-
-        [SerializeField] private GameObject basePart;
+        
+        [SerializeField] private Transform assemblyParent;
         [SerializeField] private GameObject[] partOfAssembly;
 
         private GameContextWithView _gameContextView;
@@ -69,12 +69,12 @@ namespace Diploma.PracticeScene.Controllers
             
             //var GameObjectFactory = new GameObjectFactory();
             //var Pool = new PoolOfObjects(GameObjectFactory, _gameContextWithLogic);
-            var GameObjectInitialization = new GameObjectInitialization(assembly,fileManager);
-            GameObjectInitialization.InstantiateGameObject();
+            var GameObjectInitialization = new GameObjectInitialization(assembly, fileManager);
+            var assemblyGameObject = GameObjectInitialization.InstantiateGameObject();
             var playerInitialization = new PlayerInitialization(playerPrefab, spawnPoint, _data);
             //var inventoryInitialization = new InventoryInitialization(_gameContextWithViews, _gameContextWithUI,
                // mainParent, inventoryPrefab, partOfAssembly, inventorySlotPrefab);
-            var assemblyInitialization = new AssemblyInitialization(basePart, partOfAssembly);
+            var assemblyInitialization = new AssemblyInitialization(assemblyGameObject, lesson.Lesson_Assembly_Order, assemblyParent);
 
             var pauseInitialization = new PauseInitialization(_gameContextView,_gameContextWithUI,mainParent);
             var pauseController = new PauseController(_data,new LoadingSceneController());

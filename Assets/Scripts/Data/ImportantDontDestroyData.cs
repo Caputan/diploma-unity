@@ -10,7 +10,8 @@ namespace Data
         public int activatedUserID;
 
         public float mouseSensitivity;
-        
+
+        public int[] assembleOrder;
         //дополнить по мере надобности
     }
 }

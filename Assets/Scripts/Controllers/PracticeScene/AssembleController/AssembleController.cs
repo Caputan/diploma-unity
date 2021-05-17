@@ -7,73 +7,35 @@ namespace Diploma.Controllers.AssembleController
 {
     public class AssembleController
     {
-        private GameObject _basePart;
-        // private readonly string[] _disassembleOrder = 
-        // {
-        //     "Ось прижимного рычага",
-        //     "Ось прижимного рычага",
-        //     "Рычаг суппорта",
-        //     "Рычаг суппорта",
-        //     "Болт M10x1.25x25",
-        //     "Болт M10x1.25x25",
-        //     "Коллектор",
-        //     "Штуцер",
-        //     "Штуцер",
-        //     "Пружина",
-        //     "Пружина",
-        //     "Пружина",
-        //     "Пружина",
-        //     "Защитный кожух суппорта",
-        //     "Блок цилиндров",
-        //     "Поршень",
-        //     "Поршень",
-        //     "Поршень",
-        //     "Направляющая колодок",
-        //     "Кожух защитный"
-        // };
-        private readonly GameObject[] _partsOfAssembly;
+        private readonly string _order;
+        private GameObject[] _partsOfAssembly;
 
         private int _index;
 
         private bool _isDisassembling;
 
-        public AssembleController(GameObject basePart, GameObject[] partsOfAssembly)
+        public AssembleController(string order)
         {
             _index = 0;
-            _basePart = basePart;
-            _partsOfAssembly = partsOfAssembly;
+            _order = order;
+
+            _partsOfAssembly = new GameObject[_order.Length];
 
             _isDisassembling = true;
-
-            int partId = 0;
-            foreach (var part in _partsOfAssembly)
-            {
-                var outline = part.AddComponent<Outline>();
-                outline.part_Id = partId;
-                partId++;
-                
-                var rb = part.AddComponent<Rigidbody>();
-                rb.isKinematic = true; 
-                
-                part.AddComponent<MeshCollider>();
-                
-                part.tag = "Assembly";
-            }
-
-            Debug.Log(_partsOfAssembly[_index].transform.parent.name.Split(':')[0]);
             
             PlayerController.OnPartClicked += StartDisassembling;
         }
 
         private void StartDisassembling(GameObject partOfAssembly)
         {
-            if (partOfAssembly.transform.parent.name.Split(':')[0] 
-                != _partsOfAssembly[_index].transform.parent.name.Split(':')[0]) return;
+            var partID = partOfAssembly.GetComponent<Outline>().part_Id;
+            var disassembleOrder = _order.Split(' ');
+            if (partID != int.Parse(disassembleOrder[_index])) return;
             if (_isDisassembling)
             {
-                if (_partsOfAssembly[_index].transform.parent.childCount > 1)
+                if (partOfAssembly.transform.parent.childCount > 1)
                 {
-                    for (var i = 0; i < _partsOfAssembly[_index].transform.parent.childCount; i++)
+                    for (var i = 0; i < partOfAssembly.transform.parent.childCount; i++)
                     {
                         partOfAssembly.transform.parent.GetComponentsInChildren<MeshRenderer>()[i].enabled = false;
                     }
@@ -85,6 +47,7 @@ namespace Diploma.Controllers.AssembleController
                     partOfAssembly.GetComponent<MeshRenderer>().enabled = false;
                 }
 
+                _partsOfAssembly[_index] = partOfAssembly;
                 _index++;
             }
             else
@@ -96,7 +59,7 @@ namespace Diploma.Controllers.AssembleController
                     _partsOfAssembly[_index].GetComponent<MeshCollider>().enabled = true;
             }
             
-            if (_index == _partsOfAssembly.Length)
+            if (_index == _order.Length)
             {
                 _isDisassembling = false;
                 _index--;
