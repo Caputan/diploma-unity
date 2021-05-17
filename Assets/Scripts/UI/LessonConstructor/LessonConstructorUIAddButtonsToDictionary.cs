@@ -21,7 +21,7 @@ namespace Diploma.UI
         private readonly GameObject _prefabTogglePanel;
         private readonly GameObject _canvasParent;
         private readonly AdditionalInfomationLibrary _libraryDB;
-        private readonly int[] _usedMenus = new[] {10,9,12,13,14};
+        private readonly int[] _usedMenus = new[] {10,17,12,13,14};
         private TogglePanelFactory _togglePanelFactory;
         
         public LessonConstructorUIAddButtonsToDictionary(

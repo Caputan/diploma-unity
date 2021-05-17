@@ -16,6 +16,8 @@
         DownloadModel = 12,
         DownloadPDF = 13,
         DownloadVideo = 14,
+        CreateAssemblyDis = 17,
+        
         LoadStart = 15,
         ChangeUser = 16,
         LoadLessonScene,

@@ -10,7 +10,7 @@ namespace Diploma.Controllers
         private readonly PlayerController _playerController;
 
         private readonly Transform _spawnPoint;
-        
+        private GameObject playerGO;
         private bool _isPaused;
             
         public PlayerInitialization(GameObject player, Transform spawnPoint, 
@@ -21,9 +21,15 @@ namespace Diploma.Controllers
 
             _isPaused = false;
             
-            var playerGO = GameObject.Instantiate(_playerGameObject, _spawnPoint.position, _spawnPoint.rotation, _spawnPoint);
-
+            playerGO = GameObject.Instantiate(_playerGameObject, _spawnPoint.position, _spawnPoint.rotation, _spawnPoint);
+            
             _playerController = new PlayerController(playerGO, importantDontDestroyData);
+        }
+
+        public void TurnOnOffCamera(bool toogle,Camera mainCamera)
+        {
+            playerGO.GetComponentInChildren<Camera>().enabled = toogle;
+            mainCamera.enabled = !toogle;
         }
         
         public void SetPause(bool pause)

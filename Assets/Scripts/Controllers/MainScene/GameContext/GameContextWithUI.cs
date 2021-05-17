@@ -9,7 +9,6 @@ namespace Diploma.Controllers
     public class GameContextWithUI: IGameContextUI
     {
         public Dictionary<LoadingParts, GameObject> UiControllers;
-        public Dictionary<OptionsButtons, GameObject> UIControllersOptions;
         public Dictionary<LoadingParts, IUIObject> UILogic;
         
         public GameContextWithUI()
@@ -30,14 +29,6 @@ namespace Diploma.Controllers
                 UiControllers.Add(loadingPart, uiController);
             }
         }
-        public void AddUIOptionsToDictionary(OptionsButtons loadingPart, GameObject uiController)
-        {
-            if (!UIControllersOptions.ContainsKey(loadingPart))
-            {
-                UIControllersOptions.Add(loadingPart, uiController);
-            }
-        }
-        
         public void RemoveUIFromDictionary(LoadingParts loadingPart, GameObject uiController)
         {
             if (UiControllers.ContainsKey(loadingPart))

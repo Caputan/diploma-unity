@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 using Coroutine;
 using Diploma.Controllers;
+using Diploma.Controllers.AssembleController;
 using Diploma.Enums;
 using Diploma.Interfaces;
 using Diploma.Managers;
@@ -32,6 +33,7 @@ namespace Controllers
         private readonly FileManagerController _fileManagerController;
         private string[] _destination = new string[5];
         private readonly FileManager _fileManager;
+        private readonly AssemblyCreator _assemblyCreator;
         private Dictionary<LoadingParts, GameObject> _texts;
         private PlateWithButtonForLessonsFactory _plateWithButtonForLessonsFactory;
         private string[] _localText = new string[4];
@@ -39,6 +41,11 @@ namespace Controllers
         private string[] _massForCopy = new string[3];
         private ErrorCodes _error;
         private GameObject _main;
+        private string[] lessonPacked = new string[7];
+        private int id;
+        public bool _playerChoose;
+
+        private string _order;
         //Plane[] planes;
         
         private readonly ResourcePath _viewPath = new ResourcePath {PathResource = "Prefabs/MainScene/LessonPrefab"};
@@ -51,7 +58,8 @@ namespace Controllers
             GameContextWithUI gameContextWithUI,
             GameContextWithLogic gameContextWithLogic,
             FileManagerController fileManagerController,
-            FileManager fileManager
+            FileManager fileManager,
+            AssemblyCreator assemblyCreator
         )
         {
             _dataBaseController = dataBaseController;
@@ -62,6 +70,7 @@ namespace Controllers
             _gameContextWithLogic = gameContextWithLogic;
             _fileManagerController = fileManagerController;
             _fileManager = fileManager;
+            _assemblyCreator = assemblyCreator;
             _texts = _gameContextWithViews.TextBoxesOnConstructor;
             _plateWithButtonForLessonsFactory = new PlateWithButtonForLessonsFactory(ResourceLoader.LoadPrefab(_viewPath));
         }
@@ -69,6 +78,13 @@ namespace Controllers
         public void Initialization()
         {
             _fileManagerController.newText += SetTextInTextBox;
+            _assemblyCreator.EndCreatingEvent += SavingAssemblyDis;
+        }
+
+        private void SavingAssemblyDis(string obj)
+        {
+            _playerChoose = true;
+            _order = obj;
         }
 
         public void SetTextInTextBox(LoadingParts loadingParts, string text,string firstPath)
@@ -103,6 +119,33 @@ namespace Controllers
         {
             return _error;
         }
+
+        public GameObject OpenAnUIInitialization(out ErrorCodes errorCodes)
+        {
+            
+            if (_dataBaseController.GetDataFromTable<Lessons>().Count == 0)
+            {
+                id = 0;
+            }
+            else
+            {
+                id = _dataBaseController.GetDataFromTable<Lessons>().Last().Lesson_Id+1;
+            }
+            if (_localText[0] != @"Выберите UnityBundle ()")
+            {
+                var GameObjectInitilization = new GameObjectInitialization(id +"\\"+ "Assemblies"+ "\\" +_localText[0], _fileManager);
+                _main = GameObjectInitilization.InstantiateGameObject();
+                errorCodes = ErrorCodes.None;
+                return _main;
+            }
+            else
+            {
+                errorCodes = ErrorCodes.EmptyInputError;
+                return new GameObject();
+            }
+            
+        }
+        
         public bool CreateALesson()
         {
              //это из меню
@@ -120,36 +163,29 @@ namespace Controllers
              // 4 - type
              // 5 - name
              _error = ErrorCodes.None;
-            string[] lessonPacked = new string[6];
-            lessonPacked[0] = null;
-            lessonPacked[1] = null;
-            lessonPacked[2] = null;
-            lessonPacked[3] = null;
-            lessonPacked[4] = null;
-            lessonPacked[5] = null;
-            // creating Folder-packed
-            // нужно добавить id
-            _dataBaseController.SetTable(_tables[1]);
-            int id;
-            if (_dataBaseController.GetDataFromTable<Lessons>().Count == 0)
-            {
-                id = 0;
-            }
-            else
-            {
-                id = _dataBaseController.GetDataFromTable<Lessons>().Last().Lesson_Id+1;
-            }
-            _destination[0] = _fileManager.CreateFileFolder(id +"\\"+ "Assemblies");
-            _destination[1] = _fileManager.CreateFileFolder(id +"\\"+ "Videos");
-            _destination[2] = _fileManager.CreateFileFolder(id +"\\"+ "Photos");
-            _destination[3] = _fileManager.CreateFileFolder(id +"\\"+ "Texts");
-            _destination[4] = _fileManager.CreateFileFolder(_destination[2] + "\\" + "Parts");
+             lessonPacked[0] = null;
+             lessonPacked[1] = null;
+             lessonPacked[2] = null;
+             lessonPacked[3] = null;
+             lessonPacked[4] = null;
+             lessonPacked[5] = null;
+             lessonPacked[6] = null;
+             // creating Folder-packed
+             // нужно добавить id
+             _dataBaseController.SetTable(_tables[1]);
+             
+             _destination[0] = _fileManager.CreateFileFolder(id +"\\"+ "Assemblies");
+             _destination[1] = _fileManager.CreateFileFolder(id +"\\"+ "Videos");
+             _destination[2] = _fileManager.CreateFileFolder(id +"\\"+ "Photos");
+             _destination[3] = _fileManager.CreateFileFolder(id +"\\"+ "Texts");
+             _destination[4] = _fileManager.CreateFileFolder(_destination[2] + "\\" + "Parts");
             
             // add new assembly
             if (_localText[0] != @"Выберите UnityBundle ()")
             {
                 _localBufferText[0] =_destination[0]+ "\\" +_localText[0];
                 Debug.Log(_localBufferText[0]);
+                File.Copy(_massForCopy[0],_localBufferText[0],true);
                 _dataBaseController.SetTable(_tables[0]);
                 string[] assemblyPacked = new string[1];
                 assemblyPacked[0] = id +"\\"+ "Assemblies"+ "\\" +_localText[0];
@@ -233,19 +269,16 @@ namespace Controllers
             }
             
             //Screens of parts
-            File.Copy(_massForCopy[0],_localBufferText[0],true);
-            _dataBaseController.SetTable(_tables[0]);
-            Assemblies Assembly = (Assemblies)_dataBaseController.GetRecordFromTableById(Convert.ToInt32(lessonPacked[3]));
-            var GameObjectInitilization = new GameObjectInitialization(Assembly, _fileManager);
-            _main = GameObjectInitilization.InstantiateGameObject();
-            
+
             var parts = _main.GetComponentsInChildren<MeshRenderer>();
             foreach (var meshRenderer in parts)
             {
                 meshRenderer.enabled = false;
             }
-            TakingScreensOfParts(parts,lessonPacked,id);
+
+            lessonPacked[6] = _order;
             
+            TakingScreensOfParts(parts,lessonPacked,id);
             _error = ErrorCodes.None;
             
             return true;
@@ -256,12 +289,12 @@ namespace Controllers
             MeshRenderer[] meshRenderers,
             string[] lessonPacked,
             int id
-            )
+        )
         {
             int i = 0;
             ScreenShotsCoroutine(meshRenderers,i,lessonPacked,id).StartCoroutine(out _,out _);
         }
-
+        
         private IEnumerator ScreenShotsCoroutine(
             MeshRenderer[] meshRenderer, 
             int i,
