@@ -18,6 +18,7 @@ using TMPro;
 using Tools;
 using UnityEngine;
 using UnityEngine.UI;
+using Object = UnityEngine.Object;
 using Types = Diploma.Tables.Types;
 
 namespace Controllers
@@ -34,6 +35,7 @@ namespace Controllers
         private string[] _destination = new string[5];
         private readonly FileManager _fileManager;
         private readonly AssemblyCreator _assemblyCreator;
+        private readonly Transform _assemblyParent;
         private Dictionary<LoadingParts, GameObject> _texts;
         private PlateWithButtonForLessonsFactory _plateWithButtonForLessonsFactory;
         private string[] _localText = new string[4];
@@ -44,7 +46,7 @@ namespace Controllers
         private string[] lessonPacked = new string[7];
         private int id;
         public bool _playerChoose;
-
+        private AssemblyInitialization _assemblyInitialization;
         private string _order;
         //Plane[] planes;
         
@@ -59,7 +61,8 @@ namespace Controllers
             GameContextWithLogic gameContextWithLogic,
             FileManagerController fileManagerController,
             FileManager fileManager,
-            AssemblyCreator assemblyCreator
+            AssemblyCreator assemblyCreator,
+            Transform assemblyParent
         )
         {
             _dataBaseController = dataBaseController;
@@ -71,6 +74,7 @@ namespace Controllers
             _fileManagerController = fileManagerController;
             _fileManager = fileManager;
             _assemblyCreator = assemblyCreator;
+            _assemblyParent = assemblyParent;
             _texts = _gameContextWithViews.TextBoxesOnConstructor;
             _plateWithButtonForLessonsFactory = new PlateWithButtonForLessonsFactory(ResourceLoader.LoadPrefab(_viewPath));
         }
@@ -122,7 +126,7 @@ namespace Controllers
 
         public GameObject OpenAnUIInitialization(out ErrorCodes errorCodes)
         {
-            
+            _playerChoose = false;
             if (_dataBaseController.GetDataFromTable<Lessons>().Count == 0)
             {
                 id = 0;
@@ -131,12 +135,22 @@ namespace Controllers
             {
                 id = _dataBaseController.GetDataFromTable<Lessons>().Last().Lesson_Id+1;
             }
+            _destination[0] = _fileManager.CreateFileFolder(id +"\\"+ "Assemblies");
+            _destination[1] = _fileManager.CreateFileFolder(id +"\\"+ "Videos");
+            _destination[2] = _fileManager.CreateFileFolder(id +"\\"+ "Photos");
+            _destination[3] = _fileManager.CreateFileFolder(id +"\\"+ "Texts");
+            _destination[4] = _fileManager.CreateFileFolder(_destination[2] + "\\" + "Parts");
             if (_localText[0] != @"Выберите UnityBundle ()")
             {
-                var GameObjectInitilization = new GameObjectInitialization(id +"\\"+ "Assemblies"+ "\\" +_localText[0], _fileManager);
+                _localBufferText[0] =_destination[0]+ "\\" +_localText[0];
+                Debug.Log(_localBufferText[0]);
+                File.Copy(_massForCopy[0],_localBufferText[0],true);
+                var GameObjectInitilization = new GameObjectInitialization(id +"\\"+ "Assemblies"+ "\\" +_localText[0], _fileManager);//id +"\\"+ "Assemblies"+ "\\" +_localText[0], _fileManager);
                 _main = GameObjectInitilization.InstantiateGameObject();
+                _assemblyInitialization = new AssemblyInitialization(_main,_assemblyParent);
+                _assemblyInitialization.Initialization();
                 errorCodes = ErrorCodes.None;
-                return _main;
+                return _assemblyInitialization.GetAGameObject();
             }
             else
             {
@@ -145,7 +159,11 @@ namespace Controllers
             }
             
         }
-        
+
+        public void DestroyAssembly()
+        {
+            Object.Destroy(_assemblyInitialization.GetAGameObject());
+        }
         public bool CreateALesson()
         {
              //это из меню
@@ -174,11 +192,7 @@ namespace Controllers
              // нужно добавить id
              _dataBaseController.SetTable(_tables[1]);
              
-             _destination[0] = _fileManager.CreateFileFolder(id +"\\"+ "Assemblies");
-             _destination[1] = _fileManager.CreateFileFolder(id +"\\"+ "Videos");
-             _destination[2] = _fileManager.CreateFileFolder(id +"\\"+ "Photos");
-             _destination[3] = _fileManager.CreateFileFolder(id +"\\"+ "Texts");
-             _destination[4] = _fileManager.CreateFileFolder(_destination[2] + "\\" + "Parts");
+             
             
             // add new assembly
             if (_localText[0] != @"Выберите UnityBundle ()")
@@ -270,13 +284,12 @@ namespace Controllers
             
             //Screens of parts
 
-            var parts = _main.GetComponentsInChildren<MeshRenderer>();
+            var parts = _assemblyInitialization.GetAGameObject().GetComponentsInChildren<MeshRenderer>();
             foreach (var meshRenderer in parts)
             {
                 meshRenderer.enabled = false;
             }
-
-            lessonPacked[6] = _order;
+            
             
             TakingScreensOfParts(parts,lessonPacked,id);
             _error = ErrorCodes.None;
@@ -308,10 +321,12 @@ namespace Controllers
                 {
                     mesh.enabled = true;
                 }
-                SetCameraNearObject(_main,_gameContextWithLogic.MainCamera);
+                SetCameraNearObject(_assemblyInitialization.GetAGameObject(),_gameContextWithLogic.MainCamera);
                 yield return new WaitForFixedUpdate();
                 TakingScreen(_destination[2]+"\\"+lessonPacked[5]+".png");
                 lessonPacked[0] = assemblyId +"\\"+ "Photos"+  "\\" + lessonPacked[5]+".png";
+                yield return new WaitUntil(() => _playerChoose == true);
+                lessonPacked[6] = _order;
                 _dataBaseController.SetTable(_tables[1]);
                 _dataBaseController.AddNewRecordToTable(lessonPacked);
                 yield break;

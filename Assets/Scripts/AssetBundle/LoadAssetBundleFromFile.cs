@@ -16,18 +16,18 @@ namespace AssetBundle
         {
             _asset = LoadAssetBundleFromFileOnDrive(path);
             var allAssets = _asset.LoadAllAssetsAsync<GameObject>().allAssets;
-            int i = 0;
+            //int i = 0;
             GameObject gameObject = null;
             foreach (var baseAsset in allAssets)
             {
-                GameObject prefab = baseAsset as GameObject; 
-                gameObject = GameObject.Instantiate(prefab,prefab.transform.position,prefab.transform.rotation);
-                gameObject.AddMeshCollider();
-                if (i==0)
-                {
-                    gameObject.transform.position = Vector3.zero;
-                }
-                i++;
+                gameObject = baseAsset as GameObject; 
+                //gameObject = GameObject.Instantiate(prefab,prefab.transform.position,prefab.transform.rotation);
+                //gameObject.AddMeshCollider();
+                //if (i==0)
+                //{
+                 //   gameObject.transform.position = Vector3.zero;
+                //}
+                // i++;
             }
             
             _asset.Unload(false);

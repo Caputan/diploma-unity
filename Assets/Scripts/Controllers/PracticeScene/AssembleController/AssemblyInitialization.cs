@@ -1,4 +1,5 @@
-﻿using Diploma.Interfaces;
+﻿using Diploma.Extensions;
+using Diploma.Interfaces;
 using UnityEngine;
 
 namespace Diploma.Controllers.AssembleController
@@ -10,6 +11,7 @@ namespace Diploma.Controllers.AssembleController
         private readonly GameObject _assemblyGameObject;
 
         private readonly Transform _assemblyParent;
+        private GameObject gm;
         
         public AssemblyInitialization(GameObject assemblyGameObject, string order, Transform assemblyParent)
         {
@@ -18,12 +20,18 @@ namespace Diploma.Controllers.AssembleController
             
             _assembleController = new AssembleController(order);
         }
+
+        public AssemblyInitialization(GameObject assemblyGameObject,Transform assemblyParent)
+        {
+            _assemblyGameObject = assemblyGameObject;
+            _assemblyParent = assemblyParent;
+        }
         
         public void Initialization()
         {
-            var gm = GameObject.Instantiate(_assemblyGameObject, _assemblyParent);
+            gm = GameObject.Instantiate(_assemblyGameObject, _assemblyParent);
             gm.transform.localScale = new Vector3(5f, 5f, 5f);
-
+            
             var meshes = gm.GetComponentsInChildren<MeshRenderer>();
             int partId = 0;
             foreach (var mesh in meshes)
@@ -42,6 +50,11 @@ namespace Diploma.Controllers.AssembleController
                 
                 mesh.tag = "Assembly";
             }
+        }
+
+        public GameObject GetAGameObject()
+        {
+            return gm;
         }
     }
 }

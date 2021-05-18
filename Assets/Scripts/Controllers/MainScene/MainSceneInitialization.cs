@@ -30,6 +30,7 @@ namespace Diploma.Controllers
         [SerializeField] private ImportantDontDestroyData _data;
         [SerializeField] private AdditionalInfomationLibrary _library;
         [SerializeField] private Transform _playerSpawn;
+        [SerializeField] private Transform assemblyParent;
         
         private readonly ResourcePath _viewPath = new ResourcePath {PathResource = "Prefabs/PracticeScene/Player"};
         private FileManagerController _fileManager;
@@ -148,7 +149,8 @@ namespace Diploma.Controllers
                 _gameContextWithLogic,
                 _fileManager,
                 fileManager,
-                AssemblyCreator
+                AssemblyCreator,
+                assemblyParent
             );
             
             var ScreenShootController = new ScreenShotController();
@@ -192,6 +194,7 @@ namespace Diploma.Controllers
             var uiController = new UIController(
                 _gameContextWithUI,
                 _gameContextWithLogic,
+                _gameContextWithViews,
                 ExitController,
                 BackController,
                 AuthController,
@@ -238,9 +241,10 @@ namespace Diploma.Controllers
             _controllers.Add(AssemblyCreating);
             _controllers.Add(Player);
             
-            _controllers.Initialization();
             //этот контроллер идет самым последним
-            uiController.Initialization();
+            _controllers.Add(uiController);
+            _controllers.Initialization();
+            
         }
         
         private void Update()

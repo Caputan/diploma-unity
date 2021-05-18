@@ -8,16 +8,19 @@ using Diploma.Controllers.AssembleController;
 using Diploma.Enums;
 using Diploma.Interfaces;
 using Interfaces;
+using TMPro;
 using UI.LoadingUI;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 
 namespace Diploma.Controllers
 {
-    public class UIController : IInitialization, ICleanData
+    public class UIController : IInitialization, ICleanData, IExecute
     {
         private readonly GameContextWithUI _gameContextWithUI;
         private readonly GameContextWithLogic _gameContextWithLogic;
+        private readonly GameContextWithViews _gameContextWithViews;
         private readonly ExitController _exitController;
         private readonly BackController _backController;
         private readonly AuthController _authController;
@@ -38,6 +41,7 @@ namespace Diploma.Controllers
 
         public UIController(GameContextWithUI gameContextWithUI,
             GameContextWithLogic gameContextWithLogic,
+            GameContextWithViews gameContextWithViews,
             ExitController exitController,
             BackController backController,
             AuthController authController,
@@ -54,6 +58,7 @@ namespace Diploma.Controllers
             _error = ErrorCodes.None;
             _gameContextWithUI = gameContextWithUI;
             _gameContextWithLogic = gameContextWithLogic;
+            _gameContextWithViews = gameContextWithViews;
             _exitController = exitController;
             _backController = backController;
             _authController = authController;
@@ -97,6 +102,8 @@ namespace Diploma.Controllers
                     i.LoadNext += ShowUIByUIType;
                 }
             }
+
+            _toogleEscape = false;
             _lessonConstructorController.TakeScreenShoot += TakeScreenShoot;
             _lessonConstructorController.TakeScreenShootOfPart += TakeAScreenShotOfPart;
             HideAllUI();
@@ -114,6 +121,7 @@ namespace Diploma.Controllers
         {
             HideAllUI();
             _backGround.SetActive(false);
+            _playerInitialization.TurnOnOffCamera(false,_gameContextWithLogic.MainCamera);
             _screenShotController.TakeAScreanShoot(obj);
         }
 
@@ -122,6 +130,7 @@ namespace Diploma.Controllers
         {
             HideAllUI();
             _backGround.SetActive(false);
+            _playerInitialization.TurnOnOffCamera(false,_gameContextWithLogic.MainCamera);
             _screenShotController.TakeAScreanShoot(obj);
             WaitForTakingScreenShot().StartCoroutine(out _,out _);
             
@@ -153,6 +162,7 @@ namespace Diploma.Controllers
             switch (id)
             {
                 case AssemblyCreating.Decline:
+                    _lessonConstructorController.DestroyAssembly();
                     ShowUIByUIType(LoadingParts.Back);
                     break;
                 case AssemblyCreating.SavingOrder:
@@ -308,10 +318,14 @@ namespace Diploma.Controllers
                     _gameContextWithUI.UiControllers[LoadingParts.CreateAssemblyDis].SetActive(true);
                     _playerInitialization.SetPause(false);
                     _playerInitialization.TurnOnOffCamera(true,_gameContextWithLogic.MainCamera);
+                    Cursor.lockState = CursorLockMode.Locked;
+                    Cursor.visible = false;
                     var gameObject = _lessonConstructorController.OpenAnUIInitialization(out var _someError);
                     if (_someError == ErrorCodes.None)
                     {
-                        _assemblyCreatingController.SetAssemblyGameObject(gameObject); 
+                        _assemblyCreatingController.SetAssemblyGameObject(gameObject,
+                            _gameContextWithUI.UiControllers[LoadingParts.CreateAssemblyDis].
+                                transform.GetChild(1).GetChild(0).GetChild(0).gameObject); 
                     }
                     else
                     {
@@ -412,6 +426,55 @@ namespace Diploma.Controllers
             }
             
             _lessonConstructorController.TakeScreenShoot -= TakeScreenShoot;
+        }
+
+        private bool _toogleEscape;
+        public void Execute(float deltaTime)
+        {
+            if (Input.GetKeyDown (KeyCode.Escape))
+            {
+                _toogleEscape = !_toogleEscape;
+                Debug.Log(_toogleEscape);
+                _playerInitialization.SetPause(_toogleEscape);
+                if (_toogleEscape)
+                {
+                    Cursor.lockState = CursorLockMode.None;
+                    Cursor.visible = true;
+                }
+                else
+                {
+                    Cursor.lockState = CursorLockMode.Locked;
+                    Cursor.visible = false;
+                }
+            }
+
+            if (_gameContextWithViews.TextBoxesOnConstructor[LoadingParts.DownloadModel].
+                transform.GetChild(0).GetComponent<TextMeshProUGUI>().text != "Выберите UnityBundle ()" &&
+            _gameContextWithViews.TextBoxesOnConstructor[LoadingParts.DownloadPDF].
+                transform.GetChild(0).GetComponent<TextMeshProUGUI>().text != "Выберите текстовый фаил(*.pdf)" &&
+            _gameContextWithViews.TextBoxesOnConstructor[LoadingParts.SetNameToLesson].
+                GetComponent<TMP_InputField>().text != "")
+            {
+                _gameContextWithViews.LessonConstructorButtons[LoadingParts.CreateAssemblyDis].GetComponentInChildren<TextMeshProUGUI>().color = Color.white;
+                _gameContextWithViews.LessonConstructorButtons[LoadingParts.CreateAssemblyDis].enabled = true;
+            }
+            else
+            {
+                _gameContextWithViews.LessonConstructorButtons[LoadingParts.CreateAssemblyDis].GetComponentInChildren<TextMeshProUGUI>().color = Color.black;
+                _gameContextWithViews.LessonConstructorButtons[LoadingParts.CreateAssemblyDis].enabled = false;
+            }
+
+            if (_gameContextWithUI.UiControllers[LoadingParts.CreateAssemblyDis].
+                transform.GetChild(1).GetChild(0).GetChild(0).gameObject.transform.childCount != 0)
+            {
+                _gameContextWithViews.AssemblyCreatingButtons[AssemblyCreating.SavingOrder].GetComponentInChildren<TextMeshProUGUI>().color = Color.black;
+                _gameContextWithViews.AssemblyCreatingButtons[AssemblyCreating.SavingOrder].enabled = true;
+            }
+            else
+            {
+                _gameContextWithViews.AssemblyCreatingButtons[AssemblyCreating.SavingOrder].GetComponentInChildren<TextMeshProUGUI>().color = Color.white;
+                _gameContextWithViews.AssemblyCreatingButtons[AssemblyCreating.SavingOrder].enabled = false;
+            }
         }
     }
 }
