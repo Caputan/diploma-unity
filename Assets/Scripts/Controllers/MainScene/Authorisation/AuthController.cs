@@ -1,6 +1,7 @@
 ﻿
 using System;
 using System.Collections.Generic;
+using System.Text.RegularExpressions;
 using Crypto;
 using Data;
 using Diploma.Enums;
@@ -92,6 +93,10 @@ namespace Diploma.Controllers
         {
             if (NewLogin.text == "" || NewPassword.text == "" || NewEmail.text == "" || Role.value == 0)
                 return ErrorCodes.EmptyInputError;
+
+            if (CheckValidation(NewLogin.text, NewPassword.text, NewEmail.text) != ErrorCodes.None)
+                return CheckValidation(NewLogin.text, NewPassword.text, NewEmail.text);
+                
             _dataBase.SetTable(_table);
             
             foreach (var currentUser in _dataBase.GetDataFromTable<Users>())
@@ -116,6 +121,26 @@ namespace Diploma.Controllers
             return ErrorCodes.None;
         }
 
+        private ErrorCodes CheckValidation(string login, string password, string email)
+        {
+            if (login.Length < 6 || login.Length > 20)
+                return ErrorCodes.ValidationLoginError;
+
+            if (password.Length < 6)
+                return ErrorCodes.ValidationPasswordError;
+            
+            String passwordPattern = @"^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$";
+            if (!Regex.IsMatch(password, passwordPattern))
+                return ErrorCodes.ValidationPasswordError;
+            
+            String emailPattern = @"^[\w!#$%&'*+\-/=?\^_`{|}~]+(\.[\w!#$%&'*+\-/=?\^_`{|}~]+)*"
+                                     + "@"
+                                     + @"((([\-\w]+\.)+[a-zA-Z]{2,4})|(([0-9]{1,3}\.){3}[0-9]{1,3}))\z";
+            if (!Regex.IsMatch(email, emailPattern))
+                return ErrorCodes.ValidationEmailError;
+            
+            return ErrorCodes.None;
+        }
 
         public void Initialization() { }
     }

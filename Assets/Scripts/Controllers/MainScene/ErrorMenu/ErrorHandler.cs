@@ -32,6 +32,15 @@ namespace Controllers
                 case ErrorCodes.WrongFormatError:
                     _errorTextUI.text = "Формат одного из файлов не соответствует  требуемому";
                     break;
+                case ErrorCodes.ValidationLoginError:
+                    _errorTextUI.text = "Имя пользователя должно быть больше 6 и меньше 20 символов";
+                    break;
+                case ErrorCodes.ValidationPasswordError:
+                    _errorTextUI.text = "Пароль должен быть больше 8 символов и содержать как минимум одну цифру, одну строчную и заглавную буквы";
+                    break;
+                case ErrorCodes.ValidationEmailError:
+                    _errorTextUI.text = "Неправильно введенная электронная почта";
+                    break;
                 default:
                     _errorTextUI.text = "Неизвестная ошибка";
                     break;
