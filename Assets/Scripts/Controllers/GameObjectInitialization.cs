@@ -10,10 +10,10 @@ namespace Diploma.Controllers
 {
     public sealed class GameObjectInitialization
     {
-        private readonly Assemblies _assemblies;
+        private readonly string _assemblies;
         private readonly FileManager _fileManager;
 
-        public GameObjectInitialization(Assemblies assemblies, FileManager fileManager)
+        public GameObjectInitialization(string assemblies, FileManager fileManager)
         {
             _assemblies = assemblies;
             _fileManager = fileManager;
@@ -34,7 +34,7 @@ namespace Diploma.Controllers
             //     _poolOfObjects._rootPool.gameObject,
             //     _poolOfObjects);
             LoadAssetBundleFromFile loadAssetBundleFromFile = new LoadAssetBundleFromFile();
-            return loadAssetBundleFromFile.GetBaseObjects(_fileManager.GetStorage() + "\\" +_assemblies.Assembly_Link);
+            return loadAssetBundleFromFile.GetBaseObjects(_fileManager.GetStorage() + "\\" +_assemblies);
         }
     }
 }

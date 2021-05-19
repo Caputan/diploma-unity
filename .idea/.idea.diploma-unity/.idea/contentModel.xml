@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\diploma-unity" t="IncludeRecursive">
+    <e p="C:\Users\Jasto\AppData\Local\JetBrains\Rider2020.3\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\Jasto\AppData\Local\JetBrains\Rider2020.3\resharper-host\Local\Transient\Rider\v203\SolutionCaches\_diploma-unity.-1692701119.00" t="ExcludeRecursive" />
+    <e p="D:\Unity-Storage\diploma-unity\diploma-unity" t="IncludeRecursive">
       <e p="Assembly-CSharp-firstpass.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
@@ -31,7 +33,7 @@
               <e p="FBPostProcessBuild.cs" t="Include" />
               <e p="SimpleFileBrowser.Editor.asmdef" t="Include" />
             </e>
-            <e p="README.txt" t="Include" />
+            <e p="Readme.txt" t="Include" />
             <e p="Scripts" t="Include">
               <e p="FileBrowser.cs" t="Include" />
               <e p="FileBrowserContextMenu.cs" t="Include" />
@@ -53,7 +55,7 @@
           </e>
         </e>
         <e p="QuickOutline" t="Include">
-          <e p="README.txt" t="Include" />
+          <e p="Readme.txt" t="Include" />
           <e p="Resources" t="Include">
             <e p="Shaders" t="Include">
               <e p="OutlineFill.shader" t="Include" />
@@ -115,6 +117,7 @@
                 <e p="GameContextWithViews.cs" t="Include" />
               </e>
               <e p="LessonsControllers" t="Include">
+                <e p="AssemblyCreatingUIInitialization.cs" t="Include" />
                 <e p="LessonConstructorController.cs" t="Include" />
                 <e p="LessonConstructorUIInitialization.cs" t="Include" />
                 <e p="LessonsChooseController.cs" t="Include" />
@@ -138,6 +141,7 @@
             <e p="PracticeScene" t="Include">
               <e p="AssembleController" t="Include">
                 <e p="AssembleController.cs" t="Include" />
+                <e p="AssemblyCreator.cs" t="Include" />
                 <e p="AssemblyInitialization.cs" t="Include" />
               </e>
               <e p="GameContext" t="Include">
@@ -196,6 +200,7 @@
           </e>
           <e p="Enums" t="Include">
             <e p="AnimatorButtons.cs" t="Include" />
+            <e p="AssemblyCreating.cs" t="Include" />
             <e p="CoroutineState.cs" t="Include" />
             <e p="ErrorCodes.cs" t="Include" />
             <e p="FileTypes.cs" t="Include" />
@@ -224,6 +229,7 @@
             <e p="ICollision.cs" t="Include" />
             <e p="IConstructorFactory.cs" t="Include" />
             <e p="IController.cs" t="Include" />
+            <e p="ICreatingAssemblyButton.cs" t="Include" />
             <e p="IDataBase.cs" t="Include" />
             <e p="IDataBaseFileManager.cs" t="Include" />
             <e p="IExecute.cs" t="Include" />
@@ -285,6 +291,11 @@
               <e p="AuthAddButtonsToDictionary.cs" t="Include" />
               <e p="AuthFactory.cs" t="Include" />
               <e p="AuthLogic.cs" t="Include" />
+            </e>
+            <e p="CreatingAssemblyUI" t="Include">
+              <e p="CreatingAssemblyAddButtonsToDictionary.cs" t="Include" />
+              <e p="CreatingAssemblyFactory.cs" t="Include" />
+              <e p="CreatingAssemblyLogic.cs" t="Include" />
             </e>
             <e p="ErrorMenu" t="Include">
               <e p="ErrorMenuAddButtonsToDictionary.cs" t="Include" />
@@ -395,9 +406,7 @@
       <e p="Packages" t="ExcludeRecursive" />
       <e p="SimpleFileBrowser.Editor.csproj" t="IncludeRecursive" />
       <e p="SimpleFileBrowser.Runtime.csproj" t="IncludeRecursive" />
-      <e p="Temp\bin" t="ExcludeRecursive" />
+      <e p="Temp\Bin" t="ExcludeRecursive" />
     </e>
-    <e p="C:\Users\Артем\AppData\Local\JetBrains\Rider2020.3\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\Артем\AppData\Local\JetBrains\Rider2020.3\resharper-host\Local\Transient\Rider\v203\SolutionCaches\_diploma-unity.533668909.00" t="ExcludeRecursive" />
   </component>
 </project>

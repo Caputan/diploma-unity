@@ -39,7 +39,8 @@ namespace Diploma.Tables
                 Lesson_Video_Id = lessonParams[2] != null ? Convert.ToInt32(lessonParams[2]):-1,
                 Lesson_Assembly_Id = Convert.ToInt32(lessonParams[3]),
                 Lesson_Type_Id = Convert.ToInt32(lessonParams[4]),
-                Lesson_Name = lessonParams[5]
+                Lesson_Name = lessonParams[5],
+                Lesson_Assembly_Order = lessonParams[6]
             };
             connection.Insert(newLesson);
         }

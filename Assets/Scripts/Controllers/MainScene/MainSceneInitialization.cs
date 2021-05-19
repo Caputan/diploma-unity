@@ -3,10 +3,12 @@ using Controllers;
 using Controllers.MainScene.LessonsControllers;
 using Data;
 using Diploma.Controllers.AboutControllers;
+using Diploma.Controllers.AssembleController;
 using Diploma.Interfaces;
 using Diploma.Managers;
 using Diploma.Tables;
 using TMPro;
+using Tools;
 using UI.LoadingUI;
 using UnityEditor;
 using UnityEngine;
@@ -27,8 +29,10 @@ namespace Diploma.Controllers
         
         [SerializeField] private ImportantDontDestroyData _data;
         [SerializeField] private AdditionalInfomationLibrary _library;
+        [SerializeField] private Transform _playerSpawn;
+        [SerializeField] private Transform assemblyParent;
         
-
+        private readonly ResourcePath _viewPath = new ResourcePath {PathResource = "Prefabs/PracticeScene/Player"};
         private FileManagerController _fileManager;
         private Loader3DS _loader3Ds;
         private GameContextWithLogic _gameContextWithLogic;
@@ -72,7 +76,7 @@ namespace Diploma.Controllers
 
             #endregion
 
-            #region Creation UI and GameContext
+            #region Creation
             
             _gameContextWithLogic = new GameContextWithLogic();
             _gameContextWithViews = new GameContextWithViews();
@@ -130,6 +134,11 @@ namespace Diploma.Controllers
                 MainParent,
                 _library
             );
+
+            var AssemblyCreator = new AssemblyCreator();
+
+            var Player = new PlayerInitialization(ResourceLoader.LoadPrefab(_viewPath)
+                ,_playerSpawn,_data);
             
             var LessonConstructorController = new LessonConstructorController(
                 DataBaseController,
@@ -139,7 +148,9 @@ namespace Diploma.Controllers
                 _gameContextWithUI,
                 _gameContextWithLogic,
                 _fileManager,
-                fileManager
+                fileManager,
+                AssemblyCreator,
+                assemblyParent
             );
             
             var ScreenShootController = new ScreenShotController();
@@ -148,6 +159,8 @@ namespace Diploma.Controllers
             
             var ExitController = new ExitController(_data);
 
+            var AssemblyCreating = new AssemblyCreatingUIInitialization(MainParent,_gameContextWithViews,_gameContextWithUI);
+            
             var ErrorHandlerInitialization = new ErrorMenuInitialization(
                 _gameContextWithViews,
                 _gameContextWithUI,
@@ -173,10 +186,6 @@ namespace Diploma.Controllers
                 _data
                 );
             
-            
-            
-            
-            
             var SceneLoader = new LoadingSceneController();
 
             var loading = new LoadingUILogic(MainParent.transform);
@@ -184,6 +193,8 @@ namespace Diploma.Controllers
             
             var uiController = new UIController(
                 _gameContextWithUI,
+                _gameContextWithLogic,
+                _gameContextWithViews,
                 ExitController,
                 BackController,
                 AuthController,
@@ -192,7 +203,9 @@ namespace Diploma.Controllers
                 OptionsController,
                 ScreenShootController,
                 loading,
-                _data
+                _data,
+                AssemblyCreator,
+                Player
             );
             
             var ChooseLessonController = new LessonsChooseController(
@@ -206,6 +219,7 @@ namespace Diploma.Controllers
 
             #endregion
 
+            
             _controllers = new Controllers();
             _controllers.Add(DataBaseController);
             _controllers.Add(AuthController);
@@ -224,10 +238,13 @@ namespace Diploma.Controllers
             _controllers.Add(SceneLoader);
             _controllers.Add(loading);
             _controllers.Add(AboutInitialization);
+            _controllers.Add(AssemblyCreating);
+            _controllers.Add(Player);
             
-            _controllers.Initialization();
             //этот контроллер идет самым последним
-            uiController.Initialization();
+            _controllers.Add(uiController);
+            _controllers.Initialization();
+            
         }
         
         private void Update()
