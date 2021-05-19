@@ -2,11 +2,8 @@
 {
     public enum FileTypes
     {
-        Image,
         Video,
         Assembly,
-        Text,
-        LessonPreview,
-        
+        Text
     }
 }

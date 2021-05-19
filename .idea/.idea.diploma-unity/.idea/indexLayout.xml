@@ -26,6 +26,7 @@
       <Path>Distr</Path>
       <Path>Documentation</Path>
       <Path>Library</Path>
+      <Path>Temp</Path>
       <Path>UserSettings</Path>
       <Path>obj</Path>
     </explicitExcludes>

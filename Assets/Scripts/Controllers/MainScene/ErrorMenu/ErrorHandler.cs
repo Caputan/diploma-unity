@@ -30,7 +30,7 @@ namespace Controllers
                     _errorTextUI.text = "Заполните все поля";
                     break;
                 case ErrorCodes.WrongFormatError:
-                    _errorTextUI.text = "Формат одного из файлов не соотвествует требуемому";
+                    _errorTextUI.text = "Формат одного из файлов не соответствует  требуемому";
                     break;
                 default:
                     _errorTextUI.text = "Неизвестная ошибка";

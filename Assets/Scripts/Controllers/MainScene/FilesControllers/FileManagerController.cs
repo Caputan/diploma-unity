@@ -84,22 +84,9 @@ namespace Diploma.Controllers
                 switch (fileTypes)
                 {
                     case FileTypes.Assembly:
-                        //var isFormatTrue = splitedString.Split('\\').Last().Split('.');
-                        //if (isFormatTrue.Last() != "3ds")
-                        //{
-                            //_error = ErrorCodes.WrongFormatError;
-                            //splitedString = @"Выберите деталь (*.3ds)";
-                        //}
-                        //else
-                        //{
                         localPath[0] = FileBrowser.Result[0];
                         _error = ErrorCodes.None;
-                        //}
                         parts = LoadingParts.DownloadModel;
-                        // FileBrowserHelpers.CopyFile(FileBrowser.Result[0], localPath[0]);
-                        //
-                        // DataBaseController.SetTable(Tables[0]);
-                        // DataBaseController.AddNewRecordToTable(localPath);
                         break;
                     case FileTypes.Text:
                         isFormatTrue = splitedString.Split('\\').Last().Split('.');
@@ -115,10 +102,6 @@ namespace Diploma.Controllers
                             _error = ErrorCodes.None;
                         }
                         parts = LoadingParts.DownloadPDF;
-                        // FileBrowserHelpers.CopyFile(FileBrowser.Result[0], localPath[0]);
-                        //
-                        // DataBaseController.SetTable(Tables[2]);
-                        // DataBaseController.AddNewRecordToTable(localPath);
                         break;
                     case FileTypes.Video:
                         isFormatTrue = splitedString.Split('\\').Last().Split('.');
@@ -133,20 +116,12 @@ namespace Diploma.Controllers
                             _error = ErrorCodes.None;
                         }
                         parts = LoadingParts.DownloadVideo;
-                        // FileBrowserHelpers.CopyFile(FileBrowser.Result[0], localPath[0]);
-                        //
-                        // DataBaseController.SetTable(Tables[5]);
-                        // DataBaseController.AddNewRecordToTable(localPath);
                         break;
                     default:
-                        throw new Exception("TAK DELAT NELZYA");
+                        throw new Exception("Неопознанный тип файла");
                 }
-                
                 ShowNewText(parts,splitedString,localPath[0]);
-                
             }
         }
-        
-        
     }
 }
