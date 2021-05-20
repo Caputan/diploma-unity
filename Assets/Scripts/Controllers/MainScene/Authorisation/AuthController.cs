@@ -54,16 +54,15 @@ namespace Diploma.Controllers
         {
             _dataBase.SetTable(_table);
 
-            if (Login.text == string.Empty)
+            if (Login.text == string.Empty || Password.text == string.Empty)
             {
-                Debug.Log("Working!");
                 _error = ErrorCodes.EmptyInputError;
             }
             else
             {
                 _loginedUser = (Users) _dataBase.GetRecordFromTableByName(Login.text);
                 
-                if (Login.text != "" && _loginedUser == null)
+                if (_loginedUser == null)
                 {
                     _error = ErrorCodes.AuthError;
                 }
@@ -77,15 +76,17 @@ namespace Diploma.Controllers
                 else
                 {
                     Greetings.text = "Привет, " + Login.text;
-                    
+                    role = Convert.ToInt32(_loginedUser.User_Role);
                     _error = ErrorCodes.None;
                 }
             }
-            role = Convert.ToInt32(_loginedUser.User_Role);
+            
             if (_error == ErrorCodes.None)
             {
                 _data.activatedUserID = _loginedUser.User_Id;
             }
+
+            role = 0;
             return _error;
         }
 
