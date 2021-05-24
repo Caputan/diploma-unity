@@ -32,6 +32,8 @@ namespace Controllers.TheoryScene
         private FileManager _fileManager;
         private void Start()
         {
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
             
             _gameContextWithViewsTheory = new GameContextWithViewsTheory();
             _gameContextWithUITheory = new GameContextWithUITheory();
