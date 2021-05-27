@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 3188890071
+CRC: 2308273852
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 3dbdd4a220b0cad4020f2d2dd8a92e70
+    Hash: 35e48bd3132d19ed15d116ba26ac6f9e
   TypeTreeHash:
     serializedVersion: 2
     Hash: ae2cf77de671e115b4e55d2b65767202
@@ -25,5 +25,5 @@ ClassTypes:
   Script: {instanceID: 0}
 SerializeReferenceClassIdentifiers: []
 Assets:
-- Assets/Gear_box.prefab
+- Assets/Dvigatel_oppozitny.prefab
 Dependencies: []

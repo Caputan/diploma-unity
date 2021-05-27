@@ -55,7 +55,7 @@ namespace Diploma.Controllers.AssembleController
 
             var components = _creatingAssemblyFactory.Create(_whereShouldPutTheInfo.transform).GetComponentsInChildren<TextMeshProUGUI>();
             components[0].text = partID.ToString();
-            components[1].text = partOfAssembly.name;
+            components[1].text = partOfAssembly.transform.parent.name;
 
         }
 
