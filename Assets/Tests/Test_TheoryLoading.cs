@@ -6,11 +6,11 @@ using UnityEngine.TestTools;
 
 namespace Tests
 {
-    public class SceneInitializing
+    public class Test_TheoryLoading
     {
         // A Test behaves as an ordinary method
         [Test]
-        public void SceneInitializingSimplePasses()
+        public void Test_TheoryLoadingSimplePasses()
         {
             // Use the Assert class to test conditions
         }
@@ -18,7 +18,7 @@ namespace Tests
         // A UnityTest behaves like a coroutine in Play Mode. In Edit Mode you can use
         // `yield return null;` to skip a frame.
         [UnityTest]
-        public IEnumerator SceneInitializingWithEnumeratorPasses()
+        public IEnumerator Test_TheoryLoadingWithEnumeratorPasses()
         {
             // Use the Assert class to test conditions.
             // Use yield to skip a frame.

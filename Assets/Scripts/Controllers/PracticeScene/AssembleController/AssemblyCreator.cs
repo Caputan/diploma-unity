@@ -10,7 +10,7 @@ using Object = UnityEngine.Object;
 
 namespace Diploma.Controllers.AssembleController
 {
-    public sealed class AssemblyCreator
+    public sealed class AssemblyCreator: ICleanData
     {
         private string _order;
         private Outline[] _outlines;
@@ -91,6 +91,11 @@ namespace Diploma.Controllers.AssembleController
         public void EndCreating()
         {
             EndCreatingEvent?.Invoke(_order);
+        }
+
+        public void CleanData()
+        {
+            PlayerController.OnPartClicked -= AddToOrder;
         }
     }
 }

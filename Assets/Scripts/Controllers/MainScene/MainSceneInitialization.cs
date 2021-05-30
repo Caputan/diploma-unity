@@ -240,6 +240,7 @@ namespace Diploma.Controllers
             _controllers.Add(AboutInitialization);
             _controllers.Add(AssemblyCreating);
             _controllers.Add(Player);
+            _controllers.Add(AssemblyCreator);
             
             //этот контроллер идет самым последним
             _controllers.Add(uiController);

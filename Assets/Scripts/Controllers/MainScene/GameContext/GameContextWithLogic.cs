@@ -22,6 +22,16 @@ namespace Diploma.Controllers
             FactoryTypeForCreating = new Dictionary<int, int>();
         }
 
+        public void SetAScreenShotCamera(Camera camera)
+        {
+            ScreenShotCamera = camera;
+        }
+        
+        public void SetAMainCamera(Camera camera)
+        {
+            MainCamera = camera;
+        }
+
         public void AddFactoryTypeForCreating(int id, int LibraryTom)
         {
             FactoryTypeForCreating.Add(id,LibraryTom);
