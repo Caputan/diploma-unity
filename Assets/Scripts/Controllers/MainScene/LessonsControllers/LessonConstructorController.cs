@@ -85,7 +85,7 @@ namespace Controllers
             _assemblyCreator.EndCreatingEvent += SavingAssemblyDis;
         }
 
-        private void SavingAssemblyDis(string obj)
+        public void SavingAssemblyDis(string obj)
         {
             _playerChoose = true;
             _order = obj;
@@ -127,6 +127,7 @@ namespace Controllers
         public GameObject OpenAnUIInitialization(out ErrorCodes errorCodes)
         {
             _playerChoose = false;
+            _dataBaseController.SetTable(_tables[1]);
             if (_dataBaseController.GetDataFromTable<Lessons>().Count == 0)
             {
                 id = 0;
@@ -142,7 +143,7 @@ namespace Controllers
             _destination[4] = _fileManager.CreateFileFolder(_destination[2] + "\\" + "Parts");
             if (_localText[0] != @"Выберите UnityBundle ()")
             {
-                _localBufferText[0] =_destination[0]+ "\\" +_localText[0];
+                _localBufferText[0] =_destination[0]+ "\\" +_localText[0].Split('\\').Last();
                 Debug.Log(_localBufferText[0]);
                 File.Copy(_massForCopy[0],_localBufferText[0],true);
                 var GameObjectInitilization = new GameObjectInitialization(id +"\\"+ "Assemblies"+ "\\" +_localText[0], _fileManager);//id +"\\"+ "Assemblies"+ "\\" +_localText[0], _fileManager);
