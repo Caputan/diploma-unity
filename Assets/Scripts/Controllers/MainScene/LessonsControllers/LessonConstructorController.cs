@@ -85,7 +85,7 @@ namespace Controllers
             _assemblyCreator.EndCreatingEvent += SavingAssemblyDis;
         }
 
-        private void SavingAssemblyDis(string obj)
+        public void SavingAssemblyDis(string obj)
         {
             _playerChoose = true;
             _order = obj;
@@ -127,6 +127,7 @@ namespace Controllers
         public GameObject OpenAnUIInitialization(out ErrorCodes errorCodes)
         {
             _playerChoose = false;
+            _dataBaseController.SetTable(_tables[1]);
             if (_dataBaseController.GetDataFromTable<Lessons>().Count == 0)
             {
                 id = 0;
@@ -142,10 +143,10 @@ namespace Controllers
             _destination[4] = _fileManager.CreateFileFolder(_destination[2] + "\\" + "Parts");
             if (_localText[0] != @"Выберите UnityBundle ()")
             {
-                _localBufferText[0] =_destination[0]+ "\\" +_localText[0];
+                _localBufferText[0] =_destination[0]+ "\\" +_localText[0].Split('\\').Last();
                 Debug.Log(_localBufferText[0]);
                 File.Copy(_massForCopy[0],_localBufferText[0],true);
-                var GameObjectInitilization = new GameObjectInitialization(id +"\\"+ "Assemblies"+ "\\" +_localText[0], _fileManager);//id +"\\"+ "Assemblies"+ "\\" +_localText[0], _fileManager);
+                var GameObjectInitilization = new GameObjectInitialization(id +"\\"+ "Assemblies"+ "\\" +_localText[0].Split('\\').Last(), _fileManager);//id +"\\"+ "Assemblies"+ "\\" +_localText[0], _fileManager);
                 _main = GameObjectInitilization.InstantiateGameObject();
                 _assemblyInitialization = new AssemblyInitialization(_main,_assemblyParent);
                 _assemblyInitialization.Initialization();
@@ -180,7 +181,7 @@ namespace Controllers
              // 3 - assembly
              // 4 - type
              // 5 - name
-             _error = ErrorCodes.None;
+            
              lessonPacked[0] = null;
              lessonPacked[1] = null;
              lessonPacked[2] = null;
@@ -195,46 +196,54 @@ namespace Controllers
              
             
             // add new assembly
-            if (_localText[0] != @"Выберите UnityBundle ()")
+            if (_localText[0] != @"Выберите UnityBundle ()"&& _error == ErrorCodes.None)
             {
-                _localBufferText[0] =_destination[0]+ "\\" +_localText[0];
+                _localBufferText[0] =_destination[0]+ "\\" +_localText[0].Split('\\').Last();
                 Debug.Log(_localBufferText[0]);
                 File.Copy(_massForCopy[0],_localBufferText[0],true);
                 _dataBaseController.SetTable(_tables[0]);
                 string[] assemblyPacked = new string[1];
-                assemblyPacked[0] = id +"\\"+ "Assemblies"+ "\\" +_localText[0];
+                assemblyPacked[0] = id +"\\"+ "Assemblies"+ "\\" +_localText[0].Split('\\').Last();
                 _dataBaseController.AddNewRecordToTable(assemblyPacked);
                 lessonPacked[3] = _dataBaseController.GetDataFromTable<Assemblies>().Last().Assembly_Id.ToString();
             }
+            else
+            {
+                _error = ErrorCodes.EmptyInputError;
+            }
 
             // add new text
-            if (_localText[1] != @"Выберите текстовый фаил(*.pdf)")
+            if (_localText[1] != @"Выберите текстовый фаил(*.pdf)"&& _error == ErrorCodes.None)
             {
-                _localBufferText[1] = _destination[3] + "\\" + _localText[1];
+                _localBufferText[1] = _destination[3] + "\\" + _localText[1].Split('\\').Last();
                 Debug.Log(_localBufferText[1]);
                 if (_massForCopy[1] != "")
                     //if (!File.Exists(_localBufferText[1]))
                     File.Copy(_massForCopy[1], _localBufferText[1],true);
                 _dataBaseController.SetTable(_tables[2]);
                 string[] textPacked = new string[1];
-                textPacked[0] = id +"\\"+ "Texts"+ "\\" +_localText[1];
+                textPacked[0] = id +"\\"+ "Texts"+ "\\" +_localText[1].Split('\\').Last();
                 _dataBaseController.AddNewRecordToTable(textPacked);
                 lessonPacked[1] = _dataBaseController.GetDataFromTable<Texts>().Last().Text_Id.ToString();  
                 //PDFReader pdfReader = new PDFReader();
                 //pdfReader.ProcessRequest(textPacked[0],_destination[2]);
             }
+            else
+            {
+                _error = ErrorCodes.EmptyInputError;
+            }
 
             // add new video
-            if (_localText[2] != @"Выберите видео-фаил (*.mp4)")
+            if (_localText[2] != @"Выберите видео-фаил (*.mp4)"&& _error == ErrorCodes.None)
             {
                 Debug.Log(_localBufferText[2]);
-                _localBufferText[2] = _destination[1]+ "\\" +  _localText[2];
+                _localBufferText[2] = _destination[1]+ "\\" +  _localText[2].Split('\\').Last();
                 if(_massForCopy[2]!="")
                     //if (!File.Exists(_localBufferText[2]))
                     File.Copy(_massForCopy[2],_localBufferText[2],true);
                 _dataBaseController.SetTable(_tables[5]);
                 string[] videoPacked = new string[1];
-                videoPacked[0] = id +"\\"+ "Videos"+ "\\" +_localText[2];
+                videoPacked[0] = id +"\\"+ "Videos"+ "\\" +_localText[2].Split('\\').Last();
                 _dataBaseController.AddNewRecordToTable(videoPacked);
                 lessonPacked[2] = _dataBaseController.GetDataFromTable<Videos>().Last().Video_Id.ToString();
             }
@@ -248,6 +257,7 @@ namespace Controllers
             }
             else
             {
+                Debug.Log("EmptyName");
                 _error = ErrorCodes.EmptyInputError;
             }
 
@@ -268,6 +278,7 @@ namespace Controllers
 
             if (typePacked[0] == null)
             {
+                Debug.Log("EmptyLibrary");
                 _error = ErrorCodes.EmptyInputError;
             }
             _dataBaseController.AddNewRecordToTable(typePacked);
@@ -284,16 +295,25 @@ namespace Controllers
             
             //Screens of parts
 
-            var parts = _assemblyInitialization.GetAGameObject().GetComponentsInChildren<MeshRenderer>();
-            foreach (var meshRenderer in parts)
+            var parts = _assemblyInitialization?.GetAGameObject().GetComponentsInChildren<MeshRenderer>();
+            if (parts != null)
             {
-                meshRenderer.enabled = false;
+                foreach (var meshRenderer in parts)
+                {
+                    meshRenderer.enabled = false;
+                }
             }
-            
-            
+            else
+            {
+                _error = ErrorCodes.EmptyInputError;
+            }
+
+            if (_error != ErrorCodes.None)
+            {
+                return false;
+            }
             TakingScreensOfParts(parts,lessonPacked,id);
-            _error = ErrorCodes.None;
-            
+
             return true;
             
         }
@@ -327,14 +347,47 @@ namespace Controllers
                 lessonPacked[0] = assemblyId +"\\"+ "Photos"+  "\\" + lessonPacked[5]+".png";
                 yield return new WaitUntil(() => _playerChoose == true);
                 lessonPacked[6] = _order;
-                _dataBaseController.SetTable(_tables[1]);
-                _dataBaseController.AddNewRecordToTable(lessonPacked);
+                if (lessonPacked[0] == null|| lessonPacked[0] == "")
+                {
+                    _error = ErrorCodes.EmptyInputError;
+                }
+                if (lessonPacked[1] == null|| lessonPacked[1] == "")
+                {
+                    _error = ErrorCodes.EmptyInputError;
+                }
+                if (lessonPacked[3] == null|| lessonPacked[3] == "")
+                {
+                    _error = ErrorCodes.EmptyInputError;
+                }
+                if (lessonPacked[4] == null|| lessonPacked[4] == "")
+                {
+                    _error = ErrorCodes.EmptyInputError;
+                }
+                if (lessonPacked[6] == null|| lessonPacked[6] == "")
+                {
+                    _error = ErrorCodes.EmptyInputError;
+                }
+                if (_error == ErrorCodes.None)
+                {
+                    _dataBaseController.SetTable(_tables[1]);
+                    _dataBaseController.AddNewRecordToTable(lessonPacked);
+                }
+                else
+                {
+                    DeleteNotUsingLesson(lessonPacked);
+                    Debug.Log("Deleting BullShit");
+                    for (int g = 0; g < 6; g++)
+                    {
+                        lessonPacked[g] = null;
+                    }
+                }
                 yield break;
             }
             
             meshRenderer[i].enabled = true;
             yield return new WaitForFixedUpdate();
             SetCameraNearObject(meshRenderer[i].gameObject,_gameContextWithLogic.ScreenShotCamera);
+            Debug.Log(_destination[4]+"\\PartNumber"+i+".png");
             TakingScreenShotOfPart(_destination[4]+"\\PartNumber"+i+".png");
             yield return new WaitForSeconds(0.1f);
             meshRenderer[i].enabled = false;
