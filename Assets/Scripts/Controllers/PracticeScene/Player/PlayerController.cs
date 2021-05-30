@@ -35,7 +35,7 @@ public class PlayerController
     public PlayerController(GameObject playerGameObject, ImportantDontDestroyData importantDontDestroyData)
     {
         _speed = 6f;
-        _mouseSensitivity = 2f;
+        _mouseSensitivity = importantDontDestroyData.mouseSensitivity;
         
         _playerGameObject = playerGameObject;
 
