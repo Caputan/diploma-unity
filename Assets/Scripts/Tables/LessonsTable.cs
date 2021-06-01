@@ -45,6 +45,11 @@ namespace Diploma.Tables
             connection.Insert(newLesson);
         }
 
+        public void UpdateRecordById(SQLiteConnection connection, int id, string[] paramsToChange)
+        {
+            
+        }
+
         public void DeleteLastRecord(SQLiteConnection connection, int id)
         {
             connection.Delete<Lessons>(id);

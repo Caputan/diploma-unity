@@ -19,8 +19,7 @@ namespace Diploma.Controllers.AssembleController
         public event Action<string> EndCreatingEvent;
         private readonly ResourcePath _viewPath = new ResourcePath {PathResource = "Prefabs/MainScene/OrderUnit"};
         
-        public AssemblyCreator(
-        )
+        public AssemblyCreator()
         {
             PlayerController.OnPartClicked += AddToOrder;
             _creatingAssemblyFactory = new CreatingAssemblyFactory(ResourceLoader.LoadPrefab(_viewPath));

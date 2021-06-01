@@ -17,7 +17,7 @@ namespace Diploma.PracticeScene.GameContext
         public void AddPauseButtons(PauseButtons id, Button button)
         {
             if(!PauseButtons.ContainsKey(id))
-                PauseButtons.Add(id,button);
+                PauseButtons.Add(id, button);
         }
     }
 }

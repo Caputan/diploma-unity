@@ -8,7 +8,7 @@ namespace Controllers.PracticeScene.PauseController
         private readonly ImportantDontDestroyData _data;
         private readonly LoadingSceneController _loadingSceneController;
 
-        public PauseController(ImportantDontDestroyData data,LoadingSceneController loadingSceneController)
+        public PauseController(ImportantDontDestroyData data, LoadingSceneController loadingSceneController)
         {
             _data = data;
             _loadingSceneController = loadingSceneController;

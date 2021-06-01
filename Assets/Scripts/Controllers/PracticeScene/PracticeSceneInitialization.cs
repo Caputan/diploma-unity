@@ -74,7 +74,8 @@ namespace Diploma.PracticeScene.Controllers
             var playerInitialization = new PlayerInitialization(playerPrefab, spawnPoint, _data);
             //var inventoryInitialization = new InventoryInitialization(_gameContextWithViews, _gameContextWithUI,
                // mainParent, inventoryPrefab, partOfAssembly, inventorySlotPrefab);
-            var assemblyInitialization = new AssemblyInitialization(assemblyGameObject, lesson.Lesson_Assembly_Order, assemblyParent);
+            var assemblyInitialization = new AssemblyInitialization(assemblyGameObject, lesson.Lesson_Assembly_Order, assemblyParent,
+                DataBaseController, tables, _data, new LoadingSceneController());
 
             var pauseInitialization = new PauseInitialization(_gameContextView,_gameContextWithUI,mainParent);
             var pauseController = new PauseController(_data,new LoadingSceneController());

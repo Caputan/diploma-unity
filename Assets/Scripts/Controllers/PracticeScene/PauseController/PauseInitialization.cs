@@ -39,13 +39,13 @@ namespace Controllers.PracticeScene.PauseController
             _pauseButtons = new List<Button>();
             _pauseButtons.AddRange(pause.GetComponentsInChildren<Button>());
 
-            new PauseButtonsAdd(_pauseButtons,_gameContextWithView);
+            new PauseButtonsAdd(_pauseButtons, _gameContextWithView);
             
             var pauseLogic = new PauseLogic(_gameContextWithView.PauseButtons);
             pauseLogic.Initialization();
 
             _gameContextWithUI.AddUIToDictionary(PauseButtons.PauseMenu, pause);
-            _gameContextWithUI.AddUILogic(PauseButtons.PauseMenu,pauseLogic);
+            _gameContextWithUI.AddUILogic(PauseButtons.PauseMenu, pauseLogic);
         }
     }
 }

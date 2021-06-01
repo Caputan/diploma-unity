@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Data.Linq;
 using System.Data.Linq.Mapping;
 using System.Linq;
@@ -29,9 +30,25 @@ namespace Diploma.Tables
             return connection.Table<Users>().FirstOrDefault(x => x.User_Name == name);
         }
 
+        public void UpdateRecordById(SQLiteConnection connection, int id, string[] paramsToChange)
+        {
+            Users user = (Users) GetRecordById(connection, id);
+
+            user.User_Progress += paramsToChange[5];
+            connection.Update(user);
+        }
+
         public void DeleteLastRecord(SQLiteConnection connection, int id)
         {
-            connection.Delete<Users>(id);
+            
+        }
+
+        public void UpdateUser(SQLiteConnection connection, int id, string user_progress)
+        {
+            Users user = (Users) GetRecordById(connection, id);
+
+            user.User_Progress += user_progress;
+            connection.Update(user);
         }
         
         public void AddNewRecord(SQLiteConnection connection, string[] userParams)
@@ -42,7 +59,8 @@ namespace Diploma.Tables
                 User_Email = userParams[1],
                 User_Password = userParams[2],
                 User_Salt = userParams[3],
-                User_Role = userParams[4]
+                User_Role = userParams[4],
+                User_Progress = String.Empty
             };
             connection.Insert(newUser);
         }
@@ -58,5 +76,6 @@ namespace Diploma.Tables
         public string User_Password { get; set; }
         public string User_Salt { get; set; }
         public string User_Role { get; set; }
+        public string User_Progress { get; set; }
     }
 }

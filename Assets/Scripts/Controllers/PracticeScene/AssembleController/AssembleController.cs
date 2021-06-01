@@ -1,6 +1,11 @@
 ﻿using System;
 using System.Collections;
+using System.Collections.Generic;
+using Controllers;
 using Coroutine;
+using Data;
+using Diploma.Interfaces;
+using Diploma.Tables;
 using UnityEngine;
 
 namespace Diploma.Controllers.AssembleController
@@ -14,10 +19,26 @@ namespace Diploma.Controllers.AssembleController
 
         private bool _isDisassembling;
 
-        public AssembleController(string order)
+        private DataBaseController _dataBaseController;
+        private List<IDataBase> _tables;
+        private ImportantDontDestroyData _data;
+
+        private LoadingSceneController _loadingSceneController;
+        
+        public AssembleController(
+            string order, 
+            DataBaseController dataBaseController, 
+            List<IDataBase> tables, 
+            ImportantDontDestroyData data,
+            LoadingSceneController loadingSceneController
+            )
         {
             _index = 0;
             _order = order;
+            _dataBaseController = dataBaseController;
+            _tables = tables;
+            _data = data;
+            _loadingSceneController = loadingSceneController;
 
             _partsOfAssembly = new GameObject[_order.Length];
 
@@ -59,12 +80,32 @@ namespace Diploma.Controllers.AssembleController
                     _partsOfAssembly[_index].GetComponent<MeshCollider>().enabled = true;
             }
             
-            if (_index == _order.Length)
+            if (_index == disassembleOrder.Length - 1)
             {
-                _isDisassembling = false;
-                _index--;
-                _partsOfAssembly[_index].GetComponent<MeshCollider>().enabled = true;
+                // _isDisassembling = false;
+                // _index--;
+                // _partsOfAssembly[_index].GetComponent<MeshCollider>().enabled = true;
+                CompleteLesson();
             }
+        }
+
+        private void CompleteLesson()
+        {
+            // show dialog window 
+            _dataBaseController.SetTable(_tables[4]);
+
+            var newParams = new[]
+            {
+                "",
+                "",
+                "",
+                "",
+                "",
+                _data.lessonID.ToString()
+            };
+            _dataBaseController.UpdateRecordById(_data.activatedUserID, newParams);
+            
+            _loadingSceneController.LoadNextScene(0);
         }
     }
 }
