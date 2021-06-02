@@ -41,6 +41,9 @@ namespace Controllers
                 case ErrorCodes.ValidationEmailError:
                     _errorTextUI.text = "Неправильно введенная электронная почта";
                     break;
+                case ErrorCodes.FileDoesNotExist:
+                    _errorTextUI.text = "Файл не найден по заданному пути или путь пустой";
+                    break;
                 default:
                     _errorTextUI.text = "Неизвестная ошибка";
                     break;

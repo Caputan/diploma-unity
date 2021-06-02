@@ -1,4 +1,5 @@
 ﻿
+using System.Collections;
 using System.Collections.Generic;
 using Controllers;
 using Controllers.PracticeScene.PauseController;
@@ -10,6 +11,7 @@ using Diploma.Interfaces;
 using Diploma.Managers;
 using Diploma.PracticeScene.GameContext;
 using Diploma.Tables;
+using UI.LoadingUI;
 using UnityEngine;
 using GameContextWithLogic = Diploma.PracticeScene.GameContext.GameContextWithLogic;
 using GameContextWithUI = Diploma.PracticeScene.GameContext.GameContextWithUI;
@@ -38,7 +40,7 @@ namespace Diploma.PracticeScene.Controllers
         
         private Diploma.Controllers.Controllers _controllers;
 
-        public void Start()
+        public IEnumerator Start()
         {
             var DataBaseController = new DataBaseController();
             AssemliesTable assemblies = new AssemliesTable();
@@ -64,17 +66,22 @@ namespace Diploma.PracticeScene.Controllers
             Lessons lesson = (Lessons)DataBaseController.GetRecordFromTableById(_data.lessonID);
             DataBaseController.SetTable(tables[0]);
             Assemblies assembly = (Assemblies)DataBaseController.GetRecordFromTableById(lesson.Lesson_Assembly_Id);
-
+            LoadingUILogic loadingUILogic = new LoadingUILogic(mainParent.transform);
             var fileManager = new FileManager();
-            
+            yield return new WaitForFixedUpdate();
+            loadingUILogic.SetActiveLoading(true);
+            loadingUILogic.LoadingParams("Ожидайте,пожалуйста","Загрузка");
+            yield return new WaitForFixedUpdate();
             var GameObjectInitialization = new GameObjectInitialization(assembly.Assembly_Link, fileManager);
-            var assemblyGameObject = GameObjectInitialization.InstantiateGameObject();
+            GameObjectInitialization.InstantiateGameObject();
+            yield return new WaitUntil(()=> GameObjectInitialization.GameObject != null);
+            var assemblyGameObject = GameObjectInitialization.GameObject;
             var playerInitialization = new PlayerInitialization(playerPrefab, spawnPoint, _data);
-            //var inventoryInitialization = new InventoryInitialization(_gameContextWithViews, _gameContextWithUI,
-               // mainParent, inventoryPrefab, partOfAssembly, inventorySlotPrefab);
-            var assemblyInitialization = new AssemblyInitialization(assemblyGameObject, lesson.Lesson_Assembly_Order, assemblyParent,
+            var assemblyInitialization = 
+                new AssemblyInitialization(assemblyGameObject, lesson.Lesson_Assembly_Order, assemblyParent,
                 DataBaseController, tables, _data, new LoadingSceneController());
-
+            yield return new WaitForFixedUpdate();
+            loadingUILogic.SetActiveLoading(false);
             var pauseInitialization = new PauseInitialization(_gameContextView,_gameContextWithUI,mainParent);
             var pauseController = new PauseController(_data,new LoadingSceneController());
             var ExitController = new ExitController(_data);
@@ -87,6 +94,7 @@ namespace Diploma.PracticeScene.Controllers
             _controllers.Add(assemblyInitialization);
             _controllers.Add(uiController);
             _controllers.Initialization();
+            yield break;
         }
 
         private void Update()

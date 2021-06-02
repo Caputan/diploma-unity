@@ -1,4 +1,7 @@
-﻿using Diploma.Extensions;
+﻿using System;
+using System.Collections;
+using Coroutine;
+using Diploma.Extensions;
 using UnityEngine;
 
 
@@ -7,32 +10,35 @@ namespace AssetBundle
     public sealed class LoadAssetBundleFromFile
     {
         private UnityEngine.AssetBundle _asset;
-        private UnityEngine.AssetBundle LoadAssetBundleFromFileOnDrive(string path)
+        public event Action<GameObject> LoadingIsDone;
+        public void LoadAssetBundleFromFileOnDrive(string path)//,
+           // out string WaitIsLoading,out float progress,out GameObject gameObject)
         {
-           return UnityEngine.AssetBundle.LoadFromFileAsync(path).assetBundle;
+            LoadingWaiting(path).StartCoroutine(out _, out _);
         }
 
-        public GameObject GetBaseObjects(string path)
+        private IEnumerator LoadingWaiting(string path)
         {
-            _asset = LoadAssetBundleFromFileOnDrive(path);
+            yield return new WaitForFixedUpdate();
+            AssetBundleCreateRequest assetBundle = UnityEngine.AssetBundle.LoadFromFileAsync(path);
+            yield return new WaitUntil(() => assetBundle.isDone);
+            LoadingIsDone.Invoke(GetBaseObjects(assetBundle.assetBundle));
+            yield return new WaitForEndOfFrame();
+            yield break;
+        }
+        
+        private GameObject GetBaseObjects(UnityEngine.AssetBundle assetBundle)
+        {
+            _asset = assetBundle;
+            _asset.GetAllAssetNames();
             var allAssets = _asset.LoadAllAssetsAsync<GameObject>().allAssets;
-            //int i = 0;
             GameObject gameObject = null;
             foreach (var baseAsset in allAssets)
             {
-                gameObject = baseAsset as GameObject; 
-                //gameObject = GameObject.Instantiate(prefab,prefab.transform.position,prefab.transform.rotation);
-                //gameObject.AddMeshCollider();
-                //if (i==0)
-                //{
-                 //   gameObject.transform.position = Vector3.zero;
-                //}
-                // i++;
+                gameObject = baseAsset as GameObject;
             }
-            
             _asset.Unload(false);
             return gameObject;
         }
-        
     }
 }

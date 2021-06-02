@@ -1,4 +1,7 @@
-﻿using Diploma.Extensions;
+﻿using System.Collections.Generic;
+using Controllers;
+using Data;
+using Diploma.Extensions;
 using Diploma.Interfaces;
 using UnityEngine;
 
@@ -13,12 +16,16 @@ namespace Diploma.Controllers.AssembleController
         private readonly Transform _assemblyParent;
         private GameObject gm;
         
-        public AssemblyInitialization(GameObject assemblyGameObject, string order, Transform assemblyParent)
+        public AssemblyInitialization(GameObject assemblyGameObject, string order, Transform assemblyParent,
+            DataBaseController dataBaseController,List<IDataBase> tables,ImportantDontDestroyData _data,
+            LoadingSceneController loadingSceneController
+            )
         {
             _assemblyGameObject = assemblyGameObject;
             _assemblyParent = assemblyParent;
             
-            _assembleController = new AssembleController(order);
+            _assembleController = new AssembleController(order,dataBaseController,tables,
+                _data,loadingSceneController);
         }
 
         public AssemblyInitialization(GameObject assemblyGameObject,Transform assemblyParent)

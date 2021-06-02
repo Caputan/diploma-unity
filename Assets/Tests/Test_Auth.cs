@@ -196,7 +196,7 @@ namespace Tests
                 new GameContextWithViews(),new GameContextWithUI(),new GameObject(),authController);
             authInitialization.Initialization();
 
-            authController.Login.text = "Teacher";
+            authController.Login.text = "Преподаватель";
             authController.Password.text = "123";
             authController.Greetings = new TextMeshProUGUI();
             int role;
@@ -227,7 +227,7 @@ namespace Tests
                 new GameContextWithViews(),new GameContextWithUI(),new GameObject(),authController);
             authInitialization.Initialization();
 
-            authController.Login.text = "Teacher";
+            authController.Login.text = "Преподаватель";
             authController.Password.text = "456";
             int role;
             var error = authController.CheckAuthData(out role);

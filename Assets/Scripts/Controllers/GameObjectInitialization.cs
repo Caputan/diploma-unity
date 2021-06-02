@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System.Collections;
+using System.IO;
 using AssetBundle;
 using Diploma.Interfaces;
 using Diploma.Managers;
@@ -12,17 +13,27 @@ namespace Diploma.Controllers
     {
         private readonly string _assemblies;
         private readonly FileManager _fileManager;
-
+        private LoadAssetBundleFromFile _loadAssetBundleFromFile;
+        public GameObject GameObject;
         public GameObjectInitialization(string assemblies, FileManager fileManager)
         {
             _assemblies = assemblies;
             _fileManager = fileManager;
+            _loadAssetBundleFromFile = new LoadAssetBundleFromFile();
+            GameObject = null;
+            _loadAssetBundleFromFile.LoadingIsDone += SaveSomeGameObject;
         }
 
-        public GameObject InstantiateGameObject()
+        private void SaveSomeGameObject(GameObject obj)
         {
-            LoadAssetBundleFromFile loadAssetBundleFromFile = new LoadAssetBundleFromFile();
-            return loadAssetBundleFromFile.GetBaseObjects(_fileManager.GetStorage() + "\\" +_assemblies);
+            GameObject = obj;
+        }
+
+        public void InstantiateGameObject()
+        {
+            GameObject = null;
+            _loadAssetBundleFromFile.
+                LoadAssetBundleFromFileOnDrive(_fileManager.GetStorage() + "\\" +_assemblies);
         }
     }
 }

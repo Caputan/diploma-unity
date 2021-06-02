@@ -38,6 +38,14 @@ namespace UI.LoadingUI
             _textMeshProUGUI.text = "Загружено " + parameterFoText +"%";
             _slider.value = parameterForSlider;
         }
+        
+        public void LoadingParams(string parameterFoText, string whatIsLoading)
+        {
+            
+            _textMeshProUGUIWhatIsLoading.text = whatIsLoading;
+            _textMeshProUGUI.text = parameterFoText;
+            _slider.value = 0;
+        }
 
         public void Initialization()
         {
