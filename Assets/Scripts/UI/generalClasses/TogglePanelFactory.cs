@@ -13,12 +13,10 @@ namespace Diploma.UI
         public TogglePanelFactory(GameObject togglePanel)
         {
             _togglePanel = togglePanel;
-            //_toggleGroup = toggleGroup;
         }
         public GameObject Create(Transform parent)
         {
            var gm = GameObject.Instantiate(_togglePanel, parent);
-           //gm.GetComponentInChildren<Toggle>().group = _toggleGroup;
            return gm;
         }
     }

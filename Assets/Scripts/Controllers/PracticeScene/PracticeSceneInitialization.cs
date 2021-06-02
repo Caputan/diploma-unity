@@ -67,13 +67,9 @@ namespace Diploma.PracticeScene.Controllers
 
             var fileManager = new FileManager();
             
-            //var GameObjectFactory = new GameObjectFactory();
-            //var Pool = new PoolOfObjects(GameObjectFactory, _gameContextWithLogic);
             var GameObjectInitialization = new GameObjectInitialization(assembly.Assembly_Link, fileManager);
             var assemblyGameObject = GameObjectInitialization.InstantiateGameObject();
             var playerInitialization = new PlayerInitialization(playerPrefab, spawnPoint, _data);
-            //var inventoryInitialization = new InventoryInitialization(_gameContextWithViews, _gameContextWithUI,
-               // mainParent, inventoryPrefab, partOfAssembly, inventorySlotPrefab);
             var assemblyInitialization = new AssemblyInitialization(assemblyGameObject, lesson.Lesson_Assembly_Order, assemblyParent);
 
             var pauseInitialization = new PauseInitialization(_gameContextView,_gameContextWithUI,mainParent);
@@ -96,15 +92,5 @@ namespace Diploma.PracticeScene.Controllers
             _controllers.Execute(deltaTime);
         }
         
-        // private void LateUpdate()
-        // {
-        //     var deltaTime = Time.deltaTime;
-        //     _controllers.LateExecute(deltaTime);
-        // }
-        //
-        // private void OnDestroy()
-        // {
-        //     _controllers.CleanData();
-        // }
     }
 }

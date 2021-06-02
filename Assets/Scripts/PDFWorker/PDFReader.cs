@@ -46,10 +46,10 @@ namespace PDFWorker
             int hand
             )
         {
-            RaedFileCorutine(id, strings, сoroutineController,hand); //.StartCoroutine(out _);
+            RaedFileCorutine(id, strings, сoroutineController,hand);
         }
         
-       // public IEnumerator RaedFileCorutine(int id, string inputPdfFile)
+       
        private void RaedFileCorutine(
            int id,
            string inputPdfFile,
@@ -58,7 +58,7 @@ namespace PDFWorker
            )
        {
             
-           // yield return new WaitForEndOfFrame();
+      
             
             _inputPdfFile = inputPdfFile;
             
@@ -84,8 +84,7 @@ namespace PDFWorker
            PdfReader pdfReader = new PdfReader(FilePath); 
            return pdfReader.NumberOfPages; 
        }
-        //public IEnumerator ConvertPageToImage(float pageNumber, string pathToSave)
-        private IEnumerator ConvertPageToImage(
+       private IEnumerator ConvertPageToImage(
             float pageNumber,
             string pathToSave,
             float numberOfPages,
