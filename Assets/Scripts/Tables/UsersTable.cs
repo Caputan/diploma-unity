@@ -40,15 +40,7 @@ namespace Diploma.Tables
 
         public void DeleteLastRecord(SQLiteConnection connection, int id)
         {
-            
-        }
-
-        public void UpdateUser(SQLiteConnection connection, int id, string user_progress)
-        {
-            Users user = (Users) GetRecordById(connection, id);
-
-            user.User_Progress += user_progress;
-            connection.Update(user);
+            connection.Delete<Users>(id);
         }
         
         public void AddNewRecord(SQLiteConnection connection, string[] userParams)

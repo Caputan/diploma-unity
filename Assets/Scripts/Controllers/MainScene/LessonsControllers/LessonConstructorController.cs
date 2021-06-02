@@ -88,6 +88,7 @@ namespace Controllers
         public void SavingAssemblyDis(string obj)
         {
             _playerChoose = true;
+            obj.Remove(obj.Length - 1);
             _order = obj;
         }
 

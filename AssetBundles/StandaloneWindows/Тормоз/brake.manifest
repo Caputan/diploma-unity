@@ -1,12 +1,12 @@
 ManifestFileVersion: 0
-CRC: 2259255664
+CRC: 3070040912
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 41df11b0fb22a16b42cacc083d60196c
+    Hash: 6d6978fd0f9c772fcc58d4adf2c15660
   TypeTreeHash:
     serializedVersion: 2
-    Hash: ae2cf77de671e115b4e55d2b65767202
+    Hash: ce2990554d8fefba8eeeb5268dad7fb3
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -23,7 +23,13 @@ ClassTypes:
   Script: {instanceID: 0}
 - Class: 48
   Script: {instanceID: 0}
+- Class: 74
+  Script: {instanceID: 0}
+- Class: 91
+  Script: {instanceID: 0}
+- Class: 95
+  Script: {instanceID: 0}
 SerializeReferenceClassIdentifiers: []
 Assets:
-- Assets/Brake.fbx
+- Assets/Brake.prefab
 Dependencies: []

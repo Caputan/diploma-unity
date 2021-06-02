@@ -1,4 +1,7 @@
-﻿using Diploma.Extensions;
+﻿using System.Collections.Generic;
+using Controllers;
+using Data;
+using Diploma.Extensions;
 using Diploma.Interfaces;
 using UnityEngine;
 
@@ -13,15 +16,23 @@ namespace Diploma.Controllers.AssembleController
         private readonly Transform _assemblyParent;
         private GameObject gm;
         
-        public AssemblyInitialization(GameObject assemblyGameObject, string order, Transform assemblyParent)
+        public AssemblyInitialization(
+            GameObject assemblyGameObject, 
+            string order, 
+            Transform assemblyParent,
+            DataBaseController dataBaseController,
+            List<IDataBase> tables,
+            ImportantDontDestroyData data,
+            LoadingSceneController loadingSceneController
+            )
         {
             _assemblyGameObject = assemblyGameObject;
             _assemblyParent = assemblyParent;
             
-            _assembleController = new AssembleController(order);
+            _assembleController = new AssembleController(order, dataBaseController, tables, data, loadingSceneController);
         }
 
-        public AssemblyInitialization(GameObject assemblyGameObject,Transform assemblyParent)
+        public AssemblyInitialization(GameObject assemblyGameObject, Transform assemblyParent)
         {
             _assemblyGameObject = assemblyGameObject;
             _assemblyParent = assemblyParent;
@@ -31,6 +42,10 @@ namespace Diploma.Controllers.AssembleController
         {
             gm = GameObject.Instantiate(_assemblyGameObject, _assemblyParent);
             gm.transform.localScale = new Vector3(5f, 5f, 5f);
+            // gm.transform.position = Vector3.zero;
+
+            // var animator = gm.GetComponent<Animator>();
+            // animator.enabled = false;
             
             var meshes = gm.GetComponentsInChildren<MeshRenderer>();
             int partId = 0;

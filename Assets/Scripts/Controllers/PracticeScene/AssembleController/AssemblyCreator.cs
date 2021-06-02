@@ -30,6 +30,8 @@ namespace Diploma.Controllers.AssembleController
         {
             _outlines = assemblyGameObject.GetComponentsInChildren<Outline>();
             _whereShouldPutTheInfo = whereShouldPutTheInfo;
+            var animator = assemblyGameObject.GetComponent<Animator>();
+            animator.enabled = false;
             _order = null;
         }
         
