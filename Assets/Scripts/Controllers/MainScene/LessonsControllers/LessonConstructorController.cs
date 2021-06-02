@@ -23,7 +23,7 @@ using Types = Diploma.Tables.Types;
 
 namespace Controllers
 {
-    public class LessonConstructorController: IInitialization,INeedScreenShoot
+    public class LessonConstructorController: IInitialization,INeedScreenShoot,ICleanData
     {
         private readonly DataBaseController _dataBaseController;
         private readonly List<IDataBase> _tables;
@@ -48,7 +48,7 @@ namespace Controllers
         public bool _playerChoose;
         private AssemblyInitialization _assemblyInitialization;
         private string _order;
-        //Plane[] planes;
+        public event Action<GameObject> GiveMeGameObject;
         
         private readonly ResourcePath _viewPath = new ResourcePath {PathResource = "Prefabs/MainScene/LessonPrefab"};
         
@@ -85,6 +85,12 @@ namespace Controllers
             _assemblyCreator.EndCreatingEvent += SavingAssemblyDis;
         }
 
+        public void CleanData()
+        {
+            _fileManagerController.newText -= SetTextInTextBox;
+            _assemblyCreator.EndCreatingEvent -= SavingAssemblyDis;
+        }
+        
         public void SavingAssemblyDis(string obj)
         {
             _playerChoose = true;
@@ -125,7 +131,12 @@ namespace Controllers
             return _error;
         }
 
-        public GameObject OpenAnUIInitialization(out ErrorCodes errorCodes)
+        public void OpenAnUIInitialization()
+        {
+            OpenAnUIInitializationCoroutine().StartCoroutine(out _, out _);
+        }
+        
+        public IEnumerator OpenAnUIInitializationCoroutine()
         {
             _playerChoose = false;
             _dataBaseController.SetTable(_tables[1]);
@@ -142,24 +153,26 @@ namespace Controllers
             _destination[2] = _fileManager.CreateFileFolder(id +"\\"+ "Photos");
             _destination[3] = _fileManager.CreateFileFolder(id +"\\"+ "Texts");
             _destination[4] = _fileManager.CreateFileFolder(_destination[2] + "\\" + "Parts");
-            if (_localText[0] != @"Выберите UnityBundle ()")
+            if (_localText[0] != @"Выберите UnityBundle ()" && File.Exists(_massForCopy[0]))
             {
                 _localBufferText[0] =_destination[0]+ "\\" +_localText[0].Split('\\').Last();
                 Debug.Log(_localBufferText[0]);
+                
                 File.Copy(_massForCopy[0],_localBufferText[0],true);
                 var GameObjectInitilization = new GameObjectInitialization(id +"\\"+ "Assemblies"+ "\\" +_localText[0].Split('\\').Last(), _fileManager);//id +"\\"+ "Assemblies"+ "\\" +_localText[0], _fileManager);
-                _main = GameObjectInitilization.InstantiateGameObject();
+                GameObjectInitilization.InstantiateGameObject();
+                yield return new WaitUntil(() => GameObjectInitilization.GameObject != null);
+                _main = GameObjectInitilization.GameObject;
                 _assemblyInitialization = new AssemblyInitialization(_main,_assemblyParent);
                 _assemblyInitialization.Initialization();
-                errorCodes = ErrorCodes.None;
-                return _assemblyInitialization.GetAGameObject();
+                _error = ErrorCodes.None;
+                GiveMeGameObject.Invoke(_assemblyInitialization.GetAGameObject());
             }
             else
             {
-                errorCodes = ErrorCodes.EmptyInputError;
-                return new GameObject();
+                _error = ErrorCodes.FileDoesNotExist;
+                GiveMeGameObject.Invoke(new GameObject());
             }
-            
         }
 
         public void DestroyAssembly()
@@ -197,7 +210,7 @@ namespace Controllers
              
             
             // add new assembly
-            if (_localText[0] != @"Выберите UnityBundle ()"&& _error == ErrorCodes.None)
+            if (_localText[0] != @"Выберите UnityBundle ()"&& _error == ErrorCodes.None && File.Exists(_massForCopy[0]))
             {
                 _localBufferText[0] =_destination[0]+ "\\" +_localText[0].Split('\\').Last();
                 Debug.Log(_localBufferText[0]);
@@ -210,11 +223,12 @@ namespace Controllers
             }
             else
             {
-                _error = ErrorCodes.EmptyInputError;
+                _error = ErrorCodes.FileDoesNotExist;
             }
 
             // add new text
-            if (_localText[1] != @"Выберите текстовый фаил(*.pdf)"&& _error == ErrorCodes.None)
+            if (_localText[1] != @"Выберите текстовый фаил(*.pdf)"&& _error == ErrorCodes.None
+                                                                  && File.Exists(_massForCopy[1]))
             {
                 _localBufferText[1] = _destination[3] + "\\" + _localText[1].Split('\\').Last();
                 Debug.Log(_localBufferText[1]);
@@ -231,16 +245,16 @@ namespace Controllers
             }
             else
             {
-                _error = ErrorCodes.EmptyInputError;
+                _error = ErrorCodes.FileDoesNotExist;
             }
 
             // add new video
-            if (_localText[2] != @"Выберите видео-фаил (*.mp4)"&& _error == ErrorCodes.None)
+            if (_localText[2] != @"Выберите видео-фаил (*.mp4)"&& _error == ErrorCodes.None
+                                                               && File.Exists(_massForCopy[2]))
             {
                 Debug.Log(_localBufferText[2]);
                 _localBufferText[2] = _destination[1]+ "\\" +  _localText[2].Split('\\').Last();
                 if(_massForCopy[2]!="")
-                    //if (!File.Exists(_localBufferText[2]))
                     File.Copy(_massForCopy[2],_localBufferText[2],true);
                 _dataBaseController.SetTable(_tables[5]);
                 string[] videoPacked = new string[1];

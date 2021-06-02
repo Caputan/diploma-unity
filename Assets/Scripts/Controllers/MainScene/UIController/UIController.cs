@@ -38,7 +38,9 @@ namespace Diploma.Controllers
         private ErrorCodes _error;
         private Button[] _buttonMass;
         private Vector3[] _transforms = new Vector3[4];
+        private GameObject _gameObject;
 
+        private GameObject _backGroundForCreatingOrder;
         public UIController(GameContextWithUI gameContextWithUI,
             GameContextWithLogic gameContextWithLogic,
             GameContextWithViews gameContextWithViews,
@@ -70,10 +72,16 @@ namespace Diploma.Controllers
             _importantDontDestroyData = importantDontDestroyData;
             _assemblyCreatingController = assemblyCreatingController;
             _playerInitialization = playerInitialization;
-
+            _gameObject = null;
+            
 
             _backGround = GameObject.Find("BackGround");
             
+        }
+
+        private void GivingGameObj(GameObject obj)
+        {
+            _gameObject = obj;
         }
 
         public void Initialization()
@@ -101,11 +109,13 @@ namespace Diploma.Controllers
                     var i = (ICreatingAssemblyButton) value.Value;
                     i.LoadNext += ShowUIByUIType;
                 }
+                
             }
-
+            _lessonConstructorController.GiveMeGameObject += GivingGameObj;
             _toogleEscape = false;
             _lessonConstructorController.TakeScreenShoot += TakeScreenShoot;
             _lessonConstructorController.TakeScreenShootOfPart += TakeAScreenShotOfPart;
+            _backGroundForCreatingOrder = _gameContextWithUI.UiControllers[LoadingParts.CreateAssemblyDis].transform.GetChild(0).gameObject;
             HideAllUI();
             _buttonMass = _gameContextWithUI.UiControllers[LoadingParts.LoadMain].
                 GetComponentsInChildren<Button>();
@@ -260,13 +270,11 @@ namespace Diploma.Controllers
                     _currentPosition = LoadingParts.LoadSignUp;
                     break;
                 case LoadingParts.LoadLectures:
-                    // _backGround.SetActive(false);
                     _gameContextWithUI.UiControllers[LoadingParts.LoadLectures].SetActive(true);
                     _backController.WhereIMustBack(_currentPosition);
                     _currentPosition = LoadingParts.LoadLectures;
                     break;
                 case LoadingParts.LoadCreationOfLesson:
-                    // _backGround.SetActive(false);
                     _gameContextWithUI.UiControllers[LoadingParts.LoadCreationOfLesson].SetActive(true);
                     _backController.WhereIMustBack(_currentPosition);
                     _currentPosition = LoadingParts.LoadCreationOfLesson;
@@ -315,34 +323,14 @@ namespace Diploma.Controllers
                     _fileManagerController.ShowSaveDialog(FileTypes.Video);
                     break;
                 case LoadingParts.CreateAssemblyDis:
-                    _gameContextWithUI.UiControllers[LoadingParts.CreateAssemblyDis].SetActive(true);
-                    _playerInitialization.SetPause(false);
-                    _playerInitialization.TurnOnOffCamera(true,_gameContextWithLogic.MainCamera);
-                    Cursor.lockState = CursorLockMode.Locked;
-                    Cursor.visible = false;
-                    var gameObject = _lessonConstructorController.OpenAnUIInitialization(out var _someError);
-                    if (_someError == ErrorCodes.None)
-                    {
-                        _assemblyCreatingController.SetAssemblyGameObject(gameObject,
-                            _gameContextWithUI.UiControllers[LoadingParts.CreateAssemblyDis].
-                                transform.GetChild(1).GetChild(0).GetChild(0).gameObject); 
-                    }
-                    else
-                    {
-                        _currentPosition = LoadingParts.LoadCreationOfLesson;
-                        _playerInitialization.SetPause(true);
-                        _playerInitialization.TurnOnOffCamera(false,_gameContextWithLogic.MainCamera);
-                        ShowUIByUIType(LoadingParts.LoadError);
-                    }
+                    CreateAssemblyDisPause().StartCoroutine(out _, out _);
                     break;
                 case LoadingParts.Next:
                     if (_fileManagerController.CheckForErrors() == ErrorCodes.None)
                     {
-                        // _backGround.SetActive(false);
                         if (_lessonConstructorController.CreateALesson())
                         {
                             _error = ErrorCodes.None;
-                            //ShowUIByUIType(LoadingParts.LoadStart);
                         }
                         else
                         {
@@ -350,9 +338,6 @@ namespace Diploma.Controllers
                             ShowUIByUIType(LoadingParts.LoadError);
                             _currentPosition = LoadingParts.LoadStart;
                         }
-                        //_backController.WhereIMustBack(_currentPosition);
-                        //_gameContextWithUI.UiControllers[LoadingParts.LoadMain].SetActive(true);
-                        //_currentPosition = LoadingParts.LoadMain;
                     } else
                     {
                         _backController.WhereIMustBack(_currentPosition);
@@ -383,6 +368,39 @@ namespace Diploma.Controllers
             }
         }
 
+        private IEnumerator CreateAssemblyDisPause()
+        {
+            _gameObject = null;
+            _loadingUILogic.SetActiveLoading(true);
+            yield return new WaitForFixedUpdate();
+            _playerInitialization.SetPause(false);
+            _playerInitialization.TurnOnOffCamera(true,_gameContextWithLogic.MainCamera);
+            yield return new WaitForFixedUpdate();
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+            yield return new WaitForFixedUpdate();
+            _lessonConstructorController.OpenAnUIInitialization();
+            _loadingUILogic.LoadingParams("Ожидайте,пожалуйста","Загрузка");
+            yield return new WaitUntil(()=> _gameObject != null);
+            if (_lessonConstructorController.CheckForErrors() == ErrorCodes.None)
+            {
+                _assemblyCreatingController.SetAssemblyGameObject(_gameObject,
+                    _gameContextWithUI.UiControllers[LoadingParts.CreateAssemblyDis].
+                        transform.GetChild(2).GetChild(0).GetChild(0).gameObject); 
+            }
+            else
+            {
+                _currentPosition = LoadingParts.LoadCreationOfLesson;
+                _playerInitialization.SetPause(true);
+                _playerInitialization.TurnOnOffCamera(false,_gameContextWithLogic.MainCamera);
+                ShowUIByUIType(LoadingParts.LoadError);
+            }
+            yield return new WaitForEndOfFrame();
+            _loadingUILogic.SetActiveLoading(false);
+            _gameContextWithUI.UiControllers[LoadingParts.CreateAssemblyDis].SetActive(true);
+            yield break;
+        }
+        
         private void MainLoading(int role)
         {
             if (role == 2)
@@ -424,7 +442,7 @@ namespace Diploma.Controllers
                     i.LoadNext -= ShowUIByUIType;
                 }
             }
-            
+            _lessonConstructorController.GiveMeGameObject -= GivingGameObj;
             _lessonConstructorController.TakeScreenShoot -= TakeScreenShoot;
         }
 
@@ -434,8 +452,8 @@ namespace Diploma.Controllers
             if (Input.GetKeyDown (KeyCode.Escape))
             {
                 _toogleEscape = !_toogleEscape;
-                Debug.Log(_toogleEscape);
                 _playerInitialization.SetPause(_toogleEscape);
+                _backGroundForCreatingOrder.SetActive(!_backGroundForCreatingOrder.activeSelf);
                 if (_toogleEscape)
                 {
                     Cursor.lockState = CursorLockMode.None;
@@ -465,7 +483,7 @@ namespace Diploma.Controllers
             }
 
             if (_gameContextWithUI.UiControllers[LoadingParts.CreateAssemblyDis].
-                transform.GetChild(1).GetChild(0).GetChild(0).gameObject.transform.childCount != 0)
+                transform.GetChild(2).GetChild(0).GetChild(0).gameObject.transform.childCount != 0)
             {
                 _gameContextWithViews.AssemblyCreatingButtons[AssemblyCreating.SavingOrder].GetComponentInChildren<TextMeshProUGUI>().color = Color.black;
                 _gameContextWithViews.AssemblyCreatingButtons[AssemblyCreating.SavingOrder].enabled = true;

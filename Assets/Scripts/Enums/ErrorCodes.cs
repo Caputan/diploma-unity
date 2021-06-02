@@ -10,5 +10,6 @@
         ValidationLoginError = 5,
         ValidationPasswordError = 6,
         ValidationEmailError = 7,
+        FileDoesNotExist = 8,
     }
 }
