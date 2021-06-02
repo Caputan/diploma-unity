@@ -18,7 +18,7 @@ namespace Controllers.PracticeScene.PauseController
         private PauseFactory _pauseFactory;
         private List<Button> _pauseButtons;
 
-        private readonly ResourcePath _viewPath = new ResourcePath {PathResource = "Prefabs/PracticeScene/Pause"};
+        private readonly ResourcePath _viewPath = new ResourcePath { PathResource = "Prefabs/PracticeScene/Pause" };
 
         public PauseInitialization(GameContextWithView gameContextWithView,
             GameContextWithUI gameContextWithUI,

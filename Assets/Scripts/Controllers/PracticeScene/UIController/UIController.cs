@@ -1,5 +1,6 @@
 ﻿using System;
 using Diploma.Controllers;
+using Diploma.Controllers.AssembleController;
 using Diploma.Enums;
 using Diploma.Interfaces;
 using Interfaces;
@@ -37,7 +38,7 @@ namespace Controllers.PracticeScene.UIController
             {
                 if (value is IPauseButtons)
                 {
-                    Debug.Log("PauseButtons "+value);
+                    Debug.Log("PauseButtons " + value);
                     var i = (IPauseButtons) value;
                     i.LoadNext += ShowUIByUIType;
                 }
@@ -74,7 +75,6 @@ namespace Controllers.PracticeScene.UIController
                 SetPlayersRotationAndMovement(_pauseParam);
                 _pauseParam = !_pauseParam;
             }
-            
         }
 
         public void SetPlayersRotationAndMovement(bool pause)

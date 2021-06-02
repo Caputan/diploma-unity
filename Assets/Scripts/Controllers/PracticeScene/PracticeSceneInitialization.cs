@@ -75,10 +75,10 @@ namespace Diploma.PracticeScene.Controllers
             var assemblyInitialization = new AssemblyInitialization(assemblyGameObject, lesson.Lesson_Assembly_Order, assemblyParent,
                 DataBaseController, tables, _data, new LoadingSceneController());
 
-            var pauseInitialization = new PauseInitialization(_gameContextView,_gameContextWithUI,mainParent);
-            var pauseController = new PauseController(_data,new LoadingSceneController());
+            var pauseInitialization = new PauseInitialization(_gameContextView, _gameContextWithUI, mainParent);
+            var pauseController = new PauseController(_data, new LoadingSceneController());
             var ExitController = new ExitController(_data);
-            var uiController = new UIController(_gameContextWithUI,pauseController,playerInitialization);
+            var uiController = new UIController(_gameContextWithUI, pauseController, playerInitialization);
            
             _controllers = new Diploma.Controllers.Controllers();
             _controllers.Add(playerInitialization);
