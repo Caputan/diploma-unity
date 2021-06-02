@@ -67,8 +67,6 @@ namespace Diploma.PracticeScene.Controllers
 
             var fileManager = new FileManager();
             
-            //var GameObjectFactory = new GameObjectFactory();
-            //var Pool = new PoolOfObjects(GameObjectFactory, _gameContextWithLogic);
             var GameObjectInitialization = new GameObjectInitialization(assembly.Assembly_Link, fileManager);
             var assemblyGameObject = GameObjectInitialization.InstantiateGameObject();
             var playerInitialization = new PlayerInitialization(playerPrefab, spawnPoint, _data);
@@ -97,15 +95,5 @@ namespace Diploma.PracticeScene.Controllers
             _controllers.Execute(deltaTime);
         }
         
-        // private void LateUpdate()
-        // {
-        //     var deltaTime = Time.deltaTime;
-        //     _controllers.LateExecute(deltaTime);
-        // }
-        //
-        // private void OnDestroy()
-        // {
-        //     _controllers.CleanData();
-        // }
     }
 }

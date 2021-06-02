@@ -51,7 +51,6 @@ namespace Controllers.TheoryScene.TheoryControllers
             _libraryTreeController.rewriteDictionary += CreateQueue;
             
             _mainDomain = AppDomain.CurrentDomain.BaseDirectory;
-            //CreateFileFolder("LocalDataStorage");
             var directoryInfo = new DirectoryInfo(_mainDomain);
             _mainDomain = directoryInfo.GetDirectories()[0].GetDirectories()[3].ToString();
         }

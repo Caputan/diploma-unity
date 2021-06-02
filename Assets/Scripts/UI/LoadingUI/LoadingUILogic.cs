@@ -31,19 +31,12 @@ namespace UI.LoadingUI
             _settingActiveGameObject.transform.localPosition = new Vector3(0,0,0);
         }
 
-        // public void SetLoadingParameter(float parameterForSlider,float parameterFoText)
-        // {
-        //     LoadingParams(parameterForSlider,parameterFoText).StartCoroutine(out _);
-        // }
-
-        //public IEnumerator LoadingParams(float parameterForSlider,float parameterFoText, string whatIsLoading)
         public void LoadingParams(float parameterForSlider,float parameterFoText, string whatIsLoading)
         {
             
             _textMeshProUGUIWhatIsLoading.text = "Загружается: " + whatIsLoading;
             _textMeshProUGUI.text = "Загружено " + parameterFoText +"%";
             _slider.value = parameterForSlider;
-            //yield return null;
         }
 
         public void Initialization()
