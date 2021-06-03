@@ -147,6 +147,8 @@ namespace Controllers.TheoryScene
 
         private void Update()
         {
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
             var deltaTime = Time.deltaTime;
             _controllers.Execute(deltaTime);
         }

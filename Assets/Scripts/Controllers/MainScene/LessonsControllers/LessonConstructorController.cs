@@ -167,12 +167,14 @@ namespace Controllers
                 _assemblyInitialization.Initialization();
                 _error = ErrorCodes.None;
                 GiveMeGameObject.Invoke(_assemblyInitialization.GetAGameObject());
+                yield break;
             }
             else
             {
                 _error = ErrorCodes.FileDoesNotExist;
-                GiveMeGameObject.Invoke(new GameObject());
+                yield break;
             }
+            
         }
 
         public void DestroyAssembly()

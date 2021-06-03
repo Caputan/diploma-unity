@@ -12,8 +12,6 @@ namespace Controllers
 {
     public sealed class LoadingSceneController: IInitialization
     {
-        
-
         public void LoadNextScene(int idScene)
         {
             AsyncLoad(idScene).StartCoroutine(out _, out _);
@@ -24,12 +22,12 @@ namespace Controllers
             AsyncOperation operation = SceneManager.LoadSceneAsync(sceneID);
             while (!operation.isDone)
             {
+                Debug.Log("Loading: " +operation.progress);
                 yield return null;
             }
 
         }
-        
-        
+
         public void Initialization()
         {
         }

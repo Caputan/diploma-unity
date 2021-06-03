@@ -26,6 +26,7 @@ namespace Diploma.Controllers
 
         private void SaveSomeGameObject(GameObject obj)
         {
+            Debug.Log("Loading is done");
             GameObject = obj;
         }
 

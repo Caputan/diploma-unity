@@ -96,7 +96,7 @@ namespace Controllers.PracticeScene.UIController
             }
         }
 
-        private void ActivatePauseMenu(bool activateOrDeactivate)
+        public void ActivatePauseMenu(bool activateOrDeactivate)
         {
             if (activateOrDeactivate)
             {
@@ -126,7 +126,7 @@ namespace Controllers.PracticeScene.UIController
                 {
                     Debug.Log("PauseButtons "+value.Key);
                     var i = (IPauseButtons) value.Value;
-                    i.LoadNext += ShowUIByUIType;
+                    i.LoadNext -= ShowUIByUIType;
                 }
             }
         }

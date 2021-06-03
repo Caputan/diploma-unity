@@ -10,7 +10,7 @@ namespace Diploma.Controllers
         private readonly PlayerController _playerController;
 
         private readonly Transform _spawnPoint;
-        private GameObject playerGO;
+        public GameObject playerGO;
         private bool _isPaused;
             
         public PlayerInitialization(GameObject player, Transform spawnPoint, 

@@ -1,4 +1,5 @@
 ﻿using Data;
+using Diploma.PracticeScene.Controllers;
 using UnityEngine.SceneManagement;
 
 namespace Controllers.PracticeScene.PauseController
@@ -7,7 +8,7 @@ namespace Controllers.PracticeScene.PauseController
     {
         private readonly ImportantDontDestroyData _data;
         private readonly LoadingSceneController _loadingSceneController;
-
+        private PracticeSceneInitialization _practiceSceneInitialization;
         public PauseController(ImportantDontDestroyData data, LoadingSceneController loadingSceneController)
         {
             _data = data;
@@ -16,9 +17,14 @@ namespace Controllers.PracticeScene.PauseController
 
         public void Restart()
         {
-            _loadingSceneController.LoadNextScene(2);
+            _practiceSceneInitialization.DecompileGameScene();
         }
 
+        public void SetAnPracticeScene(PracticeSceneInitialization practiceSceneInitialization)
+        {
+            _practiceSceneInitialization = practiceSceneInitialization;
+        }
+        
         public void BackToMenu()
         {
             _loadingSceneController.LoadNextScene(0);

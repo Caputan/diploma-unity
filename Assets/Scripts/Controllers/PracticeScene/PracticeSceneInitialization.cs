@@ -3,7 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using Controllers;
 using Controllers.PracticeScene.PauseController;
-using Controllers.PracticeScene.UIController;
 using Data;
 using Diploma.Controllers;
 using Diploma.Controllers.AssembleController;
@@ -13,6 +12,7 @@ using Diploma.PracticeScene.GameContext;
 using Diploma.Tables;
 using UI.LoadingUI;
 using UnityEngine;
+
 using GameContextWithLogic = Diploma.PracticeScene.GameContext.GameContextWithLogic;
 using GameContextWithUI = Diploma.PracticeScene.GameContext.GameContextWithUI;
 using UIController = Controllers.PracticeScene.UIController.UIController;
@@ -36,12 +36,16 @@ namespace Diploma.PracticeScene.Controllers
 
         private GameContextWithView _gameContextView;
         private GameContextWithUI _gameContextWithUI;
-        private GameContextWithLogic _gameContextWithLogic;
-        
+        private PlayerInitialization _playerInitialization;
+        private GameObjectInitialization _gameObjectInitialization;
+        private UIController _uiController;
+        private AssemblyInitialization _assemblyInitialization;
+        private LoadingUILogic _loadingUILogic;
         private Diploma.Controllers.Controllers _controllers;
-
-        public IEnumerator Start()
+        
+        private IEnumerator Start()
         {
+            Debug.Log("START");
             var DataBaseController = new DataBaseController();
             AssemliesTable assemblies = new AssemliesTable();
             LessonsTable lessons = new LessonsTable();
@@ -56,52 +60,70 @@ namespace Diploma.PracticeScene.Controllers
             tables.Add(types); // 3 - types
             tables.Add(users); // 4 - users
             tables.Add(videos); // 5 - videos
-
+           
             _gameContextView = new GameContextWithView();
-            _gameContextWithLogic = new GameContextWithLogic();
             _gameContextWithUI = new GameContextWithUI();
-            Debug.Log("ID lesson"+_data.lessonID);
-            Debug.Log("User " +_data.activatedUserID);
+            
             DataBaseController.SetTable(tables[1]);
             Lessons lesson = (Lessons)DataBaseController.GetRecordFromTableById(_data.lessonID);
             DataBaseController.SetTable(tables[0]);
             Assemblies assembly = (Assemblies)DataBaseController.GetRecordFromTableById(lesson.Lesson_Assembly_Id);
-            LoadingUILogic loadingUILogic = new LoadingUILogic(mainParent.transform);
+            
+            _loadingUILogic = new LoadingUILogic(mainParent.transform);
+            _loadingUILogic.Initialization();
             var fileManager = new FileManager();
+            
             yield return new WaitForFixedUpdate();
-            loadingUILogic.SetActiveLoading(true);
-            loadingUILogic.LoadingParams("Ожидайте,пожалуйста","Загрузка");
-            yield return new WaitForFixedUpdate();
-            var GameObjectInitialization = new GameObjectInitialization(assembly.Assembly_Link, fileManager);
-            GameObjectInitialization.InstantiateGameObject();
-            yield return new WaitUntil(()=> GameObjectInitialization.GameObject != null);
-            var assemblyGameObject = GameObjectInitialization.GameObject;
-            var playerInitialization = new PlayerInitialization(playerPrefab, spawnPoint, _data);
-            var assemblyInitialization = 
+            _loadingUILogic.SetActiveLoading(true);
+            _loadingUILogic.LoadingParams("Ожидайте,пожалуйста","Загрузка");
+            _gameObjectInitialization = new GameObjectInitialization(assembly.Assembly_Link, fileManager);
+            _gameObjectInitialization.InstantiateGameObject();
+            yield return new WaitUntil(()=> _gameObjectInitialization.GameObject != null);
+            
+            var assemblyGameObject = _gameObjectInitialization.GameObject;
+            
+            _playerInitialization = new PlayerInitialization(playerPrefab, spawnPoint, _data);
+            
+            _assemblyInitialization = 
                 new AssemblyInitialization(assemblyGameObject, lesson.Lesson_Assembly_Order, assemblyParent,
                 DataBaseController, tables, _data, new LoadingSceneController());
             yield return new WaitForFixedUpdate();
-            loadingUILogic.SetActiveLoading(false);
+            _loadingUILogic.SetActiveLoading(false);
+            
             var pauseInitialization = new PauseInitialization(_gameContextView,_gameContextWithUI,mainParent);
             var pauseController = new PauseController(_data,new LoadingSceneController());
+            pauseController.SetAnPracticeScene(this);
             var ExitController = new ExitController(_data);
-            var uiController = new UIController(_gameContextWithUI,pauseController,playerInitialization);
+            _uiController = new UIController(_gameContextWithUI,pauseController,_playerInitialization);
            
             _controllers = new Diploma.Controllers.Controllers();
-            _controllers.Add(playerInitialization);
+            _controllers.Add(_playerInitialization);
             _controllers.Add(pauseInitialization);
             _controllers.Add(ExitController);
-            _controllers.Add(assemblyInitialization);
-            _controllers.Add(uiController);
+            _controllers.Add(_assemblyInitialization);
+            _controllers.Add(_uiController);
             _controllers.Initialization();
             yield break;
         }
-
+        
+        public void DecompileGameScene()
+        {
+            //мы должны удалить игрока, удалить объект и вызвать start
+            
+            DestroyImmediate(_playerInitialization.playerGO);
+            DestroyImmediate(_gameObjectInitialization.GameObject,true);
+            DestroyImmediate(_assemblyInitialization.GetAGameObject());
+            DestroyImmediate(_loadingUILogic._settingActiveGameObject);
+            _uiController.ActivatePauseMenu(false);
+            _controllers.CleanData();
+            _controllers = null;
+            StartCoroutine(Start());
+        }
+        
         private void Update()
         {
             var deltaTime = Time.deltaTime;
-            _controllers.Execute(deltaTime);
+            _controllers?.Execute(deltaTime);
         }
-        
     }
 }
