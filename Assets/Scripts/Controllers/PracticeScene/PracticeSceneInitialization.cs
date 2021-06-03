@@ -31,12 +31,15 @@ namespace Diploma.PracticeScene.Controllers
         [SerializeField] private GameObject inventoryPrefab;
         [SerializeField] private GameObject inventorySlotPrefab;
         
+        [SerializeField] private GameObject completePrefab;
+        
         [SerializeField] private Transform assemblyParent;
         [SerializeField] private GameObject[] partOfAssembly;
 
         private GameContextWithView _gameContextView;
         private GameContextWithUI _gameContextWithUI;
         private PlayerInitialization _playerInitialization;
+        private PracticeSceneController _practiceSceneController;
         private GameObjectInitialization _gameObjectInitialization;
         private UIController _uiController;
         private AssemblyInitialization _assemblyInitialization;
@@ -79,14 +82,15 @@ namespace Diploma.PracticeScene.Controllers
             _gameObjectInitialization = new GameObjectInitialization(assembly.Assembly_Link, fileManager);
             _gameObjectInitialization.InstantiateGameObject();
             yield return new WaitUntil(()=> _gameObjectInitialization.GameObject != null);
+
+            _practiceSceneController = new PracticeSceneController(DataBaseController, tables, _data,
+                new LoadingSceneController(), completePrefab, mainParent.transform, _gameContextView);
             
             var assemblyGameObject = _gameObjectInitialization.GameObject;
             
             _playerInitialization = new PlayerInitialization(playerPrefab, spawnPoint, _data);
             
-            _assemblyInitialization = 
-                new AssemblyInitialization(assemblyGameObject, lesson.Lesson_Assembly_Order, assemblyParent,
-                DataBaseController, tables, _data, new LoadingSceneController());
+            _assemblyInitialization = new AssemblyInitialization(assemblyGameObject, lesson.Lesson_Assembly_Order, assemblyParent);
             yield return new WaitForFixedUpdate();
             _loadingUILogic.SetActiveLoading(false);
             
@@ -95,12 +99,13 @@ namespace Diploma.PracticeScene.Controllers
             pauseController.SetAnPracticeScene(this);
             var ExitController = new ExitController(_data);
             _uiController = new UIController(_gameContextWithUI,pauseController,_playerInitialization);
-           
+
             _controllers = new Diploma.Controllers.Controllers();
             _controllers.Add(_playerInitialization);
             _controllers.Add(pauseInitialization);
             _controllers.Add(ExitController);
             _controllers.Add(_assemblyInitialization);
+            _controllers.Add(_practiceSceneController);
             _controllers.Add(_uiController);
             _controllers.Initialization();
             yield break;

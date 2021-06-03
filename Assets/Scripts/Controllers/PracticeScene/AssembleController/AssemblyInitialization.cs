@@ -16,20 +16,12 @@ namespace Diploma.Controllers.AssembleController
         private readonly Transform _assemblyParent;
         private GameObject gm;
         
-        public AssemblyInitialization(
-            GameObject assemblyGameObject, 
-            string order, 
-            Transform assemblyParent,
-            DataBaseController dataBaseController,
-            List<IDataBase> tables,
-            ImportantDontDestroyData data,
-            LoadingSceneController loadingSceneController
-            )
+        public AssemblyInitialization(GameObject assemblyGameObject, string order, Transform assemblyParent)
         {
             _assemblyGameObject = assemblyGameObject;
             _assemblyParent = assemblyParent;
             
-            _assembleController = new AssembleController(order, dataBaseController, tables, data, loadingSceneController);
+            _assembleController = new AssembleController(order);
         }
 
         public AssemblyInitialization(GameObject assemblyGameObject, Transform assemblyParent)

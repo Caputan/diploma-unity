@@ -203,6 +203,8 @@ MonoBehaviour:
     type: 3}
   inventorySlotPrefab: {fileID: 1695746970689293887, guid: 375bb5936f5652649be319a9a371e98c,
     type: 3}
+  completePrefab: {fileID: 3948811947429950961, guid: 19f6eb925ade5024298bc029bd94ce5d,
+    type: 3}
   assemblyParent: {fileID: 1662734807}
   partOfAssembly: []
 --- !u!1 &555970428
