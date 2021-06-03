@@ -12,7 +12,7 @@ namespace UI.LoadingUI
     {
         
         private readonly Transform _canvas;
-        private GameObject _settingActiveGameObject;
+        public GameObject _settingActiveGameObject;
         private TextMeshProUGUI _textMeshProUGUI;
         private TextMeshProUGUI _textMeshProUGUIWhatIsLoading;
         private Slider _slider;
