@@ -76,17 +76,27 @@ namespace Diploma.Controllers
                 else
                 {
                     Greetings.text = "Привет, " + Login.text;
-                    role = Convert.ToInt32(_loginedUser.User_Role);
+                    
                     _error = ErrorCodes.None;
                 }
             }
             
             if (_error == ErrorCodes.None)
             {
-                _data.activatedUserID = _loginedUser.User_Id;
+                if (_loginedUser != null)
+                {
+                    role = Convert.ToInt32(_loginedUser.User_Role);
+                    _data.activatedUserID = _loginedUser.User_Id;
+                } else
+                {
+                    role = 2;
+                }
             }
-
-            role = 0;
+            else
+            {
+                role = 2;
+            }
+            
             return _error;
         }
 
