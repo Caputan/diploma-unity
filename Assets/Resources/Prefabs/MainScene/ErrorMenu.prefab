@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1301646633797499043}
   - component: {fileID: 1301646633797499042}
   - component: {fileID: 1301646633797499037}
+  - component: {fileID: 1369947668348799371}
   m_Layer: 5
   m_Name: Button_OK
   m_TagString: Untagged
@@ -36,8 +37,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -314.3, y: 53}
-  m_SizeDelta: {x: 51.79126, y: 34.04744}
+  m_AnchoredPosition: {x: -314.3, y: 72.659}
+  m_SizeDelta: {x: 278.2713, y: 57.659058}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1301646633797499043
 CanvasRenderer:
@@ -119,6 +120,20 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1369947668348799371
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1301646633797499039}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ea9ba212f2a4b0a85c2d514723c988a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _pointerDownScale: {fileID: 11400000, guid: c1c40d2545b8cf9418fcce9bcd522b46, type: 2}
+  _pointerUpScale: {fileID: 11400000, guid: 223843c9057aa48469c0f5db09b4c141, type: 2}
 --- !u!1 &1301646634261960142
 GameObject:
   m_ObjectHideFlags: 0
@@ -264,6 +279,7 @@ GameObject:
   - component: {fileID: 1301646634321958733}
   - component: {fileID: 1301646634321958739}
   - component: {fileID: 1301646634321958738}
+  - component: {fileID: 8056188324954319129}
   m_Layer: 5
   m_Name: ErrorMenu
   m_TagString: Untagged
@@ -330,6 +346,24 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &8056188324954319129
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1301646634321958732}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e22e0a6f146e4af8889d1325253fcc27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _buttonHide: {fileID: 1301646633797499037}
+  _pointerUpScale: {fileID: 11400000, guid: 223843c9057aa48469c0f5db09b4c141, type: 2}
+  _root: {fileID: 1301646634321958732}
+  _message: {fileID: 1301646634321958733}
+  _background: {fileID: 1301646634321958738}
+  _duration: 0.5
 --- !u!1 &1301646634672691827
 GameObject:
   m_ObjectHideFlags: 0

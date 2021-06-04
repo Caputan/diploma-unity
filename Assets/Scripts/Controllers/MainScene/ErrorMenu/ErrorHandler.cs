@@ -1,4 +1,5 @@
 ﻿using Diploma.Enums;
+using DoTween;
 using TMPro;
 using UnityEngine;
 
@@ -8,11 +9,13 @@ namespace Controllers
     {
         private GameObject _errorPrefab;
         private TextMeshProUGUI _errorTextUI;
+        public MessageBoxBehaviour MessageBoxBehaviour;
         
         public ErrorHandler(GameObject errorPrefab)
         {
             _errorPrefab = errorPrefab;
             _errorTextUI = _errorPrefab.GetComponentInChildren<TextMeshProUGUI>();
+            MessageBoxBehaviour = _errorPrefab.GetComponent<MessageBoxBehaviour>();
         }
 
         public void ChangeErrorMessage(ErrorCodes error)

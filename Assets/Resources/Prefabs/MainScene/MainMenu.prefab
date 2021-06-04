@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 220361715278782741}
   - component: {fileID: 220361715278782739}
   - component: {fileID: 8840892443989907896}
+  - component: {fileID: 17245727622039874}
   m_Layer: 5
   m_Name: Button_EditLessons
   m_TagString: Untagged
@@ -120,6 +121,20 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &17245727622039874
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 220361715278782737}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ea9ba212f2a4b0a85c2d514723c988a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _pointerDownScale: {fileID: 11400000, guid: c1c40d2545b8cf9418fcce9bcd522b46, type: 2}
+  _pointerUpScale: {fileID: 11400000, guid: 223843c9057aa48469c0f5db09b4c141, type: 2}
 --- !u!1 &220361715317083683
 GameObject:
   m_ObjectHideFlags: 0
@@ -132,6 +147,7 @@ GameObject:
   - component: {fileID: 220361715317083687}
   - component: {fileID: 220361715317083686}
   - component: {fileID: 220361715317083685}
+  - component: {fileID: 6510361903719642552}
   m_Layer: 5
   m_Name: Button_Settings
   m_TagString: Untagged
@@ -240,6 +256,20 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &6510361903719642552
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 220361715317083683}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ea9ba212f2a4b0a85c2d514723c988a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _pointerDownScale: {fileID: 11400000, guid: c1c40d2545b8cf9418fcce9bcd522b46, type: 2}
+  _pointerUpScale: {fileID: 11400000, guid: 223843c9057aa48469c0f5db09b4c141, type: 2}
 --- !u!1 &220361715494420168
 GameObject:
   m_ObjectHideFlags: 0
@@ -520,6 +550,7 @@ GameObject:
   - component: {fileID: 220361716142289439}
   - component: {fileID: 220361716142289438}
   - component: {fileID: 220361716142289437}
+  - component: {fileID: 4940099774604302740}
   m_Layer: 5
   m_Name: Button_Exit
   m_TagString: Untagged
@@ -628,6 +659,20 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &4940099774604302740
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 220361716142289435}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ea9ba212f2a4b0a85c2d514723c988a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _pointerDownScale: {fileID: 11400000, guid: c1c40d2545b8cf9418fcce9bcd522b46, type: 2}
+  _pointerUpScale: {fileID: 11400000, guid: 223843c9057aa48469c0f5db09b4c141, type: 2}
 --- !u!1 &220361716261799318
 GameObject:
   m_ObjectHideFlags: 0
@@ -982,6 +1027,7 @@ GameObject:
   - component: {fileID: 220361716769034215}
   - component: {fileID: 220361716769034214}
   - component: {fileID: 220361716769034213}
+  - component: {fileID: 3284014216649295288}
   m_Layer: 5
   m_Name: Button_ChangeUser
   m_TagString: Untagged
@@ -1089,6 +1135,20 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &3284014216649295288
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 220361716769034211}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ea9ba212f2a4b0a85c2d514723c988a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _pointerDownScale: {fileID: 11400000, guid: c1c40d2545b8cf9418fcce9bcd522b46, type: 2}
+  _pointerUpScale: {fileID: 11400000, guid: 223843c9057aa48469c0f5db09b4c141, type: 2}
 --- !u!1 &220361716873422804
 GameObject:
   m_ObjectHideFlags: 0
@@ -1101,6 +1161,7 @@ GameObject:
   - component: {fileID: 220361716873422824}
   - component: {fileID: 220361716873422807}
   - component: {fileID: 220361716873422806}
+  - component: {fileID: 6443934254721729332}
   m_Layer: 5
   m_Name: Button_OpenLessons
   m_TagString: Untagged
@@ -1209,6 +1270,20 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &6443934254721729332
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 220361716873422804}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ea9ba212f2a4b0a85c2d514723c988a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _pointerDownScale: {fileID: 11400000, guid: c1c40d2545b8cf9418fcce9bcd522b46, type: 2}
+  _pointerUpScale: {fileID: 11400000, guid: 223843c9057aa48469c0f5db09b4c141, type: 2}
 --- !u!1 &220361717084535625
 GameObject:
   m_ObjectHideFlags: 0

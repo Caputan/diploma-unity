@@ -280,6 +280,7 @@ GameObject:
   - component: {fileID: 2472085229400847006}
   - component: {fileID: 2472085229400847007}
   - component: {fileID: 2472085229400847004}
+  - component: {fileID: 4193029779378056117}
   m_Layer: 5
   m_Name: Button_Restart
   m_TagString: Untagged
@@ -388,6 +389,20 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &4193029779378056117
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2472085229400847002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ea9ba212f2a4b0a85c2d514723c988a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _pointerDownScale: {fileID: 11400000, guid: c1c40d2545b8cf9418fcce9bcd522b46, type: 2}
+  _pointerUpScale: {fileID: 11400000, guid: 223843c9057aa48469c0f5db09b4c141, type: 2}
 --- !u!1 &2472085229420668194
 GameObject:
   m_ObjectHideFlags: 0
@@ -400,6 +415,7 @@ GameObject:
   - component: {fileID: 2472085229420668198}
   - component: {fileID: 2472085229420668199}
   - component: {fileID: 2472085229420668196}
+  - component: {fileID: 3899053220616070017}
   m_Layer: 5
   m_Name: Button_MainMenu
   m_TagString: Untagged
@@ -508,6 +524,20 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &3899053220616070017
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2472085229420668194}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ea9ba212f2a4b0a85c2d514723c988a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _pointerDownScale: {fileID: 11400000, guid: c1c40d2545b8cf9418fcce9bcd522b46, type: 2}
+  _pointerUpScale: {fileID: 11400000, guid: 223843c9057aa48469c0f5db09b4c141, type: 2}
 --- !u!1 &2472085229668375943
 GameObject:
   m_ObjectHideFlags: 0
@@ -866,6 +896,7 @@ GameObject:
   - component: {fileID: 2472085230522408094}
   - component: {fileID: 2472085230522408095}
   - component: {fileID: 2472085230522408092}
+  - component: {fileID: 6557583155349608909}
   m_Layer: 5
   m_Name: Button_Continue
   m_TagString: Untagged
@@ -974,3 +1005,17 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &6557583155349608909
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2472085230522408090}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ea9ba212f2a4b0a85c2d514723c988a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _pointerDownScale: {fileID: 11400000, guid: c1c40d2545b8cf9418fcce9bcd522b46, type: 2}
+  _pointerUpScale: {fileID: 11400000, guid: 223843c9057aa48469c0f5db09b4c141, type: 2}

@@ -7,6 +7,7 @@ using Data;
 using Diploma.Controllers.AssembleController;
 using Diploma.Enums;
 using Diploma.Interfaces;
+using DoTween;
 using Interfaces;
 using TMPro;
 using UI.LoadingUI;
@@ -211,7 +212,7 @@ namespace Diploma.Controllers
         }
         public void ShowUIByUIType(LoadingParts id)
         {
-            HideAllUI();
+            
             switch (id)
             {
                 case LoadingParts.Exit:
@@ -220,6 +221,7 @@ namespace Diploma.Controllers
                     _exitController.ExitApplication(); 
                     break;
                 case LoadingParts.LoadStart:
+                    HideAllUI();
                     _loadingUILogic.SetActiveLoading(false);
                     _playerInitialization.SetPause(true);
                     _playerInitialization.TurnOnOffCamera(false,_gameContextWithLogic.MainCamera);
@@ -237,6 +239,7 @@ namespace Diploma.Controllers
                     _currentPosition = LoadingParts.LoadStart;
                     break;
                 case LoadingParts.ChangeUser:
+                    HideAllUI();
                     _loadingUILogic.SetActiveLoading(false);
                     _authController.Login.text = "";
                     _authController.Password.text = "";
@@ -247,6 +250,7 @@ namespace Diploma.Controllers
                     _currentPosition = LoadingParts.LoadStart;
                     break;
                 case LoadingParts.LoadAuth:
+                    HideAllUI();
                     if (_authController.AddNewUser() == ErrorCodes.None)
                     {
                         _backController.WhereIMustBack(_currentPosition);
@@ -262,6 +266,7 @@ namespace Diploma.Controllers
                     }
                     break;
                 case LoadingParts.LoadSignUp:
+                    HideAllUI();
                     _authController.NewLogin.text = "";
                     _authController.NewPassword.text = "";
                     _authController.NewEmail.text = "";
@@ -270,17 +275,20 @@ namespace Diploma.Controllers
                     _currentPosition = LoadingParts.LoadSignUp;
                     break;
                 case LoadingParts.LoadLectures:
+                    HideAllUI();
                     _gameContextWithUI.UiControllers[LoadingParts.LoadLectures].SetActive(true);
                     _backController.WhereIMustBack(_currentPosition);
                     _currentPosition = LoadingParts.LoadLectures;
                     break;
                 case LoadingParts.LoadCreationOfLesson:
+                    HideAllUI();
                     _gameContextWithUI.UiControllers[LoadingParts.LoadCreationOfLesson].SetActive(true);
                     _backController.WhereIMustBack(_currentPosition);
                     _currentPosition = LoadingParts.LoadCreationOfLesson;
                     _lessonConstructorController._playerChoose = false;
                     break;
                 case LoadingParts.LoadMain:
+                    HideAllUI();
                     if (_authController.CheckAuthData(out var role) == ErrorCodes.None)
                     {
                         _backController.WhereIMustBack(_currentPosition);
@@ -295,6 +303,7 @@ namespace Diploma.Controllers
                     }
                     break;
                 case LoadingParts.About:
+                    HideAllUI();
                     _gameContextWithUI.UiControllers[LoadingParts.About].SetActive(true);
                     _backController.WhereIMustBack(_currentPosition);
                     _currentPosition = LoadingParts.About;
@@ -303,29 +312,42 @@ namespace Diploma.Controllers
                     ShowUIByUIType(_backController.GoBack());
                     break;
                 case LoadingParts.LoadError:
+                    Debug.Log(_currentPosition);
                     _backController.WhereIMustBack(_currentPosition);
                     _errorHandler.ChangeErrorMessage(_error);
-                    _gameContextWithUI.UiControllers[LoadingParts.LoadError].SetActive(true);
-                    _currentPosition = LoadingParts.LoadError;
+                    _errorHandler.MessageBoxBehaviour.Show();
+                    //_gameContextWithUI.UiControllers[LoadingParts.LoadError].SetActive(true);
+                    break;
+                case LoadingParts.UnLoadError:
+                    //_backController.WhereIMustBack(_currentPosition);
+                    //_errorHandler.ChangeErrorMessage(_error);
+                    //_gameContextWithUI.UiControllers[LoadingParts.LoadError].GetComponent<MessageBoxBehaviour>().Show();
+                    //_gameContextWithUI.UiControllers[LoadingParts.LoadError].GetComponent<MessageBoxBehaviour>().ButtonHide_OnClick();
+                    ShowUIByUIType(LoadingParts.Back);
                     break;
                 case LoadingParts.DownloadModel:
+                    HideAllUI();
                     _gameContextWithUI.UiControllers[LoadingParts.LoadCreationOfLesson].SetActive(true);
                     _fileManagerController.ShowSaveDialog(FileTypes.Assembly);
                     
                     break;
                 case LoadingParts.DownloadPDF:
+                    HideAllUI();
                     _gameContextWithUI.UiControllers[LoadingParts.LoadCreationOfLesson].SetActive(true);
                     _fileManagerController.ShowSaveDialog(FileTypes.Text);
                     
                     break;
                 case LoadingParts.DownloadVideo:
+                    HideAllUI();
                     _gameContextWithUI.UiControllers[LoadingParts.LoadCreationOfLesson].SetActive(true);
                     _fileManagerController.ShowSaveDialog(FileTypes.Video);
                     break;
                 case LoadingParts.CreateAssemblyDis:
+                    HideAllUI();
                     CreateAssemblyDisPause().StartCoroutine(out _, out _);
                     break;
                 case LoadingParts.Next:
+                    HideAllUI();
                     if (_fileManagerController.CheckForErrors() == ErrorCodes.None)
                     {
                         if (_lessonConstructorController.CreateALesson())
@@ -347,6 +369,7 @@ namespace Diploma.Controllers
                     }
                     break;
                 case LoadingParts.Options:
+                    HideAllUI();
                     _backController.WhereIMustBack(_currentPosition);
                     _gameContextWithUI.UiControllers[LoadingParts.Options].SetActive(true);
                     _currentPosition = LoadingParts.Options;
@@ -364,7 +387,10 @@ namespace Diploma.Controllers
         {
             foreach (var controller in _gameContextWithUI.UiControllers)
             {
-                HideUI(controller.Value);
+                if (controller.Key!=LoadingParts.LoadError)
+                {
+                    HideUI(controller.Value);
+                }
             }
         }
 

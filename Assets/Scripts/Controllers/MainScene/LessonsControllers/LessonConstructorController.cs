@@ -160,7 +160,16 @@ namespace Controllers
                 
                 File.Copy(_massForCopy[0],_localBufferText[0],true);
                 var GameObjectInitilization = new GameObjectInitialization(id +"\\"+ "Assemblies"+ "\\" +_localText[0].Split('\\').Last(), _fileManager);//id +"\\"+ "Assemblies"+ "\\" +_localText[0], _fileManager);
-                GameObjectInitilization.InstantiateGameObject();
+                try
+                {
+                    GameObjectInitilization.InstantiateGameObject();
+                }
+                catch (Exception e)
+                {
+                    _error = ErrorCodes.WrongFormatError;
+                    Console.WriteLine(e);
+                    throw;
+                }
                 yield return new WaitUntil(() => GameObjectInitilization.GameObject != null);
                 _main = GameObjectInitilization.GameObject;
                 _assemblyInitialization = new AssemblyInitialization(_main,_assemblyParent);
