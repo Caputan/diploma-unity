@@ -21,7 +21,7 @@
         LoadStart = 15,
         ChangeUser = 16,
         LoadLessonScene,
-        LoadMainScene,
+        UnLoadError=20,
         SetNameToLesson,
         LoadError
     }

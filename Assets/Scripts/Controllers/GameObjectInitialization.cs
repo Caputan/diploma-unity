@@ -1,6 +1,8 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.IO;
 using AssetBundle;
+using Diploma.Enums;
 using Diploma.Interfaces;
 using Diploma.Managers;
 using Diploma.Tables;
@@ -34,7 +36,7 @@ namespace Diploma.Controllers
         {
             GameObject = null;
             _loadAssetBundleFromFile.
-                LoadAssetBundleFromFileOnDrive(_fileManager.GetStorage() + "\\" +_assemblies);
+                    LoadAssetBundleFromFileOnDrive(_fileManager.GetStorage() + "\\" +_assemblies);
         }
     }
 }
