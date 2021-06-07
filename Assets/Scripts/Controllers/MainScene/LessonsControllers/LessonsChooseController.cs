@@ -1,4 +1,5 @@
-﻿using Data;
+﻿using System;
+using Data;
 using Diploma.Controllers;
 using Diploma.Enums;
 using Diploma.Interfaces;
@@ -38,6 +39,8 @@ namespace Controllers
         {
             _gameContextWithViews.LessonChooseButtonsLogic.LoadLesson += LoadScene;
         }
+
+    
 
         private void LoadScene(int id)
         {

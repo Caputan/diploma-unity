@@ -200,7 +200,7 @@ namespace Tests
             authController.Password.text = "123";
             authController.Greetings = new TextMeshProUGUI();
             int role;
-            var error = authController.CheckAuthData(out role);
+            var error = authController.CheckAuthData(out role, out _);
             Assert.AreEqual(ErrorCodes.None,error);
         }
         [Test]
@@ -230,7 +230,7 @@ namespace Tests
             authController.Login.text = "Преподаватель";
             authController.Password.text = "456";
             int role;
-            var error = authController.CheckAuthData(out role);
+            var error = authController.CheckAuthData(out role, out _);
             Assert.AreEqual(ErrorCodes.AuthError,error);
         }
         [Test]
@@ -260,7 +260,7 @@ namespace Tests
             authController.Login.text = "";
             authController.Password.text = "";
             int role;
-            var error = authController.CheckAuthData(out role);
+            var error = authController.CheckAuthData(out role, out _);
             Assert.AreEqual(ErrorCodes.EmptyInputError,error);
         }
     }

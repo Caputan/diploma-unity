@@ -8,7 +8,7 @@ namespace Diploma.UI
 {
     public class LessonChooseButtonsLogic: IInitialization
     {
-        private readonly Dictionary<int, GameObject> _buttonLogic;
+        public Dictionary<int, GameObject> _buttonLogic;
 
         public event Action<int> LoadLesson;
         

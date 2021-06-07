@@ -50,13 +50,14 @@ namespace Diploma.Controllers
             role = Convert.ToInt32(_loginedUser.User_Role);
         }
         
-        public ErrorCodes CheckAuthData(out int role)
+        public ErrorCodes CheckAuthData(out int role,out string marks)
         {
             _dataBase.SetTable(_table);
 
             if (Login.text == string.Empty || Password.text == string.Empty)
             {
                 _error = ErrorCodes.EmptyInputError;
+                marks = "";
             }
             else
             {
@@ -76,7 +77,7 @@ namespace Diploma.Controllers
                 else
                 {
                     Greetings.text = "Привет, " + Login.text;
-                    
+                    marks = _loginedUser.User_Progress;
                     _error = ErrorCodes.None;
                 }
             }
@@ -87,14 +88,17 @@ namespace Diploma.Controllers
                 {
                     role = Convert.ToInt32(_loginedUser.User_Role);
                     _data.activatedUserID = _loginedUser.User_Id;
+                    marks = _loginedUser.User_Progress;
                 } else
                 {
                     role = 2;
+                    marks = _loginedUser?.User_Progress;
                 }
             }
             else
             {
                 role = 2;
+                marks = _loginedUser?.User_Progress;
             }
             
             return _error;

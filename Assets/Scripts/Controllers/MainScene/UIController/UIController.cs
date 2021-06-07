@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using Controllers;
 using Coroutine;
 using Controllers.MainScene.LessonsControllers;
@@ -55,8 +56,7 @@ namespace Diploma.Controllers
             LoadingUILogic loadingUILogic,
             ImportantDontDestroyData importantDontDestroyData,
             AssemblyCreator assemblyCreatingController,
-            PlayerInitialization playerInitialization
-        )
+            PlayerInitialization playerInitialization)
         {
             _error = ErrorCodes.None;
             _gameContextWithUI = gameContextWithUI;
@@ -289,16 +289,18 @@ namespace Diploma.Controllers
                     break;
                 case LoadingParts.LoadMain:
                     HideAllUI();
-                    if (_authController.CheckAuthData(out var role) == ErrorCodes.None)
+                    if (_authController.CheckAuthData(out var role, out var marks) == ErrorCodes.None)
                     {
                         _backController.WhereIMustBack(_currentPosition);
                         _gameContextWithUI.UiControllers[LoadingParts.LoadMain].SetActive(true);
-
+                        // галочки
+                        Debug.Log(marks);
+                        SetMarks(marks);
                         MainLoading(role);
                     }
                     else
                     {
-                        _error = _authController.CheckAuthData(out _);
+                        _error = _authController.CheckAuthData(out _, out _);
                         ShowUIByUIType(LoadingParts.LoadError);
                     }
                     break;
@@ -316,13 +318,8 @@ namespace Diploma.Controllers
                     _backController.WhereIMustBack(_currentPosition);
                     _errorHandler.ChangeErrorMessage(_error);
                     _errorHandler.MessageBoxBehaviour.Show();
-                    //_gameContextWithUI.UiControllers[LoadingParts.LoadError].SetActive(true);
                     break;
                 case LoadingParts.UnLoadError:
-                    //_backController.WhereIMustBack(_currentPosition);
-                    //_errorHandler.ChangeErrorMessage(_error);
-                    //_gameContextWithUI.UiControllers[LoadingParts.LoadError].GetComponent<MessageBoxBehaviour>().Show();
-                    //_gameContextWithUI.UiControllers[LoadingParts.LoadError].GetComponent<MessageBoxBehaviour>().ButtonHide_OnClick();
                     ShowUIByUIType(LoadingParts.Back);
                     break;
                 case LoadingParts.DownloadModel:
@@ -394,6 +391,23 @@ namespace Diploma.Controllers
             }
         }
 
+        public void SetMarks(string marks)
+        {
+            var marksInt = marks.Split(' ');
+            foreach (var button in _gameContextWithViews.LessonChooseButtonsLogic._buttonLogic)
+            {
+                Debug.Log("Button" + button.Key);
+                foreach (var mark in marksInt)
+                {
+                    Debug.Log("Mark "+mark);
+                    if (button.Key == Convert.ToInt32(mark))
+                    {
+                        button.Value.transform.GetChild(3).gameObject.SetActive(true);
+                    }
+                }
+            }
+        }
+        
         private IEnumerator CreateAssemblyDisPause()
         {
             _gameObject = null;
