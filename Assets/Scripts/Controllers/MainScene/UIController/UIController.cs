@@ -357,14 +357,14 @@ namespace Diploma.Controllers
                         if (_lessonConstructorController.CreateALesson())
                         {
                             _error = ErrorCodes.None;
-                            Object.Destroy(_gameObject);
+                            
                         }
                         else
                         {
                             _backController.WhereIMustBack(_currentPosition);
                             ShowUIByUIType(LoadingParts.LoadError);
                             _currentPosition = LoadingParts.LoadStart;
-                            Object.Destroy(_gameObject);
+                            
                         }
                     } else
                     {
@@ -471,6 +471,23 @@ namespace Diploma.Controllers
             _lessonConstructorController.SetTextInTextBox(LoadingParts.DownloadModel,"Выберите UnityBundle ()","");
             _lessonConstructorController.SetTextInTextBox(LoadingParts.DownloadVideo,"Выберите видео-фаил (*.mp4)","");
             _lessonConstructorController.SetTextInTextBox(LoadingParts.DownloadPDF,"Выберите текстовый фаил(*.pdf)","");
+            _gameContextWithViews.TextBoxesOnConstructor[LoadingParts.SetNameToLesson].GetComponent<TMP_InputField>().text = "";
+            _gameContextWithViews.TextBoxesOnConstructor[LoadingParts.SetNameToLesson].GetComponentInChildren<TextMeshProUGUI>().text = "Введите название урока";
+            var whereObject =
+                _gameContextWithUI.UiControllers[LoadingParts.CreateAssemblyDis].transform.GetChild(2).GetChild(0)
+                    .GetChild(0).gameObject;
+            for (int i = 0; i < whereObject.transform.childCount; i++)
+            {
+                Object.Destroy(whereObject.transform.GetChild(i).gameObject);
+            }
+            _backGroundForCreatingOrder.SetActive(false);
+            _toogleEscape = true;
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+            foreach (var toggle in _gameContextWithViews.ChoosenToggles)
+            {
+                toggle.Value.GetComponentInChildren<Toggle>().isOn = false;
+            }
         }
         
         public void CleanData()
@@ -519,8 +536,7 @@ namespace Diploma.Controllers
             _gameContextWithViews.TextBoxesOnConstructor[LoadingParts.DownloadPDF].
                 transform.GetChild(0).GetComponent<TextMeshProUGUI>().text != "Выберите текстовый фаил(*.pdf)" &&
             _gameContextWithViews.TextBoxesOnConstructor[LoadingParts.SetNameToLesson].
-                GetComponent<TMP_InputField>().text != ""
-            
+                GetComponent<TMP_InputField>().text != "" && TogglesAreNotZero()
             )
             {
                 _gameContextWithViews.LessonConstructorButtons[LoadingParts.CreateAssemblyDis].GetComponentInChildren<TextMeshProUGUI>().color = Color.white;
@@ -543,6 +559,18 @@ namespace Diploma.Controllers
                 _gameContextWithViews.AssemblyCreatingButtons[AssemblyCreating.SavingOrder].GetComponentInChildren<TextMeshProUGUI>().color = Color.white;
                 _gameContextWithViews.AssemblyCreatingButtons[AssemblyCreating.SavingOrder].enabled = false;
             }
+        }
+
+        private bool TogglesAreNotZero()
+        {
+            foreach (var toggle in _gameContextWithViews.ChoosenToggles)
+            {
+                if (toggle.Value.GetComponentInChildren<Toggle>().isOn)
+                {
+                    return true;
+                }
+            }
+            return false;
         }
     }
 }

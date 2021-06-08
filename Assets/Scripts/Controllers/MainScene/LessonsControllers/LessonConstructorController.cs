@@ -360,8 +360,8 @@ namespace Controllers
             string[] lessonPacked,
             int assemblyId)
         {
-            if (i >= meshRenderer.Length)
-            {
+            //if (i >= meshRenderer.Length)
+            //{
                 // add screens
                 foreach (var mesh in meshRenderer)
                 {
@@ -407,18 +407,19 @@ namespace Controllers
                         lessonPacked[g] = null;
                     }
                 }
+                Object.Destroy(_assemblyInitialization.GetAGameObject());
                 yield break;
-            }
+            //}
             
-            meshRenderer[i].enabled = true;
+            /*meshRenderer[i].enabled = true;
             yield return new WaitForFixedUpdate();
             SetCameraNearObject(meshRenderer[i].gameObject,_gameContextWithLogic.ScreenShotCamera);
             Debug.Log(_destination[4]+"\\PartNumber"+i+".png");
-            TakingScreenShotOfPart(_destination[4]+"\\PartNumber"+i+".png");
+            //TakingScreenShotOfPart(_destination[4]+"\\PartNumber"+i+".png");
             yield return new WaitForSeconds(0.1f);
             meshRenderer[i].enabled = false;
-            i++;
-            ScreenShotsCoroutine(meshRenderer,i,lessonPacked,assemblyId).StartCoroutine(out _,out _);
+            i++;*/
+            //ScreenShotsCoroutine(meshRenderer,i,lessonPacked,assemblyId).StartCoroutine(out _,out _);
             yield break;
         }
         public void SetCameraNearObject(GameObject gameObject, Camera witchCamera)
