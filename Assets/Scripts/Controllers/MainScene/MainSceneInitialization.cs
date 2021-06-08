@@ -26,7 +26,7 @@ namespace Diploma.Controllers
         [SerializeField] private GameObject MainParent;
         
         [SerializeField] private AudioMixer _mainAudioMixer;
-        
+        [SerializeField] private GameObject _practiceScene;
         [SerializeField] private ImportantDontDestroyData _data;
         [SerializeField] private AdditionalInfomationLibrary _library;
         [SerializeField] private Transform _playerSpawn;
@@ -205,7 +205,7 @@ namespace Diploma.Controllers
                 loading,
                 _data,
                 AssemblyCreator,
-                Player
+                Player,_practiceScene
             );
             
             var ChooseLessonController = new LessonsChooseController(

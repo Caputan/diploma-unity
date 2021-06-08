@@ -15,6 +15,7 @@ using UI.LoadingUI;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
+using Object = UnityEngine.Object;
 
 namespace Diploma.Controllers
 {
@@ -34,6 +35,7 @@ namespace Diploma.Controllers
         private readonly ImportantDontDestroyData _importantDontDestroyData;
         private readonly AssemblyCreator _assemblyCreatingController;
         private readonly PlayerInitialization _playerInitialization;
+        private readonly GameObject _practiceScene;
         private readonly GameObject _backGround;
         private ErrorHandler _errorHandler;
         private LoadingParts _currentPosition;
@@ -56,7 +58,9 @@ namespace Diploma.Controllers
             LoadingUILogic loadingUILogic,
             ImportantDontDestroyData importantDontDestroyData,
             AssemblyCreator assemblyCreatingController,
-            PlayerInitialization playerInitialization)
+            PlayerInitialization playerInitialization,
+            GameObject practiceScene
+            )
         {
             _error = ErrorCodes.None;
             _gameContextWithUI = gameContextWithUI;
@@ -73,11 +77,13 @@ namespace Diploma.Controllers
             _importantDontDestroyData = importantDontDestroyData;
             _assemblyCreatingController = assemblyCreatingController;
             _playerInitialization = playerInitialization;
+            _practiceScene = practiceScene;
             _gameObject = null;
             
 
             _backGround = GameObject.Find("BackGround");
-            
+            _backGround.SetActive(true);
+           
         }
 
         private void GivingGameObj(GameObject obj)
@@ -285,16 +291,17 @@ namespace Diploma.Controllers
                     _gameContextWithUI.UiControllers[LoadingParts.LoadCreationOfLesson].SetActive(true);
                     _backController.WhereIMustBack(_currentPosition);
                     _currentPosition = LoadingParts.LoadCreationOfLesson;
+                    // очищать тоглы и имя
+                    
                     _lessonConstructorController._playerChoose = false;
                     break;
                 case LoadingParts.LoadMain:
                     HideAllUI();
+                    _practiceScene.SetActive(true);
                     if (_authController.CheckAuthData(out var role, out var marks) == ErrorCodes.None)
                     {
                         _backController.WhereIMustBack(_currentPosition);
                         _gameContextWithUI.UiControllers[LoadingParts.LoadMain].SetActive(true);
-                        // галочки
-                        Debug.Log(marks);
                         SetMarks(marks);
                         MainLoading(role);
                     }
@@ -350,12 +357,14 @@ namespace Diploma.Controllers
                         if (_lessonConstructorController.CreateALesson())
                         {
                             _error = ErrorCodes.None;
+                            Object.Destroy(_gameObject);
                         }
                         else
                         {
                             _backController.WhereIMustBack(_currentPosition);
                             ShowUIByUIType(LoadingParts.LoadError);
                             _currentPosition = LoadingParts.LoadStart;
+                            Object.Destroy(_gameObject);
                         }
                     } else
                     {
@@ -364,6 +373,7 @@ namespace Diploma.Controllers
                         ShowUIByUIType(LoadingParts.LoadError);
                         _currentPosition = LoadingParts.LoadStart;
                     }
+                    
                     break;
                 case LoadingParts.Options:
                     HideAllUI();
@@ -396,10 +406,8 @@ namespace Diploma.Controllers
             var marksInt = marks.Split(' ');
             foreach (var button in _gameContextWithViews.LessonChooseButtonsLogic._buttonLogic)
             {
-                Debug.Log("Button" + button.Key);
                 foreach (var mark in marksInt)
                 {
-                    Debug.Log("Mark "+mark);
                     if (button.Key == Convert.ToInt32(mark))
                     {
                         button.Value.transform.GetChild(3).gameObject.SetActive(true);
@@ -511,7 +519,9 @@ namespace Diploma.Controllers
             _gameContextWithViews.TextBoxesOnConstructor[LoadingParts.DownloadPDF].
                 transform.GetChild(0).GetComponent<TextMeshProUGUI>().text != "Выберите текстовый фаил(*.pdf)" &&
             _gameContextWithViews.TextBoxesOnConstructor[LoadingParts.SetNameToLesson].
-                GetComponent<TMP_InputField>().text != "")
+                GetComponent<TMP_InputField>().text != ""
+            
+            )
             {
                 _gameContextWithViews.LessonConstructorButtons[LoadingParts.CreateAssemblyDis].GetComponentInChildren<TextMeshProUGUI>().color = Color.white;
                 _gameContextWithViews.LessonConstructorButtons[LoadingParts.CreateAssemblyDis].enabled = true;

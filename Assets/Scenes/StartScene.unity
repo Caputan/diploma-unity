@@ -245,6 +245,7 @@ MonoBehaviour:
   _screenShotCamera: {fileID: 1239178557}
   MainParent: {fileID: 1084967671}
   _mainAudioMixer: {fileID: 24100000, guid: cf6d7f734239e504bbe4db1aa1ffbc0d, type: 2}
+  _practiceScene: {fileID: 1790683827}
   _data: {fileID: 11400000, guid: 03ce9d4a4a736824db6636fb7cc1202c, type: 2}
   _library: {fileID: 11400000, guid: 8527d7f87a23f0b45bc6f567a36e8d7c, type: 2}
   _playerSpawn: {fileID: 1060808262}
@@ -747,6 +748,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1 &1790683827 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7185116272973216011, guid: 324633dded192f4439a441371564ed72,
+    type: 3}
+  m_PrefabInstance: {fileID: 2126974833}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2126974833
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -758,6 +765,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PracticeScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 7185116272973216011, guid: 324633dded192f4439a441371564ed72,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7565336548485505969, guid: 324633dded192f4439a441371564ed72,
         type: 3}
