@@ -484,6 +484,8 @@ namespace Diploma.Controllers
             _toogleEscape = true;
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
+            _errorHandler.MessageBoxBehaviour.Show();
+            _errorHandler.MessageBoxBehaviour.ButtonHide_OnClick();
             foreach (var toggle in _gameContextWithViews.ChoosenToggles)
             {
                 toggle.Value.GetComponentInChildren<Toggle>().isOn = false;
