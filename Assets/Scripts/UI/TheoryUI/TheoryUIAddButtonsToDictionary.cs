@@ -29,7 +29,7 @@ namespace UI.TheoryUI
             _usedLibraryItem = new List<int>();
             if (gameContextWithViews.urlVideo!="-1")
             {
-                _usedLibraryItem.Add(-1);
+                _usedLibraryItem.Add(-2);
             }
             foreach (var type in types)
             {

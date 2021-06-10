@@ -59,13 +59,15 @@ namespace Controllers.TheoryScene.TheoryControllers
 
         public void Show(int id)
         {
-            Debug.Log("id: "+id);
-            if (id == -1)
+            Debug.Log(id);
+            if (id == -2)
             {
+                _pdfReaderUIInitialization.UnloadDocument();
                 _pdfReaderUIInitialization.PlayANewVideo();
             }
             else
             {
+                _pdfReaderUIInitialization.UnloadVideo();
                 _pdfReaderUIInitialization.ReadNextDoc(id);
             }
         }
@@ -77,6 +79,7 @@ namespace Controllers.TheoryScene.TheoryControllers
             int hand
             )
         {
+            Debug.Log("id: "+id + " string: "+obj);
             _pdfReader.RaedFile(id,obj,coroutineController,hand);
         }
 

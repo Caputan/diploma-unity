@@ -96,11 +96,9 @@ namespace PDFWorker
             
             if (pageNumber > numberOfPages)
             {
-                Debug.Log("Сейчас корутина будет остановлена");
                 сoroutineController[hand].state = CoroutineState.Finished;
                 yield break;
             }
-            Debug.Log(pageNumber);
             yield return new WaitForEndOfFrame();
             string outImageName = Path.GetFileNameWithoutExtension(_inputPdfFile);
             outImageName = outImageName+"_"+pageNumber.ToString() + "_.png";

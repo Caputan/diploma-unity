@@ -43,7 +43,7 @@ namespace Controllers.TheoryScene.TheoryControllers
         {
             _theoryUIInitialization.SetButtons();
             Dictionary<int, string> obj = new Dictionary<int, string>();
-            obj.Add(0,_pdfPath.Text_Link);
+            obj.Add(-1,_pdfPath.Text_Link);
             rewriteDictionary?.Invoke(obj);
             //CreateDocumentLocaly(obj);
             //LoadDocumentTheory();
@@ -51,7 +51,7 @@ namespace Controllers.TheoryScene.TheoryControllers
 
         public void LoadDocumentTheory()
         {
-            _pdfReaderUIInitialization.ReadNextDoc(0);
+            _pdfReaderUIInitialization.ReadNextDoc(-1);
         }
 
         public void CreateDocumentLocaly(
@@ -61,6 +61,7 @@ namespace Controllers.TheoryScene.TheoryControllers
             int hand
             )
         {
+            Debug.Log("id: "+id + " string: "+obj);
             _pdfReader.RaedFile(id,obj, сoroutineController,hand);
         }
 

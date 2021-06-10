@@ -64,7 +64,7 @@ namespace Diploma.Controllers
                 "",
                 "",
                 "",
-                _data.lessonID.ToString() + " "
+                " " + _data.lessonID.ToString()
             };
             _dataBaseController.UpdateRecordById(_data.activatedUserID, newParams);
             
@@ -94,7 +94,7 @@ namespace Diploma.Controllers
 
         public void CleanData()
         {
-            
+            AssembleController.AssembleController.PracticeCompleted -= CompleteLesson;
         }
     }
 }

@@ -132,5 +132,10 @@ namespace Diploma.PracticeScene.Controllers
             var deltaTime = Time.deltaTime;
             _controllers?.Execute(deltaTime);
         }
+
+        private void OnDestroy()
+        {
+            _controllers?.CleanData();
+        }
     }
 }

@@ -25,7 +25,7 @@ namespace Controllers.TheoryScene.TheoryControllers
         private VideoFactory _videoFactory;
         private Textures2DPool _textures2DPool;
         private Transform _POOL;
-        
+        private GameObject _videoObject;
         
         private readonly ResourcePath _viewPath = new ResourcePath {PathResource = "Prefabs/TheoryScene/ImageForPage"};
         private readonly ResourcePath _viewVideoPrefabPath = 
@@ -38,6 +38,7 @@ namespace Controllers.TheoryScene.TheoryControllers
         {
             _gameContextWithViewsTheory = gameContextWithViewsTheory;
             _videoPlayer = videoPlayer;
+            _videoObject = null;
             _factory = new PDFReaderUIFactory(ResourceLoader.LoadPrefab(_viewPath));
             _videoFactory = new VideoFactory(ResourceLoader.LoadPrefab(_viewVideoPrefabPath));
             
@@ -58,7 +59,7 @@ namespace Controllers.TheoryScene.TheoryControllers
         {
             _videoPlayer.Stop();
             yield return new WaitForEndOfFrame();
-            
+            _parent.GetComponent<GridLayoutGroup>().cellSize = new Vector2(1000,1300);
             #region Creation PDF Reader
             var paths = Directory.GetFiles(_gameContextWithViewsTheory.nameOfFolders[id]);
             _textures2DPool.TurnOnAll();
@@ -80,20 +81,25 @@ namespace Controllers.TheoryScene.TheoryControllers
 
         public void PlayANewVideo()
         {
+            Debug.Log(_gameContextWithViewsTheory.urlVideo);
             _parent.GetComponent<GridLayoutGroup>().cellSize = new Vector2(1350,750);
-            GameObject videoObject = _videoFactory.Create(_parent);
-            videoObject.GetComponent<RawImage>().texture = ResourceLoader.LoadObject<Texture>(_videoTexture);
+            _videoObject = _videoFactory.Create(_parent);
+            _videoObject.GetComponent<RawImage>().texture = ResourceLoader.LoadObject<Texture>(_videoTexture);
             _videoPlayer.url = _gameContextWithViewsTheory.urlVideo;
             _videoPlayer.Play();
         }
 
         public void UnloadDocument()
         {
-            for(int i = 0;i<_parent.childCount; i++)
+            _textures2DPool.TurnOffAll();
+        }
+
+        public void UnloadVideo()
+        {
+            if (_videoObject!=null)
             {
-                Object.Destroy(_parent.GetChild(i).gameObject);
+                Object.Destroy(_videoObject);
             }
-            
         }
     }
 }
