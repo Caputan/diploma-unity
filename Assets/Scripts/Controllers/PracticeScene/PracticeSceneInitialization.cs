@@ -48,9 +48,9 @@ namespace Diploma.PracticeScene.Controllers
         private LoadingUILogic _loadingUILogic;
         private Diploma.Controllers.Controllers _controllers;
         
-        private IEnumerator Start()
+        public IEnumerator StartNotMB()
         {
-            Debug.Log("START");
+            Time.timeScale = 1;
             var DataBaseController = new DataBaseController();
             AssemliesTable assemblies = new AssemliesTable();
             LessonsTable lessons = new LessonsTable();
@@ -86,7 +86,7 @@ namespace Diploma.PracticeScene.Controllers
             yield return new WaitUntil(()=> _gameObjectInitialization.GameObject != null);
 
             _practiceSceneController = new PracticeSceneController(DataBaseController, tables, _data,
-                new LoadingSceneController(), completePrefab, mainParent.transform, _gameContextView);
+               _data.LoadingSceneController, completePrefab, mainParent.transform, _gameContextView);
             
             var assemblyGameObject = _gameObjectInitialization.GameObject;
             
@@ -97,11 +97,11 @@ namespace Diploma.PracticeScene.Controllers
             _loadingUILogic.SetActiveLoading(false);
             
             var pauseInitialization = new PauseInitialization(_gameContextView,_gameContextWithUI,mainParent);
-            var pauseController = new PauseController(_data,new LoadingSceneController());
+            var pauseController = new PauseController(_data,_data.LoadingSceneController);
             pauseController.SetAnPracticeScene(this);
             var ExitController = new ExitController(_data);
             _uiController = new UIController(_gameContextWithUI,pauseController,_playerInitialization);
-
+            _uiController._pauseParam = false;
             _controllers = new Diploma.Controllers.Controllers();
             _controllers.Add(_playerInitialization);
             _controllers.Add(pauseInitialization);
@@ -110,21 +110,28 @@ namespace Diploma.PracticeScene.Controllers
             _controllers.Add(_practiceSceneController);
             _controllers.Add(_uiController);
             _controllers.Initialization();
-            yield break;
+            StopCoroutine(this.name);
+        }
+
+        public void FirstStartOfStart()
+        {
+            StartCoroutine(StartNotMB());
         }
         
-        public void DecompileGameScene()
+        public void DecompileGameScene(bool isRestart)
         {
             //мы должны удалить игрока, удалить объект и вызвать start
-            
             DestroyImmediate(_playerInitialization.playerGO);
-            DestroyImmediate(_gameObjectInitialization.GameObject,true);
+            //DestroyImmediate(_gameObjectInitialization.GameObject);
             DestroyImmediate(_assemblyInitialization.GetAGameObject());
             DestroyImmediate(_loadingUILogic._settingActiveGameObject);
-            _uiController.ActivatePauseMenu(false);
-            _controllers.CleanData();
-            _controllers = null;
-            StartCoroutine(Start());
+            if (isRestart)
+            {
+                _uiController.ActivatePauseMenu(false);
+                _controllers.CleanData();
+                _controllers = null;
+            }
+            StartCoroutine(StartNotMB());
         }
         
         private void Update()
@@ -133,9 +140,25 @@ namespace Diploma.PracticeScene.Controllers
             _controllers?.Execute(deltaTime);
         }
 
-        private void OnDestroy()
+        public void OnDestroyNotMB(bool firstCall)
         {
-            _controllers?.CleanData();
+            if (!firstCall)
+            {
+                _controllers?.CleanData();
+                for (int i = 2; i < mainParent.transform.childCount; i++)
+                {
+                    Destroy(mainParent.transform.GetChild(i).gameObject);
+                }
+                for (int i = 0; i < spawnPoint.transform.childCount; i++)
+                {
+                    Destroy(spawnPoint.transform.GetChild(i).gameObject);
+                }
+                for (int i = 0; i < assemblyParent.transform.childCount; i++)
+                {
+                    Destroy(assemblyParent.transform.GetChild(i).gameObject);
+                }
+                _controllers = null;
+            }
         }
     }
 }

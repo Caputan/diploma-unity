@@ -36,6 +36,7 @@ namespace Diploma.Controllers
         private readonly AssemblyCreator _assemblyCreatingController;
         private readonly PlayerInitialization _playerInitialization;
         private readonly GameObject _practiceScene;
+        private readonly ErrorMenuInitialization _errorMenuInitialization;
         private readonly GameObject _backGround;
         private ErrorHandler _errorHandler;
         private LoadingParts _currentPosition;
@@ -59,7 +60,8 @@ namespace Diploma.Controllers
             ImportantDontDestroyData importantDontDestroyData,
             AssemblyCreator assemblyCreatingController,
             PlayerInitialization playerInitialization,
-            GameObject practiceScene
+            GameObject practiceScene,
+            ErrorMenuInitialization errorMenuInitialization
             )
         {
             _error = ErrorCodes.None;
@@ -78,6 +80,7 @@ namespace Diploma.Controllers
             _assemblyCreatingController = assemblyCreatingController;
             _playerInitialization = playerInitialization;
             _practiceScene = practiceScene;
+            _errorMenuInitialization = errorMenuInitialization;
             _gameObject = null;
             
 
@@ -98,21 +101,18 @@ namespace Diploma.Controllers
             {
                 if (value.Value is IMenuButton)
                 {
-                    Debug.Log("MainMenu "+value.Key);
                     var i = (IMenuButton) value.Value;
                     i.LoadNext += ShowUIByUIType;
                 }
 
                 if (value.Value is IUIOptions)
                 {
-                    Debug.Log("Options "+value.Key);
                     var i = (IUIOptions) value.Value;
                     i.LoadNext += ShowUIByUIType;
                 }
 
                 if (value.Value is ICreatingAssemblyButton)
                 {
-                    Debug.Log("Creating Assembly "+value.Key);
                     var i = (ICreatingAssemblyButton) value.Value;
                     i.LoadNext += ShowUIByUIType;
                 }
@@ -122,7 +122,8 @@ namespace Diploma.Controllers
             _toogleEscape = false;
             _lessonConstructorController.TakeScreenShoot += TakeScreenShoot;
             _lessonConstructorController.TakeScreenShootOfPart += TakeAScreenShotOfPart;
-            _backGroundForCreatingOrder = _gameContextWithUI.UiControllers[LoadingParts.CreateAssemblyDis].transform.GetChild(0).gameObject;
+            _backGroundForCreatingOrder = _gameContextWithUI.UiControllers[LoadingParts.CreateAssemblyDis]
+                .transform.GetChild(0).gameObject;
             HideAllUI();
             _buttonMass = _gameContextWithUI.UiControllers[LoadingParts.LoadMain].
                 GetComponentsInChildren<Button>();
@@ -130,7 +131,9 @@ namespace Diploma.Controllers
             {
                 _transforms[i] = _buttonMass[i].transform.position;
             }
-            _errorHandler = new ErrorHandler(_gameContextWithUI.UiControllers[LoadingParts.LoadError]);
+            
+            _errorHandler = new ErrorHandler(_errorMenuInitialization.Initialization());
+            _errorHandler.MessageBoxBehaviour.UIController = this;
             ShowUIByUIType(LoadingParts.LoadStart);
         }
 
@@ -218,7 +221,7 @@ namespace Diploma.Controllers
         }
         public void ShowUIByUIType(LoadingParts id)
         {
-            
+            Debug.Log(id);
             switch (id)
             {
                 case LoadingParts.Exit:
@@ -321,7 +324,6 @@ namespace Diploma.Controllers
                     ShowUIByUIType(_backController.GoBack());
                     break;
                 case LoadingParts.LoadError:
-                    Debug.Log(_currentPosition);
                     _backController.WhereIMustBack(_currentPosition);
                     _errorHandler.ChangeErrorMessage(_error);
                     _errorHandler.MessageBoxBehaviour.Show();
@@ -382,7 +384,6 @@ namespace Diploma.Controllers
                     _currentPosition = LoadingParts.Options;
                     break;
             }
-            Debug.Log(id);
         }
 
         public void HideUIByUIType(LoadingParts id)
@@ -484,8 +485,7 @@ namespace Diploma.Controllers
             _toogleEscape = true;
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
-            _errorHandler.MessageBoxBehaviour.Show();
-            _errorHandler.MessageBoxBehaviour.ButtonHide_OnClick();
+            
             foreach (var toggle in _gameContextWithViews.ChoosenToggles)
             {
                 toggle.Value.GetComponentInChildren<Toggle>().isOn = false;
@@ -498,13 +498,11 @@ namespace Diploma.Controllers
             {
                 if (value.Value is IMenuButton)
                 {
-                    Debug.Log("MainMenu "+value.Key);
                     var i = (IMenuButton) value.Value;
                     i.LoadNext -= ShowUIByUIType;
                 }
                 if (value.Value is IUIOptions)
                 {
-                    Debug.Log("Options "+value.Key);
                     var i = (IUIOptions) value.Value;
                     i.LoadNext -= ShowUIByUIType;
                 }

@@ -68,13 +68,11 @@ namespace Controllers.TheoryScene.UIController
         {
             foreach (var value in _gameContextWithUITheory.UILogic)
             {
-                Debug.Log(value.Key);
                 var i = (ITheorySceneButton)value.Value;
                 i.LoadNext -= ShowUIByUIType;
             }
             foreach (var value in _gameContextWithUITheory.UITreeLogic)
             {
-                Debug.Log(value.Key);
                 var i = (ILibraryOnSceneButton)value.Value;
                 i.LoadNext -= ShowLibraryObject;
             }
@@ -138,13 +136,13 @@ namespace Controllers.TheoryScene.UIController
                     _theoryController.RemoveDocumentPng();
                     _libraryController.RemoveDocumentPng();
                     Debug.Log("GoingToMenu");
-                    _loadingSceneController.LoadNextScene(0);
+                    _loadingSceneController.SetActiveSceneAndLoadIt(0);
                     break;
                 case LoadingPartsTheoryScene.LoadPractise:
                     Debug.Log("GoingToPractice");
                     _theoryController.RemoveDocumentPng();
                     _libraryController.RemoveDocumentPng();
-                    _loadingSceneController.LoadNextScene(2);
+                    _loadingSceneController.SetActiveSceneAndLoadIt(2);
                     break;
                 case LoadingPartsTheoryScene.CloseLibrary:
                     _theoryController.LoadDocumentTheory();

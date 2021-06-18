@@ -15,7 +15,7 @@ using UnityEngine.UI;
 using UnityEngine.Video;
 using Types = Diploma.Tables.Types;
 
-namespace Controllers.TheoryScene
+namespace Controllers
 {
     public sealed class TheorySceneInitialization: MonoBehaviour
     {
@@ -30,7 +30,7 @@ namespace Controllers.TheoryScene
         private GameContextWithUITheory _gameContextWithUITheory;
         private Diploma.Controllers.Controllers _controllers;
         private FileManager _fileManager;
-        private void Start()
+        public void StartNotMB()
         {
             Cursor.visible = true;
             Cursor.lockState = CursorLockMode.None;
@@ -69,9 +69,6 @@ namespace Controllers.TheoryScene
                 _gameContextWithViewsTheory.SetVideo(_fileManager.GetStorage() + "\\" + Video.Video_Link);
             }
 
-
-            LoadingSceneController loadingSceneController = new LoadingSceneController();
-            
             TheoryUIInitialization theoryUIInitialization = new TheoryUIInitialization
             (
                 canvas,
@@ -136,13 +133,14 @@ namespace Controllers.TheoryScene
             UIControllerTheoryScene uiControllerTheoryScene = new UIControllerTheoryScene(
                 _gameContextWithViewsTheory,
                 _gameContextWithUITheory,
-                loadingSceneController,
+                _data.LoadingSceneController,
                 theoryController,
                 libraryController,
                 _library,
                 loadingUILogic,
                 mainTheoryController
             );
+            _controllers.Add(uiControllerTheoryScene);
         }
 
         private void Update()
@@ -150,14 +148,20 @@ namespace Controllers.TheoryScene
             Cursor.visible = true;
             Cursor.lockState = CursorLockMode.None;
             var deltaTime = Time.deltaTime;
-            _controllers.Execute(deltaTime);
+            _controllers?.Execute(deltaTime);
         }
 
-        private void OnDestroy()
+        public void OnDestroyNotMB(bool firstCall)
         {
-            _controllers.CleanData();
+            if (!firstCall)
+            {
+                _controllers?.CleanData();
+                for (int i = 0; i < canvas.transform.childCount; i++)
+                {
+                    Destroy(canvas.transform.GetChild(i).gameObject);
+                }
+                _controllers = null;
+            }
         }
-
-        
     }
 }

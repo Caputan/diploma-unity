@@ -15,7 +15,7 @@ namespace Controllers.PracticeScene.UIController
         private readonly PauseController.PauseController _pauseController;
         private readonly PlayerInitialization _playerInitialization;
         private readonly KeyCode _pauseKeyCode = KeyCode.Escape;
-        private bool _pauseParam;
+        public bool _pauseParam;
 
         public UIController(
             GameContextWithUI gameContextWithUI,
@@ -27,7 +27,7 @@ namespace Controllers.PracticeScene.UIController
            
             _pauseController = pauseController;
             _playerInitialization = playerInitialization;
-            _pauseParam = true;
+            _pauseParam = false;
             SetCursorParameters(false);
             SetPlayersRotationAndMovement(false);
         }
@@ -38,7 +38,6 @@ namespace Controllers.PracticeScene.UIController
             {
                 if (value is IPauseButtons)
                 {
-                    Debug.Log("PauseButtons " + value);
                     var i = (IPauseButtons) value;
                     i.LoadNext += ShowUIByUIType;
                 }
@@ -86,7 +85,7 @@ namespace Controllers.PracticeScene.UIController
         {
             if (isOnOrOff)
             {
-                Cursor.lockState = CursorLockMode.Confined;
+                Cursor.lockState = CursorLockMode.None;
                 Cursor.visible = true;
             }
             else
@@ -100,8 +99,8 @@ namespace Controllers.PracticeScene.UIController
         {
             if (activateOrDeactivate)
             {
-                Time.timeScale = 0;
                 ShowPauseMenu();
+                Time.timeScale = 0;
             }
             else
             {
@@ -124,7 +123,6 @@ namespace Controllers.PracticeScene.UIController
             {
                 if (value.Value is IPauseButtons)
                 {
-                    Debug.Log("PauseButtons "+value.Key);
                     var i = (IPauseButtons) value.Value;
                     i.LoadNext -= ShowUIByUIType;
                 }

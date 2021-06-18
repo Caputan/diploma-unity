@@ -77,7 +77,6 @@ namespace Controllers.TheoryScene.TheoryControllers
 
         private IEnumerator QueueCorutine(int index)
         {
-            Debug.Log("Creating New document "+index);
             yield return new WaitForEndOfFrame();
             if (index >= _countOfUnitInQueue)
             {

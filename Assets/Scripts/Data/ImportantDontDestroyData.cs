@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Controllers;
+using UnityEngine;
 
 namespace Data
 {
@@ -12,6 +13,8 @@ namespace Data
         public float mouseSensitivity;
 
         public int[] assembleOrder;
+
+        public LoadingSceneController LoadingSceneController;
         //дополнить по мере надобности
     }
 }

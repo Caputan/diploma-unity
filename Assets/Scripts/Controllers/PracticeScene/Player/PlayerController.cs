@@ -46,30 +46,36 @@ public class PlayerController
 
     public void RotateCamera()
     {
-        Vector2 targetMouseDelta = new Vector2(Input.GetAxis("Mouse X"),Input.GetAxis("Mouse Y"));
-        _currentMouseDelta = Vector2.SmoothDamp(_currentMouseDelta, targetMouseDelta,
-            ref _currentMouseDeltaVelocity, _mouseSmoothTime);
+        if (_camera!=null)
+        {
+            Vector2 targetMouseDelta = new Vector2(Input.GetAxis("Mouse X"),Input.GetAxis("Mouse Y"));
+            _currentMouseDelta = Vector2.SmoothDamp(_currentMouseDelta, targetMouseDelta,
+                ref _currentMouseDeltaVelocity, _mouseSmoothTime);
 
-        _yAxisRotation -= _currentMouseDelta.y * _mouseSensitivity;
-        _yAxisRotation = Mathf.Clamp(_yAxisRotation, -90f, 90f);
+            _yAxisRotation -= _currentMouseDelta.y * _mouseSensitivity;
+            _yAxisRotation = Mathf.Clamp(_yAxisRotation, -90f, 90f);
         
-        _camera.transform.localEulerAngles = Vector3.right * _yAxisRotation;
-        _playerGameObject.transform.Rotate(Vector3.up * (_currentMouseDelta.x * _mouseSensitivity));
+            _camera.transform.localEulerAngles = Vector3.right * _yAxisRotation;
+            _playerGameObject.transform.Rotate(Vector3.up * (_currentMouseDelta.x * _mouseSensitivity)); 
+        }
     }
 
     public void MovePlayer()
     {
-        Vector3 movement = new Vector3(Input.GetAxis("Horizontal"), 0f, Input.GetAxis("Vertical"));
+        if (_playerController!=null)
+        {
+            Vector3 movement = new Vector3(Input.GetAxis("Horizontal"), 0f, Input.GetAxis("Vertical"));
 
-        if (_playerController.isGrounded)
-            _gravityVelocity = 0f;
+            if (_playerController.isGrounded)
+                _gravityVelocity = 0f;
 
-        _gravityVelocity += _gravity * Time.deltaTime;
+            _gravityVelocity += _gravity * Time.deltaTime;
 
-        Vector3 velocity = (_playerGameObject.transform.forward * movement.z + 
-                            _playerGameObject.transform.right * movement.x) * _speed + Vector3.up * _gravityVelocity;
+            Vector3 velocity = (_playerGameObject.transform.forward * movement.z + 
+                                _playerGameObject.transform.right * movement.x) * _speed + Vector3.up * _gravityVelocity;
 
-        _playerController.Move(velocity * Time.deltaTime);
+            _playerController.Move(velocity * Time.deltaTime);
+        }
     }
 
     public void PickUp(GameObject objectToPickUp)
@@ -88,12 +94,15 @@ public class PlayerController
 
     public void OutlineAssemblyParts()
     {
-        Ray hitRay = _camera.ScreenPointToRay(new Vector3(Screen.currentResolution.width / 2f, Screen.currentResolution.height / 2f, 0));
-        LayerMask boundingBoxMask = LayerMask.GetMask("BoundingBox");
-        if (!Physics.Raycast(hitRay, out var hit, 50, ~boundingBoxMask)) return;
-        if (!hit.collider.CompareTag("Assembly")) return;
-        _objectHitted = hit.collider.gameObject;
-        if(Input.GetMouseButtonDown(0))
-            OnPartClicked?.Invoke(_objectHitted);
+        if (_camera)
+        {
+            Ray hitRay = _camera.ScreenPointToRay(new Vector3(Screen.currentResolution.width / 2f, Screen.currentResolution.height / 2f, 0));
+            LayerMask boundingBoxMask = LayerMask.GetMask("BoundingBox");
+            if (!Physics.Raycast(hitRay, out var hit, 50, ~boundingBoxMask)) return;
+            if (!hit.collider.CompareTag("Assembly")) return;
+            _objectHitted = hit.collider.gameObject;
+            if(Input.GetMouseButtonDown(0))
+                OnPartClicked?.Invoke(_objectHitted);
+        }
     }
 }

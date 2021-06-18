@@ -17,7 +17,7 @@ namespace Controllers.PracticeScene.PauseController
 
         public void Restart()
         {
-            _practiceSceneInitialization.DecompileGameScene();
+            _practiceSceneInitialization.DecompileGameScene(true);
         }
 
         public void SetAnPracticeScene(PracticeSceneInitialization practiceSceneInitialization)
@@ -27,7 +27,7 @@ namespace Controllers.PracticeScene.PauseController
         
         public void BackToMenu()
         {
-            _loadingSceneController.LoadNextScene(0);
+            _loadingSceneController.SetActiveSceneAndLoadIt(0);
         }
     }
 }

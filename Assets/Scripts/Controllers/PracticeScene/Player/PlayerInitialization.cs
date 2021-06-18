@@ -28,8 +28,11 @@ namespace Diploma.Controllers
 
         public void TurnOnOffCamera(bool toogle,Camera mainCamera)
         {
-            playerGO.GetComponentInChildren<Camera>().enabled = toogle;
-            mainCamera.enabled = !toogle;
+            if (playerGO!=null)
+            {
+                playerGO.GetComponentInChildren<Camera>().enabled = toogle;
+                mainCamera.enabled = !toogle;
+            }
         }
         
         public void SetPause(bool pause)

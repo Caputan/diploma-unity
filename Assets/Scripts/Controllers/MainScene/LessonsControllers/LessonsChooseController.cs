@@ -47,7 +47,7 @@ namespace Controllers
             _uiController.ShowUIByUIType(LoadingParts.LoadLessonScene);
             _importantDontDestroyData.lessonID = id;
             _loadingUILogic.SetActiveLoading(true);
-            _loadingSceneController.LoadNextScene(1);
+            _loadingSceneController.SetActiveSceneAndLoadIt(1);
         }
     }
 }

@@ -45,9 +45,7 @@ namespace Diploma.Controllers.AssembleController
             {
                 var outline = mesh.gameObject.AddComponent<Outline>();
                 outline.part_Id = partId;
-                
-                Debug.Log(mesh.name + " | " + partId);
-                
+
                 partId++;
                 
                 var rb = mesh.gameObject.AddComponent<Rigidbody>();

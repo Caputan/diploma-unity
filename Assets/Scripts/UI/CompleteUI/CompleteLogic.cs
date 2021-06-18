@@ -23,7 +23,7 @@ namespace UI.CompleteUI
         private void SwitchToNextMenu()
         {
             Debug.Log("Button is pressed");
-            _loadingSceneController.LoadNextScene(0);
+            _loadingSceneController.SetActiveSceneAndLoadIt(0);
         }
 
         public void Initialization()

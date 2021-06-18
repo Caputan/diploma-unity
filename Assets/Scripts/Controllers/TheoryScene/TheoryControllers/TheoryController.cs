@@ -61,7 +61,6 @@ namespace Controllers.TheoryScene.TheoryControllers
             int hand
             )
         {
-            Debug.Log("id: "+id + " string: "+obj);
             _pdfReader.RaedFile(id,obj, сoroutineController,hand);
         }
 

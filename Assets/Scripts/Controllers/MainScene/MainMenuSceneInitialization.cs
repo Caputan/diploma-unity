@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Controllers;
 using Controllers.MainScene.LessonsControllers;
 using Data;
@@ -19,7 +20,7 @@ using UnityEngine.UI;
 
 namespace Diploma.Controllers
 {
-    public class MainSceneInitialization: MonoBehaviour
+    public class MainMenuSceneInitialization: MonoBehaviour
     {
         [SerializeField] private Camera _camera;
         [SerializeField] private Camera _screenShotCamera;
@@ -41,18 +42,21 @@ namespace Diploma.Controllers
         private GameContextWithUI _gameContextWithUI;
       
         private Controllers _controllers;
-       
-        public void Start()
+
+        private void Start()
+        {
+            var SceneLoader = new LoadingSceneController();
+            SceneLoader.LoadScenes();
+            _data.LoadingSceneController = SceneLoader;
+        }
+
+        public void StartNotMB()
         {
 
             #region DataBase initialization
             
             FileManager fileManager = new FileManager();
-            // destinationPath[0] = fileManager.CreateFileFolder("Assemblies");
-            // destinationPath[1] = fileManager.CreateFileFolder("Videos");
-            // destinationPath[2] = fileManager.CreateFileFolder("Photos");
-            // destinationPath[3] = fileManager.CreateFileFolder("Texts");
-            
+
             var DataBaseController = new DataBaseController();
             AssemliesTable assemblies = new AssemliesTable();
             LessonsTable lessons = new LessonsTable();
@@ -186,7 +190,7 @@ namespace Diploma.Controllers
                 _data
                 );
             
-            var SceneLoader = new LoadingSceneController();
+            
 
             var loading = new LoadingUILogic(MainParent.transform);
             
@@ -205,13 +209,14 @@ namespace Diploma.Controllers
                 loading,
                 _data,
                 AssemblyCreator,
-                Player,_practiceScene
+                Player,_practiceScene,
+                ErrorHandlerInitialization
             );
             
             var ChooseLessonController = new LessonsChooseController(
                 _gameContextWithViews,
                 _gameContextWithUI,
-                SceneLoader,
+                _data.LoadingSceneController,
                 _data,
                 uiController,
                 loading
@@ -233,9 +238,8 @@ namespace Diploma.Controllers
             _controllers.Add(LessonConstructorController);
             _controllers.Add(OptionsInitialization);
             _controllers.Add(OptionsController);
-            _controllers.Add(ErrorHandlerInitialization);
+            
             _controllers.Add(ChooseLessonController);
-            _controllers.Add(SceneLoader);
             _controllers.Add(loading);
             _controllers.Add(AboutInitialization);
             _controllers.Add(AssemblyCreating);
@@ -245,24 +249,41 @@ namespace Diploma.Controllers
             //этот контроллер идет самым последним
             _controllers.Add(uiController);
             _controllers.Initialization();
-            
+            //_controllers.Add(ErrorHandlerInitialization);
         }
         
         private void Update()
         {
             var deltaTime = Time.deltaTime;
-            _controllers.Execute(deltaTime);
+            _controllers?.Execute(deltaTime);
         }
 
         private void LateUpdate()
         {
             var deltaTime = Time.deltaTime;
-            _controllers.LateExecute(deltaTime);
+            _controllers?.LateExecute(deltaTime);
         }
 
-        private void OnDestroy()
+        public void OnDestroyNotMB(bool firstCall)
         {
-            _controllers.CleanData();
+            if (!firstCall)
+            {
+                _controllers?.CleanData();
+                for (int i = 1; i < MainParent.transform.childCount; i++)
+                {
+                    Destroy(MainParent.transform.GetChild(i).gameObject);
+                }
+                for (int i = 0; i < _playerSpawn.transform.childCount; i++)
+                {
+                    Destroy(_playerSpawn.transform.GetChild(i).gameObject);
+                }
+                for (int i = 0; i < assemblyParent.transform.childCount; i++)
+                {
+                    Destroy(assemblyParent.transform.GetChild(i).gameObject);
+                }
+
+                _controllers = null;
+            }
         }
     }
 }
