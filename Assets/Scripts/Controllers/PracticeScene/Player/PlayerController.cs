@@ -24,7 +24,8 @@ public class PlayerController
     
     private readonly CharacterController _playerController;
     private float _yAxisRotation;
-
+    private float _xAxisRotation;
+    
     private float _gravityVelocity;
     
     private bool _isHandsBusy;
@@ -40,7 +41,8 @@ public class PlayerController
         _playerGameObject = playerGameObject;
 
         _playerController = _playerGameObject.GetComponent<CharacterController>();
-        _camera = Camera.main;
+        _camera = _playerGameObject.GetComponentInChildren<Camera>();
+            //Camera.main;
         _pickUpParent = _playerGameObject.GetComponentsInChildren<Transform>()[2];
     }
 
@@ -51,19 +53,20 @@ public class PlayerController
             Vector2 targetMouseDelta = new Vector2(Input.GetAxis("Mouse X"),Input.GetAxis("Mouse Y"));
             _currentMouseDelta = Vector2.SmoothDamp(_currentMouseDelta, targetMouseDelta,
                 ref _currentMouseDeltaVelocity, _mouseSmoothTime);
-
+            
             _yAxisRotation -= _currentMouseDelta.y * _mouseSensitivity;
             _yAxisRotation = Mathf.Clamp(_yAxisRotation, -90f, 90f);
-        
+           
             _camera.transform.localEulerAngles = Vector3.right * _yAxisRotation;
+
             _playerGameObject.transform.Rotate(Vector3.up * (_currentMouseDelta.x * _mouseSensitivity)); 
         }
     }
 
     public void MovePlayer()
     {
-        if (_playerController!=null)
-        {
+         if (_playerController!=null)
+         {
             Vector3 movement = new Vector3(Input.GetAxis("Horizontal"), 0f, Input.GetAxis("Vertical"));
 
             if (_playerController.isGrounded)
@@ -75,7 +78,7 @@ public class PlayerController
                                 _playerGameObject.transform.right * movement.x) * _speed + Vector3.up * _gravityVelocity;
 
             _playerController.Move(velocity * Time.deltaTime);
-        }
+         }
     }
 
     public void PickUp(GameObject objectToPickUp)

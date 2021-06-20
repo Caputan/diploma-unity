@@ -119,7 +119,7 @@ namespace Diploma.Controllers
                 
             }
             _lessonConstructorController.GiveMeGameObject += GivingGameObj;
-            _toogleEscape = false;
+            _toggleEscape = false;
             _lessonConstructorController.TakeScreenShoot += TakeScreenShoot;
             _lessonConstructorController.TakeScreenShootOfPart += TakeAScreenShotOfPart;
             _backGroundForCreatingOrder = _gameContextWithUI.UiControllers[LoadingParts.CreateAssemblyDis]
@@ -482,7 +482,7 @@ namespace Diploma.Controllers
                 Object.Destroy(whereObject.transform.GetChild(i).gameObject);
             }
             _backGroundForCreatingOrder.SetActive(false);
-            _toogleEscape = true;
+            _toggleEscape = false;
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
             
@@ -511,15 +511,15 @@ namespace Diploma.Controllers
             _lessonConstructorController.TakeScreenShoot -= TakeScreenShoot;
         }
 
-        private bool _toogleEscape;
+        private bool _toggleEscape;
         public void Execute(float deltaTime)
         {
             if (Input.GetKeyDown (KeyCode.Escape))
             {
-                _toogleEscape = !_toogleEscape;
-                _playerInitialization.SetPause(_toogleEscape);
+                _toggleEscape = !_toggleEscape;
+                _playerInitialization.SetPause(_toggleEscape);
                 _backGroundForCreatingOrder.SetActive(!_backGroundForCreatingOrder.activeSelf);
-                if (_toogleEscape)
+                if (_toggleEscape)
                 {
                     Cursor.lockState = CursorLockMode.None;
                     Cursor.visible = true;
