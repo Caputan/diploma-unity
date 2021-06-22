@@ -86,7 +86,7 @@ namespace Diploma.Controllers
 
             new CompleteButtonsAdd(completeButtons, _gameContextWithView);
             
-            var completeLogic = new CompleteLogic(_gameContextWithView.CompleteButtons);
+            var completeLogic = new CompleteLogic(_gameContextWithView.CompleteButtons, _loadingSceneController);
             completeLogic.Initialization();
 
             _completeGM.SetActive(false);

@@ -14,10 +14,10 @@ namespace UI.CompleteUI
 
         private readonly LoadingSceneController _loadingSceneController;
         
-        public CompleteLogic(Dictionary<CompleteButtons, Button> buttons)
+        public CompleteLogic(Dictionary<CompleteButtons, Button> buttons, LoadingSceneController loadingSceneController)
         {
             _buttons = buttons;
-            _loadingSceneController = new LoadingSceneController();
+            _loadingSceneController = loadingSceneController;
         }
 
         private void SwitchToNextMenu()
