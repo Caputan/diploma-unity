@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using System.Linq;
 using Controllers;
 using Coroutine;
 using Controllers.MainScene.LessonsControllers;
@@ -404,7 +405,8 @@ namespace Diploma.Controllers
 
         public void SetMarks(string marks)
         {
-            var marksInt = marks.Split(' ');
+            var marksInt = marks.Split(' ').ToList();
+            marksInt.RemoveAt(0);
             foreach (var button in _gameContextWithViews.LessonChooseButtonsLogic._buttonLogic)
             {
                 foreach (var mark in marksInt)
