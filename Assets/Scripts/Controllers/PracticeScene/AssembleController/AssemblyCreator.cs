@@ -17,13 +17,14 @@ namespace Diploma.Controllers.AssembleController
         private GameObject _whereShouldPutTheInfo;
         private CreatingAssemblyFactory _creatingAssemblyFactory;
         public event Action<string> EndCreatingEvent;
+        private List<string> _lastIndex;
         private readonly ResourcePath _viewPath = new ResourcePath {PathResource = "Prefabs/MainScene/OrderUnit"};
         
         public AssemblyCreator()
         {
             PlayerController.OnPartClicked += AddToOrder;
             _creatingAssemblyFactory = new CreatingAssemblyFactory(ResourceLoader.LoadPrefab(_viewPath));
-            
+            _lastIndex = new List<string>();
         }
 
         public void SetAssemblyGameObject(GameObject assemblyGameObject,GameObject whereShouldPutTheInfo)
@@ -33,11 +34,13 @@ namespace Diploma.Controllers.AssembleController
             var animator = assemblyGameObject.GetComponent<Animator>();
             animator.enabled = false;
             _order = null;
+            _lastIndex.Clear();
         }
         
         private void AddToOrder(GameObject partOfAssembly)
         {
             var partID = partOfAssembly.GetComponent<Outline>().part_Id;
+            _lastIndex.Add(partID.ToString()+ " ");
             _order += partID + " ";
             Debug.Log("Пополнение "+_order);
             if (partOfAssembly.transform.parent.childCount > 1)
@@ -47,7 +50,8 @@ namespace Diploma.Controllers.AssembleController
                     partOfAssembly.transform.parent.GetComponentsInChildren<MeshRenderer>()[i].enabled = false;
                 }
                 partOfAssembly.GetComponent<MeshCollider>().enabled = false;
-            }
+            
+            } 
             else
             {
                 partOfAssembly.GetComponent<MeshCollider>().enabled = false;
@@ -55,38 +59,45 @@ namespace Diploma.Controllers.AssembleController
             }
 
             var components = _creatingAssemblyFactory.Create(_whereShouldPutTheInfo.transform).GetComponentsInChildren<TextMeshProUGUI>();
-            components[0].text = partID.ToString();
+            //components[0].text = partID.ToString();
             components[1].text = partOfAssembly.transform.parent.name;
 
         }
 
         public void BackInOrder()
         {
-            var whatIsBack = _order.Split(' ');
-            foreach (var outline in _outlines)
-            {
-                if (outline.part_Id == Convert.ToInt32(whatIsBack[whatIsBack.Length-2]))
+            if(!string.IsNullOrEmpty(_order))
+            { 
+                var whatIsBack = _order.Split(' ');
+                foreach (var outline in _outlines)
                 {
-                    if (outline.gameObject.transform.parent.childCount > 1)
+                    if (outline.part_Id == Convert.ToInt32(whatIsBack[whatIsBack.Length - 2]))
                     {
-                        for (var i = 0; i < outline.gameObject.transform.parent.childCount; i++)
+                        if (outline.gameObject.transform.parent.childCount > 1)
                         {
-                            outline.gameObject.transform.parent.GetComponentsInChildren<MeshRenderer>()[i].enabled = true;
+                            for (var i = 0; i < outline.gameObject.transform.parent.childCount; i++)
+                            {
+                                 outline.gameObject.transform.parent.GetComponentsInChildren<MeshRenderer>()[i].enabled =
+                                true;
+                            }
+
+                            outline.gameObject.GetComponent<MeshCollider>().enabled = true; 
                         }
-                        outline.gameObject.GetComponent<MeshCollider>().enabled = true;
-                    }
-                    else
-                    {
-                        outline.gameObject.GetComponent<MeshCollider>().enabled = true;
-                        outline.gameObject.GetComponent<MeshRenderer>().enabled = true;
+                        else
+                        { 
+                            outline.gameObject.GetComponent<MeshCollider>().enabled = true;
+                            outline.gameObject.GetComponent<MeshRenderer>().enabled = true;
+                        }
                     }
                 }
-            }
-            _order = _order.Remove(_order.Length-2);
 
-            var componentToDelete =
+                _order = _order.Remove(_order.Length - _lastIndex[_lastIndex.IndexOf(_lastIndex.Last())].Length); 
+                _lastIndex.Remove(_lastIndex.Last());
+                Debug.Log("Убавление" + _order);
+                var componentToDelete =
                 _whereShouldPutTheInfo.transform.GetChild(_whereShouldPutTheInfo.transform.childCount - 1);
-            Object.Destroy(componentToDelete.gameObject);
+                Object.Destroy(componentToDelete.gameObject);
+            }
         }
 
         public void EndCreating()
