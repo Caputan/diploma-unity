@@ -33,7 +33,7 @@ namespace Diploma.Controllers.AssembleController
         public void Initialization()
         {
             gm = GameObject.Instantiate(_assemblyGameObject, _assemblyParent);
-            gm.transform.localScale = new Vector3(5f, 5f, 5f);
+            gm.transform.localScale = new Vector3(2f, 2f, 2f);
             // gm.transform.position = Vector3.zero;
 
             // var animator = gm.GetComponent<Animator>();
@@ -43,6 +43,7 @@ namespace Diploma.Controllers.AssembleController
             int partId = 0;
             foreach (var mesh in meshes)
             {
+                Debug.Log(mesh.gameObject.name + " | " + partId);
                 var outline = mesh.gameObject.AddComponent<Outline>();
                 outline.part_Id = partId;
 
