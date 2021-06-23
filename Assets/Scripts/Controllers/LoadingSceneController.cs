@@ -36,10 +36,10 @@ namespace Controllers
             ListOfScenes.Add(SceneManager.GetSceneByBuildIndex(0));
             AsyncOperation operation1 = SceneManager.LoadSceneAsync(1,LoadSceneMode.Additive);
             ListOfScenes.Add(SceneManager.GetSceneByBuildIndex(1));
-            while (!operation1.isDone)
-            {
-                yield return null;
-            }
+            // while (!operation1.isDone)
+            // {
+            //     yield return null;
+            // }
             AsyncOperation operation2 = SceneManager.LoadSceneAsync(2,LoadSceneMode.Additive);
             ListOfScenes.Add(SceneManager.GetSceneByBuildIndex(2));
             while (!operation2.isDone)
@@ -47,11 +47,12 @@ namespace Controllers
                 yield return null;
             }
 
-            yield return new WaitForEndOfFrame();
+            
             _roots.Add(ListOfScenes[0].GetRootGameObjects());
             _roots.Add(ListOfScenes[1].GetRootGameObjects());
             _roots.Add(ListOfScenes[2].GetRootGameObjects());
             SetActiveSceneAndLoadIt(0);
+            //yield return new WaitForEndOfFrame();
             StopC();
         }
 
