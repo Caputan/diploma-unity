@@ -1384,8 +1384,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u0412\u044B\u0431\u0435\u0440\u0438\u0442\u0435 \u0434\u0435\u0442\u0430\u043B\u044C
-    (*.3ds)"
+  m_text: "\u0412\u044B\u0431\u0435\u0440\u0438\u0442\u0435 UnityBundle ()"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 871566cd85a1bba41948e7ac0cc3ed63, type: 2}
   m_sharedMaterial: {fileID: -9057361400934518611, guid: 871566cd85a1bba41948e7ac0cc3ed63,
@@ -2962,7 +2961,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 3707988478431601674}
   m_Direction: 2
   m_Value: 0
-  m_Size: 0.50000006
+  m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
